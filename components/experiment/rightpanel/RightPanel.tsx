@@ -7,11 +7,12 @@ interface RightPanelProps {
   exp: Experiment
   activeTab: 'overview' | 'chat'
   onTabChange: (tab: 'overview' | 'chat') => void
+  extraClass?: string
 }
 
-export default function RightPanel({ exp, activeTab, onTabChange }: RightPanelProps) {
+export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '' }: RightPanelProps) {
   return (
-    <div className="right-panel" id={`rp-${exp.num}`}>
+    <div className={`right-panel${extraClass ? ' ' + extraClass : ''}`} id={`rp-${exp.num}`}>
       <div className="rp-tabs">
         <button
           className={`rp-tab${activeTab === 'overview' ? ' active' : ''}`}

@@ -21,6 +21,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
   const [galiOpen, setGaliOpen] = useState(false)
+  const [mobilePanelOpen, setMobilePanelOpen] = useState(false)
   const color = headerColor ?? sectionColors[exp.section] ?? '#14B8A6'
   const colorDark = headerColorDark ?? '#0D9488'
 
@@ -29,7 +30,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
       {/* Header gradient — uses section colour */}
       <div className="exp-teal-header" style={{ background: `linear-gradient(135deg, ${color} 0%, ${colorDark} 100%)` }}>
         <div className="exp-header-top">
-          <button className="back-btn" onClick={onBack}>← Back to Experiments</button>
+          <button className="back-btn" onClick={onBack}>← Back</button>
           <button className="ask-gali-btn" onClick={() => setGaliOpen(true)}>✦ Ask Gali</button>
         </div>
         <h1 className="exp-h1">{exp.title}</h1>
@@ -54,8 +55,22 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
           {activeTab === 'questions' && <QuestionsTab exp={exp} />}
           {activeTab === 'notes' && <NotesTab exp={exp} />}
         </div>
-        <RightPanel exp={exp} activeTab={rpTab} onTabChange={setRpTab} />
+        <RightPanel
+          exp={exp}
+          activeTab={rpTab}
+          onTabChange={setRpTab}
+          extraClass={mobilePanelOpen ? 'mobile-open' : ''}
+        />
       </div>
+
+      {/* Mobile-only: floating toggle for the right panel */}
+      <button
+        className="mobile-panel-btn"
+        onClick={() => setMobilePanelOpen(o => !o)}
+        aria-label="Toggle overview panel"
+      >
+        {mobilePanelOpen ? '✕ Close' : '📊 Overview'}
+      </button>
 
       {galiOpen && (
         <GaliModal
