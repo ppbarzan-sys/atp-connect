@@ -297,22 +297,75 @@ body.teacher-mode .teacher-mode-bar{display:block;}
    RESPONSIVE — mobile (≤ 768px)
 ══════════════════════════════════════════════════════ */
 @media(max-width:768px){
-  /* ── App shell: stack vertically ── */
-  body.app-shell{flex-direction:column;}
+
+  /* ─────────────────────────────────────────────────
+     CRITICAL: Switch from locked-viewport to natural
+     document scroll. The desktop layout uses
+     position:fixed + overflow:hidden on html/body to
+     create independent scrolling panes. On mobile this
+     kills all native scroll entirely. We revert to a
+     normal document flow so the whole page scrolls.
+  ───────────────────────────────────────────────── */
+  html.app-shell{
+    overflow-x:hidden;
+    overflow-y:auto;           /* was overflow:hidden */
+  }
+  body.app-shell{
+    position:static;           /* was position:fixed  */
+    overflow-x:hidden;
+    overflow-y:auto;           /* was overflow:hidden */
+    width:100%;
+    height:auto;               /* was implicit 100vh via fixed */
+    min-height:100vh;
+    flex-direction:column;
+    /* Body itself gets the bottom nav clearance */
+    padding-bottom:calc(56px + env(safe-area-inset-bottom,0px));
+  }
+
+  /* Every overflow:hidden ancestor in the chain would
+     collapse its height to zero once the body is no
+     longer fixed-size. Unlock them all.               */
+  .main-area{
+    order:1;
+    flex:none;
+    width:100%;
+    overflow:visible;
+  }
+  #view-browse{
+    overflow:visible;
+    flex:none;
+    display:flex;
+    flex-direction:column;
+  }
+  .exp-view{overflow:visible;}
+  .exp-body{
+    flex-direction:column;
+    overflow:visible;
+    min-height:unset;
+  }
+  .exp-main-col{
+    overflow:visible;
+    height:auto;
+    max-height:none;
+    min-height:unset;
+    padding:14px 12px 32px;
+    gap:14px;
+  }
 
   /* ── Sidebar → fixed bottom nav bar with safe-area ── */
   .sidebar{
     order:2;
     width:100%;
-    height:calc(56px + env(safe-area-inset-bottom, 0px));
+    height:calc(56px + env(safe-area-inset-bottom,0px));
     flex-direction:row;
     border-right:none;
     border-top:1px solid var(--border);
-    padding:0 8px env(safe-area-inset-bottom, 0px);
+    padding:0 8px env(safe-area-inset-bottom,0px);
     position:fixed;
     bottom:0;left:0;right:0;
     z-index:50;
     gap:0;
+    background:#fff;
   }
   .sidebar-logo{display:none;}
   .sidebar-bottom{
@@ -331,7 +384,6 @@ body.teacher-mode .teacher-mode-bar{display:block;}
     padding:6px 0;
   }
   .nav-icon span.label{font-size:9px;}
-  /* Sign-out: match nav-icon style exactly */
   .signout-btn{
     flex:1;
     height:56px;
@@ -349,24 +401,16 @@ body.teacher-mode .teacher-mode-bar{display:block;}
     letter-spacing:.02em;
   }
 
-  /* ── Main area: safe area at top + bottom nav ── */
-  .main-area{
-    order:1;
-    flex:1;
-    min-height:0;
-    padding-bottom:calc(56px + env(safe-area-inset-bottom, 0px));
-  }
-
   /* ── Browse hero: safe area at top ── */
   .browse-hero{
-    padding:calc(16px + env(safe-area-inset-top, 0px)) 16px 16px;
+    padding:calc(20px + env(safe-area-inset-top,0px)) 16px 20px;
   }
-  .browse-hero h1{font-size:22px;}
+  .browse-hero h1{font-size:22px;margin-bottom:4px;}
   .browse-hero p{font-size:13px;}
   .browse-hero-row{gap:8px;}
   .ask-gali-hero{padding:7px 14px;font-size:12px;}
 
-  /* ── Filter bar: horizontal scroll ── */
+  /* ── Filter bar: horizontal scroll, no wrapping ── */
   .filter-bar{
     padding:10px 12px;
     flex-wrap:nowrap;
@@ -374,32 +418,41 @@ body.teacher-mode .teacher-mode-bar{display:block;}
     -webkit-overflow-scrolling:touch;
     gap:6px;
     scrollbar-width:none;
+    position:sticky;
+    top:0;
+    z-index:10;
   }
   .filter-bar::-webkit-scrollbar{display:none;}
   .filter-divider{display:none;}
   .more-filters-btn{display:none;}
 
   /* ── Browse content ── */
-  .browse-content{padding:12px 12px 80px;}
+  .browse-content{padding:14px 12px 24px;}
+  .browse-section{margin-bottom:28px;}
   .browse-section-header h2{font-size:17px;}
-  .cards-row{grid-template-columns:repeat(auto-fill,minmax(min(160px,100%),1fr));gap:12px;}
-  .card-icon{font-size:40px;}
-  .card-icon-wrap{padding:20px 0;}
-  .card-title{font-size:14px;}
+  .cards-row{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+  .card-icon{font-size:38px;}
+  .card-icon-wrap{padding:18px 0;}
+  .card-body{padding:10px 12px 14px;}
+  .card-title{font-size:13px;}
+  .card-desc{font-size:11px;}
 
   /* ── Experiment header: safe area at top ── */
   .exp-teal-header{
-    padding:calc(10px + env(safe-area-inset-top, 0px)) 12px 0;
+    padding:calc(12px + env(safe-area-inset-top,0px)) 14px 0;
   }
-  .exp-header-top{margin-bottom:8px;}
+  .exp-header-top{margin-bottom:10px;}
   .back-btn{font-size:12px;padding:5px 10px;}
   .ask-gali-btn{font-size:12px;padding:6px 12px;}
-  .exp-h1{font-size:20px;margin-bottom:3px;}
+  .exp-h1{font-size:20px;margin-bottom:4px;}
   .exp-subtitle{font-size:12px;margin-bottom:8px;}
-  .exp-badges{gap:6px;margin-bottom:10px;}
+  .exp-badges{gap:6px;margin-bottom:10px;flex-wrap:wrap;}
   .exp-badge{font-size:10px;padding:3px 10px;}
 
-  /* tabs: horizontal scroll, no wrap */
+  /* ── Tabs: horizontal scroll ── */
   .main-tabs{
     flex-wrap:nowrap;
     overflow-x:auto;
@@ -410,58 +463,61 @@ body.teacher-mode .teacher-mode-bar{display:block;}
   }
   .main-tabs::-webkit-scrollbar{display:none;}
   .main-tab{
-    padding:8px 14px;
+    padding:9px 14px;
     font-size:12px;
     white-space:nowrap;
     flex-shrink:0;
     border-radius:8px 8px 0 0;
   }
 
-  /* exp body: stack vertically */
-  .exp-body{flex-direction:column;}
-  .exp-main-col{padding:14px 12px;gap:12px;}
+  /* ── Content cards ── */
+  .content-card{padding:16px;margin-bottom:0;}
+  .content-card h3{font-size:15px;margin-top:16px;}
+  .content-card h3:first-child{margin-top:0;}
+  .content-card p,.content-card li{font-size:13px;line-height:1.65;}
 
-  /* content cards */
-  .content-card{padding:16px;}
-  .content-card h3{font-size:15px;}
-  .content-card p,.content-card li{font-size:13px;}
+  /* ── Khan Academy links (inline in summary) ── */
+  .khan-inline-section{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+  .khan-inline-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+  .khan-links{gap:8px;}
+  .khan-link{font-size:13px;padding:10px 14px;}
 
-  /* right panel when open: full-width bottom sheet above nav */
+  /* ── Right panel: bottom sheet above nav ── */
   .right-panel.mobile-open{
-    bottom:calc(56px + env(safe-area-inset-bottom, 0px));
+    bottom:calc(56px + env(safe-area-inset-bottom,0px));
   }
   .mobile-panel-btn{
-    bottom:calc(68px + env(safe-area-inset-bottom, 0px));
+    bottom:calc(70px + env(safe-area-inset-bottom,0px));
     right:12px;
     padding:7px 14px;
     font-size:12px;
   }
 
-  /* ── Chat ── */
-  .chat-messages{max-height:calc(50vh - 120px);}
+  /* ── Chat (inside bottom sheet) ── */
+  .chat-messages{max-height:calc(40vh - 120px);}
 
   /* ── Search overlay ── */
-  .search-overlay{padding-top:20px;align-items:flex-start;}
-  .search-box{border-radius:12px;width:100%;max-width:100%;margin:0 8px;}
+  .search-overlay{padding-top:16px;align-items:flex-start;}
+  .search-box{border-radius:12px;width:calc(100% - 16px);max-width:100%;margin:0 8px;}
   .search-input-wrap{padding:12px 14px;}
   .search-main-input{font-size:15px;}
-  .search-results{max-height:65vh;}
+  .search-results{max-height:60vh;}
 
   /* ── Tables: horizontal scroll ── */
   .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .data-entry-table{min-width:420px;}
+  .data-entry-table{min-width:400px;}
 
   /* ── Questions ── */
   .q-text{font-size:13px;}
-  .q-btn{font-size:12px;padding:7px 12px;}
+  .q-btn{font-size:12px;padding:8px 12px;text-align:left;}
 
-  /* teacher toggle: above nav + safe area */
+  /* ── Floaters: above nav + safe area ── */
   .teacher-toggle{
-    bottom:calc(68px + env(safe-area-inset-bottom, 0px));
+    bottom:calc(70px + env(safe-area-inset-bottom,0px));
     right:12px;
     width:44px;height:44px;font-size:18px;
   }
-  .toast{bottom:calc(68px + env(safe-area-inset-bottom, 0px));}
+  .toast{bottom:calc(70px + env(safe-area-inset-bottom,0px));}
 }
 
 /* ══════════════════════════════════════════════════════
