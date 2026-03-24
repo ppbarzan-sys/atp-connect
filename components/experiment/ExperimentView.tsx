@@ -26,7 +26,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
   const colorDark = headerColorDark ?? '#0D9488'
 
   return (
-    <div className="exp-view" id={`expview-${exp.num}`} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
+    <div className="exp-view" id={`expview-${exp.num}`}>
       {/* Header gradient — uses section colour */}
       <div className="exp-teal-header" style={{ background: `linear-gradient(135deg, ${color} 0%, ${colorDark} 100%)` }}>
         <div className="exp-header-top">
