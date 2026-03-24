@@ -1,0 +1,77 @@
+'use client'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Sidebar from '@/components/Sidebar'
+import BrowseView from '@/components/browse/BrowseView'
+import SearchOverlay from '@/components/SearchOverlay'
+import GaliModal, { GaliContext } from '@/components/GaliModal'
+import {
+  chemistryExperiments,
+  chemistrySectionColors,
+  chemistrySectionEmojis,
+} from '@/data/chemistry'
+
+export default function ChemistryPage() {
+  const [activeFilter, setActiveFilter] = useState('all')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [galiContext, setGaliContext] = useState<GaliContext | null>(null)
+  const router = useRouter()
+
+  function handleExpClick(num: number) {
+    router.push(`/chemistry/${num}`)
+  }
+
+  function openGali(section?: string) {
+    setGaliContext({ section: section ?? 'all' })
+  }
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        overflow: 'hidden',
+      }}
+    >
+      <Sidebar
+        activeView="browse"
+        onHome={() => {}}
+        onSearch={() => setSearchOpen(true)}
+      />
+
+      <BrowseView
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+        onExpClick={handleExpClick}
+        onSearch={() => setSearchOpen(true)}
+        onAskGali={openGali}
+        expData={chemistryExperiments}
+        sectionColorMap={chemistrySectionColors}
+        sectionEmojiMap={chemistrySectionEmojis}
+        heroTitle="Browse Chemistry Experiments"
+        heroSubtitle={`${chemistryExperiments.length} chemistry & plant physiology experiments for the ATP Mobile Lab 4900.00`}
+      />
+
+      {searchOpen && (
+        <SearchOverlay
+          onClose={() => setSearchOpen(false)}
+          onExpClick={num => {
+            setSearchOpen(false)
+            handleExpClick(num)
+          }}
+          expData={chemistryExperiments}
+          sectionColorMap={chemistrySectionColors}
+          sectionEmojiMap={chemistrySectionEmojis}
+        />
+      )}
+
+      {galiContext !== null && (
+        <GaliModal context={galiContext} onClose={() => setGaliContext(null)} />
+      )}
+    </div>
+  )
+}
