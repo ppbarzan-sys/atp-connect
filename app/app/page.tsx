@@ -26,6 +26,7 @@ export default function AppHome() {
         activeView="browse"
         onHome={() => {}}
         onSearch={() => setSearchOpen(true)}
+        onAskGali={openGali}
       />
       <BrowseView
         activeFilter={activeFilter}

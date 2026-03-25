@@ -31,6 +31,7 @@ export default function ChemistryPage() {
         activeView="browse"
         onHome={() => {}}
         onSearch={() => setSearchOpen(true)}
+        onAskGali={openGali}
       />
 
       <BrowseView

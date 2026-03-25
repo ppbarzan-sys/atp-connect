@@ -1,20 +1,23 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { chemistryExperiments, chemistrySectionColors } from '@/data/chemistry'
+import { chemistryExperiments, chemistrySectionColors, chemistrySectionEmojis } from '@/data/chemistry'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
-import {
-  chemistrySectionEmojis,
-} from '@/data/chemistry'
+import GaliModal, { GaliContext } from '@/components/GaliModal'
 
 export default function ChemistryExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const [searchOpen, setSearchOpen] = useState(false)
+  const [galiOpen, setGaliOpen] = useState(false)
 
   const exp = chemistryExperiments.find(e => e.num === Number(id))
+
+  const galiCtx: GaliContext = exp
+    ? { section: exp.section, experimentTitle: exp.title, experimentNum: exp.num }
+    : { section: 'all' }
 
   if (!exp) {
     return (
@@ -57,6 +60,7 @@ export default function ChemistryExperimentPage() {
         activeView="experiment"
         onHome={() => router.push('/chemistry')}
         onSearch={() => setSearchOpen(true)}
+        onAskGali={() => setGaliOpen(true)}
       />
 
       <ExperimentView
@@ -64,6 +68,7 @@ export default function ChemistryExperimentPage() {
         onBack={() => router.push('/chemistry')}
         headerColor={sectionColor}
         headerColorDark={sectionColorDark}
+        onAskGali={() => setGaliOpen(true)}
       />
 
       {searchOpen && (
@@ -77,6 +82,10 @@ export default function ChemistryExperimentPage() {
           sectionColorMap={chemistrySectionColors}
           sectionEmojiMap={chemistrySectionEmojis}
         />
+      )}
+
+      {galiOpen && (
+        <GaliModal context={galiCtx} onClose={() => setGaliOpen(false)} />
       )}
     </div>
   )

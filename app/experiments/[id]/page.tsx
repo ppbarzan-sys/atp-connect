@@ -5,12 +5,18 @@ import { experiments } from '@/data/experiments'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
+import GaliModal, { GaliContext } from '@/components/GaliModal'
 
 export default function ExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const [searchOpen, setSearchOpen] = useState(false)
+  const [galiOpen, setGaliOpen] = useState(false)
   const exp = experiments.find(e => e.num === Number(id))
+
+  const galiCtx: GaliContext = exp
+    ? { section: exp.section, experimentTitle: exp.title, experimentNum: exp.num }
+    : { section: 'all' }
 
   if (!exp) {
     return (
@@ -31,13 +37,21 @@ export default function ExperimentPage() {
         activeView="experiment"
         onHome={() => router.push('/app')}
         onSearch={() => setSearchOpen(true)}
+        onAskGali={() => setGaliOpen(true)}
       />
-      <ExperimentView exp={exp} onBack={() => router.push('/app')} />
+      <ExperimentView
+        exp={exp}
+        onBack={() => router.push('/app')}
+        onAskGali={() => setGaliOpen(true)}
+      />
       {searchOpen && (
         <SearchOverlay
           onClose={() => setSearchOpen(false)}
           onExpClick={(num) => { setSearchOpen(false); router.push(`/experiments/${num}`) }}
         />
+      )}
+      {galiOpen && (
+        <GaliModal context={galiCtx} onClose={() => setGaliOpen(false)} />
       )}
     </div>
   )

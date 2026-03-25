@@ -12,9 +12,10 @@ interface SidebarProps {
   activeView: 'browse' | 'experiment'
   onHome: () => void
   onSearch: () => void
+  onAskGali?: () => void
 }
 
-export default function Sidebar({ activeView, onHome, onSearch }: SidebarProps) {
+export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: SidebarProps) {
   const router = useRouter()
   const pathname = usePathname()
   const isChemistry = pathname?.startsWith('/chemistry') ?? false
@@ -55,6 +56,17 @@ export default function Sidebar({ activeView, onHome, onSearch }: SidebarProps) 
         <span>🔍</span>
         <span className="label">Search</span>
       </button>
+
+      {onAskGali && (
+        <button
+          className="nav-icon gali-nav"
+          onClick={onAskGali}
+          title="Ask Gali AI"
+        >
+          <span>✦</span>
+          <span className="label">Gali</span>
+        </button>
+      )}
 
       <div className="sidebar-bottom">
         <button

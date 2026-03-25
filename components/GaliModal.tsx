@@ -18,19 +18,81 @@ interface GaliModalProps {
   onClose: () => void
 }
 
+const CHEMISTRY_SECTIONS = new Set([
+  'Matter & Solutions',
+  'Acids & Bases',
+  'Gas Chemistry',
+  'Electrochemistry',
+  'Plant Physiology',
+])
+
+function isChemistry(context?: GaliContext): boolean {
+  if (!context) return false
+  if (context.experimentNum && context.experimentNum >= 101) return true
+  if (context.section && CHEMISTRY_SECTIONS.has(context.section)) return true
+  return false
+}
+
 function buildWelcome(context?: GaliContext): string {
   if (context?.experimentTitle) {
-    return `Hi! I'm Gali ✦ I'm here to help with **${context.experimentTitle}**. Ask me about setup, formulas, expected results, or anything else!`
+    const subject = isChemistry(context) ? 'chemistry' : 'physics'
+    return `Hi! I'm Gali ✦ I'm here to help with **${context.experimentTitle}**. Ask me about setup, key formulas, expected results, or how this ${subject} concept applies in the real world!`
   }
   if (context?.section && context.section !== 'all') {
-    return `Hi! I'm Gali ✦ You're browsing the **${context.section}** experiments. What would you like to know?`
+    if (CHEMISTRY_SECTIONS.has(context.section)) {
+      return `Hi! I'm Gali ✦ You're exploring **${context.section}** chemistry experiments. Ask me about reactions, formulas, lab techniques, or anything else in this section!`
+    }
+    return `Hi! I'm Gali ✦ You're exploring **${context.section}** experiments. Ask me about concepts, formulas, or real-world applications!`
   }
-  return `Hi! I'm Gali ✦ Your AI physics assistant. Ask me anything about the ATP experiments — setup, formulas, concepts, or real-world applications!`
+  return `Hi! I'm Gali ✦ Your AI science assistant. I can help with physics and chemistry experiments — setup, formulas, concepts, or real-world connections. What would you like to explore?`
 }
 
 const QUICK_PROMPTS: Record<string, string[]> = {
-  experiment: ['How do I set this up?', 'What is the key formula?', 'What results should I expect?'],
-  browse: ['What experiments cover force?', 'Which section is hardest?', 'How do levers work?'],
+  experiment_physics: [
+    'How do I set this up?',
+    'What is the key formula?',
+    'What results should I expect?',
+  ],
+  experiment_chemistry: [
+    'What reaction is happening?',
+    'What safety precautions apply?',
+    'How do I read the results?',
+  ],
+  browse_physics: [
+    'Which experiment covers force and motion?',
+    'Explain Newton\'s laws simply',
+    'What is the difference between heat and temperature?',
+  ],
+  browse_chemistry: [
+    'What is the difference between acids and bases?',
+    'How does electrolysis work?',
+    'Explain Le Chatelier\'s principle',
+  ],
+  all: [
+    'What experiments are in this lab?',
+    'Explain a key physics concept',
+    'Explain a key chemistry concept',
+  ],
+}
+
+function getQuickPrompts(context?: GaliContext): string[] {
+  if (context?.experimentTitle) {
+    return isChemistry(context)
+      ? QUICK_PROMPTS.experiment_chemistry
+      : QUICK_PROMPTS.experiment_physics
+  }
+  if (context?.section && context.section !== 'all') {
+    return CHEMISTRY_SECTIONS.has(context.section)
+      ? QUICK_PROMPTS.browse_chemistry
+      : QUICK_PROMPTS.browse_physics
+  }
+  return QUICK_PROMPTS.all
+}
+
+function getPlaceholder(context?: GaliContext): string {
+  if (context?.experimentTitle) return `Ask about ${context.experimentTitle}…`
+  if (context?.section && context.section !== 'all') return `Ask about ${context.section}…`
+  return 'Ask a science question…'
 }
 
 export default function GaliModal({ context, onClose }: GaliModalProps) {
@@ -53,10 +115,11 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // Focus input on open
   useEffect(() => {
-    setTimeout(() => inputRef.current?.focus(), 100)
+    const t = setTimeout(() => inputRef.current?.focus(), 150)
+    return () => clearTimeout(t)
   }, [])
 
-  // Scroll to bottom on new messages
+  // Scroll to bottom when messages update
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
@@ -87,6 +150,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     setInput('')
 
     const userMsg: Message = { role: 'user', content: userText }
+    // Include full history so Gali has conversation context
     const historyForAPI = [...messages, userMsg].map(m => ({
       role: m.role,
       content: m.content,
@@ -94,7 +158,6 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
     setMessages(prev => [...prev, userMsg])
     setIsStreaming(true)
-
     abortRef.current = new AbortController()
 
     try {
@@ -106,7 +169,6 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       })
 
       if (res.status === 503) {
-        // No API key — fall back to static response
         setApiAvailable(false)
         const fallback = getFallback(userText, context)
         setMessages(prev => [...prev, { role: 'gali', content: fallback }])
@@ -117,17 +179,14 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
       setApiAvailable(true)
 
-      // Stream the response text
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
-
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
         const chunk = decoder.decode(value, { stream: true })
         if (chunk) appendGaliChunk(chunk)
       }
-
       finalizeGaliMessage()
     } catch (err: unknown) {
       if ((err as Error)?.name === 'AbortError') return
@@ -143,12 +202,11 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   const contextLabel = context?.experimentTitle
     ? `Exp #${context.experimentNum}: ${context.experimentTitle}`
     : context?.section && context.section !== 'all'
-    ? `${context.section} section`
+    ? context.section
     : 'All experiments'
 
-  const quickPrompts = context?.experimentTitle
-    ? QUICK_PROMPTS.experiment
-    : QUICK_PROMPTS.browse
+  const quickPrompts = getQuickPrompts(context)
+  const placeholder = getPlaceholder(context)
 
   return (
     <div className="gali-modal-overlay" onClick={onClose}>
@@ -156,21 +214,16 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
         {/* Header */}
         <div className="gali-modal-header">
-          <div className="gali-modal-avatar">G</div>
+          <div className="gali-modal-avatar">✦</div>
           <div className="gali-modal-header-title">Ask Gali</div>
           <span className="gali-modal-context-badge">{contextLabel}</span>
-          <button
-            className="gali-modal-close"
-            onClick={onClose}
-            aria-label="Close"
-          >✕</button>
+          <button className="gali-modal-close" onClick={onClose} aria-label="Close Gali">✕</button>
         </div>
 
         {/* No-API-key notice */}
         {apiAvailable === false && (
           <div className="gali-modal-notice">
-            ⚠ No API key set — using built-in responses.
-            Add <code>ANTHROPIC_API_KEY</code> to <code>.env.local</code> for full AI.
+            ⚠ No API key — using built-in responses. Add <code>ANTHROPIC_API_KEY</code> to <code>.env.local</code> for full AI.
           </div>
         )}
 
@@ -178,7 +231,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
         <div className="gali-modal-messages">
           {messages.map((msg, i) => (
             <div key={i} className={`chat-msg${msg.role === 'user' ? ' user' : ''}`}>
-              {msg.role === 'gali' && <div className="gali-avatar">G</div>}
+              {msg.role === 'gali' && <div className="gali-avatar">✦</div>}
               <div className={`chat-bubble ${msg.role === 'gali' ? 'gali-bubble' : 'user-bubble'}`}>
                 <MarkdownText text={msg.content} />
                 {msg.streaming && <span className="gali-cursor" />}
@@ -186,12 +239,15 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             </div>
           ))}
 
+          {/* Typing indicator — shown when waiting for first token */}
           {isStreaming && messages[messages.length - 1]?.role !== 'gali' && (
             <div className="chat-msg">
-              <div className="gali-avatar">G</div>
+              <div className="gali-avatar">✦</div>
               <div className="chat-bubble gali-bubble">
                 <div className="chat-thinking">
-                  <div className="dot" /><div className="dot" /><div className="dot" />
+                  <div className="dot" style={{ animationDelay: '0ms' }} />
+                  <div className="dot" style={{ animationDelay: '160ms' }} />
+                  <div className="dot" style={{ animationDelay: '320ms' }} />
                 </div>
               </div>
             </div>
@@ -219,18 +275,19 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             ref={inputRef}
             type="text"
             className="chat-input"
-            placeholder="Ask a physics question…"
+            placeholder={placeholder}
             value={input}
             onChange={e => setInput(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter') sendMessage() }}
+            onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) sendMessage() }}
             disabled={isStreaming}
           />
           <button
             className="chat-submit"
             onClick={() => sendMessage()}
             disabled={isStreaming || !input.trim()}
+            aria-label="Send"
           >
-            {isStreaming ? '…' : 'Send'}
+            {isStreaming ? '…' : '↑'}
           </button>
         </div>
       </div>
@@ -238,45 +295,107 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   )
 }
 
-// Minimal inline markdown renderer: **bold** and newlines
+// ─── Markdown renderer ────────────────────────────────────────────────────────
+// Handles: **bold**, *italic*, `code`, - bullet lists, 1. numbered lists, blank line paragraphs
+
+function InlineText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`\n]+`)/g)
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**') && part.length > 4)
+          return <strong key={i}>{part.slice(2, -2)}</strong>
+        if (part.startsWith('*') && part.endsWith('*') && part.length > 2)
+          return <em key={i}>{part.slice(1, -1)}</em>
+        if (part.startsWith('`') && part.endsWith('`') && part.length > 2)
+          return <code key={i} className="gali-inline-code">{part.slice(1, -1)}</code>
+        return <span key={i}>{part}</span>
+      })}
+    </>
+  )
+}
+
 function MarkdownText({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g)
-  const nodes = parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>
+  const lines = text.split('\n')
+  const nodes: React.ReactNode[] = []
+  let i = 0
+  let key = 0
+
+  while (i < lines.length) {
+    const line = lines[i]
+
+    // Bullet list block
+    if (/^[-*]\s+/.test(line)) {
+      const items: string[] = []
+      while (i < lines.length && /^[-*]\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^[-*]\s+/, ''))
+        i++
+      }
+      nodes.push(
+        <ul key={key++} className="gali-list">
+          {items.map((item, j) => <li key={j}><InlineText text={item} /></li>)}
+        </ul>
+      )
+      continue
     }
-    // Render newlines as <br>
-    return part.split('\n').map((line, j, arr) => (
-      <span key={`${i}-${j}`}>
-        {line}
-        {j < arr.length - 1 && <br />}
-      </span>
-    ))
-  })
+
+    // Numbered list block
+    if (/^\d+\.\s+/.test(line)) {
+      const items: string[] = []
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^\d+\.\s+/, ''))
+        i++
+      }
+      nodes.push(
+        <ol key={key++} className="gali-list">
+          {items.map((item, j) => <li key={j}><InlineText text={item} /></li>)}
+        </ol>
+      )
+      continue
+    }
+
+    // Empty line — skip (paragraph spacing handled by CSS gap)
+    if (line.trim() === '') {
+      i++
+      continue
+    }
+
+    // Regular text line
+    nodes.push(
+      <p key={key++} className="gali-para"><InlineText text={line} /></p>
+    )
+    i++
+  }
+
   return <>{nodes}</>
 }
 
-// Keyword-based fallback when no API key is present
+// ─── Keyword-based fallback (no API key) ─────────────────────────────────────
 function getFallback(text: string, context?: GaliContext): string {
   const lower = text.toLowerCase()
-  const section = context?.section || ''
-  const exp = context?.experimentTitle || ''
-  const topic = exp || section || 'physics'
+  const isChemCtx = isChemistry(context)
+  const topic = context?.experimentTitle || context?.section || (isChemCtx ? 'chemistry' : 'physics')
 
   if (lower.includes('setup') || lower.includes('set up') || lower.includes('equipment')) {
-    return `To set up this experiment, gather all listed equipment and follow the procedure in the Experiment tab. Make sure instruments are calibrated before taking measurements.`
+    return `To set up this experiment, gather all listed equipment and follow the Experiment tab procedure step by step. Make sure instruments are calibrated before taking measurements.`
   }
-  if (lower.includes('formula') || lower.includes('equation')) {
-    return `Check the **formula box** in the Experiment tab for the key equation used in **${topic}**. Apply it step-by-step, keeping track of units throughout.`
+  if (lower.includes('formula') || lower.includes('equation') || lower.includes('law')) {
+    return `Check the **formula box** in the Experiment tab for the key equation used in **${topic}**. Apply it carefully — keep track of units and significant figures throughout.`
   }
   if (lower.includes('result') || lower.includes('expect') || lower.includes('outcome')) {
     return `Compare your results with the **Expected Outcome** in the Summary tab. Small deviations (5–10%) are normal due to measurement uncertainty.`
   }
-  if (lower.includes('error') || lower.includes('mistake')) {
-    return `Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average.`
+  if (lower.includes('error') || lower.includes('mistake') || lower.includes('wrong')) {
+    return `Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average to reduce uncertainty.`
   }
-  if (lower.includes('real') || lower.includes('application') || lower.includes('life')) {
-    return `**${topic}** has many real-world applications — check the Real-World Connections section in the Experiment tab for specific examples related to this topic.`
+  if (lower.includes('safe') || lower.includes('hazard') || lower.includes('danger')) {
+    return `Always follow lab safety guidelines: wear appropriate PPE (gloves, goggles), handle chemicals carefully, and read the safety notes in the Experiment tab before starting.`
   }
-  return `Great question about **${topic}**! I can help with setup, formulas, expected results, or real-world applications. What would you like to explore?`
+  if (lower.includes('real') || lower.includes('application') || lower.includes('life') || lower.includes('use')) {
+    return `**${topic}** has fascinating real-world applications — check the Real-World Connections section in the Experiment tab for specific examples related to this topic.`
+  }
+  if (isChemCtx && (lower.includes('reaction') || lower.includes('acid') || lower.includes('base') || lower.includes('ph'))) {
+    return `In this chemistry experiment, observe the **reaction indicators** carefully (color changes, gas evolution, precipitate formation). Record all observations in the data table before drawing conclusions.`
+  }
+  return `Great question about **${topic}**! I can help with setup, formulas, safety, expected results, or real-world applications. What specific aspect would you like to explore?`
 }

@@ -13,33 +13,63 @@ interface ChatContext {
   experimentNum?: number
 }
 
+const CHEMISTRY_SECTIONS = new Set([
+  'Matter & Solutions',
+  'Acids & Bases',
+  'Gas Chemistry',
+  'Electrochemistry',
+  'Plant Physiology',
+])
+
+function isChemistryContext(context?: ChatContext): boolean {
+  if (!context) return false
+  if (context.experimentNum && context.experimentNum >= 101) return true
+  if (context.section && CHEMISTRY_SECTIONS.has(context.section)) return true
+  return false
+}
+
 function buildSystemPrompt(context?: ChatContext): string {
-  const ctx = context?.experimentTitle
-    ? `The student is currently working on experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
-    : context?.section && context.section !== 'all'
-    ? `The student is browsing the ${context.section} section of the physics lab.`
-    : 'The student is browsing the full ATP Physics Lab experiment catalogue.'
+  const isChemistry = isChemistryContext(context)
 
-  return `You are Gali, an enthusiastic and knowledgeable AI physics lab assistant for ATP Mobile Lab 4900.00 — an interactive physics manual with 41 experiments across Mechanics, Heat, Acoustics, Optics, Magnetism, and Electricity.
+  let contextLine: string
+  if (context?.experimentTitle) {
+    const subject = isChemistry ? 'chemistry' : 'physics'
+    contextLine = `The student is currently working on ${subject} experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
+  } else if (context?.section && context.section !== 'all') {
+    const subject = CHEMISTRY_SECTIONS.has(context.section) ? 'chemistry' : 'physics'
+    contextLine = `The student is browsing the "${context.section}" section of the ${subject} lab.`
+  } else {
+    contextLine = 'The student is browsing the full ATP Lab catalogue (physics + chemistry experiments).'
+  }
 
-${ctx}
+  const subjectScope = isChemistry
+    ? `chemistry concepts (acid/base reactions, gas laws, electrochemistry, plant physiology, stoichiometry, pH, titration, electrolysis, etc.)`
+    : `physics concepts (mechanics, forces, thermodynamics, acoustics, optics, magnetism, electricity, etc.)`
+
+  return `You are Gali ✦, an enthusiastic and knowledgeable AI science lab assistant for ATP Mobile Lab — an interactive science manual with:
+- 41 physics experiments across Mechanics, Heat, Acoustics, Optics, Magnetism, and Electricity
+- 50 chemistry experiments across Matter & Solutions, Acids & Bases, Gas Chemistry, Electrochemistry, and Plant Physiology
+
+${contextLine}
 
 Your role is to:
-- Help students understand physics concepts and experiment procedures
+- Help students understand ${subjectScope}
 - Explain formulas and show how to apply them step-by-step
 - Guide students on what to observe and record during experiments
 - Describe expected results and how to interpret collected data
-- Connect physics to real-world applications and everyday examples
+- Connect science to real-world applications and everyday examples
 - Address common mistakes and misconceptions clearly
 - Encourage curiosity, scientific thinking, and deeper exploration
 
-Guidelines:
-- Keep responses concise: 2–4 sentences or a short bullet list
+Response formatting guidelines:
+- Keep responses concise: 2–4 short paragraphs or a bullet list
+- Use **bold** for key terms, formulas, and important values
+- For numbered steps use "1. step", "2. step" format
+- For lists use "- item" format
+- For inline formulas write them inline with **bold**, e.g. **F = ma** or **pH = -log[H⁺]**
 - Use friendly, encouraging language appropriate for high school or early university students
-- Use **bold** for key physics terms and formulas when helpful
-- When a formula is relevant, present it clearly (e.g. F = ma)
-- Never invent specific numerical values — refer students to their experiment data
-- If asked something outside physics/science, gently redirect to the experiment context`
+- Never invent specific numerical experiment results — refer students to their own data
+- If asked something completely off-topic, gently redirect back to STEM and the experiment context`
 }
 
 export async function POST(req: NextRequest) {
@@ -55,36 +85,58 @@ export async function POST(req: NextRequest) {
   let messages: ChatMessage[], context: ChatContext | undefined
   try {
     const body = await req.json()
-    messages = body.messages
+    messages = body.messages ?? []
     context = body.context
   } catch {
     return new Response('Invalid JSON', { status: 400 })
   }
 
-  // Map gali role → assistant for the Anthropic API
-  const apiMessages = messages.map((m) => ({
-    role: m.role === 'gali' ? 'assistant' : 'user',
-    content: m.content,
-  }))
+  // Map gali → assistant; drop the synthetic client-side welcome message
+  // (it's the first message in the array and has role 'gali' — the API
+  //  requires conversations to start with role 'user')
+  const apiMessages = messages
+    .map((m) => ({
+      role: m.role === 'gali' ? ('assistant' as const) : ('user' as const),
+      content: m.content,
+    }))
+    .filter((_, i, arr) => {
+      // Drop leading assistant messages so the array always starts with 'user'
+      const firstUserIdx = arr.findIndex((m) => m.role === 'user')
+      return i >= firstUserIdx
+    })
 
-  const upstream = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 512,
-      system: buildSystemPrompt(context),
-      stream: true,
-      messages: apiMessages,
-    }),
-  })
+  if (apiMessages.length === 0) {
+    return new Response('No user messages', { status: 400 })
+  }
+
+  let upstream: Response
+  try {
+    upstream = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-3-5-haiku-20241022',
+        max_tokens: 600,
+        system: buildSystemPrompt(context),
+        stream: true,
+        messages: apiMessages,
+      }),
+    })
+  } catch (networkErr) {
+    console.error('Anthropic API network error:', networkErr)
+    return new Response(
+      JSON.stringify({ error: 'Could not reach Anthropic API' }),
+      { status: 502, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
 
   if (!upstream.ok || !upstream.body) {
     const errText = await upstream.text().catch(() => 'Upstream error')
+    console.error('Anthropic API error:', upstream.status, errText)
     return new Response(errText, { status: upstream.status })
   }
 
@@ -113,27 +165,23 @@ export async function POST(req: NextRequest) {
             controller.enqueue(encoder.encode(event.delta.text))
           }
         } catch {
-          // skip malformed events
+          // skip malformed SSE events
         }
       }
     },
     flush(controller) {
-      // flush any remaining buffer
-      if (buffer) {
-        const lines = buffer.split('\n')
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue
-          const data = line.slice(6).trim()
-          try {
-            const event = JSON.parse(data)
-            if (
-              event.type === 'content_block_delta' &&
-              event.delta?.type === 'text_delta'
-            ) {
-              controller.enqueue(encoder.encode(event.delta.text))
-            }
-          } catch {}
-        }
+      if (!buffer) return
+      for (const line of buffer.split('\n')) {
+        if (!line.startsWith('data: ')) continue
+        try {
+          const event = JSON.parse(line.slice(6).trim())
+          if (
+            event.type === 'content_block_delta' &&
+            event.delta?.type === 'text_delta'
+          ) {
+            controller.enqueue(encoder.encode(event.delta.text))
+          }
+        } catch {}
       }
     },
   })

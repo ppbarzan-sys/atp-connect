@@ -6,21 +6,20 @@ import ExperimentTab from './tabs/ExperimentTab'
 import QuestionsTab from './tabs/QuestionsTab'
 import NotesTab from './tabs/NotesTab'
 import RightPanel from './rightpanel/RightPanel'
-import GaliModal from '@/components/GaliModal'
 
 interface ExperimentViewProps {
   exp: Experiment
   onBack: () => void
   headerColor?: string
   headerColorDark?: string
+  onAskGali?: () => void
 }
 
 type TabId = 'summary' | 'experiment' | 'questions' | 'notes'
 
-export default function ExperimentView({ exp, onBack, headerColor, headerColorDark }: ExperimentViewProps) {
+export default function ExperimentView({ exp, onBack, headerColor, headerColorDark, onAskGali }: ExperimentViewProps) {
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
-  const [galiOpen, setGaliOpen] = useState(false)
   const [mobilePanelOpen, setMobilePanelOpen] = useState(false)
   const color = headerColor ?? sectionColors[exp.section] ?? '#14B8A6'
   const colorDark = headerColorDark ?? '#0D9488'
@@ -31,7 +30,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
       <div className="exp-teal-header" style={{ background: `linear-gradient(135deg, ${color} 0%, ${colorDark} 100%)` }}>
         <div className="exp-header-top">
           <button className="back-btn" onClick={onBack}>← Back</button>
-          <button className="ask-gali-btn" onClick={() => setGaliOpen(true)}>✦ Ask Gali</button>
+          <button className="ask-gali-btn" onClick={() => onAskGali?.()}>✦ Ask Gali</button>
         </div>
         <h1 className="exp-h1">{exp.title}</h1>
         <p className="exp-subtitle">{exp.desc}</p>
@@ -72,16 +71,6 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
         {mobilePanelOpen ? '✕ Close' : '📊 Overview'}
       </button>
 
-      {galiOpen && (
-        <GaliModal
-          context={{
-            section: exp.section,
-            experimentTitle: exp.title,
-            experimentNum: exp.num,
-          }}
-          onClose={() => setGaliOpen(false)}
-        />
-      )}
     </div>
   )
 }
