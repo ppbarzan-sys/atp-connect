@@ -74,7 +74,8 @@
     "check_ai": "✦ Verifica i Risultati con l'IA",
     "gali_feedback": "✦ Feedback di Gali",
     "hint": "💡 Suggerimento:",
-    "expected": "📊 Atteso:"
+    "expected": "📊 Atteso:",
+    "ai_feedback_fallback": "Ottimo lavoro! Rivedi i dati raccolti e confrontali con i valori attesi."
   },
   "questions": {
     "quick_check": "Domande di Verifica Rapida",
@@ -128,7 +129,13 @@
     "fallback_concept": "Consulta la sezione **Teoria di Base** per il concetto chiave di questo esperimento.",
     "fallback_hook": "Questo è un esperimento affascinante — consulta la sezione Introduzione nel pannello Panoramica.",
     "fallback_misconception": "Attenzione agli errori di misura più comuni. Consulta la sezione **Errori Comuni** nel pannello Panoramica.",
-    "fallback_discussion": "Rifletti su come questo esperimento si collega alla vita reale. Consulta il tab Domande per la Discussione."
+    "fallback_discussion": "Rifletti su come questo esperimento si collega alla vita reale. Consulta il tab Domande per la Discussione.",
+    "formula_prefix": "La formula principale è:",
+    "realworld_prefix": "Applicazioni pratiche:",
+    "expected_prefix": "Risultato atteso:",
+    "concept_prefix": "Concetto chiave:",
+    "misconceptions_prefix": "Errori di concezione comuni:",
+    "discussion_prefix": "Domande di approfondimento:"
   },
   "search": {
     "placeholder": "Cerca esperimenti…",

@@ -74,7 +74,8 @@
     "check_ai": "✦ Check My Results with AI",
     "gali_feedback": "✦ Gali's Feedback",
     "hint": "💡 Hint:",
-    "expected": "📊 Expected:"
+    "expected": "📊 Expected:",
+    "ai_feedback_fallback": "Great work! Review your data and compare with the expected values."
   },
   "questions": {
     "quick_check": "Quick Check Questions",
@@ -128,7 +129,13 @@
     "fallback_concept": "Refer to the **Background Theory** section for the key concept behind this experiment.",
     "fallback_hook": "This is a fascinating experiment — check the Hook section in the Overview panel for an engaging introduction.",
     "fallback_misconception": "Watch out for common measurement errors. Check the **Common Misconceptions** section in the Overview panel.",
-    "fallback_discussion": "Think about how this experiment connects to real life. Check the Discussion Questions tab for guided prompts."
+    "fallback_discussion": "Think about how this experiment connects to real life. Check the Discussion Questions tab for guided prompts.",
+    "formula_prefix": "The key formula is:",
+    "realworld_prefix": "Real-world connections:",
+    "expected_prefix": "Expected:",
+    "concept_prefix": "Key concept:",
+    "misconceptions_prefix": "Common misconceptions:",
+    "discussion_prefix": "Discussion questions:"
   },
   "search": {
     "placeholder": "Search experiments…",

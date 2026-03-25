@@ -209,7 +209,7 @@ export default function ExperimentTab({ exp }: ExperimentTabProps) {
             {showFeedback && (
               <div className="ai-results-feedback">
                 <div className="rf-header">{t('exp_tab.gali_feedback')}</div>
-                <div className="rf-body" dangerouslySetInnerHTML={{ __html: exp.ai.keywords.result || 'Great work! Review your data and compare with the expected values.' }} />
+                <div className="rf-body" dangerouslySetInnerHTML={{ __html: exp.ai.keywords.result || t('exp_tab.ai_feedback_fallback') }} />
                 {exp.ai.hint && (
                   <div className="rf-hint"><strong>{t('exp_tab.hint')}</strong> {exp.ai.hint}</div>
                 )}

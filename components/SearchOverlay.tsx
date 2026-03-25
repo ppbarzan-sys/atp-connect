@@ -19,7 +19,7 @@ export default function SearchOverlay({
   sectionColorMap,
   sectionEmojiMap,
 }: SearchOverlayProps) {
-  const { t } = useI18n()
+  const { t, tSection } = useI18n()
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -78,7 +78,7 @@ export default function SearchOverlay({
               >
                 <div className="search-item-emoji">{emoji}</div>
                 <div>
-                  <div className="search-item-section" style={{ color }}>{exp.section}</div>
+                  <div className="search-item-section" style={{ color }}>{tSection(exp.section)}</div>
                   <div className="search-item-title">{exp.title}</div>
                   <div className="search-item-desc">{exp.desc}</div>
                 </div>
