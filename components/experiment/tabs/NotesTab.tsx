@@ -32,10 +32,10 @@ export default function NotesTab({ exp }: NotesTabProps) {
 
   function downloadNotes() {
     const blob = new Blob([
-      `ATP Physics Lab — ${exp.title}\n`,
-      `Experiment #${exp.num}\n\n`,
-      `My Notes:\n${notes}\n\n`,
-      isTeacher ? `Teacher Notes:\n${teacherNotes}` : ''
+      `${t('notes.download_header', { title: exp.title })}\n`,
+      `${t('notes.download_exp', { num: String(exp.num) })}\n\n`,
+      `${t('notes.download_my_notes')}\n${notes}\n\n`,
+      isTeacher ? `${t('notes.download_teacher_notes')}\n${teacherNotes}` : ''
     ], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')

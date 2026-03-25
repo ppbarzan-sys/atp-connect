@@ -35,37 +35,38 @@ export default function ChatPane({ exp }: ChatPaneProps) {
     const lower = userText.toLowerCase()
 
     if (lower.includes('setup') || lower.includes('set up') || lower.includes('prepare') || lower.includes('equipment') || lower.includes('preparaz') || lower.includes('strument')) {
-      return kw.setup || `To set up experiment: gather ${exp.experiment.equipment.map(e => e.name).join(', ')}.`
+      return kw.setup || t('chat.fallback_setup')
     }
     if (lower.includes('formula') || lower.includes('equation') || lower.includes('calculat')) {
-      return kw.formula || (exp.experiment.formula ? `The key formula is: <code>${exp.experiment.formula}</code>` : 'Please refer to your textbook for the formula.')
+      return kw.formula || (exp.experiment.formula ? `The key formula is: <code>${exp.experiment.formula}</code>` : t('chat.fallback_formula'))
     }
     if (lower.includes('error') || lower.includes('mistake') || lower.includes('wrong') || lower.includes('common') || lower.includes('errore') || lower.includes('comuni')) {
-      return kw.error || 'Common errors include incorrect measurements, forgetting to calibrate equipment, and reading scales at an angle.'
+      return kw.error || t('chat.fallback_error')
     }
     if (lower.includes('real') || lower.includes('application') || lower.includes('everyday') || lower.includes('life') || lower.includes('applicaz') || lower.includes('reale')) {
-      return kw.real || (exp.experiment.realWorldConnections.length > 0 ? `Real-world connections: <ul>${exp.experiment.realWorldConnections.map(r => `<li>${r}</li>`).join('')}</ul>` : 'Physics is all around us!')
+      return kw.real || (exp.experiment.realWorldConnections.length > 0 ? `Real-world connections: <ul>${exp.experiment.realWorldConnections.map(r => `<li>${r}</li>`).join('')}</ul>` : t('chat.fallback_real'))
     }
     if (lower.includes('result') || lower.includes('expect') || lower.includes('outcome') || lower.includes('data') || lower.includes('risultat') || lower.includes('atteso')) {
-      return kw.result || (exp.ai.expected ? `Expected: ${exp.ai.expected}` : 'Check your results against the expected values in the experiment tab.')
+      return kw.result || (exp.ai.expected ? `Expected: ${exp.ai.expected}` : t('chat.fallback_result'))
     }
     if (lower.includes('extend') || lower.includes('further') || lower.includes('more') || lower.includes('beyond')) {
-      return kw.extend || 'Try extending this experiment by changing variables and observing how results change.'
+      return kw.extend || t('chat.fallback_extend')
     }
     if (lower.includes('explain') || lower.includes('how does') || lower.includes('why') || lower.includes('concept') || lower.includes('spiega') || lower.includes('concetto')) {
-      return kw.explain || `Key concept: ${exp.experiment.theoryPoints[0] || 'Refer to the Background Theory section.'}`
+      return kw.explain || `Key concept: ${exp.experiment.theoryPoints[0] || t('chat.fallback_concept')}`
     }
     if (lower.includes('hook') || lower.includes('interest') || lower.includes('motivat')) {
-      return kw.hook || (exp.overview.hook ? `<blockquote>${exp.overview.hook}</blockquote>` : 'Physics is fascinating!')
+      return kw.hook || (exp.overview.hook ? `<blockquote>${exp.overview.hook}</blockquote>` : t('chat.fallback_hook'))
     }
     if (lower.includes('misconception') || lower.includes('misunderstand') || lower.includes('confuse') || lower.includes('errore comune')) {
-      return kw.misconception || (exp.overview.misconceptions.length > 0 ? `Common misconceptions: <ul>${exp.overview.misconceptions.map(m => `<li>${m}</li>`).join('')}</ul>` : 'Watch out for common measurement errors.')
+      return kw.misconception || (exp.overview.misconceptions.length > 0 ? `Common misconceptions: <ul>${exp.overview.misconceptions.map(m => `<li>${m}</li>`).join('')}</ul>` : t('chat.fallback_misconception'))
     }
     if (lower.includes('question') || lower.includes('discuss') || lower.includes('domanda')) {
-      return kw.question || (exp.questions.discussion.length > 0 ? `Discussion questions: <ul>${exp.questions.discussion.slice(0, 3).map(q => `<li>${q}</li>`).join('')}</ul>` : 'Think about how this experiment connects to real life.')
+      return kw.question || (exp.questions.discussion.length > 0 ? `Discussion questions: <ul>${exp.questions.discussion.slice(0, 3).map(q => `<li>${q}</li>`).join('')}</ul>` : t('chat.fallback_discussion'))
     }
 
-    return `I can help with <strong>${exp.title}</strong>! Ask me about: <ul><li>Setup help</li><li>Formulas</li><li>Common errors</li><li>Real-world applications</li><li>Expected results</li></ul>`
+    const intro = t('chat.fallback_general', { title: exp.title }).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    return `${intro} <ul><li>${t('chat.fallback_setup_item')}</li><li>${t('chat.fallback_formulas_item')}</li><li>${t('chat.fallback_errors_item')}</li><li>${t('chat.fallback_realworld_item')}</li><li>${t('chat.fallback_results_item')}</li></ul>`
   }
 
   function sendMessage(text?: string) {

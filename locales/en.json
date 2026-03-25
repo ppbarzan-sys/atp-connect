@@ -25,6 +25,19 @@
     "all_filter": "All",
     "search_btn": "Search"
   },
+  "sections": {
+    "mechanics": "Mechanics",
+    "heat": "Heat",
+    "acoustics": "Acoustics",
+    "optics": "Optics",
+    "magnetism": "Magnetism",
+    "electricity": "Electricity",
+    "matter_solutions": "Matter & Solutions",
+    "acids_bases": "Acids & Bases",
+    "gas_chemistry": "Gas Chemistry",
+    "electrochemistry": "Electrochemistry",
+    "plant_physiology": "Plant Physiology"
+  },
   "experiment": {
     "back": "← Back",
     "ask_gali": "✦ Ask Gali",
@@ -77,7 +90,11 @@
     "download": "⬇ Download My Notes",
     "teacher_notes": "👩‍🏫 Teacher Notes",
     "teacher_hint": "Private teacher notes — not visible to students.",
-    "teacher_placeholder": "Add teacher notes, tips, classroom observations…"
+    "teacher_placeholder": "Add teacher notes, tips, classroom observations…",
+    "download_header": "ATP Lab — {title}",
+    "download_exp": "Experiment #{num}",
+    "download_my_notes": "My Notes:",
+    "download_teacher_notes": "Teacher Notes:"
   },
   "overview": {
     "equipment": "Equipment",
@@ -95,7 +112,23 @@
     "setup_help": "⚙ Setup help",
     "formula": "ƒ Formula",
     "errors": "⚠ Common errors",
-    "placeholder": "What would you like to know about this experiment?"
+    "placeholder": "What would you like to know about this experiment?",
+    "fallback_general": "I can help with **{title}**! Ask me about:",
+    "fallback_setup_item": "Setup help",
+    "fallback_formulas_item": "Formulas",
+    "fallback_errors_item": "Common errors",
+    "fallback_realworld_item": "Real-world applications",
+    "fallback_results_item": "Expected results",
+    "fallback_setup": "To set up this experiment, gather all listed equipment and follow the step-by-step procedure. Make sure instruments are calibrated before taking measurements.",
+    "fallback_formula": "Check the **formula box** in the Experiment tab for the key equation. Apply it carefully — keep track of units and significant figures throughout.",
+    "fallback_error": "Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average.",
+    "fallback_real": "Check the **Real-World Connections** section in the Experiment tab for specific examples related to this topic.",
+    "fallback_result": "Check your results against the **Expected Outcome** in the Summary tab. Small deviations (5–10%) are normal due to measurement uncertainty.",
+    "fallback_extend": "Try extending this experiment by changing one variable at a time and observing how results change.",
+    "fallback_concept": "Refer to the **Background Theory** section for the key concept behind this experiment.",
+    "fallback_hook": "This is a fascinating experiment — check the Hook section in the Overview panel for an engaging introduction.",
+    "fallback_misconception": "Watch out for common measurement errors. Check the **Common Misconceptions** section in the Overview panel.",
+    "fallback_discussion": "Think about how this experiment connects to real life. Check the Discussion Questions tab for guided prompts."
   },
   "search": {
     "placeholder": "Search experiments…",
@@ -118,6 +151,13 @@
     "welcome_chem_section": "Hi! I'm Gali ✦ You're exploring **{section}** chemistry experiments. Ask me about reactions, formulas, lab techniques, or anything else in this section!",
     "welcome_physics_section": "Hi! I'm Gali ✦ You're exploring **{section}** experiments. Ask me about concepts, formulas, or real-world applications!",
     "welcome_general": "Hi! I'm Gali ✦ Your AI science assistant. I can help with physics and chemistry experiments — setup, formulas, concepts, or real-world connections. What would you like to explore?",
+    "fallback_setup": "To set up this experiment, gather all listed equipment and follow the Experiment tab procedure step by step. Make sure instruments are calibrated before taking measurements.",
+    "fallback_formula": "Check the **formula box** in the Experiment tab for the key equation used in **{topic}**. Apply it carefully — keep track of units and significant figures throughout.",
+    "fallback_results": "Compare your results with the **Expected Outcome** in the Summary tab. Small deviations (5–10%) are normal due to measurement uncertainty.",
+    "fallback_errors": "Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average to reduce uncertainty.",
+    "fallback_safety": "Always follow lab safety guidelines: wear appropriate PPE (gloves, goggles), handle chemicals carefully, and read the safety notes in the Experiment tab before starting.",
+    "fallback_realworld": "**{topic}** has fascinating real-world applications — check the Real-World Connections section in the Experiment tab for specific examples related to this topic.",
+    "fallback_general": "Great question about **{topic}**! I can help with setup, formulas, safety, expected results, or real-world applications. What specific aspect would you like to explore?",
     "quick_physics_setup": "How do I set this up?",
     "quick_physics_formula": "What is the key formula?",
     "quick_physics_results": "What results should I expect?",

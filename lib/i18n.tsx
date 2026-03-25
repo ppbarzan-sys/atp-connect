@@ -44,6 +44,7 @@ interface I18nContextValue {
   locale: Locale
   setLocale: (l: Locale) => void
   t: (path: string, vars?: Record<string, string | number>) => string
+  tSection: (name: string) => string
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null)
@@ -78,8 +79,14 @@ export function LangProvider({ children }: { children: ReactNode }) {
     return str.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? `{${k}}`))
   }
 
+  // Normalises a data section name ("Matter & Solutions") → looks up sections.matter_solutions
+  function tSection(name: string): string {
+    const key = name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')
+    return t(`sections.${key}`)
+  }
+
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t }}>
+    <I18nContext.Provider value={{ locale, setLocale, t, tSection }}>
       {children}
     </I18nContext.Provider>
   )

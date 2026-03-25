@@ -19,7 +19,7 @@ interface ExperimentViewProps {
 type TabId = 'summary' | 'experiment' | 'questions' | 'notes'
 
 export default function ExperimentView({ exp, onBack, headerColor, headerColorDark, onAskGali }: ExperimentViewProps) {
-  const { t } = useI18n()
+  const { t, tSection } = useI18n()
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
   const [mobilePanelOpen, setMobilePanelOpen] = useState(false)
@@ -43,7 +43,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
         <h1 className="exp-h1">{exp.title}</h1>
         <p className="exp-subtitle">{exp.desc}</p>
         <div className="exp-badges">
-          <span className="exp-badge">{sectionEmoji} {exp.section}</span>
+          <span className="exp-badge">{sectionEmoji} {tSection(exp.section)}</span>
           <span className="exp-badge">{t('experiment.badge_setup', { time: exp.setupTime })}</span>
           <span className="exp-badge">{t('experiment.badge_duration', { time: exp.duration })}</span>
         </div>

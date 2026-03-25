@@ -21,7 +21,7 @@ export default function FilterBar({
   sectionEmojis,
   expData,
 }: FilterBarProps) {
-  const { t } = useI18n()
+  const { t, tSection } = useI18n()
   const total = expData.length
 
   return (
@@ -51,7 +51,7 @@ export default function FilterBar({
                 : {}
             }
           >
-            {sectionEmojis[sec]} {sec}{' '}
+            {sectionEmojis[sec]} {tSection(sec)}{' '}
             <span className="filter-count">{count}</span>
           </button>
         )

@@ -25,6 +25,19 @@
     "all_filter": "Tutti",
     "search_btn": "Cerca"
   },
+  "sections": {
+    "mechanics": "Meccanica",
+    "heat": "Calore",
+    "acoustics": "Acustica",
+    "optics": "Ottica",
+    "magnetism": "Magnetismo",
+    "electricity": "Elettricità",
+    "matter_solutions": "Materia e Soluzioni",
+    "acids_bases": "Acidi e Basi",
+    "gas_chemistry": "Chimica dei Gas",
+    "electrochemistry": "Elettrochimica",
+    "plant_physiology": "Fisiologia Vegetale"
+  },
   "experiment": {
     "back": "← Indietro",
     "ask_gali": "✦ Chiedi a Gali",
@@ -77,7 +90,11 @@
     "download": "⬇ Scarica le Mie Note",
     "teacher_notes": "👩‍🏫 Note del Docente",
     "teacher_hint": "Note private del docente — non visibili agli studenti.",
-    "teacher_placeholder": "Aggiungi note per il docente, suggerimenti, osservazioni in classe…"
+    "teacher_placeholder": "Aggiungi note per il docente, suggerimenti, osservazioni in classe…",
+    "download_header": "Laboratorio ATP — {title}",
+    "download_exp": "Esperimento #{num}",
+    "download_my_notes": "Le Mie Note:",
+    "download_teacher_notes": "Note del Docente:"
   },
   "overview": {
     "equipment": "Strumentazione",
@@ -95,7 +112,23 @@
     "setup_help": "⚙ Preparazione",
     "formula": "ƒ Formula",
     "errors": "⚠ Errori comuni",
-    "placeholder": "Cosa vorresti sapere su questo esperimento?"
+    "placeholder": "Cosa vorresti sapere su questo esperimento?",
+    "fallback_general": "Posso aiutarti con **{title}**! Chiedimi:",
+    "fallback_setup_item": "Preparazione",
+    "fallback_formulas_item": "Formule",
+    "fallback_errors_item": "Errori comuni",
+    "fallback_realworld_item": "Applicazioni reali",
+    "fallback_results_item": "Risultati attesi",
+    "fallback_setup": "Per preparare questo esperimento, raccogli tutta la strumentazione elencata e segui la procedura passo dopo passo. Assicurati che gli strumenti siano calibrati prima di iniziare.",
+    "fallback_formula": "Controlla il **riquadro formula** nel tab Esperimento per l'equazione chiave. Applicala con cura — tieni traccia delle unità e delle cifre significative.",
+    "fallback_error": "Gli errori più comuni includono la lettura errata delle scale, la mancata azzerazione degli strumenti e gli errori di parallasse. Esegui sempre 3–5 misurazioni ripetute e calcola la media.",
+    "fallback_real": "Consulta la sezione **Applicazioni nel Mondo Reale** nel tab Esperimento per esempi specifici relativi a questo argomento.",
+    "fallback_result": "Confronta i tuoi risultati con il **Risultato Atteso** nel tab Sommario. Piccole deviazioni (5–10%) sono normali a causa dell'incertezza di misura.",
+    "fallback_extend": "Prova ad estendere l'esperimento modificando una variabile alla volta e osservando come cambiano i risultati.",
+    "fallback_concept": "Consulta la sezione **Teoria di Base** per il concetto chiave di questo esperimento.",
+    "fallback_hook": "Questo è un esperimento affascinante — consulta la sezione Introduzione nel pannello Panoramica.",
+    "fallback_misconception": "Attenzione agli errori di misura più comuni. Consulta la sezione **Errori Comuni** nel pannello Panoramica.",
+    "fallback_discussion": "Rifletti su come questo esperimento si collega alla vita reale. Consulta il tab Domande per la Discussione."
   },
   "search": {
     "placeholder": "Cerca esperimenti…",
@@ -118,6 +151,13 @@
     "welcome_chem_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di reazioni, formule, tecniche di laboratorio o qualsiasi altra cosa in questa sezione!",
     "welcome_physics_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di concetti, formule o applicazioni nel mondo reale!",
     "welcome_general": "Ciao! Sono Gali ✦ Il tuo assistente scientifico IA. Posso aiutarti con esperimenti di fisica e chimica — setup, formule, concetti o connessioni con il mondo reale. Cosa vorresti esplorare?",
+    "fallback_setup": "Per preparare questo esperimento, raccogli tutta la strumentazione elencata e segui la procedura nel tab Esperimento passo dopo passo. Assicurati che gli strumenti siano calibrati prima di iniziare.",
+    "fallback_formula": "Controlla il **riquadro formula** nel tab Esperimento per l'equazione chiave usata in **{topic}**. Applicala con attenzione — tieni traccia delle unità e delle cifre significative.",
+    "fallback_results": "Confronta i tuoi risultati con il **Risultato Atteso** nel tab Sommario. Piccole deviazioni (5–10%) sono normali a causa dell'incertezza di misura.",
+    "fallback_errors": "Gli errori più comuni includono la lettura errata delle scale, la mancata azzerazione degli strumenti e gli errori di parallasse. Esegui sempre 3–5 misurazioni ripetute e calcola la media.",
+    "fallback_safety": "Segui sempre le norme di sicurezza: indossa i DPI appropriati (guanti, occhiali), maneggia i prodotti chimici con cura e leggi le note di sicurezza nel tab Esperimento prima di iniziare.",
+    "fallback_realworld": "**{topic}** ha affascinanti applicazioni nel mondo reale — consulta la sezione Applicazioni nel Mondo Reale nel tab Esperimento per esempi specifici.",
+    "fallback_general": "Ottima domanda su **{topic}**! Posso aiutarti con setup, formule, sicurezza, risultati attesi o applicazioni reali. Quale aspetto specifico vorresti esplorare?",
     "quick_physics_setup": "Come si prepara questo esperimento?",
     "quick_physics_formula": "Qual è la formula principale?",
     "quick_physics_results": "Quali risultati dovrei aspettarmi?",

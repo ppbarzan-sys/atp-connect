@@ -146,7 +146,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       if (res.status === 503) {
         setApiAvailable(false)
         const topic = context?.experimentTitle || context?.section || 'science'
-        setMessages(prev => [...prev, { role: 'gali', content: getFallback(userText, topic) }])
+        setMessages(prev => [...prev, { role: 'gali', content: getFallback(userText, topic, t) }])
         return
       }
 
@@ -333,19 +333,21 @@ function MarkdownText({ text }: { text: string }) {
 }
 
 // ─── Keyword fallback when no API key ────────────────────────────────────────
-function getFallback(text: string, topic: string): string {
+type TFn = (path: string, vars?: Record<string, string | number>) => string
+
+function getFallback(text: string, topic: string, t: TFn): string {
   const lower = text.toLowerCase()
   if (lower.includes('setup') || lower.includes('set up') || lower.includes('equipment') || lower.includes('preparaz') || lower.includes('strument'))
-    return `To set up this experiment, gather all listed equipment and follow the Experiment tab procedure step by step. Make sure instruments are calibrated before taking measurements.`
+    return t('gali.fallback_setup')
   if (lower.includes('formula') || lower.includes('equation') || lower.includes('law'))
-    return `Check the **formula box** in the Experiment tab for the key equation used in **${topic}**. Apply it carefully — keep track of units and significant figures throughout.`
+    return t('gali.fallback_formula', { topic })
   if (lower.includes('result') || lower.includes('expect') || lower.includes('outcome') || lower.includes('risultat'))
-    return `Compare your results with the **Expected Outcome** in the Summary tab. Small deviations (5–10%) are normal due to measurement uncertainty.`
+    return t('gali.fallback_results')
   if (lower.includes('error') || lower.includes('mistake') || lower.includes('wrong') || lower.includes('errore'))
-    return `Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average to reduce uncertainty.`
+    return t('gali.fallback_errors')
   if (lower.includes('safe') || lower.includes('hazard') || lower.includes('danger') || lower.includes('sicurez'))
-    return `Always follow lab safety guidelines: wear appropriate PPE (gloves, goggles), handle chemicals carefully, and read the safety notes in the Experiment tab before starting.`
+    return t('gali.fallback_safety')
   if (lower.includes('real') || lower.includes('application') || lower.includes('life') || lower.includes('applicaz') || lower.includes('reale'))
-    return `**${topic}** has fascinating real-world applications — check the Real-World Connections section in the Experiment tab for specific examples related to this topic.`
-  return `Great question about **${topic}**! I can help with setup, formulas, safety, expected results, or real-world applications. What specific aspect would you like to explore?`
+    return t('gali.fallback_realworld', { topic })
+  return t('gali.fallback_general', { topic })
 }

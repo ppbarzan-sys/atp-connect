@@ -1,5 +1,6 @@
 'use client'
 import { Experiment } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
 
 interface ExperimentCardProps {
   exp: Experiment
@@ -9,6 +10,7 @@ interface ExperimentCardProps {
 }
 
 export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: ExperimentCardProps) {
+  const { tSection } = useI18n()
   // Fallback map covers all known sections; sectionEmoji prop takes priority
   const fallbackMap: Record<string, string> = {
     Mechanics: '⚙️',
@@ -32,7 +34,7 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
         <div className="card-icon">{emoji}</div>
       </div>
       <div className="card-body">
-        <div className="card-section" style={{ color }}>{exp.section}</div>
+        <div className="card-section" style={{ color }}>{tSection(exp.section)}</div>
         <div className="card-title">{exp.title}</div>
         <div className="card-desc">{exp.desc}</div>
       </div>

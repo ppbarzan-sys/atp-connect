@@ -13,11 +13,11 @@ interface BrowseSectionProps {
 }
 
 export default function BrowseSection({ name, color, emoji, experiments, onExpClick, onFilterChange }: BrowseSectionProps) {
-  const { t } = useI18n()
+  const { t, tSection } = useI18n()
   return (
     <div className="browse-section" data-section={name}>
       <div className="browse-section-header">
-        <h2>{emoji} {name}</h2>
+        <h2>{emoji} {tSection(name)}</h2>
         <div className="browse-section-nav">
           <button className="browse-all-btn" onClick={() => onFilterChange(name)}>{t('browse.browse_all')}</button>
         </div>
