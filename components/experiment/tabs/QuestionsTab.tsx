@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/experiments'
 import { loadResults, saveResults } from '@/lib/storage'
+import { useI18n } from '@/lib/i18n'
 
 interface QuestionsTabProps {
   exp: Experiment
 }
 
 export default function QuestionsTab({ exp }: QuestionsTabProps) {
+  const { t } = useI18n()
   const [answers, setAnswers] = useState<Record<number, number | null>>({})
   const [discussionAnswers, setDiscussionAnswers] = useState<Record<number, string>>({})
 
@@ -30,10 +32,9 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
   }, [exp.num])
 
   function handleAnswer(qIdx: number, optIdx: number) {
-    if (answers[qIdx] !== undefined && answers[qIdx] !== null) return // already answered
+    if (answers[qIdx] !== undefined && answers[qIdx] !== null) return
     const newAnswers = { ...answers, [qIdx]: optIdx }
     setAnswers(newAnswers)
-    // save
     const saved = loadResults(exp.num)
     saved[`mcq-${qIdx}`] = String(optIdx)
     saveResults(exp.num, saved)
@@ -53,7 +54,7 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
         <div className="questions-tab">
           {/* MCQ Questions */}
           <div className="q-section">
-            <h3>Quick Check Questions</h3>
+            <h3>{t('questions.quick_check')}</h3>
             {exp.questions.mcq.map((q, qIdx) => {
               const answered = answers[qIdx] !== undefined && answers[qIdx] !== null
               const userAnswer = answers[qIdx]
@@ -83,7 +84,7 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
                     </div>
                     {answered && (
                       <div className="q-feedback" style={{ display: 'block' }}>
-                        {userAnswer === q.correctIndex ? '✅ Correct! ' : '❌ Incorrect. '}
+                        {userAnswer === q.correctIndex ? t('questions.correct') : t('questions.incorrect')}
                         {q.explanation}
                       </div>
                     )}
@@ -96,14 +97,14 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
           {/* Discussion Questions */}
           {exp.questions.discussion.length > 0 && (
             <div className="q-section">
-              <h3>Discussion Questions</h3>
+              <h3>{t('questions.discussion')}</h3>
               {exp.questions.discussion.map((dq, dqIdx) => (
                 <div className="q-open" key={dqIdx}>
                   <div className="q-check-icon">✓</div>
                   <div className="q-content">
                     <p className="q-text">{dq}</p>
                     <textarea
-                      placeholder="Write your answer here…"
+                      placeholder={t('questions.answer_placeholder')}
                       rows={3}
                       value={discussionAnswers[dqIdx] || ''}
                       onChange={e => handleDiscussionChange(dqIdx, e.target.value)}

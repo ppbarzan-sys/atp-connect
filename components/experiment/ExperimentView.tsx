@@ -6,6 +6,7 @@ import ExperimentTab from './tabs/ExperimentTab'
 import QuestionsTab from './tabs/QuestionsTab'
 import NotesTab from './tabs/NotesTab'
 import RightPanel from './rightpanel/RightPanel'
+import { useI18n } from '@/lib/i18n'
 
 interface ExperimentViewProps {
   exp: Experiment
@@ -18,32 +19,39 @@ interface ExperimentViewProps {
 type TabId = 'summary' | 'experiment' | 'questions' | 'notes'
 
 export default function ExperimentView({ exp, onBack, headerColor, headerColorDark, onAskGali }: ExperimentViewProps) {
+  const { t } = useI18n()
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
   const [mobilePanelOpen, setMobilePanelOpen] = useState(false)
   const color = headerColor ?? sectionColors[exp.section] ?? '#14B8A6'
   const colorDark = headerColorDark ?? '#0D9488'
 
+  const sectionEmoji =
+    exp.section === 'Mechanics' ? '⚙️' :
+    exp.section === 'Heat' ? '🔥' :
+    exp.section === 'Acoustics' ? '🎵' :
+    exp.section === 'Optics' ? '🔭' :
+    exp.section === 'Magnetism' ? '🧲' : '⚡'
+
   return (
     <div className="exp-view" id={`expview-${exp.num}`}>
-      {/* Header gradient — uses section colour */}
       <div className="exp-teal-header" style={{ background: `linear-gradient(135deg, ${color} 0%, ${colorDark} 100%)` }}>
         <div className="exp-header-top">
-          <button className="back-btn" onClick={onBack}>← Back</button>
-          <button className="ask-gali-btn" onClick={() => onAskGali?.()}>✦ Ask Gali</button>
+          <button className="back-btn" onClick={onBack}>{t('experiment.back')}</button>
+          <button className="ask-gali-btn" onClick={() => onAskGali?.()}>{t('experiment.ask_gali')}</button>
         </div>
         <h1 className="exp-h1">{exp.title}</h1>
         <p className="exp-subtitle">{exp.desc}</p>
         <div className="exp-badges">
-          <span className="exp-badge">{exp.section === 'Mechanics' ? '⚙️' : exp.section === 'Heat' ? '🔥' : exp.section === 'Acoustics' ? '🎵' : exp.section === 'Optics' ? '🔭' : exp.section === 'Magnetism' ? '🧲' : '⚡'} {exp.section}</span>
-          <span className="exp-badge">△ Setup: {exp.setupTime}</span>
-          <span className="exp-badge">🕐 Duration: {exp.duration}</span>
+          <span className="exp-badge">{sectionEmoji} {exp.section}</span>
+          <span className="exp-badge">{t('experiment.badge_setup', { time: exp.setupTime })}</span>
+          <span className="exp-badge">{t('experiment.badge_duration', { time: exp.duration })}</span>
         </div>
         <div className="main-tabs">
-          <button className={`main-tab${activeTab === 'summary' ? ' active' : ''}`} onClick={() => setActiveTab('summary')}>📚 Summary</button>
-          <button className={`main-tab${activeTab === 'experiment' ? ' active' : ''}`} onClick={() => setActiveTab('experiment')}>🔬 Experiment</button>
-          <button className={`main-tab${activeTab === 'questions' ? ' active' : ''}`} onClick={() => setActiveTab('questions')}>❓ Questions</button>
-          <button className={`main-tab${activeTab === 'notes' ? ' active' : ''}`} onClick={() => setActiveTab('notes')}>📋 My Notes</button>
+          <button className={`main-tab${activeTab === 'summary' ? ' active' : ''}`} onClick={() => setActiveTab('summary')}>{t('experiment.tab_summary')}</button>
+          <button className={`main-tab${activeTab === 'experiment' ? ' active' : ''}`} onClick={() => setActiveTab('experiment')}>{t('experiment.tab_experiment')}</button>
+          <button className={`main-tab${activeTab === 'questions' ? ' active' : ''}`} onClick={() => setActiveTab('questions')}>{t('experiment.tab_questions')}</button>
+          <button className={`main-tab${activeTab === 'notes' ? ' active' : ''}`} onClick={() => setActiveTab('notes')}>{t('experiment.tab_notes')}</button>
         </div>
       </div>
 
@@ -62,15 +70,13 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
         />
       </div>
 
-      {/* Mobile-only: floating toggle for the right panel */}
       <button
         className="mobile-panel-btn"
         onClick={() => setMobilePanelOpen(o => !o)}
-        aria-label="Toggle overview panel"
+        aria-label={t('rightpanel.tab_overview')}
       >
-        {mobilePanelOpen ? '✕ Close' : '📊 Overview'}
+        {mobilePanelOpen ? t('experiment.overview_close') : t('experiment.overview_toggle')}
       </button>
-
     </div>
   )
 }

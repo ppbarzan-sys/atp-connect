@@ -14,13 +14,14 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useI18n } from '@/lib/i18n'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 export default function LandingPage() {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const { t } = useI18n()
 
-  // DEV: sets session cookie without credentials, then enters the platform.
-  // Replace with real auth when ready — only this function needs to change.
   async function handleSignIn() {
     setLoading(true)
     await fetch('/api/auth/signin', { method: 'POST' })
@@ -31,6 +32,11 @@ export default function LandingPage() {
   return (
     <div className="landing-root">
       <div className="landing-bg-orb" aria-hidden />
+
+      {/* Language switcher — top right on landing page */}
+      <div className="landing-lang">
+        <LanguageSwitcher />
+      </div>
 
       <main className="landing-card">
         <div className="landing-logo-wrap">
@@ -43,9 +49,7 @@ export default function LandingPage() {
 
         <div className="landing-brand">
           <h1 className="landing-title">ATP Connect</h1>
-          <p className="landing-tagline">
-            Empowering curiosity.&nbsp; Inspiring innovation.
-          </p>
+          <p className="landing-tagline">{t('landing.tagline')}</p>
         </div>
 
         <button
@@ -54,17 +58,15 @@ export default function LandingPage() {
           disabled={loading}
         >
           {loading
-            ? <span className="landing-spinner" aria-label="Entering…" />
-            : 'Sign In'}
+            ? <span className="landing-spinner" aria-label={t('landing.signing_in')} />
+            : t('landing.sign_in')}
         </button>
 
-        <p className="landing-dev-note">
-          Development mode — authentication not enforced
-        </p>
+        <p className="landing-dev-note">{t('landing.dev_note')}</p>
       </main>
 
       <footer className="landing-footer">
-        © {new Date().getFullYear()} ATP Technologies
+        {t('landing.copyright', { year: String(new Date().getFullYear()) })}
       </footer>
     </div>
   )

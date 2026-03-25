@@ -1,18 +1,20 @@
 'use client'
 import { Experiment, sectionColors } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
 
 interface OverviewPaneProps {
   exp: Experiment
 }
 
 export default function OverviewPane({ exp }: OverviewPaneProps) {
+  const { t } = useI18n()
   const color = sectionColors[exp.section] || '#14B8A6'
 
   return (
     <div style={{ overflowY: 'auto', height: '100%', padding: '0 0 16px 0' }}>
       {/* Equipment Grid */}
       <div className="rp-section">
-        <h4>Equipment</h4>
+        <h4>{t('overview.equipment')}</h4>
         <div className="eq-grid">
           {exp.experiment.equipment.map((eq, i) => (
             <div className="eq-item" key={i}>
@@ -26,8 +28,8 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
       {/* Concept Breakdown */}
       {exp.overview.conceptBreakdown.length > 0 && (
         <div className="rp-section">
-          <h4>Concept Breakdown</h4>
-          <p className="hint-text">This experiment covers:</p>
+          <h4>{t('overview.concept_breakdown')}</h4>
+          <p className="hint-text">{t('overview.concept_hint')}</p>
           <div className="cb-list">
             {exp.overview.conceptBreakdown.map((cb, i) => (
               <div className="cb-row" key={i}>
@@ -45,7 +47,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
       {/* Common Misconceptions */}
       {exp.overview.misconceptions.length > 0 && (
         <div className="rp-section">
-          <h4>Common Misconceptions</h4>
+          <h4>{t('overview.misconceptions')}</h4>
           <div className="misc-list">
             {exp.overview.misconceptions.map((m, i) => (
               <div className="misconception wrong" key={i}>
@@ -60,7 +62,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
       {/* Hook */}
       {exp.overview.hook && (
         <div className="rp-section">
-          <h4>Hook</h4>
+          <h4>{t('overview.hook')}</h4>
           <div className="hook-box">💡 {exp.overview.hook}</div>
         </div>
       )}
@@ -68,7 +70,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
       {/* Khan Academy Links */}
       {exp.overview.khanLinks.length > 0 && (
         <div className="rp-section">
-          <h4>🎬 Khan Academy</h4>
+          <h4>{t('overview.khan')}</h4>
           <div className="khan-links">
             {exp.overview.khanLinks.map((link, i) => (
               <a

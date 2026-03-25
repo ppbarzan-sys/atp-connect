@@ -9,11 +9,13 @@ import {
   chemistrySectionColors,
   chemistrySectionEmojis,
 } from '@/data/chemistry'
+import { useI18n } from '@/lib/i18n'
 
 export default function ChemistryPage() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [searchOpen, setSearchOpen] = useState(false)
   const router = useRouter()
+  const { t } = useI18n()
 
   function handleExpClick(num: number) {
     router.push(`/chemistry/${num}`)
@@ -35,8 +37,8 @@ export default function ChemistryPage() {
         expData={chemistryExperiments}
         sectionColorMap={chemistrySectionColors}
         sectionEmojiMap={chemistrySectionEmojis}
-        heroTitle="Browse Chemistry Experiments"
-        heroSubtitle={`${chemistryExperiments.length} chemistry & plant physiology experiments for the ATP Mobile Lab 4900.00`}
+        heroTitle={t('browse.chemistry_title')}
+        heroSubtitle={t('browse.chemistry_subtitle', { count: chemistryExperiments.length })}
       />
 
       {searchOpen && (

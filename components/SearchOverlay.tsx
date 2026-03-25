@@ -2,11 +2,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { experiments as physicsExps, sectionColors as physicsColors, sectionEmojis as physicsEmojis } from '@/data/experiments'
 import type { Experiment } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
 
 interface SearchOverlayProps {
   onClose: () => void
   onExpClick: (num: number) => void
-  // Optional: pass chemistry (or any) data instead of physics defaults
   expData?: Experiment[]
   sectionColorMap?: Record<string, string>
   sectionEmojiMap?: Record<string, string>
@@ -19,6 +19,7 @@ export default function SearchOverlay({
   sectionColorMap,
   sectionEmojiMap,
 }: SearchOverlayProps) {
+  const { t } = useI18n()
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -58,13 +59,11 @@ export default function SearchOverlay({
             ref={inputRef}
             type="text"
             className="search-main-input"
-            placeholder="Search experiments…"
+            placeholder={t('search.placeholder')}
             value={query}
             onChange={e => setQuery(e.target.value)}
           />
-          <button className="search-close-btn" onClick={onClose}>
-            ✕
-          </button>
+          <button className="search-close-btn" onClick={onClose}>✕</button>
         </div>
 
         <div className="search-results">
@@ -79,9 +78,7 @@ export default function SearchOverlay({
               >
                 <div className="search-item-emoji">{emoji}</div>
                 <div>
-                  <div className="search-item-section" style={{ color }}>
-                    {exp.section}
-                  </div>
+                  <div className="search-item-section" style={{ color }}>{exp.section}</div>
                   <div className="search-item-title">{exp.title}</div>
                   <div className="search-item-desc">{exp.desc}</div>
                 </div>
@@ -90,27 +87,14 @@ export default function SearchOverlay({
           })}
 
           {query.trim().length >= 2 && results.length === 0 && (
-            <div
-              style={{
-                padding: '24px 20px',
-                color: 'var(--muted)',
-                textAlign: 'center',
-              }}
-            >
-              No experiments found for &quot;{query}&quot;
+            <div style={{ padding: '24px 20px', color: 'var(--muted)', textAlign: 'center' }}>
+              {t('search.no_results', { query })}
             </div>
           )}
 
           {query.trim().length < 2 && (
-            <div
-              style={{
-                padding: '24px 20px',
-                color: 'var(--muted)',
-                textAlign: 'center',
-                fontSize: 14,
-              }}
-            >
-              Type to search experiments, topics, or sections…
+            <div style={{ padding: '24px 20px', color: 'var(--muted)', textAlign: 'center', fontSize: 14 }}>
+              {t('search.empty')}
             </div>
           )}
         </div>

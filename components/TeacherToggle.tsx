@@ -1,8 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { saveTeacherMode, loadTeacherMode } from '@/lib/storage'
+import { useI18n } from '@/lib/i18n'
 
 export default function TeacherToggle() {
+  const { t } = useI18n()
   const [isTeacher, setIsTeacher] = useState(false)
 
   useEffect(() => {
@@ -27,12 +29,12 @@ export default function TeacherToggle() {
   return (
     <>
       <div className="teacher-mode-bar">
-        👩‍🏫 TEACHER MODE ACTIVE — Student results and notes are visible
+        {t('teacher.mode_bar')}
       </div>
       <button
         className="teacher-toggle"
         onClick={toggle}
-        title={isTeacher ? 'Exit Teacher Mode' : 'Enter Teacher Mode'}
+        title={isTeacher ? t('teacher.exit') : t('teacher.enter')}
         style={isTeacher ? { background: '#F59E0B' } : {}}
       >
         {isTeacher ? '🎓' : '👩‍🏫'}

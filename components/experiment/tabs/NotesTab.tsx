@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/experiments'
 import { saveNote, loadNote, saveTeacherNote, loadTeacherNote, loadTeacherMode } from '@/lib/storage'
+import { useI18n } from '@/lib/i18n'
 
 interface NotesTabProps {
   exp: Experiment
 }
 
 export default function NotesTab({ exp }: NotesTabProps) {
+  const { t } = useI18n()
   const [notes, setNotes] = useState('')
   const [teacherNotes, setTeacherNotes] = useState('')
   const [isTeacher, setIsTeacher] = useState(false)
@@ -46,25 +48,25 @@ export default function NotesTab({ exp }: NotesTabProps) {
   return (
     <div className="tab-pane active">
       <div className="content-card">
-        <h3>📝 My Personal Notes</h3>
-        <p className="hint-text">Your notes are saved automatically and privately in your browser.</p>
+        <h3>{t('notes.my_notes')}</h3>
+        <p className="hint-text">{t('notes.student_hint')}</p>
         <textarea
           className="personal-notes"
-          placeholder="Add your own notes, observations, reminders…"
+          placeholder={t('notes.student_placeholder')}
           rows={8}
           value={notes}
           onChange={e => handleNotesChange(e.target.value)}
         />
-        <button className="btn-secondary" onClick={downloadNotes}>⬇ Download My Notes</button>
+        <button className="btn-secondary" onClick={downloadNotes}>{t('notes.download')}</button>
       </div>
 
       {isTeacher && (
         <div className="content-card" style={{ marginTop: 16, border: '2px solid #F59E0B' }}>
-          <h3>👩‍🏫 Teacher Notes</h3>
-          <p className="hint-text" style={{ color: '#92400E' }}>Private teacher notes — not visible to students.</p>
+          <h3>{t('notes.teacher_notes')}</h3>
+          <p className="hint-text" style={{ color: '#92400E' }}>{t('notes.teacher_hint')}</p>
           <textarea
             className="personal-notes"
-            placeholder="Add teacher notes, tips, classroom observations…"
+            placeholder={t('notes.teacher_placeholder')}
             rows={6}
             value={teacherNotes}
             onChange={e => handleTeacherNotesChange(e.target.value)}

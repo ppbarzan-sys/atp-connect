@@ -1,34 +1,35 @@
 'use client'
 import { Experiment } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
 
 interface SummaryTabProps {
   exp: Experiment
 }
 
 export default function SummaryTab({ exp }: SummaryTabProps) {
+  const { t } = useI18n()
   const khanLinks = exp.overview?.khanLinks ?? []
 
   return (
     <div className="tab-pane active">
       <div className="content-card">
-        <h3>What They&apos;ll Learn</h3>
+        <h3>{t('summary.what_learn')}</h3>
         <p>{exp.summary.whatTheyLearn}</p>
 
-        <h3>Instructions</h3>
+        <h3>{t('summary.instructions')}</h3>
         <ol>
           {exp.summary.instructions.map((instr, i) => (
             <li key={i}>{instr}</li>
           ))}
         </ol>
 
-        <h3>Expected Outcome</h3>
+        <h3>{t('summary.expected_outcome')}</h3>
         <p>{exp.summary.expectedOutcome}</p>
 
-        {/* Khan Academy links — always visible, not hidden inside a side panel */}
         {khanLinks.length > 0 && (
           <div className="khan-inline-section">
             <div className="khan-inline-title">
-              🎬 Khan Academy — related videos
+              {t('summary.khan_title')}
             </div>
             <div className="khan-links">
               {khanLinks.map((link, i) => (

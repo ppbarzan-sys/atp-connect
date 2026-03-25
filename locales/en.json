@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "search": "Search",
+    "gali": "Gali",
+    "physics_title": "Physics Experiments",
+    "chemistry_title": "Chemistry Experiments",
+    "gali_title": "Ask Gali AI",
+    "sign_out": "Sign Out"
+  },
+  "landing": {
+    "tagline": "Empowering curiosity. Inspiring innovation.",
+    "sign_in": "Sign In",
+    "signing_in": "Entering…",
+    "dev_note": "Development mode — authentication not enforced",
+    "copyright": "© {year} ATP Technologies"
+  },
+  "browse": {
+    "physics_title": "Browse Physics Experiments",
+    "physics_subtitle": "{count} physics experiments for the ATP Mobile Lab 4900.00",
+    "chemistry_title": "Browse Chemistry Experiments",
+    "chemistry_subtitle": "{count} chemistry & plant physiology experiments for the ATP Mobile Lab 4900.00",
+    "browse_all": "Browse all",
+    "all_filter": "All",
+    "search_btn": "Search"
+  },
+  "experiment": {
+    "back": "← Back",
+    "ask_gali": "✦ Ask Gali",
+    "tab_summary": "📚 Summary",
+    "tab_experiment": "🔬 Experiment",
+    "tab_questions": "❓ Questions",
+    "tab_notes": "📋 My Notes",
+    "badge_setup": "△ Setup: {time}",
+    "badge_duration": "🕐 Duration: {time}",
+    "overview_toggle": "📊 Overview",
+    "overview_close": "✕ Close",
+    "not_found": "Experiment not found",
+    "back_to_browse": "Back to Browse",
+    "back_to_chemistry": "Back to Chemistry"
+  },
+  "summary": {
+    "what_learn": "What They'll Learn",
+    "instructions": "Instructions",
+    "expected_outcome": "Expected Outcome",
+    "khan_title": "🎬 Khan Academy — related videos"
+  },
+  "exp_tab": {
+    "equipment": "⚙ Equipment Setup",
+    "observations_record": "Observations to Record",
+    "background": "🏫 Background Theory",
+    "realworld": "🌍 Real-World Connections",
+    "formula": "Formula",
+    "workspace": "📋 Student Results Workspace",
+    "data_table": "📋 Data Table",
+    "observations": "🔍 Observations",
+    "conclusion": "✏️ Conclusion",
+    "clear_table": "🗑 Clear table",
+    "save": "💾 Save",
+    "check_ai": "✦ Check My Results with AI",
+    "gali_feedback": "✦ Gali's Feedback",
+    "hint": "💡 Hint:",
+    "expected": "📊 Expected:"
+  },
+  "questions": {
+    "quick_check": "Quick Check Questions",
+    "discussion": "Discussion Questions",
+    "correct": "✅ Correct! ",
+    "incorrect": "❌ Incorrect. ",
+    "answer_placeholder": "Write your answer here…"
+  },
+  "notes": {
+    "my_notes": "📝 My Personal Notes",
+    "student_hint": "Your notes are saved automatically and privately in your browser.",
+    "student_placeholder": "Add your own notes, observations, reminders…",
+    "download": "⬇ Download My Notes",
+    "teacher_notes": "👩‍🏫 Teacher Notes",
+    "teacher_hint": "Private teacher notes — not visible to students.",
+    "teacher_placeholder": "Add teacher notes, tips, classroom observations…"
+  },
+  "overview": {
+    "equipment": "Equipment",
+    "concept_breakdown": "Concept Breakdown",
+    "concept_hint": "This experiment covers:",
+    "misconceptions": "Common Misconceptions",
+    "hook": "Hook",
+    "khan": "🎬 Khan Academy"
+  },
+  "rightpanel": {
+    "tab_overview": "Overview",
+    "tab_chat": "Chat with AI"
+  },
+  "chat": {
+    "setup_help": "⚙ Setup help",
+    "formula": "ƒ Formula",
+    "errors": "⚠ Common errors",
+    "placeholder": "What would you like to know about this experiment?"
+  },
+  "search": {
+    "placeholder": "Search experiments…",
+    "empty": "Type to search experiments, topics, or sections…",
+    "no_results": "No experiments found for \"{query}\""
+  },
+  "gali": {
+    "modal_title": "Ask Gali",
+    "context_all": "All experiments",
+    "context_exp": "Exp #{num}: {title}",
+    "no_api_key": "⚠ No API key — using built-in responses. Add ANTHROPIC_API_KEY to .env.local for full AI.",
+    "error_connecting": "Sorry, I had trouble connecting. Please try again.",
+    "send": "↑",
+    "sending": "…",
+    "placeholder_exp": "Ask about {title}…",
+    "placeholder_section": "Ask about {section}…",
+    "placeholder_general": "Ask a science question…",
+    "welcome_exp_physics": "Hi! I'm Gali ✦ I'm here to help with **{title}**. Ask me about setup, key formulas, expected results, or how this physics concept applies in the real world!",
+    "welcome_exp_chemistry": "Hi! I'm Gali ✦ I'm here to help with **{title}**. Ask me about setup, key formulas, expected results, or how this chemistry concept applies in the real world!",
+    "welcome_chem_section": "Hi! I'm Gali ✦ You're exploring **{section}** chemistry experiments. Ask me about reactions, formulas, lab techniques, or anything else in this section!",
+    "welcome_physics_section": "Hi! I'm Gali ✦ You're exploring **{section}** experiments. Ask me about concepts, formulas, or real-world applications!",
+    "welcome_general": "Hi! I'm Gali ✦ Your AI science assistant. I can help with physics and chemistry experiments — setup, formulas, concepts, or real-world connections. What would you like to explore?",
+    "quick_physics_setup": "How do I set this up?",
+    "quick_physics_formula": "What is the key formula?",
+    "quick_physics_results": "What results should I expect?",
+    "quick_chem_reaction": "What reaction is happening?",
+    "quick_chem_safety": "What safety precautions apply?",
+    "quick_chem_read": "How do I read the results?",
+    "quick_browse_physics_1": "Which experiment covers force and motion?",
+    "quick_browse_physics_2": "Explain Newton's laws simply",
+    "quick_browse_physics_3": "What is the difference between heat and temperature?",
+    "quick_browse_chem_1": "What is the difference between acids and bases?",
+    "quick_browse_chem_2": "How does electrolysis work?",
+    "quick_browse_chem_3": "Explain Le Chatelier's principle",
+    "quick_all_1": "What experiments are in this lab?",
+    "quick_all_2": "Explain a key physics concept",
+    "quick_all_3": "Explain a key chemistry concept"
+  },
+  "teacher": {
+    "mode_bar": "👩‍🏫 TEACHER MODE ACTIVE — Student results and notes are visible",
+    "enter": "Enter Teacher Mode",
+    "exit": "Exit Teacher Mode"
+  },
+  "lang": {
+    "label": "Language",
+    "en": "English",
+    "it": "Italiano"
+  }
+}

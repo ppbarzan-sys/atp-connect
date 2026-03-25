@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useI18n } from '@/lib/i18n'
 
 export interface GaliContext {
   section?: string
@@ -33,71 +34,49 @@ function isChemistry(context?: GaliContext): boolean {
   return false
 }
 
-function buildWelcome(context?: GaliContext): string {
-  if (context?.experimentTitle) {
-    const subject = isChemistry(context) ? 'chemistry' : 'physics'
-    return `Hi! I'm Gali ✦ I'm here to help with **${context.experimentTitle}**. Ask me about setup, key formulas, expected results, or how this ${subject} concept applies in the real world!`
-  }
-  if (context?.section && context.section !== 'all') {
-    if (CHEMISTRY_SECTIONS.has(context.section)) {
-      return `Hi! I'm Gali ✦ You're exploring **${context.section}** chemistry experiments. Ask me about reactions, formulas, lab techniques, or anything else in this section!`
-    }
-    return `Hi! I'm Gali ✦ You're exploring **${context.section}** experiments. Ask me about concepts, formulas, or real-world applications!`
-  }
-  return `Hi! I'm Gali ✦ Your AI science assistant. I can help with physics and chemistry experiments — setup, formulas, concepts, or real-world connections. What would you like to explore?`
-}
-
-const QUICK_PROMPTS: Record<string, string[]> = {
-  experiment_physics: [
-    'How do I set this up?',
-    'What is the key formula?',
-    'What results should I expect?',
-  ],
-  experiment_chemistry: [
-    'What reaction is happening?',
-    'What safety precautions apply?',
-    'How do I read the results?',
-  ],
-  browse_physics: [
-    'Which experiment covers force and motion?',
-    'Explain Newton\'s laws simply',
-    'What is the difference between heat and temperature?',
-  ],
-  browse_chemistry: [
-    'What is the difference between acids and bases?',
-    'How does electrolysis work?',
-    'Explain Le Chatelier\'s principle',
-  ],
-  all: [
-    'What experiments are in this lab?',
-    'Explain a key physics concept',
-    'Explain a key chemistry concept',
-  ],
-}
-
-function getQuickPrompts(context?: GaliContext): string[] {
-  if (context?.experimentTitle) {
-    return isChemistry(context)
-      ? QUICK_PROMPTS.experiment_chemistry
-      : QUICK_PROMPTS.experiment_physics
-  }
-  if (context?.section && context.section !== 'all') {
-    return CHEMISTRY_SECTIONS.has(context.section)
-      ? QUICK_PROMPTS.browse_chemistry
-      : QUICK_PROMPTS.browse_physics
-  }
-  return QUICK_PROMPTS.all
-}
-
-function getPlaceholder(context?: GaliContext): string {
-  if (context?.experimentTitle) return `Ask about ${context.experimentTitle}…`
-  if (context?.section && context.section !== 'all') return `Ask about ${context.section}…`
-  return 'Ask a science question…'
-}
-
 export default function GaliModal({ context, onClose }: GaliModalProps) {
+  const { t } = useI18n()
+
+  // ── Build welcome message ────────────────────────────────────────────────
+  function buildWelcome(): string {
+    if (context?.experimentTitle) {
+      const key = isChemistry(context)
+        ? 'gali.welcome_exp_chemistry'
+        : 'gali.welcome_exp_physics'
+      return t(key, { title: context.experimentTitle })
+    }
+    if (context?.section && context.section !== 'all') {
+      if (CHEMISTRY_SECTIONS.has(context.section)) {
+        return t('gali.welcome_chem_section', { section: context.section })
+      }
+      return t('gali.welcome_physics_section', { section: context.section })
+    }
+    return t('gali.welcome_general')
+  }
+
+  // ── Quick prompts ────────────────────────────────────────────────────────
+  function getQuickPrompts(): string[] {
+    if (context?.experimentTitle) {
+      return isChemistry(context)
+        ? [t('gali.quick_chem_reaction'), t('gali.quick_chem_safety'), t('gali.quick_chem_read')]
+        : [t('gali.quick_physics_setup'), t('gali.quick_physics_formula'), t('gali.quick_physics_results')]
+    }
+    if (context?.section && context.section !== 'all') {
+      return CHEMISTRY_SECTIONS.has(context.section)
+        ? [t('gali.quick_browse_chem_1'), t('gali.quick_browse_chem_2'), t('gali.quick_browse_chem_3')]
+        : [t('gali.quick_browse_physics_1'), t('gali.quick_browse_physics_2'), t('gali.quick_browse_physics_3')]
+    }
+    return [t('gali.quick_all_1'), t('gali.quick_all_2'), t('gali.quick_all_3')]
+  }
+
+  function getPlaceholder(): string {
+    if (context?.experimentTitle) return t('gali.placeholder_exp', { title: context.experimentTitle })
+    if (context?.section && context.section !== 'all') return t('gali.placeholder_section', { section: context.section })
+    return t('gali.placeholder_general')
+  }
+
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'gali', content: buildWelcome(context) },
+    { role: 'gali', content: buildWelcome() },
   ])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
@@ -106,20 +85,17 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   const inputRef = useRef<HTMLInputElement>(null)
   const abortRef = useRef<AbortController | null>(null)
 
-  // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [onClose])
 
-  // Focus input on open
   useEffect(() => {
-    const t = setTimeout(() => inputRef.current?.focus(), 150)
-    return () => clearTimeout(t)
+    const timer = setTimeout(() => inputRef.current?.focus(), 150)
+    return () => clearTimeout(timer)
   }, [])
 
-  // Scroll to bottom when messages update
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
@@ -150,7 +126,6 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     setInput('')
 
     const userMsg: Message = { role: 'user', content: userText }
-    // Include full history so Gali has conversation context
     const historyForAPI = [...messages, userMsg].map(m => ({
       role: m.role,
       content: m.content,
@@ -170,13 +145,12 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
       if (res.status === 503) {
         setApiAvailable(false)
-        const fallback = getFallback(userText, context)
-        setMessages(prev => [...prev, { role: 'gali', content: fallback }])
+        const topic = context?.experimentTitle || context?.section || 'science'
+        setMessages(prev => [...prev, { role: 'gali', content: getFallback(userText, topic) }])
         return
       }
 
       if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`)
-
       setApiAvailable(true)
 
       const reader = res.body.getReader()
@@ -192,7 +166,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       if ((err as Error)?.name === 'AbortError') return
       setMessages(prev => [
         ...prev,
-        { role: 'gali', content: 'Sorry, I had trouble connecting. Please try again.' },
+        { role: 'gali', content: t('gali.error_connecting') },
       ])
     } finally {
       setIsStreaming(false)
@@ -200,13 +174,13 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   }
 
   const contextLabel = context?.experimentTitle
-    ? `Exp #${context.experimentNum}: ${context.experimentTitle}`
+    ? t('gali.context_exp', { num: String(context.experimentNum ?? ''), title: context.experimentTitle })
     : context?.section && context.section !== 'all'
     ? context.section
-    : 'All experiments'
+    : t('gali.context_all')
 
-  const quickPrompts = getQuickPrompts(context)
-  const placeholder = getPlaceholder(context)
+  const quickPrompts = getQuickPrompts()
+  const placeholder = getPlaceholder()
 
   return (
     <div className="gali-modal-overlay" onClick={onClose}>
@@ -215,15 +189,15 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
         {/* Header */}
         <div className="gali-modal-header">
           <div className="gali-modal-avatar">✦</div>
-          <div className="gali-modal-header-title">Ask Gali</div>
+          <div className="gali-modal-header-title">{t('gali.modal_title')}</div>
           <span className="gali-modal-context-badge">{contextLabel}</span>
-          <button className="gali-modal-close" onClick={onClose} aria-label="Close Gali">✕</button>
+          <button className="gali-modal-close" onClick={onClose} aria-label="Close">✕</button>
         </div>
 
         {/* No-API-key notice */}
         {apiAvailable === false && (
           <div className="gali-modal-notice">
-            ⚠ No API key — using built-in responses. Add <code>ANTHROPIC_API_KEY</code> to <code>.env.local</code> for full AI.
+            {t('gali.no_api_key')}
           </div>
         )}
 
@@ -239,7 +213,6 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             </div>
           ))}
 
-          {/* Typing indicator — shown when waiting for first token */}
           {isStreaming && messages[messages.length - 1]?.role !== 'gali' && (
             <div className="chat-msg">
               <div className="gali-avatar">✦</div>
@@ -287,7 +260,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             disabled={isStreaming || !input.trim()}
             aria-label="Send"
           >
-            {isStreaming ? '…' : '↑'}
+            {isStreaming ? t('gali.sending') : t('gali.send')}
           </button>
         </div>
       </div>
@@ -295,9 +268,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   )
 }
 
-// ─── Markdown renderer ────────────────────────────────────────────────────────
-// Handles: **bold**, *italic*, `code`, - bullet lists, 1. numbered lists, blank line paragraphs
-
+// ─── Inline markdown renderer ─────────────────────────────────────────────────
 function InlineText({ text }: { text: string }) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`\n]+`)/g)
   return (
@@ -324,7 +295,6 @@ function MarkdownText({ text }: { text: string }) {
   while (i < lines.length) {
     const line = lines[i]
 
-    // Bullet list block
     if (/^[-*]\s+/.test(line)) {
       const items: string[] = []
       while (i < lines.length && /^[-*]\s+/.test(lines[i])) {
@@ -339,7 +309,6 @@ function MarkdownText({ text }: { text: string }) {
       continue
     }
 
-    // Numbered list block
     if (/^\d+\.\s+/.test(line)) {
       const items: string[] = []
       while (i < lines.length && /^\d+\.\s+/.test(lines[i])) {
@@ -354,48 +323,29 @@ function MarkdownText({ text }: { text: string }) {
       continue
     }
 
-    // Empty line — skip (paragraph spacing handled by CSS gap)
-    if (line.trim() === '') {
-      i++
-      continue
-    }
+    if (line.trim() === '') { i++; continue }
 
-    // Regular text line
-    nodes.push(
-      <p key={key++} className="gali-para"><InlineText text={line} /></p>
-    )
+    nodes.push(<p key={key++} className="gali-para"><InlineText text={line} /></p>)
     i++
   }
 
   return <>{nodes}</>
 }
 
-// ─── Keyword-based fallback (no API key) ─────────────────────────────────────
-function getFallback(text: string, context?: GaliContext): string {
+// ─── Keyword fallback when no API key ────────────────────────────────────────
+function getFallback(text: string, topic: string): string {
   const lower = text.toLowerCase()
-  const isChemCtx = isChemistry(context)
-  const topic = context?.experimentTitle || context?.section || (isChemCtx ? 'chemistry' : 'physics')
-
-  if (lower.includes('setup') || lower.includes('set up') || lower.includes('equipment')) {
+  if (lower.includes('setup') || lower.includes('set up') || lower.includes('equipment') || lower.includes('preparaz') || lower.includes('strument'))
     return `To set up this experiment, gather all listed equipment and follow the Experiment tab procedure step by step. Make sure instruments are calibrated before taking measurements.`
-  }
-  if (lower.includes('formula') || lower.includes('equation') || lower.includes('law')) {
+  if (lower.includes('formula') || lower.includes('equation') || lower.includes('law'))
     return `Check the **formula box** in the Experiment tab for the key equation used in **${topic}**. Apply it carefully — keep track of units and significant figures throughout.`
-  }
-  if (lower.includes('result') || lower.includes('expect') || lower.includes('outcome')) {
+  if (lower.includes('result') || lower.includes('expect') || lower.includes('outcome') || lower.includes('risultat'))
     return `Compare your results with the **Expected Outcome** in the Summary tab. Small deviations (5–10%) are normal due to measurement uncertainty.`
-  }
-  if (lower.includes('error') || lower.includes('mistake') || lower.includes('wrong')) {
+  if (lower.includes('error') || lower.includes('mistake') || lower.includes('wrong') || lower.includes('errore'))
     return `Common errors include misreading scales, not zeroing instruments, and parallax errors. Always take 3–5 repeated measurements and calculate an average to reduce uncertainty.`
-  }
-  if (lower.includes('safe') || lower.includes('hazard') || lower.includes('danger')) {
+  if (lower.includes('safe') || lower.includes('hazard') || lower.includes('danger') || lower.includes('sicurez'))
     return `Always follow lab safety guidelines: wear appropriate PPE (gloves, goggles), handle chemicals carefully, and read the safety notes in the Experiment tab before starting.`
-  }
-  if (lower.includes('real') || lower.includes('application') || lower.includes('life') || lower.includes('use')) {
+  if (lower.includes('real') || lower.includes('application') || lower.includes('life') || lower.includes('applicaz') || lower.includes('reale'))
     return `**${topic}** has fascinating real-world applications — check the Real-World Connections section in the Experiment tab for specific examples related to this topic.`
-  }
-  if (isChemCtx && (lower.includes('reaction') || lower.includes('acid') || lower.includes('base') || lower.includes('ph'))) {
-    return `In this chemistry experiment, observe the **reaction indicators** carefully (color changes, gas evolution, precipitate formation). Record all observations in the data table before drawing conclusions.`
-  }
   return `Great question about **${topic}**! I can help with setup, formulas, safety, expected results, or real-world applications. What specific aspect would you like to explore?`
 }

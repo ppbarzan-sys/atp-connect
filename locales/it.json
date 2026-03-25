@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "physics": "Fisica",
+    "chemistry": "Chimica",
+    "search": "Cerca",
+    "gali": "Gali",
+    "physics_title": "Esperimenti di Fisica",
+    "chemistry_title": "Esperimenti di Chimica",
+    "gali_title": "Chiedi a Gali IA",
+    "sign_out": "Esci"
+  },
+  "landing": {
+    "tagline": "Alimentiamo la curiosità. Ispiriamo l'innovazione.",
+    "sign_in": "Accedi",
+    "signing_in": "Accesso in corso…",
+    "dev_note": "Modalità sviluppo — autenticazione non attiva",
+    "copyright": "© {year} ATP Technologies"
+  },
+  "browse": {
+    "physics_title": "Esplora Esperimenti di Fisica",
+    "physics_subtitle": "{count} esperimenti di fisica per il Laboratorio Mobile ATP 4900.00",
+    "chemistry_title": "Esplora Esperimenti di Chimica",
+    "chemistry_subtitle": "{count} esperimenti di chimica e fisiologia vegetale per il Laboratorio Mobile ATP 4900.00",
+    "browse_all": "Vedi tutti",
+    "all_filter": "Tutti",
+    "search_btn": "Cerca"
+  },
+  "experiment": {
+    "back": "← Indietro",
+    "ask_gali": "✦ Chiedi a Gali",
+    "tab_summary": "📚 Sommario",
+    "tab_experiment": "🔬 Esperimento",
+    "tab_questions": "❓ Domande",
+    "tab_notes": "📋 Le Mie Note",
+    "badge_setup": "△ Preparazione: {time}",
+    "badge_duration": "🕐 Durata: {time}",
+    "overview_toggle": "📊 Panoramica",
+    "overview_close": "✕ Chiudi",
+    "not_found": "Esperimento non trovato",
+    "back_to_browse": "Torna alla Lista",
+    "back_to_chemistry": "Torna alla Chimica"
+  },
+  "summary": {
+    "what_learn": "Cosa Impareranno",
+    "instructions": "Istruzioni",
+    "expected_outcome": "Risultato Atteso",
+    "khan_title": "🎬 Khan Academy — video correlati"
+  },
+  "exp_tab": {
+    "equipment": "⚙ Preparazione Strumenti",
+    "observations_record": "Osservazioni da Registrare",
+    "background": "🏫 Teoria di Base",
+    "realworld": "🌍 Applicazioni nel Mondo Reale",
+    "formula": "Formula",
+    "workspace": "📋 Area di Lavoro dello Studente",
+    "data_table": "📋 Tabella Dati",
+    "observations": "🔍 Osservazioni",
+    "conclusion": "✏️ Conclusione",
+    "clear_table": "🗑 Cancella tabella",
+    "save": "💾 Salva",
+    "check_ai": "✦ Verifica i Risultati con l'IA",
+    "gali_feedback": "✦ Feedback di Gali",
+    "hint": "💡 Suggerimento:",
+    "expected": "📊 Atteso:"
+  },
+  "questions": {
+    "quick_check": "Domande di Verifica Rapida",
+    "discussion": "Domande per la Discussione",
+    "correct": "✅ Corretto! ",
+    "incorrect": "❌ Sbagliato. ",
+    "answer_placeholder": "Scrivi qui la tua risposta…"
+  },
+  "notes": {
+    "my_notes": "📝 Le Mie Note Personali",
+    "student_hint": "Le tue note vengono salvate automaticamente e in modo privato nel browser.",
+    "student_placeholder": "Aggiungi note, osservazioni, promemoria…",
+    "download": "⬇ Scarica le Mie Note",
+    "teacher_notes": "👩‍🏫 Note del Docente",
+    "teacher_hint": "Note private del docente — non visibili agli studenti.",
+    "teacher_placeholder": "Aggiungi note per il docente, suggerimenti, osservazioni in classe…"
+  },
+  "overview": {
+    "equipment": "Strumentazione",
+    "concept_breakdown": "Concetti Chiave",
+    "concept_hint": "Questo esperimento tratta:",
+    "misconceptions": "Errori Comuni",
+    "hook": "Introduzione",
+    "khan": "🎬 Khan Academy"
+  },
+  "rightpanel": {
+    "tab_overview": "Panoramica",
+    "tab_chat": "Chatta con l'IA"
+  },
+  "chat": {
+    "setup_help": "⚙ Preparazione",
+    "formula": "ƒ Formula",
+    "errors": "⚠ Errori comuni",
+    "placeholder": "Cosa vorresti sapere su questo esperimento?"
+  },
+  "search": {
+    "placeholder": "Cerca esperimenti…",
+    "empty": "Digita per cercare esperimenti, argomenti o sezioni…",
+    "no_results": "Nessun esperimento trovato per \"{query}\""
+  },
+  "gali": {
+    "modal_title": "Chiedi a Gali",
+    "context_all": "Tutti gli esperimenti",
+    "context_exp": "Esp. #{num}: {title}",
+    "no_api_key": "⚠ Nessuna chiave API — uso risposte integrate. Aggiungi ANTHROPIC_API_KEY a .env.local per l'IA completa.",
+    "error_connecting": "Spiacente, si è verificato un problema di connessione. Riprova.",
+    "send": "↑",
+    "sending": "…",
+    "placeholder_exp": "Chiedi di {title}…",
+    "placeholder_section": "Chiedi di {section}…",
+    "placeholder_general": "Fai una domanda scientifica…",
+    "welcome_exp_physics": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di fisica si applica nella vita reale!",
+    "welcome_exp_chemistry": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di chimica si applica nella vita reale!",
+    "welcome_chem_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di reazioni, formule, tecniche di laboratorio o qualsiasi altra cosa in questa sezione!",
+    "welcome_physics_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di concetti, formule o applicazioni nel mondo reale!",
+    "welcome_general": "Ciao! Sono Gali ✦ Il tuo assistente scientifico IA. Posso aiutarti con esperimenti di fisica e chimica — setup, formule, concetti o connessioni con il mondo reale. Cosa vorresti esplorare?",
+    "quick_physics_setup": "Come si prepara questo esperimento?",
+    "quick_physics_formula": "Qual è la formula principale?",
+    "quick_physics_results": "Quali risultati dovrei aspettarmi?",
+    "quick_chem_reaction": "Che reazione sta avvenendo?",
+    "quick_chem_safety": "Quali precauzioni di sicurezza vanno rispettate?",
+    "quick_chem_read": "Come si leggono i risultati?",
+    "quick_browse_physics_1": "Quale esperimento riguarda forza e moto?",
+    "quick_browse_physics_2": "Spiega le leggi di Newton in modo semplice",
+    "quick_browse_physics_3": "Qual è la differenza tra calore e temperatura?",
+    "quick_browse_chem_1": "Qual è la differenza tra acidi e basi?",
+    "quick_browse_chem_2": "Come funziona l'elettrolisi?",
+    "quick_browse_chem_3": "Spiega il principio di Le Chatelier",
+    "quick_all_1": "Quali esperimenti ci sono in questo laboratorio?",
+    "quick_all_2": "Spiega un concetto chiave di fisica",
+    "quick_all_3": "Spiega un concetto chiave di chimica"
+  },
+  "teacher": {
+    "mode_bar": "👩‍🏫 MODALITÀ DOCENTE ATTIVA — Risultati e note degli studenti sono visibili",
+    "enter": "Attiva Modalità Docente",
+    "exit": "Disattiva Modalità Docente"
+  },
+  "lang": {
+    "label": "Lingua",
+    "en": "English",
+    "it": "Italiano"
+  }
+}

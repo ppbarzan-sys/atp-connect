@@ -1,6 +1,7 @@
 'use client'
 import { Experiment } from '@/data/experiments'
 import ExperimentCard from './ExperimentCard'
+import { useI18n } from '@/lib/i18n'
 
 interface BrowseSectionProps {
   name: string
@@ -12,12 +13,13 @@ interface BrowseSectionProps {
 }
 
 export default function BrowseSection({ name, color, emoji, experiments, onExpClick, onFilterChange }: BrowseSectionProps) {
+  const { t } = useI18n()
   return (
     <div className="browse-section" data-section={name}>
       <div className="browse-section-header">
         <h2>{emoji} {name}</h2>
         <div className="browse-section-nav">
-          <button className="browse-all-btn" onClick={() => onFilterChange(name)}>Browse all</button>
+          <button className="browse-all-btn" onClick={() => onFilterChange(name)}>{t('browse.browse_all')}</button>
         </div>
       </div>
       <div className="cards-row" id={`cards-${name}`}>

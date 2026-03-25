@@ -1,6 +1,8 @@
 'use client'
 import { useRouter, usePathname } from 'next/navigation'
 import { ATP_LOGO } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 async function signOut(router: ReturnType<typeof useRouter>) {
   await fetch('/api/auth/signout', { method: 'POST' })
@@ -18,6 +20,7 @@ interface SidebarProps {
 export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: SidebarProps) {
   const router = useRouter()
   const pathname = usePathname()
+  const { t } = useI18n()
   const isChemistry = pathname?.startsWith('/chemistry') ?? false
   const isPhysicsActive = !isChemistry
 
@@ -31,49 +34,50 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       <button
         className={`nav-icon${isPhysicsActive ? ' active' : ''}`}
         onClick={() => router.push('/app')}
-        title="Physics Experiments"
+        title={t('nav.physics_title')}
       >
         <span>🔭</span>
-        <span className="label">Physics</span>
+        <span className="label">{t('nav.physics')}</span>
       </button>
 
       {/* Chemistry */}
       <button
         className={`nav-icon${isChemistry ? ' active' : ''}`}
         onClick={() => router.push('/chemistry')}
-        title="Chemistry Experiments"
+        title={t('nav.chemistry_title')}
       >
         <span>⚗️</span>
-        <span className="label">Chem</span>
+        <span className="label">{t('nav.chemistry')}</span>
       </button>
 
       {/* Search */}
       <button
         className="nav-icon"
         onClick={onSearch}
-        title="Search"
+        title={t('nav.search')}
       >
         <span>🔍</span>
-        <span className="label">Search</span>
+        <span className="label">{t('nav.search')}</span>
       </button>
 
       {onAskGali && (
         <button
           className="nav-icon gali-nav"
           onClick={onAskGali}
-          title="Ask Gali AI"
+          title={t('nav.gali_title')}
         >
           <span>✦</span>
-          <span className="label">Gali</span>
+          <span className="label">{t('nav.gali')}</span>
         </button>
       )}
 
       <div className="sidebar-bottom">
+        <LanguageSwitcher />
         <button
           className="signout-btn"
           onClick={() => signOut(router)}
-          title="Sign Out"
-          aria-label="Sign Out"
+          title={t('nav.sign_out')}
+          aria-label={t('nav.sign_out')}
         >
           ↩
         </button>

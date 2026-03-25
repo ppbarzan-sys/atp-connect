@@ -1,5 +1,6 @@
 'use client'
 import type { Experiment } from '@/data/experiments'
+import { useI18n } from '@/lib/i18n'
 
 interface FilterBarProps {
   activeFilter: string
@@ -20,6 +21,7 @@ export default function FilterBar({
   sectionEmojis,
   expData,
 }: FilterBarProps) {
+  const { t } = useI18n()
   const total = expData.length
 
   return (
@@ -28,7 +30,7 @@ export default function FilterBar({
         className={`filter-btn${activeFilter === 'all' ? ' active' : ''}`}
         onClick={() => onFilterChange('all')}
       >
-        All <span className="filter-count">{total}</span>
+        {t('browse.all_filter')} <span className="filter-count">{total}</span>
       </button>
 
       {sections.map(sec => {
@@ -59,7 +61,7 @@ export default function FilterBar({
 
       {onSearch && (
         <button className="more-filters-btn" onClick={onSearch}>
-          🔍 Search
+          🔍 {t('browse.search_btn')}
         </button>
       )}
     </div>

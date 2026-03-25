@@ -2,6 +2,7 @@
 import { Experiment } from '@/data/experiments'
 import OverviewPane from './OverviewPane'
 import ChatPane from './ChatPane'
+import { useI18n } from '@/lib/i18n'
 
 interface RightPanelProps {
   exp: Experiment
@@ -11,6 +12,7 @@ interface RightPanelProps {
 }
 
 export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '' }: RightPanelProps) {
+  const { t } = useI18n()
   return (
     <div className={`right-panel${extraClass ? ' ' + extraClass : ''}`} id={`rp-${exp.num}`}>
       <div className="rp-tabs">
@@ -18,17 +20,16 @@ export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '
           className={`rp-tab${activeTab === 'overview' ? ' active' : ''}`}
           onClick={() => onTabChange('overview')}
         >
-          Overview
+          {t('rightpanel.tab_overview')}
         </button>
         <button
           className={`rp-tab${activeTab === 'chat' ? ' active' : ''}`}
           onClick={() => onTabChange('chat')}
         >
-          Chat with AI
+          {t('rightpanel.tab_chat')}
         </button>
       </div>
 
-      {/* Overview pane */}
       <div
         className={`rp-pane${activeTab === 'overview' ? ' active' : ''}`}
         id={`rpp-${exp.num}-overview`}
@@ -36,7 +37,6 @@ export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '
         <OverviewPane exp={exp} />
       </div>
 
-      {/* Chat pane — needs flex layout so we override display */}
       <div
         id={`rpp-${exp.num}-chat`}
         style={{
