@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import Sidebar from '@/components/Sidebar'
 import BrowseView from '@/components/browse/BrowseView'
 import SearchOverlay from '@/components/SearchOverlay'
-import GaliModal, { GaliContext } from '@/components/GaliModal'
 import {
   chemistryExperiments,
   chemistrySectionColors,
@@ -14,15 +13,10 @@ import {
 export default function ChemistryPage() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [searchOpen, setSearchOpen] = useState(false)
-  const [galiContext, setGaliContext] = useState<GaliContext | null>(null)
   const router = useRouter()
 
   function handleExpClick(num: number) {
     router.push(`/chemistry/${num}`)
-  }
-
-  function openGali(section?: string) {
-    setGaliContext({ section: section ?? 'all' })
   }
 
   return (
@@ -31,7 +25,6 @@ export default function ChemistryPage() {
         activeView="browse"
         onHome={() => {}}
         onSearch={() => setSearchOpen(true)}
-        onAskGali={openGali}
       />
 
       <BrowseView
@@ -39,7 +32,6 @@ export default function ChemistryPage() {
         onFilterChange={setActiveFilter}
         onExpClick={handleExpClick}
         onSearch={() => setSearchOpen(true)}
-        onAskGali={openGali}
         expData={chemistryExperiments}
         sectionColorMap={chemistrySectionColors}
         sectionEmojiMap={chemistrySectionEmojis}
@@ -58,10 +50,6 @@ export default function ChemistryPage() {
           sectionColorMap={chemistrySectionColors}
           sectionEmojiMap={chemistrySectionEmojis}
         />
-      )}
-
-      {galiContext !== null && (
-        <GaliModal context={galiContext} onClose={() => setGaliContext(null)} />
       )}
     </div>
   )

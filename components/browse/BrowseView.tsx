@@ -13,7 +13,7 @@ interface BrowseViewProps {
   onFilterChange: (filter: string) => void
   onExpClick: (num: number) => void
   onSearch: () => void
-  onAskGali: (section?: string) => void
+  onAskGali?: (section?: string) => void
   // Optional overrides for Chemistry (defaults to Physics data)
   expData?: Experiment[]
   sectionColorMap?: Record<string, string>
@@ -68,12 +68,6 @@ export default function BrowseView({
               <h1>{title}</h1>
               <p>{subtitle}</p>
             </div>
-            <button
-              className="ask-gali-hero"
-              onClick={() => onAskGali(activeFilter !== 'all' ? activeFilter : undefined)}
-            >
-              ✦ Ask Gali
-            </button>
           </div>
         </div>
 
