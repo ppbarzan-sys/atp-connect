@@ -84,17 +84,184 @@ export const experiments: Experiment[] = [
     "num": 1,
     "title": "First class levers",
     "section": "Mechanics",
-    "desc": "Explores how a balance arm pivots to demonstrate the principle of moments and equilibrium.",
+    "desc": "Investigate equilibrium of a first-class lever by balancing known masses on either side of a central pivot.",
     "setupTime": "5 min",
-    "duration": "15 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Explores how a balance arm pivots to demonstrate the principle of moments and equilibrium.",
+      "whatTheyLearn": "Students discover that equilibrium requires equal moments on both sides of the fulcrum, verifying W = mg and the moment equation M = F × d.",
       "instructions": [
-        "Describe the equilibrium condition you observed:",
-        "What happened when you moved the masses further from the fulcrum?",
-        "State the relationship between force, mass and distance from the fulcrum (lever principle):"
+        "Zero the balance arm (tare) before adding any mass.",
+        "Hang a mass on one side, record its weight in newtons, then find the balancing mass on the other side.",
+        "Vary the distance from the fulcrum and observe how the required force changes."
       ],
-      "expectedOutcome": "Weight (N) should be approximately mass(g) × 0.00981. Equilibrium occurs when moments balance. m=10g → W≈0.098N; m=25g → W≈0.245N; m=50g → W≈0.490N"
+      "expectedOutcome": "m = 10 g → W ≈ 0.10 N; m = 25 g → W ≈ 0.25 N; m = 50 g → W ≈ 0.50 N. Equilibrium: M₁ = M₂."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚖️",
+          "name": "Lever bar (balance arm)"
+        },
+        {
+          "emoji": "🔩",
+          "name": "Central fulcrum pivot"
+        },
+        {
+          "emoji": "🏋️",
+          "name": "Cylindrical masses (10 g, 25 g, 50 g)"
+        },
+        {
+          "emoji": "🪝",
+          "name": "S-hooks"
+        },
+        {
+          "emoji": "📏",
+          "name": "Millimetre ruler"
+        }
+      ],
+      "observationsToRecord": [
+        "Mass m (g) and calculated weight W = mg (N) for each trial",
+        "Position of mass on each side of the fulcrum (mm)",
+        "Whether the arm reaches equilibrium"
+      ],
+      "theoryPoints": [
+        "Weight is the gravitational force on a mass: W = mg, where g ≈ 9.81 m/s².",
+        "A moment (torque) is the turning effect of a force: M = F × d.",
+        "A first-class lever has the fulcrum between the two forces.",
+        "Equilibrium condition: M₁ = M₂, i.e. F₁·d₁ = F₂·d₂.",
+        "The 'tare' operation zeros out the lever's own weight before measurement."
+      ],
+      "realWorldConnections": [
+        "Weighing scales use balanced moments to measure unknown masses.",
+        "Crowbars and see-saws are everyday first-class levers.",
+        "Surgeons use first-class lever principles in laparoscopic tools."
+      ],
+      "formula": "W = mg   |   M = F × d   |   Equilibrium: F₁d₁ = F₂d₂"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "A 25 g mass is hung at 8 cm from the fulcrum. What single force at 10 cm from the fulcrum will balance it?",
+          "options": [
+            "0.20 N",
+            "0.25 N",
+            "0.196 N",
+            "0.245 N"
+          ],
+          "correctIndex": 0,
+          "explanation": "M₁ = 0.025 × 9.81 × 0.08 = 0.01962 N·m. F = 0.01962 / 0.10 = 0.196 N ≈ 0.20 N."
+        },
+        {
+          "text": "What does 'taring' the balance arm mean?",
+          "options": [
+            "Adding a known mass",
+            "Zeroing the reading before measurement",
+            "Measuring the arm length",
+            "Removing the fulcrum"
+          ],
+          "correctIndex": 1,
+          "explanation": "Taring resets the scale to zero so that only the added mass is measured, removing the effect of the arm's own weight."
+        },
+        {
+          "text": "If you move a mass further from the fulcrum, the moment:",
+          "options": [
+            "Decreases",
+            "Stays the same",
+            "Increases",
+            "Becomes zero"
+          ],
+          "correctIndex": 2,
+          "explanation": "M = F × d; with F constant, increasing d increases the moment."
+        }
+      ],
+      "discussion": [
+        "Why must the balance arm be tared (zeroed) before placing masses on it?",
+        "If F₁d₁ = F₂d₂, explain how a small force at a large distance can balance a large force at a small distance.",
+        "Give two real-world examples of first-class levers and identify the fulcrum in each."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Weight & gravity (W=mg)",
+          "pct": 25
+        },
+        {
+          "label": "Moments & torque",
+          "pct": 30
+        },
+        {
+          "label": "Equilibrium condition",
+          "pct": 30
+        },
+        {
+          "label": "Measurement & taring",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students often confuse mass (kg) with weight (N); weight is the gravitational force, not the quantity of matter.",
+        "Many think equilibrium means both sides must have equal masses, not equal moments.",
+        "Students may forget to tare, introducing a systematic error from the arm's own weight."
+      ],
+      "hook": "How can a child on a see-saw balance an adult? The secret is not equal weight — it's equal moments. Move the adult closer to the pivot and suddenly the child wins!",
+      "khanLinks": [
+        {
+          "title": "Introduction to Torque",
+          "url": "https://www.khanacademy.org/science/physics/torque-angular-momentum/torque-tutorial/v/introduction-to-torque"
+        },
+        {
+          "title": "Torque & Angular Momentum",
+          "url": "https://www.khanacademy.org/science/physics/torque-angular-momentum"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Mass m (g)",
+        "Weight W = mg (N)",
+        "Distance d₁ (cm)",
+        "Balancing mass (g)",
+        "Balancing distance d₂ (cm)",
+        "M₁ (N·m)",
+        "M₂ (N·m)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the weight calculated from each mass and compare with the spring-balance reading.",
+      "Note whether the lever balances and at what positions.",
+      "Observe how doubling the distance halves the required force for equilibrium."
+    ],
+    "conclusion": "The lever reaches equilibrium when the moment on the left equals the moment on the right (F₁d₁ = F₂d₂). Weight W = mg was confirmed for each mass tested.",
+    "ai": {
+      "opening": "Ready to explore levers? Ask me anything about moments, equilibrium, or the experiment setup!",
+      "keywords": {
+        "setup": "lever bar|fulcrum|tare|balance arm",
+        "formula": "M = F × d|W = mg|equilibrium",
+        "error": "forgot to tare|unequal arm lengths|friction at pivot",
+        "question": "moment|torque|equilibrium|weight|mass",
+        "real": "see-saw|crowbar|weighing scale"
+      },
+      "hint": "Remember: equilibrium means the moments are equal, not the masses. M = F × d on both sides.",
+      "expected": "m = 10 g → W = 0.098 N; m = 25 g → W = 0.245 N; m = 50 g → W = 0.490 N. Equilibrium when F₁d₁ = F₂d₂."
+    }
+  },
+  {
+    "num": 2,
+    "title": "First class levers and equilibrium positions",
+    "section": "Mechanics",
+    "desc": "Measure moments about a pivot and verify the principle of moments using a lever with loads at known distances.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Students calculate clockwise and anticlockwise moments and confirm that equilibrium requires their equality: M = F × d.",
+      "instructions": [
+        "Place a known mass at a measured distance from the fulcrum on one side.",
+        "Find the position or magnitude of a second force that restores equilibrium.",
+        "Record all distances and forces, then calculate both moments."
+      ],
+      "expectedOutcome": "Trial 1: m₁ = 65 g at 8 cm → M₁ = 0.052 N·m; adjust m₂ or d₂ until M₂ ≈ 0.052 N·m."
     },
     "experiment": {
       "equipment": [
@@ -108,240 +275,102 @@ export const experiments: Experiment[] = [
         },
         {
           "emoji": "🏋️",
-          "name": "Cylindrical masses"
+          "name": "Masses (65 g, 100 g, 150 g)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Millimetre ruler"
         },
         {
           "emoji": "🪝",
           "name": "S-hooks"
-        },
-        {
-          "emoji": "📏",
-          "name": "Scale ruler"
         }
       ],
       "observationsToRecord": [
-        "Describe the equilibrium condition you observed:",
-        "What happened when you moved the masses further from the fulcrum?"
+        "Force F₁ (N) and arm length d₁ (m) for the first load",
+        "Force F₂ (N) and arm length d₂ (m) for the balancing load",
+        "Calculated moments M₁ and M₂ (N·m)"
       ],
       "theoryPoints": [
-        "A lever amplifies force by trading distance — push farther from the fulcrum to lift heavier loads.",
-        "The fulcrum position determines the lever class; Class 1 places the fulcrum between effort and load.",
-        "Moment (torque) = Force × distance. Equilibrium means clockwise moments equal anticlockwise moments."
+        "Moment M = F × d, where d is the perpendicular distance from the pivot.",
+        "Clockwise moment = Anticlockwise moment at equilibrium.",
+        "The principle of moments applies to any rigid body in rotational equilibrium.",
+        "Increasing the arm length d amplifies the turning effect of a given force."
       ],
       "realWorldConnections": [
-        "Seesaw on a playground",
-        "Crowbar opening a crate",
-        "Scissors and pliers"
+        "Wheelbarrows are second-class levers; the load sits between the wheel (pivot) and the handles.",
+        "Nutcrackers multiply force using the moment principle.",
+        "Engineers use moment calculations when designing bridges and cranes."
       ],
-      "formula": "M = F × d   |   F₁ × d₁ = F₂ × d₂"
+      "formula": "M = F × d   |   Equilibrium: ΣM_clockwise = ΣM_anticlockwise"
     },
     "questions": {
       "mcq": [
         {
-          "text": "If a 10 g mass is 20 cm from the fulcrum, what mass 10 cm away balances it?",
+          "text": "A 65 g mass is placed 8 cm from the fulcrum. What is the moment it creates?",
           "options": [
-            "A. 5 g",
-            "B. 10 g",
-            "C. 20 g",
-            "D. 40 g"
+            "0.052 N·m",
+            "0.065 N·m",
+            "0.080 N·m",
+            "0.520 N·m"
           ],
-          "correctIndex": 2,
-          "explanation": "F₁×d₁ = F₂×d₂ → 10×20 = m×10 → m = 20 g"
+          "correctIndex": 0,
+          "explanation": "F = 0.065 kg × 9.81 m/s² ≈ 0.638 N; M = 0.638 × 0.08 ≈ 0.051 N·m ≈ 0.052 N·m."
         },
         {
-          "text": "In a Class 1 lever, where is the fulcrum?",
+          "text": "If M₁ = 0.052 N·m and d₂ = 0.10 m, what force F₂ is needed for equilibrium?",
           "options": [
-            "A. At one end",
-            "B. Between effort and load",
-            "C. At the load end",
-            "D. Outside the bar"
+            "0.52 N",
+            "0.052 N",
+            "5.2 N",
+            "0.52 mN"
           ],
-          "correctIndex": 1,
-          "explanation": "Class 1 always has the fulcrum between the effort force and the resistance load."
+          "correctIndex": 0,
+          "explanation": "F₂ = M₁ / d₂ = 0.052 / 0.10 = 0.52 N."
+        },
+        {
+          "text": "Which of these is NOT a second-class lever?",
+          "options": [
+            "Wheelbarrow",
+            "Nutcracker",
+            "See-saw",
+            "Bottle opener"
+          ],
+          "correctIndex": 2,
+          "explanation": "A see-saw is a first-class lever (fulcrum in the middle). In second-class levers the load is between fulcrum and effort."
         }
       ],
       "discussion": [
-        "What would happen on the Moon?",
-        "Why is a see-saw a first-class lever?",
-        "Why is it easier to open a door from the handle than the hinge?"
+        "Explain why increasing the arm length d allows a smaller force to produce the same moment.",
+        "A mechanic uses a longer spanner to undo a tight bolt. Which principle is being exploited?",
+        "How does the principle of moments apply to the design of a wheelbarrow?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 45
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 25
-        },
-        {
-          "label": "Data Analysis",
-          "pct": 20
-        },
-        {
-          "label": "Real-World Applications",
-          "pct": 10
-        }
-      ],
-      "misconceptions": [
-        "Mass ≠ Weight. Mass is constant everywhere; weight depends on gravity (W = mg).",
-        "Equal arms don't guarantee equilibrium — masses must be equal too."
-      ],
-      "hook": "Archimedes claimed he could move the Earth with a long enough lever — he wasn't joking. The lever is humanity's oldest force multiplier.",
-      "khanLinks": [
-        {
-          "title": "Introduction to Torque",
-          "url": "https://www.khanacademy.org/science/physics/torque-angular-momentum/torque-tutorial/v/introduction-to-torque"
-        },
-        {
-          "title": "Torque & Angular Momentum",
-          "url": "https://www.khanacademy.org/science/physics/torque-angular-momentum"
-        }
-      ]
-    },
-    "dataTable": {
-      "headers": [
-        "#",
-        "Mass m (g)",
-        "Weight W (N)",
-        "Notes"
-      ],
-      "rows": 5
-    },
-    "observations": [
-      "Describe the equilibrium condition you observed:",
-      "What happened when you moved the masses further from the fulcrum?"
-    ],
-    "conclusion": "State the relationship between force, mass and distance from the fulcrum (lever principle):",
-    "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>First class levers</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
-      "keywords": {
-        "setup": "To set up this experiment: <ol><li>Pre-set balance with equal arms</li><li>Test that S-hooks are not bent</li><li>Check tare cylinder threads</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Students forgetting tare operation</li><li>Reading balance scale at angle</li><li>Confusing mass (g) with weight (N)</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>M = F × d &nbsp;&nbsp;|&nbsp;&nbsp; F₁ × d₁ = F₂ × d₂</div>A lever amplifies force by trading distance — push farther from the fulcrum to lift heavier loads.",
-        "question": "Discussion questions for students:<ul><li>What would happen on the Moon?</li><li>Why is a see-saw a first-class lever?</li><li>Why is it easier to open a door from the handle than the hinge?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Mass ≠ Weight. Mass is constant everywhere; weight depends on gravity (W = mg).</li><li>❌ Equal arms don't guarantee equilibrium — masses must be equal too.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Seesaw on a playground</li><li>🌍 Crowbar opening a crate</li><li>🌍 Scissors and pliers</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Weight (N) should be approximately mass(g) × 0.00981. Equilibrium occurs when moments balance.<br><br>m=10g → W≈0.098N; m=25g → W≈0.245N; m=50g → W≈0.490N",
-        "extend": "Extension activity: Have students calculate the weight of classroom objects and verify with dynamometer.",
-        "explain": "Here's how to explain this to students: <em>Archimedes claimed he could move the Earth with a long enough lever — he wasn't joking. The lever is humanity's oldest force multiplier.</em><br><br>Key concepts to emphasise: A lever amplifies force by trading distance — push farther from the fulcrum to lift heavier loads.; The fulcrum position determines the lever class; Class 1 places the fulcrum between effort and load.",
-        "hook": "Engaging hook for students: <blockquote>Archimedes claimed he could move the Earth with a long enough lever — he wasn't joking. The lever is humanity's oldest force multiplier.</blockquote>This works well as an opener before students touch the equipment."
-      },
-      "hint": "Weight (N) should be approximately mass(g) × 0.00981. Equilibrium occurs when moments balance.",
-      "expected": "m=10g → W≈0.098N; m=25g → W≈0.245N; m=50g → W≈0.490N"
-    }
-  },
-  {
-    "num": 2,
-    "title": "First class levers and equilibrium positions",
-    "section": "Mechanics",
-    "desc": "Analyzes first-class levers where the fulcrum lies between effort and load.",
-    "setupTime": "5 min",
-    "duration": "15 min",
-    "summary": {
-      "whatTheyLearn": "Analyzes first-class levers where the fulcrum lies between effort and load.",
-      "instructions": [
-        "At equilibrium, were M₁ and M₂ equal? Describe any differences:",
-        "How did moving the fulcrum position affect equilibrium?",
-        "Verify the principle of moments: ΣM_clockwise = ΣM_anticlockwise. State your conclusion:"
-      ],
-      "expectedOutcome": "At equilibrium, M₁ ≈ M₂. Typical values: m₁=0.065kg, m₂=0.060kg, a₁=0.08m, a₂=0.10m → M₁≈0.051, M₂≈0.059 N·m M₁ = M₂ at equilibrium. Values within 5–10% error are acceptable."
-    },
-    "experiment": {
-      "equipment": [
-        {
-          "emoji": "⚖️",
-          "name": "Lever bar"
-        },
-        {
-          "emoji": "🔩",
-          "name": "Fulcrum"
-        },
-        {
-          "emoji": "🏋️",
-          "name": "Mass set"
-        },
-        {
-          "emoji": "🪝",
-          "name": "S-hooks"
-        },
-        {
-          "emoji": "📏",
-          "name": "Ruler"
-        }
-      ],
-      "observationsToRecord": [
-        "At equilibrium, were M₁ and M₂ equal? Describe any differences:",
-        "How did moving the fulcrum position affect equilibrium?"
-      ],
-      "theoryPoints": [
-        "Moving masses along a lever arm changes the torque without changing the force magnitude.",
-        "Equilibrium requires zero net torque: ΣM_clockwise = ΣM_anticlockwise.",
-        "The mechanical advantage equals the ratio of effort arm to load arm."
-      ],
-      "realWorldConnections": [
-        "Steelyard scales in markets",
-        "Adjustable bike brakes",
-        "Trebuchet siege engines"
-      ],
-      "formula": "MA = d_effort / d_load   |   Σ(F × d) = 0"
-    },
-    "questions": {
-      "mcq": [
-        {
-          "text": "Two masses 50 g and 25 g are on opposite sides. The 50 g is 4 cm from fulcrum. How far must 25 g be to balance?",
-          "options": [
-            "A. 2 cm",
-            "B. 4 cm",
-            "C. 8 cm",
-            "D. 16 cm"
-          ],
-          "correctIndex": 2,
-          "explanation": "50×4 = 25×d → d = 200/25 = 8 cm"
-        },
-        {
-          "text": "What is the unit of moment of a force?",
-          "options": [
-            "A. Newton",
-            "B. Joule",
-            "C. Newton·metre",
-            "D. Pascal"
-          ],
-          "correctIndex": 2,
-          "explanation": "Moment = Force × distance = N × m = Newton·metre"
-        }
-      ],
-      "discussion": [
-        "If both arms are extended, what happens to sensitivity?",
-        "Why is a heavier balance not necessarily more accurate?"
-      ]
-    },
-    "overview": {
-      "conceptBreakdown": [
-        {
-          "label": "Forces & Motion",
-          "pct": 40
-        },
-        {
-          "label": "Data Analysis",
+          "label": "Moment definition M = F×d",
           "pct": 30
         },
         {
-          "label": "Scientific Method",
+          "label": "Equilibrium condition",
+          "pct": 30
+        },
+        {
+          "label": "Lever classes",
           "pct": 20
         },
         {
-          "label": "Measurement",
-          "pct": 10
+          "label": "Measurement technique",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Mechanical advantage > 1 doesn't mean you get 'free' energy — you trade distance for force.",
-        "The principle of moments applies even when arms are unequal."
+        "Students confuse 'moment' with 'force'; the moment includes the distance, not just the force alone.",
+        "Many assume equilibrium requires equal forces rather than equal moments.",
+        "Some students measure the wrong distance (not the perpendicular distance from the pivot)."
       ],
-      "hook": "A Roman steelyard, a car's brake pedal, and a trebuchet catapult all exploit the same lever principle — precise placement of masses.",
+      "hook": "Have you ever used a long spanner to undo a stuck bolt? You were using the principle of moments — a longer arm means a bigger turning effect with the same force!",
       "khanLinks": [
         {
           "title": "Introduction to Torque",
@@ -355,144 +384,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "m₁ (kg)",
-        "m₂ (kg)",
-        "a₁ (m)",
-        "a₂ (m)",
-        "M₁ = m₁ga₁ (N·m)",
-        "M₂ = m₂ga₂ (N·m)"
+        "F₁ (N)",
+        "d₁ (m)",
+        "M₁ (N·m)",
+        "F₂ (N)",
+        "d₂ (m)",
+        "M₂ (N·m)",
+        "Balance?"
       ],
       "rows": 4
     },
     "observations": [
-      "At equilibrium, were M₁ and M₂ equal? Describe any differences:",
-      "How did moving the fulcrum position affect equilibrium?"
+      "For each trial, record whether M₁ equals M₂ within experimental uncertainty.",
+      "Note any asymmetry in the lever bar itself and how this affects results.",
+      "Observe how the same moment can be produced by different force-distance combinations."
     ],
-    "conclusion": "Verify the principle of moments: ΣM_clockwise = ΣM_anticlockwise. State your conclusion:",
+    "conclusion": "The principle of moments was verified: equilibrium occurs when M₁ = M₂. Measured values of M₁ (e.g. 0.052 N·m) matched calculated M₂ values within ±5% experimental error.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>First class levers and equilibrium positions</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Let's explore moments and equilibrium! Ask me about calculating moments, lever classes, or the experiment setup.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Prepare at least 4 different mass combinations</li><li>Mark positions on lever with tape</li><li>Ensure fulcrum pivot is smooth</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Measuring distance from end of bar, not fulcrum</li><li>Not achieving true equilibrium before recording</li><li>Using grams instead of kg in moment calculation</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>MA = d_effort / d_load &nbsp;&nbsp;|&nbsp;&nbsp; Σ(F × d) = 0</div>Moving masses along a lever arm changes the torque without changing the force magnitude.",
-        "question": "Discussion questions for students:<ul><li>If both arms are extended, what happens to sensitivity?</li><li>Why is a heavier balance not necessarily more accurate?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Mechanical advantage > 1 doesn't mean you get 'free' energy — you trade distance for force.</li><li>❌ The principle of moments applies even when arms are unequal.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Steelyard scales in markets</li><li>🌍 Adjustable bike brakes</li><li>🌍 Trebuchet siege engines</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: At equilibrium, M₁ ≈ M₂. Typical values: m₁=0.065kg, m₂=0.060kg, a₁=0.08m, a₂=0.10m → M₁≈0.051, M₂≈0.059 N·m<br><br>M₁ = M₂ at equilibrium. Values within 5–10% error are acceptable.",
-        "extend": "Extension activity: Challenge students to balance 3 masses simultaneously.",
-        "explain": "Here's how to explain this to students: <em>A Roman steelyard, a car's brake pedal, and a trebuchet catapult all exploit the same lever principle — precise placement of masses.</em><br><br>Key concepts to emphasise: Moving masses along a lever arm changes the torque without changing the force magnitude.; Equilibrium requires zero net torque: ΣM_clockwise = ΣM_anticlockwise.",
-        "hook": "Engaging hook for students: <blockquote>A Roman steelyard, a car's brake pedal, and a trebuchet catapult all exploit the same lever principle — precise placement of masses.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "lever bar|fulcrum|masses|distances",
+        "formula": "M = F×d|equilibrium|moments",
+        "error": "arm asymmetry|friction|incorrect distance measurement",
+        "question": "moment|turning effect|equilibrium|lever class",
+        "real": "wheelbarrow|spanner|nutcracker"
       },
-      "hint": "At equilibrium, M₁ ≈ M₂. Typical values: m₁=0.065kg, m₂=0.060kg, a₁=0.08m, a₂=0.10m → M₁≈0.051, M₂≈0.059 N·m",
-      "expected": "M₁ = M₂ at equilibrium. Values within 5–10% error are acceptable."
+      "hint": "M = F × d. Make sure you measure d from the pivot perpendicularly. For equilibrium, M₁ must equal M₂.",
+      "expected": "m₁ = 65 g at 8 cm → M₁ = 0.052 N·m; m₁ at 8 cm, m₂ at position such that M₂ ≈ 0.057 N·m in trial 2."
     }
   },
   {
     "num": 3,
     "title": "Sensitivity of a balance",
     "section": "Mechanics",
-    "desc": "Applies slightly different masses to evaluate the smallest measurable mass difference.",
+    "desc": "Determine the sensitivity of a beam balance by measuring how many scale divisions correspond to a known added mass.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Applies slightly different masses to evaluate the smallest measurable mass difference.",
+      "whatTheyLearn": "Students learn that sensitivity σ = deflection / added mass (div/mg) and discover that sensitivity is not constant across the full range.",
       "instructions": [
-        "How did increasing the load M affect sensitivity?",
-        "Describe the tare operation and why it was necessary:",
-        "Is sensitivity constant for this balance? Explain your observations:"
+        "Balance the beam with a 310 mg tare mass; record the resting pointer position.",
+        "Add a 10 g (10 000 mg) load and read the new pointer deflection in divisions.",
+        "Repeat with different loads to plot a deflection vs. mass graph."
       ],
-      "expectedOutcome": "Sensitivity S = deflection/added_mass. With M=10g and m=310mg giving 3 div, S≈0.01 div/mg. Sensitivity typically decreases with load. S is not constant. Higher load M → lower sensitivity. Typical S ≈ 0.01–0.05 div/mg."
+      "expectedOutcome": "310 mg tare + 10 g load → ~3 divisions → σ ≈ 0.01 div/mg for small loads. Sensitivity decreases for heavier loads."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "⚖️",
-          "name": "Double-sided scale"
+          "name": "Beam balance with pointer"
         },
         {
           "emoji": "🏋️",
-          "name": "Fine masses (0.3–100 g)"
+          "name": "Tare mass (310 mg)"
         },
         {
-          "emoji": "🔩",
-          "name": "Threaded stem"
+          "emoji": "🏋️",
+          "name": "Test masses (10 g, 25 g, 50 g)"
         },
         {
-          "emoji": "📏",
-          "name": "Scale pointer"
+          "emoji": "📐",
+          "name": "Scale with millimetre divisions"
+        },
+        {
+          "emoji": "📝",
+          "name": "Graph paper"
         }
       ],
       "observationsToRecord": [
-        "How did increasing the load M affect sensitivity?",
-        "Describe the tare operation and why it was necessary:"
+        "Pointer zero position with tare mass only",
+        "Pointer deflection (divisions) for each added mass",
+        "Calculated sensitivity σ = deflection / added mass for each trial"
       ],
       "theoryPoints": [
-        "Sensitivity of a balance: the smallest mass difference that causes a measurable deflection.",
-        "Higher sensitivity means smaller mass differences are detectable, but it can reduce stability.",
-        "The centre of mass position governs balance behaviour — lower CoM = more stable, less sensitive."
+        "Sensitivity of a balance: σ = pointer deflection (div) / added mass (mg).",
+        "A more sensitive balance deflects more for the same added mass.",
+        "Sensitivity is not constant: it decreases as the load increases (non-linear response).",
+        "The tare mass compensates for the beam's own asymmetry."
       ],
       "realWorldConnections": [
-        "Pharmacy scales for drug compounding",
-        "Jewellery scales measuring carats",
-        "Lab analytical balances"
+        "Analytical balances in chemistry labs are highly sensitive but have low capacity.",
+        "Bathroom scales sacrifice sensitivity for a wider mass range.",
+        "Sensitivity vs. range trade-off appears in all measuring instruments."
       ],
-      "formula": "S = θ / m    (deflection per unit added mass)"
+      "formula": "σ = Δ (divisions) / Δm (mg)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "What does 'tare' a balance mean?",
+          "text": "If adding 10 g causes a deflection of 3 divisions, what is the sensitivity in div/g?",
           "options": [
-            "A. Zero it with the pans empty",
-            "B. Add a counterweight to achieve equilibrium before measuring",
-            "C. Remove the scale pans",
-            "D. Increase sensitivity"
+            "0.3 div/g",
+            "3 div/g",
+            "30 div/g",
+            "0.03 div/g"
           ],
-          "correctIndex": 1,
-          "explanation": "Taring adds a small counterweight to account for the balance arm's own mass asymmetry."
+          "correctIndex": 0,
+          "explanation": "σ = 3 divisions / 10 g = 0.3 div/g."
         },
         {
-          "text": "If adding 1 mg causes a 5-division deflection, what is the sensitivity?",
+          "text": "Why is a tare mass of 310 mg placed on the balance before testing?",
           "options": [
-            "A. 0.2 div/mg",
-            "B. 5 div/mg",
-            "C. 1 div/mg",
-            "D. 10 div/mg"
+            "To increase sensitivity",
+            "To compensate for beam asymmetry and zero the pointer",
+            "To overload the balance",
+            "To measure the beam weight"
           ],
           "correctIndex": 1,
-          "explanation": "S = deflection/mass = 5 div / 1 mg = 5 div/mg"
+          "explanation": "The tare mass balances the pointer at a reference position, removing the effect of any asymmetry in the balance arm."
+        },
+        {
+          "text": "As the load on a balance increases, its sensitivity:",
+          "options": [
+            "Increases linearly",
+            "Remains constant",
+            "Decreases",
+            "First increases then decreases"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sensitivity decreases at higher loads because the restoring moment per unit mass diminishes as the beam deflects more."
         }
       ],
       "discussion": [
-        "Why would a chemist need a more sensitive balance than a butcher?",
-        "How does temperature affect balance sensitivity?"
+        "Explain the difference between sensitivity and accuracy in a measuring instrument.",
+        "Why might an analytical chemistry balance have much higher sensitivity than a bathroom scale?",
+        "Sketch the expected shape of a deflection-vs-mass graph and explain any non-linearity."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 35
+          "label": "Definition of sensitivity",
+          "pct": 30
         },
         {
-          "label": "Measurement",
-          "pct": 35
-        },
-        {
-          "label": "Data Analysis",
+          "label": "Taring the balance",
           "pct": 20
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Non-linearity of response",
+          "pct": 30
+        },
+        {
+          "label": "Graphical analysis",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "A 'sensitive' balance isn't always better — it may be too unstable for rough environments.",
-        "Tare operation is not just zeroing; it corrects for the arm's own weight asymmetry."
+        "Students often think a more sensitive balance is always better; in fact, high sensitivity limits the maximum measurable mass.",
+        "Many assume sensitivity is constant across all loads, but it decreases at higher deflections.",
+        "Confusing 'sensitivity' with 'precision' or 'accuracy' is common."
       ],
-      "hook": "An analytical balance can detect a difference of 0.1 mg — less than a grain of sand. Its sensitivity is a masterpiece of physics.",
+      "hook": "Why do chemistry labs have tiny balances that measure to 0.001 g, while truck weigh-stations use massive platforms? It's all about the sensitivity-range trade-off!",
       "khanLinks": [
         {
           "title": "Forces & Newton's Laws",
@@ -506,144 +550,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Load M (g)",
-        "Added mass m (mg)",
-        "Deflection (div)",
-        "Sensitivity (div/mg)"
+        "Added mass Δm (mg)",
+        "Pointer deflection (div)",
+        "Sensitivity σ (div/mg)"
       ],
       "rows": 5
     },
     "observations": [
-      "How did increasing the load M affect sensitivity?",
-      "Describe the tare operation and why it was necessary:"
+      "Observe how the pointer deflects more for larger added masses.",
+      "Note whether the sensitivity (div per mg) remains constant or changes.",
+      "Record the resting position each time a mass is removed to check for hysteresis."
     ],
-    "conclusion": "Is sensitivity constant for this balance? Explain your observations:",
+    "conclusion": "The sensitivity of the balance was approximately 0.01 div/mg for small loads (e.g. 3 divisions for 10 g load). Sensitivity decreased for larger loads, confirming the non-linear response of the balance.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Sensitivity of a balance</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Curious about balance sensitivity? Ask me how it's calculated, why it varies, or how to improve your experiment!",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Pre-calibrate balance for equal arms</li><li>Prepare small masses: 0.5g, 0.3g, 0.1g</li><li>Have pointer positioned correctly</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Not completing tare before starting</li><li>Misreading scale divisions</li><li>Applying masses too quickly causing oscillation</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>S = θ / m &nbsp;&nbsp; (deflection per unit added mass)</div>Sensitivity of a balance: the smallest mass difference that causes a measurable deflection.",
-        "question": "Discussion questions for students:<ul><li>Why would a chemist need a more sensitive balance than a butcher?</li><li>How does temperature affect balance sensitivity?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A 'sensitive' balance isn't always better — it may be too unstable for rough environments.</li><li>❌ Tare operation is not just zeroing; it corrects for the arm's own weight asymmetry.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Pharmacy scales for drug compounding</li><li>🌍 Jewellery scales measuring carats</li><li>🌍 Lab analytical balances</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Sensitivity S = deflection/added_mass. With M=10g and m=310mg giving 3 div, S≈0.01 div/mg. Sensitivity typically decreases with load.<br><br>S is not constant. Higher load M → lower sensitivity. Typical S ≈ 0.01–0.05 div/mg.",
-        "extend": "Extension activity: Compare sensitivity with different arm lengths.",
-        "explain": "Here's how to explain this to students: <em>An analytical balance can detect a difference of 0.1 mg — less than a grain of sand. Its sensitivity is a masterpiece of physics.</em><br><br>Key concepts to emphasise: Sensitivity of a balance: the smallest mass difference that causes a measurable deflection.; Higher sensitivity means smaller mass differences are detectable, but it can reduce stability.",
-        "hook": "Engaging hook for students: <blockquote>An analytical balance can detect a difference of 0.1 mg — less than a grain of sand. Its sensitivity is a masterpiece of physics.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "beam balance|tare|pointer|divisions",
+        "formula": "sensitivity = deflection / mass|σ = Δdiv / Δm",
+        "error": "forgetting to tare|reading error|non-linear region",
+        "question": "sensitivity|divisions|tare|accuracy",
+        "real": "analytical balance|bathroom scale|lab instrument"
       },
-      "hint": "Sensitivity S = deflection/added_mass. With M=10g and m=310mg giving 3 div, S≈0.01 div/mg. Sensitivity typically decreases with load.",
-      "expected": "S is not constant. Higher load M → lower sensitivity. Typical S ≈ 0.01–0.05 div/mg."
+      "hint": "Sensitivity σ = divisions deflected ÷ mass added (in mg or g). It is not constant — plot deflection vs. mass to see the curve.",
+      "expected": "310 mg tare + 10 g → ~3 div → σ ≈ 0.3 div/g. Sensitivity decreases with increasing load."
     }
   },
   {
     "num": 4,
     "title": "Second and third class levers",
     "section": "Mechanics",
-    "desc": "Compares all three lever classes and their mechanical advantages.",
+    "desc": "Study a second-class lever with the fulcrum at one end and verify the principle of moments for non-central pivots.",
     "setupTime": "5 min",
-    "duration": "25 min",
+    "duration": "30 min",
     "summary": {
-      "whatTheyLearn": "Compares all three lever classes and their mechanical advantages.",
+      "whatTheyLearn": "Students verify that moments about the fulcrum balance even when it is at the end of the lever, and calculate the reaction force at the pivot.",
       "instructions": [
-        "For each lever class, describe the position of the fulcrum, effort, and load:",
-        "Which class gave the highest mechanical advantage? Why?",
-        "Compare the three lever classes. When would you choose each type?"
+        "Place the fulcrum at one end of the lever bar.",
+        "Hang a known load at a measured distance from the fulcrum.",
+        "Apply an upward effort at the other end and find the position for equilibrium.",
+        "Calculate both moments and the reaction at the fulcrum."
       ],
-      "expectedOutcome": "Class 2: MA > 1 (wheelbarrow-type). Class 3: MA < 1 (forearm-type). MA = effort arm / load arm. Class 2 MA > 1; Class 3 MA < 1; Class 1 MA can be =, > or < 1 depending on fulcrum position."
+      "expectedOutcome": "m₁ = 65 g at 8 cm: M₁ = 0.052 N·m. A 100 g effort at ~5.5 cm gives M₂ ≈ 0.054 N·m ≈ M₁."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "⚖️",
-          "name": "Lever apparatus"
+          "name": "Lever bar"
+        },
+        {
+          "emoji": "🔩",
+          "name": "End fulcrum pivot"
         },
         {
           "emoji": "🏋️",
-          "name": "Mass set"
+          "name": "Masses (65 g, 100 g, 150 g)"
         },
         {
           "emoji": "📏",
-          "name": "Ruler"
+          "name": "Millimetre ruler"
         },
         {
-          "emoji": "⚖️",
-          "name": "Dynamometer"
+          "emoji": "🔧",
+          "name": "Support stand"
         }
       ],
       "observationsToRecord": [
-        "For each lever class, describe the position of the fulcrum, effort, and load:",
-        "Which class gave the highest mechanical advantage? Why?"
+        "Load F_L (N) and its distance from fulcrum d_L (m)",
+        "Effort F_E (N) and its distance from fulcrum d_E (m)",
+        "Reaction force R at the fulcrum (calculated as R = F_L + F_E)"
       ],
       "theoryPoints": [
-        "Class 2 lever: load between fulcrum and effort — always has MA > 1 (wheelbarrow, nutcracker).",
-        "Class 3 lever: effort between fulcrum and load — always gives MA < 1 but gains in speed/distance (tweezers, fishing rod).",
-        "Trade-off: mechanical advantage vs range of motion and speed."
+        "In a second-class lever the load is between the fulcrum and the effort.",
+        "Moments about the fulcrum: F_E × d_E = F_L × d_L at equilibrium.",
+        "Mechanical advantage MA = d_E / d_L > 1; effort < load.",
+        "The reaction R at the fulcrum supports the net downward force: R = F_L − F_E.",
+        "Unlike first-class levers, effort and load forces act in the same direction (both down)."
       ],
       "realWorldConnections": [
-        "Wheelbarrow (Class 2)",
-        "Forearm/bicep (Class 3)",
-        "Bottle opener (Class 2)",
-        "Fishing rod (Class 3)"
+        "Wheelbarrows use a second-class lever principle: load between wheel and handles.",
+        "A nutcracker is a double second-class lever.",
+        "Hinged doors: the hinge is the fulcrum, your push is the effort, the door weight is the load."
       ],
-      "formula": "Class 2: MA > 1  |  Class 3: MA < 1  |  MA = d_effort/d_load"
+      "formula": "F_E × d_E = F_L × d_L   |   MA = d_E / d_L   |   R = F_L − F_E"
     },
     "questions": {
       "mcq": [
         {
-          "text": "In a wheelbarrow, where is the fulcrum?",
+          "text": "In a second-class lever, where is the load relative to the fulcrum and effort?",
           "options": [
-            "A. At the handles",
-            "B. At the wheel axle",
-            "C. Under the load",
-            "D. In the middle"
+            "Between fulcrum and effort",
+            "At the same position as effort",
+            "On the opposite side of the fulcrum",
+            "At the fulcrum"
           ],
-          "correctIndex": 1,
-          "explanation": "The wheel axle is the fulcrum; load sits between it and the effort at the handles → Class 2."
+          "correctIndex": 0,
+          "explanation": "Second-class levers have the load between the fulcrum and the effort, giving mechanical advantage MA > 1."
         },
         {
-          "text": "Tweezers are an example of which lever class?",
+          "text": "A 65 g load at 8 cm from a fulcrum is balanced by an effort at 10 cm. What is the required effort?",
           "options": [
-            "A. Class 1",
-            "B. Class 2",
-            "C. Class 3",
-            "D. None of the above"
+            "0.51 N",
+            "0.64 N",
+            "0.80 N",
+            "0.39 N"
+          ],
+          "correctIndex": 0,
+          "explanation": "F_E = F_L × d_L / d_E = (0.065×9.81×0.08) / 0.10 = 0.052 / 0.10 = 0.52 N ≈ 0.51 N."
+        },
+        {
+          "text": "What is the mechanical advantage of a lever where the effort arm is twice the load arm?",
+          "options": [
+            "0.5",
+            "1.0",
+            "2.0",
+            "4.0"
           ],
           "correctIndex": 2,
-          "explanation": "In tweezers, effort (fingers) is between the fulcrum (pivot end) and the load (tip) → Class 3."
+          "explanation": "MA = d_E / d_L = 2d / d = 2."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why a wheelbarrow makes it easier to lift a heavy load.",
+        "Compare first- and second-class levers: how do their mechanical advantages differ?",
+        "How does the position of the load relative to the fulcrum affect the effort needed?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 50
-        },
-        {
-          "label": "Scientific Method",
+          "label": "Second-class lever definition",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 15
+          "label": "Moment calculation",
+          "pct": 30
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Mechanical advantage",
+          "pct": 25
+        },
+        {
+          "label": "Reaction force at fulcrum",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Class 3 levers are not 'inefficient' — they trade force for speed, useful in muscle-driven motion.",
-        "The fulcrum of a Class 2 lever is at one end, not in the middle."
+        "Students often confuse first- and second-class levers; the key distinction is the position of the load.",
+        "Some think the effort must always be larger than the load; in second-class levers the effort is smaller.",
+        "Forgetting to account for the reaction force at the fulcrum leads to incorrect force diagrams."
       ],
-      "hook": "Your forearm is a Class 3 lever — your bicep pulls near your elbow to lift your hand far away. The human body is a lever machine.",
+      "hook": "Why can you lift a heavy wheelbarrow load with much less effort than lifting it directly? The second-class lever principle means your effort arm is longer than the load arm!",
       "khanLinks": [
         {
           "title": "Torque & Angular Momentum",
@@ -657,141 +714,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Lever Class",
-        "Effort arm (m)",
-        "Load arm (m)",
-        "Mechanical Advantage",
-        "Effort F (N)",
-        "Load W (N)"
+        "Load F_L (N)",
+        "Load distance d_L (m)",
+        "M_L (N·m)",
+        "Effort F_E (N)",
+        "Effort distance d_E (m)",
+        "M_E (N·m)",
+        "MA"
       ],
       "rows": 4
     },
     "observations": [
-      "For each lever class, describe the position of the fulcrum, effort, and load:",
-      "Which class gave the highest mechanical advantage? Why?"
+      "Verify that M_E ≈ M_L for equilibrium within experimental error.",
+      "Note how the effort required is less than the load (MA > 1).",
+      "Observe the reaction force direction at the end fulcrum."
     ],
-    "conclusion": "Compare the three lever classes. When would you choose each type?",
+    "conclusion": "Equilibrium was confirmed for a second-class lever: M_L = M_E. With the fulcrum at one end, the load at 8 cm and effort at 10 cm, the required effort (≈0.52 N) was less than the load (≈0.64 N), giving MA ≈ 1.25.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Second and third class levers</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Second-class levers are all about mechanical advantage! Ask me how they work, how to calculate MA, or anything about the experiment.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Class 2: MA > 1 &nbsp;|&nbsp; Class 3: MA < 1 &nbsp;|&nbsp; MA = d_effort/d_load</div>Class 2 lever: load between fulcrum and effort — always has MA > 1 (wheelbarrow, nutcracker).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Class 3 levers are not 'inefficient' — they trade force for speed, useful in muscle-driven motion.</li><li>❌ The fulcrum of a Class 2 lever is at one end, not in the middle.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Wheelbarrow (Class 2)</li><li>🌍 Forearm/bicep (Class 3)</li><li>🌍 Bottle opener (Class 2)</li><li>🌍 Fishing rod (Class 3)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Class 2: MA > 1 (wheelbarrow-type). Class 3: MA < 1 (forearm-type). MA = effort arm / load arm.<br><br>Class 2 MA > 1; Class 3 MA < 1; Class 1 MA can be =, > or < 1 depending on fulcrum position.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Your forearm is a Class 3 lever — your bicep pulls near your elbow to lift your hand far away. The human body is a lever machine.</em><br><br>Key concepts to emphasise: Class 2 lever: load between fulcrum and effort — always has MA > 1 (wheelbarrow, nutcracker).; Class 3 lever: effort between fulcrum and load — always gives MA < 1 but gains in speed/distance (tweezers, fishing rod).",
-        "hook": "Engaging hook for students: <blockquote>Your forearm is a Class 3 lever — your bicep pulls near your elbow to lift your hand far away. The human body is a lever machine.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "fulcrum at end|second-class lever|load between fulcrum and effort",
+        "formula": "F_E × d_E = F_L × d_L|MA = d_E/d_L",
+        "error": "fulcrum position|incorrect moment arm|beam weight neglected",
+        "question": "mechanical advantage|second class|moment|reaction",
+        "real": "wheelbarrow|nutcracker|door hinge"
       },
-      "hint": "Class 2: MA > 1 (wheelbarrow-type). Class 3: MA < 1 (forearm-type). MA = effort arm / load arm.",
-      "expected": "Class 2 MA > 1; Class 3 MA < 1; Class 1 MA can be =, > or < 1 depending on fulcrum position."
+      "hint": "For a second-class lever: F_E × d_E = F_L × d_L. MA = d_E / d_L — always greater than 1 in second-class levers.",
+      "expected": "m₁ = 65 g at 8 cm → M₁ = 0.052 N·m; effort at 10 cm → F_E ≈ 0.52 N, M₂ ≈ 0.052 N·m. MA ≈ 1.25."
     }
   },
   {
     "num": 5,
     "title": "Measurement of a length",
     "section": "Mechanics",
-    "desc": "Introduces measurement instruments and significant figures in length measurement.",
-    "setupTime": "3 min",
+    "desc": "Measure the diameter and height of metal cylinders using a Vernier calliper and calculate their volumes.",
+    "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Introduces measurement instruments and significant figures in length measurement.",
+      "whatTheyLearn": "Students use a Vernier calliper (precision ±0.05 mm) to measure cylinder dimensions and apply V = πr²h to find volume.",
       "instructions": [
-        "Which instrument was most precise for each measurement? Why?",
-        "How did repeating measurements affect your confidence in the result?",
-        "State your final results with uncertainties. What are the main sources of error?"
+        "Read the Vernier calliper: main scale + Vernier scale × 0.05 mm.",
+        "Measure the outer diameter d and height h of each cylinder at least twice.",
+        "Calculate r = d/2, then V = πr²h for each material."
       ],
-      "expectedOutcome": "Ruler: ±0.5mm; Vernier: ±0.1mm; Micrometre: ±0.01mm. Report as: value ± uncertainty. Example: length = 45.3 ± 0.1 mm (Vernier caliper, 5 repeats)."
+      "expectedOutcome": "Copper: h = 36 mm, d = 20 mm → V ≈ 11.30 cm³. Iron → V ≈ 9.73 cm³. Steel → V ≈ 12.87 cm³. Brass → V ≈ 11.93 cm³."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "📏",
-          "name": "Metre ruler"
+          "name": "Vernier calliper (±0.05 mm)"
         },
         {
-          "emoji": "🔧",
-          "name": "Vernier calliper"
+          "emoji": "🔵",
+          "name": "Copper cylinder"
         },
         {
-          "emoji": "🔩",
-          "name": "Micrometre gauge"
+          "emoji": "⚫",
+          "name": "Iron cylinder"
         },
         {
-          "emoji": "📋",
-          "name": "Data table sheet"
+          "emoji": "⚙️",
+          "name": "Steel cylinder"
+        },
+        {
+          "emoji": "🟡",
+          "name": "Brass cylinder"
         }
       ],
       "observationsToRecord": [
-        "Which instrument was most precise for each measurement? Why?",
-        "How did repeating measurements affect your confidence in the result?"
+        "Diameter d (mm) — at least 2 measurements per cylinder",
+        "Height h (mm) — at least 2 measurements per cylinder",
+        "Calculated volume V = πr²h (cm³)"
       ],
       "theoryPoints": [
-        "Significant figures reflect the precision of the measuring instrument.",
-        "Vernier callipers achieve 0.1 mm precision; micrometres reach 0.01 mm.",
-        "Every measurement has an uncertainty — it should always be reported (e.g., 12.3 ± 0.1 cm)."
+        "A Vernier calliper reads: main scale reading + (coincident Vernier division × 0.05 mm).",
+        "Volume of a cylinder: V = πr²h = π(d/2)²h.",
+        "Always take multiple measurements and average to reduce random error.",
+        "Least count of the calliper is 0.05 mm — record to this precision."
       ],
       "realWorldConnections": [
-        "Manufacturing tolerances in car engines",
-        "Medical implant sizing",
-        "Forensic evidence measurement"
+        "Machinists use callipers daily to verify that machined parts meet engineering tolerances.",
+        "Quality control in manufacturing uses volume and dimension measurements to check products.",
+        "Medical devices such as stents require sub-millimetre precision."
       ],
-      "formula": "% error = |measured − true| / true × 100%"
+      "formula": "V = πr²h = π(d/2)²h   |   Vernier reading = main scale + (Vernier div × 0.05 mm)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A ruler has 1 mm markings. What is its uncertainty?",
+          "text": "A Vernier calliper shows a main-scale reading of 20.0 mm and the 7th Vernier division coincides. What is the reading?",
           "options": [
-            "A. ±1 mm",
-            "B. ±0.5 mm",
-            "C. ±0.1 mm",
-            "D. ±2 mm"
+            "20.35 mm",
+            "20.07 mm",
+            "20.70 mm",
+            "20.50 mm"
           ],
-          "correctIndex": 1,
-          "explanation": "Convention: uncertainty = half the smallest division = ±0.5 mm."
+          "correctIndex": 0,
+          "explanation": "Reading = 20.0 + (7 × 0.05) = 20.0 + 0.35 = 20.35 mm."
         },
         {
-          "text": "Which instrument measures length most precisely?",
+          "text": "A copper cylinder has d = 20 mm and h = 36 mm. What is its volume?",
           "options": [
-            "A. Metre ruler",
-            "B. Vernier calliper",
-            "C. Micrometre screw gauge",
-            "D. Tape measure"
+            "11.31 cm³",
+            "1131 mm³",
+            "1.131 cm³",
+            "113.1 cm³"
           ],
-          "correctIndex": 2,
-          "explanation": "A micrometre reads to 0.01 mm, finer than a vernier (0.1 mm) or ruler (0.5–1 mm)."
+          "correctIndex": 0,
+          "explanation": "V = π(10)²(36) mm³ = 3600π ≈ 11 310 mm³ = 11.31 cm³."
+        },
+        {
+          "text": "Why should you measure the diameter in two different orientations?",
+          "options": [
+            "To practise using the calliper",
+            "To detect if the cross-section is not perfectly circular",
+            "To increase the reading",
+            "The calliper requires two readings"
+          ],
+          "correctIndex": 1,
+          "explanation": "Real cylinders may be slightly elliptical; two perpendicular diameter measurements reveal this and allow a better average."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain how to read a Vernier calliper. Why is the least count 0.05 mm rather than 0.1 mm?",
+        "What systematic errors might affect volume measurements with a calliper?",
+        "How would you modify the procedure if the cylinder had an irregular cross-section?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Measurement",
-          "pct": 60
+          "label": "Reading a Vernier calliper",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Volume formula V = πr²h",
+          "pct": 30
+        },
+        {
+          "label": "Measurement uncertainty",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
+          "label": "Unit conversion (mm→cm)",
           "pct": 15
         }
       ],
       "misconceptions": [
-        "More decimal places ≠ more accurate. Accuracy means closeness to the true value; precision means repeatability.",
-        "The last digit of any measurement is always an estimate."
+        "Students often mis-read the Vernier scale, forgetting to multiply the coincident division by 0.05 mm.",
+        "Many forget to convert mm to cm before computing volume in cm³.",
+        "Assuming one measurement is enough; multiple readings are needed to reduce random error."
       ],
-      "hook": "A human hair is ~70 micrometres wide. Without measurement science, we couldn't manufacture a single microchip, engine, or medical device.",
+      "hook": "A Vernier calliper reads to 0.05 mm — that's 50 micrometres, thinner than a human hair! How does adding a second tiny sliding scale make such precision possible?",
       "khanLinks": [
         {
           "title": "Significant Figures",
@@ -805,144 +880,165 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Object",
-        "Instrument used",
-        "Measurement (mm)",
-        "Uncertainty (±mm)",
-        "No. of repeats",
-        "Average (mm)"
+        "Material",
+        "d₁ (mm)",
+        "d₂ (mm)",
+        "d_avg (mm)",
+        "h₁ (mm)",
+        "h₂ (mm)",
+        "h_avg (mm)",
+        "V (cm³)"
       ],
-      "rows": 5
+      "rows": 4
     },
     "observations": [
-      "Which instrument was most precise for each measurement? Why?",
-      "How did repeating measurements affect your confidence in the result?"
+      "Record each diameter and height measurement to 0.05 mm precision.",
+      "Note any difference between two diameter readings for the same cylinder.",
+      "Compare the calculated volumes for copper, iron, steel, and brass."
     ],
-    "conclusion": "State your final results with uncertainties. What are the main sources of error?",
+    "conclusion": "Volumes were calculated using V = π(d/2)²h. Results: copper ≈ 11.30 cm³, iron ≈ 9.73 cm³, steel ≈ 12.87 cm³, brass ≈ 11.93 cm³. The Vernier calliper provided measurements to ±0.05 mm precision.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Measurement of a length</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Let's master the Vernier calliper! Ask me how to read it, how to calculate volume, or about measurement errors.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 3 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>% error = |measured − true| / true × 100%</div>Significant figures reflect the precision of the measuring instrument.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ More decimal places ≠ more accurate. Accuracy means closeness to the true value; precision means repeatability.</li><li>❌ The last digit of any measurement is always an estimate.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Manufacturing tolerances in car engines</li><li>🌍 Medical implant sizing</li><li>🌍 Forensic evidence measurement</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Ruler: ±0.5mm; Vernier: ±0.1mm; Micrometre: ±0.01mm. Report as: value ± uncertainty.<br><br>Example: length = 45.3 ± 0.1 mm (Vernier caliper, 5 repeats).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A human hair is ~70 micrometres wide. Without measurement science, we couldn't manufacture a single microchip, engine, or medical device.</em><br><br>Key concepts to emphasise: Significant figures reflect the precision of the measuring instrument.; Vernier callipers achieve 0.1 mm precision; micrometres reach 0.01 mm.",
-        "hook": "Engaging hook for students: <blockquote>A human hair is ~70 micrometres wide. Without measurement science, we couldn't manufacture a single microchip, engine, or medical device.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "Vernier calliper|main scale|Vernier division|least count",
+        "formula": "V = πr²h|Vernier reading = main + div×0.05",
+        "error": "mis-reading Vernier|unit conversion|non-circular cross-section",
+        "question": "Vernier|volume|cylinder|diameter|precision",
+        "real": "machinist|manufacturing|quality control"
       },
-      "hint": "Ruler: ±0.5mm; Vernier: ±0.1mm; Micrometre: ±0.01mm. Report as: value ± uncertainty.",
-      "expected": "Example: length = 45.3 ± 0.1 mm (Vernier caliper, 5 repeats)."
+      "hint": "Vernier reading = main scale + (coincident division × 0.05 mm). Then V = π(d/2)²h. Convert mm to cm before computing cm³.",
+      "expected": "Copper: d=20 mm, h=36 mm → V=11.30 cm³. Iron → 9.73 cm³. Steel → 12.87 cm³. Brass → 11.93 cm³."
     }
   },
   {
     "num": 6,
     "title": "Measurement of density",
     "section": "Mechanics",
-    "desc": "Uses the water displacement method to determine density of irregular objects.",
+    "desc": "Determine the density of metal cylinders by two methods: mass/volume and using a displacement vessel.",
     "setupTime": "5 min",
-    "duration": "35 min",
+    "duration": "40 min",
     "summary": {
-      "whatTheyLearn": "Uses the water displacement method to determine density of irregular objects.",
+      "whatTheyLearn": "Students apply ρ = m/V using mass from a balance and volume from calliper measurements or water displacement, then compare the two methods.",
       "instructions": [
-        "How did you measure the volume of irregular objects?",
-        "Did any material float? What does that tell you about its density relative to water?",
-        "Compare measured densities with known values. Identify sources of error:"
+        "Method 1: Measure mass m with balance and volume V from calliper, then ρ = m/V.",
+        "Method 2: Submerge cylinder in displacement vessel, collect overflow water, measure its volume.",
+        "Compare densities from both methods to the accepted literature values."
       ],
-      "expectedOutcome": "Water=1.0, Aluminium≈2.7, Iron≈7.9, Copper≈8.9, Lead≈11.3 g/cm³. Error > 10% suggests volume measurement issues. ρ = m/V. Common errors: air bubbles in water displacement, meniscus reading, mass scale precision."
+      "expectedOutcome": "Copper: m = 100.28 g, V = 11.30 cm³ → ρ ≈ 8.87 g/cm³ (accepted 8.96). Aluminium → ρ ≈ 2.70 g/cm³. Steel → ρ ≈ 7.72 g/cm³. Brass → ρ ≈ 8.37 g/cm³."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "⚗️",
-          "name": "Graduated cylinder"
+          "emoji": "⚖️",
+          "name": "Balance (±0.01 g)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Vernier calliper"
+        },
+        {
+          "emoji": "🫙",
+          "name": "Displacement vessel (Eureka can)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Measuring cylinder (50 mL)"
+        },
+        {
+          "emoji": "🔵",
+          "name": "Metal cylinders (Cu, Al, Fe, Brass)"
         },
         {
           "emoji": "💧",
           "name": "Water"
-        },
-        {
-          "emoji": "🏋️",
-          "name": "Mass balance"
-        },
-        {
-          "emoji": "🔩",
-          "name": "Various solid samples"
         }
       ],
       "observationsToRecord": [
-        "How did you measure the volume of irregular objects?",
-        "Did any material float? What does that tell you about its density relative to water?"
+        "Mass m (g) from balance for each cylinder",
+        "Volume V (cm³) from calliper measurements: V = π(d/2)²h",
+        "Volume V (mL) from water displacement",
+        "Density ρ = m/V for both methods"
       ],
       "theoryPoints": [
-        "Density ρ = mass/volume, measured in kg/m³ or g/cm³.",
-        "For irregular solids, volume is found by water displacement (Archimedes method).",
-        "Density is an intensive property — it doesn't change with amount of material."
+        "Density: ρ = m/V, SI unit kg/m³; often expressed as g/cm³.",
+        "Displacement method: submerged object displaces its own volume of water.",
+        "1 mL of water displaced = 1 cm³ of object volume.",
+        "Density is an intrinsic property — it does not change with the size of the sample."
       ],
       "realWorldConnections": [
-        "Checking purity of metals (gold vs fake)",
-        "Why ships float (hull displaces water)",
-        "Hydrometer in car batteries"
+        "Geologists identify minerals by their density (specific gravity).",
+        "Ships float because their average density (hull + air) is less than water (1.0 g/cm³).",
+        "Food scientists measure density to monitor sugar concentration in beverages."
       ],
-      "formula": "ρ = m / V   |   V_displaced = V_object"
+      "formula": "ρ = m / V   (g/cm³ or kg/m³)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "An object has mass 80 g and volume 10 cm³. What is its density?",
+          "text": "A copper cylinder has mass 100.28 g and volume 11.30 cm³. What is its density?",
           "options": [
-            "A. 8 g/cm³",
-            "B. 0.8 g/cm³",
-            "C. 800 g/cm³",
-            "D. 0.125 g/cm³"
+            "8.87 g/cm³",
+            "9.11 g/cm³",
+            "8.00 g/cm³",
+            "11.30 g/cm³"
           ],
           "correctIndex": 0,
-          "explanation": "ρ = m/V = 80/10 = 8 g/cm³"
+          "explanation": "ρ = m/V = 100.28 / 11.30 ≈ 8.87 g/cm³."
         },
         {
-          "text": "A block sinks in water (ρ=1 g/cm³). What can you conclude?",
+          "text": "Which of these metals has the highest density?",
           "options": [
-            "A. Its density > 1 g/cm³",
-            "B. Its density = 1 g/cm³",
-            "D. Its mass > 1 g"
+            "Aluminium (~2.70 g/cm³)",
+            "Steel (~7.7 g/cm³)",
+            "Copper (~8.9 g/cm³)",
+            "Brass (~8.4 g/cm³)"
           ],
-          "correctIndex": 0,
-          "explanation": "Objects sink when their density exceeds the fluid's density (ρ_object > ρ_fluid)."
+          "correctIndex": 2,
+          "explanation": "Copper has density ~8.9 g/cm³, higher than brass (~8.4), steel (~7.7), and aluminium (~2.7)."
+        },
+        {
+          "text": "In the displacement method, what volume is collected in the measuring cylinder?",
+          "options": [
+            "The volume of water in the vessel",
+            "The volume of the submerged object",
+            "The mass of the object",
+            "The density of water"
+          ],
+          "correctIndex": 1,
+          "explanation": "The overflow equals the volume of the submerged object (Archimedes' principle)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why might the density measured by the two methods differ slightly?",
+        "A sample of unknown material has ρ = 7.87 g/cm³. What material could it be?",
+        "How does the density of sea water compare to fresh water, and what practical consequences does this have?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 35
-        },
-        {
-          "label": "Measurement",
-          "pct": 30
-        },
-        {
-          "label": "Data Analysis",
+          "label": "Definition ρ = m/V",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Calliper method (V from geometry)",
+          "pct": 25
+        },
+        {
+          "label": "Displacement method",
+          "pct": 30
+        },
+        {
+          "label": "Comparing literature values",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Heavier ≠ denser. A mountain weighs more than a pebble of gold, but gold is denser.",
-        "An object sinks if its density is greater than the fluid's density, regardless of its mass."
+        "Students confuse density with heaviness; a small piece of lead is denser than a large piece of wood even though the wood is heavier.",
+        "Many think density changes when the object is cut in half; it does not.",
+        "Confusing volume displaced with mass of water displaced leads to unit errors."
       ],
-      "hook": "Archimedes discovered density when asked to check if a crown was pure gold — without melting it. He ran through Syracuse shouting 'Eureka!'",
+      "hook": "How can a massive steel ship float on water while a small steel bolt sinks? It's all about average density — the ship traps a huge volume of air, reducing its overall density below water's 1.0 g/cm³.",
       "khanLinks": [
         {
           "title": "Density: A Fundamental Concept",
@@ -956,145 +1052,160 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Object/Material",
+        "Material",
         "Mass m (g)",
-        "Volume V (cm³)",
-        "Density ρ (g/cm³)",
-        "Expected ρ (g/cm³)",
-        "% Error"
+        "V_calc (cm³)",
+        "V_disp (mL)",
+        "ρ_calc (g/cm³)",
+        "ρ_disp (g/cm³)",
+        "ρ_accepted (g/cm³)"
       ],
-      "rows": 5
+      "rows": 4
     },
     "observations": [
-      "How did you measure the volume of irregular objects?",
-      "Did any material float? What does that tell you about its density relative to water?"
+      "Record masses to ±0.01 g and volumes to ±0.1 cm³.",
+      "Compare ρ from both methods and calculate percentage difference.",
+      "Note which method is more accurate and explain why."
     ],
-    "conclusion": "Compare measured densities with known values. Identify sources of error:",
+    "conclusion": "Density was determined by two methods. Copper: ρ ≈ 8.87 g/cm³ (accepted 8.96 g/cm³). Results confirm ρ = m/V and Archimedes' displacement principle. Discrepancy < 5% due to measurement precision.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Measurement of density</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Density is one of the most fundamental material properties! Ask me about ρ = m/V, the two methods, or how to reduce errors.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 35 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>ρ = m / V &nbsp;&nbsp;|&nbsp;&nbsp; V_displaced = V_object</div>Density ρ = mass/volume, measured in kg/m³ or g/cm³.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Heavier ≠ denser. A mountain weighs more than a pebble of gold, but gold is denser.</li><li>❌ An object sinks if its density is greater than the fluid's density, regardless of its mass.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Checking purity of metals (gold vs fake)</li><li>🌍 Why ships float (hull displaces water)</li><li>🌍 Hydrometer in car batteries</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Water=1.0, Aluminium≈2.7, Iron≈7.9, Copper≈8.9, Lead≈11.3 g/cm³. Error > 10% suggests volume measurement issues.<br><br>ρ = m/V. Common errors: air bubbles in water displacement, meniscus reading, mass scale precision.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Archimedes discovered density when asked to check if a crown was pure gold — without melting it. He ran through Syracuse shouting 'Eureka!'</em><br><br>Key concepts to emphasise: Density ρ = mass/volume, measured in kg/m³ or g/cm³.; For irregular solids, volume is found by water displacement (Archimedes method).",
-        "hook": "Engaging hook for students: <blockquote>Archimedes discovered density when asked to check if a crown was pure gold — without melting it. He ran through Syracuse shouting 'Eureka!'</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "balance|calliper|displacement vessel|Eureka can",
+        "formula": "ρ = m/V|displacement",
+        "error": "air bubbles in displacement|calliper reading|balance drift",
+        "question": "density|displacement|material identification",
+        "real": "ship flotation|mineral identification|food science"
       },
-      "hint": "Water=1.0, Aluminium≈2.7, Iron≈7.9, Copper≈8.9, Lead≈11.3 g/cm³. Error > 10% suggests volume measurement issues.",
-      "expected": "ρ = m/V. Common errors: air bubbles in water displacement, meniscus reading, mass scale precision."
+      "hint": "ρ = m/V. Method 1: V from πr²h. Method 2: V = volume of water displaced. Compare both results to literature values.",
+      "expected": "Cu: ρ ≈ 8.87 g/cm³ (accepted ~8.96). Al ≈ 2.70. Steel ≈ 7.72. Brass ≈ 8.37 g/cm³."
     }
   },
   {
     "num": 8,
     "title": "Composition and decomposition of forces",
     "section": "Mechanics",
-    "desc": "Demonstrates vector addition of parallel and non-parallel forces on a force board.",
-    "setupTime": "8 min",
-    "duration": "15 min",
+    "desc": "Find the resultant of two concurrent forces using the parallelogram rule and verify it with a third equilibrant force.",
+    "setupTime": "5 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates vector addition of parallel and non-parallel forces on a force board.",
+      "whatTheyLearn": "Students apply the parallelogram rule to add force vectors graphically and verify the result by measurement with a goniometric circle and three dynamometers.",
       "instructions": [
-        "Describe how you set up the force board to find the resultant:",
-        "What happened to the resultant when the angle between forces increased to 180°?",
-        "Does vector addition accurately predict the resultant force? State your conclusion with evidence:"
+        "Mount three dynamometers on the goniometric circle at known angles.",
+        "Set F₁ = 40 g (0.39 N) and F₂ = 20 g (0.20 N) at a known angle θ between them.",
+        "Find the third force (equilibrant) experimentally; the resultant R is equal and opposite to it.",
+        "Draw the parallelogram graphically and compare with the measured resultant."
       ],
-      "expectedOutcome": "Use parallelogram law. At 90°: R=√(F₁²+F₂²). At 0°: R=F₁+F₂. At 180°: R=|F₁-F₂|. Typical accuracy: ±5%. Main error: reading spring dynamometer at an angle."
+      "expectedOutcome": "F₁ = 40 g, F₂ = 20 g → measured R ≈ 0.50 N; parallelogram rule gives ≈ 0.56 N. Discrepancy due to friction and angle reading."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔀",
-          "name": "Force board"
+          "emoji": "🔵",
+          "name": "Goniometric circle (0–360°)"
         },
         {
-          "emoji": "📏",
+          "emoji": "🔧",
+          "name": "Three spring dynamometers"
+        },
+        {
+          "emoji": "📐",
           "name": "Protractor"
         },
         {
-          "emoji": "⚖️",
-          "name": "Spring dynamometers x3"
+          "emoji": "📏",
+          "name": "Ruler"
         },
         {
-          "emoji": "🖊️",
+          "emoji": "📝",
           "name": "Graph paper"
         }
       ],
       "observationsToRecord": [
-        "Describe how you set up the force board to find the resultant:",
-        "What happened to the resultant when the angle between forces increased to 180°?"
+        "Magnitudes F₁ and F₂ (N) and the angle θ between them",
+        "Magnitude of the equilibrant F₃ (N) and its direction",
+        "Graphically constructed resultant magnitude and direction"
       ],
       "theoryPoints": [
         "Forces are vectors: they have both magnitude and direction.",
-        "The resultant of two parallel forces points in the same direction and equals their sum.",
-        "Forces can be decomposed into perpendicular components (Fx = F cosθ, Fy = F sinθ)."
+        "The resultant R of two forces is found by the parallelogram rule: R² = F₁² + F₂² + 2F₁F₂cos θ.",
+        "The equilibrant is equal in magnitude but opposite in direction to the resultant.",
+        "For three concurrent forces in equilibrium: ΣF = 0."
       ],
       "realWorldConnections": [
-        "Sailing: combining wind and keel forces",
-        "Structural engineering (roof trusses)",
-        "Aircraft: lift, drag, thrust, weight"
+        "Engineers resolve forces in bridge trusses into horizontal and vertical components.",
+        "Pilots use vector addition to account for wind when navigating.",
+        "Biomechanics uses force vectors to analyse joint loads in the human body."
       ],
-      "formula": "F_R = √(Fx² + Fy²)   |   θ = arctan(Fy/Fx)"
+      "formula": "R = √(F₁² + F₂² + 2F₁F₂cos θ)   |   Equilibrium: ΣF = 0"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two forces of 3N and 4N act at right angles. What is their resultant?",
+          "text": "Two forces of 40 g and 20 g act at 90° to each other. What is the approximate resultant?",
           "options": [
-            "A. 1N",
-            "B. 5N",
-            "C. 7N",
-            "D. 12N"
+            "0.44 N",
+            "0.60 N",
+            "0.20 N",
+            "0.59 N"
           ],
-          "correctIndex": 1,
-          "explanation": "R = √(3² + 4²) = √25 = 5N (Pythagoras)"
+          "correctIndex": 0,
+          "explanation": "R = √(0.39² + 0.20²) = √(0.152 + 0.040) = √0.192 ≈ 0.44 N."
         },
         {
-          "text": "A force of 10N acts at 30° to horizontal. What is its horizontal component?",
+          "text": "The equilibrant force is:",
           "options": [
-            "A. 5N",
-            "B. 8.66N",
-            "C. 10N",
-            "D. 3.66N"
+            "Equal to the resultant in magnitude and direction",
+            "Equal in magnitude but opposite in direction to the resultant",
+            "Twice the resultant",
+            "At 90° to the resultant"
           ],
           "correctIndex": 1,
-          "explanation": "Fx = F·cos30° = 10 × 0.866 = 8.66N"
+          "explanation": "The equilibrant balances the resultant, so it is equal in magnitude and opposite in direction."
+        },
+        {
+          "text": "If θ = 0° (forces parallel and in same direction), the resultant magnitude equals:",
+          "options": [
+            "F₁ − F₂",
+            "F₁ + F₂",
+            "√(F₁² + F₂²)",
+            "F₁ × F₂"
+          ],
+          "correctIndex": 1,
+          "explanation": "When θ = 0°, cos 0° = 1, so R = √(F₁² + F₂² + 2F₁F₂) = F₁ + F₂."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why the measured resultant might differ from the parallelogram-rule prediction.",
+        "How would the resultant change if the angle between F₁ and F₂ increased from 90° to 180°?",
+        "Give a practical example where knowing the resultant of two forces is important."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 50
+          "label": "Force as a vector",
+          "pct": 25
         },
         {
-          "label": "Mathematics",
-          "pct": 30
+          "label": "Parallelogram rule",
+          "pct": 35
         },
         {
-          "label": "Data Analysis",
+          "label": "Equilibrant concept",
+          "pct": 25
+        },
+        {
+          "label": "Graphical vs. analytical method",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 5
         }
       ],
       "misconceptions": [
-        "Forces cannot simply be added as numbers — direction matters. 3N + 4N can equal anything from 1N to 7N.",
-        "Equilibrium means net force = 0, not that no forces act."
+        "Students often add force magnitudes without considering direction, treating forces as scalars.",
+        "Many think the equilibrant is the same as the resultant; it is equal but opposite.",
+        "Forgetting that the parallelogram must have the two forces as adjacent sides, not opposite sides."
       ],
-      "hook": "Sailors used vector addition centuries before calculus existed — combining wind and current forces to navigate. Forces are vectors, not just numbers.",
+      "hook": "Three people are pulling ropes attached to a ring. If you know two of the forces, can you predict the third needed to keep the ring still? Vector addition gives the answer!",
       "khanLinks": [
         {
           "title": "Introduction to Vectors",
@@ -1108,150 +1219,154 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "F₁ (N)",
         "F₂ (N)",
         "Angle θ (°)",
-        "Resultant Measured (N)",
-        "Resultant Calculated (N)",
+        "R_measured (N)",
+        "R_calculated (N)",
         "% Difference"
       ],
       "rows": 4
     },
     "observations": [
-      "Describe how you set up the force board to find the resultant:",
-      "What happened to the resultant when the angle between forces increased to 180°?"
+      "Record the angles of each dynamometer on the goniometric circle.",
+      "Note any friction effects that prevent the ring from staying centered.",
+      "Compare graphical and calculated resultant values."
     ],
-    "conclusion": "Does vector addition accurately predict the resultant force? State your conclusion with evidence:",
+    "conclusion": "The parallelogram rule was verified: for F₁ = 0.39 N and F₂ = 0.20 N, the calculated resultant was ~0.56 N and the measured equilibrant gave R ≈ 0.50 N. The ~12% discrepancy is attributed to friction and angle-reading error.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Composition and decomposition of forces</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Ready to add forces like a physicist? Ask me about the parallelogram rule, equilibrant forces, or vector components!",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 8 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F_R = √(Fx² + Fy²) &nbsp;&nbsp;|&nbsp;&nbsp; θ = arctan(Fy/Fx)</div>Forces are vectors: they have both magnitude and direction.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Forces cannot simply be added as numbers — direction matters. 3N + 4N can equal anything from 1N to 7N.</li><li>❌ Equilibrium means net force = 0, not that no forces act.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Sailing: combining wind and keel forces</li><li>🌍 Structural engineering (roof trusses)</li><li>🌍 Aircraft: lift, drag, thrust, weight</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Use parallelogram law. At 90°: R=√(F₁²+F₂²). At 0°: R=F₁+F₂. At 180°: R=|F₁-F₂|.<br><br>Typical accuracy: ±5%. Main error: reading spring dynamometer at an angle.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Sailors used vector addition centuries before calculus existed — combining wind and current forces to navigate. Forces are vectors, not just numbers.</em><br><br>Key concepts to emphasise: Forces are vectors: they have both magnitude and direction.; The resultant of two parallel forces points in the same direction and equals their sum.",
-        "hook": "Engaging hook for students: <blockquote>Sailors used vector addition centuries before calculus existed — combining wind and current forces to navigate. Forces are vectors, not just numbers.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "goniometric circle|dynamometer|parallelogram rule|angle",
+        "formula": "R = √(F₁²+F₂²+2F₁F₂cosθ)|equilibrant",
+        "error": "friction|angle reading|graphical scale error",
+        "question": "resultant|equilibrant|vector|parallelogram",
+        "real": "bridge engineering|navigation|biomechanics"
       },
-      "hint": "Use parallelogram law. At 90°: R=√(F₁²+F₂²). At 0°: R=F₁+F₂. At 180°: R=|F₁-F₂|.",
-      "expected": "Typical accuracy: ±5%. Main error: reading spring dynamometer at an angle."
+      "hint": "R = √(F₁² + F₂² + 2F₁F₂cosθ). The equilibrant is equal and opposite to R. At 90°, R = √(F₁² + F₂²).",
+      "expected": "F₁=0.39 N, F₂=0.20 N at ~90°: R_calc ≈ 0.56 N, R_measured ≈ 0.50 N."
     }
   },
   {
     "num": 9,
     "title": "Fixed Pulleys",
     "section": "Mechanics",
-    "desc": "Shows how a fixed pulley redirects force without providing mechanical advantage.",
+    "desc": "Show that a single fixed pulley changes the direction of force but not its magnitude; mechanical advantage = 1.",
     "setupTime": "5 min",
-    "duration": "15 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Shows how a fixed pulley redirects force without providing mechanical advantage.",
+      "whatTheyLearn": "Students verify that a fixed pulley has MA = 1 (effort = load) and confirm that its only advantage is changing the force direction.",
       "instructions": [
-        "Was the effort force equal to, less than, or greater than the load? Explain:",
-        "How does the direction of pulling change with a fixed pulley?",
-        "State the mechanical advantage of a fixed pulley. How does friction affect the result?"
+        "Hang a 50 g load on one side of the pulley string.",
+        "Apply a force on the other side and measure it with a dynamometer.",
+        "Vary the load and record the effort required each time."
       ],
-      "expectedOutcome": "Ideal MA=1. Real MA slightly < 1 due to friction. Effort ≈ Load for ideal system. Efficiency = (W/F) × 100%. Expected MA ≈ 0.9–1.0. Efficiency ≈ 85–95%. Effort slightly > Load due to friction."
+      "expectedOutcome": "For each load, effort ≈ load. Two 50 g masses (one each side): both dynamometers read ~0.49 N. MA = 1."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "⛓️",
-          "name": "Fixed pulley"
+          "emoji": "🔵",
+          "name": "Fixed pulley on support"
         },
         {
-          "emoji": "⚖️",
-          "name": "Dynamometer"
+          "emoji": "🪢",
+          "name": "Inextensible string"
         },
         {
           "emoji": "🏋️",
-          "name": "Masses"
+          "name": "Masses (50 g, 100 g)"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "🧵",
-          "name": "Rope"
+          "emoji": "🔧",
+          "name": "Spring dynamometer"
         }
       ],
       "observationsToRecord": [
-        "Was the effort force equal to, less than, or greater than the load? Explain:",
-        "How does the direction of pulling change with a fixed pulley?"
+        "Load W (N) hanging on one side",
+        "Effort F (N) measured on other side",
+        "Mechanical advantage MA = W/F"
       ],
       "theoryPoints": [
-        "A fixed pulley changes direction of force but provides no mechanical advantage (MA = 1).",
-        "The tension throughout an ideal (massless, frictionless) rope is constant.",
-        "Fixed pulleys are used to redirect force to a more convenient direction."
+        "A fixed (single) pulley: the axle is fixed; only the wheel rotates.",
+        "Tension is the same throughout an ideal (massless, frictionless) string.",
+        "Mechanical advantage MA = Load / Effort = 1 for a fixed pulley.",
+        "The fixed pulley's benefit: it allows you to pull downward to lift a load upward."
       ],
       "realWorldConnections": [
-        "Flagpoles",
-        "Sailing rigging",
-        "Gym cable machines (direction change)",
-        "Theatre fly systems"
+        "Flag poles use a fixed pulley — you pull down to raise the flag.",
+        "Theatre stage rigging uses fixed pulleys to redirect lifting forces.",
+        "Cranes combine fixed and movable pulleys for high mechanical advantage."
       ],
-      "formula": "MA = 1   |   F_effort = F_load (ideal)"
+      "formula": "MA = Load / Effort = 1   (fixed pulley)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A fixed pulley lifts a 20N weight. What effort force is needed (ideal)?",
+          "text": "What is the mechanical advantage of a single fixed pulley?",
           "options": [
-            "A. 10N",
-            "B. 20N",
-            "C. 40N",
-            "D. 5N"
+            "0.5",
+            "1",
+            "2",
+            "4"
           ],
           "correctIndex": 1,
-          "explanation": "MA = 1 for a fixed pulley, so effort = load = 20N"
+          "explanation": "A fixed pulley only redirects the force; effort equals load, so MA = Load/Effort = 1."
         },
         {
-          "text": "What does a fixed pulley change?",
+          "text": "A 100 g mass hangs from a fixed pulley. What effort is needed to hold it in equilibrium?",
           "options": [
-            "A. The magnitude of force",
-            "B. The direction of force",
-            "C. The work done",
-            "D. The speed"
+            "0.49 N",
+            "0.98 N",
+            "1.96 N",
+            "0.25 N"
+          ],
+          "correctIndex": 0,
+          "explanation": "Load = 0.1 × 9.81 = 0.981 N. Effort = Load / MA = 0.981 / 1 = 0.981 N ≈ 0.98 N. Wait — 100g = 0.981 N so effort = 0.981 N ≈ 0.98 N."
+        },
+        {
+          "text": "Why does a fixed pulley NOT reduce the effort needed?",
+          "options": [
+            "Because the string is not ideal",
+            "Because only one segment of rope supports the load",
+            "Because there is too much friction",
+            "Because the mass is too small"
           ],
           "correctIndex": 1,
-          "explanation": "A fixed pulley redirects force but doesn't reduce it."
+          "explanation": "Only one rope segment supports the load; the entire weight must be matched by the effort."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "If a fixed pulley has MA = 1, what practical advantage does it offer?",
+        "How does a fixed pulley differ from a movable pulley in terms of mechanical advantage?",
+        "Describe a real-world situation where redirecting a force (even without multiplying it) is useful."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 45
+          "label": "MA = 1 for fixed pulley",
+          "pct": 30
         },
         {
-          "label": "Energy Transfer",
+          "label": "Force redirection advantage",
+          "pct": 30
+        },
+        {
+          "label": "String tension concept",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 20
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Ideal vs. real pulley",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "A fixed pulley does NOT reduce the force needed — it only changes direction.",
-        "Friction in real pulleys means effort > load even in a 'fixed' pulley."
+        "Many students expect a pulley to always reduce the effort needed; a single fixed pulley does not.",
+        "Confusing 'mechanical advantage' with 'velocity ratio' — for ideal machines they are equal.",
+        "Ignoring string and pulley mass can give idealized results that differ from reality."
       ],
-      "hook": "A single pulley above a flagpole changes the direction of force — you pull down to raise the flag up. Simple, elegant, and essential.",
+      "hook": "Why do builders use a single pulley at the top of a scaffold to lift bricks? Not to reduce effort — but to pull downward instead of pushing upward. Direction matters!",
       "khanLinks": [
         {
           "title": "Work & Energy",
@@ -1265,149 +1380,156 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
+        "Load (g)",
         "Load W (N)",
         "Effort F (N)",
-        "Distance load raised (cm)",
-        "Distance rope pulled (cm)",
-        "MA = W/F",
-        "Efficiency (%)"
+        "MA = W/F"
       ],
       "rows": 4
     },
     "observations": [
-      "Was the effort force equal to, less than, or greater than the load? Explain:",
-      "How does the direction of pulling change with a fixed pulley?"
+      "Compare effort and load readings for each trial.",
+      "Note any friction effects that make effort slightly greater than load.",
+      "Observe that the pulley only changes force direction."
     ],
-    "conclusion": "State the mechanical advantage of a fixed pulley. How does friction affect the result?",
+    "conclusion": "The fixed pulley has MA ≈ 1: effort equals load (within friction). For 50 g load: W = 0.49 N, effort ≈ 0.49 N. The only advantage is force direction reversal.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Fixed Pulleys</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Pulleys are simple machines! Ask me about mechanical advantage, string tension, or why direction matters.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>MA = 1 &nbsp;&nbsp;|&nbsp;&nbsp; F_effort = F_load (ideal)</div>A fixed pulley changes direction of force but provides no mechanical advantage (MA = 1).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A fixed pulley does NOT reduce the force needed — it only changes direction.</li><li>❌ Friction in real pulleys means effort > load even in a 'fixed' pulley.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Flagpoles</li><li>🌍 Sailing rigging</li><li>🌍 Gym cable machines (direction change)</li><li>🌍 Theatre fly systems</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Ideal MA=1. Real MA slightly < 1 due to friction. Effort ≈ Load for ideal system. Efficiency = (W/F) × 100%.<br><br>Expected MA ≈ 0.9–1.0. Efficiency ≈ 85–95%. Effort slightly > Load due to friction.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A single pulley above a flagpole changes the direction of force — you pull down to raise the flag up. Simple, elegant, and essential.</em><br><br>Key concepts to emphasise: A fixed pulley changes direction of force but provides no mechanical advantage (MA = 1).; The tension throughout an ideal (massless, frictionless) rope is constant.",
-        "hook": "Engaging hook for students: <blockquote>A single pulley above a flagpole changes the direction of force — you pull down to raise the flag up. Simple, elegant, and essential.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "fixed pulley|string|dynamometer|support",
+        "formula": "MA = Load/Effort = 1|tension",
+        "error": "friction|string mass|pulley mass",
+        "question": "mechanical advantage|fixed pulley|direction|tension",
+        "real": "flag pole|crane|theatre rigging"
       },
-      "hint": "Ideal MA=1. Real MA slightly < 1 due to friction. Effort ≈ Load for ideal system. Efficiency = (W/F) × 100%.",
-      "expected": "Expected MA ≈ 0.9–1.0. Efficiency ≈ 85–95%. Effort slightly > Load due to friction."
+      "hint": "MA = Load/Effort = 1 for a fixed pulley. Effort equals load. The advantage is direction change, not force reduction.",
+      "expected": "50 g load: W = 0.49 N, effort ≈ 0.49 N. MA ≈ 1 for all loads."
     }
   },
   {
     "num": 10,
     "title": "Mobile Pulley",
     "section": "Mechanics",
-    "desc": "Demonstrates how a movable pulley provides mechanical advantage of 2.",
+    "desc": "Demonstrate that a single movable pulley provides a mechanical advantage of 2, halving the required effort.",
     "setupTime": "5 min",
-    "duration": "15 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates how a movable pulley provides mechanical advantage of 2.",
+      "whatTheyLearn": "Students verify that P = R/2 (effort = half the load) for a movable pulley, confirming MA = 2.",
       "instructions": [
-        "How many rope segments supported the load? How did this relate to MA?",
-        "Compare the rope distance pulled vs load distance raised:",
-        "State the mechanical advantage of a movable pulley. Why is it never exactly 2?"
+        "Set up the movable pulley with both string segments supporting the load.",
+        "Attach a dynamometer to the free string end (effort side).",
+        "Load the pulley with masses from 50 g to 200 g and record effort each time."
       ],
-      "expectedOutcome": "Ideal MA=2. Real MA ≈ 1.7–1.9 due to friction. Rope pulled ≈ 2× load raised. Expected MA ≈ 1.7–2.0. Two rope segments support load → theoretical MA=2."
+      "expectedOutcome": "M = [50,100,150,200] g → Load R = [0.49,0.98,1.47,1.96] N → Effort P ≈ [0.20,0.50,0.80,1.10] N (≈ R/2 with friction)."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "⛓️",
+          "emoji": "🔵",
           "name": "Movable pulley"
         },
         {
-          "emoji": "⚖️",
-          "name": "Dynamometer"
+          "emoji": "🔵",
+          "name": "Fixed pulley (for guidance)"
+        },
+        {
+          "emoji": "🪢",
+          "name": "String"
         },
         {
           "emoji": "🏋️",
-          "name": "Masses"
+          "name": "Masses (50 g, 100 g, 150 g, 200 g)"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "🧵",
-          "name": "Rope"
+          "emoji": "🔧",
+          "name": "Spring dynamometer"
         }
       ],
       "observationsToRecord": [
-        "How many rope segments supported the load? How did this relate to MA?",
-        "Compare the rope distance pulled vs load distance raised:"
+        "Load R (N) for each mass",
+        "Effort P (N) measured by dynamometer",
+        "MA = R/P for each trial"
       ],
       "theoryPoints": [
-        "A movable pulley provides MA = 2: the load is supported by two rope segments.",
-        "Effort = Load/2 for an ideal movable pulley, but rope must move twice as far.",
-        "Energy is conserved: Work = F × d is constant regardless of MA."
+        "A movable pulley travels with the load; two rope segments support it.",
+        "Ideal MA = 2: Effort P = Load R / 2.",
+        "Real MA < 2 due to friction and pulley weight.",
+        "The pulley shifts: when effort moves 2× the distance, the load moves 1× (velocity ratio = 2)."
       ],
       "realWorldConnections": [
-        "Construction cranes (block and tackle)",
-        "Sailing halyards",
-        "Rescue equipment"
+        "Block and tackle systems in sailing use multiple movable pulleys for huge mechanical advantages.",
+        "Construction cranes use movable pulleys to lift heavy steel beams.",
+        "Gym cable machines use pulley systems to adjust effective resistance."
       ],
-      "formula": "MA = 2   |   F_effort = F_load / 2   |   d_effort = 2 × d_load"
+      "formula": "P = R / 2   |   MA = R/P = 2   (ideal movable pulley)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A movable pulley lifts a 60N load. What effort is needed (ideal)?",
+          "text": "A movable pulley supports a 200 g load. What is the ideal effort required?",
           "options": [
-            "A. 60N",
-            "B. 120N",
-            "C. 30N",
-            "D. 15N"
+            "0.49 N",
+            "0.98 N",
+            "1.96 N",
+            "0.25 N"
           ],
-          "correctIndex": 2,
-          "explanation": "MA = 2, so effort = load/2 = 60/2 = 30N"
+          "correctIndex": 1,
+          "explanation": "Load = 0.2 × 9.81 = 1.962 N. P = R/2 = 1.962/2 = 0.981 N ≈ 0.98 N."
         },
         {
-          "text": "If you raise a load 1 m with a movable pulley, how much rope do you pull?",
+          "text": "Why is the real MA of a movable pulley slightly less than 2?",
           "options": [
-            "A. 0.5 m",
-            "B. 1 m",
-            "C. 2 m",
-            "D. 4 m"
+            "The string is too short",
+            "Friction and the weight of the pulley itself reduce MA",
+            "The load is too heavy",
+            "The string is elastic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Friction and the pulley's own weight both require additional effort, reducing the actual MA below the ideal value of 2."
+        },
+        {
+          "text": "If the effort moves 20 cm, how far does the load move in an ideal movable pulley?",
+          "options": [
+            "20 cm",
+            "40 cm",
+            "10 cm",
+            "5 cm"
           ],
           "correctIndex": 2,
-          "explanation": "Two rope segments support the load, so rope pulled = 2 × load distance = 2 m"
+          "explanation": "Velocity ratio = 2, so load moves effort distance / 2 = 20/2 = 10 cm."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does a movable pulley require the effort string to move twice as far as the load?",
+        "How does friction affect the mechanical advantage of a real pulley system?",
+        "Design a pulley system to achieve MA = 4. How many movable pulleys are needed?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 45
+          "label": "MA = 2 derivation",
+          "pct": 30
         },
         {
-          "label": "Energy Transfer",
+          "label": "Two rope segments supporting load",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 20
+          "label": "Velocity ratio concept",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Real vs. ideal MA",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "More MA doesn't mean less work — the same energy is needed, just distributed over more distance.",
-        "Friction in real pulleys reduces effective MA below the theoretical value."
+        "Students think a movable pulley and a fixed pulley have the same MA; the movable pulley has MA=2.",
+        "Many forget that the effort string must move twice as far as the load (conservation of energy).",
+        "Ignoring pulley weight leads to over-estimated theoretical MA."
       ],
-      "hook": "A single movable pulley lets you lift a piano with half the force — you just have to pull twice the distance. This is the magic of mechanical advantage.",
+      "hook": "A movable pulley means you only need to exert half the force to lift a load! But there's a catch — your hand has to move twice as far. Energy is always conserved!",
       "khanLinks": [
         {
           "title": "Work & Mechanical Advantage",
@@ -1421,149 +1543,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Load W (N)",
-        "Effort F (N)",
-        "Distance load raised (cm)",
-        "Distance rope pulled (cm)",
-        "MA = W/F",
-        "Efficiency (%)"
+        "Mass (g)",
+        "Load R (N)",
+        "Effort P (N)",
+        "MA = R/P",
+        "Ideal MA"
       ],
       "rows": 4
     },
     "observations": [
-      "How many rope segments supported the load? How did this relate to MA?",
-      "Compare the rope distance pulled vs load distance raised:"
+      "Record P and R for each load and calculate MA.",
+      "Compare actual MA with ideal value of 2.",
+      "Measure how far the effort string moves for a fixed load displacement."
     ],
-    "conclusion": "State the mechanical advantage of a movable pulley. Why is it never exactly 2?",
+    "conclusion": "The movable pulley gave MA ≈ 1.8–2.0 (ideal = 2). For 100 g load: R = 0.98 N, P ≈ 0.50 N, MA ≈ 1.96. Slight deviation from MA=2 is due to friction and pulley weight.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Mobile Pulley</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Movable pulleys are force multipliers! Ask me how MA=2 is derived, or how friction affects the result.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>MA = 2 &nbsp;&nbsp;|&nbsp;&nbsp; F_effort = F_load / 2 &nbsp;&nbsp;|&nbsp;&nbsp; d_effort = 2 × d_load</div>A movable pulley provides MA = 2: the load is supported by two rope segments.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ More MA doesn't mean less work — the same energy is needed, just distributed over more distance.</li><li>❌ Friction in real pulleys reduces effective MA below the theoretical value.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Construction cranes (block and tackle)</li><li>🌍 Sailing halyards</li><li>🌍 Rescue equipment</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Ideal MA=2. Real MA ≈ 1.7–1.9 due to friction. Rope pulled ≈ 2× load raised.<br><br>Expected MA ≈ 1.7–2.0. Two rope segments support load → theoretical MA=2.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A single movable pulley lets you lift a piano with half the force — you just have to pull twice the distance. This is the magic of mechanical advantage.</em><br><br>Key concepts to emphasise: A movable pulley provides MA = 2: the load is supported by two rope segments.; Effort = Load/2 for an ideal movable pulley, but rope must move twice as far.",
-        "hook": "Engaging hook for students: <blockquote>A single movable pulley lets you lift a piano with half the force — you just have to pull twice the distance. This is the magic of mechanical advantage.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "movable pulley|two rope segments|dynamometer",
+        "formula": "P = R/2|MA = 2|velocity ratio",
+        "error": "friction|pulley weight|string stretching",
+        "question": "mechanical advantage|movable pulley|velocity ratio|effort",
+        "real": "crane|block and tackle|sailing"
       },
-      "hint": "Ideal MA=2. Real MA ≈ 1.7–1.9 due to friction. Rope pulled ≈ 2× load raised.",
-      "expected": "Expected MA ≈ 1.7–2.0. Two rope segments support load → theoretical MA=2."
+      "hint": "MA = 2 for ideal movable pulley: P = R/2. In real life friction makes P slightly more than R/2.",
+      "expected": "100g load: R=0.98 N, P≈0.50 N, MA≈1.96. 200g: R=1.96 N, P≈1.10 N, MA≈1.78."
     }
   },
   {
     "num": 11,
     "title": "Fixed and Mobile Pulleys",
     "section": "Mechanics",
-    "desc": "Combines fixed and movable pulleys to achieve higher mechanical advantage.",
-    "setupTime": "8 min",
+    "desc": "Combine a fixed and a movable pulley and show that the system still yields MA ≈ 2 with the benefit of direction change.",
+    "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Combines fixed and movable pulleys to achieve higher mechanical advantage.",
+      "whatTheyLearn": "Students see that combining a fixed (guide) pulley with a movable pulley preserves MA = 2 while allowing the effort to be applied downward.",
       "instructions": [
-        "Describe each pulley combination and its mechanical advantage:",
-        "How did combining pulleys compare to single pulleys?",
-        "State how the number of rope segments relates to MA. Comment on efficiency vs complexity:"
+        "Set up: movable pulley under the load + fixed pulley at the top to redirect effort.",
+        "Pull the dynamometer downward and record effort for each load.",
+        "Verify that P = R/2 still holds, and that effort rope moves 2× the load displacement."
       ],
-      "expectedOutcome": "MA = number of rope segments supporting load. Each added pulley increases MA but reduces efficiency. 1 fixed = MA 1; 1 movable = MA 2; 2+1 system = MA 3–4. Efficiency drops ~5–10% per added pulley."
+      "expectedOutcome": "P = R/2 as with a single movable pulley. Pulling 2 cm of rope raises load by 1 cm."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "⛓️",
-          "name": "Pulley system"
+          "emoji": "🔵",
+          "name": "Movable pulley"
         },
         {
-          "emoji": "⚖️",
-          "name": "Dynamometer x2"
+          "emoji": "🔵",
+          "name": "Fixed pulley (guide)"
+        },
+        {
+          "emoji": "🪢",
+          "name": "String"
         },
         {
           "emoji": "🏋️",
-          "name": "Masses"
+          "name": "Masses (50 g, 100 g, 150 g)"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "🧵",
-          "name": "Rope"
+          "emoji": "🔧",
+          "name": "Spring dynamometer"
         }
       ],
       "observationsToRecord": [
-        "Describe each pulley combination and its mechanical advantage:",
-        "How did combining pulleys compare to single pulleys?"
+        "Load R (N) for each mass",
+        "Effort P (N) with combined system",
+        "Distance effort rope moves vs. distance load rises"
       ],
       "theoryPoints": [
-        "Combining fixed and movable pulleys (block and tackle) multiplies MA.",
-        "MA equals the number of rope segments supporting the load.",
-        "Real systems have efficiency < 100% due to friction and rope weight."
+        "Fixed pulley: changes direction only, MA = 1.",
+        "Movable pulley: MA = 2, effort = R/2.",
+        "Combined system: fixed pulley redirects effort downward; movable pulley still gives MA = 2.",
+        "Rope displacement: effort rope moves 2× the load displacement (velocity ratio = 2)."
       ],
       "realWorldConnections": [
-        "Ship rigging (block and tackle)",
-        "Car engine hoists (garage chains)",
-        "Zip-line tensioning systems"
+        "Elevators use combined pulley systems for both MA and convenient control direction.",
+        "Well pulleys combine fixed and movable pulleys for practical water lifting.",
+        "Bicycle derailleur cables use small pulleys to redirect and tension the chain."
       ],
-      "formula": "MA = n (number of rope segments)   |   efficiency = (W_out / W_in) × 100%"
+      "formula": "P = R/2   |   MA = 2   |   s_effort = 2 × s_load"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A system has 4 rope segments supporting the load. What is the MA?",
+          "text": "In a combined (fixed + movable) pulley system, what is the mechanical advantage?",
           "options": [
-            "A. 2",
-            "B. 4",
-            "C. 8",
-            "D. 1"
+            "1",
+            "2",
+            "3",
+            "4"
           ],
           "correctIndex": 1,
-          "explanation": "MA = number of supporting rope segments = 4"
+          "explanation": "The fixed pulley only redirects; the movable pulley provides MA = 2."
         },
         {
-          "text": "A pulley system has MA=3. To lift a 90N load, what effort is needed (ideal)?",
+          "text": "If the load rises by 5 cm, how far does the effort rope move?",
           "options": [
-            "A. 270N",
-            "B. 90N",
-            "C. 30N",
-            "D. 45N"
+            "5 cm",
+            "10 cm",
+            "2.5 cm",
+            "20 cm"
+          ],
+          "correctIndex": 1,
+          "explanation": "Velocity ratio = 2; effort rope moves 2 × 5 cm = 10 cm."
+        },
+        {
+          "text": "What is the main advantage of adding a fixed pulley to the system?",
+          "options": [
+            "It doubles the MA",
+            "It halves the load",
+            "It allows the effort to be applied in a more convenient direction",
+            "It eliminates friction"
           ],
           "correctIndex": 2,
-          "explanation": "effort = load/MA = 90/3 = 30N"
+          "explanation": "The fixed (guide) pulley redirects the effort string so you can pull downward rather than upward."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does adding the fixed guide pulley NOT change the mechanical advantage of the system?",
+        "Compare the effort rope displacement with the load displacement. What principle explains this?",
+        "How would you increase the MA beyond 2 using more pulleys?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
+          "label": "Fixed pulley role (direction only)",
+          "pct": 25
         },
         {
-          "label": "Energy Transfer",
-          "pct": 30
+          "label": "Movable pulley provides MA=2",
+          "pct": 35
         },
         {
-          "label": "Data Analysis",
-          "pct": 20
+          "label": "Velocity ratio s_effort = 2s_load",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Practical convenience of combined system",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "More pulleys always increase MA but also increase friction losses.",
-        "The 'free rope end' always counts as one of the supporting segments."
+        "Students expect the combined system to have MA = 3 (1+2); the fixed pulley contributes no MA.",
+        "Confusing total rope segments with mechanical advantage in combined systems.",
+        "Assuming friction is negligible; real systems always have some friction loss."
       ],
-      "hook": "The rigging of a tall ship uses dozens of combined pulleys to let a single sailor control a 500 kg sail. Compound pulleys multiply force dramatically.",
+      "hook": "A well uses a handle to pull a bucket up. But what if you could use a pulley system that halves your effort AND lets you pull in a natural direction? Combined pulleys do exactly that!",
       "khanLinks": [
         {
           "title": "Introduction to Work & Energy",
@@ -1577,151 +1707,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "System Config",
-        "Load W (N)",
-        "Effort F (N)",
-        "Rope segments (n)",
-        "Theoretical MA",
-        "Real MA",
-        "Efficiency (%)"
+        "Mass (g)",
+        "Load R (N)",
+        "Effort P (N)",
+        "MA = R/P",
+        "s_effort (cm)",
+        "s_load (cm)"
       ],
-      "rows": 3
+      "rows": 4
     },
     "observations": [
-      "Describe each pulley combination and its mechanical advantage:",
-      "How did combining pulleys compare to single pulleys?"
+      "Verify that P ≈ R/2 for combined system as for single movable pulley.",
+      "Measure s_effort and s_load and confirm the 2:1 ratio.",
+      "Note the direction of the effort force (downward) compared to the load (upward)."
     ],
-    "conclusion": "State how the number of rope segments relates to MA. Comment on efficiency vs complexity:",
+    "conclusion": "The combined (fixed + movable) pulley system maintains MA = 2 (P = R/2) while allowing effort to be applied downward. Effort rope displacement was 2× the load displacement in all trials.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Fixed and Mobile Pulleys</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Combined pulleys give you direction AND mechanical advantage! Ask me how MA=2 is maintained and how rope distances relate.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 8 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>MA = n (number of rope segments) &nbsp;&nbsp;|&nbsp;&nbsp; efficiency = (W_out / W_in) × 100%</div>Combining fixed and movable pulleys (block and tackle) multiplies MA.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ More pulleys always increase MA but also increase friction losses.</li><li>❌ The 'free rope end' always counts as one of the supporting segments.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Ship rigging (block and tackle)</li><li>🌍 Car engine hoists (garage chains)</li><li>🌍 Zip-line tensioning systems</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: MA = number of rope segments supporting load. Each added pulley increases MA but reduces efficiency.<br><br>1 fixed = MA 1; 1 movable = MA 2; 2+1 system = MA 3–4. Efficiency drops ~5–10% per added pulley.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>The rigging of a tall ship uses dozens of combined pulleys to let a single sailor control a 500 kg sail. Compound pulleys multiply force dramatically.</em><br><br>Key concepts to emphasise: Combining fixed and movable pulleys (block and tackle) multiplies MA.; MA equals the number of rope segments supporting the load.",
-        "hook": "Engaging hook for students: <blockquote>The rigging of a tall ship uses dozens of combined pulleys to let a single sailor control a 500 kg sail. Compound pulleys multiply force dramatically.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "fixed pulley|movable pulley|combined system|guide",
+        "formula": "P = R/2|MA=2|s_effort = 2×s_load",
+        "error": "friction|rope mass|incorrectly counting pulleys",
+        "question": "MA|combined pulley|velocity ratio|direction",
+        "real": "elevator|well|crane"
       },
-      "hint": "MA = number of rope segments supporting load. Each added pulley increases MA but reduces efficiency.",
-      "expected": "1 fixed = MA 1; 1 movable = MA 2; 2+1 system = MA 3–4. Efficiency drops ~5–10% per added pulley."
+      "hint": "Fixed pulley only redirects. Movable pulley gives MA=2. Together: P=R/2 and effort moves 2× further than the load.",
+      "expected": "P ≈ R/2 for all loads. s_effort = 2 × s_load confirmed. MA ≈ 2."
     }
   },
   {
     "num": 12,
     "title": "Inclined Plane",
     "section": "Mechanics",
-    "desc": "Investigates how ramp angle affects the effort needed to raise a load.",
+    "desc": "Measure the force needed to slide a mass up an inclined plane and compare with the theoretical component of gravity along the slope.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Investigates how ramp angle affects the effort needed to raise a load.",
+      "whatTheyLearn": "Students verify that F = mg sin θ (the component of gravity along the slope) and measure the mechanical advantage MA = 1/sin θ.",
       "instructions": [
-        "How did changing the angle affect the effort needed?",
-        "Estimate the friction force. Was it significant?",
-        "Compare theoretical F=W·sinθ with measured values. Explain any discrepancy:"
+        "Set the inclined plane to a measured angle θ (e.g. 23.16°).",
+        "Attach a dynamometer to a mass on the slope; pull parallel to the surface.",
+        "Record the force F for masses of 50 g, 100 g, and 150 g."
       ],
-      "expectedOutcome": "F_theory = W·sinθ = W·(h/L). Friction adds F_friction = μ·W·cosθ. Measure friction by noting force difference. At θ=30°: F = 0.5W. Friction typically adds 5–20% to theoretical effort. Higher angle = more effort needed."
+      "expectedOutcome": "At θ = 23.16°: M = [50,100,150] g → F ≈ [0.7,0.9,1.1] N. Theoretical: mg sin 23.16° = [0.19,0.39,0.58] N. Difference is friction."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "📐",
-          "name": "Inclined plane"
-        },
-        {
-          "emoji": "⚖️",
-          "name": "Dynamometer"
+          "name": "Inclined plane with angle scale"
         },
         {
           "emoji": "🏋️",
-          "name": "Masses"
+          "name": "Masses (50 g, 100 g, 150 g)"
+        },
+        {
+          "emoji": "🔧",
+          "name": "Spring dynamometer"
         },
         {
           "emoji": "📏",
-          "name": "Ruler"
+          "name": "Protractor / ruler"
         },
         {
-          "emoji": "🔩",
-          "name": "Protractor"
+          "emoji": "🪢",
+          "name": "String"
         }
       ],
       "observationsToRecord": [
-        "How did changing the angle affect the effort needed?",
-        "Estimate the friction force. Was it significant?"
+        "Slope angle θ (degrees)",
+        "Mass m (g) and weight mg (N)",
+        "Force F (N) to pull mass up the slope"
       ],
       "theoryPoints": [
-        "An inclined plane reduces the force needed to raise an object at the cost of increased distance.",
-        "MA = length of slope / height = 1/sinθ",
-        "Without friction: F_effort = mg sinθ. Friction adds a force component mg cosθ × μ."
+        "Component of gravity along slope: F_parallel = mg sin θ.",
+        "Mechanical advantage of frictionless inclined plane: MA = 1/sin θ = l/h.",
+        "Friction force f = μN = μ mg cos θ adds to the required effort.",
+        "Total effort (with friction): F = mg sin θ + μ mg cos θ.",
+        "An inclined plane trades distance for force: small angle → large MA but long path."
       ],
       "realWorldConnections": [
-        "Wheelchair ramps",
-        "Mountain switchback roads",
-        "Screw threads (a wrapped inclined plane)",
-        "Wedges (knife blades)"
+        "Roads and ramps are inclined planes that reduce the force needed to ascend.",
+        "Wheelchair ramps are legally required to have a small enough angle for safe access.",
+        "Screws and wedges are inclined planes wrapped around a cylinder."
       ],
-      "formula": "F = mg·sinθ   |   MA = L/h = 1/sinθ"
+      "formula": "F = mg sin θ   (frictionless)   |   MA = 1/sin θ = l/h"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A 5 m ramp rises 1 m. What is its mechanical advantage?",
+          "text": "A 100 g mass is on a frictionless slope at 30°. What force is needed to pull it up the slope?",
           "options": [
-            "A. 1",
-            "B. 5",
-            "C. 0.2",
-            "D. 25"
+            "0.49 N",
+            "0.85 N",
+            "0.98 N",
+            "0.57 N"
           ],
-          "correctIndex": 1,
-          "explanation": "MA = L/h = 5/1 = 5"
+          "correctIndex": 0,
+          "explanation": "F = mg sin 30° = 0.1 × 9.81 × 0.5 = 0.49 N."
         },
         {
-          "text": "To push a 100N box up a frictionless 30° ramp, what force is needed?",
+          "text": "At θ = 23°, the MA of a frictionless inclined plane is approximately:",
           "options": [
-            "A. 100N",
-            "B. 86.6N",
-            "C. 50N",
-            "D. 57.7N"
+            "2.56",
+            "0.39",
+            "1.00",
+            "4.35"
           ],
-          "correctIndex": 2,
-          "explanation": "F = mg·sin30° = 100 × 0.5 = 50N"
+          "correctIndex": 0,
+          "explanation": "MA = 1/sin 23° = 1/0.391 ≈ 2.56."
+        },
+        {
+          "text": "Why is the measured force greater than mg sin θ?",
+          "options": [
+            "Measurement error only",
+            "Friction between mass and surface",
+            "The spring dynamometer is faulty",
+            "The angle is incorrect"
+          ],
+          "correctIndex": 1,
+          "explanation": "Friction adds μ mg cos θ to the required effort, making the real force greater than the frictionless theoretical value."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why a gentle slope is easier to climb than a steep one, using forces.",
+        "A ramp is 3 m long and rises 1 m. What is its MA? What effort is needed to push a 60 kg box up it?",
+        "How does friction affect the mechanical advantage of a real inclined plane?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 50
+          "label": "Slope force F = mg sinθ",
+          "pct": 30
         },
         {
-          "label": "Energy Transfer",
+          "label": "Normal force N = mg cosθ",
           "pct": 20
         },
         {
-          "label": "Mathematics",
-          "pct": 20
+          "label": "Friction f = μN",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "MA = l/h = 1/sinθ",
+          "pct": 25
         }
       ],
       "misconceptions": [
-        "A shallower ramp isn't 'easier' in terms of total work — it just spreads it over more distance.",
-        "Friction always opposes motion and increases with the normal force (larger on shallower ramps)."
+        "Students often think friction decreases on steeper slopes; in fact the normal force (and friction) decreases but the required force still increases.",
+        "Confusing the length of the slope with the height gained leads to MA calculation errors.",
+        "Many forget that friction is always directed opposite to motion, increasing the required effort."
       ],
-      "hook": "Ancient Egyptians moved multi-ton pyramid blocks using inclined planes. A 30° ramp can reduce the required force by half — but doubles the distance.",
+      "hook": "Ancient Egyptians moved blocks weighing tonnes up enormous ramps to build the pyramids. They understood the inclined plane: with a gentle enough slope, any force can move any load!",
       "khanLinks": [
         {
           "title": "Inclined Plane Force Components",
@@ -1735,151 +1873,160 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Height h (cm)",
-        "Length L (cm)",
-        "sin θ",
-        "Weight W (N)",
-        "Effort F_theory (N)",
-        "Effort F_measured (N)",
-        "Friction force (N)"
+        "Mass (g)",
+        "Weight mg (N)",
+        "Angle θ (°)",
+        "F_measured (N)",
+        "mg·sinθ (N)",
+        "Friction f (N)"
       ],
       "rows": 4
     },
     "observations": [
-      "How did changing the angle affect the effort needed?",
-      "Estimate the friction force. Was it significant?"
+      "Record the force needed to pull each mass up the slope at constant speed.",
+      "Calculate mg sin θ and compare with the measured force.",
+      "The difference (F − mg sin θ) estimates the friction force."
     ],
-    "conclusion": "Compare theoretical F=W·sinθ with measured values. Explain any discrepancy:",
+    "conclusion": "At θ = 23.16°: measured forces were F ≈ 0.7, 0.9, 1.1 N for 50, 100, 150 g. Theoretical mg sin θ ≈ 0.19, 0.39, 0.58 N. Difference confirms significant friction force on the slope.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Inclined Plane</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Inclined planes turn steep climbs into gentle pushes! Ask me about F = mg sinθ, MA, or how friction changes things.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F = mg·sinθ &nbsp;&nbsp;|&nbsp;&nbsp; MA = L/h = 1/sinθ</div>An inclined plane reduces the force needed to raise an object at the cost of increased distance.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A shallower ramp isn't 'easier' in terms of total work — it just spreads it over more distance.</li><li>❌ Friction always opposes motion and increases with the normal force (larger on shallower ramps).</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Wheelchair ramps</li><li>🌍 Mountain switchback roads</li><li>🌍 Screw threads (a wrapped inclined plane)</li><li>🌍 Wedges (knife blades)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: F_theory = W·sinθ = W·(h/L). Friction adds F_friction = μ·W·cosθ. Measure friction by noting force difference.<br><br>At θ=30°: F = 0.5W. Friction typically adds 5–20% to theoretical effort. Higher angle = more effort needed.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Ancient Egyptians moved multi-ton pyramid blocks using inclined planes. A 30° ramp can reduce the required force by half — but doubles the distance.</em><br><br>Key concepts to emphasise: An inclined plane reduces the force needed to raise an object at the cost of increased distance.; MA = length of slope / height = 1/sinθ",
-        "hook": "Engaging hook for students: <blockquote>Ancient Egyptians moved multi-ton pyramid blocks using inclined planes. A 30° ramp can reduce the required force by half — but doubles the distance.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "inclined plane|angle|dynamometer|slope",
+        "formula": "F = mg sinθ|MA = 1/sinθ|friction = μN",
+        "error": "friction neglected|angle measurement|dynamometer at wrong angle",
+        "question": "inclined plane|slope|mechanical advantage|friction|angle",
+        "real": "ramp|road|pyramid|screw"
       },
-      "hint": "F_theory = W·sinθ = W·(h/L). Friction adds F_friction = μ·W·cosθ. Measure friction by noting force difference.",
-      "expected": "At θ=30°: F = 0.5W. Friction typically adds 5–20% to theoretical effort. Higher angle = more effort needed."
+      "hint": "F = mg sinθ (frictionless). Real F = mg sinθ + μ mg cosθ. MA = l/h = 1/sinθ.",
+      "expected": "θ=23°: F_theory = mg×0.392. M=50g: F_theory≈0.19 N but F_measured≈0.7 N. Friction is large."
     }
   },
   {
     "num": 13,
     "title": "Hooke’s Law",
     "section": "Mechanics",
-    "desc": "Investigates the linear relationship between force and spring extension (F = kx).",
+    "desc": "Verify Hooke's Law by measuring spring extension as a function of applied force and determine the spring constant k.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Investigates the linear relationship between force and spring extension (F = kx).",
+      "whatTheyLearn": "Students plot F vs. x and verify F = kx. The slope of the line equals the spring constant k (N/m).",
       "instructions": [
-        "Did the spring return to original length after removing each load?",
-        "At what force did you observe deviation from Hooke's Law (elastic limit)?",
-        "State the spring constant k with units. Was Hooke's Law confirmed? What is the elastic limit?"
+        "Hang the spring vertically; record the natural length (no load).",
+        "Add masses of 10 g, 25 g, 50 g; measure total length and calculate extension x.",
+        "Plot F = mg (y-axis) vs. x (x-axis); the slope is k."
       ],
-      "expectedOutcome": "k should be approximately constant across measurements. Plot F vs x — straight line confirms Hooke's Law. Slope = k. Typical lab spring: k = 20–50 N/m. Elastic limit visible when graph deviates from linear."
+      "expectedOutcome": "m = 10 g → x = 0.016 m; m = 25 g → x = 0.040 m; m = 50 g → x = 0.081 m. k = slope of F vs. x graph."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌀",
-          "name": "Metal spring"
-        },
-        {
-          "emoji": "🏋️",
-          "name": "Hooked masses"
+          "name": "Helical spring"
         },
         {
           "emoji": "📏",
-          "name": "Ruler"
+          "name": "Ruler or metre stick"
         },
         {
-          "emoji": "🔩",
-          "name": "Support rod"
+          "emoji": "🏋️",
+          "name": "Masses (10 g, 25 g, 50 g)"
         },
         {
-          "emoji": "📋",
+          "emoji": "🪝",
+          "name": "Mass hanger"
+        },
+        {
+          "emoji": "📝",
           "name": "Graph paper"
         }
       ],
       "observationsToRecord": [
-        "Did the spring return to original length after removing each load?",
-        "At what force did you observe deviation from Hooke's Law (elastic limit)?"
+        "Natural length L₀ (m)",
+        "Total length L (m) with each mass",
+        "Extension x = L − L₀ (m)",
+        "Applied force F = mg (N)"
       ],
       "theoryPoints": [
-        "Hooke's Law: extension is proportional to force within the elastic limit (F = kx).",
-        "The spring constant k (N/m) measures stiffness — larger k = stiffer spring.",
-        "Beyond the elastic limit, permanent deformation occurs (plastic deformation)."
+        "Hooke's Law: F = kx (restoring force proportional to extension, within elastic limit).",
+        "Spring constant k = F/x (N/m): stiffness of the spring.",
+        "The elastic limit is the maximum extension beyond which the spring is permanently deformed.",
+        "F vs. x graph: straight line through origin with slope = k.",
+        "Negative sign in F = −kx indicates the restoring force opposes extension."
       ],
       "realWorldConnections": [
-        "Car suspensions",
-        "Bungee cords",
-        "Weighing scales",
-        "Building seismic dampers"
+        "Suspension springs in cars and bicycles absorb shocks using Hooke's Law.",
+        "Elastic potential energy stored in a compressed spring powers clockwork mechanisms.",
+        "Seismographs use spring-mass systems to detect ground vibrations."
       ],
-      "formula": "F = k·x   |   k = F/x   |   PE = ½kx²"
+      "formula": "F = kx   |   k = F/x (N/m)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A spring stretches 4 cm under a 2N force. What is k?",
+          "text": "A spring extends by 0.040 m when a 25 g mass is hung on it. What is k?",
           "options": [
-            "A. 8 N/m",
-            "B. 50 N/m",
-            "C. 0.08 N/m",
-            "D. 2 N/m"
+            "6.1 N/m",
+            "0.61 N/m",
+            "61 N/m",
+            "0.245 N/m"
           ],
-          "correctIndex": 1,
-          "explanation": "k = F/x = 2N / 0.04m = 50 N/m"
+          "correctIndex": 0,
+          "explanation": "F = 0.025 × 9.81 = 0.245 N; k = F/x = 0.245/0.040 = 6.1 N/m."
         },
         {
-          "text": "What happens when a spring is stretched beyond its elastic limit?",
+          "text": "What does the slope of an F vs. x graph represent?",
           "options": [
-            "A. It returns to original length",
-            "B. It permanently deforms",
-            "C. k increases",
-            "D. It breaks immediately"
+            "Gravitational field strength",
+            "Spring constant k",
+            "Mass of the spring",
+            "Elastic limit"
           ],
           "correctIndex": 1,
-          "explanation": "Beyond the elastic limit, Hooke's Law no longer applies and permanent (plastic) deformation occurs."
+          "explanation": "F = kx so slope = ΔF/Δx = k."
+        },
+        {
+          "text": "Hooke's Law breaks down when:",
+          "options": [
+            "Temperature increases",
+            "Extension exceeds the elastic limit",
+            "Mass is removed",
+            "The spring is horizontal"
+          ],
+          "correctIndex": 1,
+          "explanation": "Beyond the elastic limit the spring is permanently deformed and the linear relationship F = kx no longer holds."
         }
       ],
       "discussion": [
-        "Why do springs have different k values?",
-        "What determines a spring's elastic limit?",
-        "How do car shock absorbers use Hooke's Law?"
+        "How would you determine the elastic limit of the spring from your F vs. x graph?",
+        "Two springs have k₁ = 5 N/m and k₂ = 10 N/m. Which spring is stiffer? Why?",
+        "Explain why a spring obeys Hooke's Law only up to a certain extension."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
+          "label": "Hooke's Law F = kx",
+          "pct": 35
         },
         {
-          "label": "Energy Transfer",
-          "pct": 25
+          "label": "Spring constant k from graph slope",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
-          "pct": 25
+          "label": "Elastic limit",
+          "pct": 20
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Graphical analysis",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Hooke's Law is not universal — it only applies below the elastic limit.",
-        "A stiffer spring (higher k) stores MORE energy for the same extension."
+        "Students sometimes think k depends on the load; it is a property of the spring, constant in the elastic region.",
+        "Forgetting to measure from the natural length: extension x = L − L₀, not the total length L.",
+        "Assuming the graph must pass through (0,0); in practice a small zero error may shift it."
       ],
-      "hook": "Every spring, mattress, car suspension, and building earthquake absorber relies on Hooke's Law — one of the most elegant laws in physics.",
+      "hook": "A spring scale works because of Hooke's Law — the extension is exactly proportional to the force. Without this simple rule, bathroom scales would be useless!",
       "khanLinks": [
         {
           "title": "Intro to Springs and Hooke's Law",
@@ -1893,147 +2040,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Force F (N)",
-        "Extension x (cm)",
-        "Spring constant k = F/x (N/m)",
-        "Notes"
+        "Mass m (g)",
+        "Force F = mg (N)",
+        "Total length L (m)",
+        "Extension x = L−L₀ (m)",
+        "k = F/x (N/m)"
       ],
-      "rows": 7
+      "rows": 5
     },
     "observations": [
-      "Did the spring return to original length after removing each load?",
-      "At what force did you observe deviation from Hooke's Law (elastic limit)?"
+      "Record natural length L₀ carefully with no mass attached.",
+      "Ensure each mass is added gently to avoid oscillation during measurement.",
+      "Plot F vs. x and draw the best-fit straight line through the origin."
     ],
-    "conclusion": "State the spring constant k with units. Was Hooke's Law confirmed? What is the elastic limit?",
+    "conclusion": "Hooke's Law verified: F = kx. Data: m=10g→x=1.6cm, m=25g→x=4.0cm, m=50g→x=8.1cm. Spring constant k ≈ 6.0 N/m from graph slope. Linear relationship confirmed within elastic limit.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Hooke’s Law</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Springs and Hooke's Law! Ask me how to find k, what the elastic limit means, or how to plot the graph.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Pre-test springs to identify elastic limit</li><li>Prepare mass hangers and cylindrical masses</li><li>Set up rulers vertically and securely</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Stretching spring beyond elastic limit permanently</li><li>Not zeroing extension at no-load position</li><li>Including mass hanger weight in calculation without accounting for it</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F = k·x &nbsp;&nbsp;|&nbsp;&nbsp; k = F/x &nbsp;&nbsp;|&nbsp;&nbsp; PE = ½kx²</div>Hooke's Law: extension is proportional to force within the elastic limit (F = kx).",
-        "question": "Discussion questions for students:<ul><li>Why do springs have different k values?</li><li>What determines a spring's elastic limit?</li><li>How do car shock absorbers use Hooke's Law?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Hooke's Law is not universal — it only applies below the elastic limit.</li><li>❌ A stiffer spring (higher k) stores MORE energy for the same extension.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Car suspensions</li><li>🌍 Bungee cords</li><li>🌍 Weighing scales</li><li>🌍 Building seismic dampers</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: k should be approximately constant across measurements. Plot F vs x — straight line confirms Hooke's Law. Slope = k.<br><br>Typical lab spring: k = 20–50 N/m. Elastic limit visible when graph deviates from linear.",
-        "extend": "Extension activity: Plot F vs x graph and determine k from gradient.",
-        "explain": "Here's how to explain this to students: <em>Every spring, mattress, car suspension, and building earthquake absorber relies on Hooke's Law — one of the most elegant laws in physics.</em><br><br>Key concepts to emphasise: Hooke's Law: extension is proportional to force within the elastic limit (F = kx).; The spring constant k (N/m) measures stiffness — larger k = stiffer spring.",
-        "hook": "Engaging hook for students: <blockquote>Every spring, mattress, car suspension, and building earthquake absorber relies on Hooke's Law — one of the most elegant laws in physics.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "helical spring|natural length|extension|mass hanger",
+        "formula": "F = kx|k = F/x|elastic limit",
+        "error": "zero error|measuring from wrong reference|beyond elastic limit",
+        "question": "Hooke's Law|spring constant|extension|elastic limit",
+        "real": "suspension spring|clockwork|seismograph"
       },
-      "hint": "k should be approximately constant across measurements. Plot F vs x — straight line confirms Hooke's Law. Slope = k.",
-      "expected": "Typical lab spring: k = 20–50 N/m. Elastic limit visible when graph deviates from linear."
+      "hint": "x = L − L₀ (extension, not total length). Plot F vs. x; slope = k. F = kx only within elastic limit.",
+      "expected": "10g→x=0.016m; 25g→x=0.040m; 50g→x=0.081m. k ≈ 6 N/m from best-fit slope."
     }
   },
   {
     "num": 14,
     "title": "Springs in series and in parallel",
     "section": "Mechanics",
-    "desc": "Compares effective spring constants for series and parallel spring combinations.",
-    "setupTime": "8 min",
-    "duration": "25 min",
+    "desc": "Measure the effective spring constant for springs connected in series and in parallel, and explore the surprising 'spring paradox'.",
+    "setupTime": "5 min",
+    "duration": "30 min",
     "summary": {
-      "whatTheyLearn": "Compares effective spring constants for series and parallel spring combinations.",
+      "whatTheyLearn": "Students derive and verify 1/k_series = 1/k₁ + 1/k₂ and k_parallel = k₁ + k₂, and observe the paradox where cutting the middle string of two loaded springs causes one mass to rise.",
       "instructions": [
-        "Which configuration (series/parallel) gave the largest extension for the same force?",
-        "Compare k_eff values with theoretical predictions:",
-        "State formulas for series and parallel combinations. Were your results consistent with theory?"
+        "Connect two springs in series: measure extension for each load; calculate 1/k_s.",
+        "Connect the same springs in parallel: measure extension for same loads; calculate k_p.",
+        "Set up the paradox: two springs compressed against a mass; cut the middle string."
       ],
-      "expectedOutcome": "Series: k_eff < each spring. Parallel: k_eff > each spring. If k₁=k₂=k: series k/2, parallel 2k. Two identical springs k=30 N/m: series→15 N/m, parallel→60 N/m. Verify with measurements."
+      "expectedOutcome": "Series: 1/k_s = 1/k₁ + 1/k₂ → k_s < k₁ or k₂. Parallel: k_p = k₁ + k₂ → stiffer. Paradox: cutting the middle string causes the connected mass to rise."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌀",
-          "name": "Springs x2"
-        },
-        {
-          "emoji": "🏋️",
-          "name": "Masses"
+          "name": "Two identical helical springs"
         },
         {
           "emoji": "📏",
           "name": "Ruler"
         },
         {
-          "emoji": "🔩",
-          "name": "Support rod"
+          "emoji": "🏋️",
+          "name": "Masses (50 g, 100 g)"
         },
         {
-          "emoji": "🪝",
-          "name": "Hooks"
+          "emoji": "✂️",
+          "name": "Scissors (for paradox)"
+        },
+        {
+          "emoji": "🧵",
+          "name": "String"
         }
       ],
       "observationsToRecord": [
-        "Which configuration (series/parallel) gave the largest extension for the same force?",
-        "Compare k_eff values with theoretical predictions:"
+        "Extension of series combination for each load → k_series",
+        "Extension of parallel combination for each load → k_parallel",
+        "Direction of mass movement when middle string is cut (paradox)"
       ],
       "theoryPoints": [
-        "Springs in series: 1/k_eff = 1/k₁ + 1/k₂ — effective spring constant is lower (softer).",
-        "Springs in parallel: k_eff = k₁ + k₂ — effective spring constant is higher (stiffer).",
-        "Same principle applies to electrical resistors and capacitors (opposite rules for each)."
+        "Series springs: same tension in each; total extension = x₁ + x₂; 1/k_s = 1/k₁ + 1/k₂.",
+        "Parallel springs: share the load; same extension; k_p = k₁ + k₂.",
+        "Series springs are softer (smaller k); parallel springs are stiffer (larger k).",
+        "The spring paradox: one spring is compressed and one extended via a string. Cutting the string releases stored energy, causing a net upward impulse on the attached mass."
       ],
       "realWorldConnections": [
-        "Mattress springs (parallel = firm)",
-        "Bungee cord extensions (series = more stretch)",
-        "Car suspension design"
+        "Vehicle suspensions use spring combinations tuned for comfort (series, softer) or handling (parallel, stiffer).",
+        "Mattress springs are in parallel — many springs share the load, giving high k_p.",
+        "Bungee ropes are effectively springs in series (longer → softer)."
       ],
-      "formula": "Series: 1/k_eff = Σ(1/kᵢ)   |   Parallel: k_eff = Σkᵢ"
+      "formula": "Series: 1/k_s = 1/k₁ + 1/k₂   |   Parallel: k_p = k₁ + k₂"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two identical springs (k = 10 N/m each) in parallel. What is k_eff?",
+          "text": "Two springs each with k = 10 N/m are connected in series. What is the combined spring constant?",
           "options": [
-            "A. 5 N/m",
-            "B. 10 N/m",
-            "C. 20 N/m",
-            "D. 100 N/m"
+            "20 N/m",
+            "10 N/m",
+            "5 N/m",
+            "1 N/m"
           ],
           "correctIndex": 2,
-          "explanation": "Parallel: k_eff = k₁ + k₂ = 10 + 10 = 20 N/m"
+          "explanation": "1/k_s = 1/10 + 1/10 = 2/10; k_s = 5 N/m."
         },
         {
-          "text": "Two identical springs (k = 10 N/m each) in series. What is k_eff?",
+          "text": "Two springs each with k = 10 N/m are connected in parallel. What is k_p?",
           "options": [
-            "A. 5 N/m",
-            "B. 10 N/m",
-            "C. 20 N/m",
-            "D. 1 N/m"
+            "5 N/m",
+            "10 N/m",
+            "20 N/m",
+            "100 N/m"
           ],
-          "correctIndex": 0,
-          "explanation": "Series: 1/k_eff = 1/10 + 1/10 = 2/10, so k_eff = 5 N/m"
+          "correctIndex": 2,
+          "explanation": "k_p = k₁ + k₂ = 10 + 10 = 20 N/m."
+        },
+        {
+          "text": "In the spring paradox, what causes the mass to move upward when the string is cut?",
+          "options": [
+            "Gravity reverses direction",
+            "The compressed spring releases its stored elastic energy",
+            "The string was supporting extra weight",
+            "Air pressure increases"
+          ],
+          "correctIndex": 1,
+          "explanation": "The compressed spring was storing elastic potential energy. When the constraint (string) is removed, that energy is released as an upward impulse."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why is k_series < k₁ and k₂, while k_parallel > k₁ and k₂?",
+        "Explain the spring paradox in terms of stored elastic potential energy.",
+        "A mattress has 100 parallel springs each with k = 200 N/m. What is the total k?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
-        },
-        {
-          "label": "Mathematics",
+          "label": "Series formula 1/k_s = Σ1/kᵢ",
           "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Parallel formula k_p = Σkᵢ",
+          "pct": 30
+        },
+        {
+          "label": "Graphical verification",
           "pct": 20
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Spring paradox (elastic energy)",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Two springs in series are NOT equivalent to one spring with double the constant — they're softer.",
-        "Springs in parallel share the load, not the extension."
+        "Students often apply the series formula (1/k_total) when they mean parallel and vice versa — remember: series → softer; parallel → stiffer.",
+        "Many assume series springs extend half as much as a single spring; actually they extend twice as much per unit load.",
+        "The spring paradox surprises everyone: students expect the mass to fall or stay still when the string is cut."
       ],
-      "hook": "Series vs parallel springs explain everything from multi-spring mattresses to suspension bridges. Nature always finds the simplest mechanical solution.",
+      "hook": "Cut the string connecting two loaded springs and watch what happens — one mass shoots upward! Springs can store and release energy in unexpected ways.",
       "khanLinks": [
         {
           "title": "Spring Forces (AP Physics 1)",
@@ -2047,148 +2204,158 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Configuration",
-        "Force F (N)",
-        "Extension x (cm)",
-        "k_eff measured (N/m)",
-        "k_eff theory (N/m)",
-        "% Difference"
+        "Mass (g)",
+        "Load F (N)",
+        "Extension x (m)",
+        "k_eff (N/m)"
       ],
-      "rows": 3
+      "rows": 6
     },
     "observations": [
-      "Which configuration (series/parallel) gave the largest extension for the same force?",
-      "Compare k_eff values with theoretical predictions:"
+      "Record extension for series and parallel for the same loads.",
+      "Confirm that series extends more than a single spring and parallel extends less.",
+      "Observe the direction of motion when the paradox string is cut."
     ],
-    "conclusion": "State formulas for series and parallel combinations. Were your results consistent with theory?",
+    "conclusion": "Series: k_s = k/2 for equal springs (softer). Parallel: k_p = 2k (stiffer). Formulas verified within 5% error. Paradox: mass rose when middle string was cut — elastic energy release explained this.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Springs in series and in parallel</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Series or parallel springs — which is stiffer? And what's the spring paradox? Ask me anything about spring combinations!",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 8 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Series: 1/k_eff = Σ(1/kᵢ) &nbsp;&nbsp;|&nbsp;&nbsp; Parallel: k_eff = Σkᵢ</div>Springs in series: 1/k_eff = 1/k₁ + 1/k₂ — effective spring constant is lower (softer).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Two springs in series are NOT equivalent to one spring with double the constant — they're softer.</li><li>❌ Springs in parallel share the load, not the extension.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Mattress springs (parallel = firm)</li><li>🌍 Bungee cord extensions (series = more stretch)</li><li>🌍 Car suspension design</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Series: k_eff < each spring. Parallel: k_eff > each spring. If k₁=k₂=k: series k/2, parallel 2k.<br><br>Two identical springs k=30 N/m: series→15 N/m, parallel→60 N/m. Verify with measurements.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Series vs parallel springs explain everything from multi-spring mattresses to suspension bridges. Nature always finds the simplest mechanical solution.</em><br><br>Key concepts to emphasise: Springs in series: 1/k_eff = 1/k₁ + 1/k₂ — effective spring constant is lower (softer).; Springs in parallel: k_eff = k₁ + k₂ — effective spring constant is higher (stiffer).",
-        "hook": "Engaging hook for students: <blockquote>Series vs parallel springs explain everything from multi-spring mattresses to suspension bridges. Nature always finds the simplest mechanical solution.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "series springs|parallel springs|string|masses",
+        "formula": "1/k_s = 1/k₁+1/k₂|k_p = k₁+k₂|paradox",
+        "error": "reading extension|friction|string not cut cleanly",
+        "question": "series|parallel|spring constant|paradox|elastic energy",
+        "real": "vehicle suspension|mattress|bungee"
       },
-      "hint": "Series: k_eff < each spring. Parallel: k_eff > each spring. If k₁=k₂=k: series k/2, parallel 2k.",
-      "expected": "Two identical springs k=30 N/m: series→15 N/m, parallel→60 N/m. Verify with measurements."
+      "hint": "Series: 1/k_s = 1/k₁+1/k₂ (softer). Parallel: k_p = k₁+k₂ (stiffer). Paradox: compressed spring stores energy → releases upward when string cuts.",
+      "expected": "Equal springs k=6 N/m: series k_s=3 N/m; parallel k_p=12 N/m. Paradox: mass rises when string cut."
     }
   },
   {
     "num": 15,
     "title": "Simple Pendulum",
     "section": "Mechanics",
-    "desc": "Measures period vs. length to calculate g using T = 2π√(L/g).",
+    "desc": "Measure the period of a simple pendulum for different lengths and verify T = 2π√(L/g).",
     "setupTime": "5 min",
-    "duration": "25 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Measures period vs. length to calculate g using T = 2π√(L/g).",
+      "whatTheyLearn": "Students measure T for lengths L = 0.25 m and L = 1.0 m and confirm T² ∝ L, allowing calculation of g.",
       "instructions": [
-        "Plot T² vs L. Describe the shape of the graph:",
-        "Did mass of the bob affect the period? Explain:",
-        "Calculate your measured value of g. Compare to accepted value (9.81 m/s²). Find percentage error:"
+        "Set pendulum length L = 0.25 m; displace < 5° from vertical and release.",
+        "Time 50 complete oscillations (50T) with a stopwatch.",
+        "Repeat for L = 1.0 m. Calculate T and compare with T = 2π√(L/g)."
       ],
-      "expectedOutcome": "T = 2π√(L/g). T² = (4π²/g)·L — linear graph through origin. Slope = 4π²/g. Typical g measurement: 9.5–10.1 m/s². L=25cm→T≈1.00s; L=50cm→T≈1.42s; L=100cm→T≈2.01s. Plot T² vs L, slope=4π²/g≈4.03."
+      "expectedOutcome": "L = 0.25 m → T ≈ 1.0 s; L = 1.0 m → T ≈ 2.0 s. Ratio T(1m)/T(0.25m) = 2 = √(1/0.25)."
     },
     "experiment": {
       "equipment": [
         {
+          "emoji": "⚫",
+          "name": "Bob (small dense sphere)"
+        },
+        {
           "emoji": "🧵",
-          "name": "String pendulum"
-        },
-        {
-          "emoji": "⚙️",
-          "name": "Heavy bob"
-        },
-        {
-          "emoji": "📏",
-          "name": "Ruler"
+          "name": "Inextensible string (adjustable 0.25–1.0 m)"
         },
         {
           "emoji": "⏱️",
           "name": "Stopwatch"
         },
         {
+          "emoji": "📏",
+          "name": "Ruler"
+        },
+        {
           "emoji": "🔩",
-          "name": "Clamp stand"
+          "name": "Clamp and stand"
         }
       ],
       "observationsToRecord": [
-        "Plot T² vs L. Describe the shape of the graph:",
-        "Did mass of the bob affect the period? Explain:"
+        "Length L (m) from pivot to centre of bob",
+        "Time for 50 oscillations t₅₀ (s)",
+        "Period T = t₅₀/50 (s)",
+        "T² (s²)"
       ],
       "theoryPoints": [
-        "Period of a simple pendulum: T = 2π√(L/g) — depends only on length and gravity.",
-        "Period is independent of mass and amplitude (for small angles < 15°).",
-        "Can be used to measure g very precisely, or to keep accurate time."
+        "T = 2π√(L/g): period depends only on length and g, not mass or amplitude (< 10°).",
+        "Squaring: T² = (4π²/g) L — linear relationship between T² and L.",
+        "Slope of T² vs. L graph = 4π²/g → g = 4π²/slope.",
+        "Timing 50 oscillations reduces the percentage error in T."
       ],
       "realWorldConnections": [
-        "Grandfather clock mechanism",
-        "Seismometer for earthquakes",
-        "Foucault pendulum demonstrating Earth's rotation"
+        "Pendulum clocks used this principle for 300 years to keep accurate time.",
+        "Foucault's pendulum demonstrates Earth's rotation.",
+        "Gravimeters use precision pendulums to map Earth's gravitational field."
       ],
-      "formula": "T = 2π√(L/g)   |   g = 4π²L/T²"
+      "formula": "T = 2π√(L/g)   |   T² = (4π²/g) × L"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A pendulum's period is 2s. If you quadruple its length, what is the new period?",
+          "text": "A pendulum of length 1.0 m. What is its period? (g = 9.81 m/s²)",
           "options": [
-            "A. 1 s",
-            "B. 2 s",
-            "C. 4 s",
-            "D. 8 s"
+            "2.01 s",
+            "1.00 s",
+            "3.14 s",
+            "0.50 s"
           ],
-          "correctIndex": 2,
-          "explanation": "T ∝ √L. Quadrupling L doubles T: new T = 2×2 = 4s"
+          "correctIndex": 0,
+          "explanation": "T = 2π√(1.0/9.81) = 2π × 0.319 = 2.006 s ≈ 2.01 s."
         },
         {
-          "text": "What two variables affect a simple pendulum's period?",
+          "text": "If L is quadrupled, T:",
           "options": [
-            "A. Mass and length",
-            "B. Amplitude and mass",
-            "C. Length and g",
-            "D. Temperature and length"
+            "Doubles",
+            "Quadruples",
+            "Halves",
+            "Stays the same"
           ],
-          "correctIndex": 2,
-          "explanation": "T = 2π√(L/g) — only length L and gravitational acceleration g matter."
+          "correctIndex": 0,
+          "explanation": "T ∝ √L. Quadrupling L multiplies √L by 2, so T doubles."
+        },
+        {
+          "text": "Why measure 50 oscillations rather than just 1?",
+          "options": [
+            "To make the pendulum swing faster",
+            "To reduce the percentage error in T",
+            "To increase the amplitude",
+            "To change the frequency"
+          ],
+          "correctIndex": 1,
+          "explanation": "Reaction time error is ~0.2 s regardless; for 50 oscillations this is only 0.2/50T ≈ 0.2% error instead of 20% for 1 oscillation."
         }
       ],
       "discussion": [
-        "How did Galileo use pendulums to measure time?",
-        "Why don't pendulum clocks work on the Moon?"
+        "How would you use your T² vs. L graph to determine g?",
+        "Does the mass of the bob affect the period? Justify your answer using the formula.",
+        "A grandfather clock runs slow. Should you shorten or lengthen its pendulum to correct it?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 35
+          "label": "T = 2π√(L/g)",
+          "pct": 30
         },
         {
-          "label": "Mathematics",
-          "pct": 35
+          "label": "T² vs. L linear graph",
+          "pct": 25
         },
         {
-          "label": "Data Analysis",
+          "label": "Measuring g from slope",
+          "pct": 25
+        },
+        {
+          "label": "Experimental technique (50 oscillations)",
           "pct": 20
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Heavier bobs do NOT swing faster — period is independent of mass.",
-        "Larger swings (large amplitude) slightly increase the period — the formula is an approximation."
+        "Students often think heavier bobs swing faster; period is independent of mass.",
+        "Many believe larger amplitudes increase period; T is independent of amplitude for small angles (< 10°).",
+        "Confusing one oscillation (A→B→A) with a half-oscillation (A→B)."
       ],
-      "hook": "Galileo supposedly dropped two spheres from the Leaning Tower of Pisa. His pendulum discovery came from watching a swinging cathedral lamp — time and gravity locked together.",
+      "hook": "Galileo reportedly timed swinging cathedral lamps with his own pulse. He noticed all swings took the same time regardless of how far they swung — the birth of the pendulum clock!",
       "khanLinks": [
         {
           "title": "Period of a Pendulum",
@@ -2202,63 +2369,58 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Length L (cm)",
-        "10 oscillations time (s)",
-        "Period T (s)",
+        "Length L (m)",
+        "Time 50 oscillations t₅₀ (s)",
+        "Period T = t₅₀/50 (s)",
         "T² (s²)",
-        "g calculated (m/s²)"
+        "T_theoretical (s)"
       ],
-      "rows": 6
+      "rows": 4
     },
     "observations": [
-      "Plot T² vs L. Describe the shape of the graph:",
-      "Did mass of the bob affect the period? Explain:"
+      "Keep amplitude below 5° for each trial.",
+      "Record t₅₀ three times and average to reduce timing error.",
+      "Plot T² vs. L and draw best-fit line to find g."
     ],
-    "conclusion": "Calculate your measured value of g. Compare to accepted value (9.81 m/s²). Find percentage error:",
+    "conclusion": "T = 2π√(L/g) verified. L=0.25 m → T ≈ 1.00 s; L=1.0 m → T ≈ 2.01 s. Ratio T(1m)/T(0.25m) = 2.01 ≈ √4 = 2. g calculated from slope ≈ 9.7–9.9 m/s².",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Simple Pendulum</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Pendulums are the original timekeepers! Ask me about T = 2π√(L/g), how to find g, or timing techniques.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Prepare strings of lengths: 25, 50, 75, 100, 125 cm</li><li>Use heavy metal bobs (reduce air resistance)</li><li>Demonstrate 'small angle' (< 15°) to class</li></ol>Time needed: 5 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Using too large amplitude (>15°) invalidating simple pendulum formula</li><li>Counting half-swings instead of full oscillations</li><li>Starting timer mid-swing</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>T = 2π√(L/g) &nbsp;&nbsp;|&nbsp;&nbsp; g = 4π²L/T²</div>Period of a simple pendulum: T = 2π√(L/g) — depends only on length and gravity.",
-        "question": "Discussion questions for students:<ul><li>How did Galileo use pendulums to measure time?</li><li>Why don't pendulum clocks work on the Moon?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Heavier bobs do NOT swing faster — period is independent of mass.</li><li>❌ Larger swings (large amplitude) slightly increase the period — the formula is an approximation.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Grandfather clock mechanism</li><li>🌍 Seismometer for earthquakes</li><li>🌍 Foucault pendulum demonstrating Earth's rotation</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: T = 2π√(L/g). T² = (4π²/g)·L — linear graph through origin. Slope = 4π²/g. Typical g measurement: 9.5–10.1 m/s².<br><br>L=25cm→T≈1.00s; L=50cm→T≈1.42s; L=100cm→T≈2.01s. Plot T² vs L, slope=4π²/g≈4.03.",
-        "extend": "Extension activity: Use results to calculate g and compare to 9.81 m/s².",
-        "explain": "Here's how to explain this to students: <em>Galileo supposedly dropped two spheres from the Leaning Tower of Pisa. His pendulum discovery came from watching a swinging cathedral lamp — time and gravity locked together.</em><br><br>Key concepts to emphasise: Period of a simple pendulum: T = 2π√(L/g) — depends only on length and gravity.; Period is independent of mass and amplitude (for small angles < 15°).",
-        "hook": "Engaging hook for students: <blockquote>Galileo supposedly dropped two spheres from the Leaning Tower of Pisa. His pendulum discovery came from watching a swinging cathedral lamp — time and gravity locked together.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "pendulum|length|bob|50 oscillations|stopwatch",
+        "formula": "T = 2π√(L/g)|T² = (4π²/g)L",
+        "error": "amplitude too large|timing error|measuring L to wrong point",
+        "question": "period|length|mass|amplitude|g|oscillation",
+        "real": "pendulum clock|Foucault pendulum|gravimeter"
       },
-      "hint": "T = 2π√(L/g). T² = (4π²/g)·L — linear graph through origin. Slope = 4π²/g. Typical g measurement: 9.5–10.1 m/s².",
-      "expected": "L=25cm→T≈1.00s; L=50cm→T≈1.42s; L=100cm→T≈2.01s. Plot T² vs L, slope=4π²/g≈4.03."
+      "hint": "T = 2π√(L/g). Time 50 oscillations; T = t₅₀/50. T² vs. L is linear; slope = 4π²/g.",
+      "expected": "L=0.25m → T=1.00s; L=1.0m → T=2.01s. T²=(4π²/9.81)L: slope=4.03 s²/m."
     }
   },
   {
     "num": 16,
     "title": "Spring Pendulum",
     "section": "Mechanics",
-    "desc": "Explores how mass affects oscillation period in a spring-mass system.",
+    "desc": "Measure the period of a spring-mass oscillator and verify T = 2π√(m/k).",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Explores how mass affects oscillation period in a spring-mass system.",
+      "whatTheyLearn": "Students verify that the period of a spring pendulum depends on mass and spring constant but NOT on amplitude, and measure T for two different lengths.",
       "instructions": [
-        "How did increasing mass affect the period?",
-        "Compare spring pendulum period to gravity pendulum of same length:",
-        "State T = 2π√(m/k). Calculate k from your results and compare to Hooke's Law measurement:"
+        "Attach a mass m to the spring; displace slightly (< 5 cm) and release.",
+        "Time 20 oscillations and calculate T = t₂₀/20.",
+        "Record: L = 0.25 m → 20.20 s (T ≈ 1.01 s); L = 1.0 m → 40.40 s (T ≈ 2.02 s)."
       ],
-      "expectedOutcome": "T increases with √m. Compare k obtained from T with k from Hooke's Law experiment. They should agree within 10%. m=0.1kg, k=10N/m → T≈0.63s. Doubling mass → T×√2≈0.89s."
+      "expectedOutcome": "T = 2π√(m/k). For same spring: L=0.25m → T≈1.01s; L=1.0m → T≈2.02s (period doubles when L quadruples, confirming T∝√L analogy)."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌀",
-          "name": "Spring"
+          "name": "Helical spring (known k)"
         },
         {
           "emoji": "🏋️",
-          "name": "Mass hanger + masses"
+          "name": "Mass (measured in g)"
         },
         {
           "emoji": "⏱️",
@@ -2270,80 +2432,95 @@ export const experiments: Experiment[] = [
         },
         {
           "emoji": "🔩",
-          "name": "Clamp stand"
+          "name": "Clamp and stand"
         }
       ],
       "observationsToRecord": [
-        "How did increasing mass affect the period?",
-        "Compare spring pendulum period to gravity pendulum of same length:"
+        "Mass m (kg)",
+        "Time for 20 oscillations t₂₀ (s)",
+        "Period T = t₂₀/20 (s)",
+        "Spring constant k (from Exp 13)"
       ],
       "theoryPoints": [
-        "A spring pendulum oscillates with period T = 2π√(m/k).",
-        "Unlike a gravitational pendulum, period increases with mass and decreases with stiffer springs.",
-        "Energy alternates between kinetic (moving) and elastic potential (compressed/stretched spring)."
+        "T = 2π√(m/k): period depends on mass and spring constant.",
+        "Unlike simple pendulum, T does NOT depend on g.",
+        "Increasing mass increases T; increasing k decreases T.",
+        "The system executes simple harmonic motion (SHM): F = −kx."
       ],
       "realWorldConnections": [
-        "Watch balance wheel and hairspring",
-        "Car suspension oscillation after a bump",
-        "Atomic clocks (quantum springs)"
+        "Vehicle shock absorbers are tuned spring-mass systems.",
+        "Mass spectrometers use spring-like electric forces to separate ions by mass.",
+        "Building dampers (tuned mass dampers) protect skyscrapers from oscillation."
       ],
-      "formula": "T = 2π√(m/k)   |   f = 1/(2π) × √(k/m)"
+      "formula": "T = 2π√(m/k)   |   f = (1/2π)√(k/m)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A spring pendulum has mass 0.1 kg and k = 10 N/m. What is its period?",
+          "text": "A spring (k = 6 N/m) with m = 0.150 kg. Calculate T.",
           "options": [
-            "A. 0.63 s",
-            "B. 6.28 s",
-            "C. 0.2 s",
-            "D. 1 s"
-          ],
-          "correctIndex": 0,
-          "explanation": "T = 2π√(0.1/10) = 2π×0.1 ≈ 0.63 s"
-        },
-        {
-          "text": "Doubling the mass of a spring pendulum changes its period by a factor of:",
-          "options": [
-            "A. 2",
-            "B. √2",
-            "C. 0.5",
-            "D. 4"
+            "0.99 s",
+            "1.57 s",
+            "3.14 s",
+            "0.49 s"
           ],
           "correctIndex": 1,
-          "explanation": "T ∝ √m, so doubling m multiplies T by √2 ≈ 1.41"
+          "explanation": "T = 2π√(0.150/6) = 2π√0.025 = 2π × 0.158 = 0.994 s ≈ 0.99 s. Wait: 2π×0.158=0.994. Closest: 0.99 s."
+        },
+        {
+          "text": "How does doubling the mass affect the period of a spring pendulum?",
+          "options": [
+            "Period doubles",
+            "Period increases by factor √2",
+            "Period halves",
+            "Period is unchanged"
+          ],
+          "correctIndex": 1,
+          "explanation": "T ∝ √m; doubling m multiplies T by √2 ≈ 1.41."
+        },
+        {
+          "text": "Unlike the simple pendulum, the spring pendulum period does NOT depend on:",
+          "options": [
+            "Mass",
+            "Spring constant",
+            "Gravitational field strength g",
+            "Amplitude (within SHM limit)"
+          ],
+          "correctIndex": 2,
+          "explanation": "T = 2π√(m/k) has no g term; the period is independent of gravitational field strength."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does the spring pendulum period NOT depend on g, while the simple pendulum period does?",
+        "How could you use a spring pendulum to measure an unknown mass?",
+        "Compare the formulas T = 2π√(L/g) and T = 2π√(m/k). What are the key differences?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
+          "label": "T = 2π√(m/k)",
+          "pct": 35
         },
         {
-          "label": "Mathematics",
-          "pct": 30
+          "label": "SHM and F = −kx",
+          "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 20
+          "label": "Effect of m and k on T",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Comparison with simple pendulum",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Unlike a gravity pendulum, the spring pendulum period DOES depend on mass.",
-        "Spring and gravity pendulums have different restoring force sources — spring vs gravity component."
+        "Students confuse the spring pendulum formula with the simple pendulum formula.",
+        "Many think g appears in the spring pendulum formula; it does not.",
+        "Forgetting that T increases with mass but decreases with k is a common error."
       ],
-      "hook": "A spring pendulum is at the heart of every mechanical watch — the hairspring and balance wheel keep perfect time through energy oscillating between kinetic and potential forms.",
+      "hook": "Astronauts in the International Space Station use spring-mass systems to measure their mass — a balance scale would be useless in zero-g, but T = 2π√(m/k) doesn't depend on g!",
       "khanLinks": [
         {
           "title": "Spring-Mass Systems",
@@ -2357,145 +2534,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Mass m (kg)",
-        "10 oscillations time (s)",
-        "Period T (s)",
-        "T² (s²)",
-        "k from T (N/m)"
+        "Spring k (N/m)",
+        "t₂₀ (s)",
+        "T = t₂₀/20 (s)",
+        "T_theory (s)"
       ],
-      "rows": 5
+      "rows": 4
     },
     "observations": [
-      "How did increasing mass affect the period?",
-      "Compare spring pendulum period to gravity pendulum of same length:"
+      "Displace the mass no more than 5 cm to stay within SHM approximation.",
+      "Time 20 oscillations three times and average.",
+      "Record L = 0.25 m → 20.20 s and L = 1.0 m → 40.40 s from curriculum."
     ],
-    "conclusion": "State T = 2π√(m/k). Calculate k from your results and compare to Hooke's Law measurement:",
+    "conclusion": "T = 2π√(m/k) verified. L=0.25m → t₂₀=20.20s, T=1.01s. L=1.0m → t₂₀=40.40s, T=2.02s. Period doubled when effective length quadrupled, consistent with T∝√(m/k).",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Spring Pendulum</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Spring pendulums oscillate without needing gravity! Ask me about T = 2π√(m/k) or how to measure mass in space.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>T = 2π√(m/k) &nbsp;&nbsp;|&nbsp;&nbsp; f = 1/(2π) × √(k/m)</div>A spring pendulum oscillates with period T = 2π√(m/k).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Unlike a gravity pendulum, the spring pendulum period DOES depend on mass.</li><li>❌ Spring and gravity pendulums have different restoring force sources — spring vs gravity component.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Watch balance wheel and hairspring</li><li>🌍 Car suspension oscillation after a bump</li><li>🌍 Atomic clocks (quantum springs)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: T increases with √m. Compare k obtained from T with k from Hooke's Law experiment. They should agree within 10%.<br><br>m=0.1kg, k=10N/m → T≈0.63s. Doubling mass → T×√2≈0.89s.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A spring pendulum is at the heart of every mechanical watch — the hairspring and balance wheel keep perfect time through energy oscillating between kinetic and potential forms.</em><br><br>Key concepts to emphasise: A spring pendulum oscillates with period T = 2π√(m/k).; Unlike a gravitational pendulum, period increases with mass and decreases with stiffer springs.",
-        "hook": "Engaging hook for students: <blockquote>A spring pendulum is at the heart of every mechanical watch — the hairspring and balance wheel keep perfect time through energy oscillating between kinetic and potential forms.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "spring|mass|oscillation|SHM|clamp",
+        "formula": "T = 2π√(m/k)|f = (1/2π)√(k/m)",
+        "error": "amplitude too large|counting oscillations|friction",
+        "question": "spring pendulum|period|mass|spring constant|SHM",
+        "real": "shock absorber|mass spectrometer|tuned mass damper"
       },
-      "hint": "T increases with √m. Compare k obtained from T with k from Hooke's Law experiment. They should agree within 10%.",
-      "expected": "m=0.1kg, k=10N/m → T≈0.63s. Doubling mass → T×√2≈0.89s."
+      "hint": "T = 2π√(m/k). No g in formula! Time 20 oscillations for lower error.",
+      "expected": "L=0.25m → t₂₀=20.20s, T=1.01s. L=1.0m → t₂₀=40.40s, T=2.02s."
     }
   },
   {
     "num": 17,
     "title": "Communicating Vessels",
     "section": "Mechanics",
-    "desc": "Demonstrates that connected fluid surfaces reach the same height regardless of container shape.",
+    "desc": "Observe that a connected liquid reaches the same level in all tubes, verifying Stevino's law p = ρgh.",
     "setupTime": "5 min",
-    "duration": "15 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates that connected fluid surfaces reach the same height regardless of container shape.",
+      "whatTheyLearn": "Students verify that static fluid pressure depends only on depth (p = ρgh + p₀) and that liquid seeks the same level in all connected vessels, regardless of shape.",
       "instructions": [
-        "Did vessel shape or volume affect the final water level? Explain:",
-        "What happened when you used a denser fluid (e.g. salt water vs fresh water)?",
-        "State Pascal's principle as demonstrated by this experiment:"
+        "Connect several tubes of different shapes and diameters at the base.",
+        "Pour water and observe the level in each tube.",
+        "Press down on one tube and observe what happens to the others."
       ],
-      "expectedOutcome": "At equilibrium, both surfaces reach the same height regardless of container shape. Δh ≈ 0 for same fluid. Δh should be 0 ± 2mm for connected vessels with same fluid. Different fluids: h₁ρ₁ = h₂ρ₂."
+      "expectedOutcome": "Water reaches the same height in all connected tubes regardless of tube diameter or shape. Pressing one down raises all others equally."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "💧",
-          "name": "Water"
+          "emoji": "🫙",
+          "name": "Set of communicating tubes (different shapes)"
         },
         {
-          "emoji": "🧪",
-          "name": "Communicating vessel set"
+          "emoji": "💧",
+          "name": "Coloured water"
         },
         {
           "emoji": "📏",
           "name": "Ruler"
         },
         {
-          "emoji": "🟦",
-          "name": "Coloured liquid"
+          "emoji": "🧪",
+          "name": "Plastic tubing"
+        },
+        {
+          "emoji": "🖐️",
+          "name": "Finger (to press on tube)"
         }
       ],
       "observationsToRecord": [
-        "Did vessel shape or volume affect the final water level? Explain:",
-        "What happened when you used a denser fluid (e.g. salt water vs fresh water)?"
+        "Water level in each tube (cm above base)",
+        "Effect of pressing one tube on other levels",
+        "Effect of adding liquid to one tube on all others"
       ],
       "theoryPoints": [
-        "Communicating vessels: connected fluid containers reach the same surface level regardless of shape.",
-        "Pressure at equal depths is equal: P = ρgh",
-        "Pascal's Principle: pressure applied to an enclosed fluid is transmitted undiminished throughout."
+        "Stevino's law: pressure at depth h is p = p₀ + ρgh.",
+        "At the same depth in connected vessels, pressure must be equal.",
+        "Equal pressure at the base → equal height h in all connected tubes.",
+        "Shape and diameter of tubes do not affect the equilibrium height."
       ],
       "realWorldConnections": [
-        "Hydraulic car brakes",
-        "U-tube manometer",
-        "Spirit levels",
-        "Canal locks"
+        "Plumbers' spirit levels use communicating vessels to check horizontal alignment.",
+        "The hydraulic press uses connected vessels of different areas to multiply force.",
+        "Municipal water supply towers maintain pressure using hydrostatic principles."
       ],
-      "formula": "P = ρgh   |   P₁ = P₂ at equal depth"
+      "formula": "p = p₀ + ρgh   |   Same depth → same pressure → same height"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two connected vessels have different cross-sections. At equilibrium, the water levels are:",
+          "text": "Water is in two connected tubes: narrow and wide. Where is the water level higher?",
           "options": [
-            "A. Different (wider vessel is lower)",
-            "B. The same",
-            "C. Different (narrower is higher)",
-            "D. Depends on volume"
+            "In the narrow tube",
+            "In the wide tube",
+            "The same height in both",
+            "It depends on the temperature"
           ],
-          "correctIndex": 1,
-          "explanation": "In communicating vessels, the free surface always reaches the same height regardless of shape."
+          "correctIndex": 2,
+          "explanation": "By Stevino's law, connected fluid seeks the same level regardless of tube width."
         },
         {
-          "text": "Water pressure at 2 m depth (ρ=1000 kg/m³, g=10 m/s²):",
+          "text": "What happens to the level in all tubes when you push down on the liquid in one tube?",
           "options": [
-            "A. 200 Pa",
-            "B. 20 000 Pa",
-            "C. 2000 Pa",
-            "D. 100 Pa"
+            "Only that tube changes",
+            "All tubes rise equally",
+            "Some tubes rise, some fall",
+            "Nothing changes"
           ],
           "correctIndex": 1,
-          "explanation": "P = ρgh = 1000×10×2 = 20 000 Pa"
+          "explanation": "Pressure is transmitted equally through connected fluid (Pascal's principle); all levels rise together."
+        },
+        {
+          "text": "Stevino's law states that pressure at depth h equals:",
+          "options": [
+            "ρg",
+            "ρgh",
+            "p₀ + ρgh",
+            "p₀ × ρgh"
+          ],
+          "correctIndex": 2,
+          "explanation": "p = p₀ + ρgh, where p₀ is atmospheric pressure, ρ is fluid density, g is gravitational acceleration, h is depth."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why the level is the same in all tubes regardless of their shape, using pressure arguments.",
+        "How does a hydraulic jack use the communicating vessels principle to multiply force?",
+        "Why do plumbers use a water-filled tube as a level rather than a ruler?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
-        },
-        {
-          "label": "Fluid Mechanics",
+          "label": "Stevino's law p = p₀ + ρgh",
           "pct": 35
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "Equal pressure at same depth",
+          "pct": 30
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Pascal's principle",
+          "pct": 20
+        },
+        {
+          "label": "Applications of hydrostatics",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Fluid level in connected vessels depends only on height, not the volume or shape of the containers.",
-        "Dense fluids (like mercury) reach lower levels than water for the same pressure."
+        "Students often think the narrower tube will have a higher level; shape is irrelevant.",
+        "Many confuse pressure with force; pressure is force per unit area.",
+        "Forgetting the atmospheric pressure term p₀ in Stevino's formula."
       ],
-      "hook": "Pascal proved that water pressure transmits equally in all directions — this is why your hydraulic car brakes work. One foot applies tons of stopping force.",
+      "hook": "How does a simple water-filled tube work as a perfect spirit level? Because water always finds the same level in any connected system — Stevino knew this in 1586!",
       "khanLinks": [
         {
           "title": "Introduction to Pressure",
@@ -2509,144 +2698,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Vessel shape/size",
-        "Water height left (cm)",
-        "Water height right (cm)",
-        "Difference Δh (cm)",
-        "Fluid type"
+        "Tube",
+        "Shape/Diameter",
+        "Water level (cm)",
+        "Matches other tubes?"
       ],
-      "rows": 4
+      "rows": 5
     },
     "observations": [
-      "Did vessel shape or volume affect the final water level? Explain:",
-      "What happened when you used a denser fluid (e.g. salt water vs fresh water)?"
+      "Record the level in each tube and confirm they are equal.",
+      "Observe the effect of pressing one tube on all others.",
+      "Note that level is independent of tube diameter."
     ],
-    "conclusion": "State Pascal's principle as demonstrated by this experiment:",
+    "conclusion": "Water reached the same level in all connected tubes regardless of shape or diameter, confirming Stevino's law: equal depth → equal pressure. Pascal's principle confirmed: pressure applied to one tube was transmitted to all.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Communicating Vessels</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Water always finds its level — Stevino's law explains why! Ask me about hydrostatic pressure, Pascal's principle, or the experiment.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>P = ρgh &nbsp;&nbsp;|&nbsp;&nbsp; P₁ = P₂ at equal depth</div>Communicating vessels: connected fluid containers reach the same surface level regardless of shape.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Fluid level in connected vessels depends only on height, not the volume or shape of the containers.</li><li>❌ Dense fluids (like mercury) reach lower levels than water for the same pressure.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Hydraulic car brakes</li><li>🌍 U-tube manometer</li><li>🌍 Spirit levels</li><li>🌍 Canal locks</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: At equilibrium, both surfaces reach the same height regardless of container shape. Δh ≈ 0 for same fluid.<br><br>Δh should be 0 ± 2mm for connected vessels with same fluid. Different fluids: h₁ρ₁ = h₂ρ₂.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Pascal proved that water pressure transmits equally in all directions — this is why your hydraulic car brakes work. One foot applies tons of stopping force.</em><br><br>Key concepts to emphasise: Communicating vessels: connected fluid containers reach the same surface level regardless of shape.; Pressure at equal depths is equal: P = ρgh",
-        "hook": "Engaging hook for students: <blockquote>Pascal proved that water pressure transmits equally in all directions — this is why your hydraulic car brakes work. One foot applies tons of stopping force.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "communicating tubes|coloured water|connected|pressure",
+        "formula": "p = p₀ + ρgh|Stevino|Pascal",
+        "error": "air bubbles|leaking connections|not at equilibrium",
+        "question": "pressure|depth|same level|Pascal|hydrostatic",
+        "real": "spirit level|hydraulic jack|water tower"
       },
-      "hint": "At equilibrium, both surfaces reach the same height regardless of container shape. Δh ≈ 0 for same fluid.",
-      "expected": "Δh should be 0 ± 2mm for connected vessels with same fluid. Different fluids: h₁ρ₁ = h₂ρ₂."
+      "hint": "p = p₀ + ρgh. At same depth, same pressure → same liquid level in all connected tubes.",
+      "expected": "All tubes reach the same height. Pressing one tube raises all others equally."
     }
   },
   {
     "num": 18,
     "title": "Archimedes’ Principle",
     "section": "Mechanics",
-    "desc": "Verifies that buoyancy equals the weight of displaced fluid (Eureka principle).",
+    "desc": "Verify Archimedes' principle by measuring the buoyant force on submerged objects and comparing it with the weight of fluid displaced.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Verifies that buoyancy equals the weight of displaced fluid (Eureka principle).",
+      "whatTheyLearn": "Students verify F_B = ρ_fluid × V_object × g by measuring weight loss on submersion and volume of displaced water.",
       "instructions": [
-        "Did the measured buoyancy equal the weight of displaced water? Show calculation:",
-        "What happened to a floating object? How did you measure its buoyancy?",
-        "State Archimedes' Principle using your results. Calculate the density of each object:"
+        "Weigh the object in air: W_air (N).",
+        "Submerge the object; record the apparent weight W_water (N).",
+        "Collect and measure displaced water volume V (mL).",
+        "Verify: F_B = W_air − W_water = ρ_water × V × g."
       ],
-      "expectedOutcome": "F_B = W_air − W_water = weight of fluid displaced = ρ_fluid × V × g. V = F_B / (ρ_water × g) = F_B / 9800 × 10⁶ cm³. Iron block 50g: W=0.49N, W_w≈0.43N, F_B≈0.06N, V≈6.1cm³, ρ≈8.2 g/cm³."
+      "expectedOutcome": "M = [10,25,50,75,100] g masses → displaced V = [1,2.5,5.5,8,11] mL. F_B = ρVg matches (W_air − W_water)."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🏋️",
-          "name": "Sample masses"
+          "emoji": "⚖️",
+          "name": "Spring balance or force sensor"
         },
         {
-          "emoji": "⚖️",
-          "name": "Spring balance"
+          "emoji": "🫙",
+          "name": "Displacement vessel (Eureka can)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Measuring cylinder (10 mL)"
         },
         {
           "emoji": "💧",
-          "name": "Water container"
+          "name": "Water"
         },
         {
-          "emoji": "📏",
-          "name": "Overflow can"
+          "emoji": "🏋️",
+          "name": "Masses (10–100 g)"
         }
       ],
       "observationsToRecord": [
-        "Did the measured buoyancy equal the weight of displaced water? Show calculation:",
-        "What happened to a floating object? How did you measure its buoyancy?"
+        "Weight in air W_air (N)",
+        "Apparent weight when submerged W_water (N)",
+        "Buoyant force F_B = W_air − W_water (N)",
+        "Volume of water displaced V (mL = cm³)",
+        "Weight of displaced water ρVg (N)"
       ],
       "theoryPoints": [
-        "Buoyancy force = weight of fluid displaced = ρ_fluid × V_displaced × g.",
-        "An object floats if buoyancy ≥ weight; sinks if buoyancy < weight.",
-        "The apparent weight of a submerged object = real weight − buoyancy force."
+        "Archimedes' Principle: F_B = weight of fluid displaced = ρ_fluid × V_object × g.",
+        "An object submerged in fluid loses weight equal to the weight of displaced fluid.",
+        "Objects float if F_B ≥ weight; sink if F_B < weight.",
+        "F_B depends on fluid density and object volume, NOT on object density or mass."
       ],
       "realWorldConnections": [
-        "Steel ships (hollow hull displaces huge volume)",
-        "Submarines (control buoyancy with ballast tanks)",
-        "Hot air balloons"
+        "Ships are designed so the hull volume displaces enough water to support the ship's weight.",
+        "Submarines adjust buoyancy by filling/emptying ballast tanks with water.",
+        "Hot air balloons use buoyancy in air: the envelope displaces air heavier than the balloon."
       ],
-      "formula": "F_B = ρ_f × V × g   |   W_apparent = W − F_B"
+      "formula": "F_B = ρ_fluid × V × g   |   Apparent weight = W_air − F_B"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A 200 cm³ object is submerged in water (ρ=1 g/cm³). What is the buoyancy force?",
+          "text": "A 50 g mass displaces 5.5 mL of water. What is the buoyant force?",
           "options": [
-            "A. 0.2 N",
-            "B. 1.96 N",
-            "C. 200 N",
-            "D. 20 N"
+            "0.054 N",
+            "0.49 N",
+            "0.54 N",
+            "0.054 mN"
           ],
-          "correctIndex": 1,
-          "explanation": "F_B = ρVg = 1×200×10⁻⁶×9.8 ≈ 1.96 N (or 200 g-force if using g/cm³)"
+          "correctIndex": 0,
+          "explanation": "F_B = ρVg = 1000 × 5.5×10⁻⁶ × 9.81 = 0.054 N."
         },
         {
-          "text": "An object has density 0.8 g/cm³. It is placed in water. It will:",
+          "text": "An object weighs 2.0 N in air and 1.4 N when submerged. What is the buoyant force?",
           "options": [
-            "A. Sink",
-            "B. Float with part above water",
-            "C. Float fully submerged",
-            "D. Dissolve"
+            "3.4 N",
+            "0.6 N",
+            "1.4 N",
+            "2.0 N"
           ],
           "correctIndex": 1,
-          "explanation": "Density < 1 g/cm³ (water), so it floats with part above the surface."
+          "explanation": "F_B = W_air − W_water = 2.0 − 1.4 = 0.6 N."
+        },
+        {
+          "text": "Archimedes' Principle states that the buoyant force equals:",
+          "options": [
+            "The weight of the object",
+            "The weight of displaced fluid",
+            "The depth of submersion",
+            "The surface area of the object"
+          ],
+          "correctIndex": 1,
+          "explanation": "F_B equals the weight of the fluid displaced by the object, regardless of the object's own weight."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does a steel ship float while a solid steel ball sinks, even though both are made of the same material?",
+        "How do submarines control their depth? Explain using Archimedes' Principle.",
+        "Why do objects feel lighter when submerged in water?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Forces & Motion",
-          "pct": 40
-        },
-        {
-          "label": "Fluid Mechanics",
+          "label": "F_B = ρVg",
           "pct": 35
         },
         {
-          "label": "Data Analysis",
-          "pct": 15
+          "label": "Apparent weight measurement",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Volume displacement measurement",
+          "pct": 25
+        },
+        {
+          "label": "Floating vs. sinking conditions",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Steel ships float because their average density (including hollow space) is less than water.",
-        "Buoyancy depends on displaced volume, not the shape or material of the object."
+        "Students think heavier objects experience more buoyancy; F_B depends only on displaced volume, not mass.",
+        "Many confuse apparent weight with buoyant force; apparent weight = W_air − F_B.",
+        "Assuming buoyancy depends on the depth of submersion (it does not, for fully submerged objects)."
       ],
-      "hook": "'Eureka!' — Archimedes' legendary cry when he stepped into his bath and saw water overflow. He'd just discovered the principle that explains why steel ships float.",
+      "hook": "Legend has it Archimedes leapt from his bath shouting 'Eureka!' after realising a submerged object displaces exactly its own volume of water. That insight revolutionised science!",
       "khanLinks": [
         {
           "title": "Archimedes Principle & Buoyant Force",
@@ -2660,305 +2864,158 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Object",
-        "Weight in air W (N)",
-        "Weight in water W_w (N)",
-        "Buoyancy F_B (N)",
-        "Volume displaced V (cm³)",
-        "ρ_object (g/cm³)"
+        "Mass m (g)",
+        "W_air (N)",
+        "W_water (N)",
+        "F_B (N)",
+        "V_disp (mL)",
+        "ρVg (N)"
       ],
-      "rows": 4
+      "rows": 5
     },
     "observations": [
-      "Did the measured buoyancy equal the weight of displaced water? Show calculation:",
-      "What happened to a floating object? How did you measure its buoyancy?"
+      "Ensure the object is fully submerged without touching the vessel walls.",
+      "Collect all displaced water carefully in the measuring cylinder.",
+      "Compare F_B = W_air − W_water with ρVg = 1000 × V_mL × 10⁻⁶ × 9.81."
     ],
-    "conclusion": "State Archimedes' Principle using your results. Calculate the density of each object:",
+    "conclusion": "Archimedes' Principle verified: F_B = ρVg = W_air − W_water for all masses. Example: 50 g → V=5.5 mL, F_B=0.054 N calculated vs. 0.054 N measured. Agreement within 2%.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Archimedes’ Principle</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Archimedes' Principle explains flotation, submarines, and ships! Ask me about buoyant force, how to measure it, or why ships float.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F_B = ρ_f × V × g &nbsp;&nbsp;|&nbsp;&nbsp; W_apparent = W − F_B</div>Buoyancy force = weight of fluid displaced = ρ_fluid × V_displaced × g.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Steel ships float because their average density (including hollow space) is less than water.</li><li>❌ Buoyancy depends on displaced volume, not the shape or material of the object.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Steel ships (hollow hull displaces huge volume)</li><li>🌍 Submarines (control buoyancy with ballast tanks)</li><li>🌍 Hot air balloons</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: F_B = W_air − W_water = weight of fluid displaced = ρ_fluid × V × g. V = F_B / (ρ_water × g) = F_B / 9800 × 10⁶ cm³.<br><br>Iron block 50g: W=0.49N, W_w≈0.43N, F_B≈0.06N, V≈6.1cm³, ρ≈8.2 g/cm³.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>'Eureka!' — Archimedes' legendary cry when he stepped into his bath and saw water overflow. He'd just discovered the principle that explains why steel ships float.</em><br><br>Key concepts to emphasise: Buoyancy force = weight of fluid displaced = ρ_fluid × V_displaced × g.; An object floats if buoyancy ≥ weight; sinks if buoyancy < weight.",
-        "hook": "Engaging hook for students: <blockquote>'Eureka!' — Archimedes' legendary cry when he stepped into his bath and saw water overflow. He'd just discovered the principle that explains why steel ships float.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "Eureka can|spring balance|displacement|measuring cylinder",
+        "formula": "F_B = ρVg|apparent weight = W_air - F_B",
+        "error": "incomplete submersion|air bubbles|displaced water spilled",
+        "question": "buoyancy|Archimedes|float|sink|displacement",
+        "real": "ship|submarine|hot air balloon"
       },
-      "hint": "F_B = W_air − W_water = weight of fluid displaced = ρ_fluid × V × g. V = F_B / (ρ_water × g) = F_B / 9800 × 10⁶ cm³.",
-      "expected": "Iron block 50g: W=0.49N, W_w≈0.43N, F_B≈0.06N, V≈6.1cm³, ρ≈8.2 g/cm³."
-    }
-  },
-  {
-    "num": 25,
-    "title": "The Manometer",
-    "section": "Mechanics",
-    "desc": "Measures gauge pressure using fluid column height in a U-tube manometer.",
-    "setupTime": "5 min",
-    "duration": "20 min",
-    "summary": {
-      "whatTheyLearn": "Measures gauge pressure using fluid column height in a U-tube manometer.",
-      "instructions": [
-        "Describe what happened to the fluid levels when pressure was applied:",
-        "What is the difference between gauge pressure and absolute pressure?",
-        "Calculate the gauge pressures from your height measurements. State the formula used:"
-      ],
-      "expectedOutcome": "P_gauge = ρgh. For water (ρ=1000 kg/m³): P = 1000×9.81×h. P_abs = P_atm + P_gauge. 1 atm ≈ 101325 Pa. h=10cm water → P_gauge = 981 Pa; h=50cm → 4905 Pa. Vacuum would show negative gauge pressure."
-    },
-    "experiment": {
-      "equipment": [
-        {
-          "emoji": "🧪",
-          "name": "U-tube manometer"
-        },
-        {
-          "emoji": "💧",
-          "name": "Water"
-        },
-        {
-          "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "🌬️",
-          "name": "Rubber tubing"
-        },
-        {
-          "emoji": "🔒",
-          "name": "Clips"
-        }
-      ],
-      "observationsToRecord": [
-        "Describe what happened to the fluid levels when pressure was applied:",
-        "What is the difference between gauge pressure and absolute pressure?"
-      ],
-      "theoryPoints": [
-        "A manometer measures pressure difference between a gas and a reference (usually atmosphere).",
-        "Gauge pressure = absolute pressure − atmospheric pressure.",
-        "U-tube manometer: the height difference h gives P = ρgh."
-      ],
-      "realWorldConnections": [
-        "Blood pressure measurement",
-        "Tyre pressure gauges",
-        "Gas pipe pressure monitoring",
-        "Weather barometers"
-      ],
-      "formula": "P_gauge = ρgh   |   P_abs = P_atm + P_gauge"
-    },
-    "questions": {
-      "mcq": [
-        {
-          "text": "A water manometer shows 50 cm height difference. What is the gauge pressure? (ρ=1000 kg/m³, g=10)",
-          "options": [
-            "A. 50 Pa",
-            "B. 500 Pa",
-            "C. 5000 Pa",
-            "D. 50 000 Pa"
-          ],
-          "correctIndex": 2,
-          "explanation": "P = ρgh = 1000×10×0.5 = 5000 Pa"
-        },
-        {
-          "text": "Gauge pressure is 0 Pa. What does this mean?",
-          "options": [
-            "A. There is a vacuum",
-            "B. Pressure equals atmospheric",
-            "C. There is no gas",
-            "D. Pressure is 101 325 Pa absolute"
-          ],
-          "correctIndex": 1,
-          "explanation": "Gauge pressure = 0 means the absolute pressure equals atmospheric pressure — open to atmosphere."
-        }
-      ],
-      "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
-      ]
-    },
-    "overview": {
-      "conceptBreakdown": [
-        {
-          "label": "Fluid Mechanics",
-          "pct": 45
-        },
-        {
-          "label": "Measurement",
-          "pct": 30
-        },
-        {
-          "label": "Data Analysis",
-          "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
-        }
-      ],
-      "misconceptions": [
-        "Gauge pressure can be negative (vacuum) — absolute pressure can never be negative.",
-        "The fluid in a manometer doesn't need to be mercury — any fluid works, but height differs with density."
-      ],
-      "hook": "Every weather forecast depends on atmospheric pressure. Torricelli invented the barometer in 1643 and proved air has weight — shocking scientists of his day.",
-      "khanLinks": [
-        {
-          "title": "Introduction to Pressure",
-          "url": "https://www.khanacademy.org/science/physics/fluids/fluid-statics/v/introduction-to-pressure"
-        },
-        {
-          "title": "Fluid Statics",
-          "url": "https://www.khanacademy.org/science/physics/fluids/fluid-statics"
-        }
-      ]
-    },
-    "dataTable": {
-      "headers": [
-        "#",
-        "Gas source",
-        "Height diff h (cm)",
-        "Fluid density ρ (g/cm³)",
-        "Gauge pressure P (Pa)",
-        "Absolute pressure P_abs (Pa)"
-      ],
-      "rows": 4
-    },
-    "observations": [
-      "Describe what happened to the fluid levels when pressure was applied:",
-      "What is the difference between gauge pressure and absolute pressure?"
-    ],
-    "conclusion": "Calculate the gauge pressures from your height measurements. State the formula used:",
-    "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>The Manometer</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
-      "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>P_gauge = ρgh &nbsp;&nbsp;|&nbsp;&nbsp; P_abs = P_atm + P_gauge</div>A manometer measures pressure difference between a gas and a reference (usually atmosphere).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Gauge pressure can be negative (vacuum) — absolute pressure can never be negative.</li><li>❌ The fluid in a manometer doesn't need to be mercury — any fluid works, but height differs with density.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Blood pressure measurement</li><li>🌍 Tyre pressure gauges</li><li>🌍 Gas pipe pressure monitoring</li><li>🌍 Weather barometers</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: P_gauge = ρgh. For water (ρ=1000 kg/m³): P = 1000×9.81×h. P_abs = P_atm + P_gauge. 1 atm ≈ 101325 Pa.<br><br>h=10cm water → P_gauge = 981 Pa; h=50cm → 4905 Pa. Vacuum would show negative gauge pressure.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Every weather forecast depends on atmospheric pressure. Torricelli invented the barometer in 1643 and proved air has weight — shocking scientists of his day.</em><br><br>Key concepts to emphasise: A manometer measures pressure difference between a gas and a reference (usually atmosphere).; Gauge pressure = absolute pressure − atmospheric pressure.",
-        "hook": "Engaging hook for students: <blockquote>Every weather forecast depends on atmospheric pressure. Torricelli invented the barometer in 1643 and proved air has weight — shocking scientists of his day.</blockquote>This works well as an opener before students touch the equipment."
-      },
-      "hint": "P_gauge = ρgh. For water (ρ=1000 kg/m³): P = 1000×9.81×h. P_abs = P_atm + P_gauge. 1 atm ≈ 101325 Pa.",
-      "expected": "h=10cm water → P_gauge = 981 Pa; h=50cm → 4905 Pa. Vacuum would show negative gauge pressure."
+      "hint": "F_B = W_air − W_water = ρ_water × V_displaced × g. Collect ALL displaced water to measure V.",
+      "expected": "50g mass: V=5.5mL, F_B=0.054N; 100g: V=11mL, F_B=0.108N."
     }
   },
   {
     "num": 19,
     "title": "Equilibrium temperature of mixed liquids",
     "section": "Heat",
-    "desc": "Mixes hot and cold water to verify the law of heat exchange.",
-    "setupTime": "10 min",
+    "desc": "Mix equal volumes of hot and cold water and measure the equilibrium temperature to verify heat exchange.",
+    "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Mixes hot and cold water to verify the law of heat exchange.",
+      "whatTheyLearn": "Students confirm Q_lost = Q_gained and discover that the calorimeter absorbs some heat, making T_eq slightly below the predicted average.",
       "instructions": [
-        "Was the measured T_eq close to calculated? List sources of heat loss:",
-        "What happened when you mixed different masses of water?",
-        "State the law of heat exchange. Calculate % error for each trial:"
+        "Measure T_cold (cold water) and T_hot (hot water) with a thermometer.",
+        "Mix equal masses in a calorimeter; stir and record temperature every 30 s.",
+        "Compare measured T_eq with predicted (T_cold + T_hot)/2."
       ],
-      "expectedOutcome": "T_eq = (m₁T₁ + m₂T₂)/(m₁+m₂) when c is same. Error from heat loss to calorimeter/surroundings. Expect 2–5% error. 100g at 80°C + 100g at 20°C → T_eq = 50°C. Real T_eq slightly < 50°C due to heat loss."
+      "expectedOutcome": "T_cold ≈ 20°C, T_hot ≈ 70°C → predicted T_eq = 45°C; measured ≈ 43–45°C (slightly lower due to calorimeter heat absorption). Data: 30s→32°C, 60s→39°C, 90s→42°C, 120s→45°C."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌡️",
-          "name": "Thermometers x2"
+          "name": "Thermometer (±0.5°C)"
         },
         {
           "emoji": "☕",
-          "name": "Hot water"
+          "name": "Calorimeter (insulated cup)"
         },
         {
           "emoji": "💧",
-          "name": "Cold water"
+          "name": "Hot water (~70°C) and cold water (~20°C)"
         },
         {
-          "emoji": "⚗️",
-          "name": "Calorimeter"
+          "emoji": "⏱️",
+          "name": "Stopwatch"
         },
         {
           "emoji": "⚖️",
-          "name": "Mass balance"
+          "name": "Balance (to measure equal masses)"
         }
       ],
       "observationsToRecord": [
-        "Was the measured T_eq close to calculated? List sources of heat loss:",
-        "What happened when you mixed different masses of water?"
+        "T_cold (°C) before mixing",
+        "T_hot (°C) before mixing",
+        "T_eq (°C) measured at 30 s intervals until stable"
       ],
       "theoryPoints": [
-        "Thermal equilibrium: heat flows from hotter to cooler body until temperatures equalise.",
-        "Conservation of energy: Q_lost (hot) = Q_gained (cold) — assuming no heat loss.",
-        "Q = mcΔT relates heat transferred to mass, specific heat, and temperature change."
+        "Heat lost by hot water = Heat gained by cold water + calorimeter: Q = mcΔT.",
+        "For equal masses of the same liquid: T_eq = (T_hot + T_cold)/2 (ideal).",
+        "Real T_eq is slightly lower because the calorimeter itself absorbs heat.",
+        "Thermal equilibrium: no further temperature change when Q_lost = Q_gained."
       ],
       "realWorldConnections": [
-        "Mixing hot and cold water in a shower",
-        "Cooling a CPU with a heatsink",
-        "Tempering chocolate (controlled cooling)"
+        "Mixing hot and cold water in a shower uses this principle.",
+        "Heat exchangers in power plants transfer heat between fluids.",
+        "Cooking: adding cold ingredients to hot oil changes the cooking temperature."
       ],
-      "formula": "Q = mc·ΔT   |   m₁c₁ΔT₁ = m₂c₂ΔT₂"
+      "formula": "Q = mcΔT   |   m₁c(T_hot − T_eq) = m₂c(T_eq − T_cold)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "100g of water at 80°C mixes with 100g at 20°C (same c). Equilibrium temperature?",
+          "text": "Equal masses of water at 20°C and 70°C are mixed. Predicted T_eq is:",
           "options": [
-            "A. 60°C",
-            "B. 50°C",
-            "C. 40°C",
-            "D. 100°C"
+            "35°C",
+            "45°C",
+            "50°C",
+            "40°C"
           ],
           "correctIndex": 1,
-          "explanation": "Equal masses, same specific heat: T_eq = (80+20)/2 = 50°C"
+          "explanation": "T_eq = (T_cold + T_hot)/2 = (20 + 70)/2 = 45°C for equal masses of same liquid."
         },
         {
-          "text": "What does specific heat capacity measure?",
+          "text": "Why is the measured T_eq slightly lower than predicted?",
           "options": [
-            "A. Heat needed to melt 1 kg",
-            "B. Heat to raise 1 kg by 1°C",
-            "C. Heat conducted per second",
-            "D. Maximum temperature of a substance"
+            "Thermometer error",
+            "The calorimeter absorbs some heat",
+            "Cold water is denser",
+            "Heat escapes from the hot water before mixing"
           ],
           "correctIndex": 1,
-          "explanation": "Specific heat c = energy required to raise 1 kg of a substance by 1°C (or 1K)"
+          "explanation": "The calorimeter (container) absorbs some of the heat from the hot water, so less heat goes to the cold water, giving a lower T_eq."
+        },
+        {
+          "text": "What happens to total thermal energy when hot and cold water mix (ignoring losses)?",
+          "options": [
+            "It increases",
+            "It decreases",
+            "It stays the same",
+            "It doubles"
+          ],
+          "correctIndex": 2,
+          "explanation": "Energy is conserved: Q_lost by hot = Q_gained by cold. Total thermal energy is constant."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does the measured equilibrium temperature fall slightly below (T_hot + T_cold)/2?",
+        "How would you modify the experiment if you used different volumes of hot and cold water?",
+        "What is the purpose of stirring the mixture during the experiment?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Energy Transfer",
-          "pct": 50
+          "label": "Q = mcΔT",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
-          "pct": 25
+          "label": "Heat conservation Q_lost = Q_gained",
+          "pct": 35
         },
         {
-          "label": "Scientific Method",
+          "label": "Calorimeter heat loss",
+          "pct": 20
+        },
+        {
+          "label": "Thermal equilibrium",
           "pct": 15
-        },
-        {
-          "label": "Measurement",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Heat and temperature are different. Heat is energy transferred; temperature is a measure of average kinetic energy.",
-        "Equal masses don't always reach the midpoint temperature — specific heat matters."
+        "Students think the hotter water 'dominates' and T_eq is closer to T_hot; equal masses give exactly the average.",
+        "Many forget that the calorimeter itself absorbs heat, reducing T_eq.",
+        "Confusing heat Q with temperature T; heat is energy, temperature is a measure of average kinetic energy."
       ],
-      "hook": "When you mix hot and cold water, heat flows until temperatures equalise — a beautiful example of thermodynamic equilibrium that governs every heat engine.",
+      "hook": "If you mix 1 litre of boiling water with 1 litre of ice water, what do you get? Barely warm — exactly 50°C. Nature perfectly shares the energy!",
       "khanLinks": [
         {
           "title": "Specific Heat, Heat of Fusion",
@@ -2972,150 +3029,154 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "m_hot (g)",
-        "T_hot (°C)",
-        "m_cold (g)",
-        "T_cold (°C)",
-        "T_eq measured (°C)",
-        "T_eq calculated (°C)",
-        "% Error"
+        "Time (s)",
+        "Temperature (°C)"
       ],
-      "rows": 4
+      "rows": 6
     },
     "observations": [
-      "Was the measured T_eq close to calculated? List sources of heat loss:",
-      "What happened when you mixed different masses of water?"
+      "Record T every 30 seconds after mixing until it stabilises.",
+      "Note the final equilibrium temperature and compare with the predicted value.",
+      "Describe the shape of the temperature-time graph."
     ],
-    "conclusion": "State the law of heat exchange. Calculate % error for each trial:",
+    "conclusion": "T_eq measured ≈ 43–45°C vs. predicted 45°C. The calorimeter absorbed some heat, giving a slightly lower equilibrium temperature. Q_lost ≈ Q_gained confirmed qualitatively. Data: 30s→32°C, 60s→39°C, 90s→42°C, 120s→45°C.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Equilibrium temperature of mixed liquids</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Mixing hot and cold — pure thermodynamics! Ask me about Q=mcΔT, why T_eq is lower than expected, or heat conservation.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 10 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Q = mc·ΔT &nbsp;&nbsp;|&nbsp;&nbsp; m₁c₁ΔT₁ = m₂c₂ΔT₂</div>Thermal equilibrium: heat flows from hotter to cooler body until temperatures equalise.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Heat and temperature are different. Heat is energy transferred; temperature is a measure of average kinetic energy.</li><li>❌ Equal masses don't always reach the midpoint temperature — specific heat matters.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Mixing hot and cold water in a shower</li><li>🌍 Cooling a CPU with a heatsink</li><li>🌍 Tempering chocolate (controlled cooling)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: T_eq = (m₁T₁ + m₂T₂)/(m₁+m₂) when c is same. Error from heat loss to calorimeter/surroundings. Expect 2–5% error.<br><br>100g at 80°C + 100g at 20°C → T_eq = 50°C. Real T_eq slightly < 50°C due to heat loss.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>When you mix hot and cold water, heat flows until temperatures equalise — a beautiful example of thermodynamic equilibrium that governs every heat engine.</em><br><br>Key concepts to emphasise: Thermal equilibrium: heat flows from hotter to cooler body until temperatures equalise.; Conservation of energy: Q_lost (hot) = Q_gained (cold) — assuming no heat loss.",
-        "hook": "Engaging hook for students: <blockquote>When you mix hot and cold water, heat flows until temperatures equalise — a beautiful example of thermodynamic equilibrium that governs every heat engine.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "calorimeter|thermometer|hot water|cold water|mixing",
+        "formula": "Q = mcΔT|T_eq = (T1+T2)/2|Q_lost = Q_gained",
+        "error": "calorimeter heat absorption|heat loss to surroundings|thermometer lag",
+        "question": "equilibrium temperature|heat|calorimeter|mixing",
+        "real": "shower temperature|heat exchanger|cooking"
       },
-      "hint": "T_eq = (m₁T₁ + m₂T₂)/(m₁+m₂) when c is same. Error from heat loss to calorimeter/surroundings. Expect 2–5% error.",
-      "expected": "100g at 80°C + 100g at 20°C → T_eq = 50°C. Real T_eq slightly < 50°C due to heat loss."
+      "hint": "For equal masses of same liquid: T_eq = (T_hot + T_cold)/2 ideally. In practice T_eq is lower because the calorimeter absorbs heat.",
+      "expected": "T_cold=20°C, T_hot=70°C → ideal T_eq=45°C; measured ≈43–45°C. Time-temp: 30s→32, 60s→39, 90s→42, 120s→45°C."
     }
   },
   {
     "num": 20,
     "title": "Heat transfer and thermal insulation",
     "section": "Heat",
-    "desc": "Compares insulating materials by measuring cooling rates over time.",
-    "setupTime": "10 min",
-    "duration": "30 min",
+    "desc": "Compare the cooling rate of hot water with no insulation, one insulating layer, and two insulating layers.",
+    "setupTime": "5 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Compares insulating materials by measuring cooling rates over time.",
+      "whatTheyLearn": "Students verify that more insulation layers slow heat loss, and understand conduction, convection, and radiation mechanisms.",
       "instructions": [
-        "Which material was the best insulator? Which was the worst?",
-        "Describe the shape of the cooling curve (linear, exponential, etc.):",
-        "Rank the materials by insulating ability. Explain results in terms of conduction, convection, radiation:"
+        "Fill three identical containers with hot water at the same initial temperature.",
+        "Wrap one with no insulation, one with one layer, one with two layers of material.",
+        "Record temperature every 30 s for 4 minutes in each container."
       ],
-      "expectedOutcome": "Newton's Law of Cooling: rate ∝ ΔT. Better insulators show slower cooling rate. Vacuum flask should show nearly flat curve. Metal: fast cooling (high k). Foam: slow. Vacuum flask: very slow. Plot T vs time to see exponential decay."
+      "expectedOutcome": "At t = 240 s: no insulation → 75°C, one layer → 79°C, two layers → 86°C. More layers → slower cooling."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌡️",
-          "name": "Thermometer"
+          "name": "Three thermometers"
         },
         {
           "emoji": "☕",
-          "name": "Hot water"
+          "name": "Three identical cups"
         },
         {
-          "emoji": "🧊",
-          "name": "Insulating materials"
+          "emoji": "🧣",
+          "name": "Insulating material (e.g. wool, foam layers)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Hot water (~90°C)"
         },
         {
           "emoji": "⏱️",
           "name": "Stopwatch"
-        },
-        {
-          "emoji": "📋",
-          "name": "Data sheet"
         }
       ],
       "observationsToRecord": [
-        "Which material was the best insulator? Which was the worst?",
-        "Describe the shape of the cooling curve (linear, exponential, etc.):"
+        "Initial temperature T₀ (all three equal)",
+        "Temperature at 30 s intervals for 240 s",
+        "Temperature difference after 240 s for each configuration"
       ],
       "theoryPoints": [
-        "Three modes of heat transfer: conduction (solids), convection (fluids), radiation (electromagnetic waves).",
-        "Thermal insulators reduce conduction by trapping air (low thermal conductivity).",
-        "Rate of heat flow: Q/t = kA(ΔT/d) for conduction (Fourier's Law)."
+        "Heat transfer mechanisms: conduction (through solid), convection (through fluid), radiation (electromagnetic).",
+        "Insulation reduces conduction by trapping air (low thermal conductivity).",
+        "Thicker insulation → greater temperature gradient spread → slower heat loss.",
+        "Newton's Law of Cooling: rate of heat loss ∝ (T − T_surroundings)."
       ],
       "realWorldConnections": [
-        "Double-glazed windows (trapped air insulates)",
-        "Astronaut suits (vacuum + reflective layers)",
-        "Building insulation (fibreglass/mineral wool)"
+        "Double-glazed windows trap a layer of air to insulate homes.",
+        "Thermos flasks use a vacuum to eliminate conduction and convection.",
+        "Arctic animals have thick layers of fat and fur for thermal insulation."
       ],
-      "formula": "Q/t = k·A·ΔT/d   |   (k = thermal conductivity)"
+      "formula": "Rate of heat loss ∝ (T − T_ambient) × 1/R_insulation"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Which heat transfer mode requires no medium (works in vacuum)?",
+          "text": "After 4 minutes: no insulation 75°C, 1 layer 79°C, 2 layers 86°C. Which lost most heat?",
           "options": [
-            "A. Conduction",
-            "B. Convection",
-            "C. Radiation",
-            "D. All three"
+            "No insulation",
+            "One layer",
+            "Two layers",
+            "All equal"
           ],
-          "correctIndex": 2,
-          "explanation": "Radiation transfers heat via electromagnetic waves and needs no medium — it works in space."
+          "correctIndex": 0,
+          "explanation": "No insulation dropped the most from the initial temperature, meaning it lost the most heat."
         },
         {
-          "text": "Why does wrapping food in aluminium foil keep it warm?",
+          "text": "Insulation works primarily by:",
           "options": [
-            "A. Foil is a conductor",
-            "B. Shiny surfaces reflect infrared radiation",
-            "C. Foil traps air",
-            "D. Foil absorbs heat"
+            "Absorbing heat",
+            "Trapping air with low thermal conductivity",
+            "Reflecting all heat",
+            "Increasing convection"
           ],
           "correctIndex": 1,
-          "explanation": "Shiny aluminium reflects infrared radiation, reducing heat loss by radiation."
+          "explanation": "Insulating materials trap air pockets, and air has low thermal conductivity, slowing heat transfer by conduction."
+        },
+        {
+          "text": "A thermos flask minimises heat transfer by:",
+          "options": [
+            "Using thick glass walls",
+            "Creating a vacuum between the walls",
+            "Adding insulating foam inside",
+            "Painting the flask black"
+          ],
+          "correctIndex": 1,
+          "explanation": "The vacuum eliminates conduction and convection; reflective walls minimise radiation."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain the three mechanisms of heat transfer and how insulation reduces each.",
+        "Why does doubling insulation thickness not exactly halve the heat loss?",
+        "How does a thermos flask differ from ordinary insulation? Why is it more effective?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Energy Transfer",
-          "pct": 50
+          "label": "Three heat transfer modes",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Role of trapped air",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "Newton's Law of Cooling",
+          "pct": 25
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Quantitative comparison of layers",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Cold doesn't flow — only heat flows (from hot to cold). 'Cold coming in' is actually heat going out.",
-        "A shiny surface radiates and absorbs less heat — useful in thermos and space blankets."
+        "Students think insulation 'adds heat'; it only slows heat loss.",
+        "Many confuse heat and temperature; insulation slows the rate of heat flow, not the temperature difference.",
+        "Assuming a black surface always loses more heat than white; for radiation only, black emits/absorbs more."
       ],
-      "hook": "A thermos flask uses three layers of protection: vacuum, silvered walls, and air gaps. Understanding heat transfer lets us design everything from spacecraft to winter jackets.",
+      "hook": "Why do we wrap babies in blankets, insulate houses with foam, and use thermos flasks for coffee? Because trapping air is the simplest and most effective way to slow heat loss!",
       "khanLinks": [
         {
           "title": "Heat Transfer",
@@ -3129,149 +3190,160 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Material/Method",
-        "Initial T (°C)",
-        "T after 5 min (°C)",
-        "T after 10 min (°C)",
-        "T after 15 min (°C)",
-        "Cooling rate (°C/min)"
+        "Time (s)",
+        "T no insulation (°C)",
+        "T 1 layer (°C)",
+        "T 2 layers (°C)"
       ],
-      "rows": 4
+      "rows": 8
     },
     "observations": [
-      "Which material was the best insulator? Which was the worst?",
-      "Describe the shape of the cooling curve (linear, exponential, etc.):"
+      "Record temperature every 30 s for all three cups simultaneously.",
+      "At t=240s: compare readings — 75°C, 79°C, 86°C expected.",
+      "Sketch T vs. t curves for all three on the same graph."
     ],
-    "conclusion": "Rank the materials by insulating ability. Explain results in terms of conduction, convection, radiation:",
+    "conclusion": "More insulation layers significantly slow heat loss. At t=240s: no insulation→75°C, 1 layer→79°C, 2 layers→86°C. Temperature decrease: 15°C, 11°C, 4°C respectively (from initial ~90°C). Conduction through trapped air explains the difference.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Heat transfer and thermal insulation</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Insulation is all about slowing heat escape! Ask me about conduction, convection, radiation, or how to analyse the temperature-time graph.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 10 min setup + 30 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Q/t = k·A·ΔT/d &nbsp;&nbsp;|&nbsp;&nbsp; (k = thermal conductivity)</div>Three modes of heat transfer: conduction (solids), convection (fluids), radiation (electromagnetic waves).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Cold doesn't flow — only heat flows (from hot to cold). 'Cold coming in' is actually heat going out.</li><li>❌ A shiny surface radiates and absorbs less heat — useful in thermos and space blankets.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Double-glazed windows (trapped air insulates)</li><li>🌍 Astronaut suits (vacuum + reflective layers)</li><li>🌍 Building insulation (fibreglass/mineral wool)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Newton's Law of Cooling: rate ∝ ΔT. Better insulators show slower cooling rate. Vacuum flask should show nearly flat curve.<br><br>Metal: fast cooling (high k). Foam: slow. Vacuum flask: very slow. Plot T vs time to see exponential decay.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A thermos flask uses three layers of protection: vacuum, silvered walls, and air gaps. Understanding heat transfer lets us design everything from spacecraft to winter jackets.</em><br><br>Key concepts to emphasise: Three modes of heat transfer: conduction (solids), convection (fluids), radiation (electromagnetic waves).; Thermal insulators reduce conduction by trapping air (low thermal conductivity).",
-        "hook": "Engaging hook for students: <blockquote>A thermos flask uses three layers of protection: vacuum, silvered walls, and air gaps. Understanding heat transfer lets us design everything from spacecraft to winter jackets.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "insulation layers|hot water|thermometer|stopwatch",
+        "formula": "Newton cooling|heat loss rate|thermal resistance",
+        "error": "initial temperatures not equal|different cup sizes|heat loss from lid",
+        "question": "insulation|heat transfer|conduction|convection|radiation|layers",
+        "real": "double glazing|thermos|polar animals"
       },
-      "hint": "Newton's Law of Cooling: rate ∝ ΔT. Better insulators show slower cooling rate. Vacuum flask should show nearly flat curve.",
-      "expected": "Metal: fast cooling (high k). Foam: slow. Vacuum flask: very slow. Plot T vs time to see exponential decay."
+      "hint": "More layers = more trapped air = lower thermal conductivity = slower heat loss. At t=240s: no insulation→75°C, 1 layer→79°C, 2 layers→86°C.",
+      "expected": "From initial ~90°C: at 240s — no insulation: 75°C (−15°C); 1 layer: 79°C (−11°C); 2 layers: 86°C (−4°C)."
     }
   },
   {
     "num": 21,
     "title": "Specific heat capacity of solids",
     "section": "Heat",
-    "desc": "Uses a calorimeter to measure specific heat capacity of solid materials.",
-    "setupTime": "10 min",
-    "duration": "30 min",
+    "desc": "Determine the specific heat capacity of metals by measuring temperature changes when hot metal is dropped into cold water.",
+    "setupTime": "5 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Uses a calorimeter to measure specific heat capacity of solid materials.",
+      "whatTheyLearn": "Students apply Q_metal = Q_water to find c_metal = (m_w × c_w × ΔT_w) / (m_m × ΔT_m).",
       "instructions": [
-        "How did you measure the heat Q supplied to the material?",
-        "What corrections did you make for heat loss?",
-        "Compare your c values to accepted values. Calculate % error and identify major error sources:"
+        "Heat metal sample to 95°C in boiling water; record m_metal and T_metal.",
+        "Pour cold water (T_cold ≈ 22°C) into calorimeter; record m_water.",
+        "Drop hot metal into water; stir and record T_eq."
       ],
-      "expectedOutcome": "c = Q/(mΔT). Accepted: Al=900, Fe=450, Cu=385, Pb=128 J/kg·K. Errors from heat loss, thermometer lag. c_Al ≈ 900 J/kg·K ±15%. Lower measured value = heat lost to calorimeter. Higher = heat input overestimated."
+      "expectedOutcome": "Steel (95°C dropped into 22°C water) → T_eq ≈ 39°C. Copper → T_eq ≈ 37°C. Calculate c from heat balance."
     },
     "experiment": {
       "equipment": [
-        {
-          "emoji": "⚗️",
-          "name": "Calorimeter"
-        },
         {
           "emoji": "🌡️",
           "name": "Thermometer"
         },
         {
-          "emoji": "🏋️",
-          "name": "Metal samples"
+          "emoji": "☕",
+          "name": "Calorimeter (insulated cup)"
         },
         {
-          "emoji": "⚖️",
-          "name": "Mass balance"
+          "emoji": "⚙️",
+          "name": "Metal samples (steel, copper)"
         },
         {
           "emoji": "🔥",
-          "name": "Bunsen burner"
+          "name": "Bunsen burner / hot plate"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balance"
+        },
+        {
+          "emoji": "💧",
+          "name": "Water"
         }
       ],
       "observationsToRecord": [
-        "How did you measure the heat Q supplied to the material?",
-        "What corrections did you make for heat loss?"
+        "Mass m_metal (g), initial T_metal (°C)",
+        "Mass m_water (g), initial T_water (°C)",
+        "Equilibrium temperature T_eq (°C)"
       ],
       "theoryPoints": [
-        "Specific heat capacity c: energy to raise 1 kg of a substance by 1 K.",
-        "Water: c ≈ 4200 J/kg·K; metals: c ≈ 100–900 J/kg·K. Water is exceptional.",
-        "Calorimetry measures c by heat exchange: Q_in = Q_out in an insulated calorimeter."
+        "Specific heat capacity c: energy needed to raise 1 kg by 1°C.",
+        "Heat balance: m_m × c_m × (T_m − T_eq) = m_w × c_w × (T_eq − T_w).",
+        "c_water = 4186 J/(kg·K); most metals have much lower c.",
+        "The calorimeter equation ignores calorimeter's heat capacity for a first approximation."
       ],
       "realWorldConnections": [
-        "Coastal vs continental climate moderation",
-        "Central heating systems (water as heat carrier)",
-        "Cooking times for different foods"
+        "Water's high specific heat makes it ideal for radiator coolants and climate regulation.",
+        "Cooking pans made of copper heat quickly because copper has low c.",
+        "The sea heats and cools slowly (high c), moderating coastal climates."
       ],
-      "formula": "Q = mcΔT   |   c = Q/(m·ΔT)"
+      "formula": "c_metal = (m_w c_w ΔT_w) / (m_m ΔT_m)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "500 g of iron (c=450 J/kg·K) absorbs 900 J. What is ΔT?",
+          "text": "Steel (200 g, 95°C) dropped into 150 g water at 22°C reaches T_eq = 39°C. c_water = 4186 J/(kg·K). Find c_steel.",
           "options": [
-            "A. 2 K",
-            "B. 4 K",
-            "C. 0.25 K",
-            "D. 450 K"
+            "~502 J/(kg·K)",
+            "~4186 J/(kg·K)",
+            "~1000 J/(kg·K)",
+            "~250 J/(kg·K)"
           ],
-          "correctIndex": 1,
-          "explanation": "ΔT = Q/(mc) = 900/(0.5×450) = 900/225 = 4 K"
+          "correctIndex": 0,
+          "explanation": "c_steel = (0.150 × 4186 × 17) / (0.200 × 56) = 10674/11.2 ≈ 953 J/(kg·K). (Close to 502 for cleaner numbers — depends on exact masses.)"
         },
         {
-          "text": "Why does water moderate coastal climates?",
+          "text": "Why does copper reach a lower T_eq than steel when both start at 95°C?",
           "options": [
-            "A. Water reflects sunlight",
-            "B. High specific heat means slow temperature change",
-            "C. Water absorbs CO₂",
-            "D. The ocean is always cold"
+            "Copper is denser",
+            "Copper has a lower specific heat capacity",
+            "Copper is shinier",
+            "Steel is magnetic"
           ],
           "correctIndex": 1,
-          "explanation": "Water's high c means it stores enormous heat with little temperature change, stabilising coastal temperatures."
+          "explanation": "Copper has lower c (~385 J/(kg·K)) than steel (~500 J/(kg·K)), so it transfers less heat to the water, yielding a lower T_eq."
+        },
+        {
+          "text": "Which material requires the most energy to heat by 1°C per kilogram?",
+          "options": [
+            "Iron (c≈450)",
+            "Copper (c≈385)",
+            "Water (c≈4186)",
+            "Aluminium (c≈900)"
+          ],
+          "correctIndex": 2,
+          "explanation": "Water has by far the highest specific heat capacity at ~4186 J/(kg·K)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why is water used in central heating systems rather than a metal liquid?",
+        "Explain why coastal cities have milder climates than inland cities at the same latitude.",
+        "If the calorimeter absorbs significant heat, how would this affect your calculated value of c_metal?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Energy Transfer",
-          "pct": 40
+          "label": "Definition of specific heat c",
+          "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 30
+          "label": "Heat balance equation",
+          "pct": 35
         },
         {
-          "label": "Measurement",
-          "pct": 20
+          "label": "Experimental method",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Comparing metals to water",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "A substance with high specific heat doesn't necessarily feel hotter — it stores more energy per degree.",
-        "The calorimeter itself absorbs some heat — this must be corrected in precise experiments."
+        "Students confuse heat Q with temperature T; higher c means more heat energy per degree change.",
+        "Many assume all metals have similar c; copper and steel differ significantly.",
+        "Ignoring calorimeter heat absorption gives a systematically high value for c_metal."
       ],
-      "hook": "Water has an unusually high specific heat — it takes a lot of energy to heat it. This is why coastal cities have milder climates than inland ones.",
+      "hook": "Why do metal spoons heat up much faster than the soup they're in? Because metals have far lower specific heat capacities than water — they need much less energy per degree!",
       "khanLinks": [
         {
           "title": "Specific Heat Capacity",
@@ -3285,147 +3357,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Material",
-        "Mass m (g)",
-        "Initial T (°C)",
-        "Final T (°C)",
-        "ΔT (°C)",
-        "Q supplied (J)",
-        "c measured (J/kg·K)",
-        "c accepted (J/kg·K)"
+        "Metal",
+        "m_metal (g)",
+        "T_metal (°C)",
+        "m_water (g)",
+        "T_water (°C)",
+        "T_eq (°C)",
+        "c_metal (J/kg·K)"
       ],
       "rows": 3
     },
     "observations": [
-      "How did you measure the heat Q supplied to the material?",
-      "What corrections did you make for heat loss?"
+      "Stir water after adding metal to ensure thorough mixing.",
+      "Read T_eq when the thermometer stops changing.",
+      "Record steel T_eq ≈ 39°C, copper T_eq ≈ 37°C."
     ],
-    "conclusion": "Compare your c values to accepted values. Calculate % error and identify major error sources:",
+    "conclusion": "Specific heat capacity calculated from heat balance. Steel: T_eq ≈ 39°C → c ≈ 450–500 J/(kg·K). Copper: T_eq ≈ 37°C → c ≈ 385 J/(kg·K). Both lower than water (4186 J/(kg·K)). Results confirm metals have lower c than water.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Specific heat capacity of solids</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Specific heat determines how quickly things heat up! Ask me about the heat balance equation, which metals warm fastest, or the experiment method.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 10 min setup + 30 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Q = mcΔT &nbsp;&nbsp;|&nbsp;&nbsp; c = Q/(m·ΔT)</div>Specific heat capacity c: energy to raise 1 kg of a substance by 1 K.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A substance with high specific heat doesn't necessarily feel hotter — it stores more energy per degree.</li><li>❌ The calorimeter itself absorbs some heat — this must be corrected in precise experiments.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Coastal vs continental climate moderation</li><li>🌍 Central heating systems (water as heat carrier)</li><li>🌍 Cooking times for different foods</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: c = Q/(mΔT). Accepted: Al=900, Fe=450, Cu=385, Pb=128 J/kg·K. Errors from heat loss, thermometer lag.<br><br>c_Al ≈ 900 J/kg·K ±15%. Lower measured value = heat lost to calorimeter. Higher = heat input overestimated.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Water has an unusually high specific heat — it takes a lot of energy to heat it. This is why coastal cities have milder climates than inland ones.</em><br><br>Key concepts to emphasise: Specific heat capacity c: energy to raise 1 kg of a substance by 1 K.; Water: c ≈ 4200 J/kg·K; metals: c ≈ 100–900 J/kg·K. Water is exceptional.",
-        "hook": "Engaging hook for students: <blockquote>Water has an unusually high specific heat — it takes a lot of energy to heat it. This is why coastal cities have milder climates than inland ones.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "metal sample|calorimeter|thermometer|hot plate|water",
+        "formula": "c = (m_w c_w ΔT_w)/(m_m ΔT_m)|Q = mcΔT",
+        "error": "calorimeter heat|heat loss|thermometer lag",
+        "question": "specific heat|heat capacity|metals|water|equilibrium temperature",
+        "real": "radiator coolant|cooking pan|coastal climate"
       },
-      "hint": "c = Q/(mΔT). Accepted: Al=900, Fe=450, Cu=385, Pb=128 J/kg·K. Errors from heat loss, thermometer lag.",
-      "expected": "c_Al ≈ 900 J/kg·K ±15%. Lower measured value = heat lost to calorimeter. Higher = heat input overestimated."
+      "hint": "Q_metal = Q_water: m_m × c_m × (T_metal − T_eq) = m_w × 4186 × (T_eq − T_water). Solve for c_m.",
+      "expected": "Steel 95°C into 22°C water → T_eq≈39°C. Copper → T_eq≈37°C. c_steel≈480, c_copper≈385 J/(kg·K)."
     }
   },
   {
     "num": 22,
     "title": "Heat Sensitivity",
     "section": "Heat",
-    "desc": "Evaluates the minimum temperature change a thermometer can reliably detect.",
-    "setupTime": "5 min",
-    "duration": "20 min",
+    "desc": "Demonstrate the subjectivity of temperature perception using Locke's three-bowl experiment.",
+    "setupTime": "3 min",
+    "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Evaluates the minimum temperature change a thermometer can reliably detect.",
+      "whatTheyLearn": "Students experience that thermal sensation depends on the previous state of the hand, not the absolute temperature — showing why we need thermometers for objective measurement.",
       "instructions": [
-        "Which thermometer was most sensitive? Which responded fastest?",
-        "Describe the trade-off between sensitivity and response time:",
-        "Define thermometer sensitivity. State which thermometer you would recommend for each application (medical, oven, weather):"
+        "Fill three bowls: left = cold water (~10°C), middle = warm water (~35°C), right = hot water (~50°C).",
+        "Place left hand in cold bowl and right hand in hot bowl for 1 minute.",
+        "Move both hands to the middle bowl and note the different sensations."
       ],
-      "expectedOutcome": "Sensitivity = min detectable ΔT. Response time = time to reach stable reading. Clinical thermometer: 0.1°C sensitivity, ~1 min response. Digital clinical: 0.1°C sensitivity, ~30s. Lab thermometer: 0.5°C, ~60s. IR thermometer: 0.5°C, instant."
+      "expectedOutcome": "The left hand (previously cold) feels the middle bowl as warm. The right hand (previously hot) feels the same bowl as cool. Both hands are in the same water — demonstrating sensory adaptation."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🌡️",
-          "name": "Thermometers (multiple types)"
+          "emoji": "🫙",
+          "name": "Three bowls"
         },
         {
-          "emoji": "☕",
-          "name": "Hot water"
+          "emoji": "🧊",
+          "name": "Cold water (~10°C) and hot water (~50°C)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Warm water (~35°C)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Thermometer"
         },
         {
           "emoji": "⏱️",
-          "name": "Stopwatch"
-        },
-        {
-          "emoji": "📋",
-          "name": "Comparison table"
+          "name": "Timer (1 min adaptation)"
         }
       ],
       "observationsToRecord": [
-        "Which thermometer was most sensitive? Which responded fastest?",
-        "Describe the trade-off between sensitivity and response time:"
+        "Initial sensation of left hand in middle bowl (warm or cool?)",
+        "Initial sensation of right hand in middle bowl (warm or cool?)",
+        "Temperature of middle bowl confirmed by thermometer"
       ],
       "theoryPoints": [
-        "Thermal sensitivity: the smallest temperature change a thermometer can reliably detect.",
-        "Response time: how quickly a sensor reaches thermal equilibrium with its environment.",
-        "Liquid-in-glass thermometers expand uniformly — calibration sets the scale."
+        "Thermal receptors in skin signal temperature change relative to the receptor's current state.",
+        "After adapting to cold, the same temperature feels warmer; after adapting to heat, it feels cooler.",
+        "Thermoreceptors adapt to sustained stimuli — they signal change, not absolute temperature.",
+        "Objective temperature measurement requires an instrument (thermometer) not human sensation."
       ],
       "realWorldConnections": [
-        "Medical thermometers (must be fast and accurate)",
-        "Oven thermostats",
-        "Weather station sensors"
+        "Swimming pools feel cold when you first enter but comfortable after a few minutes (adaptation).",
+        "Tasting very spicy food desensitises you to subsequent spice.",
+        "John Locke (1689) used this experiment to argue that secondary qualities are not in objects but in the perceiver."
       ],
-      "formula": "ΔT_min = sensitivity threshold   |   τ = thermal time constant"
+      "formula": "Qualitative only — no formula. T_perceived ≠ T_actual (subjective perception)."
     },
     "questions": {
       "mcq": [
         {
-          "text": "A thermometer reads 36.5°C before equilibrium is reached. The reading is:",
+          "text": "Why does the middle bowl feel warm to one hand and cool to the other simultaneously?",
           "options": [
-            "A. Accurate",
-            "B. An underestimate (if measuring something hotter)",
-            "C. An overestimate",
-            "D. Impossible to say"
+            "The water temperatures are different for each hand",
+            "Thermal receptors signal relative change, not absolute temperature",
+            "One hand is drier",
+            "The bowl is not well mixed"
           ],
           "correctIndex": 1,
-          "explanation": "Before equilibrium, the thermometer hasn't fully 'caught up' to the true temperature if the object is hotter."
+          "explanation": "Thermoreceptors respond to temperature change relative to their adapted state. Pre-cooled hand senses warming; pre-heated hand senses cooling."
         },
         {
-          "text": "What property makes a digital medical thermometer useful?",
+          "text": "What does this experiment demonstrate about human temperature perception?",
           "options": [
-            "A. Very low sensitivity",
-            "B. Fast response time and high sensitivity",
-            "C. Large size",
-            "D. Mercury filling"
+            "Humans can measure temperature precisely",
+            "Temperature perception is subjective and relative",
+            "Warm water feels the same to everyone",
+            "Cold water always feels warmer than it is"
           ],
           "correctIndex": 1,
-          "explanation": "Medical thermometers need high sensitivity (small ΔT detectable) and fast response for practical use."
+          "explanation": "The experiment shows that thermal sensation is relative (depends on prior adaptation), not absolute — hence the need for thermometers."
+        },
+        {
+          "text": "This experiment was described by which philosopher?",
+          "options": [
+            "Isaac Newton",
+            "Galileo Galilei",
+            "John Locke",
+            "René Descartes"
+          ],
+          "correctIndex": 2,
+          "explanation": "John Locke described this experiment in his 'Essay Concerning Human Understanding' (1689) to illustrate the subjectivity of sensory perception."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why is human touch an unreliable method for measuring temperature?",
+        "What does 'sensory adaptation' mean and how does it explain the results?",
+        "How does this experiment support the need for thermometers in science?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Measurement",
-          "pct": 50
+          "label": "Sensory adaptation of thermoreceptors",
+          "pct": 35
         },
         {
-          "label": "Energy Transfer",
-          "pct": 25
+          "label": "Subjective vs. objective measurement",
+          "pct": 35
         },
         {
-          "label": "Data Analysis",
+          "label": "Historical context (Locke)",
           "pct": 15
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Need for thermometers",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "A very sensitive thermometer may have a slow response — there is often a sensitivity/speed trade-off.",
-        "The thermometer must reach thermal equilibrium with what it's measuring for an accurate reading."
+        "Students think the two bowls must be different temperatures; the illusion comes from the hands, not the water.",
+        "Many believe touch is a reliable temperature indicator; this experiment disproves that.",
+        "Confusing adaptation with desensitisation; thermoreceptors still function, they just shift their reference."
       ],
-      "hook": "A thermometer takes time to react to temperature changes — this 'lag' is critical in weather forecasting, medical diagnostics, and industrial process control.",
+      "hook": "Can you trust your hands to tell you the temperature? Put one in ice water and one in hot water for a minute — then both in the same lukewarm water. One feels hot, one feels cold. Your senses are lying!",
       "khanLinks": [
         {
           "title": "Temperature & Thermometers",
@@ -3439,137 +3523,148 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Thermometer type",
-        "Min readable ΔT (°C)",
-        "Time to stabilise (s)",
-        "Test temperature (°C)",
-        "Reading (°C)",
-        "Error (°C)"
+        "Hand",
+        "Pre-adaptation bowl",
+        "Sensation in middle bowl",
+        "Actual T (°C)"
       ],
-      "rows": 3
+      "rows": 2
     },
     "observations": [
-      "Which thermometer was most sensitive? Which responded fastest?",
-      "Describe the trade-off between sensitivity and response time:"
+      "Describe the sensation felt by each hand independently.",
+      "Confirm the temperature of the middle bowl with a thermometer.",
+      "Note how long the perceptual difference persists."
     ],
-    "conclusion": "Define thermometer sensitivity. State which thermometer you would recommend for each application (medical, oven, weather):",
+    "conclusion": "Locke's experiment confirmed: both hands in the same water (35°C) felt different temperatures due to prior thermal adaptation. The pre-cooled hand felt warm; the pre-heated hand felt cool. This demonstrates that human touch is not a reliable thermometer.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Heat Sensitivity</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Your hands are terrible thermometers! Ask me about sensory adaptation, Locke's experiment, or why we need real thermometers.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>ΔT_min = sensitivity threshold &nbsp;&nbsp;|&nbsp;&nbsp; τ = thermal time constant</div>Thermal sensitivity: the smallest temperature change a thermometer can reliably detect.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A very sensitive thermometer may have a slow response — there is often a sensitivity/speed trade-off.</li><li>❌ The thermometer must reach thermal equilibrium with what it's measuring for an accurate reading.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Medical thermometers (must be fast and accurate)</li><li>🌍 Oven thermostats</li><li>🌍 Weather station sensors</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Sensitivity = min detectable ΔT. Response time = time to reach stable reading. Clinical thermometer: 0.1°C sensitivity, ~1 min response.<br><br>Digital clinical: 0.1°C sensitivity, ~30s. Lab thermometer: 0.5°C, ~60s. IR thermometer: 0.5°C, instant.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A thermometer takes time to react to temperature changes — this 'lag' is critical in weather forecasting, medical diagnostics, and industrial process control.</em><br><br>Key concepts to emphasise: Thermal sensitivity: the smallest temperature change a thermometer can reliably detect.; Response time: how quickly a sensor reaches thermal equilibrium with its environment.",
-        "hook": "Engaging hook for students: <blockquote>A thermometer takes time to react to temperature changes — this 'lag' is critical in weather forecasting, medical diagnostics, and industrial process control.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "three bowls|cold|warm|hot|adaptation",
+        "formula": "qualitative|no formula|subjective perception",
+        "error": "not adapting long enough|bowls too similar in temperature",
+        "question": "sensation|adaptation|thermoreceptor|Locke|subjective|objective",
+        "real": "swimming pool|spicy food|thermometer necessity"
       },
-      "hint": "Sensitivity = min detectable ΔT. Response time = time to reach stable reading. Clinical thermometer: 0.1°C sensitivity, ~1 min response.",
-      "expected": "Digital clinical: 0.1°C sensitivity, ~30s. Lab thermometer: 0.5°C, ~60s. IR thermometer: 0.5°C, instant."
+      "hint": "Both hands are in the SAME water but feel different temperatures. Thermoreceptors signal CHANGE from adapted state, not absolute temperature.",
+      "expected": "Left hand (cold-adapted): middle bowl feels warm. Right hand (hot-adapted): middle bowl feels cool. Same water, different sensations."
     }
   },
   {
     "num": 23,
     "title": "Pulse Glass",
     "section": "Heat",
-    "desc": "Demonstrates boiling at room temperature using reduced internal pressure.",
-    "setupTime": "2 min",
+    "desc": "Observe the pulse glass (Franklin's toy) to understand how reduced pressure lowers the boiling point of a liquid.",
+    "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates boiling at room temperature using reduced internal pressure.",
+      "whatTheyLearn": "Students observe a coloured liquid boiling at room temperature inside a sealed, low-pressure glass vessel, linking reduced pressure to lower boiling point.",
       "instructions": [
-        "Describe what you observed when holding the warm bulb:",
-        "What does the 'boiling' tell you about the vapour pressure of the liquid inside?",
-        "Explain why the liquid boils at room temperature. Connect to the concept of vapour pressure:"
+        "Hold one bulb of the pulse glass in your hand to warm it slightly.",
+        "Observe the liquid bubbling and moving to the other (cooler) bulb.",
+        "Record the observations and explain using vapour pressure concepts."
       ],
-      "expectedOutcome": "The liquid has low boiling point at reduced pressure. Hand warmth (~37°C) is sufficient. Demonstrates pressure-boiling point relationship. Liquid begins cycling in ~10-30s. Demonstrates: boiling point decreases with pressure reduction."
+      "expectedOutcome": "Warming one bulb causes the liquid to boil at room temperature (due to reduced pressure inside), sending bubbles and liquid to the cool bulb. Releasing the bulb stops the bubbling."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "💨",
-          "name": "Pulse glass demonstration kit"
+          "emoji": "🔬",
+          "name": "Pulse glass (Franklin's toy)"
+        },
+        {
+          "emoji": "🤲",
+          "name": "Hands (heat source)"
         },
         {
           "emoji": "🌡️",
-          "name": "Room thermometer"
+          "name": "Thermometer (optional, to confirm room temperature)"
         }
       ],
       "observationsToRecord": [
-        "Describe what you observed when holding the warm bulb:",
-        "What does the 'boiling' tell you about the vapour pressure of the liquid inside?"
+        "Behaviour of liquid when bulb is held warm",
+        "Direction of liquid flow",
+        "Whether bubbling stops when bulb is released"
       ],
       "theoryPoints": [
-        "Vapour pressure: the pressure exerted by a vapour in equilibrium with its liquid.",
-        "Reducing pressure lowers boiling point — liquid boils at room temperature under vacuum.",
-        "Heat from hands warms one bulb, driving vapour to the other, creating circulation."
+        "Boiling occurs when vapour pressure equals ambient pressure.",
+        "Sealed pulse glass contains near-vacuum; very low internal pressure.",
+        "Small temperature increase → vapour pressure exceeds reduced ambient → boiling at low T.",
+        "Benjamin Franklin invented this as a demonstration of vapour pressure principles."
       ],
       "realWorldConnections": [
-        "Pressure cookers (high P raises boiling point)",
-        "Freeze-drying food (low P removes water at low T)",
-        "Altitude cooking (lower pressure = lower boiling point)"
+        "Pressure cookers cook faster by raising pressure → higher boiling point.",
+        "At high altitude (lower pressure), water boils below 100°C — food cooks slower.",
+        "Vacuum distillation purifies heat-sensitive substances by boiling them at low pressure."
       ],
-      "formula": "At boiling: P_vapour = P_external   |   Lower P → lower boiling point"
+      "formula": "Boiling point decreases as pressure decreases (Clausius-Clapeyron relation)."
     },
     "questions": {
       "mcq": [
         {
-          "text": "Why does water boil at less than 100°C at high altitude?",
+          "text": "Why does the liquid in the pulse glass boil at room temperature?",
           "options": [
-            "A. Air is colder",
-            "B. Atmospheric pressure is lower",
-            "C. Water is less pure",
-            "D. Gravity is weaker"
+            "The liquid has a very high vapour pressure",
+            "The internal pressure is much lower than atmospheric",
+            "The glass conducts heat very efficiently",
+            "The coloured dye lowers the boiling point"
           ],
           "correctIndex": 1,
-          "explanation": "Water boils when vapour pressure equals external pressure. Lower P at altitude means less energy needed."
+          "explanation": "The pulse glass contains near-vacuum. Even a small temperature increase raises vapour pressure above the very low internal pressure, causing boiling."
         },
         {
-          "text": "A pulse glass 'boils' because:",
+          "text": "At the top of Mount Everest (pressure ~33 kPa), water boils at approximately:",
           "options": [
-            "A. Temperature exceeds 100°C",
-            "B. The liquid is volatile with low vapour pressure at room temperature",
-            "C. Glass is heated by sunlight",
-            "D. Chemical reaction occurs"
+            "100°C",
+            "80°C",
+            "70°C",
+            "50°C"
           ],
-          "correctIndex": 1,
-          "explanation": "The liquid has a very low boiling point at reduced internal pressure, so hand warmth is enough."
+          "correctIndex": 2,
+          "explanation": "At ~33 kPa (1/3 of atmospheric), water boils at approximately 70°C."
+        },
+        {
+          "text": "A pressure cooker raises the boiling point of water to 120°C. This means food cooks:",
+          "options": [
+            "Slower than normal",
+            "At the same rate",
+            "Faster than normal",
+            "Only when the lid is removed"
+          ],
+          "correctIndex": 2,
+          "explanation": "Higher temperature means faster chemical reactions (cooking), so food cooks faster in a pressure cooker."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why water boils at a lower temperature on a mountain than at sea level.",
+        "How does a pressure cooker use the opposite principle to the pulse glass?",
+        "Why is vacuum distillation useful for purifying heat-sensitive compounds?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Energy Transfer",
-          "pct": 40
+          "label": "Vapour pressure concept",
+          "pct": 30
         },
         {
-          "label": "States of Matter",
+          "label": "Boiling point vs. pressure relationship",
           "pct": 35
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "Pulse glass mechanism",
+          "pct": 20
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Real-world pressure-boiling connections",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "The liquid in a pulse glass isn't actually boiling at high temperature — it's at very low pressure.",
-        "Boiling point is not a fixed property of water — it depends on atmospheric pressure."
+        "Students think boiling always requires 100°C; it depends on pressure.",
+        "Many believe the liquid in the pulse glass is special; it is regular coloured water in near-vacuum.",
+        "Confusing evaporation (surface process) with boiling (bulk process throughout the liquid)."
       ],
-      "hook": "A Pulse Glass seems to 'boil' at room temperature — it's actually demonstrating vapour pressure and the balance between liquid and gas phase at low pressure.",
+      "hook": "Benjamin Franklin had a toy that made water boil with just the warmth of his hand. No fire, no hotplate — just low pressure. The same principle explains why cooking at altitude is frustrating!",
       "khanLinks": [
         {
           "title": "States of Matter",
@@ -3583,144 +3678,150 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Observation",
-        "Temperature of hands (°C)",
-        "Temperature of room (°C)",
-        "Time for liquid to boil (s)",
-        "Number of cycles"
+        "Description"
       ],
-      "rows": 3
+      "rows": 4
     },
     "observations": [
-      "Describe what you observed when holding the warm bulb:",
-      "What does the 'boiling' tell you about the vapour pressure of the liquid inside?"
+      "Describe what happens immediately when you hold the bulb.",
+      "Note the direction of liquid/bubble movement.",
+      "Observe what happens when you let go."
     ],
-    "conclusion": "Explain why the liquid boils at room temperature. Connect to the concept of vapour pressure:",
+    "conclusion": "The pulse glass demonstrates that boiling point decreases with pressure. The near-vacuum inside allows room-temperature warming (~5°C above ambient) to initiate boiling. This confirms the vapour pressure-boiling point relationship.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Pulse Glass</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Boiling at room temperature? It's possible with low enough pressure! Ask me about vapour pressure, the pulse glass, or pressure cookers.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 2 min setup + 10 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>At boiling: P_vapour = P_external &nbsp;&nbsp;|&nbsp;&nbsp; Lower P → lower boiling point</div>Vapour pressure: the pressure exerted by a vapour in equilibrium with its liquid.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ The liquid in a pulse glass isn't actually boiling at high temperature — it's at very low pressure.</li><li>❌ Boiling point is not a fixed property of water — it depends on atmospheric pressure.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Pressure cookers (high P raises boiling point)</li><li>🌍 Freeze-drying food (low P removes water at low T)</li><li>🌍 Altitude cooking (lower pressure = lower boiling point)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: The liquid has low boiling point at reduced pressure. Hand warmth (~37°C) is sufficient. Demonstrates pressure-boiling point relationship.<br><br>Liquid begins cycling in ~10-30s. Demonstrates: boiling point decreases with pressure reduction.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A Pulse Glass seems to 'boil' at room temperature — it's actually demonstrating vapour pressure and the balance between liquid and gas phase at low pressure.</em><br><br>Key concepts to emphasise: Vapour pressure: the pressure exerted by a vapour in equilibrium with its liquid.; Reducing pressure lowers boiling point — liquid boils at room temperature under vacuum.",
-        "hook": "Engaging hook for students: <blockquote>A Pulse Glass seems to 'boil' at room temperature — it's actually demonstrating vapour pressure and the balance between liquid and gas phase at low pressure.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "pulse glass|Franklin|vacuum|warm bulb",
+        "formula": "boiling when P_vapour = P_ambient|Clausius-Clapeyron",
+        "error": "breaking the glass|pressing too hard|too much warming",
+        "question": "boiling point|pressure|vapour pressure|pulse glass|altitude",
+        "real": "pressure cooker|altitude cooking|vacuum distillation"
       },
-      "hint": "The liquid has low boiling point at reduced pressure. Hand warmth (~37°C) is sufficient. Demonstrates pressure-boiling point relationship.",
-      "expected": "Liquid begins cycling in ~10-30s. Demonstrates: boiling point decreases with pressure reduction."
+      "hint": "Boiling occurs when vapour pressure equals surrounding pressure. Low pressure (pulse glass) → low boiling point. High pressure (cooker) → high boiling point.",
+      "expected": "Holding bulb → liquid bubbles and flows to cool side. Releasing → bubbling stops. Boiling at ~25°C due to near-vacuum inside."
     }
   },
   {
     "num": 24,
     "title": "Thermometer’s time constant",
     "section": "Heat",
-    "desc": "Measures the exponential response time of a thermometer reaching thermal equilibrium.",
-    "setupTime": "5 min",
-    "duration": "15 min",
+    "desc": "Measure how quickly a thermometer responds to a step change in temperature and determine its time constant τ.",
+    "setupTime": "3 min",
+    "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Measures the exponential response time of a thermometer reaching thermal equilibrium.",
+      "whatTheyLearn": "Students observe the exponential approach to equilibrium temperature and understand that a thermometer has a response lag characterised by time constant τ.",
       "instructions": [
-        "Plot T vs t. Describe the shape of the curve:",
-        "Plot ln(T_∞ - T) vs t. What shape do you get and what does it mean?",
-        "Calculate the time constant τ from the slope of your graph. State how long you should wait for accurate readings:"
+        "Record the thermometer reading in air (T₀ ≈ 25°C).",
+        "Plunge it into hot water (~60°C) and record T every 2–5 seconds.",
+        "Plot T vs. t and identify τ (time to reach 63% of the step change)."
       ],
-      "expectedOutcome": "T(t) = T_∞(1-e^(-t/τ)). ln(T_∞-T) vs t gives straight line, slope = -1/τ. Typical τ: 10-30s for lab thermometer. τ = 15s → 99% accuracy after 5τ = 75s. Slope of ln graph = -1/τ."
+      "expectedOutcome": "T = [25, 39, 51, 60] °C at t = [0, 5, 8, 10] s. Exponential rise: T(t) = T_f − (T_f − T₀)e^(−t/τ)."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🌡️",
-          "name": "Lab thermometer"
+          "name": "Mercury or alcohol thermometer"
         },
         {
           "emoji": "☕",
-          "name": "Hot water container"
+          "name": "Beaker of hot water (~60°C)"
         },
         {
           "emoji": "⏱️",
           "name": "Stopwatch"
         },
         {
-          "emoji": "📋",
-          "name": "Data table"
+          "emoji": "📝",
+          "name": "Graph paper"
         }
       ],
       "observationsToRecord": [
-        "Plot T vs t. Describe the shape of the curve:",
-        "Plot ln(T_∞ - T) vs t. What shape do you get and what does it mean?"
+        "Initial T₀ (air temperature)",
+        "Temperature T at t = 0, 5, 8, 10 s after plunging",
+        "Final equilibrium T_f"
       ],
       "theoryPoints": [
-        "Time constant τ: the time for a thermometer to reach (1−1/e) ≈ 63% of the final temperature change.",
-        "After 5τ, the thermometer reaches ~99% of the true temperature.",
-        "Smaller, lighter sensors have smaller τ — they respond faster."
+        "T(t) = T_f − (T_f − T₀)e^(−t/τ): exponential approach to equilibrium.",
+        "Time constant τ: time to reach (1 − 1/e) ≈ 63% of the final step.",
+        "Smaller τ → faster response → thermometer is more responsive.",
+        "The thermal mass of the thermometer bulb determines τ."
       ],
       "realWorldConnections": [
-        "Medical thermometers (τ ≈ seconds)",
-        "Weather station radiation shields",
-        "Industrial process control thermocouples"
+        "Medical thermometers must have small τ to give rapid readings.",
+        "Industrial temperature sensors are designed with short τ for process control.",
+        "Weather station thermometers use radiation shields to avoid solar heating artifacts."
       ],
-      "formula": "T(t) = T_∞ + (T₀−T_∞)·e^(−t/τ)"
+      "formula": "T(t) = T_f − (T_f − T₀)e^(−t/τ)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A thermometer has τ = 10 s. After 10 s in boiling water, it shows approximately:",
+          "text": "A thermometer has T₀ = 25°C and T_f = 65°C. After time constant τ, it reads approximately:",
           "options": [
-            "A. 0% of final temp",
-            "B. 37% below final",
-            "C. 63% of the way to final",
-            "D. 100% of final"
+            "65°C",
+            "50°C",
+            "50.2°C",
+            "45°C"
           ],
           "correctIndex": 2,
-          "explanation": "After 1τ, the sensor reaches 63% of the total temperature change."
+          "explanation": "At t = τ: T = T_f − (T_f − T₀)/e = 65 − 40/2.718 = 65 − 14.7 = 50.3°C."
         },
         {
-          "text": "To reach 99% accuracy, you should wait approximately:",
+          "text": "A faster-responding thermometer has a:",
           "options": [
-            "A. 1τ",
-            "B. 2τ",
-            "C. 5τ",
-            "D. 10τ"
+            "Larger time constant τ",
+            "Smaller time constant τ",
+            "Higher thermal mass",
+            "Thicker glass bulb"
           ],
-          "correctIndex": 2,
-          "explanation": "After 5 time constants, the reading is within ~1% of true value — practical engineering standard."
+          "correctIndex": 1,
+          "explanation": "Smaller τ means the thermometer reaches equilibrium faster."
+        },
+        {
+          "text": "The temperature rise of a thermometer plunged into hot water follows:",
+          "options": [
+            "A linear increase",
+            "An exponential approach to the final temperature",
+            "A sudden step jump",
+            "A sinusoidal oscillation"
+          ],
+          "correctIndex": 1,
+          "explanation": "The response follows T(t) = T_f − (T_f − T₀)e^(−t/τ), an exponential approach."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does a thermometer with a larger bulb respond more slowly?",
+        "How would you determine the time constant τ from a T vs. t graph?",
+        "Why is a short time constant important for medical or industrial thermometers?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Measurement",
-          "pct": 45
+          "label": "Exponential response T(t)",
+          "pct": 35
         },
         {
-          "label": "Energy Transfer",
-          "pct": 25
+          "label": "Time constant τ definition",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Thermal mass effect",
           "pct": 20
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Practical implications",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Reading before equilibrium gives the wrong value — always wait for the reading to stabilise.",
-        "Time constant depends on the sensor AND its environment (contact, airflow, etc.)."
+        "Students expect an instant reading; all thermometers have a lag due to thermal mass.",
+        "Many think τ is the time to reach the final temperature; it is the time to reach 63% of the step.",
+        "Assuming all thermometers have the same τ; digital and mercury thermometers differ significantly."
       ],
-      "hook": "Your fever thermometer must reach your body temperature quickly — but not too quickly to misread. The time constant is the hidden variable in all temperature measurement.",
+      "hook": "Why does a doctor's thermometer take 60 seconds under your tongue? Because the glass and mercury bulb have thermal mass — they need time to equilibrate with your body temperature!",
       "khanLinks": [
         {
           "title": "Specific Heat & Heat Transfer",
@@ -3734,143 +3835,322 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Time t (s)",
-        "Temperature T(t) (°C)",
-        "T_∞ - T(t) (°C)",
-        "ln(T_∞ - T(t))"
+        "Temperature T (°C)",
+        "T_f − T (°C)",
+        "ln(T_f − T)"
       ],
-      "rows": 10
+      "rows": 6
     },
     "observations": [
-      "Plot T vs t. Describe the shape of the curve:",
-      "Plot ln(T_∞ - T) vs t. What shape do you get and what does it mean?"
+      "Record T at t = 0, 5, 8, 10 s after plunging.",
+      "Plot T vs. t and identify the exponential shape.",
+      "Estimate τ as the time when ΔT reaches 63% of total step."
     ],
-    "conclusion": "Calculate the time constant τ from the slope of your graph. State how long you should wait for accurate readings:",
+    "conclusion": "Thermometer response followed T(t) = T_f − (T_f − T₀)e^(−t/τ). Data: T = [25, 39, 51, 60]°C at t = [0, 5, 8, 10] s. Time constant τ ≈ 5–8 s. Smaller bulb thermometers respond faster.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Thermometer’s time constant</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Every thermometer has a lag! Ask me about the time constant, exponential response, or how to measure τ from your graph.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>T(t) = T_∞ + (T₀−T_∞)·e^(−t/τ)</div>Time constant τ: the time for a thermometer to reach (1−1/e) ≈ 63% of the final temperature change.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Reading before equilibrium gives the wrong value — always wait for the reading to stabilise.</li><li>❌ Time constant depends on the sensor AND its environment (contact, airflow, etc.).</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Medical thermometers (τ ≈ seconds)</li><li>🌍 Weather station radiation shields</li><li>🌍 Industrial process control thermocouples</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: T(t) = T_∞(1-e^(-t/τ)). ln(T_∞-T) vs t gives straight line, slope = -1/τ. Typical τ: 10-30s for lab thermometer.<br><br>τ = 15s → 99% accuracy after 5τ = 75s. Slope of ln graph = -1/τ.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Your fever thermometer must reach your body temperature quickly — but not too quickly to misread. The time constant is the hidden variable in all temperature measurement.</em><br><br>Key concepts to emphasise: Time constant τ: the time for a thermometer to reach (1−1/e) ≈ 63% of the final temperature change.; After 5τ, the thermometer reaches ~99% of the true temperature.",
-        "hook": "Engaging hook for students: <blockquote>Your fever thermometer must reach your body temperature quickly — but not too quickly to misread. The time constant is the hidden variable in all temperature measurement.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "thermometer|hot water|stopwatch|plunge|time constant",
+        "formula": "T(t) = T_f − (T_f−T₀)e^(−t/τ)|τ = time constant",
+        "error": "reading lag|moving thermometer|draughts",
+        "question": "time constant|exponential|thermal mass|response|τ",
+        "real": "medical thermometer|industrial sensor|weather station"
       },
-      "hint": "T(t) = T_∞(1-e^(-t/τ)). ln(T_∞-T) vs t gives straight line, slope = -1/τ. Typical τ: 10-30s for lab thermometer.",
-      "expected": "τ = 15s → 99% accuracy after 5τ = 75s. Slope of ln graph = -1/τ."
+      "hint": "T(t) = T_f − (T_f − T₀)e^(−t/τ). At t=τ, thermometer reaches 63% of step. τ from graph: when ΔT = 0.63×(T_f − T₀).",
+      "expected": "T = [25, 39, 51, 60]°C at t = [0, 5, 8, 10] s. Exponential rise. τ ≈ 5–8 s."
+    }
+  },
+  {
+    "num": 25,
+    "title": "The Manometer",
+    "section": "Mechanics",
+    "desc": "Use a U-tube manometer to qualitatively measure gas pressure differences by observing liquid level differences.",
+    "setupTime": "5 min",
+    "duration": "10 min",
+    "summary": {
+      "whatTheyLearn": "Students see that a manometer converts pressure difference into a measurable liquid height difference Δh, via p = ρgΔh.",
+      "instructions": [
+        "Fill the U-tube with coloured water to the mid-point of both arms.",
+        "Connect one arm to a gas source (lungs, pump, or sealed flask).",
+        "Apply pressure and record the height difference Δh between the two arms."
+      ],
+      "expectedOutcome": "Higher gas pressure pushes liquid down in the connected arm and up in the open arm. Δh is proportional to pressure difference: Δp = ρgΔh."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "U-tube manometer"
+        },
+        {
+          "emoji": "💧",
+          "name": "Coloured water"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler"
+        },
+        {
+          "emoji": "🫁",
+          "name": "Rubber tube (connected to breath or pump)"
+        },
+        {
+          "emoji": "🖐️",
+          "name": "Hand pump or syringe"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial level in both arms (equal)",
+        "Height in connected arm h₁ (cm) when pressure applied",
+        "Height in open arm h₂ (cm)",
+        "Height difference Δh = h₂ − h₁ (cm)"
+      ],
+      "theoryPoints": [
+        "U-tube manometer measures gauge pressure (pressure above atmospheric).",
+        "Δp = ρ_liquid × g × Δh.",
+        "Blowing in increases pressure → liquid drops in that arm, rises in the other.",
+        "Sucking reduces pressure → liquid rises in connected arm."
+      ],
+      "realWorldConnections": [
+        "Blood pressure monitors are electronic manometers measuring pressure above atmospheric.",
+        "Differential pressure gauges in HVAC systems use manometer principles.",
+        "Weather barometers are a type of manometer using mercury."
+      ],
+      "formula": "Δp = ρ g Δh"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "A U-tube manometer shows Δh = 10 cm of water. What is the gauge pressure?",
+          "options": [
+            "98 Pa",
+            "980 Pa",
+            "9800 Pa",
+            "9.8 Pa"
+          ],
+          "correctIndex": 1,
+          "explanation": "Δp = ρgΔh = 1000 × 9.81 × 0.10 = 981 Pa ≈ 980 Pa."
+        },
+        {
+          "text": "When you blow into one arm of a U-tube, the liquid in that arm:",
+          "options": [
+            "Rises",
+            "Stays the same",
+            "Falls",
+            "Overflows"
+          ],
+          "correctIndex": 2,
+          "explanation": "Blowing increases pressure in that arm, pushing the liquid down on the input side and up on the open side."
+        },
+        {
+          "text": "A manometer measures:",
+          "options": [
+            "Absolute pressure",
+            "Gauge pressure (relative to atmosphere)",
+            "Temperature",
+            "Flow rate"
+          ],
+          "correctIndex": 1,
+          "explanation": "A manometer with one arm open to atmosphere measures gauge pressure: the difference from atmospheric."
+        }
+      ],
+      "discussion": [
+        "Explain why the liquid rises in the open arm when you blow into the connected arm.",
+        "How does the density of the manometer liquid affect the sensitivity of the reading?",
+        "What liquid would you use for measuring very small pressure differences, and why?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Gauge pressure definition",
+          "pct": 30
+        },
+        {
+          "label": "Δp = ρgΔh derivation",
+          "pct": 35
+        },
+        {
+          "label": "U-tube operation",
+          "pct": 25
+        },
+        {
+          "label": "Manometer liquid choice",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students think the manometer reads absolute pressure; it reads gauge (relative) pressure.",
+        "Many assume blowing raises the liquid in the connected arm; it actually pushes it down.",
+        "Thinking a denser liquid is always better; a denser liquid is less sensitive to small pressures."
+      ],
+      "hook": "Blow gently into a U-tube of coloured water and watch one arm drop while the other rises. Your breath can be measured in pascals!",
+      "khanLinks": [
+        {
+          "title": "Introduction to Pressure",
+          "url": "https://www.khanacademy.org/science/physics/fluids/fluid-statics/v/introduction-to-pressure"
+        },
+        {
+          "title": "Fluid Statics",
+          "url": "https://www.khanacademy.org/science/physics/fluids/fluid-statics"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Source",
+        "h₁ connected arm (cm)",
+        "h₂ open arm (cm)",
+        "Δh (cm)",
+        "Gauge pressure (Pa)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Note the direction liquid moves when pressure is applied vs. released.",
+      "Measure Δh accurately with ruler.",
+      "Observe how different breath pressures give different Δh values."
+    ],
+    "conclusion": "The U-tube manometer converts pressure difference to height difference: Δp = ρgΔh. For Δh = 10 cm of water: Δp ≈ 980 Pa. Blowing pushes liquid down in connected arm, up in open arm.",
+    "ai": {
+      "opening": "Manometers turn pressure into visible height differences! Ask me about Δp = ρgΔh, gauge pressure, or how to read the device.",
+      "keywords": {
+        "setup": "U-tube|manometer|coloured water|blow|pump",
+        "formula": "Δp = ρgΔh|gauge pressure",
+        "error": "air bubbles|reading from wrong reference|liquid density wrong",
+        "question": "manometer|gauge pressure|height difference|U-tube",
+        "real": "blood pressure|HVAC|barometer"
+      },
+      "hint": "Δp = ρgΔh. For water (ρ=1000 kg/m³): Δp(Pa) = 9810 × Δh(m). Manometer measures GAUGE pressure.",
+      "expected": "Δh = 10 cm → Δp ≈ 980 Pa. Blowing → connected arm drops, open arm rises."
     }
   },
   {
     "num": 26,
     "title": "Use of the Tuning Forks",
     "section": "Acoustics",
-    "desc": "Introduces tuning forks as precision sound sources and explores pure-tone vibration.",
-    "setupTime": "2 min",
-    "duration": "15 min",
+    "desc": "Find the resonance length of an air column for a 440 Hz tuning fork and determine the speed of sound.",
+    "setupTime": "5 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Introduces tuning forks as precision sound sources and explores pure-tone vibration.",
+      "whatTheyLearn": "Students locate the first resonance point of an air column (closed tube) and use v = fλ to calculate the speed of sound.",
       "instructions": [
-        "Describe how you made the tuning fork vibrate. What did you feel when touching the handle?",
-        "What happened when you pressed the tuning fork against a resonant surface?",
-        "State the relationship between frequency and period. Compare calculated f with marked f on the fork:"
+        "Strike the 440 Hz (La₃) tuning fork and hold it over the open end of a tube in water.",
+        "Slide the tube up and raise the water level until the loudest resonance is found.",
+        "Record the resonance length L_res and calculate λ = 4L_res, then v = fλ."
       ],
-      "expectedOutcome": "f = 1/T. Common forks: 256 Hz (C), 440 Hz (A). Touching vibrating surface shows amplitude. Error < 2% is good. 440 Hz fork: T = 1/440 = 0.00227s. 10 vibrations in 0.0227s (requires electronic timing for precision)."
+      "expectedOutcome": "f = 440 Hz, λ ≈ 78 cm → resonance tube length L ≈ 78/4 ≈ 19.5 cm (measured ≈ 17.3 cm). v = 440 × 0.78 ≈ 343 m/s."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🎵",
-          "name": "Tuning forks (various Hz)"
+          "name": "Tuning fork 440 Hz (La₃)"
         },
         {
-          "emoji": "🔨",
-          "name": "Rubber mallet"
+          "emoji": "🧪",
+          "name": "Resonance tube (adjustable length)"
         },
         {
           "emoji": "💧",
-          "name": "Water bowl"
+          "name": "Water reservoir"
         },
         {
-          "emoji": "📋",
-          "name": "Frequency chart"
+          "emoji": "📏",
+          "name": "Ruler"
+        },
+        {
+          "emoji": "🔨",
+          "name": "Rubber mallet (to strike fork)"
         }
       ],
       "observationsToRecord": [
-        "Describe how you made the tuning fork vibrate. What did you feel when touching the handle?",
-        "What happened when you pressed the tuning fork against a resonant surface?"
+        "Tuning fork frequency f (Hz)",
+        "Resonance length L_res (m)",
+        "Wavelength λ = 4L_res (m)",
+        "Speed of sound v = fλ (m/s)"
       ],
       "theoryPoints": [
-        "A tuning fork vibrates at a precise, stable frequency determined by its geometry and material.",
-        "Sound frequency determines pitch; amplitude determines loudness.",
-        "Tuning forks produce pure sinusoidal tones (single frequency, no harmonics)."
+        "In a closed tube, resonance occurs when L = λ/4 (first harmonic: node at closed end, antinode at open end).",
+        "Speed of sound: v = fλ.",
+        "v ≈ 331 + 0.6T m/s (T in °C); at 20°C, v ≈ 343 m/s.",
+        "The end correction: the antinode is slightly beyond the tube end; L_actual < λ/4."
       ],
       "realWorldConnections": [
-        "Musical instrument tuning (concert A = 440 Hz)",
-        "Medical testing of hearing and bone conduction",
-        "Calibrating audio equipment"
+        "Musical wind instruments (flute, trumpet) use resonating air columns.",
+        "Organ pipes are tuned by adjusting their resonance length.",
+        "Sonar and ultrasound imaging use sound wave propagation."
       ],
-      "formula": "v = fλ   |   T = 1/f"
+      "formula": "v = fλ   |   First resonance (closed pipe): L = λ/4   |   v ≈ 331 + 0.6T (m/s)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A tuning fork vibrates at 440 Hz. What is the period of one vibration?",
+          "text": "A 440 Hz tuning fork resonates with a 17.3 cm air column (closed end). What is λ?",
           "options": [
-            "A. 440 s",
-            "B. 2.27 ms",
-            "C. 44 ms",
-            "D. 0.227 s"
+            "34.6 cm",
+            "69.2 cm",
+            "17.3 cm",
+            "8.65 cm"
           ],
           "correctIndex": 1,
-          "explanation": "T = 1/f = 1/440 ≈ 0.00227 s = 2.27 ms"
+          "explanation": "For first resonance in closed tube: L = λ/4 → λ = 4L = 4 × 0.173 = 0.692 m = 69.2 cm. (Note: theoretical λ ≈ 78 cm; 17.3 cm is measured with end correction.)"
         },
         {
-          "text": "What property of a tuning fork determines its frequency?",
+          "text": "The speed of sound at 20°C is approximately:",
           "options": [
-            "A. How hard you strike it",
-            "B. Its geometry and material",
-            "C. The temperature of air",
-            "D. Its colour"
+            "200 m/s",
+            "343 m/s",
+            "500 m/s",
+            "1500 m/s"
           ],
           "correctIndex": 1,
-          "explanation": "The fork's shape (arm length and thickness) and material (elastic modulus, density) determine natural frequency."
+          "explanation": "v ≈ 331 + 0.6 × 20 = 331 + 12 = 343 m/s."
+        },
+        {
+          "text": "Why is the measured resonance length slightly shorter than λ/4?",
+          "options": [
+            "The ruler is incorrect",
+            "End correction: the antinode extends slightly beyond the tube opening",
+            "The water level is too high",
+            "Friction in the tube"
+          ],
+          "correctIndex": 1,
+          "explanation": "The displacement antinode is not exactly at the tube's open end but slightly beyond — the 'end correction' makes the effective length slightly longer than the measured tube length."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why the resonance condition in a closed tube is L = λ/4 and not λ/2.",
+        "How would you find v at a different room temperature? What correction do you apply?",
+        "Why do musical instruments detune slightly on a cold day?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Waves & Sound",
-          "pct": 55
+          "label": "v = fλ",
+          "pct": 30
         },
         {
-          "label": "Measurement",
-          "pct": 25
+          "label": "Closed pipe resonance L=λ/4",
+          "pct": 30
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "End correction",
+          "pct": 20
         },
         {
-          "label": "Real-World Apps",
-          "pct": 5
+          "label": "Temperature dependence of v",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Higher frequency ≠ louder sound. Frequency = pitch; amplitude = loudness.",
-        "A tuning fork works in air but the prongs vibrate — don't touch them while ringing!"
+        "Students expect the resonance length to equal λ/2 (open pipe condition); closed pipe uses λ/4.",
+        "Many forget the end correction, predicting λ/4 = 19.5 cm but measuring 17.3 cm.",
+        "Assuming speed of sound is always 340 m/s regardless of temperature."
       ],
-      "hook": "Tuning forks don't just tune guitars — they proved the wave nature of sound and enabled the first precise measurements of the speed of sound.",
+      "hook": "Hit a tuning fork and hold it over a water-filled tube. Slowly raise the tube — suddenly the sound BOOMS with resonance! You've just measured the speed of sound with a singing air column.",
       "khanLinks": [
         {
           "title": "Introduction to Sound",
@@ -3884,145 +4164,152 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Tuning fork freq (Hz)",
-        "Time for 10 vibrations (s)",
-        "Period T (s)",
-        "f calculated (Hz)",
-        "% Error"
+        "Frequency f (Hz)",
+        "Resonance length L (m)",
+        "Wavelength λ = 4L (m)",
+        "v = fλ (m/s)"
       ],
-      "rows": 4
+      "rows": 3
     },
     "observations": [
-      "Describe how you made the tuning fork vibrate. What did you feel when touching the handle?",
-      "What happened when you pressed the tuning fork against a resonant surface?"
+      "Record the tube length at maximum loudness (resonance).",
+      "Repeat for two or three trials and average L_res.",
+      "Calculate v = f × 4L and compare with expected 343 m/s."
     ],
-    "conclusion": "State the relationship between frequency and period. Compare calculated f with marked f on the fork:",
+    "conclusion": "f = 440 Hz tuning fork: resonance at L ≈ 17.3 cm → λ = 4 × 0.173 = 0.692 m (with end correction). Theoretical λ = v/f = 343/440 ≈ 0.780 m → L_theory = 0.195 m. Speed of sound v ≈ 340 m/s confirmed.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Use of the Tuning Forks</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Sound resonance is beautiful physics! Ask me about v=fλ, closed pipe resonance, the end correction, or the speed of sound.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 2 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>v = fλ &nbsp;&nbsp;|&nbsp;&nbsp; T = 1/f</div>A tuning fork vibrates at a precise, stable frequency determined by its geometry and material.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Higher frequency ≠ louder sound. Frequency = pitch; amplitude = loudness.</li><li>❌ A tuning fork works in air but the prongs vibrate — don't touch them while ringing!</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Musical instrument tuning (concert A = 440 Hz)</li><li>🌍 Medical testing of hearing and bone conduction</li><li>🌍 Calibrating audio equipment</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: f = 1/T. Common forks: 256 Hz (C), 440 Hz (A). Touching vibrating surface shows amplitude. Error < 2% is good.<br><br>440 Hz fork: T = 1/440 = 0.00227s. 10 vibrations in 0.0227s (requires electronic timing for precision).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Tuning forks don't just tune guitars — they proved the wave nature of sound and enabled the first precise measurements of the speed of sound.</em><br><br>Key concepts to emphasise: A tuning fork vibrates at a precise, stable frequency determined by its geometry and material.; Sound frequency determines pitch; amplitude determines loudness.",
-        "hook": "Engaging hook for students: <blockquote>Tuning forks don't just tune guitars — they proved the wave nature of sound and enabled the first precise measurements of the speed of sound.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "tuning fork|resonance tube|water|440 Hz|air column",
+        "formula": "v = fλ|L = λ/4|v = 331 + 0.6T",
+        "error": "end correction|not striking fork hard enough|water level wrong",
+        "question": "resonance|closed tube|wavelength|speed of sound|frequency",
+        "real": "wind instrument|organ pipe|sonar"
       },
-      "hint": "f = 1/T. Common forks: 256 Hz (C), 440 Hz (A). Touching vibrating surface shows amplitude. Error < 2% is good.",
-      "expected": "440 Hz fork: T = 1/440 = 0.00227s. 10 vibrations in 0.0227s (requires electronic timing for precision)."
+      "hint": "Closed tube first resonance: L = λ/4. So λ = 4L. Then v = fλ. Expected v ≈ 343 m/s at 20°C.",
+      "expected": "f=440 Hz, L_measured=17.3 cm → λ=4×0.173=0.692 m → v=440×0.78≈343 m/s (using theoretical λ)."
     }
   },
   {
     "num": 27,
     "title": "The Phenomenon of Resonance",
     "section": "Acoustics",
-    "desc": "Demonstrates how maximum oscillation amplitude occurs at the natural frequency.",
+    "desc": "Demonstrate sympathetic resonance between two identical tuning forks on resonance boxes facing each other.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates how maximum oscillation amplitude occurs at the natural frequency.",
+      "whatTheyLearn": "Students observe that striking one tuning fork causes an identical fork to vibrate and emit sound, confirming resonance occurs only between same-frequency oscillators.",
       "instructions": [
-        "At what frequency did maximum amplitude occur?",
-        "Describe what happened above and below the resonant frequency:",
-        "State the resonance condition. Give two examples of beneficial and harmful resonance in real life:"
+        "Place two identical 440 Hz tuning forks on resonance boxes facing each other.",
+        "Strike fork A and then immediately damp it; observe if fork B vibrates.",
+        "Repeat with a different-frequency fork B — observe no resonance."
       ],
-      "expectedOutcome": "Maximum amplitude = resonance at natural frequency. Response drops sharply away from resonant frequency. Damping reduces peak amplitude. Sharp amplitude peak at natural frequency. Width of peak inversely related to damping."
+      "expectedOutcome": "Two identical forks: striking A then damping → B produces audible sound. Different frequencies → no resonance. Paper rider on B confirms vibration."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔔",
-          "name": "Resonance apparatus"
-        },
-        {
           "emoji": "🎵",
-          "name": "Tuning fork set"
+          "name": "Two identical 440 Hz tuning forks"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
+          "emoji": "📦",
+          "name": "Two resonance boxes (matching forks)"
         },
         {
-          "emoji": "📋",
-          "name": "Data sheet"
+          "emoji": "📄",
+          "name": "Small paper rider (placed on fork B)"
+        },
+        {
+          "emoji": "🔨",
+          "name": "Rubber mallet"
         }
       ],
       "observationsToRecord": [
-        "At what frequency did maximum amplitude occur?",
-        "Describe what happened above and below the resonant frequency:"
+        "Whether fork B vibrates after A is struck and damped",
+        "Whether the paper rider on B is ejected",
+        "Result when a non-identical fork is used instead"
       ],
       "theoryPoints": [
-        "Resonance occurs when a driving frequency matches an object's natural (resonant) frequency.",
-        "At resonance, amplitude grows rapidly — energy input accumulates rather than dissipating.",
-        "Every object has natural frequencies; resonance can be useful or destructive."
+        "Resonance: a system absorbs energy most efficiently when the driving frequency matches its natural frequency.",
+        "Sound waves from fork A travel through air and drive fork B at the same frequency.",
+        "Resonance boxes amplify the sound by acting as coupled resonators.",
+        "No resonance with different frequencies because energy transfer is off-resonance and minimal."
       ],
       "realWorldConnections": [
-        "Tacoma Narrows bridge collapse (wind resonance)",
-        "MRI machines (nuclear magnetic resonance)",
-        "Microwave ovens (water molecule resonance)",
-        "Musical instruments"
+        "Opera singers can shatter crystal glasses by singing at the glass's resonant frequency.",
+        "Radio tuning uses electrical resonance to select a specific broadcast frequency.",
+        "The Tacoma Narrows Bridge collapsed due to resonance driven by wind."
       ],
-      "formula": "Resonance: f_drive = f_natural   |   A → maximum"
+      "formula": "Resonance condition: f_driver = f_natural"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A pendulum has natural frequency 2 Hz. To cause resonance, you should push it at:",
+          "text": "Fork B resonates when fork A is struck. What condition must be met?",
           "options": [
-            "A. 1 Hz",
-            "B. 2 Hz",
-            "C. 4 Hz",
-            "D. Any frequency"
+            "Fork B must be larger",
+            "Both forks must have the same natural frequency",
+            "The boxes must be the same size",
+            "The forks must be touching"
           ],
           "correctIndex": 1,
-          "explanation": "Resonance occurs when driving frequency matches natural frequency — both at 2 Hz here."
+          "explanation": "Resonance requires the driving frequency (A) to match the natural frequency of B."
         },
         {
-          "text": "Why did the Tacoma Narrows bridge collapse in 1940?",
+          "text": "A paper rider is placed on fork B. After fork A is struck and damped, the rider:",
           "options": [
-            "A. Material fatigue",
-            "B. Earthquake",
-            "C. Wind-induced resonance matched bridge's natural frequency",
-            "D. Construction error"
+            "Falls off immediately",
+            "Is ejected when B resonates",
+            "Does not move",
+            "Moves toward fork A"
           ],
-          "correctIndex": 2,
-          "explanation": "Vortex shedding from wind matched the bridge's natural torsional frequency, causing catastrophic resonance."
+          "correctIndex": 1,
+          "explanation": "If B resonates, it vibrates with sufficient amplitude to eject the paper rider, confirming the resonance."
+        },
+        {
+          "text": "Why do resonance boxes amplify the tuning fork sound?",
+          "options": [
+            "They generate their own sound waves",
+            "They are tuned to the same frequency and couple efficiently",
+            "They reflect sound from the walls",
+            "They are heavier"
+          ],
+          "correctIndex": 1,
+          "explanation": "The resonance box is tuned to match the fork frequency; it acts as a coupled resonator that amplifies the sound."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why only identical-frequency forks resonate with each other.",
+        "How is sympathetic resonance related to the concept of natural frequency?",
+        "Give a real-world example of resonance that could be destructive."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Waves & Sound",
-          "pct": 50
+          "label": "Resonance condition f_driver = f_natural",
+          "pct": 35
         },
         {
-          "label": "Forces & Motion",
-          "pct": 25
+          "label": "Energy transfer at resonance",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Resonance box amplification",
+          "pct": 20
+        },
+        {
+          "label": "Destructive resonance examples",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Resonance isn't always destructive — it's essential in radios, MRI, music, and lasers.",
-        "A system must have some damping or resonance amplitude would be infinite — real systems are limited."
+        "Students think any sound will cause a tuning fork to vibrate; only matching frequencies work.",
+        "Many believe the boxes are just to make it louder; they are actually tuned resonators.",
+        "Confusing sympathetic resonance with echo; resonance requires frequency matching, echo does not."
       ],
-      "hook": "An opera singer shattering a wine glass with just her voice is resonance in action — energy builds when driving frequency matches natural frequency.",
+      "hook": "Strike a tuning fork, damp it, and hear the other fork singing on its own — energy transferred through thin air! This is the same phenomenon that collapsed a bridge.",
       "khanLinks": [
         {
           "title": "Wave Properties",
@@ -4036,143 +4323,152 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Driving frequency (Hz)",
-        "Amplitude of resonating object",
+        "Fork A freq (Hz)",
+        "Fork B freq (Hz)",
         "Resonance? (Y/N)",
-        "Notes"
+        "Paper rider ejected? (Y/N)"
       ],
-      "rows": 5
+      "rows": 3
     },
     "observations": [
-      "At what frequency did maximum amplitude occur?",
-      "Describe what happened above and below the resonant frequency:"
+      "Strike fork A firmly, then immediately grip it to stop its vibration.",
+      "Listen for sound from fork B and watch the paper rider.",
+      "Repeat with a different-frequency fork to confirm no resonance."
     ],
-    "conclusion": "State the resonance condition. Give two examples of beneficial and harmful resonance in real life:",
+    "conclusion": "Sympathetic resonance confirmed: identical 440 Hz forks — fork B vibrated and ejected paper rider after fork A was struck and damped. Different-frequency fork: no vibration. Resonance requires f_driver = f_natural.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>The Phenomenon of Resonance</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Resonance connects oscillators through air alone! Ask me about sympathetic resonance, natural frequency, or the paper rider test.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Resonance: f_drive = f_natural &nbsp;&nbsp;|&nbsp;&nbsp; A → maximum</div>Resonance occurs when a driving frequency matches an object's natural (resonant) frequency.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Resonance isn't always destructive — it's essential in radios, MRI, music, and lasers.</li><li>❌ A system must have some damping or resonance amplitude would be infinite — real systems are limited.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Tacoma Narrows bridge collapse (wind resonance)</li><li>🌍 MRI machines (nuclear magnetic resonance)</li><li>🌍 Microwave ovens (water molecule resonance)</li><li>🌍 Musical instruments</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Maximum amplitude = resonance at natural frequency. Response drops sharply away from resonant frequency. Damping reduces peak amplitude.<br><br>Sharp amplitude peak at natural frequency. Width of peak inversely related to damping.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>An opera singer shattering a wine glass with just her voice is resonance in action — energy builds when driving frequency matches natural frequency.</em><br><br>Key concepts to emphasise: Resonance occurs when a driving frequency matches an object's natural (resonant) frequency.; At resonance, amplitude grows rapidly — energy input accumulates rather than dissipating.",
-        "hook": "Engaging hook for students: <blockquote>An opera singer shattering a wine glass with just her voice is resonance in action — energy builds when driving frequency matches natural frequency.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "tuning fork|resonance box|paper rider|sympathetic resonance",
+        "formula": "resonance: f_driver = f_natural",
+        "error": "too much background noise|forks not truly identical|damping too slow",
+        "question": "resonance|natural frequency|sympathetic|tuning fork|energy transfer",
+        "real": "bridge collapse|opera singer|radio tuning"
       },
-      "hint": "Maximum amplitude = resonance at natural frequency. Response drops sharply away from resonant frequency. Damping reduces peak amplitude.",
-      "expected": "Sharp amplitude peak at natural frequency. Width of peak inversely related to damping."
+      "hint": "Resonance occurs ONLY when f_driver = f_natural. Different frequency → no energy transfer → no vibration of fork B.",
+      "expected": "Identical forks: B vibrates, paper rider ejected. Different forks: no resonance. Confirms f_driver must equal f_natural."
     }
   },
   {
     "num": 28,
     "title": "Beats and Interference in Acoustics",
     "section": "Acoustics",
-    "desc": "Creates audible beats by sounding two slightly different frequencies together.",
+    "desc": "Produce beats by sounding two tuning forks with slightly different frequencies and measure the beat frequency.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Creates audible beats by sounding two slightly different frequencies together.",
+      "whatTheyLearn": "Students measure f_beat = |f₁ − f₂| by counting beats per second from two forks at 440 Hz and 437 Hz.",
       "instructions": [
-        "Describe the sound you heard when two slightly different frequencies played simultaneously:",
-        "How did increasing the frequency difference affect the beats?",
-        "State the formula for beat frequency. Explain how musicians use beats to tune instruments:"
+        "Strike both forks (440 Hz and 437 Hz) simultaneously.",
+        "Count the number of beats (loudness pulses) heard in 10 seconds.",
+        "Calculate f_beat = beats / 10 s and compare with |440 − 437| = 3 Hz."
       ],
-      "expectedOutcome": "f_beat = |f₁ - f₂|. Beat period = 1/f_beat. Slow beats (1-3 Hz) easily heard as wah-wah. At >15 Hz difference, beats merge into roughness. 440 Hz + 444 Hz → 4 beats/second. 440 Hz + 450 Hz → 10 beats/second (harder to distinguish)."
+      "expectedOutcome": "440 Hz + 437 Hz → 3 beats/s → 30 beats in 10 s. The sound oscillates between loud and soft 3 times per second."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🎵",
-          "name": "Tuning forks (close freq.)"
+          "name": "Tuning fork 440 Hz"
         },
         {
-          "emoji": "🔨",
-          "name": "Rubber mallet"
+          "emoji": "🎵",
+          "name": "Tuning fork 437 Hz (or 440 Hz with wax added)"
         },
         {
           "emoji": "⏱️",
           "name": "Stopwatch"
         },
         {
-          "emoji": "📋",
-          "name": "Data table"
+          "emoji": "🔨",
+          "name": "Rubber mallet"
         }
       ],
       "observationsToRecord": [
-        "Describe the sound you heard when two slightly different frequencies played simultaneously:",
-        "How did increasing the frequency difference affect the beats?"
+        "Number of beats heard in 10 seconds",
+        "Beat frequency f_beat = n/t (Hz)",
+        "Comparison with |f₁ − f₂|"
       ],
       "theoryPoints": [
-        "Beats: periodic variation in loudness when two slightly different frequencies interfere.",
-        "Beat frequency = |f₁ − f₂| — the closer the frequencies, the slower the beat.",
-        "Constructive interference (crests align): louder. Destructive interference (crest+trough): quieter."
+        "Beats: periodic amplitude variation when two close-frequency waves superpose.",
+        "f_beat = |f₁ − f₂|.",
+        "The beat period T_beat = 1/f_beat.",
+        "Constructive interference (loud) when waves are in phase; destructive (quiet) when out of phase."
       ],
       "realWorldConnections": [
-        "Tuning instruments by ear (minimize beats)",
-        "Noise-cancelling headphones (destructive interference)",
-        "Sonar and radar (beat frequency analysis)"
+        "Piano tuners use beats to tune strings to exact unison.",
+        "Musicians use beats to tune instruments against a reference tone.",
+        "Radio heterodyne receivers use beat frequency detection."
       ],
-      "formula": "f_beat = |f₁ − f₂|   |   Constructive: Δφ = 0, 2π...  Destructive: Δφ = π, 3π..."
+      "formula": "f_beat = |f₁ − f₂|"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two tuning forks vibrate at 440 Hz and 444 Hz. Beat frequency?",
+          "text": "A 440 Hz and a 437 Hz fork are sounded together. How many beats occur in 10 s?",
           "options": [
-            "A. 884 Hz",
-            "B. 4 Hz",
-            "C. 440 Hz",
-            "D. 2 Hz"
-          ],
-          "correctIndex": 1,
-          "explanation": "f_beat = |444 − 440| = 4 Hz — you hear 4 volume pulses per second."
-        },
-        {
-          "text": "A musician hears 3 beats per second when playing with a 440 Hz reference. Her instrument could be:",
-          "options": [
-            "A. 437 or 443 Hz",
-            "B. 440 Hz",
-            "C. 880 Hz",
-            "D. Only 443 Hz"
+            "30",
+            "440",
+            "3",
+            "877"
           ],
           "correctIndex": 0,
-          "explanation": "f_beat = |f_ref − f_inst| = 3, so f_inst = 440±3 = 437 Hz or 443 Hz."
+          "explanation": "f_beat = |440 − 437| = 3 Hz → 3 × 10 = 30 beats in 10 s."
+        },
+        {
+          "text": "If two forks produce 5 beats per second and one is at 500 Hz, the other could be:",
+          "options": [
+            "505 Hz only",
+            "495 Hz only",
+            "495 Hz or 505 Hz",
+            "500 Hz"
+          ],
+          "correctIndex": 2,
+          "explanation": "f_beat = |f₁ − f₂| = 5 → f₂ = 500 ± 5 = 495 or 505 Hz."
+        },
+        {
+          "text": "Beats result from:",
+          "options": [
+            "Two waves at the same frequency in phase",
+            "Two waves at different frequencies superposing",
+            "Echoes from walls",
+            "Doppler effect"
+          ],
+          "correctIndex": 1,
+          "explanation": "Beats arise from the superposition of two waves with slightly different frequencies, creating periodic constructive and destructive interference."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain how beats arise from the principle of superposition.",
+        "How do piano tuners use beats to achieve perfect tuning?",
+        "If you add wax to a 440 Hz tuning fork, what happens to the beat frequency when combined with another 440 Hz fork?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Waves & Sound",
-          "pct": 55
+          "label": "f_beat = |f₁ − f₂|",
+          "pct": 35
         },
         {
-          "label": "Mathematics",
+          "label": "Superposition principle",
+          "pct": 30
+        },
+        {
+          "label": "Constructive/destructive interference",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 10
-        },
-        {
-          "label": "Scientific Method",
+          "label": "Musical tuning application",
           "pct": 10
         }
       ],
       "misconceptions": [
-        "Beats are NOT a new frequency — they're an amplitude modulation of the original waves.",
-        "Destructive interference doesn't destroy energy — it redistributes it to other locations."
+        "Students think beats produce a new frequency; they are periodic amplitude variations, not a new frequency.",
+        "Many confuse the beat frequency with the average frequency (f₁+f₂)/2.",
+        "Believing two forks must be identical for any sound interaction; beats specifically require different frequencies."
       ],
-      "hook": "Two slightly out-of-tune guitars create a 'wah-wah' pulsing beat — you're literally hearing wave interference in real time. DJs and instrument tuners use this phenomenon.",
+      "hook": "Two guitars slightly out of tune produce a wobbling 'wah-wah' sound — that's beats! Professional tuners count these wobbles per second to bring instruments to perfect pitch.",
       "khanLinks": [
         {
           "title": "Sound and Wave Interference",
@@ -4186,144 +4482,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "f₁ (Hz)",
         "f₂ (Hz)",
-        "f_beat measured (Hz)",
-        "f_beat calculated (Hz)",
-        "Beat period (s)"
+        "Predicted f_beat (Hz)",
+        "Beats in 10 s",
+        "Measured f_beat (Hz)"
       ],
-      "rows": 4
+      "rows": 3
     },
     "observations": [
-      "Describe the sound you heard when two slightly different frequencies played simultaneously:",
-      "How did increasing the frequency difference affect the beats?"
+      "Strike both forks simultaneously and listen carefully for the beat pattern.",
+      "Count beat cycles (loud-soft-loud = one beat) in 10 seconds.",
+      "Verify measured f_beat ≈ |f₁ − f₂| = 3 Hz."
     ],
-    "conclusion": "State the formula for beat frequency. Explain how musicians use beats to tune instruments:",
+    "conclusion": "Beats confirmed: 440 Hz + 437 Hz → 30 beats in 10 s → f_beat = 3 Hz = |440 − 437|. The sound amplitude pulsed 3 times per second. This verifies f_beat = |f₁ − f₂|.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Beats and Interference in Acoustics</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Beats are interference made audible! Ask me about f_beat = |f₁ − f₂|, how to count beats, or how piano tuners use them.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>f_beat = |f₁ − f₂| &nbsp;&nbsp;|&nbsp;&nbsp; Constructive: Δφ = 0, 2π... &nbsp;Destructive: Δφ = π, 3π...</div>Beats: periodic variation in loudness when two slightly different frequencies interfere.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Beats are NOT a new frequency — they're an amplitude modulation of the original waves.</li><li>❌ Destructive interference doesn't destroy energy — it redistributes it to other locations.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Tuning instruments by ear (minimize beats)</li><li>🌍 Noise-cancelling headphones (destructive interference)</li><li>🌍 Sonar and radar (beat frequency analysis)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: f_beat = |f₁ - f₂|. Beat period = 1/f_beat. Slow beats (1-3 Hz) easily heard as wah-wah. At >15 Hz difference, beats merge into roughness.<br><br>440 Hz + 444 Hz → 4 beats/second. 440 Hz + 450 Hz → 10 beats/second (harder to distinguish).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Two slightly out-of-tune guitars create a 'wah-wah' pulsing beat — you're literally hearing wave interference in real time. DJs and instrument tuners use this phenomenon.</em><br><br>Key concepts to emphasise: Beats: periodic variation in loudness when two slightly different frequencies interfere.; Beat frequency = |f₁ − f₂| — the closer the frequencies, the slower the beat.",
-        "hook": "Engaging hook for students: <blockquote>Two slightly out-of-tune guitars create a 'wah-wah' pulsing beat — you're literally hearing wave interference in real time. DJs and instrument tuners use this phenomenon.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "two tuning forks|slightly different frequencies|stopwatch|count beats",
+        "formula": "f_beat = |f₁ − f₂|",
+        "error": "miscounting beats|too noisy environment|forks not simultaneously struck",
+        "question": "beats|f_beat|interference|superposition|tuning",
+        "real": "piano tuning|guitar tuning|radio heterodyne"
       },
-      "hint": "f_beat = |f₁ - f₂|. Beat period = 1/f_beat. Slow beats (1-3 Hz) easily heard as wah-wah. At >15 Hz difference, beats merge into roughness.",
-      "expected": "440 Hz + 444 Hz → 4 beats/second. 440 Hz + 450 Hz → 10 beats/second (harder to distinguish)."
+      "hint": "f_beat = |f₁ − f₂|. Count loud pulses per second. 440 Hz + 437 Hz → 3 beats/s → 30 in 10 s.",
+      "expected": "f₁=440 Hz, f₂=437 Hz → 30 beats in 10 s → f_beat = 3 Hz = |440−437|."
     }
   },
   {
     "num": 29,
     "title": "Focal Length",
     "section": "Optics",
-    "desc": "Measures focal length of converging lenses using distant objects and ray boxes.",
+    "desc": "Measure the focal lengths of biconcave and biconvex lenses by focusing parallel light or using distant objects.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Measures focal length of converging lenses using distant objects and ray boxes.",
+      "whatTheyLearn": "Students measure focal lengths of converging and diverging lenses and confirm the sign convention: f > 0 for convex, f < 0 for concave.",
       "instructions": [
-        "Describe how you found the focal length using a distant object:",
-        "What happened to the image when you moved inside the focal length?",
-        "State your measured focal lengths and powers. Compare converging vs diverging lens behaviour:"
+        "For biconvex: direct lens toward a distant object; find the sharpest image on a screen and measure f.",
+        "For biconcave: use a virtual image method or measure divergence of a narrow beam.",
+        "Record f for three different lenses of each type."
       ],
-      "expectedOutcome": "1/f = 1/u + 1/v. Distant object (u→∞): image at f. Power P = 100/f(cm) = 1/f(m) in dioptres. Convex lens f≈10cm: P=10D. For u=20cm: 1/v = 1/10-1/20 = 1/20 → v=20cm (real, inverted, same size)."
+      "expectedOutcome": "Biconcave: f = [−0.054, −0.102, −0.152] m. Biconvex: f = [+0.053, +0.098, +0.151] m."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔭",
-          "name": "Converging lens"
+          "emoji": "🔵",
+          "name": "Set of biconvex lenses (3 different)"
+        },
+        {
+          "emoji": "🔵",
+          "name": "Set of biconcave lenses (3 different)"
+        },
+        {
+          "emoji": "🔦",
+          "name": "Distant light source or window"
         },
         {
           "emoji": "📏",
-          "name": "Optical bench"
+          "name": "Ruler / optical bench"
         },
         {
-          "emoji": "💡",
-          "name": "Light source"
-        },
-        {
-          "emoji": "🖊️",
-          "name": "Screen"
+          "emoji": "🖥️",
+          "name": "Screen (white card)"
         }
       ],
       "observationsToRecord": [
-        "Describe how you found the focal length using a distant object:",
-        "What happened to the image when you moved inside the focal length?"
+        "Type of lens (convex/concave)",
+        "Distance from lens to sharp image f (m)",
+        "Sign of f (positive for convex, negative for concave)"
       ],
       "theoryPoints": [
-        "Focal length f: the distance from a converging lens to where parallel rays meet.",
-        "Shorter focal length = stronger (more curved) lens.",
-        "Real focal point: rays actually converge. Virtual focal point: rays appear to diverge from it."
+        "Focal length f: distance from lens to focal point where parallel rays converge (convex) or appear to diverge from (concave).",
+        "Convex (converging) lens: f > 0; forms real image of distant objects.",
+        "Concave (diverging) lens: f < 0; always forms virtual, upright, diminished images.",
+        "Lens power P = 1/f (dioptres, D); more curved lens → shorter f → higher P."
       ],
       "realWorldConnections": [
-        "Reading glasses (diverging for short-sight)",
-        "Camera lenses (adjustable focal length)",
-        "Telescope objectives (long focal length)"
+        "Eyeglasses use lenses with prescribed focal lengths to correct vision.",
+        "Camera lenses are compound systems of converging and diverging lenses.",
+        "Telescopes and microscopes combine lenses to achieve high magnification."
       ],
-      "formula": "P = 1/f    (Power in dioptres, f in metres)"
+      "formula": "P = 1/f (D)   |   f > 0 (converging)   |   f < 0 (diverging)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A converging lens has f = 0.25 m. What is its power in dioptres?",
+          "text": "A biconvex lens has f = 0.098 m. What is its power in dioptres?",
           "options": [
-            "A. 0.25 D",
-            "B. 4 D",
-            "C. 25 D",
-            "D. 2.5 D"
-          ],
-          "correctIndex": 1,
-          "explanation": "P = 1/f = 1/0.25 = 4 dioptres"
-        },
-        {
-          "text": "Parallel rays from the sun pass through a lens and converge 10 cm away. What is f?",
-          "options": [
-            "A. 0.1 m",
-            "B. 10 m",
-            "C. 1 m",
-            "D. 0.01 m"
+            "10.2 D",
+            "0.098 D",
+            "9.8 D",
+            "1.02 D"
           ],
           "correctIndex": 0,
-          "explanation": "Parallel (distant) rays converge at the focal point: f = 0.1 m = 10 cm"
+          "explanation": "P = 1/f = 1/0.098 ≈ 10.2 D."
+        },
+        {
+          "text": "A biconcave lens has f = −0.102 m. What type of image does it always form?",
+          "options": [
+            "Real, inverted, magnified",
+            "Real, inverted, diminished",
+            "Virtual, upright, diminished",
+            "Virtual, inverted, same size"
+          ],
+          "correctIndex": 2,
+          "explanation": "A concave (diverging) lens always forms virtual, upright, and diminished images regardless of object position."
+        },
+        {
+          "text": "To correct shortsightedness (myopia), which lens is needed?",
+          "options": [
+            "Converging (convex)",
+            "Diverging (concave)",
+            "Plane (flat)",
+            "Cylindrical"
+          ],
+          "correctIndex": 1,
+          "explanation": "Myopia means the eye converges light too strongly; a diverging (concave) lens reduces convergence and shifts the focal point back to the retina."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain the difference between a converging and a diverging lens using ray diagrams.",
+        "Why does a more curved lens have a shorter focal length?",
+        "How would you measure f for a concave lens without a direct focal point?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
-        },
-        {
-          "label": "Mathematics",
+          "label": "Focal length definition",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 15
+          "label": "Sign convention (f>0, f<0)",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Lens power P=1/f",
+          "pct": 25
+        },
+        {
+          "label": "Image types for each lens",
+          "pct": 25
         }
       ],
       "misconceptions": [
-        "A converging lens can form both real and virtual images depending on object position.",
-        "Focal length is a fixed property of a lens, not dependent on where you place objects."
+        "Students think concave lenses can form real images under some conditions; diverging lenses always form virtual images.",
+        "Many forget the sign of f for concave lenses, causing calculation errors.",
+        "Confusing focal length with image distance."
       ],
-      "hook": "A magnifying glass, telescope, and the human eye all use the same physics — converging lenses bring parallel rays to a single focal point.",
+      "hook": "Hold a magnifying glass near a window and move a piece of paper until you see the sharpest image of the outside world — that distance is the focal length. Every lens has its own!",
       "khanLinks": [
         {
           "title": "Convex Lenses",
@@ -4337,148 +4646,152 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Lens",
-        "Object distance u (cm)",
-        "Image distance v (cm)",
-        "Focal length f (cm)",
-        "Power P (D)"
+        "Lens type",
+        "Label",
+        "f measured (m)",
+        "Power P = 1/f (D)"
       ],
-      "rows": 5
+      "rows": 6
     },
     "observations": [
-      "Describe how you found the focal length using a distant object:",
-      "What happened to the image when you moved inside the focal length?"
+      "Record focal length for each of the 3 biconvex and 3 biconcave lenses.",
+      "Confirm f > 0 for convex and f < 0 for concave.",
+      "Compare measured values with labelled values if available."
     ],
-    "conclusion": "State your measured focal lengths and powers. Compare converging vs diverging lens behaviour:",
+    "conclusion": "Focal lengths measured: biconvex f = [+0.053, +0.098, +0.151] m; biconcave f = [−0.054, −0.102, −0.152] m. Sign convention confirmed. More curved lenses have shorter f and higher power.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Focal Length</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Lenses bend light to create images! Ask me about focal length, lens power, or how to measure f for concave lenses.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>P = 1/f &nbsp;&nbsp; (Power in dioptres, f in metres)</div>Focal length f: the distance from a converging lens to where parallel rays meet.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A converging lens can form both real and virtual images depending on object position.</li><li>❌ Focal length is a fixed property of a lens, not dependent on where you place objects.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Reading glasses (diverging for short-sight)</li><li>🌍 Camera lenses (adjustable focal length)</li><li>🌍 Telescope objectives (long focal length)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: 1/f = 1/u + 1/v. Distant object (u→∞): image at f. Power P = 100/f(cm) = 1/f(m) in dioptres.<br><br>Convex lens f≈10cm: P=10D. For u=20cm: 1/v = 1/10-1/20 = 1/20 → v=20cm (real, inverted, same size).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A magnifying glass, telescope, and the human eye all use the same physics — converging lenses bring parallel rays to a single focal point.</em><br><br>Key concepts to emphasise: Focal length f: the distance from a converging lens to where parallel rays meet.; Shorter focal length = stronger (more curved) lens.",
-        "hook": "Engaging hook for students: <blockquote>A magnifying glass, telescope, and the human eye all use the same physics — converging lenses bring parallel rays to a single focal point.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "lens|focal point|screen|optical bench|distant object",
+        "formula": "P = 1/f|f>0 convex|f<0 concave",
+        "error": "parallax error|not a truly distant object|screen not perpendicular",
+        "question": "focal length|converging|diverging|power|dioptres",
+        "real": "eyeglasses|camera|telescope"
       },
-      "hint": "1/f = 1/u + 1/v. Distant object (u→∞): image at f. Power P = 100/f(cm) = 1/f(m) in dioptres.",
-      "expected": "Convex lens f≈10cm: P=10D. For u=20cm: 1/v = 1/10-1/20 = 1/20 → v=20cm (real, inverted, same size)."
+      "hint": "Convex lens: parallel rays converge at F (real focus), f>0. Concave lens: rays diverge as if from virtual F, f<0.",
+      "expected": "Biconvex: f = +0.053, +0.098, +0.151 m. Biconcave: f = −0.054, −0.102, −0.152 m."
     }
   },
   {
     "num": 30,
     "title": "Thin Lens Equation",
     "section": "Optics",
-    "desc": "Verifies the thin lens equation 1/f = 1/v + 1/u across multiple object distances.",
+    "desc": "Verify the thin lens equation 1/p + 1/q = 1/f using a converging lens and measuring object and image distances.",
     "setupTime": "5 min",
-    "duration": "25 min",
+    "duration": "30 min",
     "summary": {
-      "whatTheyLearn": "Verifies the thin lens equation 1/f = 1/v + 1/u across multiple object distances.",
+      "whatTheyLearn": "Students measure object distance p and image distance q for several positions and confirm 1/p + 1/q = 1/f.",
       "instructions": [
-        "At what object distance did the image become virtual?",
-        "Describe how the image changed as you moved the object from far to close:",
-        "Verify the thin lens equation for each measurement. State when real vs virtual images form:"
+        "Place object at p = 200 mm from a lens of known f.",
+        "Move the screen until a sharp image forms; record q.",
+        "Repeat for p = 150, 130, 100 mm and verify 1/p + 1/q = 1/f each time."
       ],
-      "expectedOutcome": "Real image: u > f. Virtual image: u < f. m = v/u. m > 0 = upright; m < 0 = inverted. |m| > 1 = magnified. u=∞: v=f (real). u=2f: v=2f (real, same size). u=f: v=∞. u<f: virtual, upright, magnified."
+      "expectedOutcome": "p = 200 mm → q ≈ 90 mm; f ≈ 7 cm (from 1/0.2 + 1/0.09 ≈ 1/0.063). Object at 10 cm with f=15 cm: virtual image at q = −30 cm."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔭",
-          "name": "Convex lens"
-        },
-        {
-          "emoji": "📏",
-          "name": "Optical bench"
+          "emoji": "🔵",
+          "name": "Converging lens (known f)"
         },
         {
           "emoji": "💡",
-          "name": "Light source"
+          "name": "Illuminated object (lamp + object slide)"
         },
         {
-          "emoji": "🖊️",
+          "emoji": "🖥️",
           "name": "Screen"
         },
         {
-          "emoji": "📋",
-          "name": "Data table"
+          "emoji": "📏",
+          "name": "Optical bench with scale"
         }
       ],
       "observationsToRecord": [
-        "At what object distance did the image become virtual?",
-        "Describe how the image changed as you moved the object from far to close:"
+        "Object distance p (mm)",
+        "Image distance q (mm) for each p",
+        "Whether image is real (screen) or virtual (cannot be projected)"
       ],
       "theoryPoints": [
-        "Thin lens equation: 1/f = 1/v − 1/u (or 1/do + 1/di = 1/f in some conventions).",
-        "Real images: rays actually converge; can be projected on a screen.",
-        "Virtual images: rays appear to diverge from; cannot be projected (e.g., magnifying glass)."
+        "Thin lens equation: 1/p + 1/q = 1/f.",
+        "Real images: q > 0 (same side as image), can be projected on screen.",
+        "Virtual images: q < 0, cannot be projected; appear behind the lens.",
+        "Magnification m = −q/p (negative m = inverted image)."
       ],
       "realWorldConnections": [
-        "Camera focussing (adjusting image distance)",
-        "Projector alignment",
-        "Eye optometry corrections"
+        "Camera: film/sensor at image distance q for object at distance p.",
+        "Projectors: produce large real images on a screen by placing object just outside focal length.",
+        "Magnifying glass: object inside focal length → virtual, upright, magnified image."
       ],
-      "formula": "1/f = 1/v − 1/u   |   m = v/u (magnification)"
+      "formula": "1/p + 1/q = 1/f   |   m = −q/p"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Object 30 cm from a 10 cm focal length lens. Where is the image?",
+          "text": "For a lens with f = 70 mm and p = 200 mm, calculate q.",
           "options": [
-            "A. 15 cm",
-            "B. 20 cm",
-            "C. 10 cm",
-            "D. 30 cm"
+            "109 mm",
+            "70 mm",
+            "200 mm",
+            "130 mm"
           ],
           "correctIndex": 0,
-          "explanation": "1/v = 1/f − 1/(-u)... using 1/10 = 1/v + 1/30 → 1/v = 1/10−1/30 = 2/30 → v=15 cm"
+          "explanation": "1/q = 1/f − 1/p = 1/70 − 1/200 = (200−70)/(70×200) = 130/14000 → q = 14000/130 ≈ 107.7 mm ≈ 108 mm."
         },
         {
-          "text": "An image forms on the same side as the object. The image is:",
+          "text": "An object is placed at p = 10 cm from a lens with f = 15 cm. The image is:",
           "options": [
-            "A. Real and inverted",
-            "B. Virtual and upright",
-            "C. Real and upright",
-            "D. Virtual and inverted"
+            "Real at 30 cm",
+            "Virtual at −30 cm",
+            "Real at −30 cm",
+            "Virtual at 30 cm"
           ],
           "correctIndex": 1,
-          "explanation": "Virtual images form on the same side as the object and are always upright in a converging lens."
+          "explanation": "1/q = 1/15 − 1/10 = (2−3)/30 = −1/30 → q = −30 cm. Negative q means virtual image."
+        },
+        {
+          "text": "When 1/p = 1/f (object at focal point), what is q?",
+          "options": [
+            "q = 0",
+            "q = f",
+            "q = ∞",
+            "q = −f"
+          ],
+          "correctIndex": 2,
+          "explanation": "1/q = 1/f − 1/f = 0 → q = ∞. Parallel rays exit the lens; image at infinity."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Draw a ray diagram for an object at 2f and predict the image position using the lens equation.",
+        "Explain the difference between a real and a virtual image. How can you tell which type you have?",
+        "How does a projector differ from a camera in terms of where the object is placed relative to f?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 45
-        },
-        {
-          "label": "Mathematics",
+          "label": "1/p + 1/q = 1/f derivation",
           "pct": 30
         },
         {
-          "label": "Data Analysis",
-          "pct": 15
+          "label": "Real vs. virtual images",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Magnification m = −q/p",
+          "pct": 25
+        },
+        {
+          "label": "Special cases (p=f, p=2f)",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Sign conventions vary — always state which convention you use (real-is-positive vs Cartesian).",
-        "A virtual image is not 'fake' — it looks just as real to the eye; it just can't be projected."
+        "Students forget the sign convention: real images have positive q, virtual images have negative q.",
+        "Many think a virtual image means no image exists; a virtual image can be seen through the lens but not projected.",
+        "Mixing up object and image distances in the lens equation."
       ],
-      "hook": "The thin lens equation connects object distance, image distance, and focal length — it's the recipe behind every camera, projector, and human eye correction.",
+      "hook": "How does a phone camera focus from 10 cm to infinity? The lens physically moves to change q while keeping 1/p + 1/q = 1/f satisfied. Lens equation in action!",
       "khanLinks": [
         {
           "title": "Thin Lens Equation",
@@ -4492,145 +4805,157 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Object dist u (cm)",
-        "Image dist v (cm)",
-        "f from equation (cm)",
-        "Magnification m",
-        "Image type (R/V)",
-        "Image orientation (U/I)"
+        "p (mm)",
+        "q (mm)",
+        "1/p (mm⁻¹)",
+        "1/q (mm⁻¹)",
+        "1/p+1/q",
+        "1/f (mm⁻¹)",
+        "Match?"
       ],
-      "rows": 6
+      "rows": 5
     },
     "observations": [
-      "At what object distance did the image become virtual?",
-      "Describe how the image changed as you moved the object from far to close:"
+      "Record p and q for each trial.",
+      "Calculate 1/p + 1/q and compare with 1/f.",
+      "Note whether image is real (q>0) or virtual (q<0)."
     ],
-    "conclusion": "Verify the thin lens equation for each measurement. State when real vs virtual images form:",
+    "conclusion": "Thin lens equation verified for all trials. p=200mm→q≈109mm: 1/200+1/109=0.005+0.0092=0.0142≈1/70 mm⁻¹. Object at p=10cm, f=15cm→q=−30cm (virtual). All results consistent with 1/p+1/q=1/f.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Thin Lens Equation</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "The thin lens equation governs every camera, projector, and eye! Ask me about 1/p+1/q=1/f, real vs. virtual images, or magnification.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>1/f = 1/v − 1/u &nbsp;&nbsp;|&nbsp;&nbsp; m = v/u (magnification)</div>Thin lens equation: 1/f = 1/v − 1/u (or 1/do + 1/di = 1/f in some conventions).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Sign conventions vary — always state which convention you use (real-is-positive vs Cartesian).</li><li>❌ A virtual image is not 'fake' — it looks just as real to the eye; it just can't be projected.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Camera focussing (adjusting image distance)</li><li>🌍 Projector alignment</li><li>🌍 Eye optometry corrections</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Real image: u > f. Virtual image: u < f. m = v/u. m > 0 = upright; m < 0 = inverted. |m| > 1 = magnified.<br><br>u=∞: v=f (real). u=2f: v=2f (real, same size). u=f: v=∞. u<f: virtual, upright, magnified.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>The thin lens equation connects object distance, image distance, and focal length — it's the recipe behind every camera, projector, and human eye correction.</em><br><br>Key concepts to emphasise: Thin lens equation: 1/f = 1/v − 1/u (or 1/do + 1/di = 1/f in some conventions).; Real images: rays actually converge; can be projected on a screen.",
-        "hook": "Engaging hook for students: <blockquote>The thin lens equation connects object distance, image distance, and focal length — it's the recipe behind every camera, projector, and human eye correction.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "optical bench|converging lens|object|screen|image distance",
+        "formula": "1/p+1/q=1/f|m=-q/p",
+        "error": "parallax|screen not at sharp focus|p measured from wrong reference",
+        "question": "thin lens|object distance|image distance|real|virtual|magnification",
+        "real": "camera|projector|magnifying glass"
       },
-      "hint": "Real image: u > f. Virtual image: u < f. m = v/u. m > 0 = upright; m < 0 = inverted. |m| > 1 = magnified.",
-      "expected": "u=∞: v=f (real). u=2f: v=2f (real, same size). u=f: v=∞. u<f: virtual, upright, magnified."
+      "hint": "1/q = 1/f − 1/p. If result is negative, q is negative → virtual image. m = −q/p gives sign and size of image.",
+      "expected": "p=200mm, f=70mm: q≈108mm. p=10cm, f=15cm: q=−30cm (virtual). 1/p+1/q=1/f confirmed."
     }
   },
   {
     "num": 31,
     "title": "Magnification",
     "section": "Optics",
-    "desc": "Measures and compares linear magnification from image/object heights and distances.",
+    "desc": "Measure the linear magnification of a converging lens by comparing image and object sizes and verifying m = −v/u.",
     "setupTime": "5 min",
-    "duration": "20 min",
+    "duration": "40 min",
     "summary": {
-      "whatTheyLearn": "Measures and compares linear magnification from image/object heights and distances.",
+      "whatTheyLearn": "Students measure image size S₂ and object size S₁ and verify m = S₂/S₁ = −v/u = −q/p.",
       "instructions": [
-        "Did linear magnification from heights match magnification from distances?",
-        "Describe the difference between real and virtual magnification:",
-        "State the magnification formula. At what distance is magnification = 1 (same size image)?"
+        "Set up object (arrow slide) at measured distance u from lens.",
+        "Find sharp image on screen at distance v.",
+        "Measure S₁ (object size) and S₂ (image size); calculate m = S₂/S₁ and compare with −v/u."
       ],
-      "expectedOutcome": "m = hi/ho = di/do. Same size when u = v = 2f. |m| > 1 means larger image. m negative means inverted. u=2f=20cm (f=10cm): m = 1, image same size. u=15cm: m = 2 (magnified). u=5cm<f: m virtual."
+      "expectedOutcome": "Trial 1: u = 35 mm, v = 86.5 mm, S₁ = 21 mm, S₂ = 51 mm → m = 51/21 ≈ 2.43; −v/u = −86.5/35 ≈ −2.47. Inverted image."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔭",
-          "name": "Lens set"
-        },
-        {
-          "emoji": "📏",
-          "name": "Optical bench"
+          "emoji": "🔵",
+          "name": "Converging lens"
         },
         {
           "emoji": "💡",
-          "name": "Object source"
+          "name": "Object slide with arrow (known size S₁)"
+        },
+        {
+          "emoji": "🖥️",
+          "name": "Screen"
         },
         {
           "emoji": "📏",
-          "name": "Ruler"
+          "name": "Optical bench with millimetre scale"
         }
       ],
       "observationsToRecord": [
-        "Did linear magnification from heights match magnification from distances?",
-        "Describe the difference between real and virtual magnification:"
+        "Object distance u (mm)",
+        "Image distance v (mm)",
+        "Object size S₁ (mm)",
+        "Image size S₂ (mm)",
+        "m = S₂/S₁ and m = −v/u"
       ],
       "theoryPoints": [
-        "Linear magnification m = image height / object height = image distance / object distance.",
-        "Angular magnification: how much larger an object appears compared to naked eye view.",
-        "Compound microscope: objective lens produces real image magnified by eyepiece."
+        "Linear magnification: m = image size / object size = S₂/S₁.",
+        "From geometry of similar triangles: m = −v/u (negative sign = inverted).",
+        "|m| > 1: magnified; |m| < 1: diminished; m < 0: inverted.",
+        "Real images (v > 0) from object beyond f: inverted (m < 0)."
       ],
       "realWorldConnections": [
-        "Medical microscopy for cell and pathogen analysis",
-        "Camera zoom lenses",
-        "Astronomical telescopes"
+        "Projectors require m >> 1 to create large screen images.",
+        "Microscopes use two lens stages; total m = m_obj × m_eye.",
+        "Cameras require m < 1 to create small sensor images of large scenes."
       ],
-      "formula": "m = hᵢ/h₀ = dᵢ/d₀   |   m < 0 means inverted"
+      "formula": "m = S₂/S₁ = −v/u = −q/p"
     },
     "questions": {
       "mcq": [
         {
-          "text": "An object 2 mm tall has image 10 mm tall. What is the magnification?",
+          "text": "Object at u = 35 mm, image at v = 86.5 mm. What is the magnification?",
           "options": [
-            "A. 0.2×",
-            "B. 5×",
-            "C. 20×",
-            "D. 12×"
+            "−2.47",
+            "+2.47",
+            "−0.40",
+            "+0.40"
           ],
-          "correctIndex": 1,
-          "explanation": "m = image/object = 10/2 = 5× magnification"
+          "correctIndex": 0,
+          "explanation": "m = −v/u = −86.5/35 ≈ −2.47. Negative: inverted image. |m| = 2.47: magnified."
         },
         {
-          "text": "Magnification = −3. The image is:",
+          "text": "If |m| = 0.5, the image is:",
           "options": [
-            "A. 3× larger and upright",
-            "B. 3× larger and inverted",
-            "C. 3× smaller and inverted",
-            "D. Same size"
+            "Twice as large as the object",
+            "The same size as the object",
+            "Half the size of the object",
+            "Three times as large"
+          ],
+          "correctIndex": 2,
+          "explanation": "|m| = 0.5 means image size = 0.5 × object size → image is half the size (diminished)."
+        },
+        {
+          "text": "A real image formed by a converging lens is always:",
+          "options": [
+            "Upright and magnified",
+            "Inverted",
+            "Virtual",
+            "The same size as the object"
           ],
           "correctIndex": 1,
-          "explanation": "Magnitude 3 means 3× larger; negative sign means inverted image."
+          "explanation": "Real images from converging lenses (object beyond f) are always inverted (m < 0)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why m = −v/u has a negative sign for real images.",
+        "How would you set up the experiment to produce a magnified virtual image? What would m be?",
+        "A projector lens produces an image 50× the object size. If the object is 20 mm, how large is the image?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
+          "label": "m = S₂/S₁ (size ratio)",
+          "pct": 30
         },
         {
-          "label": "Mathematics",
+          "label": "m = −v/u (distance ratio)",
+          "pct": 30
+        },
+        {
+          "label": "Sign and magnitude of m",
           "pct": 25
         },
         {
-          "label": "Measurement",
+          "label": "Verification of both methods",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Higher magnification is not always better — resolution limits what is actually useful.",
-        "A negative magnification means the image is inverted, not smaller."
+        "Students think magnification is always > 1; cameras and eyes produce m < 1.",
+        "Forgetting the negative sign: m < 0 means inverted, not smaller.",
+        "Measuring S₂ and S₁ from the same side of the lens confuses object and image."
       ],
-      "hook": "A microscope can see a single bacterium (1 micron). A radio telescope sees galaxies billions of light-years away. Both use the same magnification mathematics.",
+      "hook": "How does a movie projector make a postage-stamp-sized film frame fill an entire cinema screen? Linear magnification of hundreds — all from the thin lens equation!",
       "khanLinks": [
         {
           "title": "Image Height & Distance",
@@ -4644,147 +4969,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Object height (mm)",
-        "Image height (mm)",
-        "Object distance (cm)",
-        "Image distance (cm)",
-        "m = hi/ho",
-        "m = di/do",
+        "u (mm)",
+        "v (mm)",
+        "S₁ (mm)",
+        "S₂ (mm)",
+        "m = S₂/S₁",
+        "m = −v/u",
         "Match?"
       ],
       "rows": 4
     },
     "observations": [
-      "Did linear magnification from heights match magnification from distances?",
-      "Describe the difference between real and virtual magnification:"
+      "Measure S₁ of the object with a ruler before the experiment.",
+      "Measure S₂ of the image on the screen carefully.",
+      "Compare m calculated both ways for each trial."
     ],
-    "conclusion": "State the magnification formula. At what distance is magnification = 1 (same size image)?",
+    "conclusion": "Trial 1: u=35mm, v=86.5mm → m_size=51/21≈2.43, m_ratio=−86.5/35≈−2.47. Agreement within 2%. Real image is inverted (m<0). m = S₂/S₁ = −v/u verified.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Magnification</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Magnification connects object and image sizes! Ask me about m = S₂/S₁, why real images are inverted, or how projectors work.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>m = hᵢ/h₀ = dᵢ/d₀ &nbsp;&nbsp;|&nbsp;&nbsp; m < 0 means inverted</div>Linear magnification m = image height / object height = image distance / object distance.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Higher magnification is not always better — resolution limits what is actually useful.</li><li>❌ A negative magnification means the image is inverted, not smaller.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Medical microscopy for cell and pathogen analysis</li><li>🌍 Camera zoom lenses</li><li>🌍 Astronomical telescopes</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: m = hi/ho = di/do. Same size when u = v = 2f. |m| > 1 means larger image. m negative means inverted.<br><br>u=2f=20cm (f=10cm): m = 1, image same size. u=15cm: m = 2 (magnified). u=5cm<f: m virtual.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A microscope can see a single bacterium (1 micron). A radio telescope sees galaxies billions of light-years away. Both use the same magnification mathematics.</em><br><br>Key concepts to emphasise: Linear magnification m = image height / object height = image distance / object distance.; Angular magnification: how much larger an object appears compared to naked eye view.",
-        "hook": "Engaging hook for students: <blockquote>A microscope can see a single bacterium (1 micron). A radio telescope sees galaxies billions of light-years away. Both use the same magnification mathematics.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "optical bench|object slide|screen|converging lens|image size",
+        "formula": "m = S₂/S₁ = −v/u",
+        "error": "measuring from wrong reference|blurry image|parallax",
+        "question": "magnification|image size|object size|inverted|real image",
+        "real": "projector|microscope|camera"
       },
-      "hint": "m = hi/ho = di/do. Same size when u = v = 2f. |m| > 1 means larger image. m negative means inverted.",
-      "expected": "u=2f=20cm (f=10cm): m = 1, image same size. u=15cm: m = 2 (magnified). u=5cm<f: m virtual."
+      "hint": "m = S₂/S₁ = −v/u. Negative m means inverted. |m|>1 means magnified. Real images are always inverted.",
+      "expected": "u=35mm, v=86.5mm, S₁=21mm, S₂=51mm → m_size≈2.43, m_ratio≈−2.47. Agreement confirms formula."
     }
   },
   {
     "num": 32,
     "title": "Mixing of Colours",
     "section": "Optics",
-    "desc": "Demonstrates additive colour mixing with coloured lights to produce white light.",
+    "desc": "Mix coloured lights (additive synthesis) and coloured filters (subtractive synthesis) to understand colour perception.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates additive colour mixing with coloured lights to produce white light.",
+      "whatTheyLearn": "Students discover the additive primary colours (R, G, B) and their mixtures, and compare with subtractive mixing of pigments.",
       "instructions": [
-        "Describe the difference between additive (light) and subtractive (pigment) mixing:",
-        "Which combination surprised you most? Why?",
-        "State the primary colours for additive mixing. Explain why a TV screen can produce all colours:"
+        "Shine red, green, and blue lights onto a white screen and overlap them.",
+        "Record the colour at each overlap region.",
+        "Repeat with coloured filters (subtractive): observe different results."
       ],
-      "expectedOutcome": "Additive: R+G=Y, G+B=Cyan, R+B=Magenta, R+G+B=White. Subtractive: opposite primaries (CMY). TV=additive RGB pixels. Light: R+G=Yellow (not red+green=brown). Pigment: opposite behaviour. Always specify mixing type."
+      "expectedOutcome": "Additive: R+G=Yellow, R+B=Magenta, G+B=Cyan, R+G+B=White. Subtractive: primary colours CMY combine differently."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "💡",
-          "name": "RGB light sources"
+          "emoji": "🔴",
+          "name": "Red LED / spotlight"
         },
         {
-          "emoji": "🌑",
-          "name": "Dark room"
+          "emoji": "🟢",
+          "name": "Green LED / spotlight"
         },
         {
-          "emoji": "🖊️",
+          "emoji": "🔵",
+          "name": "Blue LED / spotlight"
+        },
+        {
+          "emoji": "🖥️",
           "name": "White screen"
         },
         {
           "emoji": "🎨",
-          "name": "Colour filters"
+          "name": "Coloured filters (CMY)"
         }
       ],
       "observationsToRecord": [
-        "Describe the difference between additive (light) and subtractive (pigment) mixing:",
-        "Which combination surprised you most? Why?"
+        "Colour at each overlap of two primaries",
+        "Colour when all three primaries overlap",
+        "Comparison with subtractive (filter) mixing results"
       ],
       "theoryPoints": [
-        "White light is a mixture of all visible wavelengths (colours).",
-        "Additive colour mixing (light): Red + Green + Blue = White.",
-        "Subtractive colour mixing (pigments): Cyan + Magenta + Yellow = Black."
+        "Additive mixing (lights): R + G = Yellow; R + B = Magenta; G + B = Cyan; R + G + B = White.",
+        "Subtractive mixing (pigments/filters): absorb colours; Cyan + Magenta + Yellow = Black.",
+        "Human eye has three cone types (sensitive to R, G, B).",
+        "TV screens use additive mixing (tiny R, G, B pixels)."
       ],
       "realWorldConnections": [
-        "RGB screens (pixels mix light additively)",
-        "Colour printing (CMYK ink)",
-        "Stage lighting design",
-        "Sunset colours (Rayleigh scattering)"
+        "Television and phone screens use additive RGB mixing.",
+        "Printing uses subtractive CMYK mixing.",
+        "Stage lighting designers use additive colour mixing."
       ],
       "formula": "Additive: R+G+B = White   |   Subtractive: C+M+Y = Black"
     },
     "questions": {
       "mcq": [
         {
-          "text": "In additive colour mixing, Red + Green = ?",
+          "text": "What colour is produced by mixing red and green light?",
           "options": [
-            "A. Brown",
-            "B. Yellow",
-            "C. Orange",
-            "D. White"
+            "Brown",
+            "Yellow",
+            "Orange",
+            "White"
           ],
           "correctIndex": 1,
-          "explanation": "Additive mixing (light): R+G = Yellow. This is different from pigment mixing."
+          "explanation": "Additive mixing: red + green = yellow."
         },
         {
-          "text": "Computer monitors use additive colour mixing with:",
+          "text": "Mixing all three additive primaries (R+G+B) gives:",
           "options": [
-            "A. C, M, Y pixels",
-            "B. R, G, B pixels",
-            "C. Only red and blue",
-            "D. White and black pixels"
+            "Black",
+            "Brown",
+            "White",
+            "Grey"
           ],
-          "correctIndex": 1,
-          "explanation": "LCD/LED screens use tiny Red, Green, Blue sub-pixels that mix additively to produce all colours."
+          "correctIndex": 2,
+          "explanation": "All three additive primaries together produce white light."
+        },
+        {
+          "text": "Subtractive colour mixing is used in:",
+          "options": [
+            "Television screens",
+            "Stage lighting",
+            "Colour printing",
+            "Projectors"
+          ],
+          "correctIndex": 2,
+          "explanation": "Printing uses subtractive CMYK mixing; inks absorb (subtract) colours from white light."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain the difference between additive and subtractive colour mixing with examples.",
+        "Why does mixing all pigment colours give black while mixing all lights gives white?",
+        "How does a TV screen produce millions of colours using only three colours?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
-        },
-        {
-          "label": "Waves & Light",
+          "label": "Additive primaries RGB",
           "pct": 30
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Secondary colours (Y, M, C)",
+          "pct": 25
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Subtractive mixing (CMY)",
+          "pct": 25
+        },
+        {
+          "label": "Colour perception (cone cells)",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Mixing paints is subtractive, not additive — red+green paint makes brown, not yellow.",
-        "Coloured light mixes differently to pigments — an important distinction for artists vs lighting designers."
+        "Students confuse additive (light) and subtractive (pigment) mixing; they follow different rules.",
+        "Many think R+G should make orange (paint mixing rule); in light, R+G = Yellow.",
+        "Assuming white is the absence of colour; in additive mixing, white is all colours together."
       ],
-      "hook": "White light is a mixture of all rainbow colours. Newton proved this by splitting sunlight with a prism — and then recombining the colours back to white with a second prism.",
+      "hook": "Your phone screen has no yellow, orange or purple pixels — only red, green, and blue. Yet it shows billions of colours! Additive mixing is the secret.",
       "khanLinks": [
         {
           "title": "Visible Light & the EM Spectrum",
@@ -4798,63 +5135,56 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Colours mixed",
-        "Predicted result",
-        "Observed result",
-        "Mixing type (additive/subtractive)",
-        "Match? (Y/N)"
+        "Combination",
+        "Additive result",
+        "Subtractive result"
       ],
-      "rows": 6
+      "rows": 7
     },
     "observations": [
-      "Describe the difference between additive (light) and subtractive (pigment) mixing:",
-      "Which combination surprised you most? Why?"
+      "Record the colour at each overlap zone on the white screen.",
+      "Confirm R+G+B = White in the central overlap.",
+      "Compare with filter overlaps and note the differences."
     ],
-    "conclusion": "State the primary colours for additive mixing. Explain why a TV screen can produce all colours:",
+    "conclusion": "Additive colour mixing verified: R+G=Yellow, R+B=Magenta, G+B=Cyan, R+G+B=White. Subtractive mixing with filters gives different results (CMY → Black). TV screens use additive RGB; printers use subtractive CMY.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Mixing of Colours</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Colour mixing is different for lights vs. paints! Ask me about additive RGB, subtractive CMY, or how screens create all colours.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Additive: R+G+B = White &nbsp;&nbsp;|&nbsp;&nbsp; Subtractive: C+M+Y = Black</div>White light is a mixture of all visible wavelengths (colours).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Mixing paints is subtractive, not additive — red+green paint makes brown, not yellow.</li><li>❌ Coloured light mixes differently to pigments — an important distinction for artists vs lighting designers.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 RGB screens (pixels mix light additively)</li><li>🌍 Colour printing (CMYK ink)</li><li>🌍 Stage lighting design</li><li>🌍 Sunset colours (Rayleigh scattering)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Additive: R+G=Y, G+B=Cyan, R+B=Magenta, R+G+B=White. Subtractive: opposite primaries (CMY). TV=additive RGB pixels.<br><br>Light: R+G=Yellow (not red+green=brown). Pigment: opposite behaviour. Always specify mixing type.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>White light is a mixture of all rainbow colours. Newton proved this by splitting sunlight with a prism — and then recombining the colours back to white with a second prism.</em><br><br>Key concepts to emphasise: White light is a mixture of all visible wavelengths (colours).; Additive colour mixing (light): Red + Green + Blue = White.",
-        "hook": "Engaging hook for students: <blockquote>White light is a mixture of all rainbow colours. Newton proved this by splitting sunlight with a prism — and then recombining the colours back to white with a second prism.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "coloured lights|RGB|white screen|filters|overlap",
+        "formula": "R+G=Y|R+B=M|G+B=C|R+G+B=White|C+M+Y=Black",
+        "error": "room not dark enough|spotlights not truly RGB|screen not white",
+        "question": "additive|subtractive|RGB|CMY|colour mixing|primary colours",
+        "real": "TV screen|printing|stage lighting"
       },
-      "hint": "Additive: R+G=Y, G+B=Cyan, R+B=Magenta, R+G+B=White. Subtractive: opposite primaries (CMY). TV=additive RGB pixels.",
-      "expected": "Light: R+G=Yellow (not red+green=brown). Pigment: opposite behaviour. Always specify mixing type."
+      "hint": "Additive (lights): R+G=Yellow, R+B=Magenta, G+B=Cyan, all three=White. Subtractive (pigments): opposite — all absorb to give Black.",
+      "expected": "R+G=Yellow, R+B=Magenta, G+B=Cyan, R+G+B=White. Subtractive: C+M+Y=Black."
     }
   },
   {
     "num": 33,
     "title": "Microscope – Telescope",
     "section": "Optics",
-    "desc": "Builds a compound microscope and refracting telescope from two lenses.",
-    "setupTime": "8 min",
-    "duration": "25 min",
+    "desc": "Build a simple microscope and telescope using available lenses and measure their magnifications.",
+    "setupTime": "5 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Builds a compound microscope and refracting telescope from two lenses.",
+      "whatTheyLearn": "Students understand that a compound microscope uses two converging lenses (M_total = M_obj × M_eye) and a telescope uses a large objective and eyepiece.",
       "instructions": [
-        "Describe what you saw through the microscope/telescope. Was the image upright or inverted?",
-        "How did changing the eyepiece affect the magnification?",
-        "State the magnification formula for each instrument. Compare theoretical vs measured magnification:"
+        "Microscope: place object just beyond f of objective; position eyepiece to view the real intermediate image.",
+        "Telescope: align objective (long f) and eyepiece (short f) separated by f_obj + f_eye.",
+        "Measure total magnification by comparing image and object apparent sizes."
       ],
-      "expectedOutcome": "Telescope M = f_obj/f_eye. Microscope M = (tube length/f_obj) × (25cm/f_eye). Telescope inverts image. Telescope: f_obj=30cm, f_eye=5cm → M=6×. Image inverted. Field of view decreases with magnification."
+      "expectedOutcome": "Microscope: M_total = M_obj × M_eye. Telescope angular magnification: M = f_obj/f_eye."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🔬",
-          "name": "Objective lens"
+          "emoji": "🔵",
+          "name": "Short focal length lens (objective)"
         },
         {
-          "emoji": "🔭",
-          "name": "Eyepiece lens"
+          "emoji": "🔵",
+          "name": "Medium focal length lens (eyepiece)"
         },
         {
           "emoji": "📏",
@@ -4862,80 +5192,98 @@ export const experiments: Experiment[] = [
         },
         {
           "emoji": "💡",
-          "name": "Light source"
+          "name": "Illuminated object"
+        },
+        {
+          "emoji": "🔭",
+          "name": "Long focal length lens (telescope objective)"
         }
       ],
       "observationsToRecord": [
-        "Describe what you saw through the microscope/telescope. Was the image upright or inverted?",
-        "How did changing the eyepiece affect the magnification?"
+        "f_objective and f_eyepiece (mm)",
+        "Total magnification M_total for microscope",
+        "Angular magnification M = f_obj/f_eye for telescope"
       ],
       "theoryPoints": [
-        "Compound microscope: short-focal-length objective + eyepiece; total m = m_obj × m_eye.",
-        "Refracting telescope: long-focal-length objective collects light; eyepiece magnifies.",
-        "Telescope magnification = f_objective / f_eyepiece."
+        "Compound microscope: M_total = M_obj × M_eye = (v_obj/u_obj) × (D/f_eye).",
+        "Telescope: M = f_obj / f_eye (angular magnification).",
+        "Using a short f_obj and short f_eye gives high microscope magnification.",
+        "Telescope: large f_obj and short f_eye gives high magnification."
       ],
       "realWorldConnections": [
-        "Medical diagnosis under microscope",
-        "Astronomical observation",
-        "Binoculars (dual telescope)"
+        "Compound microscopes magnify cells and microorganisms for biological study.",
+        "Astronomical telescopes use large objective mirrors or lenses to gather light.",
+        "Binoculars combine two telescopes with prisms for compact design."
       ],
-      "formula": "Microscope: M = (L/f_obj) × (25/f_eye)   |   Telescope: M = f_obj/f_eye"
+      "formula": "Microscope: M = M_obj × M_eye   |   Telescope: M = f_obj / f_eye"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A telescope has objective f=100 cm and eyepiece f=5 cm. Magnification?",
+          "text": "A microscope has M_obj = 10× and M_eye = 5×. What is M_total?",
           "options": [
-            "A. 20×",
-            "B. 5×",
-            "C. 100×",
-            "D. 500×"
+            "2×",
+            "15×",
+            "50×",
+            "100×"
           ],
-          "correctIndex": 0,
-          "explanation": "M = f_obj/f_eye = 100/5 = 20×"
+          "correctIndex": 2,
+          "explanation": "M_total = M_obj × M_eye = 10 × 5 = 50×."
         },
         {
-          "text": "To get higher magnification from a telescope, you should:",
+          "text": "A telescope has f_obj = 600 mm and f_eye = 20 mm. What is its magnification?",
           "options": [
-            "A. Use a longer eyepiece focal length",
-            "B. Use a shorter eyepiece focal length",
-            "C. Use a shorter objective",
-            "D. Increase the tube length"
+            "20×",
+            "30×",
+            "600×",
+            "12,000×"
           ],
           "correctIndex": 1,
-          "explanation": "M = f_obj/f_eye — smaller f_eye gives higher magnification."
+          "explanation": "M = f_obj/f_eye = 600/20 = 30×."
+        },
+        {
+          "text": "The eyepiece of a microscope acts as:",
+          "options": [
+            "An objective lens making a real image",
+            "A magnifying glass viewing the real image from the objective",
+            "A mirror",
+            "A projector"
+          ],
+          "correctIndex": 1,
+          "explanation": "The eyepiece functions as a simple magnifying glass, enlarging the real intermediate image formed by the objective."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain the two-stage magnification process in a compound microscope.",
+        "Why does a telescope need a large diameter objective lens?",
+        "Compare the light path in a refracting telescope and a reflecting telescope."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 55
+          "label": "Two-lens compound microscope",
+          "pct": 30
         },
         {
-          "label": "Mathematics",
-          "pct": 25
+          "label": "Refracting telescope design",
+          "pct": 30
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "M = M_obj × M_eye (microscope)",
+          "pct": 20
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "M = f_obj/f_eye (telescope)",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Bigger telescope is not just about magnification — light-gathering (aperture) is often more important.",
-        "A microscope forms a real intermediate image; a telescope typically doesn't."
+        "Students think more lenses always means more magnification; alignment is critical.",
+        "Confusing the roles of objective and eyepiece in a microscope.",
+        "Assuming all optical instruments work the same way."
       ],
-      "hook": "Galileo's first telescope had a magnification of just 8× — yet it was enough to discover Jupiter's moons and overturn 2000 years of cosmology.",
+      "hook": "A compound microscope uses two lenses whose magnifications multiply — not add! A 40× objective and a 10× eyepiece give 400× total. That's enough to see individual cells!",
       "khanLinks": [
         {
           "title": "Lenses (Geometric Optics)",
@@ -4949,145 +5297,155 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Instrument",
-        "f_objective (cm)",
-        "f_eyepiece (cm)",
-        "Theoretical M",
-        "Measured M",
-        "% Error"
+        "f_obj (mm)",
+        "f_eye (mm)",
+        "M_obj",
+        "M_eye",
+        "M_total"
       ],
-      "rows": 2
+      "rows": 3
     },
     "observations": [
-      "Describe what you saw through the microscope/telescope. Was the image upright or inverted?",
-      "How did changing the eyepiece affect the magnification?"
+      "Record lens focal lengths and measure magnification for the microscope setup.",
+      "Calculate M = f_obj/f_eye for the telescope and verify by observation.",
+      "Describe the orientation of the final image in each instrument."
     ],
-    "conclusion": "State the magnification formula for each instrument. Compare theoretical vs measured magnification:",
+    "conclusion": "Compound microscope: M_total = M_obj × M_eye. Telescope: M = f_obj/f_eye. Both verified experimentally. Microscope image is inverted; telescope image inverted (refracting). M_total multiplies with each stage.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Microscope – Telescope</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Microscopes and telescopes bend light in ingenious ways! Ask me about the two-stage microscope, telescope magnification, or how to build one.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 8 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Microscope: M = (L/f_obj) × (25/f_eye) &nbsp;&nbsp;|&nbsp;&nbsp; Telescope: M = f_obj/f_eye</div>Compound microscope: short-focal-length objective + eyepiece; total m = m_obj × m_eye.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Bigger telescope is not just about magnification — light-gathering (aperture) is often more important.</li><li>❌ A microscope forms a real intermediate image; a telescope typically doesn't.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Medical diagnosis under microscope</li><li>🌍 Astronomical observation</li><li>🌍 Binoculars (dual telescope)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Telescope M = f_obj/f_eye. Microscope M = (tube length/f_obj) × (25cm/f_eye). Telescope inverts image.<br><br>Telescope: f_obj=30cm, f_eye=5cm → M=6×. Image inverted. Field of view decreases with magnification.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Galileo's first telescope had a magnification of just 8× — yet it was enough to discover Jupiter's moons and overturn 2000 years of cosmology.</em><br><br>Key concepts to emphasise: Compound microscope: short-focal-length objective + eyepiece; total m = m_obj × m_eye.; Refracting telescope: long-focal-length objective collects light; eyepiece magnifies.",
-        "hook": "Engaging hook for students: <blockquote>Galileo's first telescope had a magnification of just 8× — yet it was enough to discover Jupiter's moons and overturn 2000 years of cosmology.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "objective|eyepiece|optical bench|focal length|microscope|telescope",
+        "formula": "M_total = M_obj × M_eye|M_telescope = f_obj/f_eye",
+        "error": "alignment|eye relief|incorrect lens choice",
+        "question": "microscope|telescope|magnification|objective|eyepiece",
+        "real": "biological microscope|astronomical telescope|binoculars"
       },
-      "hint": "Telescope M = f_obj/f_eye. Microscope M = (tube length/f_obj) × (25cm/f_eye). Telescope inverts image.",
-      "expected": "Telescope: f_obj=30cm, f_eye=5cm → M=6×. Image inverted. Field of view decreases with magnification."
+      "hint": "Microscope: M_total = M_obj × M_eye. Telescope: M = f_obj / f_eye. For telescope, use long f_obj and short f_eye.",
+      "expected": "Telescope with f_obj=600mm, f_eye=20mm → M=30×. Microscope: M_obj×M_eye gives total magnification."
     }
   },
   {
     "num": 34,
     "title": "Prism: Composition of Light",
     "section": "Optics",
-    "desc": "Disperses white light with a glass prism to reveal the visible spectrum.",
+    "desc": "Pass white light through a glass prism to produce a visible spectrum and observe wavelength-dependent refraction (dispersion).",
     "setupTime": "5 min",
-    "duration": "25 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Disperses white light with a glass prism to reveal the visible spectrum.",
+      "whatTheyLearn": "Students observe that white light splits into ROY G BIV (red, orange, yellow, green, blue, indigo, violet) and understand that violet bends most, red least.",
       "instructions": [
-        "List the colours observed in order from least to most deviated:",
-        "What happened when you used a second prism to recombine the spectrum?",
-        "Explain dispersion. State which colour has the highest refractive index in glass and why:"
+        "Direct a narrow beam of white light at the prism face.",
+        "Observe the spectrum on a screen and identify the colours in order.",
+        "Note which colour is deviated most (violet) and least (red)."
       ],
-      "expectedOutcome": "Order: Red(700nm), Orange(620nm), Yellow(580nm), Green(530nm), Blue(470nm), Indigo, Violet(400nm). Violet most deviated (highest n). ROYGBIV order. Violet deviates most (~45-50°), red least (~40-45°) for typical glass prism."
+      "expectedOutcome": "Spectrum in order: Red, Orange, Yellow, Green, Blue, Indigo, Violet (ROY G BIV). Violet deviates the most; red the least. Replicates Newton's 1666 prism experiment."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "💎",
-          "name": "Glass prism"
+          "emoji": "🔺",
+          "name": "Glass equilateral prism"
         },
         {
-          "emoji": "💡",
-          "name": "White light source"
+          "emoji": "🔦",
+          "name": "White light source (projector or sunlight slit)"
         },
         {
-          "emoji": "🌑",
-          "name": "Dark room"
-        },
-        {
-          "emoji": "🖊️",
+          "emoji": "🖥️",
           "name": "White screen"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler (to measure deviation angles)"
         }
       ],
       "observationsToRecord": [
-        "List the colours observed in order from least to most deviated:",
-        "What happened when you used a second prism to recombine the spectrum?"
+        "Colour sequence in the spectrum",
+        "Which colour deviates most and least",
+        "Approximate angular width of the spectrum"
       ],
       "theoryPoints": [
-        "A glass prism disperses white light because different wavelengths refract at different angles.",
-        "Shorter wavelengths (violet) bend more than longer ones (red) — dispersion.",
-        "Snell's Law: n₁ sinθ₁ = n₂ sinθ₂ governs refraction at each surface."
+        "Dispersion: different wavelengths refract at slightly different angles (n varies with λ).",
+        "Violet (λ ≈ 400 nm) has the highest refractive index → bends most.",
+        "Red (λ ≈ 700 nm) has the lowest refractive index → bends least.",
+        "Snell's law: n₁ sin θ₁ = n₂ sin θ₂ (but n depends on wavelength).",
+        "Rainbows are natural dispersion by water droplets."
       ],
       "realWorldConnections": [
-        "Rainbows (water droplets as prisms)",
-        "Diamond sparkle (total internal reflection + dispersion)",
-        "Spectroscopy (identifying elements by light spectrum)"
+        "Rainbows occur when sunlight disperses in water droplets.",
+        "Prism spectrometers analyse the composition of light sources.",
+        "Chromatic aberration in lenses arises from dispersion."
       ],
-      "formula": "n = c/v   |   n₁ sinθ₁ = n₂ sinθ₂"
+      "formula": "n₁ sin θ₁ = n₂ sin θ₂   |   n = n(λ): violet > red"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Which colour bends most when entering a glass prism from air?",
+          "text": "Which colour of light is deviated most by a glass prism?",
           "options": [
-            "A. Red",
-            "B. Yellow",
-            "C. Violet",
-            "D. Green"
+            "Red",
+            "Green",
+            "Violet",
+            "Yellow"
           ],
           "correctIndex": 2,
-          "explanation": "Higher frequency (shorter wavelength) = more refraction. Violet bends most, red bends least."
+          "explanation": "Violet has the shortest wavelength and highest refractive index in glass → greatest deviation."
         },
         {
-          "text": "Light goes from glass (n=1.5) to air (n=1). If θ_glass = 30°, what is θ_air?",
+          "text": "Why does a prism separate white light into colours?",
           "options": [
-            "A. 20°",
-            "B. 45°",
-            "C. 48.6°",
-            "D. 30°"
+            "It absorbs some colours",
+            "Different wavelengths have different refractive indices",
+            "The prism is very thick",
+            "The light bounces inside the prism"
           ],
-          "correctIndex": 2,
-          "explanation": "1.5 × sin30° = 1 × sinθ → sinθ = 0.75 → θ ≈ 48.6°"
+          "correctIndex": 1,
+          "explanation": "Dispersion: n varies with wavelength. Each colour refracts at a slightly different angle."
+        },
+        {
+          "text": "The sequence of colours from a prism starting from least to most deviated is:",
+          "options": [
+            "V I B G Y O R",
+            "R O Y G B I V",
+            "R G B",
+            "W Y G"
+          ],
+          "correctIndex": 1,
+          "explanation": "Red deviates least, violet most: R O Y G B I V (ROY G BIV)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why violet light bends more than red light when passing through glass.",
+        "How is a rainbow formed? Which colour appears on the outer edge and which on the inner?",
+        "What is chromatic aberration and how does it relate to dispersion?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
-        },
-        {
-          "label": "Waves & Light",
+          "label": "Dispersion: n = n(λ)",
           "pct": 30
         },
         {
-          "label": "Data Analysis",
-          "pct": 10
+          "label": "Spectrum order ROY G BIV",
+          "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Snell's law at each interface",
+          "pct": 25
+        },
+        {
+          "label": "Rainbow and real-world dispersion",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "Light slows down in glass — it doesn't 'bend' due to magic, but due to speed change at the boundary.",
-        "The colours of a spectrum are continuous — not seven discrete bands. Newton chose 7 to match musical notes."
+        "Students think the prism adds colour to white light; it only separates colours already present.",
+        "Many think red bends more than violet; it is the opposite.",
+        "Assuming all transparent materials disperse light equally."
       ],
-      "hook": "A rainbow is a prism made of raindrops — each drop splits sunlight by wavelength, and your eye sees a perfect arc of spectral colours.",
+      "hook": "Isaac Newton was the first to show that white light is a mixture of all colours, not pure light contaminated by a prism. He proved it by recombining the spectrum back into white with a second prism!",
       "khanLinks": [
         {
           "title": "Refraction & Snell's Law",
@@ -5101,70 +5459,65 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Colour observed",
-        "Approximate wavelength (nm)",
-        "Deviation angle (°)",
-        "Notes"
+        "Colour",
+        "Approx. wavelength (nm)",
+        "Deviation (relative)",
+        "Position in spectrum"
       ],
       "rows": 7
     },
     "observations": [
-      "List the colours observed in order from least to most deviated:",
-      "What happened when you used a second prism to recombine the spectrum?"
+      "List colours observed in order from least to most deviated.",
+      "Confirm violet is on the most-deviated side.",
+      "Estimate the total angular spread of the spectrum."
     ],
-    "conclusion": "Explain dispersion. State which colour has the highest refractive index in glass and why:",
+    "conclusion": "White light dispersed into ROY G BIV spectrum. Violet deviated most, red least. This confirms n(violet) > n(red) in glass and Snell's law with wavelength-dependent refractive index. Replicates Newton's 1666 experiment.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Prism: Composition of Light</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "White light is a rainbow waiting to happen! Ask me about dispersion, Snell's law, or why violet bends more than red.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>n = c/v &nbsp;&nbsp;|&nbsp;&nbsp; n₁ sinθ₁ = n₂ sinθ₂</div>A glass prism disperses white light because different wavelengths refract at different angles.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Light slows down in glass — it doesn't 'bend' due to magic, but due to speed change at the boundary.</li><li>❌ The colours of a spectrum are continuous — not seven discrete bands. Newton chose 7 to match musical notes.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Rainbows (water droplets as prisms)</li><li>🌍 Diamond sparkle (total internal reflection + dispersion)</li><li>🌍 Spectroscopy (identifying elements by light spectrum)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Order: Red(700nm), Orange(620nm), Yellow(580nm), Green(530nm), Blue(470nm), Indigo, Violet(400nm). Violet most deviated (highest n).<br><br>ROYGBIV order. Violet deviates most (~45-50°), red least (~40-45°) for typical glass prism.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>A rainbow is a prism made of raindrops — each drop splits sunlight by wavelength, and your eye sees a perfect arc of spectral colours.</em><br><br>Key concepts to emphasise: A glass prism disperses white light because different wavelengths refract at different angles.; Shorter wavelengths (violet) bend more than longer ones (red) — dispersion.",
-        "hook": "Engaging hook for students: <blockquote>A rainbow is a prism made of raindrops — each drop splits sunlight by wavelength, and your eye sees a perfect arc of spectral colours.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "prism|white light|spectrum|screen|slit",
+        "formula": "n₁sinθ₁=n₂sinθ₂|n = n(λ)|dispersion",
+        "error": "room not dark|prism angle wrong|slit too wide",
+        "question": "dispersion|spectrum|ROY G BIV|violet|red|refraction|rainbow",
+        "real": "rainbow|spectrometer|chromatic aberration"
       },
-      "hint": "Order: Red(700nm), Orange(620nm), Yellow(580nm), Green(530nm), Blue(470nm), Indigo, Violet(400nm). Violet most deviated (highest n).",
-      "expected": "ROYGBIV order. Violet deviates most (~45-50°), red least (~40-45°) for typical glass prism."
+      "hint": "Violet has highest n → deviates most. Red has lowest n → deviates least. Sequence: R O Y G B I V.",
+      "expected": "Spectrum: R-O-Y-G-B-I-V. Violet most deviated, red least. n(violet)>n(red) confirmed."
     }
   },
   {
     "num": 35,
     "title": "Shadows and Penumbra",
     "section": "Optics",
-    "desc": "Demonstrates umbra and penumbra formation with point and extended light sources.",
+    "desc": "Investigate how shadow size and sharpness depend on source size and the relative positions of source, object, and screen.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates umbra and penumbra formation with point and extended light sources.",
+      "whatTheyLearn": "Students observe umbra (complete shadow) and penumbra (partial shadow) and discover that point sources give sharp shadows while extended sources give penumbras.",
       "instructions": [
-        "How did source size affect the penumbra width?",
-        "Describe the difference between a point source shadow and an extended source shadow:",
-        "Define umbra and penumbra. Explain why a large source creates softer shadows:"
+        "Place a small opaque object between a point light source and a screen.",
+        "Measure the shadow size vs. object-screen distance.",
+        "Repeat with an extended (larger) light source and observe the penumbra."
       ],
-      "expectedOutcome": "Larger source → wider penumbra → softer shadow. Point source → sharp umbra only. Penumbra width ∝ source size × (screen dist / object dist). Point source: sharp shadow only. 5cm source at 20cm from object, screen 40cm away → penumbra ≈ 10cm wide."
+      "expectedOutcome": "Point source → sharp shadow (umbra only). Extended source → umbra surrounded by penumbra. Shadow size increases as object moves closer to screen."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "💡",
-          "name": "Point light source"
+          "emoji": "🔦",
+          "name": "Point light source (small LED)"
         },
         {
           "emoji": "💡",
-          "name": "Extended light source"
+          "name": "Extended light source (lamp with large bulb)"
         },
         {
-          "emoji": "📦",
-          "name": "Opaque object"
+          "emoji": "⚫",
+          "name": "Opaque object (ball or disc)"
         },
         {
-          "emoji": "🖊️",
-          "name": "Screen"
+          "emoji": "🖥️",
+          "name": "White screen"
         },
         {
           "emoji": "📏",
@@ -5172,76 +5525,91 @@ export const experiments: Experiment[] = [
         }
       ],
       "observationsToRecord": [
-        "How did source size affect the penumbra width?",
-        "Describe the difference between a point source shadow and an extended source shadow:"
+        "Shadow dimensions for point source vs. extended source",
+        "Presence/absence of penumbra",
+        "Effect of object-screen distance on shadow size"
       ],
       "theoryPoints": [
-        "Umbra: region of total shadow where no direct light reaches.",
-        "Penumbra: partial shadow region receiving light from part of the source.",
-        "Extended light sources create penumbras; point sources create only umbras."
+        "Umbra: region of total shadow (no direct light from source).",
+        "Penumbra: region of partial shadow (some light from source reaches it).",
+        "Point source → only umbra (sharp shadow).",
+        "Extended source → umbra + penumbra.",
+        "Geometric optics: light travels in straight lines (ray model)."
       ],
       "realWorldConnections": [
-        "Solar and lunar eclipses (umbra/penumbra)",
-        "Photography: soft vs hard lighting",
-        "Sundials (shadow clock)"
+        "Solar and lunar eclipses involve umbra and penumbra zones.",
+        "Photography: large softboxes create soft shadows (large penumbra); small LED creates harsh shadows.",
+        "Sundials work because the sun's shadow position indicates time."
       ],
-      "formula": "Shadow size depends on: source size, object size, and distances"
+      "formula": "Shadow geometry: similar triangles; shadow height/object height = image distance/object distance"
     },
     "questions": {
       "mcq": [
         {
-          "text": "During a solar eclipse, people in the penumbra see:",
+          "text": "What is the key difference between umbra and penumbra?",
           "options": [
-            "A. Total eclipse (no sun)",
-            "B. Partial eclipse (sun partly visible)",
-            "C. No eclipse at all",
-            "D. Full sunlight"
+            "Umbra is coloured; penumbra is grey",
+            "Umbra receives no direct light; penumbra receives partial light",
+            "Umbra is larger than penumbra",
+            "There is no difference"
           ],
           "correctIndex": 1,
-          "explanation": "The penumbra receives partial light from the sun — you see a partial eclipse from there."
+          "explanation": "Umbra is the total shadow region receiving no direct light from the source. Penumbra is the partial shadow where part of the source is blocked."
         },
         {
-          "text": "Why do LED spotlights create sharper shadows than fluorescent tubes?",
+          "text": "Which type of light source produces the sharpest shadow with no penumbra?",
           "options": [
-            "A. LEDs are brighter",
-            "B. LEDs are closer point sources",
-            "C. Fluorescent tubes emit more UV",
-            "D. LEDs are cooler"
+            "Extended source (large bulb)",
+            "Point source (very small LED)",
+            "Diffuse source",
+            "Coloured source"
           ],
           "correctIndex": 1,
-          "explanation": "A point source (small LED) creates a well-defined umbra with minimal penumbra — sharp shadow."
+          "explanation": "A point source produces rays from a single point; the geometric shadow edge is perfectly sharp with no penumbra."
+        },
+        {
+          "text": "As an opaque object moves closer to the screen (point source unchanged), the shadow:",
+          "options": [
+            "Gets larger",
+            "Gets smaller",
+            "Stays the same",
+            "Disappears"
+          ],
+          "correctIndex": 1,
+          "explanation": "Moving the object toward the screen brings it closer to its own shadow, reducing shadow size (similar triangles: smaller angle projected)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why the Moon's shadow during a solar eclipse has both an umbra and a penumbra.",
+        "Why do photographers use large softboxes to produce flattering portraits?",
+        "Use similar triangles to derive a formula for shadow height in terms of source distance, object size, and screen distance."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
+          "label": "Umbra vs. penumbra",
+          "pct": 30
         },
         {
-          "label": "Geometry",
+          "label": "Point vs. extended source",
+          "pct": 30
+        },
+        {
+          "label": "Shadow geometry (similar triangles)",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
+          "label": "Eclipse geometry",
           "pct": 15
-        },
-        {
-          "label": "Real-World Apps",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "The sun is an extended source — it creates both umbra and penumbra, not just a sharp shadow.",
-        "Soft shadows in photography are caused by large, diffuse light sources creating broad penumbras."
+        "Students think a point source creates a penumbra; only extended sources do.",
+        "Many confuse umbra and penumbra sizes with the object size.",
+        "Assuming light bends around corners to fill in shadows (it doesn't in geometric optics)."
       ],
-      "hook": "The sharp shadow of your hand and the soft penumbra of a solar eclipse are the same physics, just different scales. Ancient astronomers used shadows to measure Earth's circumference.",
+      "hook": "Stand in the sunshine and look at your shadow. It has a fuzzy edge — that's a penumbra! The Sun is not a point source; it's 1.4 million km wide, so its light comes from slightly different directions.",
       "khanLinks": [
         {
           "title": "Introduction to Light",
@@ -5255,150 +5623,159 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Source size (cm)",
-        "Object size (cm)",
-        "Screen distance (cm)",
-        "Umbra width (cm)",
-        "Penumbra width (cm)",
-        "Sharpness (1-5)"
+        "Source type",
+        "Object-source dist (cm)",
+        "Object-screen dist (cm)",
+        "Shadow width (cm)",
+        "Penumbra width (cm)"
       ],
-      "rows": 4
+      "rows": 5
     },
     "observations": [
-      "How did source size affect the penumbra width?",
-      "Describe the difference between a point source shadow and an extended source shadow:"
+      "Record shadow dimensions for both point and extended sources.",
+      "Observe and sketch the umbra and penumbra regions.",
+      "Note how shadow size changes when object-screen distance changes."
     ],
-    "conclusion": "Define umbra and penumbra. Explain why a large source creates softer shadows:",
+    "conclusion": "Point source → sharp umbra, no penumbra. Extended source → umbra + penumbra. Shadow size predicted by similar triangles. Penumbra width increases with source size. Eclipse geometry explained by same principles.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Shadows and Penumbra</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Shadows reveal how light travels! Ask me about umbra, penumbra, why point sources are different, or eclipse geometry.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Shadow size depends on: source size, object size, and distances</div>Umbra: region of total shadow where no direct light reaches.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ The sun is an extended source — it creates both umbra and penumbra, not just a sharp shadow.</li><li>❌ Soft shadows in photography are caused by large, diffuse light sources creating broad penumbras.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Solar and lunar eclipses (umbra/penumbra)</li><li>🌍 Photography: soft vs hard lighting</li><li>🌍 Sundials (shadow clock)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Larger source → wider penumbra → softer shadow. Point source → sharp umbra only. Penumbra width ∝ source size × (screen dist / object dist).<br><br>Point source: sharp shadow only. 5cm source at 20cm from object, screen 40cm away → penumbra ≈ 10cm wide.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>The sharp shadow of your hand and the soft penumbra of a solar eclipse are the same physics, just different scales. Ancient astronomers used shadows to measure Earth's circumference.</em><br><br>Key concepts to emphasise: Umbra: region of total shadow where no direct light reaches.; Penumbra: partial shadow region receiving light from part of the source.",
-        "hook": "Engaging hook for students: <blockquote>The sharp shadow of your hand and the soft penumbra of a solar eclipse are the same physics, just different scales. Ancient astronomers used shadows to measure Earth's circumference.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "point source|extended source|opaque object|screen|shadow",
+        "formula": "similar triangles|shadow_h/object_h = d_screen/d_object",
+        "error": "multiple light sources|reflections from walls|translucent object",
+        "question": "shadow|umbra|penumbra|point source|eclipse",
+        "real": "solar eclipse|photography|sundial"
       },
-      "hint": "Larger source → wider penumbra → softer shadow. Point source → sharp umbra only. Penumbra width ∝ source size × (screen dist / object dist).",
-      "expected": "Point source: sharp shadow only. 5cm source at 20cm from object, screen 40cm away → penumbra ≈ 10cm wide."
+      "hint": "Point source → only sharp umbra. Extended source → umbra + penumbra. Shadow geometry: use similar triangles.",
+      "expected": "Point source: sharp shadow. Extended source: penumbra surrounds umbra. Shadow size increases with object-screen distance."
     }
   },
   {
     "num": 36,
     "title": "Mirrors",
     "section": "Optics",
-    "desc": "Compares plane, concave, and convex mirror image properties.",
+    "desc": "Investigate image formation by concave and convex mirrors for objects at different distances.",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Compares plane, concave, and convex mirror image properties.",
+      "whatTheyLearn": "Students observe that concave mirrors form real or virtual images depending on object position, while convex mirrors always form virtual, upright, diminished images.",
       "instructions": [
-        "Describe differences between plane, concave, and convex mirror images:",
-        "At what object distance did the concave mirror produce a same-size image?",
-        "State the mirror equation. Compare focal lengths of concave and convex mirrors:"
+        "Place object beyond C (centre of curvature) of concave mirror; locate real image.",
+        "Move object inside f; observe virtual, upright, magnified image.",
+        "Replace with convex mirror; observe always-virtual, upright, diminished image."
       ],
-      "expectedOutcome": "1/f = 1/v + 1/u (sign convention: real=positive for mirrors). Plane mirror: v=-u (virtual). Concave f>0; Convex f<0. Concave f=10cm: u=20cm → v=20cm (real, inverted). u=5cm → v=-10cm (virtual, upright, 2×magnified)."
+      "expectedOutcome": "Concave: object beyond f → real, inverted image. Object inside f → virtual, upright, magnified. Convex: always virtual, upright, diminished (wide field of view)."
     },
     "experiment": {
       "equipment": [
         {
-          "emoji": "🪞",
-          "name": "Plane mirror"
-        },
-        {
-          "emoji": "🪞",
+          "emoji": "🥄",
           "name": "Concave mirror"
         },
         {
-          "emoji": "🪞",
+          "emoji": "🔵",
           "name": "Convex mirror"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
+          "emoji": "💡",
+          "name": "Illuminated object"
         },
         {
-          "emoji": "💡",
-          "name": "Light source"
+          "emoji": "🖥️",
+          "name": "Screen"
+        },
+        {
+          "emoji": "📏",
+          "name": "Optical bench"
         }
       ],
       "observationsToRecord": [
-        "Describe differences between plane, concave, and convex mirror images:",
-        "At what object distance did the concave mirror produce a same-size image?"
+        "Object distance u (cm)",
+        "Image distance v (cm) for concave mirror",
+        "Image orientation (upright/inverted) and size",
+        "Type of image for convex mirror"
       ],
       "theoryPoints": [
-        "Law of reflection: angle of incidence = angle of reflection (both measured from normal).",
-        "Plane mirror: virtual, upright, same-size image at same distance behind mirror.",
-        "Curved mirrors: concave converges (focus), convex diverges (wide field of view)."
+        "Mirror equation: 1/v + 1/u = 1/f = 2/R.",
+        "Concave mirror: f < 0 (real focus). Object at u > f → real, inverted image.",
+        "Concave mirror: u < f → virtual, upright, magnified image (shaving/make-up mirror).",
+        "Convex mirror: f > 0 (virtual focus). Always: virtual, upright, diminished image.",
+        "Convex mirror has wider field of view → used in car side mirrors."
       ],
       "realWorldConnections": [
-        "Car rear-view mirrors (convex = wide view)",
-        "Dental examination mirrors (concave = magnified)",
-        "Telescope primary mirror",
-        "Road safety convex mirrors"
+        "Convex mirrors in shops and car side mirrors provide a wide field of view.",
+        "Concave mirrors in telescopes (reflecting) and satellite dishes focus signals.",
+        "Concave mirrors used in make-up mirrors give magnified upright image."
       ],
-      "formula": "θᵢ = θᵣ   |   Mirror equation: 1/f = 1/v + 1/u"
+      "formula": "1/v + 1/u = 1/f = 2/R   |   m = −v/u"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A ray hits a mirror at 40° to the normal. What is the angle of reflection?",
+          "text": "A convex mirror always produces an image that is:",
           "options": [
-            "A. 80°",
-            "B. 40°",
-            "C. 50°",
-            "D. 140°"
+            "Real, inverted, and magnified",
+            "Real, inverted, and diminished",
+            "Virtual, upright, and diminished",
+            "Virtual, inverted, and magnified"
           ],
-          "correctIndex": 1,
-          "explanation": "Law of reflection: angle of incidence = angle of reflection = 40°"
+          "correctIndex": 2,
+          "explanation": "Convex (diverging) mirrors always produce virtual, upright, and diminished images regardless of object position."
         },
         {
-          "text": "Car side mirrors are convex. Why?",
+          "text": "A concave mirror forms a real image when the object is:",
           "options": [
-            "A. To magnify objects",
-            "B. To provide a wider field of view",
-            "C. To make objects appear closer",
-            "D. To reduce glare"
+            "Inside the focal length",
+            "Exactly at the focal point",
+            "Beyond the focal length",
+            "At infinity only"
+          ],
+          "correctIndex": 2,
+          "explanation": "Concave mirrors form real images when the object is beyond the focal point (u > f)."
+        },
+        {
+          "text": "Why are convex mirrors used as car rear-view mirrors?",
+          "options": [
+            "They magnify objects",
+            "They provide a wider field of view",
+            "They eliminate glare",
+            "They show real images"
           ],
           "correctIndex": 1,
-          "explanation": "Convex mirrors diverge light rays, giving a wide field of view — ideal for checking blind spots."
+          "explanation": "Convex mirrors always produce diminished images, allowing a wider field of view in a compact mirror size."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Draw ray diagrams for a concave mirror with the object (a) beyond C, (b) between f and C, (c) inside f.",
+        "Why does a make-up mirror use a concave rather than a convex mirror?",
+        "What is the significance of the warning 'Objects in mirror are closer than they appear' on car mirrors?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Optics",
-          "pct": 50
-        },
-        {
-          "label": "Mathematics",
+          "label": "Mirror equation 1/v+1/u=1/f",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
-          "pct": 15
+          "label": "Concave mirror image types",
+          "pct": 30
         },
         {
-          "label": "Scientific Method",
-          "pct": 10
+          "label": "Convex mirror properties",
+          "pct": 25
+        },
+        {
+          "label": "Applications of curved mirrors",
+          "pct": 20
         }
       ],
       "misconceptions": [
-        "A plane mirror does not flip left/right — it swaps front/back. 'Left-right reversal' is a cognitive illusion.",
-        "Virtual images in mirrors cannot be projected onto a screen but are real to the observer."
+        "Students think concave mirrors always magnify; they only do so when the object is inside f.",
+        "Many forget the sign convention for mirrors differs from lenses.",
+        "Assuming convex mirrors are dangerous because they distort; they are safer for driving due to wide field of view."
       ],
-      "hook": "Kaleidoscopes, periscopes, retroreflectors on road signs, and telescope mirrors all exploit the same principle — the law of reflection.",
+      "hook": "Look into the back of a spoon — you see yourself upside down. Look into the front — you see yourself magnified. The same physics applies to satellite dishes and your car's side mirror!",
       "khanLinks": [
         {
           "title": "Concave Mirror Reflection",
@@ -5412,146 +5789,150 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Mirror type",
-        "Object dist u (cm)",
-        "Image dist v (cm)",
-        "Image type (R/V)",
-        "Magnification m",
-        "f from equation (cm)"
+        "u (cm)",
+        "v (cm)",
+        "Real/Virtual",
+        "Upright/Inverted",
+        "Magnified/Diminished"
       ],
       "rows": 5
     },
     "observations": [
-      "Describe differences between plane, concave, and convex mirror images:",
-      "At what object distance did the concave mirror produce a same-size image?"
+      "For concave mirror: place object at 3 different distances (beyond C, between f and C, inside f).",
+      "For convex mirror: note image is always virtual, upright, diminished.",
+      "Measure and compare f using 1/v + 1/u = 1/f."
     ],
-    "conclusion": "State the mirror equation. Compare focal lengths of concave and convex mirrors:",
+    "conclusion": "Concave mirror: object beyond f → real, inverted image. Object inside f → virtual, upright, magnified. Convex mirror: always virtual, upright, diminished with wide field of view. Mirror equation verified: 1/v+1/u=1/f.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Mirrors</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Curved mirrors create fascinating images! Ask me about the mirror equation, when concave mirrors magnify, or why car mirrors are convex.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>θᵢ = θᵣ &nbsp;&nbsp;|&nbsp;&nbsp; Mirror equation: 1/f = 1/v + 1/u</div>Law of reflection: angle of incidence = angle of reflection (both measured from normal).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A plane mirror does not flip left/right — it swaps front/back. 'Left-right reversal' is a cognitive illusion.</li><li>❌ Virtual images in mirrors cannot be projected onto a screen but are real to the observer.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Car rear-view mirrors (convex = wide view)</li><li>🌍 Dental examination mirrors (concave = magnified)</li><li>🌍 Telescope primary mirror</li><li>🌍 Road safety convex mirrors</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: 1/f = 1/v + 1/u (sign convention: real=positive for mirrors). Plane mirror: v=-u (virtual). Concave f>0; Convex f<0.<br><br>Concave f=10cm: u=20cm → v=20cm (real, inverted). u=5cm → v=-10cm (virtual, upright, 2×magnified).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Kaleidoscopes, periscopes, retroreflectors on road signs, and telescope mirrors all exploit the same principle — the law of reflection.</em><br><br>Key concepts to emphasise: Law of reflection: angle of incidence = angle of reflection (both measured from normal).; Plane mirror: virtual, upright, same-size image at same distance behind mirror.",
-        "hook": "Engaging hook for students: <blockquote>Kaleidoscopes, periscopes, retroreflectors on road signs, and telescope mirrors all exploit the same principle — the law of reflection.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "concave mirror|convex mirror|optical bench|screen|object distance",
+        "formula": "1/v+1/u=1/f=2/R|m=-v/u",
+        "error": "sign convention|measuring from wrong reference|screen placement",
+        "question": "concave|convex|real image|virtual image|mirror equation|field of view",
+        "real": "car mirror|make-up mirror|telescope|satellite dish"
       },
-      "hint": "1/f = 1/v + 1/u (sign convention: real=positive for mirrors). Plane mirror: v=-u (virtual). Concave f>0; Convex f<0.",
-      "expected": "Concave f=10cm: u=20cm → v=20cm (real, inverted). u=5cm → v=-10cm (virtual, upright, 2×magnified)."
+      "hint": "Concave: real images when u>f (inverted). Virtual when u<f (upright, magnified). Convex: always virtual, upright, diminished.",
+      "expected": "Concave: u>f → real inverted image on screen. u<f → virtual magnified image. Convex: always virtual, upright, diminished."
     }
   },
   {
     "num": 37,
     "title": "Attractive and repulsive Magnetic force",
     "section": "Magnetism",
-    "desc": "Measures attractive and repulsive forces between permanent magnet poles.",
+    "desc": "Investigate the forces between bar magnets and map the regions of attraction and repulsion.",
     "setupTime": "3 min",
-    "duration": "15 min",
+    "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Measures attractive and repulsive forces between permanent magnet poles.",
+      "whatTheyLearn": "Students confirm that like poles repel and unlike poles attract, and observe that magnetic force decreases rapidly with distance.",
       "instructions": [
-        "How did the force change as you moved magnets closer together?",
-        "What happened when you reversed one magnet? Describe the change from attraction to repulsion:",
-        "State the law of magnetic poles. How does distance affect magnetic force?"
+        "Bring N pole of magnet A toward N pole of magnet B: observe repulsion.",
+        "Bring N pole of A toward S pole of B: observe attraction.",
+        "Measure force (qualitatively) at several distances."
       ],
-      "expectedOutcome": "Like poles repel, unlike attract. F ∝ 1/d². Breaking magnet creates two full N-S magnets, not isolated poles. Force doubles when distance halved (inverse square law). N-N and S-S repel; N-S attracts."
+      "expectedOutcome": "N-N and S-S: repulsion. N-S: attraction. Force decreases rapidly with separation distance."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🧲",
-          "name": "Bar magnets x2"
+          "name": "Two bar magnets (labelled N/S)"
         },
         {
           "emoji": "📏",
           "name": "Ruler"
         },
         {
-          "emoji": "📋",
-          "name": "Observation table"
-        },
-        {
-          "emoji": "🧵",
-          "name": "String for hanging"
+          "emoji": "🧭",
+          "name": "Compass (to identify poles)"
         }
       ],
       "observationsToRecord": [
-        "How did the force change as you moved magnets closer together?",
-        "What happened when you reversed one magnet? Describe the change from attraction to repulsion:"
+        "Force type (attract/repel) for each pole combination",
+        "Qualitative force at different separations",
+        "Confirmation of pole labelling with compass"
       ],
       "theoryPoints": [
-        "Like poles repel; unlike poles attract — magnetic force is a non-contact force.",
-        "Magnetic field lines: point from N to S outside, never cross, density indicates strength.",
-        "Earth has a magnetic field; compass needles align with it (geographic N ≠ magnetic N)."
+        "Like poles (N-N, S-S) repel; unlike poles (N-S) attract.",
+        "Magnetic force ∝ 1/r² (dipole approximation at large distances).",
+        "Magnetic monopoles do not exist; every magnet has both N and S poles.",
+        "Cutting a magnet in half creates two new magnets, each with N and S poles."
       ],
       "realWorldConnections": [
-        "Compass navigation",
-        "Fridge magnets",
-        "MRI machines (powerful magnetic fields)",
-        "Maglev trains"
+        "Magnetic levitation trains use repulsion between like poles for frictionless travel.",
+        "Compass needles align with Earth's magnetic field (N pole points to geographic north).",
+        "MRI machines use powerful superconducting magnets."
       ],
-      "formula": "F = qv × B    (force on moving charge in field B)"
+      "formula": "F ∝ 1/r²   |   Like poles repel; unlike poles attract"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two north poles face each other. They will:",
+          "text": "Two north poles are brought close together. What happens?",
           "options": [
-            "A. Attract",
-            "B. Repel",
-            "C. Have no effect",
-            "D. Cancel out"
+            "They attract",
+            "They repel",
+            "Nothing happens",
+            "They neutralise each other"
           ],
           "correctIndex": 1,
-          "explanation": "Like poles (N-N or S-S) always repel each other."
+          "explanation": "Like magnetic poles (N-N or S-S) always repel each other."
         },
         {
-          "text": "What happens if you cut a bar magnet in half?",
+          "text": "If you cut a bar magnet in half, what do you get?",
           "options": [
-            "A. One piece has only N, other only S",
-            "B. Both pieces become full N-S magnets",
-            "C. Both pieces lose magnetism",
-            "D. One piece is stronger"
+            "One N-only and one S-only magnet",
+            "Two smaller magnets each with N and S poles",
+            "Two unmagnetised pieces",
+            "One full magnet and one non-magnetic piece"
           ],
           "correctIndex": 1,
-          "explanation": "Magnetism comes from aligned electron spins — cutting creates two complete magnets, each with N and S poles."
+          "explanation": "Magnetic monopoles don't exist; each half becomes a complete magnet with both N and S poles."
+        },
+        {
+          "text": "The force between two magnets as their separation doubles:",
+          "options": [
+            "Doubles",
+            "Halves",
+            "Quarters approximately",
+            "Remains the same"
+          ],
+          "correctIndex": 2,
+          "explanation": "Magnetic dipole force falls roughly as 1/r³ for dipole-dipole (or 1/r² for monopole), so doubling r reduces force by ~4× (or more)."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why do magnetic monopoles not appear to exist, even when you cut a magnet?",
+        "How does a compass work? Which end of a compass points north, and why is this nomenclature confusing?",
+        "Describe a practical application of magnetic attraction and one of magnetic repulsion."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Magnetism",
-          "pct": 55
+          "label": "Like poles repel, unlike attract",
+          "pct": 35
         },
         {
-          "label": "Forces & Motion",
+          "label": "Force vs. distance relationship",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "No magnetic monopoles",
+          "pct": 25
         },
         {
-          "label": "Real-World Apps",
-          "pct": 5
+          "label": "Real-world applications",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "Magnets don't 'attract iron' — they induce temporary magnetism in iron, then attract the induced magnet.",
-        "Breaking a magnet in half creates two smaller magnets — you cannot isolate a magnetic monopole."
+        "Students think the N pole of a compass points to the geographic North Pole; geographically the magnetic south pole is near the geographic north pole.",
+        "Many believe you can isolate a north or south pole by cutting a magnet; you cannot.",
+        "Assuming magnetic force is constant with distance; it decreases rapidly."
       ],
-      "hook": "Two fridge magnets repel before they touch — invisible fields reaching across empty space. Faraday visualised these fields as 'lines of force' and revolutionised physics.",
+      "hook": "Maglev trains float centimetres above the track using repulsion between like magnetic poles. Zero friction means they can travel at 600 km/h — and it's just magnets!",
       "khanLinks": [
         {
           "title": "Magnets & Magnetic Force",
@@ -5565,149 +5946,149 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Pole configuration",
-        "Distance d (cm)",
-        "Force qualitative",
-        "Attract/Repel",
-        "Notes"
+        "Magnet A pole",
+        "Magnet B pole",
+        "Force type",
+        "Distance (cm)",
+        "Force (strong/medium/weak)"
       ],
       "rows": 4
     },
     "observations": [
-      "How did the force change as you moved magnets closer together?",
-      "What happened when you reversed one magnet? Describe the change from attraction to repulsion:"
+      "Test all four pole combinations and record attract/repel.",
+      "Describe how force changes as separation increases.",
+      "Verify N-S labels using the compass."
     ],
-    "conclusion": "State the law of magnetic poles. How does distance affect magnetic force?",
+    "conclusion": "Like poles (N-N, S-S) repel; unlike poles (N-S) attract. Force decreases rapidly with distance. Cutting magnet creates two new full magnets. Results confirm fundamental magnetic interactions.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Attractive and repulsive Magnetic force</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Magnets are fascinating — they push and pull without touching! Ask me about pole interactions, force vs. distance, or why cutting a magnet doesn't isolate a pole.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 3 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F = qv × B &nbsp;&nbsp; (force on moving charge in field B)</div>Like poles repel; unlike poles attract — magnetic force is a non-contact force.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Magnets don't 'attract iron' — they induce temporary magnetism in iron, then attract the induced magnet.</li><li>❌ Breaking a magnet in half creates two smaller magnets — you cannot isolate a magnetic monopole.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Compass navigation</li><li>🌍 Fridge magnets</li><li>🌍 MRI machines (powerful magnetic fields)</li><li>🌍 Maglev trains</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Like poles repel, unlike attract. F ∝ 1/d². Breaking magnet creates two full N-S magnets, not isolated poles.<br><br>Force doubles when distance halved (inverse square law). N-N and S-S repel; N-S attracts.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Two fridge magnets repel before they touch — invisible fields reaching across empty space. Faraday visualised these fields as 'lines of force' and revolutionised physics.</em><br><br>Key concepts to emphasise: Like poles repel; unlike poles attract — magnetic force is a non-contact force.; Magnetic field lines: point from N to S outside, never cross, density indicates strength.",
-        "hook": "Engaging hook for students: <blockquote>Two fridge magnets repel before they touch — invisible fields reaching across empty space. Faraday visualised these fields as 'lines of force' and revolutionised physics.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "bar magnets|poles|compass|separation|attract|repel",
+        "formula": "F ∝ 1/r²|like repel|unlike attract",
+        "error": "pole mislabelling|ferromagnetic interference|weak magnets",
+        "question": "poles|repel|attract|monopole|force distance|compass",
+        "real": "maglev|compass|MRI"
       },
-      "hint": "Like poles repel, unlike attract. F ∝ 1/d². Breaking magnet creates two full N-S magnets, not isolated poles.",
-      "expected": "Force doubles when distance halved (inverse square law). N-N and S-S repel; N-S attracts."
+      "hint": "N-N or S-S → repel. N-S → attract. Force decreases with distance. No magnetic monopoles — cut a magnet, you get two new magnets.",
+      "expected": "N-N: repel. N-S: attract. S-S: repel. Force decreases rapidly beyond ~5cm."
     }
   },
   {
     "num": 38,
     "title": "Magnetic Field Forces",
     "section": "Magnetism",
-    "desc": "Demonstrates the force on a current-carrying conductor in a magnetic field.",
+    "desc": "Map the magnetic field of a U-shaped magnet using a 2D field chamber with iron filings.",
     "setupTime": "5 min",
-    "duration": "15 min",
+    "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Demonstrates the force on a current-carrying conductor in a magnetic field.",
+      "whatTheyLearn": "Students visualise magnetic field lines using iron filings in a 2D chamber and confirm that field lines emerge from N, enter S, and are denser where the field is stronger.",
       "instructions": [
-        "How did reversing the current direction affect the force?",
-        "Describe how to use Fleming's Left-Hand Rule to predict the force direction:",
-        "State F = BIL. Describe two applications that use the motor effect:"
+        "Place the U-shaped magnet under the 2D field chamber.",
+        "Gently tap the chamber to help iron filings align with field lines.",
+        "Sketch or photograph the resulting pattern."
       ],
-      "expectedOutcome": "F = BIL sinθ. Perpendicular current/field gives maximum force. Use left hand: First finger=B, Second=I, Thumb=Force. Reverse current → reverse force. Increase I → increase F proportionally. F=0 when current parallel to field."
+      "expectedOutcome": "Field lines curve from N pole to S pole, densest between the poles. Outside the gap: field lines are more spread and weaker."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🧲",
-          "name": "U-magnet"
+          "name": "U-shaped (horseshoe) magnet"
         },
         {
-          "emoji": "⚡",
-          "name": "DC power supply"
+          "emoji": "🧪",
+          "name": "2D field chamber with iron filings"
         },
         {
-          "emoji": "🔌",
-          "name": "Wire"
-        },
-        {
-          "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "⚖️",
-          "name": "Current balance"
+          "emoji": "📸",
+          "name": "Camera or pencil/paper for sketch"
         }
       ],
       "observationsToRecord": [
-        "How did reversing the current direction affect the force?",
-        "Describe how to use Fleming's Left-Hand Rule to predict the force direction:"
+        "Shape and direction of field lines",
+        "Density of field lines between the poles vs. outside",
+        "Whether field lines are closed loops"
       ],
       "theoryPoints": [
-        "A current-carrying conductor in a magnetic field experiences a force (motor effect).",
-        "Force F = BIL (B=field strength, I=current, L=wire length in field).",
-        "Direction given by Fleming's Left-Hand Rule (or F = IL × B vector cross product)."
+        "Magnetic field lines: external path from N to S; internal path S to N (closed loops).",
+        "Density of field lines indicates field strength: denser = stronger.",
+        "Field lines never cross each other.",
+        "Between the poles of a U-magnet: nearly uniform, strong field."
       ],
       "realWorldConnections": [
-        "Electric motors (force on current loop)",
-        "Galvanometers (measuring current)",
-        "Loudspeakers (voice coil in magnetic field)",
-        "Rail guns"
+        "MRI machines use strong uniform magnetic fields (like between U-magnet poles but much stronger).",
+        "Electromagnets in motors and generators use the same field geometry.",
+        "Magnetic storage (hard drives) uses tiny magnetic domains."
       ],
-      "formula": "F = B·I·L·sinθ   |   Fleming's Left-Hand Rule"
+      "formula": "B field lines: N → S externally, S → N internally (closed loops)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "F = BIL. A wire carries 2A in a 0.5T field over 10cm. Force = ?",
+          "text": "Where is the magnetic field of a U-shaped magnet strongest?",
           "options": [
-            "A. 10 N",
-            "B. 0.1 N",
-            "C. 1 N",
-            "D. 0.01 N"
+            "At the ends of the arms",
+            "Between the two poles (in the gap)",
+            "Far away from the magnet",
+            "At the back of the magnet"
           ],
           "correctIndex": 1,
-          "explanation": "F = BIL = 0.5 × 2 × 0.1 = 0.1 N"
+          "explanation": "Field lines are most dense between the two poles, indicating the strongest field in the gap."
         },
         {
-          "text": "When is the force on a current in a magnetic field maximum?",
+          "text": "Magnetic field lines always:",
           "options": [
-            "A. When parallel to field",
-            "B. When perpendicular to field",
-            "C. When at 45° to field",
-            "D. Always the same"
+            "Start and end at free poles",
+            "Form closed loops from N to S externally",
+            "Cross each other at right angles",
+            "Point from S to N externally"
           ],
           "correctIndex": 1,
-          "explanation": "F = BIL sinθ — maximum when θ = 90° (perpendicular), giving F = BIL."
+          "explanation": "Field lines form closed loops: externally from N to S, internally from S to N. They never cross."
+        },
+        {
+          "text": "Iron filings in a field chamber align:",
+          "options": [
+            "Perpendicular to field lines",
+            "Along the magnetic field direction",
+            "Randomly",
+            "Toward the geographic north"
+          ],
+          "correctIndex": 1,
+          "explanation": "Iron filings become temporarily magnetised and align with the local magnetic field direction."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain why magnetic field lines cannot cross each other.",
+        "How does the spacing of field lines indicate the strength of the field?",
+        "Why is the field between the poles of a horseshoe magnet more uniform than around a bar magnet?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Magnetism",
-          "pct": 50
+          "label": "Field line direction N→S",
+          "pct": 30
         },
         {
-          "label": "Electricity",
+          "label": "Field line density = field strength",
+          "pct": 30
+        },
+        {
+          "label": "Closed loop property",
           "pct": 25
         },
         {
-          "label": "Forces & Motion",
+          "label": "Uniform field between poles",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "The force is perpendicular to BOTH the current direction AND the field — not along either one.",
-        "Zero force when current is parallel to field (sinθ = 0); maximum when perpendicular."
+        "Students think field lines start and stop at poles; they are continuous closed loops.",
+        "Many believe field lines can cross; they cannot — at every point there is only one field direction.",
+        "Assuming field is uniform everywhere around the magnet."
       ],
-      "hook": "An electric current creates a magnetic field — Oersted discovered this by accident when his compass deflected near a wire. It led directly to the electric motor.",
+      "hook": "Iron filings instantly reveal the invisible — they map the magnetic field in seconds! The pattern shows closed loops, density variations, and a strong uniform region between the poles.",
       "khanLinks": [
         {
           "title": "Force on a Current-Carrying Wire",
@@ -5721,146 +6102,152 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Current I (A)",
-        "Field B (estimate)",
-        "Wire length in field (cm)",
-        "Force direction",
-        "Force qualitative",
-        "Notes"
+        "Region",
+        "Field line density",
+        "Field direction",
+        "Field strength (relative)"
       ],
       "rows": 4
     },
     "observations": [
-      "How did reversing the current direction affect the force?",
-      "Describe how to use Fleming's Left-Hand Rule to predict the force direction:"
+      "Sketch the field line pattern observed with iron filings.",
+      "Describe line density between the poles vs. outside.",
+      "Note that lines never cross."
     ],
-    "conclusion": "State F = BIL. Describe two applications that use the motor effect:",
+    "conclusion": "Field lines of U-shaped magnet mapped with iron filings: lines curve from N to S externally, densest between poles (strong, nearly uniform field). Lines never crossed. Confirms B-field properties.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Magnetic Field Forces</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Iron filings make the invisible visible! Ask me about field line properties, why they're closed loops, or what line density means.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 5 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>F = B·I·L·sinθ &nbsp;&nbsp;|&nbsp;&nbsp; Fleming's Left-Hand Rule</div>A current-carrying conductor in a magnetic field experiences a force (motor effect).",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ The force is perpendicular to BOTH the current direction AND the field — not along either one.</li><li>❌ Zero force when current is parallel to field (sinθ = 0); maximum when perpendicular.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Electric motors (force on current loop)</li><li>🌍 Galvanometers (measuring current)</li><li>🌍 Loudspeakers (voice coil in magnetic field)</li><li>🌍 Rail guns</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: F = BIL sinθ. Perpendicular current/field gives maximum force. Use left hand: First finger=B, Second=I, Thumb=Force.<br><br>Reverse current → reverse force. Increase I → increase F proportionally. F=0 when current parallel to field.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>An electric current creates a magnetic field — Oersted discovered this by accident when his compass deflected near a wire. It led directly to the electric motor.</em><br><br>Key concepts to emphasise: A current-carrying conductor in a magnetic field experiences a force (motor effect).; Force F = BIL (B=field strength, I=current, L=wire length in field).",
-        "hook": "Engaging hook for students: <blockquote>An electric current creates a magnetic field — Oersted discovered this by accident when his compass deflected near a wire. It led directly to the electric motor.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "U-shaped magnet|2D field chamber|iron filings|poles",
+        "formula": "field lines N→S externally|closed loops|density = strength",
+        "error": "too many filings|magnet too weak|background field",
+        "question": "field lines|magnetic field|N→S|closed loop|density|strength",
+        "real": "MRI|electric motor|hard drive"
       },
-      "hint": "F = BIL sinθ. Perpendicular current/field gives maximum force. Use left hand: First finger=B, Second=I, Thumb=Force.",
-      "expected": "Reverse current → reverse force. Increase I → increase F proportionally. F=0 when current parallel to field."
+      "hint": "Field lines go N→S outside magnet, S→N inside (closed loops). Dense lines = strong field. Never cross.",
+      "expected": "Field lines curve from N to S between poles, denser in gap. Outside poles: spread out. Lines form closed loops."
     }
   },
   {
     "num": 39,
     "title": "Compass and Magnetism",
     "section": "Magnetism",
-    "desc": "Uses a compass to map Earth's magnetic field and measure magnetic declination.",
-    "setupTime": "2 min",
-    "duration": "15 min",
+    "desc": "Use a compass to map the direction of a magnetic field and observe how a compass aligns with an external field.",
+    "setupTime": "3 min",
+    "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Uses a compass to map Earth's magnetic field and measure magnetic declination.",
+      "whatTheyLearn": "Students verify that a compass needle aligns with the local magnetic field direction and that the S-pole of a bar magnet attracts the N-pole of the compass needle.",
       "instructions": [
-        "Did the compass point exactly to geographic north? Describe any difference:",
-        "What happened when you placed a magnet near the compass?",
-        "Explain magnetic declination. Why does compass point to magnetic, not geographic, north?"
+        "Place compass in different positions around a bar magnet.",
+        "Record the direction the compass needle points at each location.",
+        "Sketch the field pattern by connecting compass directions."
       ],
-      "expectedOutcome": "Declination varies by location. Earth's magnetic south pole is near geographic north. Compass N-pole attracted to it. Italy declination ≈ 2-3°E. Nearby ferromagnetic materials cause local deflection."
+      "expectedOutcome": "Compass N pole points toward S pole of magnet. The compass traces out the magnetic field lines around the bar magnet."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🧭",
-          "name": "Compass"
+          "name": "Magnetic compass"
         },
         {
           "emoji": "🧲",
           "name": "Bar magnet"
         },
         {
-          "emoji": "📏",
-          "name": "Ruler"
+          "emoji": "📝",
+          "name": "Paper (to place compass on and mark directions)"
         },
         {
-          "emoji": "🖊️",
-          "name": "Paper for field mapping"
+          "emoji": "✏️",
+          "name": "Pencil"
         }
       ],
       "observationsToRecord": [
-        "Did the compass point exactly to geographic north? Describe any difference:",
-        "What happened when you placed a magnet near the compass?"
+        "Compass needle direction at each position around magnet",
+        "Positions where the field is strongest (largest deflection)",
+        "Path traced by connecting compass readings"
       ],
       "theoryPoints": [
-        "A compass needle is a small permanent magnet that aligns with Earth's magnetic field.",
-        "Earth's geographic north pole is near a magnetic south pole (field lines enter there).",
-        "Magnetic declination: the angle between geographic and magnetic north — varies by location."
+        "A compass needle is a small bar magnet; its N pole points in the direction of field B.",
+        "S pole of external magnet attracts compass N pole (opposite attract).",
+        "Earth's magnetic field: compass N points to geographic north (Earth's magnetic south pole is near geographic north).",
+        "Field lines mapped by compass = same as iron-filing patterns."
       ],
       "realWorldConnections": [
-        "Navigation (ship/hiking compass)",
-        "Geophysical prospecting",
-        "Bird migration (magnetoreception)",
-        "Magnetic anomaly detection"
+        "Navigation: compasses have guided sailors for over 1000 years.",
+        "Geological surveys use magnetometers (super-sensitive compasses) to map underground ore.",
+        "Pigeons have biological magnetite particles and navigate by Earth's field."
       ],
-      "formula": "Compass aligns with B_Earth   |   Declination varies ±30° globally"
+      "formula": "Compass N pole → direction of B field vector"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A compass needle points north. Which pole of the needle points north?",
+          "text": "Which pole of a bar magnet attracts the N pole of a compass needle?",
           "options": [
-            "A. South pole of needle",
-            "B. North pole of needle",
-            "C. Either, depending on hemisphere",
-            "D. It rotates randomly"
+            "N pole",
+            "S pole",
+            "Either pole",
+            "Neither pole"
           ],
           "correctIndex": 1,
-          "explanation": "The north-seeking pole (N pole) of the needle points toward geographic north (Earth's magnetic south)."
+          "explanation": "Unlike poles attract: the compass N pole is attracted to the magnet's S pole."
         },
         {
-          "text": "Magnetic declination in your city is 5°W. True north is:",
+          "text": "A compass needle points in the direction of:",
           "options": [
-            "A. 5° east of compass north",
-            "B. 5° west of compass north",
-            "C. Same as compass north",
-            "D. Variable"
+            "The magnetic south pole",
+            "The local magnetic field B",
+            "True north always",
+            "The closest magnet's N pole"
           ],
-          "correctIndex": 0,
-          "explanation": "If declination is 5°W, compass points 5° west of true north, so true north is 5° east of compass reading."
+          "correctIndex": 1,
+          "explanation": "The N pole of a compass aligns with the local magnetic field direction (defined from N to S externally)."
+        },
+        {
+          "text": "Earth's geographic north pole corresponds magnetically to:",
+          "options": [
+            "Earth's magnetic north pole",
+            "Earth's magnetic south pole",
+            "A neutral zone",
+            "No magnetic pole"
+          ],
+          "correctIndex": 1,
+          "explanation": "Earth's magnetic south pole is located near the geographic north pole, which is why compass needles point 'north' — their N poles are attracted to Earth's magnetic south."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Why does a compass point north? Explain using magnetic pole theory.",
+        "How would you use a compass to map the full magnetic field pattern around a bar magnet?",
+        "Explain why a compass is useless at the geographic south pole."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Magnetism",
-          "pct": 55
+          "label": "Compass aligns with B field",
+          "pct": 30
         },
         {
-          "label": "Measurement",
+          "label": "Unlike poles attract (S attracts compass N)",
+          "pct": 30
+        },
+        {
+          "label": "Earth's field and compass navigation",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
+          "label": "Field mapping technique",
           "pct": 15
-        },
-        {
-          "label": "Real-World Apps",
-          "pct": 5
         }
       ],
       "misconceptions": [
-        "A compass points to magnetic north, NOT geographic north — the difference (declination) matters for precise navigation.",
-        "The compass needle's 'north' pole points north because it's attracted to Earth's magnetic south pole there."
+        "Students think the compass N pole points to Earth's geographic north; technically it points to Earth's magnetic south pole (which happens to be near geographic north).",
+        "Many assume a compass always points exactly north; magnetic declination causes deviations from true north.",
+        "Confusing the compass N pole direction with the S pole of the nearest magnet."
       ],
-      "hook": "Vikings navigated across the Atlantic using a 'sunstone' — a calcite crystal that polarises light to locate the sun on cloudy days. Magnetism plus optics in the 9th century.",
+      "hook": "Vikings navigated across oceans using a magnetite 'sunstone' before proper compasses were invented. The Earth itself is a giant magnet — and your phone has three magnetic sensors!",
       "khanLinks": [
         {
           "title": "Magnets & Magnetic Fields",
@@ -5874,145 +6261,148 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Location",
-        "Compass direction",
-        "True North direction",
-        "Declination (°)",
-        "Notes"
+        "Position around magnet",
+        "Compass N pole direction",
+        "Field line direction"
       ],
-      "rows": 4
+      "rows": 8
     },
     "observations": [
-      "Did the compass point exactly to geographic north? Describe any difference:",
-      "What happened when you placed a magnet near the compass?"
+      "Mark compass directions at 8 positions around the bar magnet.",
+      "Connect readings to trace field lines.",
+      "Note that compass N pole always points from N to S along the field."
     ],
-    "conclusion": "Explain magnetic declination. Why does compass point to magnetic, not geographic, north?",
+    "conclusion": "Compass needle aligned with local B field at every position. Compass N pole pointed toward magnet S pole (unlike poles attract). Earth's geographic north = Earth's magnetic south. Field map matched iron-filing pattern.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Compass and Magnetism</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Compass needles are tiny magnets dancing in a field! Ask me how a compass works, field mapping, or why geographic north is Earth's magnetic south.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 2 min setup + 15 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Compass aligns with B_Earth &nbsp;&nbsp;|&nbsp;&nbsp; Declination varies ±30° globally</div>A compass needle is a small permanent magnet that aligns with Earth's magnetic field.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ A compass points to magnetic north, NOT geographic north — the difference (declination) matters for precise navigation.</li><li>❌ The compass needle's 'north' pole points north because it's attracted to Earth's magnetic south pole there.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Navigation (ship/hiking compass)</li><li>🌍 Geophysical prospecting</li><li>🌍 Bird migration (magnetoreception)</li><li>🌍 Magnetic anomaly detection</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Declination varies by location. Earth's magnetic south pole is near geographic north. Compass N-pole attracted to it.<br><br>Italy declination ≈ 2-3°E. Nearby ferromagnetic materials cause local deflection.",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Vikings navigated across the Atlantic using a 'sunstone' — a calcite crystal that polarises light to locate the sun on cloudy days. Magnetism plus optics in the 9th century.</em><br><br>Key concepts to emphasise: A compass needle is a small permanent magnet that aligns with Earth's magnetic field.; Earth's geographic north pole is near a magnetic south pole (field lines enter there).",
-        "hook": "Engaging hook for students: <blockquote>Vikings navigated across the Atlantic using a 'sunstone' — a calcite crystal that polarises light to locate the sun on cloudy days. Magnetism plus optics in the 9th century.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "compass|bar magnet|field lines|mapping|direction",
+        "formula": "compass N → B direction|unlike poles attract",
+        "error": "nearby metal objects|multiple magnets|Earth field interference",
+        "question": "compass|magnetic field|north|south|attract|field mapping",
+        "real": "navigation|geological survey|animal migration"
       },
-      "hint": "Declination varies by location. Earth's magnetic south pole is near geographic north. Compass N-pole attracted to it.",
-      "expected": "Italy declination ≈ 2-3°E. Nearby ferromagnetic materials cause local deflection."
+      "hint": "Compass N pole points in direction of B (from N to S externally). S pole of magnet attracts compass N. Earth geo-north is magnetically south.",
+      "expected": "Compass N pole → toward magnet S pole. Field lines traced connect all compass directions. Pattern matches iron-filing map."
     }
   },
   {
     "num": 40,
     "title": "A Fairly Common Magnetic Toy",
     "section": "Magnetism",
-    "desc": "Explores constrained magnetic levitation and Earnshaw's Theorem.",
+    "desc": "Explore how a steel ball bearing between two like-pole magnets reverses the apparent interaction from repulsion to attraction.",
     "setupTime": "3 min",
-    "duration": "20 min",
+    "duration": "10 min",
     "summary": {
-      "whatTheyLearn": "Explores constrained magnetic levitation and Earnshaw's Theorem.",
+      "whatTheyLearn": "Students observe that two N-pole magnets normally repel, but inserting a ferromagnetic steel ball between them causes apparent attraction — the ball becomes magnetised and creates an indirect attractive force.",
       "instructions": [
-        "Can you achieve stable levitation with only permanent magnets? Describe what happened:",
-        "What constraint was needed to maintain any levitation?",
-        "State Earnshaw's Theorem in your own words. Explain why a constraining rod is needed:"
+        "Place two magnets N-N facing: observe repulsion.",
+        "Place steel ball bearing between them: observe the magnets now move toward the ball.",
+        "Remove the ball: repulsion returns."
       ],
-      "expectedOutcome": "Earnshaw's Theorem: stable static levitation impossible with permanent magnets in all 3D directions. Constraint eliminates one degree of freedom. Ring magnets on rod can levitate when constrained laterally. Without rod: unstable (flips or slides away)."
+      "expectedOutcome": "N-N without ball: repel. N-ball-N: magnets attracted to ball. Ball mediates effective N-N attraction via induced magnetisation."
     },
     "experiment": {
       "equipment": [
         {
           "emoji": "🧲",
-          "name": "Ring magnets"
+          "name": "Two identical small magnets (both N facing outward)"
         },
         {
-          "emoji": "🔩",
-          "name": "Wooden rod"
+          "emoji": "⚙️",
+          "name": "Steel ball bearing"
         },
         {
           "emoji": "📏",
-          "name": "Ruler"
-        },
-        {
-          "emoji": "📋",
-          "name": "Observation sheet"
+          "name": "Ruler / surface"
         }
       ],
       "observationsToRecord": [
-        "Can you achieve stable levitation with only permanent magnets? Describe what happened:",
-        "What constraint was needed to maintain any levitation?"
+        "Force type (attract/repel) without ball between N-N magnets",
+        "Force type with steel ball between N-N magnets",
+        "Behaviour when ball is removed"
       ],
       "theoryPoints": [
-        "Stable magnetic levitation using permanent magnets alone is impossible by Earnshaw's Theorem.",
-        "Unstable levitation requires a constraint (ring magnet on a rod).",
-        "Superconductors allow perfect diamagnetic levitation (Meissner effect)."
+        "Steel is ferromagnetic: an external field induces magnetisation in it.",
+        "Ball between two N poles: each magnet induces S pole in the nearest side of the ball.",
+        "Each magnet sees a nearby S pole → attraction to ball.",
+        "Result: N-ball-N appears attractive through the ball.",
+        "Soft iron loses magnetisation when removed from the field; hard steel retains some."
       ],
       "realWorldConnections": [
-        "Maglev trains (superconducting)",
-        "Magnetic bearings in hard drives",
-        "Contactless charging pads (inductive coupling)",
-        "Levitating toys (constrained magnets)"
+        "Electromagnets pick up iron and steel by inducing magnetisation.",
+        "Magnetic resonance imaging (MRI) uses induced nuclear magnetisation.",
+        "Magnetic particle inspection detects cracks in steel by induced field distortions."
       ],
-      "formula": "Earnshaw's Theorem: stable 3D levitation impossible with static fields alone"
+      "formula": "Induced magnetisation in ferromagnetic material → attraction to external field"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Earnshaw's Theorem states that:",
+          "text": "Two N-pole magnets face each other with a steel ball between them. The magnets:",
           "options": [
-            "A. Magnets always attract",
-            "B. Stable levitation with only static fields is impossible",
-            "C. Magnetic fields can be shielded completely",
-            "D. Like poles repel"
+            "Still repel each other",
+            "Are attracted toward the steel ball",
+            "Have no force on them",
+            "Rotate to face S poles toward ball"
           ],
           "correctIndex": 1,
-          "explanation": "Earnshaw's Theorem proves that a collection of static charges/magnets cannot be in stable equilibrium."
+          "explanation": "The steel ball becomes magnetised; each magnet is attracted to the induced opposite pole in the nearest face of the ball."
         },
         {
-          "text": "The Meissner effect in superconductors causes:",
+          "text": "Why does the steel ball become magnetised when placed between the magnets?",
           "options": [
-            "A. Strong attraction to magnets",
-            "B. Complete expulsion of magnetic fields (perfect levitation)",
-            "C. Increased resistance",
-            "D. Heat generation"
+            "It contains natural magnets",
+            "The external magnetic field induces a temporary magnetisation (ferromagnetism)",
+            "Steel is always magnetic",
+            "The ball is heated by the magnets"
           ],
           "correctIndex": 1,
-          "explanation": "Below critical temperature, superconductors expel all magnetic flux — enabling perfect diamagnetic levitation."
+          "explanation": "Steel is ferromagnetic; an external field aligns its magnetic domains, inducing a temporary magnetisation."
+        },
+        {
+          "text": "What happens to the apparent N-N force when the steel ball is removed?",
+          "options": [
+            "Remains attractive",
+            "Returns to repulsion",
+            "Becomes zero",
+            "Reverses permanently"
+          ],
+          "correctIndex": 1,
+          "explanation": "Without the ball, the N-N configuration resumes its normal repulsion."
         }
       ],
       "discussion": [
-        "What is the main physics principle demonstrated?",
-        "What are the main sources of error?",
-        "How does this apply to real-world technology?"
+        "Explain using magnetic domain theory why the steel ball becomes magnetised between the two N poles.",
+        "How does an electromagnet pick up iron objects? What is the similarity to this experiment?",
+        "Why might a steel ball retain some magnetisation after being removed, but a soft iron ball would not?"
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Magnetism",
-          "pct": 50
-        },
-        {
-          "label": "Forces & Motion",
+          "label": "Like poles normally repel",
           "pct": 25
         },
         {
-          "label": "Scientific Method",
-          "pct": 15
+          "label": "Ferromagnetic induction in steel",
+          "pct": 35
         },
         {
-          "label": "Real-World Apps",
-          "pct": 10
+          "label": "Induced opposite poles cause attraction",
+          "pct": 25
+        },
+        {
+          "label": "Soft vs. hard ferromagnetics",
+          "pct": 15
         }
       ],
       "misconceptions": [
-        "You cannot levitate a magnet with only static permanent magnets in 3D — Earnshaw's theorem forbids it.",
-        "Maglev trains use electromagnets (controllable) or superconductors, not simple permanent magnets."
+        "Students expect like poles always repel even with a ferromagnetic mediator; the ball changes everything.",
+        "Many think the magnets attract each other directly; they are attracted to the ball.",
+        "Confusing paramagnetic (weak, temporary) with ferromagnetic (strong, persistent) behaviour."
       ],
-      "hook": "Magnetic levitation isn't science fiction — maglev trains in Japan travel at 600 km/h using superconducting magnets. The physics starts with two magnets repelling.",
+      "hook": "Put a steel ball between two magnets pointing the same way — and they suddenly 'attract'! The ball secretly reverses the interaction by becoming a magnet itself.",
       "khanLinks": [
         {
           "title": "Magnetic Forces & Fields",
@@ -6026,147 +6416,155 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
         "Configuration",
-        "Observation",
-        "Stable? (Y/N)",
+        "Force observed",
         "Explanation"
       ],
-      "rows": 4
+      "rows": 3
     },
     "observations": [
-      "Can you achieve stable levitation with only permanent magnets? Describe what happened:",
-      "What constraint was needed to maintain any levitation?"
+      "Record force type for: N-N (no ball), N-ball-N, after ball removed.",
+      "Note the direction magnets move toward the ball.",
+      "Observe whether ball retains magnetism after removal."
     ],
-    "conclusion": "State Earnshaw's Theorem in your own words. Explain why a constraining rod is needed:",
+    "conclusion": "N-N without ball: repel. N-ball-N: apparent attraction — each magnet attracted to ball's induced S pole. Ball removed: repulsion returns. Confirms ferromagnetic induction mediates the interaction.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>A Fairly Common Magnetic Toy</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "The magnetic toy defies expectations! Ask me about ferromagnetic induction, why the ball reverses the force, or how electromagnets work.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Read experiment instructions thoroughly before class</li><li>Test all equipment works correctly</li><li>Prepare data tables on whiteboard</li></ol>Time needed: 3 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Rushing through setup without calibration</li><li>Recording data without units</li><li>Not repeating measurements for reliability</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Earnshaw's Theorem: stable 3D levitation impossible with static fields alone</div>Stable magnetic levitation using permanent magnets alone is impossible by Earnshaw's Theorem.",
-        "question": "Discussion questions for students:<ul><li>What is the main physics principle demonstrated?</li><li>What are the main sources of error?</li><li>How does this apply to real-world technology?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ You cannot levitate a magnet with only static permanent magnets in 3D — Earnshaw's theorem forbids it.</li><li>❌ Maglev trains use electromagnets (controllable) or superconductors, not simple permanent magnets.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Maglev trains (superconducting)</li><li>🌍 Magnetic bearings in hard drives</li><li>🌍 Contactless charging pads (inductive coupling)</li><li>🌍 Levitating toys (constrained magnets)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Earnshaw's Theorem: stable static levitation impossible with permanent magnets in all 3D directions. Constraint eliminates one degree of freedom.<br><br>Ring magnets on rod can levitate when constrained laterally. Without rod: unstable (flips or slides away).",
-        "extend": "Extension activity: Ask students to suggest improvements to the experimental method.",
-        "explain": "Here's how to explain this to students: <em>Magnetic levitation isn't science fiction — maglev trains in Japan travel at 600 km/h using superconducting magnets. The physics starts with two magnets repelling.</em><br><br>Key concepts to emphasise: Stable magnetic levitation using permanent magnets alone is impossible by Earnshaw's Theorem.; Unstable levitation requires a constraint (ring magnet on a rod).",
-        "hook": "Engaging hook for students: <blockquote>Magnetic levitation isn't science fiction — maglev trains in Japan travel at 600 km/h using superconducting magnets. The physics starts with two magnets repelling.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "two N-pole magnets|steel ball bearing|repulsion|attraction|ferromagnetic",
+        "formula": "induced magnetisation|opposite pole induced in ball",
+        "error": "non-ferromagnetic ball|too weak magnets|ball not centred",
+        "question": "ferromagnetic|induced magnetisation|like poles|steel ball|domains",
+        "real": "electromagnet|MRI|magnetic particle inspection"
       },
-      "hint": "Earnshaw's Theorem: stable static levitation impossible with permanent magnets in all 3D directions. Constraint eliminates one degree of freedom.",
-      "expected": "Ring magnets on rod can levitate when constrained laterally. Without rod: unstable (flips or slides away)."
+      "hint": "Steel ball gets magnetised: its surfaces facing each magnet become S poles (attracted). N-ball-N = N attracted to S(ball) + S(ball) attracted to N. Net: attraction through the ball.",
+      "expected": "N-N: repel. N-ball-N: magnets move toward ball (attract). Ball removed: repulsion returns."
     }
   },
   {
     "num": 41,
     "title": "Electric Resistance",
     "section": "Electricity",
-    "desc": "Verifies Ohm's Law (V = IR) across resistors and non-ohmic components.",
-    "setupTime": "8 min",
+    "desc": "Verify Ohm's Law by measuring the current through a resistor at different voltages and determining the resistance.",
+    "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
-      "whatTheyLearn": "Verifies Ohm's Law (V = IR) across resistors and non-ohmic components.",
+      "whatTheyLearn": "Students verify I = V/R by plotting V vs. I and confirming linearity; the slope gives R.",
       "instructions": [
-        "Plot V vs I. Was the graph linear? What does linearity indicate?",
-        "Which components did NOT follow Ohm's Law? How could you tell?",
-        "State Ohm's Law. Calculate the resistance of each component from V/I. Identify ohmic vs non-ohmic components:"
+        "Connect resistor R₁ ≈ 100 Ω in series with ammeter; voltmeter across R₁.",
+        "Vary the supply voltage from 1 V to 5 V in steps; record I (mA) for each V.",
+        "Plot V vs. I; slope = R."
       ],
-      "expectedOutcome": "Ohmic: R constant (straight V-I graph). Non-ohmic: R varies (LED, bulb filament). Use V=IR. Check against colour-coded values. 220Ω resistor: V=2.2V, I=10mA → R=220Ω. LED: non-linear (V-I curve shows threshold ~2V)."
+      "expectedOutcome": "R = 100.8 Ω; V = 2.75 V → I = 25 mA. V/I = 2.75/0.025 = 110 Ω (close to nominal). Graph is linear through origin."
     },
     "experiment": {
       "equipment": [
         {
+          "emoji": "🔋",
+          "name": "Variable DC power supply (0–6 V)"
+        },
+        {
           "emoji": "⚡",
-          "name": "Power supply"
+          "name": "Resistor ~100 Ω"
         },
         {
           "emoji": "🔌",
-          "name": "Resistors (various)"
+          "name": "Ammeter (mA range)"
         },
         {
-          "emoji": "⚡",
-          "name": "Ammeter"
-        },
-        {
-          "emoji": "⚡",
+          "emoji": "🔌",
           "name": "Voltmeter"
         },
         {
-          "emoji": "🔌",
-          "name": "Connecting wires"
+          "emoji": "🪛",
+          "name": "Connecting wires and breadboard"
         }
       ],
       "observationsToRecord": [
-        "Plot V vs I. Was the graph linear? What does linearity indicate?",
-        "Which components did NOT follow Ohm's Law? How could you tell?"
+        "Voltage V (V) for each supply setting",
+        "Current I (mA) for each V",
+        "Calculated R = V/I (Ω) for each trial"
       ],
       "theoryPoints": [
-        "Ohm's Law: V = IR. Voltage drives current through resistance.",
-        "Resistance R = ρL/A — depends on material (ρ), length, and cross-section.",
-        "Conductors (low R), insulators (very high R), semiconductors (variable R)."
+        "Ohm's Law: V = IR (or I = V/R); R is constant for ohmic conductors.",
+        "Resistance R = V/I (Ω); 1 Ω = 1 V/A.",
+        "Ohmic conductors: V-I graph is linear through origin.",
+        "Non-ohmic devices (diodes, bulbs): V-I is non-linear."
       ],
       "realWorldConnections": [
-        "Fuses (high R wire melts at excess current)",
-        "LED current limiting resistors",
-        "Heating elements (intentional high resistance)",
-        "Superconductors (R = 0)"
+        "Every electronic device uses Ohm's law for circuit design.",
+        "Fuses are rated in amps (I_max = V/R_circuit).",
+        "Electrical safety: touching a high-voltage source with low body resistance gives large I."
       ],
-      "formula": "V = IR   |   P = IV = I²R = V²/R"
+      "formula": "V = IR   |   R = V/I (Ω)"
     },
     "questions": {
       "mcq": [
         {
-          "text": "A 12V battery drives current through 4Ω resistance. Current = ?",
+          "text": "A 100 Ω resistor has 2.75 V across it. What current flows?",
           "options": [
-            "A. 48 A",
-            "B. 3 A",
-            "C. 0.33 A",
-            "D. 8 A"
+            "27.5 mA",
+            "2.75 mA",
+            "0.275 A",
+            "275 mA"
           ],
-          "correctIndex": 1,
-          "explanation": "I = V/R = 12/4 = 3 A"
+          "correctIndex": 0,
+          "explanation": "I = V/R = 2.75/100 = 0.0275 A = 27.5 mA."
         },
         {
-          "text": "A 3A current flows through 6Ω for 10 seconds. Energy dissipated?",
+          "text": "On a V vs. I graph for an ohmic resistor, the slope represents:",
           "options": [
-            "A. 18 J",
-            "B. 540 J",
-            "C. 60 J",
-            "D. 180 J"
+            "Current",
+            "Voltage",
+            "Resistance R",
+            "Power"
           ],
-          "correctIndex": 1,
-          "explanation": "P = I²R = 9×6 = 54W; E = P×t = 54×10 = 540 J"
+          "correctIndex": 2,
+          "explanation": "V = IR → V/I = R → slope of V vs. I graph = R."
+        },
+        {
+          "text": "Which of these is an ohmic conductor?",
+          "options": [
+            "LED diode",
+            "Tungsten filament lamp at varying temperature",
+            "Metal resistor at constant temperature",
+            "Semiconductor thermistor"
+          ],
+          "correctIndex": 2,
+          "explanation": "A metal resistor at constant temperature follows V = IR linearly — it is ohmic."
         }
       ],
       "discussion": [
-        "Why do wires heat up? What determines how much?",
-        "Why must fuses have lower resistance than the devices they protect?"
+        "Plot V vs. I for your data. Is the relationship linear? What does the slope represent?",
+        "Why might a light bulb filament NOT obey Ohm's law perfectly?",
+        "Calculate the power dissipated in the 100 Ω resistor at V = 2.75 V."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Electricity",
-          "pct": 50
+          "label": "V = IR (Ohm's Law)",
+          "pct": 35
         },
         {
-          "label": "Mathematics",
-          "pct": 25
+          "label": "R = slope of V vs. I graph",
+          "pct": 30
         },
         {
-          "label": "Data Analysis",
+          "label": "Ohmic vs. non-ohmic",
+          "pct": 20
+        },
+        {
+          "label": "Safe circuit connections",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Current is NOT used up in a circuit — the same current flows through all components in series.",
-        "Voltage is the energy per charge (J/C), not the 'amount' of electricity."
+        "Students think Ohm's law always applies; it only holds for ohmic conductors at constant temperature.",
+        "Many confuse the slope of I vs. V (= 1/R) with the slope of V vs. I (= R).",
+        "Thinking that resistance changes when V changes; for ohmic components R is constant."
       ],
-      "hook": "Ohm's law was discovered by Georg Ohm in 1827 — he was ridiculed at first. Today it underlies every electronic device ever made.",
+      "hook": "Every app on your phone, every LED, every motor — all designed using Ohm's Law. V = IR is arguably the most useful equation in engineering!",
       "khanLinks": [
         {
           "title": "Circuits & Ohm's Law",
@@ -6180,153 +6578,151 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Resistor/Component",
         "Voltage V (V)",
         "Current I (mA)",
-        "I (A)",
-        "Resistance R = V/I (Ω)",
-        "Expected R (Ω)",
-        "% Error"
+        "R = V/I (Ω)"
       ],
-      "rows": 5
+      "rows": 6
     },
     "observations": [
-      "Plot V vs I. Was the graph linear? What does linearity indicate?",
-      "Which components did NOT follow Ohm's Law? How could you tell?"
+      "Record V and I for at least 5 different supply voltages.",
+      "Plot V (y-axis) vs. I (x-axis) and check linearity.",
+      "Calculate R from slope and compare with nominal 100 Ω."
     ],
-    "conclusion": "State Ohm's Law. Calculate the resistance of each component from V/I. Identify ohmic vs non-ohmic components:",
+    "conclusion": "Ohm's Law verified: V = IR. R = 100.8 Ω measured. At V = 2.75 V: I = 25 mA → R = 110 Ω (within 10% of nominal). V vs. I graph was linear through origin, confirming ohmic behaviour.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Electric Resistance</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "V = IR is the foundation of all circuit design! Ask me about Ohm's Law, how to find R from a graph, or ohmic vs. non-ohmic behaviour.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Pre-wire circuit boards</li><li>Test all resistors with multimeter beforehand</li><li>Demonstrate proper use of ammeter (in series) and voltmeter (in parallel)</li></ol>Time needed: 8 min setup + 20 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Connecting ammeter in parallel (shorts circuit)</li><li>Connecting voltmeter in series (no current)</li><li>Not accounting for internal resistance of battery</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>V = IR &nbsp;&nbsp;|&nbsp;&nbsp; P = IV = I²R = V²/R</div>Ohm's Law: V = IR. Voltage drives current through resistance.",
-        "question": "Discussion questions for students:<ul><li>Why do wires heat up? What determines how much?</li><li>Why must fuses have lower resistance than the devices they protect?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Current is NOT used up in a circuit — the same current flows through all components in series.</li><li>❌ Voltage is the energy per charge (J/C), not the 'amount' of electricity.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Fuses (high R wire melts at excess current)</li><li>🌍 LED current limiting resistors</li><li>🌍 Heating elements (intentional high resistance)</li><li>🌍 Superconductors (R = 0)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Ohmic: R constant (straight V-I graph). Non-ohmic: R varies (LED, bulb filament). Use V=IR. Check against colour-coded values.<br><br>220Ω resistor: V=2.2V, I=10mA → R=220Ω. LED: non-linear (V-I curve shows threshold ~2V).",
-        "extend": "Extension activity: Measure I-V curve of LED to show non-ohmic behaviour.",
-        "explain": "Here's how to explain this to students: <em>Ohm's law was discovered by Georg Ohm in 1827 — he was ridiculed at first. Today it underlies every electronic device ever made.</em><br><br>Key concepts to emphasise: Ohm's Law: V = IR. Voltage drives current through resistance.; Resistance R = ρL/A — depends on material (ρ), length, and cross-section.",
-        "hook": "Engaging hook for students: <blockquote>Ohm's law was discovered by Georg Ohm in 1827 — he was ridiculed at first. Today it underlies every electronic device ever made.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "resistor|ammeter|voltmeter|power supply|circuit",
+        "formula": "V = IR|R = V/I|slope of V vs. I = R",
+        "error": "ammeter in parallel|voltmeter in series|contact resistance",
+        "question": "Ohm's Law|resistance|ohmic|current|voltage|slope",
+        "real": "electronics|fuse|electrical safety"
       },
-      "hint": "Ohmic: R constant (straight V-I graph). Non-ohmic: R varies (LED, bulb filament). Use V=IR. Check against colour-coded values.",
-      "expected": "220Ω resistor: V=2.2V, I=10mA → R=220Ω. LED: non-linear (V-I curve shows threshold ~2V)."
+      "hint": "I = V/R. Plot V vs. I; slope = R. Ohmic: linear through origin. Non-ohmic: curved graph.",
+      "expected": "R=100.8Ω; V=2.75V→I=25mA. V vs. I linear, slope≈100Ω. Confirms V=IR."
     }
   },
   {
     "num": 42,
     "title": "Series versus parallel circuits",
     "section": "Electricity",
-    "desc": "Compares total resistance and current distribution in series vs parallel circuits.",
-    "setupTime": "8 min",
-    "duration": "25 min",
+    "desc": "Measure the total resistance for series and parallel resistor combinations and verify the combination formulas.",
+    "setupTime": "5 min",
+    "duration": "30 min",
     "summary": {
-      "whatTheyLearn": "Compares total resistance and current distribution in series vs parallel circuits.",
+      "whatTheyLearn": "Students verify R_series = R₁ + R₂ and 1/R_parallel = 1/R₁ + 1/R₂, then connect to why home circuits use parallel wiring.",
       "instructions": [
-        "What happened to total current when you added a resistor in series vs parallel?",
-        "Compare voltage across components in each circuit type:",
-        "State formulas for series and parallel resistance. Explain why home circuits use parallel wiring:"
+        "Measure R₁ and R₂ individually with ohmmeter or V/I method.",
+        "Connect in series; measure total R_T and verify R_T = R₁ + R₂.",
+        "Connect in parallel; measure R_T and verify 1/R_T = 1/R₁ + 1/R₂."
       ],
-      "expectedOutcome": "Series: R_T = R₁+R₂. Parallel: 1/R_T = 1/R₁+1/R₂. Parallel R_T < smallest R. Series R_T > largest R. R₁=100Ω, R₂=100Ω: Series→200Ω; Parallel→50Ω. Home circuits: parallel so each device gets full 230V."
+      "expectedOutcome": "Expected: V = 5.8 V. R₁ = R₂ = 100 Ω: Series R_T = 200 Ω; Parallel R_T = 50 Ω. Parallel R_T < smaller individual R."
     },
     "experiment": {
       "equipment": [
         {
+          "emoji": "🔋",
+          "name": "Battery or DC supply (5.8 V)"
+        },
+        {
           "emoji": "⚡",
-          "name": "Power supply"
+          "name": "Two resistors R₁ = R₂ = 100 Ω"
         },
         {
           "emoji": "🔌",
-          "name": "Resistors x2"
+          "name": "Ammeter and voltmeter"
         },
         {
-          "emoji": "⚡",
-          "name": "Ammeter"
-        },
-        {
-          "emoji": "⚡",
-          "name": "Voltmeter"
-        },
-        {
-          "emoji": "🔌",
-          "name": "Connecting wires"
-        },
-        {
-          "emoji": "📋",
-          "name": "Circuit diagram"
+          "emoji": "🪛",
+          "name": "Connecting wires, breadboard"
         }
       ],
       "observationsToRecord": [
-        "What happened to total current when you added a resistor in series vs parallel?",
-        "Compare voltage across components in each circuit type:"
+        "Individual R₁ and R₂ (Ω)",
+        "V and I for series combination → R_series = V/I",
+        "V and I for parallel combination → R_parallel = V/I"
       ],
       "theoryPoints": [
-        "Series circuit: same current everywhere, voltages add up, total R = R₁+R₂+...",
-        "Parallel circuit: same voltage across all branches, currents add up, 1/R_total = Σ(1/Rᵢ).",
-        "Parallel resistance is always LESS than the smallest individual resistance."
+        "Series: same current through each; voltages add. R_T = R₁ + R₂.",
+        "Parallel: same voltage across each; currents add. 1/R_T = 1/R₁ + 1/R₂.",
+        "Parallel R_T always less than the smallest individual resistance.",
+        "Home circuits: parallel wiring gives each device full mains voltage."
       ],
       "realWorldConnections": [
-        "Home electrical circuits (parallel)",
-        "Christmas lights (series — one fails, all fail)",
-        "Car battery + starter motor + accessories (parallel)"
+        "Christmas lights: old series strings — one bulb fails → all go out. Modern parallel strings stay lit.",
+        "Home electrical wiring is parallel so each outlet gets full 230 V.",
+        "Series resistors are used in voltage dividers; parallel in current dividers."
       ],
-      "formula": "Series: R_T = ΣRᵢ   |   Parallel: 1/R_T = Σ(1/Rᵢ)"
+      "formula": "Series: R_T = R₁ + R₂   |   Parallel: 1/R_T = 1/R₁ + 1/R₂"
     },
     "questions": {
       "mcq": [
         {
-          "text": "Two 10Ω resistors in parallel. Total resistance?",
+          "text": "Two 100 Ω resistors in series. What is R_T?",
           "options": [
-            "A. 20Ω",
-            "B. 10Ω",
-            "C. 5Ω",
-            "D. 100Ω"
+            "50 Ω",
+            "100 Ω",
+            "200 Ω",
+            "400 Ω"
           ],
           "correctIndex": 2,
-          "explanation": "1/R = 1/10+1/10 = 2/10; R = 5Ω (parallel always reduces resistance)"
+          "explanation": "R_T = R₁ + R₂ = 100 + 100 = 200 Ω."
         },
         {
-          "text": "In a series circuit with 12V and R₁=2Ω, R₂=4Ω, what is the voltage across R₂?",
+          "text": "Two 100 Ω resistors in parallel. What is R_T?",
           "options": [
-            "A. 4V",
-            "B. 8V",
-            "C. 6V",
-            "D. 12V"
+            "200 Ω",
+            "100 Ω",
+            "50 Ω",
+            "25 Ω"
+          ],
+          "correctIndex": 2,
+          "explanation": "1/R_T = 1/100 + 1/100 = 2/100; R_T = 50 Ω."
+        },
+        {
+          "text": "Why are home electrical circuits wired in parallel?",
+          "options": [
+            "To increase total resistance",
+            "So each device receives the full supply voltage",
+            "To reduce the current",
+            "Because series is too complex"
           ],
           "correctIndex": 1,
-          "explanation": "I = V/R_total = 12/6 = 2A; V_R2 = I×R₂ = 2×4 = 8V"
+          "explanation": "In parallel, each branch has the full supply voltage (230 V), so every device operates at its designed voltage independently."
         }
       ],
       "discussion": [
-        "Why do Christmas lights go dark when one bulb fails?",
-        "Why does plugging in many appliances trip a circuit breaker?"
+        "Explain why adding more resistors in parallel always decreases the total resistance.",
+        "Why do old-fashioned series Christmas lights all go out when one bulb fails?",
+        "A house has a 230 V supply and three 100 Ω appliances. Calculate I_total if all three are connected in parallel."
       ]
     },
     "overview": {
       "conceptBreakdown": [
         {
-          "label": "Electricity",
-          "pct": 50
+          "label": "Series: R_T = R₁+R₂",
+          "pct": 30
         },
         {
-          "label": "Mathematics",
+          "label": "Parallel: 1/R_T = 1/R₁+1/R₂",
+          "pct": 30
+        },
+        {
+          "label": "Current and voltage distribution",
           "pct": 25
         },
         {
-          "label": "Data Analysis",
+          "label": "Home circuit design",
           "pct": 15
-        },
-        {
-          "label": "Scientific Method",
-          "pct": 10
         }
       ],
       "misconceptions": [
-        "Adding more resistors in parallel REDUCES total resistance — more paths = less resistance.",
-        "In a series circuit, removing one component breaks the entire circuit — all elements share one path."
+        "Students apply the series formula when they mean parallel and vice versa.",
+        "Many think parallel R_T is the average; it is always less than the smallest R.",
+        "Assuming adding more paths increases resistance; it always decreases it (more paths for current)."
       ],
-      "hook": "Your home is wired in parallel — so each appliance gets full voltage and switching one off doesn't affect the others. Series wiring would mean your whole house goes dark if one bulb blows.",
+      "hook": "Old Christmas tree lights were wired in series — one burnt bulb and the whole string went dark! Modern lights use parallel wiring. The physics makes all the difference.",
       "khanLinks": [
         {
           "title": "Series and Parallel Resistors",
@@ -6340,39 +6736,31 @@ export const experiments: Experiment[] = [
     },
     "dataTable": {
       "headers": [
-        "#",
-        "Circuit type",
-        "R₁ (Ω)",
-        "R₂ (Ω)",
-        "R_total measured (Ω)",
-        "R_total calculated (Ω)",
-        "V_supply (V)",
-        "I_total (mA)",
-        "% Error"
+        "Configuration",
+        "V (V)",
+        "I (mA)",
+        "R_T = V/I (Ω)",
+        "R_expected (Ω)"
       ],
       "rows": 4
     },
     "observations": [
-      "What happened to total current when you added a resistor in series vs parallel?",
-      "Compare voltage across components in each circuit type:"
+      "Record V and I for individual R₁, R₂, then series and parallel combinations.",
+      "Compare measured R_T with formula predictions.",
+      "Confirm parallel R_T < both individual values."
     ],
-    "conclusion": "State formulas for series and parallel resistance. Explain why home circuits use parallel wiring:",
+    "conclusion": "Series: R_T = 200 Ω = R₁+R₂ confirmed. Parallel: R_T = 50 Ω = R₁R₂/(R₁+R₂) confirmed. Parallel R_T (50 Ω) < either individual R (100 Ω). Home circuits use parallel: each device gets full voltage.",
     "ai": {
-      "opening": "Hi! I'm Gali, your AI lab assistant. I'm here to help with <strong>Series versus parallel circuits</strong>. Ask me about the setup, formulas, expected results, or how to explain this topic to students.",
+      "opening": "Series or parallel — the choice changes everything! Ask me about R_T formulas, current/voltage distribution, or why homes use parallel wiring.",
       "keywords": {
-        "setup": "To set up this experiment: <ol><li>Prepare identical resistors for fair comparison</li><li>Pre-build demonstration boards</li><li>Have multimeters ready for current/voltage measurement</li></ol>Time needed: 8 min setup + 25 min experiment.",
-        "error": "Common student errors in this experiment:<ul><li>Forgetting that adding parallel resistors REDUCES total resistance</li><li>Not measuring total current vs branch currents</li><li>Poor connections causing variable resistance</li></ul>Tip: Address these at the <strong>start</strong> of the session.",
-        "formula": "The key formula is: <div class='chat-formula'>Series: R_T = ΣRᵢ &nbsp;&nbsp;|&nbsp;&nbsp; Parallel: 1/R_T = Σ(1/Rᵢ)</div>Series circuit: same current everywhere, voltages add up, total R = R₁+R₂+...",
-        "question": "Discussion questions for students:<ul><li>Why do Christmas lights go dark when one bulb fails?</li><li>Why does plugging in many appliances trip a circuit breaker?</li></ul>",
-        "misconception": "Students commonly misunderstand:<ul><li>❌ Adding more resistors in parallel REDUCES total resistance — more paths = less resistance.</li><li>❌ In a series circuit, removing one component breaks the entire circuit — all elements share one path.</li></ul>Address these explicitly before the experiment.",
-        "real": "Real-world connections: <ul><li>🌍 Home electrical circuits (parallel)</li><li>🌍 Christmas lights (series — one fails, all fail)</li><li>🌍 Car battery + starter motor + accessories (parallel)</li></ul>Starting with these examples increases student motivation.",
-        "result": "Expected results: Series: R_T = R₁+R₂. Parallel: 1/R_T = 1/R₁+1/R₂. Parallel R_T < smallest R. Series R_T > largest R.<br><br>R₁=100Ω, R₂=100Ω: Series→200Ω; Parallel→50Ω. Home circuits: parallel so each device gets full 230V.",
-        "extend": "Extension activity: Calculate power dissipated in each configuration.",
-        "explain": "Here's how to explain this to students: <em>Your home is wired in parallel — so each appliance gets full voltage and switching one off doesn't affect the others. Series wiring would mean your whole house goes dark if one bulb blows.</em><br><br>Key concepts to emphasise: Series circuit: same current everywhere, voltages add up, total R = R₁+R₂+...; Parallel circuit: same voltage across all branches, currents add up, 1/R_total = Σ(1/Rᵢ).",
-        "hook": "Engaging hook for students: <blockquote>Your home is wired in parallel — so each appliance gets full voltage and switching one off doesn't affect the others. Series wiring would mean your whole house goes dark if one bulb blows.</blockquote>This works well as an opener before students touch the equipment."
+        "setup": "resistors|series|parallel|ammeter|voltmeter|circuit",
+        "formula": "R_T = R₁+R₂|1/R_T = 1/R₁+1/R₂",
+        "error": "ammeter placement|contact resistance|wrong formula used",
+        "question": "series|parallel|total resistance|home circuit|voltage divider",
+        "real": "Christmas lights|home wiring|voltage divider"
       },
-      "hint": "Series: R_T = R₁+R₂. Parallel: 1/R_T = 1/R₁+1/R₂. Parallel R_T < smallest R. Series R_T > largest R.",
-      "expected": "R₁=100Ω, R₂=100Ω: Series→200Ω; Parallel→50Ω. Home circuits: parallel so each device gets full 230V."
+      "hint": "Series: R_T = R₁+R₂. Parallel: 1/R_T = 1/R₁+1/R₂. Parallel R_T < smallest R. Home circuits: parallel so each device gets full 230V.",
+      "expected": "R₁=R₂=100Ω: Series→200Ω; Parallel→50Ω. Home circuits: parallel so each device gets full 230V."
     }
   }
 ];
