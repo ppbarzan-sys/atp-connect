@@ -179,7 +179,12 @@
     "quick_browse_chem_3": "Explain Le Chatelier's principle",
     "quick_all_1": "What experiments are in this lab?",
     "quick_all_2": "Explain a key physics concept",
-    "quick_all_3": "Explain a key chemistry concept"
+    "quick_all_3": "Explain a key chemistry concept",
+    "voice_input": "Speak",
+    "voice_listening": "Listening…",
+    "voice_stop": "Stop",
+    "voice_output_on": "Mute voice",
+    "voice_output_off": "Enable voice responses"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 TEACHER MODE ACTIVE — Student results and notes are visible",

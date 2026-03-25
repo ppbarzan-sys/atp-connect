@@ -34,8 +34,88 @@ function isChemistry(context?: GaliContext): boolean {
   return false
 }
 
+// ─── Speech API types (cross-browser, avoids reliance on lib.dom globals) ────
+
+interface ISpeechRecognitionEvent {
+  readonly results: { [index: number]: { [index: number]: { transcript: string } } }
+}
+
+interface ISpeechRecognition {
+  lang: string
+  continuous: boolean
+  interimResults: boolean
+  maxAlternatives: number
+  onresult: ((ev: ISpeechRecognitionEvent) => void) | null
+  onerror: (() => void) | null
+  onend: (() => void) | null
+  start(): void
+  abort(): void
+}
+
+type SpeechRecognitionCtor = new () => ISpeechRecognition
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/** Strip markdown so TTS reads clean prose */
+function cleanForSpeech(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/`(.*?)`/g, '$1')
+    .replace(/^[-*•]\s/gm, '')
+    .replace(/^\d+\.\s/gm, '')
+    .replace(/#{1,6}\s/gm, '')
+    .replace(/\n{2,}/g, '. ')
+    .replace(/\n/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
+/** Resolve the Web Speech SpeechRecognition constructor (cross-browser) */
+function getSpeechRecognition(): SpeechRecognitionCtor | null {
+  if (typeof window === 'undefined') return null
+  type W = Window & {
+    SpeechRecognition?: SpeechRecognitionCtor
+    webkitSpeechRecognition?: SpeechRecognitionCtor
+  }
+  const w = window as W
+  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null
+}
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
 export default function GaliModal({ context, onClose }: GaliModalProps) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+
+  // ── Speech locale ────────────────────────────────────────────────────────
+  const speechLocale = locale === 'it' ? 'it-IT' : 'en-US'
+
+  // ── Voice state ──────────────────────────────────────────────────────────
+  const [micSupported, setMicSupported] = useState(false)
+  const [isListening, setIsListening] = useState(false)
+  const [voiceEnabled, setVoiceEnabled] = useState(false)
+  const recognitionRef = useRef<ISpeechRecognition | null>(null)
+
+  // Live refs so callbacks always see current values without stale closures
+  const voiceEnabledRef = useRef(false)
+  const speechLocaleRef = useRef(speechLocale)
+  const messagesRef = useRef<Message[]>([])
+
+  useEffect(() => { voiceEnabledRef.current = voiceEnabled }, [voiceEnabled])
+  useEffect(() => { speechLocaleRef.current = speechLocale }, [speechLocale])
+
+  // Detect browser support on mount
+  useEffect(() => {
+    setMicSupported(!!getSpeechRecognition())
+  }, [])
+
+  // Cleanup recognition + synthesis when modal unmounts
+  useEffect(() => {
+    return () => {
+      recognitionRef.current?.abort()
+      window.speechSynthesis?.cancel()
+    }
+  }, [])
 
   // ── Build welcome message ────────────────────────────────────────────────
   function buildWelcome(): string {
@@ -75,6 +155,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     return t('gali.placeholder_general')
   }
 
+  // ── Chat state ───────────────────────────────────────────────────────────
   const [messages, setMessages] = useState<Message[]>([
     { role: 'gali', content: buildWelcome() },
   ])
@@ -84,6 +165,9 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const abortRef = useRef<AbortController | null>(null)
+
+  // Keep messagesRef current so voice effects can read latest messages
+  useEffect(() => { messagesRef.current = messages }, [messages])
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -100,6 +184,71 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
+  // ── Text-to-Speech ────────────────────────────────────────────────────────
+  function speakText(text: string) {
+    if (!voiceEnabledRef.current) return
+    if (typeof window === 'undefined' || !window.speechSynthesis) return
+    window.speechSynthesis.cancel()
+    const clean = cleanForSpeech(text)
+    if (!clean) return
+    const utterance = new SpeechSynthesisUtterance(clean)
+    utterance.lang = speechLocaleRef.current
+    utterance.rate = 0.95
+    utterance.pitch = 1.0
+    window.speechSynthesis.speak(utterance)
+  }
+
+  // Fire TTS when a streaming response finishes
+  const prevStreamingRef = useRef(false)
+  useEffect(() => {
+    if (prevStreamingRef.current && !isStreaming) {
+      const last = messagesRef.current[messagesRef.current.length - 1]
+      if (last?.role === 'gali' && !last.streaming) {
+        speakText(last.content)
+      }
+    }
+    prevStreamingRef.current = isStreaming
+  }, [isStreaming]) // intentional: speakText reads only refs
+
+  // ── Speech-to-Text ────────────────────────────────────────────────────────
+  function startListening() {
+    const SR = getSpeechRecognition()
+    if (!SR || isStreaming) return
+
+    // Silence any ongoing TTS before listening
+    window.speechSynthesis?.cancel()
+
+    const recognition = new SR()
+    recognition.lang = speechLocaleRef.current
+    recognition.continuous = false
+    recognition.interimResults = false
+    recognition.maxAlternatives = 1
+    recognitionRef.current = recognition
+
+    recognition.onresult = (event: ISpeechRecognitionEvent) => {
+      const transcript = event.results[0][0].transcript
+      setIsListening(false)
+      if (transcript.trim()) sendMessage(transcript.trim())
+    }
+
+    recognition.onerror = () => setIsListening(false)
+    recognition.onend = () => setIsListening(false)
+
+    setIsListening(true)
+    try { recognition.start() } catch { setIsListening(false) }
+  }
+
+  function stopListening() {
+    recognitionRef.current?.abort()
+    setIsListening(false)
+  }
+
+  function toggleVoice() {
+    if (voiceEnabled) window.speechSynthesis?.cancel()
+    setVoiceEnabled(v => !v)
+  }
+
+  // ── Streaming helpers ─────────────────────────────────────────────────────
   const appendGaliChunk = useCallback((chunk: string) => {
     setMessages(prev => {
       const last = prev[prev.length - 1]
@@ -120,6 +269,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     })
   }, [])
 
+  // ── Send message ──────────────────────────────────────────────────────────
   async function sendMessage(text?: string) {
     const userText = (text ?? input).trim()
     if (!userText || isStreaming) return
@@ -146,7 +296,9 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       if (res.status === 503) {
         setApiAvailable(false)
         const topic = context?.experimentTitle || context?.section || 'science'
-        setMessages(prev => [...prev, { role: 'gali', content: getFallback(userText, topic, t) }])
+        const fallbackText = getFallback(userText, topic, t)
+        setMessages(prev => [...prev, { role: 'gali', content: fallbackText }])
+        speakText(fallbackText)
         return
       }
 
@@ -173,6 +325,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     }
   }
 
+  // ── Derived UI values ─────────────────────────────────────────────────────
   const contextLabel = context?.experimentTitle
     ? t('gali.context_exp', { num: String(context.experimentNum ?? ''), title: context.experimentTitle })
     : context?.section && context.section !== 'all'
@@ -180,8 +333,9 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     : t('gali.context_all')
 
   const quickPrompts = getQuickPrompts()
-  const placeholder = getPlaceholder()
+  const placeholder = isListening ? t('gali.voice_listening') : getPlaceholder()
 
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="gali-modal-overlay" onClick={onClose}>
       <div className="gali-modal" onClick={e => e.stopPropagation()}>
@@ -191,6 +345,17 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
           <div className="gali-modal-avatar">✦</div>
           <div className="gali-modal-header-title">{t('gali.modal_title')}</div>
           <span className="gali-modal-context-badge">{contextLabel}</span>
+
+          {/* Voice output toggle */}
+          <button
+            className={`gali-voice-toggle${voiceEnabled ? ' active' : ''}`}
+            onClick={toggleVoice}
+            aria-label={voiceEnabled ? t('gali.voice_output_on') : t('gali.voice_output_off')}
+            title={voiceEnabled ? t('gali.voice_output_on') : t('gali.voice_output_off')}
+          >
+            {voiceEnabled ? '🔊' : '🔇'}
+          </button>
+
           <button className="gali-modal-close" onClick={onClose} aria-label="Close">✕</button>
         </div>
 
@@ -242,22 +407,38 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
           ))}
         </div>
 
-        {/* Input */}
+        {/* Input row */}
         <div className="chat-input-row">
           <input
             ref={inputRef}
             type="text"
-            className="chat-input"
+            className={`chat-input${isListening ? ' listening-pulse' : ''}`}
             placeholder={placeholder}
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) sendMessage() }}
-            disabled={isStreaming}
+            disabled={isStreaming || isListening}
           />
+
+          {/* Microphone button — only shown if browser supports Web Speech API */}
+          {micSupported && (
+            <button
+              className={`gali-mic-btn${isListening ? ' listening' : ''}`}
+              onClick={isListening ? stopListening : startListening}
+              disabled={isStreaming}
+              aria-label={
+                isListening ? t('gali.voice_stop') : t('gali.voice_input')
+              }
+              title={isListening ? t('gali.voice_stop') : t('gali.voice_input')}
+            >
+              {isListening ? '◼' : '🎤'}
+            </button>
+          )}
+
           <button
             className="chat-submit"
             onClick={() => sendMessage()}
-            disabled={isStreaming || !input.trim()}
+            disabled={isStreaming || isListening || !input.trim()}
             aria-label="Send"
           >
             {isStreaming ? t('gali.sending') : t('gali.send')}
@@ -268,7 +449,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   )
 }
 
-// ─── Inline markdown renderer ─────────────────────────────────────────────────
+// ─── Inline markdown renderer ──────────────────────────────────────────────────
 function InlineText({ text }: { text: string }) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*\n]+\*|`[^`\n]+`)/g)
   return (
@@ -332,7 +513,7 @@ function MarkdownText({ text }: { text: string }) {
   return <>{nodes}</>
 }
 
-// ─── Keyword fallback when no API key ────────────────────────────────────────
+// ─── Keyword fallback when no API key ─────────────────────────────────────────
 type TFn = (path: string, vars?: Record<string, string | number>) => string
 
 function getFallback(text: string, topic: string, t: TFn): string {

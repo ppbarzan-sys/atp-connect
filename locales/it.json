@@ -179,7 +179,12 @@
     "quick_browse_chem_3": "Spiega il principio di Le Chatelier",
     "quick_all_1": "Quali esperimenti ci sono in questo laboratorio?",
     "quick_all_2": "Spiega un concetto chiave di fisica",
-    "quick_all_3": "Spiega un concetto chiave di chimica"
+    "quick_all_3": "Spiega un concetto chiave di chimica",
+    "voice_input": "Parla",
+    "voice_listening": "In ascolto…",
+    "voice_stop": "Interrompi",
+    "voice_output_on": "Disattiva voce",
+    "voice_output_off": "Attiva risposte vocali"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 MODALITÀ DOCENTE ATTIVA — Risultati e note degli studenti sono visibili",
