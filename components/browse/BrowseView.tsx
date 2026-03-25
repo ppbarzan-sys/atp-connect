@@ -7,6 +7,7 @@ import {
 import type { Experiment } from '@/data/experiments'
 import FilterBar from './FilterBar'
 import BrowseSection from './BrowseSection'
+import { useI18n } from '@/lib/i18n'
 
 interface BrowseViewProps {
   activeFilter: string
@@ -34,6 +35,7 @@ export default function BrowseView({
   heroTitle,
   heroSubtitle,
 }: BrowseViewProps) {
+  const { t } = useI18n()
   const allExperiments = expData ?? physicsExps
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
@@ -55,8 +57,8 @@ export default function BrowseView({
     }))
     .filter(g => g.exps.length > 0)
 
-  const title = heroTitle ?? 'Browse Physics Experiments'
-  const subtitle = heroSubtitle ?? `${allExperiments.length} physics experiments for the ATP Mobile Lab 4900.00`
+  const title = heroTitle ?? t('browse.physics_title')
+  const subtitle = heroSubtitle ?? t('browse.physics_subtitle', { count: allExperiments.length })
 
   return (
     <div className="main-area">

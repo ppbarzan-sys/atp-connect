@@ -6,10 +6,12 @@ import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal, { GaliContext } from '@/components/GaliModal'
+import { useI18n } from '@/lib/i18n'
 
 export default function ExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
+  const { t } = useI18n()
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const exp = experiments.find(e => e.num === Number(id))
@@ -22,9 +24,9 @@ export default function ExperimentPage() {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'sans-serif' }}>
         <div>
-          <h2>Experiment not found</h2>
+          <h2>{t('experiment.not_found')}</h2>
           <button onClick={() => router.push('/app')} style={{ marginTop: 16, padding: '8px 16px', cursor: 'pointer' }}>
-            Back to Browse
+            {t('experiment.back_to_browse')}
           </button>
         </div>
       </div>
