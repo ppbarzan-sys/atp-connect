@@ -1,10 +1,10 @@
 'use client'
 import {
-  experiments as physicsExps,
   sectionColors as physicsColors,
   sectionEmojis as physicsEmojis,
 } from '@/data/experiments'
-import type { Experiment } from '@/data/experiments'
+import type { Experiment } from '@/data/loader'
+import { getExperiments } from '@/data/loader'
 import FilterBar from './FilterBar'
 import BrowseSection from './BrowseSection'
 import { useI18n } from '@/lib/i18n'
@@ -35,8 +35,8 @@ export default function BrowseView({
   heroTitle,
   heroSubtitle,
 }: BrowseViewProps) {
-  const { t } = useI18n()
-  const allExperiments = expData ?? physicsExps
+  const { t, locale } = useI18n()
+  const allExperiments = expData ?? getExperiments(locale)
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
 
@@ -70,6 +70,11 @@ export default function BrowseView({
               <h1>{title}</h1>
               <p>{subtitle}</p>
             </div>
+            {onAskGali && (
+              <button className="ask-gali-hero" onClick={() => onAskGali()}>
+                ✦ {t('experiment.ask_gali')}
+              </button>
+            )}
           </div>
         </div>
 

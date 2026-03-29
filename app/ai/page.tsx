@@ -43,10 +43,15 @@ export default function AIPage() {
       <div className="app-main">
         {/* Hero header */}
         <div className="browse-header ai-header">
-          <div className="browse-header-content">
-            <h1 className="browse-title">🤖 {t('ai.title')}</h1>
-            <p className="browse-subtitle">{t('ai.subtitle')}</p>
-            <p className="courses-note">{t('ai.note')}</p>
+          <div className="browse-header-row">
+            <div className="browse-header-content">
+              <h1 className="browse-title">🤖 {t('ai.title')}</h1>
+              <p className="browse-subtitle">{t('ai.subtitle')}</p>
+              <p className="courses-note">{t('ai.note')}</p>
+            </div>
+            <button className="ask-gali-hero" onClick={() => setGaliOpen(true)}>
+              ✦ {t('experiment.ask_gali')}
+            </button>
           </div>
         </div>
 

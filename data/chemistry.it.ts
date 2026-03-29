@@ -1,3 +1,5930 @@
-// Italian chemistry translations — full translation coming soon
-// Falls back to English while translation is being finalized
-export { chemistryExperiments } from './chemistry'
+// data/chemistry.it.ts — Esperimenti di Chimica e Fisiologia Vegetale (Italiano)
+// Traduzione italiana di chemistry.ts
+
+import type { Experiment } from "./experiments"
+
+export const chemistrySectionColors: Record<string, string> = {
+  "Materia e Soluzioni": "#6366F1",
+  "Acidi e Basi": "#EF4444",
+  "Chimica dei Gas": "#06B6D4",
+  "Elettrochimica": "#F59E0B",
+  "Fisiologia Vegetale": "#22C55E",
+}
+
+export const chemistrySectionEmojis: Record<string, string> = {
+  "Materia e Soluzioni": "🧪",
+  "Acidi e Basi": "⚗️",
+  "Chimica dei Gas": "💨",
+  "Elettrochimica": "⚡",
+  "Fisiologia Vegetale": "🌱",
+}
+
+export const chemistryExperiments: Experiment[] = [
+  {
+    num: 101,
+    title: "Legge della Conservazione della Massa",
+    section: "Materia e Soluzioni",
+    desc: "Mescola soluzioni di KI e AgNO₃ in un pallone sigillato e pesa prima e dopo per verificare la Legge di Lavoisier.",
+    setupTime: "10 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti confermano che la massa si conserva in una reazione chimica: la massa totale dei reagenti è uguale alla massa totale dei prodotti.",
+      instructions: [
+        "Pesa un pallone sigillato contenente soluzione di KI più una piccola fiala interna di soluzione di AgNO₃.",
+        "Inclina il pallone per mescolare le soluzioni; un precipitato giallo di AgI si forma immediatamente.",
+        "Pesa nuovamente il pallone sigillato senza aprirlo.",
+        "Registra entrambe le masse e calcola la differenza.",
+        "Discuti perché non si osserva alcuna variazione di massa."
+      ],
+      expectedOutcome: "La massa prima e dopo la reazione è identica (entro la precisione della bilancia ±0,01 g), confermando la conservazione della massa."
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚗️", name: "Beuta sigillata (250 mL)" },
+        { emoji: "🧪", name: "Soluzione di KI (0,1 M, 50 mL)" },
+        { emoji: "🧪", name: "Soluzione di AgNO₃ (0,1 M, 10 mL)" },
+        { emoji: "⚖️", name: "Bilancia elettronica (±0,01 g)" },
+        { emoji: "🧊", name: "Piccola fiala interna o provetta" }
+      ],
+      observationsToRecord: [
+        "Massa del pallone sigillato prima della miscelazione (g)",
+        "Cambio di colore osservato durante la miscelazione",
+        "Massa del pallone sigillato dopo la miscelazione (g)",
+        "Differenza tra le masse prima e dopo (g)"
+      ],
+      theoryPoints: [
+        "La Legge di Lavoisier afferma che la materia non viene né creata né distrutta in una reazione chimica.",
+        "KI + AgNO₃ → AgI↓ + KNO₃; il precipitato giallo di AgI si forma ma rimane all'interno del pallone sigillato.",
+        "Gli atomi vengono riorganizzati, non persi; sigillare il pallone impedisce a qualsiasi massa di fuoriuscire come gas.",
+        "La moderna teoria atomica spiega la conservazione della massa attraverso la conservazione degli atomi."
+      ],
+      realWorldConnections: [
+        "Gli impianti chimici industriali monitorano il bilancio di massa per rilevare perdite e garantire che nessun reagente venga sprecato.",
+        "I chimici forensi usano i calcoli del bilancio di massa per ricostruire quali sostanze chimiche erano coinvolte in una reazione.",
+        "La produzione farmaceutica si basa sulla stechiometria (basata sulla conservazione della massa) per ottenere dosaggi precisi dei farmaci."
+      ],
+      formula: "massa(reagenti) = massa(prodotti)"
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cosa afferma la Legge di Conservazione della Massa di Lavoisier?",
+          options: [
+            "L'energia si conserva in tutte le reazioni chimiche",
+            "La massa totale dei reagenti è uguale alla massa totale dei prodotti",
+            "Il numero di molecole si conserva in una reazione",
+            "Le reazioni producono sempre gas"
+          ],
+          correctIndex: 1,
+          explanation: "La Legge di Lavoisier afferma che la massa si conserva: la massa totale dei reagenti è uguale alla massa totale dei prodotti, perché gli atomi vengono riorganizzati, non creati o distrutti."
+        },
+        {
+          text: "Perché il pallone deve essere sigillato durante l'esperimento KI + AgNO₃?",
+          options: [
+            "Per accelerare la reazione",
+            "Per impedire la formazione del precipitato giallo",
+            "Per garantire che nessuna materia (gas o liquido) possa fuoriuscire, mantenendo costante la massa",
+            "Per mantenere stabile la temperatura"
+          ],
+          correctIndex: 2,
+          explanation: "Sigillare il pallone garantisce che nessuna materia fuoriesca come vapore o liquido. Se il pallone fosse aperto, l'evaporazione dell'acqua potrebbe ridurre la massa misurata, facendo sembrare che la massa sia stata persa."
+        },
+        {
+          text: "In KI + AgNO₃ → AgI + KNO₃, quale prodotto è un precipitato giallo?",
+          options: [
+            "KNO₃",
+            "KI",
+            "AgNO₃",
+            "AgI"
+          ],
+          correctIndex: 3,
+          explanation: "Lo ioduro d'argento (AgI) è un solido giallo insolubile che precipita dalla soluzione quando KI e AgNO₃ vengono mescolati."
+        }
+      ],
+      discussion: [
+        "Se eseguissi questo esperimento in un becher aperto e osservassi una piccola diminuzione di massa, cosa potrebbe spiegarla? Questo smentisce la Legge di Lavoisier?",
+        "Come si relaziona la legge di conservazione della massa con il bilanciamento delle equazioni chimiche?",
+        "Riesci a pensare a una situazione quotidiana in cui potrebbe sembrare che la massa non si conservi? Cosa sta realmente accadendo?"
+      ]
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Conservazione della Massa", pct: 40 },
+        { label: "Reazioni di Precipitazione", pct: 30 },
+        { label: "Misurazione Sperimentale", pct: 20 },
+        { label: "Teoria Atomica", pct: 10 }
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che bruciare o sciogliere distrugga la materia; in realtà, la massa si conserva ma i prodotti possono essere gas invisibili.",
+        "Alcuni studenti confondono la conservazione della massa con la conservazione delle molecole — il numero di molecole può cambiare anche se la massa si conserva."
+      ],
+      hook: "Antoine Lavoisier era così preciso con la sua bilancia che scoprì una legge fondamentale dell'universo nel 1789 — usando attrezzature che potevi tenere in una mano!",
+      khanLinks: [
+        { title: "Legge di Conservazione della Massa", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/conservation-of-mass/v/law-of-conservation-of-mass" },
+        { title: "Bilanciamento delle Equazioni Chimiche", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/balancing-chemical-equations/v/balancing-chemical-equations" }
+      ]
+    },
+    dataTable: {
+      headers: ["Prova", "Massa Prima (g)", "Massa Dopo (g)", "Differenza (g)", "Osservazione"],
+      rows: 3
+    },
+    observations: [
+      "Colore della soluzione di KI prima della miscelazione",
+      "Cambio di colore quando le soluzioni si mescolano (precipitato giallo di AgI)",
+      "Lettura della massa prima e dopo la miscelazione"
+    ],
+    conclusion: "Scrivi una conclusione indicando se la massa si è conservata, e collega il tuo risultato alla Legge di Lavoisier e alla teoria atomica.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi stai testando una delle leggi più fondamentali della chimica — la conservazione della massa. Assicuriamoci che il tuo esperimento sia impostato correttamente!",
+      keywords: {
+        setup: "Assicurati che il pallone sia completamente sigillato prima di inclinarlo. Posiziona l'AgNO₃ nella fiala interna in modo che la miscelazione avvenga solo quando inclini il pallone.",
+        formula: "La relazione chiave è: massa(reagenti) = massa(prodotti). Qualsiasi differenza che misuri è un errore sperimentale, non una reale perdita di massa.",
+        error: "L'errore più comune è non sigillare bene il pallone, permettendo al vapore di fuoriuscire e facendo sembrare la massa finale più piccola.",
+        result: "Dovresti trovare che la massa prima e dopo la miscelazione è la stessa entro ±0,02 g, confermando la conservazione della massa.",
+        real: "Questa legge è alla base di tutta la chimica industriale — le fabbriche la usano per tracciare i reagenti e garantire che nulla venga sprecato o perso.",
+        explain: "Gli atomi vengono riorganizzati nelle reazioni chimiche, non distrutti. Poiché gli atomi hanno massa, la massa totale non può cambiare.",
+        hook: "Lavoisier fu ghigliottinato durante la Rivoluzione Francese, ma la sua legge di conservazione della massa sopravvisse e divenne il fondamento della chimica moderna!",
+        misconception: "Molte persone pensano che bruciare distrugga la materia — ma il fumo e la CO₂ rilasciati hanno la stessa massa totale del combustibile originale e dell'ossigeno."
+      },
+      hint: "Se le tue masse differiscono di più di 0,05 g, verifica che il coperchio del pallone sia ermetico e azzera la bilancia prima di ogni misurazione.",
+      expected: "Massa prima = massa dopo (entro ±0,02 g). Un precipitato giallo di AgI si forma all'interno del pallone."
+    }
+  },
+  {
+    num: 102,
+    title: "Diffusione in Soluzione",
+    section: "Materia e Soluzioni",
+    desc: "Lascia cadere un cristallo di KMnO₄ in acqua ferma e osserva il colore viola diffondersi lentamente senza agitare.",
+    setupTime: "5 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti osservano come le particelle disciolte si diffondono da alta a bassa concentrazione per diffusione, guidate dal moto termico casuale.",
+      instructions: [
+        "Riempi un grande becher con 300 mL di acqua distillata e lascialo riposare fino a quando è perfettamente fermo.",
+        "Lascia cadere con cura un piccolo cristallo di KMnO₄ al centro del becher senza disturbare l'acqua.",
+        "Osserva e disegna la diffusione del colore viola ogni 5 minuti per 20 minuti.",
+        "Registra il raggio approssimativo della zona viola ad ogni intervallo di tempo.",
+        "Confronta la velocità di diffusione all'inizio rispetto alla fine."
+      ],
+      expectedOutcome: "Un alone viola si diffonde lentamente verso l'esterno dal cristallo in 20 minuti, dimostrando che le molecole si muovono da regioni ad alta concentrazione a bassa concentrazione."
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🥛", name: "Grande becher (500 mL)" },
+        { emoji: "🔮", name: "Cristalli di KMnO₄ (1–2 piccoli granelli)" },
+        { emoji: "💧", name: "Acqua distillata (300 mL)" },
+        { emoji: "📏", name: "Righello" },
+        { emoji: "⏱️", name: "Cronometro" }
+      ],
+      observationsToRecord: [
+        "Raggio della zona viola a 0, 5, 10, 15, 20 minuti",
+        "Intensità del colore al centro del cristallo rispetto al bordo",
+        "Forma del fronte di diffusione (circolare? irregolare?)",
+        "Se l'acqua è stata disturbata durante l'osservazione"
+      ],
+      theoryPoints: [
+        "La diffusione è il movimento netto di particelle da una regione ad alta concentrazione a una a bassa concentrazione.",
+        "La diffusione è guidata dal moto termico casuale (browniano) delle molecole — non è richiesto alcun apporto di energia.",
+        "La velocità di diffusione dipende dalla temperatura, dalla dimensione delle particelle e dal gradiente di concentrazione.",
+        "Prima Legge di Fick: flusso ∝ gradiente di concentrazione; gradiente più ripido = diffusione più veloce."
+      ],
+      realWorldConnections: [
+        "L'ossigeno diffonde dagli alveoli nei polmoni nel flusso sanguigno attraverso un gradiente di concentrazione.",
+        "Le molecole di profumo diffondono attraverso l'aria dall'alta concentrazione vicino alla fonte alla concentrazione più bassa in tutta la stanza.",
+        "I nutrienti diffondono dall'intestino nei capillari circostanti durante la digestione."
+      ],
+      formula: "J = −D (dC/dx)  [Prima Legge di Fick]"
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cosa guida la diffusione in soluzione?",
+          options: [
+            "Un gradiente elettrico tra le cariche",
+            "Il moto termico casuale delle molecole",
+            "La gravità che tira le particelle verso il basso",
+            "Un pompaggio attivo da parte del solvente"
+          ],
+          correctIndex: 1,
+          explanation: "La diffusione è guidata dal moto termico casuale (browniano) delle molecole. Non è necessario alcun apporto di energia; le particelle si muovono semplicemente in modo casuale e nel tempo si diffondono da alta a bassa concentrazione."
+        },
+        {
+          text: "Perché il colore viola si diffonde verso l'esterno dal cristallo di KMnO₄?",
+          options: [
+            "Il cristallo è più denso dell'acqua e affonda, rilasciando colore verso il basso",
+            "Gli ioni KMnO₄ si muovono dall'alta concentrazione vicino al cristallo alla concentrazione più bassa più lontano",
+            "Le molecole d'acqua spingono il KMnO₄ lontano dal centro",
+            "La carica elettrica sul KMnO₄ respinge gli ioni verso l'esterno"
+          ],
+          correctIndex: 1,
+          explanation: "Il KMnO₄ si dissolve e rilascia ioni MnO₄⁻. Questi ioni sono altamente concentrati vicino al cristallo e diffondono verso l'esterno in regioni a concentrazione più bassa, creando l'alone viola che si espande."
+        },
+        {
+          text: "Cosa succederebbe alla velocità di diffusione se la temperatura dell'acqua fosse aumentata a 60°C?",
+          options: [
+            "La diffusione rallenterebbe perché il calore rende l'acqua più viscosa",
+            "La diffusione si fermerebbe perché il calore distrugge il KMnO₄",
+            "La diffusione accelererebbe perché le molecole hanno più energia termica",
+            "La velocità di diffusione resterebbe invariata; conta solo la concentrazione"
+          ],
+          correctIndex: 2,
+          explanation: "Una temperatura più alta conferisce alle molecole più energia cinetica, aumentando la frequenza e la velocità delle collisioni casuali. Questo accelera la diffusione."
+        }
+      ],
+      discussion: [
+        "Perché la velocità di diffusione sembra rallentare man mano che l'esperimento procede, anche se la temperatura non è cambiata?",
+        "Se ripetessi questo esperimento a 60°C, prevedi quale differenza vedresti e spiega perché.",
+        "Come si confronta la diffusione in soluzione con la diffusione in un gas? Quale è più veloce e perché?"
+      ]
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Diffusione e Gradiente di Concentrazione", pct: 45 },
+        { label: "Teoria Cinetica Molecolare", pct: 30 },
+        { label: "Legge di Fick", pct: 15 },
+        { label: "Osservazione Sperimentale", pct: 10 }
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che la diffusione richieda agitazione o una forza esterna — in realtà è guidata interamente dal moto molecolare casuale.",
+        "Molti studenti pensano che la diffusione continui finché tutte le molecole raggiungono il centro; in realtà si ferma quando la concentrazione è uniforme (equilibrio)."
+      ],
+      hook: "Senza diffusione, i tuoi polmoni non potrebbero trasferire ossigeno nel sangue — ogni respiro che fai si basa su questo semplice processo!",
+      khanLinks: [
+        { title: "Diffusione e Osmosi", url: "https://www.khanacademy.org/science/ap-biology/cell-structure-and-function/passive-transport/v/diffusion-and-osmosis" },
+        { title: "Teoria Cinetica Molecolare", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory/v/kinetic-molecular-theory-of-gas-phase" }
+      ]
+    },
+    dataTable: {
+      headers: ["Tempo (min)", "Raggio della Zona Viola (cm)", "Intensità del Colore (1–5)", "Note"],
+      rows: 5
+    },
+    observations: [
+      "Disegna la diffusione del colore viola ad ogni intervallo di 5 minuti",
+      "Stima il raggio della zona viola ad ogni punto temporale",
+      "Nota se la diffusione appare uniforme in tutte le direzioni"
+    ],
+    conclusion: "Spiega come le tue osservazioni confermano che la diffusione muove le particelle da alta a bassa concentrazione senza alcuna forza esterna.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai osservando la diffusione in azione — uno dei processi più importanti in tutta la biologia e la chimica. Osserviamo attentamente!",
+      keywords: {
+        setup: "Aggiungi il cristallo di KMnO₄ molto delicatamente in modo da non creare correnti nell'acqua. Il becher dovrebbe stare su una superficie priva di vibrazioni.",
+        formula: "Prima Legge di Fick: J = −D(dC/dx). Il flusso di diffusione è proporzionale al gradiente di concentrazione — gradiente più ripido significa diffusione più rapida.",
+        error: "Evita di disturbare il becher durante l'esperimento. Anche una piccola vibrazione crea correnti convettive che mascherano la vera diffusione.",
+        result: "Dovresti vedere un alone viola che cresce lentamente, con il colore più intenso vicino al cristallo e che sfuma verso i bordi.",
+        real: "L'ossigeno diffonde dai polmoni nel sangue usando lo stesso principio — alto O₂ negli alveoli, basso O₂ nel sangue, quindi si muove attraverso.",
+        explain: "La diffusione è causata dal moto molecolare casuale. Le molecole di KMnO₄ si muovono casualmente, ma poiché ce ne sono di più vicino al cristallo, il movimento netto è verso l'esterno.",
+        hook: "I cristalli di KMnO₄ sono di un viola-nero intenso — ma scioglili in acqua e ottieni un colore viola straordinario usato come disinfettante e per il trattamento dell'acqua!",
+        misconception: "La diffusione NON si ferma quando il gradiente scompare — le molecole continuano a muoversi casualmente, semplicemente non hanno più una direzione netta (equilibrio dinamico)."
+      },
+      hint: "Se il colore viola si diffonde in modo irregolare, controlla se ci sono correnti d'aria dal condizionatore o vibrazioni da altre apparecchiature che influenzano il becher.",
+      expected: "Una zona viola circolare si espande dal cristallo a circa 0,5–1 cm ogni 5 minuti a temperatura ambiente."
+    }
+  },
+  {
+    num: 103,
+    title: "Colloids",
+    section: "Materia e Soluzioni",
+    desc: "Dissolve sulphur in ethanol, add to water to create a colloid, then compare it to a true solution using a filter.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Students distinguish between true solutions, colloids, and suspensions by preparing a sulphur colloid and testing it with filtration.",
+      instructions: [
+        "Dissolve a small amount of sulphur powder in 5 mL of ethanol in a test tube.",
+        "Slowly add the sulphur-ethanol solution to 50 mL of distilled water while stirring.",
+        "Observe the milky appearance of the colloid that forms.",
+        "Filter the colloid through filter paper and compare the filtrate to the original.",
+        "Compare the colloid appearance with a true NaCl solution and a chalk suspension.",
+      ],
+      expectedOutcome: "The sulphur colloid appears milky and opalescent. Unlike a suspension, it passes through filter paper. Unlike a true solution, it scatters light visibly.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Test tubes and rack" },
+        { emoji: "🔆", name: "Sulphur powder (0.1 g)" },
+        { emoji: "🍶", name: "Ethanol (5 mL)" },
+        { emoji: "💧", name: "Distilled water (100 mL)" },
+        { emoji: "📄", name: "Filter paper and funnel" },
+        { emoji: "🥛", name: "Beaker (100 mL)" },
+      ],
+      observationsToRecord: [
+        "Appearance of sulphur-ethanol solution (clear or cloudy?)",
+        "Appearance after adding to water (colour, turbidity)",
+        "Whether colloid passes through filter paper",
+        "Comparison with true NaCl solution and chalk suspension",
+      ],
+      theoryPoints: [
+        "A colloid contains particles 1–1000 nm in diameter dispersed in a medium — too small to filter but large enough to scatter light.",
+        "True solutions have particle sizes <1 nm and are transparent; suspensions have particles >1000 nm that settle and can be filtered.",
+        "When sulphur (insoluble in water) is added via ethanol, it precipitates as colloidal particles stabilised in water.",
+        "Colloids are thermodynamically metastable: they appear stable but can be destabilised by changes in temperature or electrolyte concentration.",
+      ],
+      realWorldConnections: [
+        "Milk is a colloid of fat droplets dispersed in water — it looks white because colloidal particles scatter light.",
+        "Blood plasma is a colloid; proper colloid behaviour is essential for oxygen and nutrient transport.",
+        "Fog is a colloid of water droplets in air; aerosol sprays are colloids of liquid in gas.",
+      ],
+      formula: "Particle diameter: 1 nm < d < 1000 nm (colloid range)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "What distinguishes a colloid from a true solution?",
+          options: [
+            "Colloids contain ions; solutions contain molecules",
+            "Colloid particles are 1–1000 nm and scatter light; solution particles are <1 nm and do not",
+            "Colloids can be filtered; solutions cannot",
+            "Colloids always appear clear; solutions appear milky",
+          ],
+          correctIndex: 1,
+          explanation: "Colloid particles (1–1000 nm) are large enough to scatter light (Tyndall effect) but small enough to pass through filter paper. True solution particles (<1 nm) are too small to scatter light and the solution appears clear.",
+        },
+        {
+          text: "Why does sulphur form a colloid when the ethanol solution is added to water?",
+          options: [
+            "Sulphur dissolves in water to form ions",
+            "Ethanol reacts with water to release sulphur gas",
+            "Sulphur is insoluble in water and precipitates as tiny colloidal particles stabilised by the solvent change",
+            "Water oxidises sulphur into a new compound",
+          ],
+          correctIndex: 2,
+          explanation: "Sulphur dissolves in ethanol but not in water. When the ethanol solution is added to water, sulphur precipitates as very fine particles (colloid size) rather than a bulk precipitate, because the sudden change in solvent prevents large crystal formation.",
+        },
+        {
+          text: "What happens when you filter a colloid through ordinary filter paper?",
+          options: [
+            "The colloid is completely retained by the filter paper",
+            "The colloid passes through because colloidal particles are smaller than filter paper pores",
+            "Filtration converts the colloid into a true solution",
+            "The filter paper changes colour permanently",
+          ],
+          correctIndex: 1,
+          explanation: "Ordinary filter paper has pore sizes much larger than colloidal particles (1–1000 nm), so the colloid passes through unchanged. This is why colloids cannot be separated by simple filtration — unlike suspensions.",
+        },
+      ],
+      discussion: [
+        "How would you tell the difference between a colloid, a true solution, and a suspension without using a filter? What tests would you do?",
+        "Why does milk look white? Use your knowledge of colloids to explain.",
+        "Colloids are described as \"metastable.\" What does this mean and what could cause a colloid to destabilise?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Colloid vs. Solution vs. Suspension", pct: 40 },
+        { label: "Particle Size & Properties", pct: 30 },
+        { label: "Light Scattering (Tyndall Effect)", pct: 20 },
+        { label: "Filtration & Separation", pct: 10 },
+      ],
+      misconceptions: [
+        "Students often think colloids are the same as suspensions — but suspensions settle and can be filtered, while colloids do neither.",
+        "Many students assume that if a liquid looks cloudy it must be a suspension — in fact, many colloids appear cloudy or milky.",
+      ],
+      hook: "Milk, fog, blood, and even jelly are all colloids — one of the most important types of mixture in nature and industry!",
+      khanLinks: [
+        { title: "Introduction to Solutions", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions" },
+      ],
+    },
+    dataTable: {
+      headers: ["Sample", "Appearance", "Passes Filter?", "Scatters Light?", "Classification"],
+      rows: 4,
+    },
+    observations: [
+      "Record the appearance (colour, clarity) of each mixture",
+      "Note whether each sample passes through filter paper",
+      "Observe which samples scatter a torch beam (Tyndall effect)",
+    ],
+    conclusion: "Summarise the key differences between the three types of mixture based on your observations and link to particle size theory.",
+    ai: {
+      opening: "Hey! I'm Gali. You're making a colloid today — a mysterious type of mixture that's neither a true solution nor a suspension. Fascinating stuff!",
+      keywords: {
+        setup: "Add the sulphur-ethanol solution dropwise to water while stirring gently. Adding it too fast may create larger particles that settle.",
+        formula: "Colloid particle diameter: 1 nm to 1000 nm. This size range gives colloids their unique optical properties.",
+        error: "Do not use too much sulphur — excess sulphur creates a visible suspension that settles, instead of a true colloid.",
+        result: "Expect a milky-white opalescent liquid that passes through filter paper but scatters a light beam (Tyndall effect).",
+        real: "Milk is a colloid of fat in water; the white colour comes from light scattering by colloidal fat droplets — same physics as your sulphur colloid!",
+        explain: "Colloidal particles are large enough to scatter light but small enough to stay suspended indefinitely due to Brownian motion.",
+        hook: "The sky is blue because air acts like a colloid — tiny dust and gas molecules scatter short-wavelength blue light more than red light!",
+        misconception: "A colloid is NOT a solution — the sulphur is not dissolved at the atomic level. But it is NOT a suspension either — it does not settle.",
+      },
+      hint: "If your colloid settles after a few minutes, the particles are too large. Dilute the original sulphur-ethanol solution more before adding to water.",
+      expected: "A milky opalescent colloid that passes through filter paper and shows the Tyndall effect when a torch beam is shone through it.",
+    },
+  },
+  {
+    num: 104,
+    title: "Proprietà dei Colloidi",
+    section: "Materia e Soluzioni",
+    desc: "Dimostrare l'effetto Tyndall con una torcia, coagulare un colloide con NaCl e testare il latte come colloide naturale.",
+    setupTime: "10 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti indagano le due proprietà caratteristiche dei colloidi: la diffusione della luce (effetto Tyndall) e la coagulazione tramite elettroliti.",
+      instructions: [
+        "Preparare il colloide di zolfo dall'Esperimento 103, oppure usare latte diluito.",
+        "Puntare un raggio laser o di torcia attraverso il colloide in una stanza buia — osservare il percorso della luce.",
+        "Puntare lo stesso raggio attraverso una vera soluzione di NaCl per confronto.",
+        "Aggiungere 1 mL di soluzione satura di NaCl al colloide e osservare il cambiamento.",
+        "Registrare se il colloide diventa torbido o se si deposita dopo l'aggiunta del sale.",
+      ],
+      expectedOutcome: "Il colloide mostra un raggio di luce visibile (effetto Tyndall); la soluzione di NaCl no. L'aggiunta di NaCl causa la coagulazione e la sedimentazione del colloide.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔦", name: "Torcia o puntatore laser" },
+        { emoji: "🥛", name: "Colloide di zolfo o latte diluito" },
+        { emoji: "🧂", name: "Soluzione satura di NaCl (5 mL)" },
+        { emoji: "🧪", name: "Provette (x4)" },
+        { emoji: "💧", name: "Acqua distillata" },
+      ],
+      observationsToRecord: [
+        "Visibilità del raggio di luce nel colloide rispetto alla vera soluzione",
+        "Aspetto del colloide prima e dopo l'aggiunta di NaCl",
+        "Tempo di sedimentazione delle particelle coagulate",
+        "Confronto dell'effetto Tyndall tra latte e colloide di zolfo",
+      ],
+      theoryPoints: [
+        "L'effetto Tyndall: le particelle colloidali diffondono la luce, rendendo visibile il raggio; le vere soluzioni non diffondono significativamente la luce.",
+        "I colloidi sono stabilizzati da cariche superficiali (potenziale zeta) che mantengono le particelle in repulsione reciproca.",
+        "L'aggiunta di elettroliti (NaCl) neutralizza le cariche superficiali, permettendo alle particelle di aggregarsi (coagulare) e sedimentare.",
+        "Il latte è un colloide naturale di proteine della caseina e globuli di grasso dispersi in acqua.",
+      ],
+      realWorldConnections: [
+        "Gli impianti di trattamento dell'acqua usano solfato di alluminio per coagulare le impurità colloidali e farle sedimentare per la rimozione.",
+        "L'effetto Tyndall spiega perché i fari delle auto sono visibili come raggi in condizioni di nebbia.",
+        "L'aggiunta di sale o acido al latte lo fa cagliare (coagulare) — la base della produzione del formaggio.",
+      ],
+      formula: "Effetto Tyndall: I_scatter ∝ 1/λ⁴ (diffusione di Rayleigh per particelle piccole)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cos'è l'effetto Tyndall?",
+          options: [
+            "Il riscaldamento di un colloide per assorbimento di luce",
+            "La diffusione di un raggio di luce da parte delle particelle colloidali, che lo rende visibile",
+            "Il cambiamento di colore di un colloide quando si aggiungono elettroliti",
+            "La sedimentazione delle particelle in una sospensione nel tempo",
+          ],
+          correctIndex: 1,
+          explanation: "L'effetto Tyndall è la diffusione della luce da parte delle particelle colloidali. Poiché le particelle colloidali (1–1000 nm) sono di dimensioni comparabili alla lunghezza d'onda della luce visibile, diffondono il raggio di luce e lo rendono visibile.",
+        },
+        {
+          text: "Perché l'aggiunta di NaCl causa la coagulazione di un colloide?",
+          options: [
+            "NaCl reagisce chimicamente con le particelle colloidali",
+            "NaCl aumenta la viscosità dell'acqua, rallentando le particelle",
+            "Gli ioni Na⁺ e Cl⁻ neutralizzano le cariche superficiali che tengono separate le particelle colloidali",
+            "NaCl adsorbe le particelle sulla sua superficie cristallina",
+          ],
+          correctIndex: 2,
+          explanation: "Le particelle colloidali sono stabilizzate da cariche elettriche sulle loro superfici. Quando si aggiunge NaCl, gli ioni neutralizzano queste cariche, riducendo la repulsione tra le particelle. Senza repulsione, le particelle collidono e si attaccano insieme (coagulano), poi sedimentano.",
+        },
+        {
+          text: "Quale dei seguenti è un esempio reale di coagulazione di un colloide?",
+          options: [
+            "Sciogliere il sale nell'acqua",
+            "Il ghiaccio che si scioglie in una stanza calda",
+            "Il latte che caglia quando si aggiunge acido o sale",
+            "Il vapore che condensa su una finestra fredda",
+          ],
+          correctIndex: 2,
+          explanation: "Il latte è un colloide di particelle proteiche (caseina). L'aggiunta di acido o sale neutralizza le cariche superficiali sulla caseina, causando la coagulazione delle particelle proteiche e la formazione di cagliata — il primo passo nella produzione del formaggio.",
+        },
+      ],
+      discussion: [
+        "Come potresti usare l'effetto Tyndall per determinare se una bevanda è stata adulterata con un additivo colloidale?",
+        "Nel trattamento dell'acqua, perché la coagulazione è seguita dalla filtrazione? Cosa succederebbe se facessi solo un passaggio?",
+        "Perché il cielo appare blu durante il giorno ma rosso/arancione al tramonto? Come si collega questo all'effetto Tyndall?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Effetto Tyndall e Diffusione della Luce", pct: 35 },
+        { label: "Coagulazione e Potenziale Zeta", pct: 35 },
+        { label: "Stabilità dei Colloidi", pct: 20 },
+        { label: "Applicazioni nel Mondo Reale", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti pensano che tutti i liquidi bianchi o torbidi mostrino l'effetto Tyndall — ma l'intensità dipende dalla dimensione e dalla concentrazione delle particelle.",
+        "Molti pensano che la coagulazione distrugga le particelle — in realtà le particelle esistono ancora, si aggregano semplicemente e sedimentano.",
+      ],
+      hook: "L'effetto Tyndall è il motivo per cui puoi vedere un raggio laser attraverso l'aria nebbiosa — e perché il cielo è blu!",
+      khanLinks: [
+        { title: "Introduzione alle Soluzioni", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions" },
+      ],
+    },
+    dataTable: {
+      headers: ["Campione", "Effetto Tyndall?", "Aspetto Prima di NaCl", "Aspetto Dopo NaCl", "Tempo di Sedimentazione (min)"],
+      rows: 4,
+    },
+    observations: [
+      "Visibilità e luminosità del raggio di luce attraverso ogni campione",
+      "Cambiamento nell'aspetto del colloide dopo l'aggiunta della soluzione di NaCl",
+      "Se le particelle coagulate alla fine sedimentano sul fondo",
+    ],
+    conclusion: "Spiega come l'effetto Tyndall e la coagulazione dimostrano le proprietà uniche dei colloidi rispetto alle vere soluzioni.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi esplorerai ciò che rende unici i colloidi — dai bellissimi raggi di luce alla scienza della produzione del formaggio. Entusiasmante!",
+      keywords: {
+        setup: "Usa una torcia in una stanza buia per il miglior effetto Tyndall. Illumina attraverso il lato della provetta, non dall'alto.",
+        formula: "L'intensità dell'effetto Tyndall è legata alla diffusione di Rayleigh: I ∝ 1/λ⁴ — le lunghezze d'onda più corte (luce blu) si diffondono di più.",
+        error: "Usare troppo NaCl tutto insieme può dare un risultato poco chiaro. Aggiungilo goccia a goccia e osserva la coagulazione graduale.",
+        result: "Il raggio della torcia dovrebbe essere chiaramente visibile nel colloide ma invisibile nella soluzione di NaCl. Dopo aver aggiunto il sale, il colloide dovrebbe diventare torbido e poi sedimentare.",
+        real: "Gli impianti di trattamento dell'acqua usano esattamente questo processo — aggiungono allume (un elettrolita) per coagulare fango colloidale e batteri, poi filtrano il fango sedimentato.",
+        explain: "Le cariche superficiali sulle particelle colloidali le tengono separate. Gli elettroliti neutralizzano quelle cariche, permettendo alle particelle di aggregarsi (coagulare) e infine sedimentare.",
+        hook: "Il colore blu del cielo è in realtà un effetto simile a quello di Tyndall — minuscole molecole d'aria diffondono la luce blu più di quella rossa, facendo apparire il cielo blu!",
+        misconception: "La coagulazione NON è la stessa cosa della cristallizzazione — le particelle non formano una struttura cristallina, si aggregano semplicemente in aggregati più grandi.",
+      },
+      hint: "Se la coagulazione è lenta, riscalda leggermente la soluzione — una temperatura più alta accelera le collisioni tra particelle e la coagulazione.",
+      expected: "Raggio Tyndall chiaro nel colloide; nessun raggio nella soluzione. L'aggiunta di NaCl causa torbidità visibile seguita dalla sedimentazione delle particelle di zolfo.",
+    },
+  },
+  {
+    num: 105,
+    title: "Complessi di Coordinazione",
+    section: "Materia e Soluzioni",
+    desc: "Aggiungere ammoniaca a CuSO₄ per formare un complesso blu intenso, e NaCl per formare un complesso verde brillante.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti osservano come gli ioni metallici formano complessi di coordinazione con diversi leganti, producendo colori caratteristici.",
+      instructions: [
+        "Preparare 20 mL di soluzione di CuSO₄ 0,1 M in un becher.",
+        "Aggiungere lentamente goccia a goccia soluzione diluita di ammoniaca (NH₃) mescolando; osservare il cambiamento di colore.",
+        "Continuare ad aggiungere NH₃ finché la soluzione non diventa blu intenso — registrare il colore a ogni stadio.",
+        "In un becher separato, aggiungere NaCl solido alla soluzione di CuSO₄ e osservare il cambiamento di colore in verde brillante.",
+        "Confrontare i due complessi e discutere come i leganti influenzano il colore.",
+      ],
+      expectedOutcome: "CuSO₄ + NH₃ produce un complesso tetraamminorame(II) blu intenso [Cu(NH₃)₄]²⁺. CuSO₄ + NaCl produce un complesso clororame verde brillante.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔵", name: "Soluzione di CuSO₄ (0,1 M, 50 mL)" },
+        { emoji: "🧴", name: "Soluzione diluita di ammoniaca (NH₃, 25 mL)" },
+        { emoji: "🧂", name: "NaCl solido (2 g)" },
+        { emoji: "🥛", name: "Becher (100 mL, x2)" },
+        { emoji: "🧪", name: "Pipetta contagocce" },
+      ],
+      observationsToRecord: [
+        "Colore della soluzione di CuSO₄ prima di qualsiasi aggiunta (azzurro pallido)",
+        "Colore a ogni stadio dell'aggiunta di NH₃ (azzurro pallido → verde-blu → blu intenso)",
+        "Colore di CuSO₄ dopo l'aggiunta di NaCl (verde brillante)",
+        "Eventuale formazione di precipitato (Cu(OH)₂ azzurro pallido prima dell'eccesso di NH₃)",
+      ],
+      theoryPoints: [
+        "I complessi di coordinazione si formano quando i leganti donano coppie di elettroni a uno ione metallico centrale.",
+        "[Cu(H₂O)₄]²⁺ (azzurro pallido) è sostituito da [Cu(NH₃)₄]²⁺ (blu intenso) quando NH₃ sostituisce i leganti acqua.",
+        "Il colore di un complesso dipende dalla scissione del campo dei leganti (differenza di energia degli orbitali d) — leganti diversi danno colori diversi.",
+        "I leganti Cl⁻ creano un campo più debole rispetto a NH₃, dando al complesso clororame verde un'energia di transizione d-d diversa.",
+      ],
+      realWorldConnections: [
+        "I complessi di coordinazione sono usati nella galvanoplastica — la ramatura usa complessi [Cu(CN)₄]²⁻ per una deposizione uniforme.",
+        "L'emoglobina è un complesso di coordinazione del ferro che lega e rilascia ossigeno nel corpo.",
+        "L'EDTA, usato nelle provette per la raccolta del sangue, è un legante che forma complessi stabili con Ca²⁺ per prevenire la coagulazione del sangue.",
+      ],
+      formula: "Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺  (blu intenso)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cos'è un legante in un complesso di coordinazione?",
+          options: [
+            "Lo ione metallico centrale che accetta elettroni",
+            "Una molecola o ione che dona una coppia solitaria di elettroni allo ione metallico",
+            "Un sale che si dissolve in acqua per formare ioni",
+            "Un precipitato insolubile formato dal metallo",
+          ],
+          correctIndex: 1,
+          explanation: "Un legante è una molecola o ione che dona una coppia solitaria di elettroni allo ione metallico centrale, formando un legame coordinato (dativo). NH₃ e Cl⁻ sono entrambi leganti in questo esperimento.",
+        },
+        {
+          text: "Perché il colore della soluzione cambia quando si aggiunge NH₃ a CuSO₄?",
+          options: [
+            "NH₃ reagisce con SO₄²⁻ per formare un nuovo composto che assorbe luce diversa",
+            "NH₃ riduce Cu²⁺ a rame metallico, che ha un colore diverso",
+            "NH₃ sostituisce i leganti acqua attorno a Cu²⁺, cambiando la scissione energetica degli orbitali d e quindi il colore",
+            "NH₃ aumenta la concentrazione degli ioni Cu²⁺, intensificando il colore blu",
+          ],
+          correctIndex: 2,
+          explanation: "Leganti diversi scindono gli orbitali d di Cu²⁺ in misure diverse (teoria del campo dei leganti). NH₃ li scinde più dell'H₂O, cambiando l'energia delle transizioni d-d e quindi la lunghezza d'onda della luce assorbita — risultando in un colore blu più intenso.",
+        },
+        {
+          text: "Cosa si forma inizialmente quando si aggiunge una piccola quantità di NH₃ alla soluzione di CuSO₄?",
+          options: [
+            "[Cu(NH₃)₄]²⁺ blu intenso immediatamente",
+            "Un precipitato azzurro pallido di Cu(OH)₂, prima che l'eccesso di NH₃ lo dissolva",
+            "Un precipitato rosso di rame metallico",
+            "Non si osserva alcun cambiamento visibile",
+          ],
+          correctIndex: 1,
+          explanation: "Inizialmente, NH₃ aumenta il pH e causa la precipitazione di Cu(OH)₂ (solido azzurro pallido). Con eccesso di NH₃, questo si dissolve poiché Cu²⁺ forma il complesso stabile [Cu(NH₃)₄]²⁺ tetraamminorame(II) blu intenso.",
+        },
+      ],
+      discussion: [
+        "Perché cambiare il legante attorno a uno ione metallico cambia il colore del complesso? Spiega in termini di livelli energetici degli elettroni.",
+        "L'emoglobina è un complesso di coordinazione del ferro. Perché l'avvelenamento da monossido di carbonio (CO) potrebbe essere così pericoloso in base a ciò che sai sulla competizione tra leganti?",
+        "Se aggiungessi EDTA alla tua soluzione blu intenso di [Cu(NH₃)₄]²⁺, cosa potrebbe succedere e perché?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Chimica di Coordinazione e Leganti", pct: 40 },
+        { label: "Colore dalla Scissione degli Orbitali d", pct: 30 },
+        { label: "Reazioni di Sostituzione dei Leganti", pct: 20 },
+        { label: "Applicazioni Biologiche e Industriali", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che il cambiamento di colore sia dovuto a una reazione chimica che produce un nuovo composto — in realtà è un cambiamento nell'ambiente di coordinazione attorno allo stesso ione Cu²⁺.",
+        "Molti pensano che tutti i composti del rame siano blu — in realtà, leganti diversi danno a Cu²⁺ colori molto diversi (blu, verde, incolore).",
+      ],
+      hook: "Il blu intenso di [Cu(NH₃)₄]²⁺ era usato dagli antichi Egizi come pigmento — e la stessa chimica spiega perché il tuo sangue è rosso (complesso del ferro)!",
+      khanLinks: [
+        { title: "Stati di Ossidazione", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/introduction-to-oxidation-reduction-reactions/v/introduction-to-oxidation-states" },
+      ],
+    },
+    dataTable: {
+      headers: ["Aggiunta", "Volume Aggiunto (mL)", "Colore Osservato", "Precipitato?", "Note"],
+      rows: 6,
+    },
+    observations: [
+      "Colore della soluzione a ogni stadio dell'aggiunta di NH₃",
+      "Formazione e dissoluzione di eventuali precipitati",
+      "Colore finale di entrambi i complessi (complesso con NH₃ e complesso con NaCl)",
+    ],
+    conclusion: "Spiega come leganti diversi (NH₃ vs Cl⁻ vs H₂O) influenzano il colore dei complessi del rame, e collega questo alla teoria del campo dei leganti.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi farai complessi di coordinazione — lo stesso tipo di chimica che rende rosso il tuo sangue e blu i minerali di rame. Incredibile!",
+      keywords: {
+        setup: "Aggiungi NH₃ goccia a goccia e mescola continuamente. Aggiungere troppo velocemente causa un eccesso di precipitato prima che si formi il complesso.",
+        formula: "Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺. Questa è una sostituzione di leganti dove 4 molecole d'acqua attorno a Cu²⁺ sono sostituite da 4 molecole di ammoniaca.",
+        error: "Un errore comune è fermarsi allo stadio del precipitato azzurro pallido — continua ad aggiungere NH₃ finché il precipitato non si dissolve completamente e si forma il complesso blu intenso.",
+        result: "Con NH₃: soluzione blu intensa. Con NaCl: soluzione verde brillante. Questi sono due diversi complessi di coordinazione del rame.",
+        real: "L'emoglobina (sangue) e la clorofilla (piante) sono entrambi complessi di coordinazione — l'eme è a base di ferro, la clorofilla è a base di magnesio.",
+        explain: "Leganti diversi scindono gli orbitali d di Cu²⁺ in modo diverso (scissione del campo dei leganti). Questo cambia quali lunghezze d'onda della luce vengono assorbite, cambiando il colore.",
+        hook: "La Statua della Libertà è fatta di rame — è verde perché l'umidità atmosferica e la CO₂ formano complessi di carbonato di rame sulla sua superficie!",
+        misconception: "Il cambiamento di colore NON è dovuto alla formazione di un elemento completamente nuovo — Cu²⁺ è ancora presente, solo circondato da leganti diversi che cambiano le sue proprietà ottiche.",
+      },
+      hint: "Se la soluzione diventa verde invece che blu con NH₃, potresti avere contaminazione da NaCl — risciacqua accuratamente tutta la vetreria prima di iniziare.",
+      expected: "[Cu(NH₃)₄]²⁺ blu intenso con eccesso di ammoniaca; complesso verde brillante con leganti Cl⁻ dall'aggiunta di NaCl.",
+    },
+  },
+  {
+    num: 106,
+    title: "Effetti della Temperatura sulla Solubilità",
+    section: "Materia e Soluzioni",
+    desc: "Testare la solubilità di CaCO₃, CuSO₄, NaCl e saccarosio a temperatura ambiente e a 70°C.",
+    setupTime: "15 min",
+    duration: "35 min",
+    summary: {
+      whatTheyLearn: "Gli studenti scoprono che la temperatura influenza la solubilità di diversi soluti in modo diverso: la maggior parte dei sali ionici e dei composti molecolari diventano più solubili quando riscaldati.",
+      instructions: [
+        "Preparare quattro provette con 10 mL di acqua distillata ciascuna a temperatura ambiente.",
+        "Aggiungere quantità uguali di CaCO₃, CuSO₄, NaCl e saccarosio a ciascuna provetta e mescolare.",
+        "Registrare quanto si dissolve a temperatura ambiente (qualitativo: nulla/parziale/completa).",
+        "Riscaldare le provette in un bagno d'acqua a 70°C per 5 minuti e mescolare.",
+        "Registrare il cambiamento nella solubilità per ciascun soluto alla temperatura più alta.",
+      ],
+      expectedOutcome: "CuSO₄, NaCl e saccarosio mostrano una maggiore solubilità a 70°C; CaCO₃ rimane quasi insolubile a entrambe le temperature.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Provette (x4)" },
+        { emoji: "🌡️", name: "Bagno d'acqua o piastra riscaldante (70°C)" },
+        { emoji: "🔵", name: "CuSO₄ (0,5 g)" },
+        { emoji: "🧂", name: "NaCl (0,5 g), saccarosio (0,5 g), CaCO₃ (0,5 g)" },
+        { emoji: "💧", name: "Acqua distillata (50 mL)" },
+      ],
+      observationsToRecord: [
+        "Quantità disciolta a temperatura ambiente per ciascun soluto",
+        "Quantità disciolta a 70°C per ciascun soluto",
+        "Colore e limpidezza di ciascuna soluzione a entrambe le temperature",
+        "Eventuali cambiamenti di colore (CuSO₄ è blu; CaCO₃ è bianco e insolubile)",
+      ],
+      theoryPoints: [
+        "La solubilità è la quantità massima di soluto che si dissolve in un dato volume di solvente a una temperatura specifica.",
+        "Per la maggior parte dei solidi ionici (NaCl, CuSO₄), la solubilità aumenta con la temperatura perché il processo di dissoluzione è endotermico.",
+        "CaCO₃ è altamente insolubile perché l'energia reticolare del suo cristallo è molto alta rispetto all'energia di idratazione.",
+        "I cambiamenti di temperatura spostano l'equilibrio di dissoluzione secondo il Principio di Le Chatelier: il riscaldamento favorisce la direzione endotermica della dissoluzione.",
+      ],
+      realWorldConnections: [
+        "L'acqua calda dissolve più composti del caffè o del tè — l'aumento della solubilità a temperature più elevate estrae più sapore.",
+        "I tubi dell'acqua sviluppano depositi di CaCO₃ (calcare) quando l'acqua calda perde CO₂ disciolto, riducendo la solubilità dei carbonati.",
+        "I pesci hanno bisogno di ossigeno disciolto — l'acqua più calda contiene meno O₂, motivo per cui le morie di pesci si verificano durante le ondate di calore estive.",
+      ],
+      formula: "Ksp (CaCO₃) = [Ca²⁺][CO₃²⁻] = 3,3 × 10⁻⁹ mol²/L²",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cosa si intende per solubilità di una sostanza?",
+          options: [
+            "La velocità con cui una sostanza si dissolve in acqua",
+            "La massa massima di un soluto che si dissolve in 100 g di solvente a una data temperatura",
+            "Il volume di solvente necessario per dissolvere 1 g di qualsiasi soluto",
+            "La temperatura alla quale una sostanza inizia a dissolversi",
+          ],
+          correctIndex: 1,
+          explanation: "La solubilità è la quantità massima (solitamente in grammi) di soluto che si dissolve completamente in 100 g (o 100 mL) di solvente a una temperatura specifica per formare una soluzione satura.",
+        },
+        {
+          text: "Perché il saccarosio diventa più solubile in acqua all'aumentare della temperatura?",
+          options: [
+            "Il saccarosio reagisce con l'acqua calda per produrre ioni che si dissolvono più facilmente",
+            "La temperatura più alta fornisce alle molecole d'acqua più energia per rompere i legami dei cristalli di saccarosio",
+            "L'acqua calda evapora, lasciando più spazio per le molecole di saccarosio",
+            "Il saccarosio fonde a 70°C e diventa un liquido che si mescola con l'acqua",
+          ],
+          correctIndex: 1,
+          explanation: "Una temperatura più alta aumenta l'energia cinetica delle molecole d'acqua. Questo fornisce loro più energia per rompere i legami intermolecolari che tengono insieme i cristalli di saccarosio, permettendo a più saccarosio di dissolversi.",
+        },
+        {
+          text: "CaCO₃ è quasi insolubile sia a temperatura ambiente che a 70°C. Quale spiegazione è la migliore?",
+          options: [
+            "CaCO₃ è un gas ad alte temperature",
+            "CaCO₃ ha un'energia reticolare molto alta che non viene superata dall'energia di idratazione, anche a 70°C",
+            "Il calcio non può formare ioni in acqua",
+            "Lo ione CO₃²⁻ reagisce con l'acqua e impedisce la dissoluzione",
+          ],
+          correctIndex: 1,
+          explanation: "CaCO₃ ha un'energia reticolare estremamente alta (forti legami cristallini). L'energia rilasciata dall'idratazione dei suoi ioni è insufficiente per superare questa energia reticolare, quindi molto poco si dissolve indipendentemente dalla temperatura.",
+        },
+      ],
+      discussion: [
+        "L'ossigeno gassoso diventa meno solubile in acqua all'aumentare della temperatura. In che modo questo differisce dalla maggior parte dei solidi ionici, e cosa ti dice sul segno di ΔH per la dissoluzione del gas in acqua?",
+        "Usando il Principio di Le Chatelier, spiega perché il riscaldamento aumenta la solubilità di NaCl se la reazione di dissoluzione è endotermica.",
+        "Come potrebbe il cambiamento climatico (aumento delle temperature oceaniche) influenzare la capacità dell'acqua oceanica di dissolvere CO₂? Quali sono le conseguenze ambientali?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Solubilità e Saturazione", pct: 35 },
+        { label: "Effetto della Temperatura sulla Solubilità", pct: 35 },
+        { label: "Energia Reticolare vs. Energia di Idratazione", pct: 20 },
+        { label: "Principio di Le Chatelier", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso assumono che tutte le sostanze diventino più solubili quando riscaldate — i gas in realtà diventano meno solubili a temperature più elevate.",
+        "Molti pensano che una sostanza sia 'insolubile' solo se non si dissolve nulla — anche CaCO₃ dissolve una quantità minima (Ksp = 3,3 × 10⁻⁹).",
+      ],
+      hook: "Perché i pesci muoiono in acqua molto calda? Perché l'acqua calda contiene meno ossigeno disciolto — la solubilità di O₂ diminuisce con l'aumento della temperatura!",
+      khanLinks: [
+        { title: "Solubilità e Forze Intermolecolari", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/solutions-chemistry/v/solubility-and-intermolecular-forces" },
+      ],
+    },
+    dataTable: {
+      headers: ["Soluto", "Disciolto a 20°C (g/100mL)", "Disciolto a 70°C (g/100mL)", "Variazione", "Osservazione"],
+      rows: 4,
+    },
+    observations: [
+      "Limpidezza e colore di ciascuna soluzione a temperatura ambiente",
+      "Cambiamento visivo nella quantità disciolta dopo il riscaldamento a 70°C",
+      "Quali soluti mostrano il maggior cambiamento di solubilità con la temperatura",
+    ],
+    conclusion: "Confrontare come la temperatura influenza ciascun soluto e collegare i risultati all'energia reticolare, all'energia di idratazione e al Principio di Le Chatelier.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai esplorando come i cambiamenti di temperatura influenzano la quantità di una sostanza che può dissolversi — una domanda cruciale per tutto, dalla cucina alla scienza ambientale!",
+      keywords: {
+        setup: "Usa quantità uguali di ciascun soluto per un confronto equo. Controlla attentamente la temperatura del bagno d'acqua — usa un termometro.",
+        formula: "Prodotto di solubilità: Ksp = [Ca²⁺][CO₃²⁻]. Per CaCO₃ questo è 3,3 × 10⁻⁹, spiegando la sua solubilità quasi nulla.",
+        error: "Non aggiungere troppo soluto in una volta — vuoi vedere il punto di saturazione, quindi aggiungi piccole quantità e osserva se ogni aggiunta si dissolve.",
+        result: "CuSO₄ e saccarosio si dissolveranno chiaramente di più a 70°C. NaCl mostra solo un modesto aumento. CaCO₃ rimane per lo più indisciolto a entrambe le temperature.",
+        real: "Le sorgenti termali in tutto il mondo precipitano minerali (CaCO₃, silicati) quando l'acqua si raffredda — i minerali che erano disciolti ad alta temperatura escono dalla soluzione.",
+        explain: "La dissoluzione della maggior parte dei composti ionici è endotermica — aggiungere calore sposta l'equilibrio verso una maggiore dissoluzione (Principio di Le Chatelier).",
+        hook: "Il caffè istantaneo si dissolve in acqua calda ma non in acqua fredda — stai usando la temperatura per aumentare la solubilità ogni mattina!",
+        misconception: "Mescolare accelera la velocità di dissoluzione ma NON aumenta la solubilità massima (la concentrazione finale satura). La solubilità è una proprietà dipendente solo dalla temperatura.",
+      },
+      hint: "Se CuSO₄ non sembra dissolversi di più a 70°C, verifica di stare misurando per massa disciolta per unità di volume, non solo per aspetto visivo.",
+      expected: "Maggiore solubilità per CuSO₄, NaCl e saccarosio a 70°C; CaCO₃ essenzialmente insolubile a entrambe le temperature.",
+    },
+  },
+  {
+    num: 107,
+    title: "Densità delle Sostanze",
+    section: "Materia e Soluzioni",
+    desc: "Misurare la densità di acqua, glicerolo, un oggetto solido e ghiaccio usando un cilindro graduato e una bilancia.",
+    setupTime: "10 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti calcolano la densità (massa/volume) per diversi stati della materia e imparano perché il ghiaccio galleggia sull'acqua.",
+      instructions: [
+        "Misurare la massa e il volume di 50 mL di acqua distillata usando una bilancia e un cilindro graduato.",
+        "Ripetere per 50 mL di glicerolo.",
+        "Misurare la massa e il volume di un oggetto solido (cilindro metallico o pietra) usando lo spostamento dell'acqua.",
+        "Misurare la massa e il volume di un cubetto di ghiaccio appena tolto dal freezer.",
+        "Calcolare la densità = massa/volume per ciascuno e confrontare.",
+      ],
+      expectedOutcome: "Acqua ≈ 1,00 g/mL, glicerolo ≈ 1,26 g/mL, ghiaccio ≈ 0,917 g/mL. La densità del ghiaccio è inferiore a quella dell'acqua, spiegando perché galleggia.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "📐", name: "Cilindro graduato (100 mL)" },
+        { emoji: "⚖️", name: "Bilancia elettronica (±0,01 g)" },
+        { emoji: "💧", name: "Acqua distillata (100 mL)" },
+        { emoji: "🍯", name: "Glicerolo (50 mL)" },
+        { emoji: "🧊", name: "Cubetto di ghiaccio" },
+        { emoji: "🪨", name: "Piccolo oggetto solido (cilindro metallico)" },
+      ],
+      observationsToRecord: [
+        "Massa e volume di ciascun campione",
+        "Densità calcolata per ciascuna sostanza",
+        "Confronto delle densità misurate con i valori di letteratura",
+        "Osservazione del ghiaccio che galleggia sull'acqua",
+      ],
+      theoryPoints: [
+        "Densità (ρ) = massa (m) / volume (V); le unità sono g/mL o g/cm³.",
+        "I liquidi più densi affondano sotto quelli meno densi: il glicerolo affonda sotto l'acqua, che affonda sotto l'olio.",
+        "Il ghiaccio è meno denso dell'acqua liquida (0,917 vs 1,00 g/mL) perché la rete esagonale di legami idrogeno nel ghiaccio occupa più spazio.",
+        "Spostamento del volume: volume immerso = volume di acqua spostato; questo permette di misurare i volumi di solidi irregolari.",
+      ],
+      realWorldConnections: [
+        "Gli iceberg galleggiano con circa il 10% sopra l'acqua (densità del ghiaccio ~0,917 g/mL vs acqua di mare ~1,025 g/mL).",
+        "Le differenze di densità tra acqua salata e dolce creano stratificazione delle correnti oceaniche, guidando i modelli climatici globali.",
+        "L'idrometria (misurazione della densità dei liquidi) è usata nei birrifici per misurare il contenuto alcolico durante la fermentazione.",
+      ],
+      formula: "ρ = m/V  [g/mL o g/cm³]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quale formula esprime correttamente la densità?",
+          options: [
+            "ρ = V/m",
+            "ρ = m × V",
+            "ρ = m/V",
+            "ρ = m − V",
+          ],
+          correctIndex: 2,
+          explanation: "La densità è uguale alla massa divisa per il volume: ρ = m/V. Per esempio, l'acqua ha una massa di 100 g e un volume di 100 mL, dando ρ = 1,00 g/mL.",
+        },
+        {
+          text: "Perché il ghiaccio galleggia sull'acqua liquida?",
+          options: [
+            "Il ghiaccio è più caldo dell'acqua liquida e il calore fa galleggiare le cose",
+            "Il ghiaccio ha una densità inferiore all'acqua liquida perché i legami idrogeno creano una struttura cristallina meno compatta",
+            "Il ghiaccio è più leggero perché contiene meno molecole dell'acqua liquida",
+            "Il ghiaccio galleggia perché le molecole d'acqua lo spingono verso l'alto attraverso la convezione",
+          ],
+          correctIndex: 1,
+          explanation: "Nel ghiaccio, le molecole d'acqua formano una rete rigida esagonale di legami idrogeno che le mantiene più distanziate rispetto all'acqua liquida. Questo rende il ghiaccio meno denso (0,917 g/mL) dell'acqua liquida (1,00 g/mL), quindi galleggia.",
+        },
+        {
+          text: "Hai 50 mL di glicerolo con una massa di 63 g. Qual è la sua densità?",
+          options: [
+            "0,79 g/mL",
+            "1,00 g/mL",
+            "1,26 g/mL",
+            "2,52 g/mL",
+          ],
+          correctIndex: 2,
+          explanation: "Densità = massa/volume = 63 g / 50 mL = 1,26 g/mL, che è la densità corretta del glicerolo.",
+        },
+      ],
+      discussion: [
+        "Se versassi glicerolo, acqua e olio vegetale in un cilindro alto, prevedi l'ordine degli strati dal basso verso l'alto. Spiega il tuo ragionamento.",
+        "Perché il fatto che il ghiaccio sia meno denso dell'acqua è biologicamente importante per la vita acquatica nei climi freddi?",
+        "Come potresti usare le misurazioni di densità per determinare se un pezzo di metallo è oro puro (ρ = 19,3 g/cm³) o un falso placcato oro?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Misurazione e Calcolo della Densità", pct: 40 },
+        { label: "Stati della Materia e Struttura", pct: 30 },
+        { label: "Metodo dello Spostamento dell'Acqua", pct: 20 },
+        { label: "Applicazioni della Densità nel Mondo Reale", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti pensano che gli oggetti più pesanti affondhino sempre — in realtà, è la densità (massa per volume), non la massa totale, che determina se qualcosa galleggia.",
+        "Molti pensano che il ghiaccio galleggi perché è 'più leggero' — ma un grande blocco di ghiaccio è molto pesante; galleggia a causa della sua densità inferiore.",
+      ],
+      hook: "Se il ghiaccio fosse più denso dell'acqua liquida — come quasi tutti gli altri solidi — i laghi si ghiaccerebbero completamente dal fondo verso l'alto, uccidendo tutta la vita acquatica ogni inverno!",
+      khanLinks: [
+        { title: "Stati della Materia", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter" },
+      ],
+    },
+    dataTable: {
+      headers: ["Sostanza", "Massa (g)", "Volume (mL)", "Densità (g/mL)", "Valore di Letteratura (g/mL)"],
+      rows: 4,
+    },
+    observations: [
+      "Massa e volume di ciascuna sostanza",
+      "Se il ghiaccio galleggia o affonda quando posto in acqua",
+      "Stratificazione visiva quando glicerolo, acqua e olio sono combinati",
+    ],
+    conclusion: "Riassumere i valori di densità ottenuti, confrontare con i valori di letteratura e spiegare perché il ghiaccio galleggia basandosi sul concetto di densità.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai misurando la densità — la proprietà che spiega perché le navi galleggiano, gli iceberg esistono e il condimento dell'insalata si separa in strati!",
+      keywords: {
+        setup: "Azzerare (tarare) la bilancia prima di posizionare il contenitore. Misurare il volume del liquido all'altezza degli occhi per evitare errori di parallasse.",
+        formula: "ρ = m/V. Registra la massa in grammi e il volume in millilitri — il risultato è in g/mL. L'acqua dovrebbe dare ~1,00 g/mL.",
+        error: "L'errore più comune è non tenere conto della massa del contenitore (dimenticare di tarare la bilancia).",
+        result: "Acqua: 1,00 g/mL, Glicerolo: 1,26 g/mL, Ghiaccio: ~0,917 g/mL. Il ghiaccio galleggia sull'acqua perché è meno denso.",
+        real: "Archimede scoprì il principio dello spostamento dei fluidi quando gli fu chiesto di verificare se una corona fosse oro puro — misurò la sua densità usando lo spostamento dell'acqua!",
+        explain: "Il ghiaccio ha una struttura cristallina esagonale con legami idrogeno che distanzia le molecole più che nell'acqua liquida — dandogli una densità inferiore.",
+        hook: "Una nave d'acciaio può galleggiare perché la sua densità totale (scafo + aria all'interno) è inferiore a quella dell'acqua, anche se l'acciaio da solo affonda!",
+        misconception: "La densità non è la stessa cosa della massa — un piccolo cubo d'oro è più denso di un grande blocco di legno, anche se il legno è più pesante.",
+      },
+      hint: "Se la densità del ghiaccio sembra troppo alta, il ghiaccio potrebbe aver iniziato a sciogliersi. Lavora rapidamente — misura il ghiaccio immediatamente dopo averlo tolto dal freezer.",
+      expected: "Densità misurate: acqua ~1,00, glicerolo ~1,26, ghiaccio ~0,917 g/mL. Il ghiaccio galleggia sull'acqua; il glicerolo affonda sotto l'acqua.",
+    },
+  },
+  {
+    num: 108,
+    title: "Water of Crystallization",
+    section: "Materia e Soluzioni",
+    desc: "Heat blue CuSO₄·5H₂O until it turns white, then add water to restore the blue colour.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Students discover that some ionic compounds contain water molecules in their crystal structure, and that heating removes this water reversibly.",
+      instructions: [
+        "Weigh 2 g of blue CuSO₄·5H₂O crystals and place in an evaporating dish.",
+        "Heat gently over a Bunsen burner, observing the colour change from blue to white.",
+        "Continue heating until no further colour change occurs; allow to cool.",
+        "Weigh the anhydrous white CuSO₄ and calculate the mass of water lost.",
+        "Add 2–3 drops of distilled water to the white powder and observe the colour returning to blue.",
+      ],
+      expectedOutcome: "Blue CuSO₄·5H₂O turns white (anhydrous CuSO₄) on heating. Adding water restores the blue colour, confirming the reversible nature of hydration.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔵", name: "CuSO₄·5H₂O blue crystals (2 g)" },
+        { emoji: "🍳", name: "Evaporating dish" },
+        { emoji: "🔥", name: "Bunsen burner or hot plate" },
+        { emoji: "⚖️", name: "Electronic balance (±0.01 g)" },
+        { emoji: "💧", name: "Dropper with distilled water" },
+      ],
+      observationsToRecord: [
+        "Colour of CuSO₄·5H₂O before heating (blue)",
+        "Colour during and after heating (blue → white)",
+        "Mass before and after heating (calculate mass of water lost)",
+        "Colour change when water is added to anhydrous CuSO₄ (white → blue)",
+      ],
+      theoryPoints: [
+        "Water of crystallization consists of water molecules incorporated into the crystal lattice of an ionic compound.",
+        "CuSO₄·5H₂O contains five water molecules per formula unit; the colour is due to [Cu(H₂O)₄]²⁺ complexes.",
+        "Heating drives off the water molecules: CuSO₄·5H₂O → CuSO₄ + 5H₂O; the anhydrous salt is white because Cu²⁺ has no water ligands.",
+        "The reaction is reversible: adding water rehydrates the salt and restores the blue coordination complex.",
+      ],
+      realWorldConnections: [
+        "Anhydrous CaCl₂ and silica gel are used as desiccants because they readily absorb water of crystallization from the air.",
+        "Gypsum (CaSO₄·2H₂O) is heated to form plaster of Paris (CaSO₄·½H₂O), which rehydrates and hardens when mixed with water.",
+        "CuSO₄ anhydrous is used as a test for water because it turns visibly blue when even traces of water are present.",
+      ],
+      formula: "CuSO₄·5H₂O → CuSO₄ + 5H₂O  (ΔH > 0, endothermic)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "What is \"water of crystallization\"?",
+          options: [
+            "Water molecules trapped on the surface of crystals",
+            "Water molecules that form the crystal lattice of ice",
+            "Water molecules that are chemically incorporated into the crystal structure of an ionic compound",
+            "Water that is produced when a crystal dissolves in a solvent",
+          ],
+          correctIndex: 2,
+          explanation: "Water of crystallization consists of water molecules that are chemically bound within the crystal structure of an ionic salt, forming part of the repeating unit cell. They are not just surface water — they are part of the chemical formula.",
+        },
+        {
+          text: "Why does CuSO₄·5H₂O turn white when heated?",
+          options: [
+            "The heat breaks down CuSO₄ into copper metal and SO₃ gas",
+            "The water molecules are driven off, removing the water ligands from Cu²⁺, which eliminates the blue colour",
+            "The high temperature oxidises Cu²⁺ to Cu³⁺, which is white",
+            "The crystal structure collapses and Cu²⁺ becomes colourless",
+          ],
+          correctIndex: 1,
+          explanation: "The blue colour of CuSO₄·5H₂O is due to [Cu(H₂O)₄]²⁺ coordination complexes. Heating drives off the water molecules; without water ligands, Cu²⁺ has a different electronic environment and appears white.",
+        },
+        {
+          text: "CuSO₄·5H₂O has a molar mass of 249.7 g/mol and CuSO₄ is 159.6 g/mol. What percentage of the mass is water?",
+          options: [
+            "36.1%",
+            "15.2%",
+            "49.3%",
+            "22.5%",
+          ],
+          correctIndex: 0,
+          explanation: "Mass of water = 249.7 − 159.6 = 90.1 g/mol. Percentage = (90.1/249.7) × 100 = 36.1%. This confirms that about one-third of the mass of blue vitriol is water.",
+        },
+      ],
+      discussion: [
+        "Why is anhydrous CuSO₄ used to test for the presence of water? What would you observe and what does it prove?",
+        "Gypsum (CaSO₄·2H₂O) is heated to make plaster of Paris, which then sets hard when water is added. How does this process relate to what you observed with CuSO₄?",
+        "If you left white anhydrous CuSO₄ in a humid room overnight, what would you expect to find in the morning, and why?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Water of Crystallization", pct: 40 },
+        { label: "Coordination Chemistry (Cu²⁺ colour)", pct: 30 },
+        { label: "Reversible Reactions", pct: 20 },
+        { label: "Stoichiometry (% water)", pct: 10 },
+      ],
+      misconceptions: [
+        "Students often think the colour of CuSO₄ is an intrinsic property of copper — but it depends entirely on the ligands around Cu²⁺.",
+        "Many think \"water of crystallization\" means the crystal is wet — but the water is chemically bonded inside the crystal structure.",
+      ],
+      hook: "Anhydrous copper sulfate is the world's simplest water test — place a drop of any liquid on it: if it turns blue, water is present!",
+      khanLinks: [
+        { title: "States of Matter", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter" },
+      ],
+    },
+    dataTable: {
+      headers: ["Stage", "Mass (g)", "Colour", "Notes"],
+      rows: 4,
+    },
+    observations: [
+      "Colour of crystals at each stage (before heating, during heating, after cooling, after adding water)",
+      "Mass of sample before and after heating",
+      "Calculated mass and percentage of water lost",
+    ],
+    conclusion: "State the mass of water lost per gram of CuSO₄·5H₂O, compare to the theoretical value (36.1%), and explain the reversible colour change.",
+    ai: {
+      opening: "Hi! I'm Gali. Today you're exploring a beautiful reversible reaction — watch blue crystals turn white, then blue again just by adding water. Like magic, but chemistry!",
+      keywords: {
+        setup: "Heat gently and evenly. Too much heat can decompose CuSO₄ into CuO (black), which is not reversible.",
+        formula: "CuSO₄·5H₂O → CuSO₄ + 5H₂O. Molar masses: 249.7 → 159.6 + 90.1. So 36.1% of the mass is water.",
+        error: "Do not overheat — if the dish turns black, you have decomposed CuSO₄ to CuO, not just removed water. Use gentle heat.",
+        result: "Blue crystals → white powder on heating. White powder → blue on adding water. Mass loss ≈ 36% of original mass.",
+        real: "Plaster of Paris (CaSO₄·½H₂O) hardens when mixed with water because it rehydrates to gypsum (CaSO₄·2H₂O) — same principle as this experiment.",
+        explain: "The blue colour comes from water molecules acting as ligands around Cu²⁺. Remove the water ligands, and Cu²⁺ is in a different environment — no blue colour.",
+        hook: "Silica gel (the little packets in new shoes) is a desiccant — it absorbs water of crystallization from the air to keep products dry, just like anhydrous CuSO₄!",
+        misconception: "The water in CuSO₄·5H₂O is NOT surface moisture — it is chemically part of the crystal, and removing it completely changes the compound's properties.",
+      },
+      hint: "If your mass loss is less than 30%, the heating may not be complete. Continue heating until the mass stays constant between measurements.",
+      expected: "Mass loss of ~36% (water). Blue to white colour change on heating. Instant return of blue colour when water is added to anhydrous powder.",
+    },
+  },
+  {
+    num: 109,
+    title: "Fusione dello Zolfo",
+    section: "Materia e Soluzioni",
+    desc: "Riscalda lentamente lo zolfo e osserva le transizioni: solido giallo → liquido → plastico viscoso → gas. Confronta con la decomposizione del saccarosio.",
+    setupTime: "10 min",
+    duration: "35 min",
+    summary: {
+      whatTheyLearn: "Gli studenti osservano le transizioni allotropiche dello zolfo e confrontano la fusione fisica (zolfo) con la decomposizione chimica (saccarosio).",
+      instructions: [
+        "Metti una piccola quantità di polvere di zolfo in una provetta e riscalda lentamente su un becco Bunsen.",
+        "Registra l'aspetto a ogni fase di temperatura: solido giallo, liquido giallo pallido (regione rombica), liquido ambrato, liquido scuro viscoso (zolfo plastico) e gas.",
+        "In una provetta separata, riscalda una piccola quantità di saccarosio e registra il colore e l'odore.",
+        "Confronta: fusione dello zolfo (cambiamento fisico) vs. caramellizzazione e decomposizione del saccarosio (cambiamento chimico).",
+      ],
+      expectedOutcome: "Lo zolfo subisce cambiamenti allotropici fisici: giallo → liquido → zolfo plastico viscoso scuro → gas. Il saccarosio diventa marrone, odora di caramello e si carbonizza in carbonio nero — un cambiamento chimico.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🟡", name: "Polvere di zolfo (2 g)" },
+        { emoji: "🍬", name: "Saccarosio (1 g)" },
+        { emoji: "🧪", name: "Provette in borosilicato (x2)" },
+        { emoji: "🔥", name: "Becco Bunsen" },
+        { emoji: "🌡️", name: "Termometro (fino a 300°C)" },
+      ],
+      observationsToRecord: [
+        "Colore e stato dello zolfo a ogni intervallo di temperatura",
+        "Temperatura alla quale lo zolfo inizia a fondere",
+        "Aspetto del liquido scuro viscoso a ~160°C",
+        "Cambiamenti osservati quando il saccarosio viene riscaldato (colore, odore, residuo)",
+      ],
+      theoryPoints: [
+        "Lo zolfo esiste in due allotropi cristallini: rombico (stabile sotto 96°C) e monoclino (stabile 96–119°C).",
+        "Sopra 119°C, lo zolfo fonde in un liquido giallo pallido mobile; sopra ~160°C, gli anelli S₈ si aprono in lunghe catene (zolfo plastico) — scuro e viscoso.",
+        "I cambiamenti fisici (transizioni allotropiche, fusione) sono reversibili; i cambiamenti chimici (decomposizione del saccarosio) non lo sono.",
+        "Il saccarosio (C₁₂H₂₂O₁₁) si decompone per riscaldamento: l'acqua viene espulsa e rimane carbonio come carbone nero — questo è un cambiamento chimico.",
+      ],
+      realWorldConnections: [
+        "Lo zolfo plastico può essere prodotto versando zolfo fuso in acqua fredda — utilizzato per produrre composti di zolfo flessibili nei processi industriali.",
+        "Lo zolfo è usato nella vulcanizzazione della gomma — calore e zolfo creano legami incrociati tra le catene polimeriche, rendendo la gomma più dura.",
+        "La caramellizzazione del saccarosio è sfruttata in cucina — l'imbrunimento e lo sviluppo del sapore del caramello e delle caramelle sono cambiamenti chimici da reazioni di apertura dell'anello simili allo zolfo (ma per il carbonio).",
+      ],
+      formula: "S₈ (rombico) → S₈ (monoclino) → S liquido → catene Sₙ (plastico) → S₂/S gas",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cos'è un allotropo?",
+          options: [
+            "Una forma radioattiva di un elemento",
+            "Un diverso stato fisico (solido, liquido, gas) di un elemento",
+            "Una diversa forma strutturale dello stesso elemento con diverse proprietà fisiche",
+            "Un composto formato quando un elemento reagisce con l'ossigeno",
+          ],
+          correctIndex: 2,
+          explanation: "Gli allotropi sono diverse forme strutturali (molecolari o cristalline) dello stesso elemento. Lo zolfo rombico e monoclino sono entrambi zolfo puro ma hanno diverse strutture cristalline e diverse proprietà fisiche.",
+        },
+        {
+          text: "Perché lo zolfo fuso diventa scuro e viscoso sopra circa 160°C?",
+          options: [
+            "Lo zolfo reagisce con l'aria per formare SO₂, che è scuro",
+            "Gli anelli S₈ si aprono e formano lunghe catene aggrovigliate che resistono al flusso",
+            "Le impurità nello zolfo si concentrano quando l'acqua evapora",
+            "Lo zolfo ricristallizza tornando alla forma rombica, aumentando la viscosità",
+          ],
+          correctIndex: 1,
+          explanation: "Sopra ~160°C, le molecole ad anello S₈ si aprono e polimerizzano in lunghe catene di milioni di atomi di zolfo. Queste lunghe catene aggrovigliate aumentano drasticamente la viscosità, rendendo il liquido scuro e denso (zolfo plastico).",
+        },
+        {
+          text: "Come puoi distinguere la fusione dello zolfo dalla decomposizione del saccarosio come cambiamento fisico vs. chimico?",
+          options: [
+            "Lo zolfo cambia colore; il saccarosio no",
+            "La fusione dello zolfo è reversibile (si solidifica raffreddandosi); la decomposizione del saccarosio non è reversibile (rimane carbonio nero)",
+            "Lo zolfo produce un gas; il saccarosio no",
+            "Lo zolfo richiede una temperatura più alta del saccarosio",
+          ],
+          correctIndex: 1,
+          explanation: "I cambiamenti fisici come la fusione sono reversibili — lo zolfo raffreddato si solidifica tornando a un solido giallo. La decomposizione del saccarosio è un cambiamento chimico: produce vapore acqueo e carbonio (carbone nero), e non può essere invertita per rigenerare il saccarosio.",
+        },
+      ],
+      discussion: [
+        "Anche il carbonio ha allotropi (grafite e diamante). In cosa differiscono per struttura e proprietà, e come è analogo agli allotropi dello zolfo?",
+        "Se versassi lo zolfo plastico scuro viscoso in acqua fredda, cosa succederebbe e che forma di zolfo otterresti?",
+        "Quando il saccarosio brucia, vedi carbonio nero e vapore. È lo stesso processo della caramellizzazione? Come puoi capirlo?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Allotropia e Struttura Cristallina", pct: 35 },
+        { label: "Cambiamenti Fisici vs. Chimici", pct: 30 },
+        { label: "Transizioni di Fase", pct: 25 },
+        { label: "Polimeri (Zolfo a Catena Lunga)", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che qualsiasi cambiamento di colore debba essere un cambiamento chimico — ma i cambiamenti di colore dello zolfo durante la fusione sono cambiamenti fisici (non si forma nessuna nuova sostanza).",
+        "Molti pensano che \"fondere\" significhi sempre diventare un liquido trasparente — ma lo zolfo plastico è scuro e viscoso, il che confonde gli studenti.",
+      ],
+      hook: "Lo zolfo plastico è un materiale gommoso e elastico — e puoi farlo in laboratorio semplicemente versando zolfo fuso in acqua fredda!",
+      khanLinks: [
+        { title: "Stati della Materia", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter" },
+        { title: "Diagrammi di Fase", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams" },
+      ],
+    },
+    dataTable: {
+      headers: ["Temperatura (°C)", "Aspetto dello Zolfo", "Stato Fisico", "Reversibile?"],
+      rows: 6,
+    },
+    observations: [
+      "Registra il colore e la consistenza dello zolfo a ogni fase di temperatura",
+      "Nota l'odore prodotto (il diossido di zolfo è tossico — lavora sotto cappa o in un'area ben ventilata)",
+      "Registra tutti i cambiamenti osservati quando riscaldi il saccarosio",
+    ],
+    conclusion: "Distingui i cambiamenti allotropici dello zolfo (fisici) dalla decomposizione del saccarosio (chimica), e spiega perché uno è reversibile e l'altro no.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi potrai vedere lo zolfo trasformarsi in una plastica gommosa e elastica — uno dei cambiamenti fisici più spettacolari della chimica!",
+      keywords: {
+        setup: "Riscalda lentamente e osserva ogni fase. Lavora vicino a una finestra aperta o sotto cappa — il vapore di zolfo e SO₂ sono sgradevoli e nocivi.",
+        formula: "Anelli S₈ (rombico/monoclino) → lunghe catene Sₙ (zolfo plastico) a ~160°C.",
+        error: "Riscaldare troppo velocemente salta le fasi intermedie interessanti. Riscalda lentamente così puoi osservare ogni cambiamento di colore in sequenza.",
+        result: "Zolfo: solido giallo → liquido pallido → ambrato → liquido scuro viscoso → gas. Saccarosio: fonde → diventa marrone → si carbonizza in carbonio nero.",
+        real: "Gli pneumatici di gomma della tua auto esistono grazie allo zolfo — la vulcanizzazione usa catene di zolfo per collegare trasversalmente le molecole di gomma e renderle durevoli.",
+        explain: "I cambiamenti fisici coinvolgono le stesse molecole in disposizioni diverse; i cambiamenti chimici rompono e formano legami, creando sostanze completamente nuove.",
+        hook: "I depositi di zolfo vicino ai vulcani formano bellissimi cristalli gialli (zolfo rombico) — lo stesso materiale che stai riscaldando in laboratorio!",
+        misconception: "Il colore scuro dello zolfo plastico NON è perché sta bruciando o reagendo — è un cambiamento fisico da molecole ad anello a lunghe catene.",
+      },
+      hint: "Se lo zolfo inizia a bruciare con una fiamma blu e a produrre SO₂, riduci immediatamente il calore — sei andato oltre la fase plastica nella combustione.",
+      expected: "Distinti cambiamenti di colore e viscosità a ogni fase di temperatura. Il saccarosio diventa marrone poi nero (irreversibile). I cambiamenti dello zolfo sono reversibili al raffreddamento.",
+    },
+  },
+  {
+    num: 110,
+    title: "Sublimazione dello Iodio",
+    section: "Materia e Soluzioni",
+    desc: "Riscalda delicatamente i cristalli di iodio e osserva il vapore viola che si forma e ricristallizza senza passare attraverso una fase liquida.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti osservano la sublimazione — la transizione diretta solido-gas — e il processo inverso (deposizione) dei cristalli di iodio.",
+      instructions: [
+        "Metti alcuni cristalli di iodio sul fondo di una provetta.",
+        "Chiudi leggermente la parte superiore con cotone idrofilo e metti in un bagnomaria caldo (80°C).",
+        "Osserva il vapore viola che riempie la provetta mentre lo iodio sublima.",
+        "Posiziona una bacchetta di vetro o una provetta ghiacciata sopra per osservare la formazione di cristalli viola-neri (deposizione).",
+        "Disegna e descrivi i cambiamenti osservati.",
+      ],
+      expectedOutcome: "I cristalli di iodio producono un caratteristico vapore viola senza alcuna fase liquida visibile. I cristalli si riformano sulla superficie fredda sopra, dimostrando la deposizione.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⬛", name: "Cristalli di iodio (0,1 g)" },
+        { emoji: "🧪", name: "Provetta" },
+        { emoji: "♨️", name: "Bagnomaria caldo (80°C)" },
+        { emoji: "🧊", name: "Ghiaccio o bacchetta di vetro fredda" },
+        { emoji: "🔌", name: "Cotone idrofilo (tappo lasco)" },
+      ],
+      observationsToRecord: [
+        "Aspetto dei cristalli di iodio prima del riscaldamento",
+        "Colore del vapore prodotto durante il riscaldamento",
+        "Se si osserva iodio liquido",
+        "Aspetto dei cristalli sulla superficie fredda (deposizione)",
+      ],
+      theoryPoints: [
+        "La sublimazione è la transizione diretta da solido a gas senza passare attraverso la fase liquida.",
+        "Lo iodio ha una pressione di vapore relativamente alta a temperatura ambiente e sublima facilmente quando riscaldato delicatamente.",
+        "Il processo inverso (da gas a solido) è chiamato deposizione; i cristalli si formano sulle superfici fredde.",
+        "La sublimazione avviene quando la pressione ambiente è inferiore alla pressione del punto triplo per una sostanza, o quando la pressione di vapore eguaglia la pressione ambiente sotto il punto di fusione.",
+      ],
+      realWorldConnections: [
+        "Il ghiaccio secco (CO₂ solido) sublima a pressione atmosferica — usato negli effetti speciali per la nebbia perché produce vapore freddo senza liquido.",
+        "La liofilizzazione usa la sublimazione per rimuovere l'acqua da alimenti o farmaci senza danni da calore.",
+        "La sublimazione dello iodio è usata nella scienza forense per rivelare le impronte digitali — il vapore di iodio si condensa sui residui oleosi delle impronte.",
+      ],
+      formula: "I₂ (s) → I₂ (g)  [sublimazione, transizione diretta solido-gas]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cos'è la sublimazione?",
+          options: [
+            "La fusione di un solido in un liquido ad alta temperatura",
+            "La conversione diretta di un solido in gas senza passare attraverso la fase liquida",
+            "L'evaporazione di un liquido per formare un gas",
+            "La condensazione di un gas in un solido su una superficie fredda",
+          ],
+          correctIndex: 1,
+          explanation: "La sublimazione è la transizione di fase diretta da solido a gas, bypassando completamente la fase liquida. Avviene quando la pressione di vapore della sostanza supera la pressione atmosferica sotto il suo punto di fusione.",
+        },
+        {
+          text: "Di che colore è il vapore di iodio?",
+          options: [
+            "Incolore",
+            "Giallo-verde",
+            "Viola/violetto",
+            "Marrone-arancio",
+          ],
+          correctIndex: 2,
+          explanation: "Il vapore di iodio (I₂ gas) ha un caratteristico colore viola o violetto. Questo rende la sublimazione dello iodio una delle dimostrazioni visivamente più sorprendenti di questa transizione di fase.",
+        },
+        {
+          text: "Come si chiama il processo inverso della sublimazione?",
+          options: [
+            "Evaporazione",
+            "Condensazione",
+            "Deposizione",
+            "Cristallizzazione da soluzione",
+          ],
+          correctIndex: 2,
+          explanation: "La deposizione è la transizione diretta da gas a solido senza passare attraverso la fase liquida. In questo esperimento, il vapore di iodio si deposita come cristalli solidi sulla superficie di vetro fredda sopra i cristalli riscaldati.",
+        },
+      ],
+      discussion: [
+        "Perché lo iodio sublima a pressione atmosferica, ma l'acqua richiede una pressione molto bassa (condizioni di liofilizzazione) per sublimare?",
+        "Gli scienziati forensi usano il vapore di iodio per rivelare le impronte digitali. Spiega il meccanismo usando la tua conoscenza della sublimazione e delle forze intermolecolari.",
+        "Quali condizioni (temperatura e pressione) sarebbero necessarie per osservare lo iodio liquido? Fai riferimento al concetto di punto triplo.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Sublimazione e Transizioni di Fase", pct: 40 },
+        { label: "Pressione di Vapore", pct: 25 },
+        { label: "Deposizione (Sublimazione Inversa)", pct: 20 },
+        { label: "Forze Intermolecolari nello Iodio", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che la sublimazione richieda condizioni estreme — ma lo iodio sublima notevolmente anche a temperatura ambiente.",
+        "Molti studenti confondono la deposizione con la cristallizzazione da soluzione — la deposizione è il gas che diventa direttamente solido senza liquido coinvolto.",
+      ],
+      hook: "Gli scienziati forensi trovano le impronte digitali sulle scene del crimine usando il vapore di iodio — lo stesso gas viola che stai producendo in questo esperimento!",
+      khanLinks: [
+        { title: "Diagrammi di Fase", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams" },
+        { title: "Stati della Materia", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo (min)", "Osservazione", "Stato Presente", "Colore"],
+      rows: 5,
+    },
+    observations: [
+      "Registra quando appare per la prima volta il vapore viola",
+      "Nota se si osserva iodio liquido in qualsiasi fase",
+      "Descrivi i cristalli che si formano sulla superficie fredda (dimensione, colore, forma)",
+    ],
+    conclusion: "Conferma che lo iodio subisce sublimazione (non fusione), e spiega questo in termini di pressione di vapore e forze intermolecolari.",
+    ai: {
+      opening: "Ciao! Sono Gali. Stai per vedere un solido trasformarsi direttamente in un gas viola — la sublimazione dello iodio è una delle dimostrazioni visivamente più spettacolari della chimica!",
+      keywords: {
+        setup: "Usa solo una piccola quantità di iodio (pochi cristalli). Un delicato bagnomaria a 80°C è sufficiente — non surriscaldare o usare una fiamma diretta, poiché il vapore di iodio è irritante.",
+        formula: "I₂(s) → I₂(g): sublimazione. I₂(g) → I₂(s): deposizione (sulla superficie fredda sopra).",
+        error: "Riscaldare troppo fortemente produce vapore eccessivo che può fuoriuscire dal tappo di cotone. Usa il minimo calore necessario per osservare il vapore viola.",
+        result: "Il vapore viola si forma sopra i cristalli senza fase liquida visibile. Cristalli nero-viola si formano sulla superficie di vetro fredda sopra.",
+        real: "Il caffè liofilizzato (caffè istantaneo) usa la sublimazione — il ghiaccio nel caffè congelato viene rimosso come vapore acqueo sotto vuoto, preservando il sapore.",
+        explain: "Lo iodio ha deboli forze di van der Waals tra le molecole I₂. Queste sono abbastanza deboli da permettere alle molecole di sfuggire dal solido direttamente nella fase gassosa.",
+        hook: "Il ghiaccio secco (CO₂ solido) è la sostanza che sublima più famosa — passa direttamente da solido a gas, creando l'effetto nebbia usato nei concerti e nei teatri!",
+        misconception: "Lo iodio NON fonde prima — la sublimazione è una transizione diretta solido-gas. Se vedi liquido, o la pressione è molto alta o hai surriscaldato.",
+      },
+      hint: "Se non è visibile alcun vapore, assicurati che il bagnomaria sia abbastanza caldo (≥70°C). La provetta deve essere sufficientemente chiusa per permettere alla concentrazione di vapore di accumularsi.",
+      expected: "Vapore di iodio viola visibile entro 2–3 minuti. Nessuna fase liquida osservata. Cristalli nero-viola si depositano sulla superficie di vetro fredda sopra.",
+    },
+  },
+  {
+    num: 111,
+    title: "Indicatore Universale e Scala del pH",
+    section: "Acidi e Basi",
+    desc: "Testa soluzioni domestiche (aceto, bicarbonato di sodio, succo di limone, candeggina, latte) con indicatore universale e classificale sulla scala del pH.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano a misurare il pH usando l'indicatore universale e a classificare le sostanze comuni come acide, neutre o alcaline.",
+      instructions: [
+        "Versa 10 mL di ciascuna soluzione domestica in provette separate.",
+        "Aggiungi 3–4 gocce di indicatore universale a ciascuna provetta e agita delicatamente.",
+        "Confronta il colore ottenuto con una tabella dei colori del pH e registra il pH.",
+        "Classifica tutte le soluzioni dalla più acida alla più alcalina.",
+        "Conferma i valori di pH selezionati usando un pHmetro calibrato o cartina indicatrice.",
+      ],
+      expectedOutcome: "Il succo di limone e l'aceto diventano rosso/arancione (pH 2–3), il latte diventa giallo-verde (pH 6–7), il bicarbonato di sodio diventa blu (pH 8–9), la candeggina diventa viola (pH 12–13).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Provette e portaprovette (6)" },
+        { emoji: "💧", name: "Soluzione di indicatore universale" },
+        { emoji: "🍋", name: "Soluzioni domestiche: aceto, succo di limone, latte, soluzione di bicarbonato di sodio, candeggina, acqua distillata" },
+        { emoji: "📏", name: "Tabella dei colori del pH" },
+        { emoji: "⏱️", name: "pHmetro o cartina indicatrice (per conferma)" },
+      ],
+      observationsToRecord: ["Colore prodotto da ciascuna soluzione con indicatore universale", "Valore del pH stimato dalla tabella dei colori", "Valore del pH dal pHmetro/cartina (se disponibile)", "Classificazione dalla più acida alla più alcalina"],
+      theoryPoints: [
+        "La scala del pH va da 0 (fortemente acido) a 14 (fortemente alcalino), con 7 come neutro.",
+        "pH = −log₁₀[H⁺]; ogni unità di pH rappresenta una variazione di dieci volte nella concentrazione di H⁺.",
+        "L'indicatore universale è una miscela di coloranti che cambia colore continuamente lungo l'intervallo di pH.",
+        "Gli acidi producono ioni H⁺ in soluzione; gli alcali producono ioni OH⁻ in soluzione.",
+      ],
+      realWorldConnections: [
+        "Il pH del suolo determina quali nutrienti sono disponibili per le piante — la maggior parte delle colture cresce meglio a pH 6–7.",
+        "Il pH del sangue è regolato strettamente a 7,35–7,45; anche piccole deviazioni possono essere pericolose per la vita.",
+        "L'acqua delle piscine è mantenuta a pH 7,2–7,8 per il comfort e l'efficace disinfezione con cloro.",
+      ],
+      formula: "pH = −log₁₀[H⁺]  |  pOH = −log₁₀[OH⁻]  |  pH + pOH = 14",
+    },
+    questions: {
+      mcq: [
+        { text: "Quale valore di pH indica una soluzione neutra?", options: ["0", "7", "10", "14"], correctIndex: 1, explanation: "Una soluzione neutra ha concentrazioni uguali di ioni H⁺ e OH⁻, dando pH = 7 a 25 °C." },
+        { text: "Una soluzione ha un pH di 3. Quante volte più ioni H⁺ contiene rispetto a una soluzione di pH 5?", options: ["2 volte", "20 volte", "100 volte", "1000 volte"], correctIndex: 2, explanation: "Ogni unità di pH rappresenta una variazione di dieci volte in [H⁺]. Due unità di pH di differenza = 10² = 100 volte più ioni H⁺." },
+        { text: "Quale sostanza domestica avrebbe il pH più alto?", options: ["Succo di limone", "Aceto", "Latte", "Candeggina"], correctIndex: 3, explanation: "La candeggina (soluzione di ipoclorito di sodio) è fortemente alcalina con un pH di 12–13, il più alto tra le sostanze elencate." },
+      ],
+      discussion: ["Perché l'indicatore universale dà una gamma di colori mentre la cartina tornasole ne dà solo due? Quale vantaggio offre questo?", "Spiega perché l'acido gastrico (pH 1–2) non danneggia la parete dello stomaco in condizioni normali.", "Se diluisci un acido forte da pH 1 a pH 4, di che fattore lo hai diluito?"],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Scala del pH e Natura Logaritmica", pct: 40 },
+        { label: "Classificazione Acido/Alcalino", pct: 25 },
+        { label: "Chimica degli Indicatori", pct: 20 },
+        { label: "Applicazioni del pH nel Mondo Reale", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che il pH sia una scala lineare — è logaritmica; pH 3 non è \"due volte più acido\" di pH 6, è 1000 volte più acido.", "Molti credono che tutti gli acidi siano pericolosi — il latte e il succo di limone sono leggermente acidi ma perfettamente sicuri da consumare."],
+      hook: "Il tuo stomaco contiene acido cloridrico a pH 1–2, abbastanza forte da sciogliere chiodi di ferro — eppure non digerisce il tuo stesso stomaco grazie a un rivestimento protettivo di muco!",
+      khanLinks: [
+        { title: "Scala del pH", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/ph-scale" },
+        { title: "Definizione di Arrhenius di Acidi e Basi", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases" },
+      ],
+    },
+    dataTable: {
+      headers: ["Sostanza", "Colore Indicatore", "pH (tabella)", "pH (pHmetro)", "Classificazione"],
+      rows: 6,
+    },
+    observations: ["Registra il cambio di colore per ogni sostanza con indicatore universale", "Registra il pH stimato dalla tabella dei colori", "Classifica tutte le sostanze dalla più acida alla più alcalina"],
+    conclusion: "Riassumi i valori di pH ottenuti per ogni sostanza domestica, spiega cosa determina se una sostanza è acida o alcalina, e discuti perché il pH è misurato su una scala logaritmica.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai testando sostanze quotidiane per scoprire le loro identità acido-base nascoste — potresti rimanere sorpreso da quali oggetti domestici sono fortemente acidi o alcalini!",
+      keywords: {
+        setup: "Usa provette pulite per ogni sostanza per prevenire la contaminazione incrociata. Aggiungi le gocce di indicatore alla soluzione, non il contrario.",
+        formula: "pH = −log₁₀[H⁺]. Ogni unità di pH = variazione di 10× nella concentrazione di H⁺. pH 7 = neutro. Sotto 7 = acido. Sopra 7 = alcalino.",
+        error: "L'errore più comune è contaminare la bottiglia dell'indicatore immergendola nella soluzione. Usa sempre un contagocce e non rimettere mai l'indicatore non usato nella bottiglia.",
+        result: "Succo di limone: pH ~2 (rosso). Aceto: pH ~3 (arancione). Latte: pH ~6,5 (giallo-verde). Acqua: pH 7 (verde). Bicarbonato di sodio: pH ~9 (blu). Candeggina: pH ~12 (viola).",
+        real: "Il pH del sangue deve rimanere tra 7,35 e 7,45. I tamponi nel sangue (sistema dei carbonati) prevengono pericolose oscillazioni di pH dovute all'esercizio o alla dieta.",
+        explain: "Gli acidi rilasciano ioni H⁺ in soluzione; più ioni H⁺, più basso è il pH. Gli alcali rilasciano ioni OH⁻, che si combinano con H⁺ per alzare il pH.",
+        hook: "Le punture d'ape sono acide (acido formico) e le punture di vespa sono alcaline — ecco perché sono raccomandati rimedi diversi per ciascuna!",
+        misconception: "pH 7 è neutro solo a 25 °C. A temperature più alte, il pH neutro si sposta leggermente sotto 7 perché l'acqua si autoionizza di più.",
+      },
+      hint: "Se i colori sono difficili da distinguere, tieni la provetta contro uno sfondo bianco e confronta con la tabella dei colori in buona illuminazione.",
+      expected: "Gradiente di colore chiaro dal rosso (pH 2) attraverso il verde (pH 7) al viola (pH 12). Tutti i valori di pH entro ±0,5 dai valori di letteratura attesi.",
+    },
+  },
+  {
+    num: 112,
+    title: "Acidi Forti vs Deboli (Conducibilità)",
+    section: "Acidi e Basi",
+    desc: "Confronta la conducibilità elettrica di HCl e acido etanoico alla stessa concentrazione per distinguere acidi forti e deboli.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che gli acidi forti si ionizzano completamente in soluzione mentre gli acidi deboli si ionizzano solo parzialmente, risultando in conducibilità diverse alla stessa concentrazione.",
+      instructions: [
+        "Prepara soluzioni 0,1 mol/L di HCl (acido forte) e acido etanoico (acido debole).",
+        "Prepara un circuito di conducibilità con un LED e due elettrodi di carbonio.",
+        "Immergi gli elettrodi nella soluzione di HCl e registra la luminosità del LED.",
+        "Risciacqua gli elettrodi e immergili nella soluzione di acido etanoico; registra la luminosità del LED.",
+        "Misura il pH di entrambe le soluzioni e confronta con i valori teorici.",
+      ],
+      expectedOutcome: "La soluzione di HCl dà un LED luminoso e pH ~1. L'acido etanoico dà un LED fioco e pH ~2,9, confermando la ionizzazione parziale.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💡", name: "Circuito di conducibilità con LED (batteria 9 V, LED, sonde di carbonio)" },
+        { emoji: "🧪", name: "Soluzione di HCl 0,1 mol/L" },
+        { emoji: "🧪", name: "Soluzione di acido etanoico (CH₃COOH) 0,1 mol/L" },
+        { emoji: "📏", name: "pHmetro o cartina indicatrice a intervallo stretto" },
+        { emoji: "⏱️", name: "Cronometro" },
+      ],
+      observationsToRecord: ["Luminosità del LED in HCl (forte/media/fioca)", "Luminosità del LED in acido etanoico (forte/media/fioca)", "pH della soluzione di HCl", "pH della soluzione di acido etanoico"],
+      theoryPoints: [
+        "Gli acidi forti (HCl, H₂SO₄, HNO₃) si ionizzano completamente: HCl → H⁺ + Cl⁻ (100% ionizzazione).",
+        "Gli acidi deboli (CH₃COOH) si ionizzano parzialmente: CH₃COOH ⇌ CH₃COO⁻ + H⁺ (circa 1,3% ionizzato a 0,1 mol/L).",
+        "Più ioni = maggiore conducibilità = LED più luminoso.",
+        "La costante di equilibrio Ka quantifica il grado di ionizzazione: Ka(CH₃COOH) = 1,8 × 10⁻⁵.",
+      ],
+      realWorldConnections: [
+        "L'aceto (acido etanoico, ~5%) è sicuro da consumare perché è un acido debole; consumare la stessa concentrazione di HCl causerebbe gravi ustioni.",
+        "L'acido citrico nelle bevande gassate è un acido debole — dà un gusto aspro senza abbassare pericolosamente il pH dello stomaco.",
+        "L'acido delle batterie per auto (H₂SO₄) è un acido forte — anche schizzi diluiti possono danneggiare pelle e vestiti.",
+      ],
+      formula: "Acido forte: HCl → H⁺ + Cl⁻ (100%)  |  Acido debole: CH₃COOH ⇌ CH₃COO⁻ + H⁺ (Kₐ = 1,8 × 10⁻⁵)",
+    },
+    questions: {
+      mcq: [
+        { text: "Alla stessa concentrazione, un acido forte ha un pH _____ di un acido debole.", options: ["Più alto", "Più basso", "Uguale", "Variabile"], correctIndex: 1, explanation: "Un acido forte si ionizza completamente, producendo più ioni H⁺ alla stessa concentrazione, risultando in un pH più basso." },
+        { text: "Perché l'acido etanoico 0,1 mol/L ha un pH di circa 2,9 invece di 1,0?", options: ["L'acido etanoico è più concentrato", "L'acido etanoico si ionizza solo parzialmente, producendo meno ioni H⁺", "L'acido etanoico reagisce con l'acqua", "Il pHmetro è impreciso per gli acidi deboli"], correctIndex: 1, explanation: "L'acido etanoico è un acido debole con Ka = 1,8 × 10⁻⁵. Solo circa l'1,3% delle molecole si ionizza a 0,1 mol/L, dando [H⁺] ≈ 1,3 × 10⁻³ mol/L, quindi pH ≈ 2,9." },
+        { text: "Quale di questi è un acido forte?", options: ["Acido etanoico", "Acido citrico", "Acido carbonico", "Acido cloridrico"], correctIndex: 3, explanation: "HCl è un acido forte che si ionizza completamente in acqua. Gli acidi etanoico, citrico e carbonico sono tutti acidi deboli con ionizzazione incompleta." },
+      ],
+      discussion: ["Spiega perché un acido debole può ancora avere un pH molto basso se è abbastanza concentrato.", "Perché è importante distinguere tra forza e concentrazione di un acido?", "Prevedi cosa succede alla conducibilità dell'acido etanoico se lo diluisci di dieci volte. Spiega."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Ionizzazione Acido Forte vs Debole", pct: 40 },
+        { label: "Conducibilità e Concentrazione Ionica", pct: 25 },
+        { label: "Ka ed Equilibrio", pct: 20 },
+        { label: "Sicurezza e Contesto Reale", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso confondono la forza dell'acido con la concentrazione — un acido debole concentrato può avere più molecole di acido totali di un acido forte diluito.", "Molti pensano che gli acidi deboli siano innocui — l'acido etanoico concentrato (acido acetico glaciale) può causare ustioni."],
+      hook: "L'acido fluoridrico (HF) è tecnicamente un acido debole, eppure è uno dei più pericolosi perché penetra la pelle e dissolve le ossa — la forza dell'acido e la pericolosità non sono la stessa cosa!",
+      khanLinks: [
+        { title: "Acidi Forti e Basi Forti", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/strong-acids-and-strong-bases" },
+        { title: "Equilibrio degli Acidi Deboli", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/weak-acid-base-equilibria/v/weak-acid-equilibrium" },
+      ],
+    },
+    dataTable: {
+      headers: ["Acido", "Concentrazione (mol/L)", "Luminosità LED", "pH", "% Ionizzazione"],
+      rows: 3,
+    },
+    observations: ["Registra la luminosità del LED per ogni soluzione acida", "Registra le letture del pHmetro per entrambe le soluzioni", "Calcola la percentuale approssimativa di ionizzazione per l'acido debole"],
+    conclusion: "Confronta la conducibilità e il pH di HCl e acido etanoico alla stessa concentrazione. Spiega la differenza in termini di grado di ionizzazione e relaziona alla Ka.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi scoprirai perché due acidi alla stessa concentrazione possono comportarsi in modo molto diverso — uno è una tigre, l'altro un gattino!",
+      keywords: {
+        setup: "Usa la stessa concentrazione (0,1 mol/L) per entrambi gli acidi così il confronto è equo. Risciacqua gli elettrodi con acqua distillata tra i test.",
+        formula: "HCl → H⁺ + Cl⁻ (100% ionizzato). CH₃COOH ⇌ CH₃COO⁻ + H⁺ (Ka = 1,8 × 10⁻⁵, ~1,3% ionizzato a 0,1 mol/L).",
+        error: "Non confondere la forza con la concentrazione. Indica sempre entrambe quando descrivi un acido.",
+        result: "HCl: LED luminoso, pH ~1,0. Acido etanoico: LED fioco, pH ~2,9. Stessa concentrazione ma concentrazioni ioniche molto diverse.",
+        real: "L'aceto (acido etanoico al 5%) è sicuro nelle insalate. La stessa concentrazione di HCl causerebbe ustioni chimiche. La forza conta!",
+        explain: "Un acido forte dona tutti i suoi ioni H⁺ all'acqua. Un acido debole raggiunge un equilibrio dove la maggior parte delle molecole rimane intatta. Meno ioni significa minore conducibilità e pH più alto.",
+        hook: "L'acido nel tuo stomaco (HCl) è un acido forte a pH 1–2. L'acido nel morso di formica (acido metanoico) è un acido debole — ma fa comunque male!",
+        misconception: "Un'alta concentrazione di un acido debole può avere un pH più basso di una bassa concentrazione di un acido forte. Forza e concentrazione sono proprietà indipendenti.",
+      },
+      hint: "Se la luminosità del LED è difficile da confrontare, prova a usare un multimetro per misurare la corrente effettiva attraverso ogni soluzione per un confronto quantitativo.",
+      expected: "HCl: LED luminoso, pH 1,0 ± 0,1. Acido etanoico: LED fioco, pH 2,9 ± 0,2. Rapporto di conducibilità approssimativamente 10:1 a favore di HCl.",
+    },
+  },
+  {
+    num: 113,
+    title: "Neutralisation & Temperature Change",
+    section: "Acidi e Basi",
+    desc: "Mix HCl and NaOH solutions and measure the temperature rise to demonstrate that neutralisation is exothermic.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Students learn that acid-base neutralisation releases heat energy and can calculate the enthalpy of neutralisation from temperature change data.",
+      instructions: [
+        "Measure 25 mL of 1.0 mol/L HCl into a polystyrene cup and record initial temperature.",
+        "Measure 25 mL of 1.0 mol/L NaOH and record its initial temperature.",
+        "Pour the NaOH into the HCl, stir, and record the highest temperature reached.",
+        "Calculate the temperature change (ΔT) and the heat released (q = mcΔT).",
+        "Calculate the molar enthalpy of neutralisation (ΔH).",
+      ],
+      expectedOutcome: "Temperature rises by approximately 6–7 °C, giving an experimental enthalpy of neutralisation close to −57 kJ/mol for a strong acid–strong base pair.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "1.0 mol/L HCl (25 mL)" },
+        { emoji: "🧪", name: "1.0 mol/L NaOH (25 mL)" },
+        { emoji: "☕", name: "Polystyrene cup (calorimeter)" },
+        { emoji: "🌡️", name: "Thermometer (±0.5 °C)" },
+        { emoji: "📏", name: "Measuring cylinder (25 mL)" },
+      ],
+      observationsToRecord: ["Initial temperature of HCl (°C)", "Initial temperature of NaOH (°C)", "Maximum temperature after mixing (°C)", "Temperature change ΔT (°C)"],
+      theoryPoints: [
+        "Neutralisation: HCl + NaOH → NaCl + H₂O (exothermic).",
+        "The ionic equation is: H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ/mol.",
+        "All strong acid–strong base neutralisations give approximately the same ΔH because the net reaction is always H⁺ + OH⁻ → H₂O.",
+        "Heat energy: q = mcΔT, where m = total mass of solution (g), c = 4.18 J/g/°C, ΔT = temperature rise.",
+      ],
+      realWorldConnections: [
+        "Antacid tablets neutralise excess stomach acid — the reaction releases a small amount of heat inside the stomach.",
+        "Industrial neutralisation of acidic waste water must account for heat release to prevent boiling or thermal damage to equipment.",
+        "Lime (Ca(OH)₂) is added to acidic lake water to neutralise acid rain effects — the temperature rise is negligible in large water bodies.",
+      ],
+      formula: "q = mcΔT  |  ΔH = −q/n  |  H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ/mol",
+    },
+    questions: {
+      mcq: [
+        { text: "Neutralisation of a strong acid with a strong base is:", options: ["Endothermic", "Exothermic", "Neither — no energy change", "Sometimes endothermic, sometimes exothermic"], correctIndex: 1, explanation: "Strong acid–strong base neutralisation is always exothermic (ΔH ≈ −57 kJ/mol) because forming the strong O–H bond in water releases energy." },
+        { text: "If 50 mL of mixed solution rises by 6.5 °C, what is q? (c = 4.18 J/g/°C, assume density = 1 g/mL)", options: ["209 J", "1,359 J", "2,717 J", "13,585 J"], correctIndex: 1, explanation: "q = mcΔT = 50 × 4.18 × 6.5 = 1,358.5 J ≈ 1,359 J." },
+        { text: "Why do all strong acid–strong base neutralisations give approximately the same ΔH?", options: ["They all produce NaCl", "The net ionic reaction is always H⁺ + OH⁻ → H₂O", "Strong acids are all the same", "Temperature does not vary"], correctIndex: 1, explanation: "Regardless of the specific strong acid and base, the spectator ions do not participate. The actual reaction is always H⁺ + OH⁻ → H₂O, which has a fixed ΔH of −57.1 kJ/mol." },
+      ],
+      discussion: ["Why would neutralisation of a weak acid with a strong base give a slightly different ΔH than a strong acid–strong base pair?", "What are the main sources of heat loss in this experiment, and how could you reduce them?", "Explain why using a polystyrene cup is better than a glass beaker for this calorimetry experiment."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Neutralisation Reaction", pct: 35 },
+        { label: "Calorimetry (q = mcΔT)", pct: 30 },
+        { label: "Enthalpy of Neutralisation", pct: 25 },
+        { label: "Energy Changes in Reactions", pct: 10 },
+      ],
+      misconceptions: ["Students often think mixing any acid and base always produces a neutral solution — this is only true when exact stoichiometric amounts are used.", "Many forget that ΔH for neutralisation is negative (exothermic) and report a positive value."],
+      hook: "When concentrated sulphuric acid is mixed with water, so much heat is released that the water can boil violently — that is why you always add acid to water, never water to acid!",
+      khanLinks: [
+        { title: "Acid-Base Titration", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/acid-base-titration" },
+        { title: "Conjugate Acids and Bases", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/conjugate-acids-and-bases" },
+      ],
+    },
+    dataTable: {
+      headers: ["Measurement", "Trial 1", "Trial 2", "Trial 3", "Average"],
+      rows: 5,
+    },
+    observations: ["Record initial and final temperatures for each trial", "Note any visible changes (e.g., solution feels warm to touch)", "Calculate ΔT and q for each trial"],
+    conclusion: "Calculate the experimental enthalpy of neutralisation and compare to the accepted value of −57.1 kJ/mol. Discuss sources of error and suggest improvements.",
+    ai: {
+      opening: "Hi! I'm Gali. Today you're measuring the heat released when an acid meets a base — neutralisation is one of the most fundamentally important reactions in all of chemistry!",
+      keywords: {
+        setup: "Use a polystyrene cup as a calorimeter to minimise heat loss. Ensure both solutions start at the same temperature. Stir continuously after mixing.",
+        formula: "q = mcΔT. ΔH = −q/n. For 25 mL of 1.0 mol/L each: n = 0.025 mol. Expected ΔT ≈ 6.8 °C → q ≈ 1,423 J → ΔH ≈ −56.9 kJ/mol.",
+        error: "Heat loss to the surroundings is the main source of error. Using a lid on the cup and stirring quickly minimises this.",
+        result: "Temperature rise of ~6–7 °C. Calculated ΔH ≈ −55 to −58 kJ/mol. Accepted value: −57.1 kJ/mol.",
+        real: "Acid spills in laboratories are neutralised with sodium bicarbonate — the neutralisation is exothermic, so large spills require careful addition to avoid boiling.",
+        explain: "When H⁺ meets OH⁻, they form a very stable O–H bond in water. This bond formation releases 57 kJ of energy per mole — that energy heats the solution.",
+        hook: "Mixing concentrated H₂SO₄ with water releases so much heat it can boil. Always add acid to water (not water to acid) to prevent violent spattering!",
+        misconception: "Neutralisation does not always produce pH 7. A strong acid + weak base gives a salt that is slightly acidic (pH < 7). Only strong acid + strong base gives pH 7.",
+      },
+      hint: "If your ΔH is significantly less than 57 kJ/mol, heat loss is likely the cause. Try adding a lid with a hole for the thermometer to reduce evaporative cooling.",
+      expected: "ΔT ≈ 6.5–7.0 °C. Calculated ΔH ≈ −55 to −58 kJ/mol. Close agreement with the accepted value of −57.1 kJ/mol confirms the exothermic nature of neutralisation.",
+    },
+  },
+  {
+    num: 114,
+    title: "Effetto delle Piogge Acide sul Marmo",
+    section: "Acidi e Basi",
+    desc: "Gocciolare HCl diluito su frammenti di marmo per simulare le piogge acide, misurando la produzione di CO₂ e la perdita di massa nel tempo.",
+    setupTime: "5 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che le piogge acide (contenenti H₂SO₄ e HNO₃) attaccano il carbonato di calcio nel marmo e nel calcare, producendo CO₂ e causando erosione.",
+      instructions: [
+        "Pesare 5 g di frammenti di marmo e posizionarli in una beuta conica.",
+        "Aggiungere 50 mL di HCl diluito (0,5 mol/L) e collegare immediatamente una siringa per gas o un cilindro graduato capovolto.",
+        "Registrare il volume di CO₂ raccolto ogni minuto per 10 minuti.",
+        "Ripesare i frammenti di marmo rimanenti dopo che la reazione rallenta.",
+        "Testare il gas con acqua di calce per confermare la presenza di CO₂.",
+      ],
+      expectedOutcome: "Un'effervescenza vigorosa produce CO₂ (confermato dall'acqua di calce che diventa lattiginosa). I frammenti di marmo perdono massa. La velocità di produzione del gas diminuisce man mano che l'acido viene consumato.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🪨", name: "Frammenti di marmo (CaCO₃, ~5 g)" },
+        { emoji: "🧪", name: "HCl diluito (0,5 mol/L, 50 mL)" },
+        { emoji: "💨", name: "Siringa per gas o cilindro graduato capovolto" },
+        { emoji: "⚖️", name: "Bilancia elettronica (±0,01 g)" },
+        { emoji: "💧", name: "Acqua di calce (soluzione di Ca(OH)₂)" },
+      ],
+      observationsToRecord: ["Volume di CO₂ raccolto ogni minuto (cm³)", "Massa del marmo prima e dopo la reazione (g)", "Risultato del test con acqua di calce", "Velocità dell'effervescenza nel tempo (veloce → lenta → ferma)"],
+      theoryPoints: [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ — l'acido reagisce con il carbonato per produrre anidride carbonica.",
+        "Le piogge acide contengono SO₂ e NOₓ disciolti che formano H₂SO₃, H₂SO₄ e HNO₃ nell'acqua piovana.",
+        "Gli edifici in calcare e marmo si erodono nel corso dei decenni a causa di questa reazione con le piogge acide.",
+        "La velocità di reazione diminuisce nel tempo poiché la concentrazione dell'acido cala (il reagente viene consumato).",
+      ],
+      realWorldConnections: [
+        "Il Partenone ad Atene ha subito più erosione negli ultimi 50 anni a causa delle piogge acide che nei precedenti 2.400 anni.",
+        "Le lapidi in calcare nei vecchi cimiteri mostrano visibili segni di erosione dovuti a decenni di esposizione alle piogge acide.",
+        "La desolforazione dei fumi nelle centrali elettriche utilizza il calcare per rimuovere SO₂ — la stessa reazione ma usata in modo benefico.",
+      ],
+      formula: "CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)",
+    },
+    questions: {
+      mcq: [
+        { text: "Quale gas viene prodotto quando l'acido reagisce con il marmo?", options: ["Idrogeno", "Ossigeno", "Anidride carbonica", "Cloro"], correctIndex: 2, explanation: "Il marmo è carbonato di calcio (CaCO₃). Quando reagisce con l'acido, viene rilasciato gas CO₂: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂." },
+        { text: "Come viene confermata la presenza di gas CO₂ in questo esperimento?", options: ["La scheggia incandescente si riaccende", "Scoppiettio", "L'acqua di calce diventa lattiginosa", "Fa diventare rosso il tornasole"], correctIndex: 2, explanation: "Il CO₂ fa diventare lattiginosa l'acqua di calce (soluzione di Ca(OH)₂) a causa della formazione di carbonato di calcio insolubile: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O." },
+        { text: "Perché la velocità di produzione di CO₂ diminuisce nel tempo?", options: ["Il marmo esaurisce la superficie", "La concentrazione dell'acido diminuisce mentre reagisce", "Il CO₂ si accumula e blocca la reazione", "La temperatura scende"], correctIndex: 1, explanation: "Man mano che l'HCl reagisce con il CaCO₃, la sua concentrazione diminuisce. Una concentrazione più bassa significa meno collisioni efficaci al secondo, riducendo la velocità." },
+      ],
+      discussion: ["Come potresti aumentare la velocità di questa reazione senza cambiare la concentrazione dell'acido?", "Spiega perché il marmo in polvere reagisce più velocemente dei frammenti di marmo con la stessa massa di acido.", "Suggerisci come l'esperimento potrebbe essere modificato per simulare l'effetto di diverse intensità di piogge acide."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Reazioni Acido-Carbonato", pct: 35 },
+        { label: "Concetti sulla Velocità di Reazione", pct: 25 },
+        { label: "Impatto Ambientale (Piogge Acide)", pct: 25 },
+        { label: "Raccolta e Test dei Gas", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che le piogge acide siano un acido forte — tipicamente hanno pH 4-5, solo leggermente più acide della pioggia normale (pH 5,6).", "Molti credono che le piogge acide colpiscano solo gli edifici in pietra — in realtà danneggiano anche foreste, laghi e strutture metalliche."],
+      hook: "Si dice che Cleopatra abbia sciolto una perla (carbonato di calcio) nell'aceto per vincere una scommessa sulla possibilità di consumare la ricchezza di una nazione in un solo pasto — la stessa reazione che stai osservando oggi!",
+      khanLinks: [
+        { title: "Equazioni Molecolari, Complete e Ioniche Nette", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/net-ionic-equations/v/molecular-complete-and-net-ionic-equations" },
+        { title: "Introduzione alla Titolazione", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/titration-introduction" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo (min)", "Volume Totale CO₂ (cm³)", "Velocità (cm³/min)", "Osservazioni"],
+      rows: 10,
+    },
+    observations: ["Registrare il volume di CO₂ ogni minuto per 10 minuti", "Annotare i cambiamenti nell'intensità dell'effervescenza nel tempo", "Registrare la massa dei frammenti di marmo prima e dopo la reazione"],
+    conclusion: "Tracciare un grafico del volume di CO₂ in funzione del tempo. Spiegare perché la curva si appiattisce. Calcolare la massa di CaCO₃ che ha reagito e confrontarla con la perdita di massa misurata.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai simulando le piogge acide che attaccano il marmo — lo stesso processo che sta lentamente dissolvendo alcuni dei più famosi monumenti antichi del mondo!",
+      keywords: {
+        setup: "Collegare l'apparato di raccolta del gas rapidamente dopo aver aggiunto l'acido — perderai l'esplosione iniziale di CO₂ se c'è un ritardo.",
+        formula: "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Dalla stechiometria: 100 g di CaCO₃ producono 44 g di CO₂ (una mole ciascuno).",
+        error: "Assicurarsi che tutti i collegamenti siano a tenuta di gas. Qualsiasi perdita significa che il volume di CO₂ misurato sarà troppo basso.",
+        result: "Effervescenza rapida inizialmente (~10 cm³/min), che rallenta a ~1 cm³/min dopo 8 minuti. CO₂ totale ≈ 50-60 cm³. Perdita di massa del marmo ≈ 2-3 g.",
+        real: "Il marmo bianco del Taj Mahal sta ingiallendo e si sta erodendo a causa delle piogge acide causate dall'inquinamento industriale vicino. L'India ha imposto controlli sulle emissioni per proteggerlo.",
+        explain: "L'acido attacca gli ioni carbonato nel marmo: 2H⁺ + CO₃²⁻ → H₂O + CO₂. Man mano che l'acido viene consumato, sono disponibili meno ioni H⁺, quindi la reazione rallenta.",
+        hook: "Le grotte calcaree e le stalattiti si formano attraverso il processo inverso — l'acqua piovana leggermente acida dissolve lentamente il calcare nel corso di milioni di anni!",
+        misconception: "Le piogge acide NON sono causate dal CO₂ — sono causate da SO₂ e NOₓ derivanti dalla combustione di combustibili fossili. Il CO₂ rende la pioggia molto leggermente acida (pH 5,6), ma SO₂ e NOₓ possono abbassarlo a pH 4 o inferiore.",
+      },
+      hint: "Se la produzione di gas sembra troppo lenta, verificare che l'acido sia fresco e alla concentrazione corretta. L'HCl diluito vecchio potrebbe aver perso forza.",
+      expected: "Effervescenza rapida iniziale, velocità decrescente in 10 minuti. CO₂ totale: 50-70 cm³. L'acqua di calce diventa lattiginosa. Perdita di massa coerente con il calcolo stechiometrico.",
+    },
+  },
+  {
+    num: 115,
+    title: "Titolazione Acido-Base",
+    section: "Acidi e Basi",
+    desc: "Titolare l'acido acetico nell'aceto con NaOH usando l'indicatore fenolftaleina per determinare la concentrazione dell'acido nell'aceto.",
+    setupTime: "10 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono la tecnica della titolazione e la usano per determinare la concentrazione di acido etanoico nell'aceto domestico.",
+      instructions: [
+        "Pipettare 25,0 mL di aceto diluito (1:10) in una beuta conica.",
+        "Aggiungere 2-3 gocce di indicatore fenolftaleina.",
+        "Riempire una buretta con soluzione standardizzata di NaOH 0,1 mol/L.",
+        "Titolare lentamente, agitando continuamente, fino a quando appare un colore rosa pallido permanente.",
+        "Registrare il volume del titolo. Ripetere fino a ottenere titoli concordanti (entro 0,10 mL).",
+      ],
+      expectedOutcome: "I titoli concordanti forniscono un volume medio dal quale la concentrazione di acido etanoico nell'aceto può essere calcolata come circa 0,8-0,9 mol/L (circa 5% p/v).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Buretta (50 mL) con NaOH (0,1 mol/L)" },
+        { emoji: "⚗️", name: "Beuta conica (250 mL)" },
+        { emoji: "💧", name: "Pipetta (25 mL) e propipetta" },
+        { emoji: "🟣", name: "Indicatore fenolftaleina" },
+        { emoji: "📏", name: "Piastrella bianca (per vedere il cambio di colore)" },
+      ],
+      observationsToRecord: ["Letture iniziali e finali della buretta per ogni titolo", "Volume del titolo per ogni prova (mL)", "Colore al punto finale (incolore → rosa pallido)", "Valori dei titoli concordanti"],
+      theoryPoints: [
+        "CH₃COOH + NaOH → CH₃COONa + H₂O — una mole di acido reagisce con una mole di base (stechiometria 1:1).",
+        "La fenolftaleina è incolore in ambiente acido e rosa in ambiente alcalino; il punto finale è il primo rosa pallido permanente.",
+        "Al punto di equivalenza: moli acido = moli base → CₐVₐ = CᵦVᵦ.",
+        "I titoli concordanti (che concordano entro 0,10 mL) assicurano precisione e affidabilità.",
+      ],
+      realWorldConnections: [
+        "I produttori alimentari usano la titolazione per verificare che l'acidità dell'aceto, dei succhi di frutta e del vino rispetti le specifiche.",
+        "Le aziende farmaceutiche titolano i principi attivi per assicurare che ogni compressa contenga la dose corretta.",
+        "Gli impianti di trattamento delle acque monitorano l'alcalinità titolando campioni d'acqua con acido standard.",
+      ],
+      formula: "CₐVₐ = CᵦVᵦ  |  n(acido) = n(base)  |  concentrazione = n/V",
+    },
+    questions: {
+      mcq: [
+        { text: "Al punto di equivalenza di una titolazione, quale affermazione è vera?", options: ["Il pH è sempre esattamente 7", "Le moli di acido equivalgono alle moli di base", "Tutto l'indicatore ha cambiato colore", "La soluzione è sempre neutra"], correctIndex: 1, explanation: "Al punto di equivalenza, le moli di acido equivalgono esattamente alle moli di base (per stechiometria 1:1). Il pH dipende dal sale formato e potrebbe non essere esattamente 7." },
+        { text: "Perché la fenolftaleina è un buon indicatore per questa titolazione?", options: ["Cambia colore esattamente a pH 7", "Il suo intervallo di viraggio (pH 8,2-10) cade all'interno della curva ripida del pH al punto di equivalenza di una titolazione acido debole-base forte", "È l'unico indicatore disponibile", "Reagisce con NaOH"], correctIndex: 1, explanation: "Per una titolazione acido debole-base forte, il pH al punto di equivalenza è superiore a 7 (circa 8,7). La fenolftaleina cambia a pH 8,2-10, che corrisponde bene a questo punto di equivalenza." },
+        { text: "Se 25 mL di aceto richiedono 22,5 mL di NaOH 0,1 mol/L, qual è la concentrazione dell'acido nell'aceto?", options: ["0,045 mol/L", "0,090 mol/L", "0,111 mol/L", "0,225 mol/L"], correctIndex: 1, explanation: "n(NaOH) = 0,1 × 0,0225 = 0,00225 mol = n(acido). C(acido) = 0,00225/0,025 = 0,090 mol/L." },
+      ],
+      discussion: ["Perché è importante aggiungere NaOH goccia a goccia vicino al punto finale?", "Cosa succederebbe se usassi il metilarancio invece della fenolftaleina per questa titolazione?", "Come modificheresti questo esperimento per trovare la concentrazione di acido citrico nel succo di limone?"],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Tecnica di Titolazione", pct: 35 },
+        { label: "Stechiometria (CₐVₐ = CᵦVᵦ)", pct: 30 },
+        { label: "Selezione dell'Indicatore", pct: 20 },
+        { label: "Precisione e Concordanza", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che il punto finale e il punto di equivalenza siano la stessa cosa — il punto finale è dove l'indicatore cambia; il punto di equivalenza è dove le moli sono uguali. Idealmente coincidono.", "Molti leggono la buretta dall'alto verso il basso ma dimenticano che le burette si leggono da 0 in alto, quindi il titolo è la lettura finale meno quella iniziale."],
+      hook: "L'aceto etichettato \"5% di acidità\" significa 5 g di acido acetico per 100 mL — puoi verificare questa affermazione tu stesso con una semplice titolazione!",
+      khanLinks: [
+        { title: "Introduzione alla Titolazione", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/titration-introduction" },
+        { title: "Titolazione Acido-Base", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/acid-base-titration" },
+      ],
+    },
+    dataTable: {
+      headers: ["Prova", "Lettura Iniziale (mL)", "Lettura Finale (mL)", "Titolo (mL)", "Concordante?"],
+      rows: 4,
+    },
+    observations: ["Registrare le letture della buretta per ogni prova", "Annotare il colore esatto al punto finale", "Identificare i titoli concordanti e calcolare la media"],
+    conclusion: "Calcolare la concentrazione di acido etanoico nell'aceto usando il titolo concordante medio. Convertire in % p/v e confrontare con quanto dichiarato in etichetta. Valutare la precisione.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai eseguendo una titolazione — la tecnica quantitativa più precisa ed elegante della chimica. Alla fine, saprai esattamente quanto acido c'è nel tuo aceto!",
+      keywords: {
+        setup: "Sciacquare la buretta con la soluzione di NaOH prima di riempirla. Sciacquare la pipetta con la soluzione di aceto. Rimuovere la bolla d'aria sotto il rubinetto della buretta prima di iniziare.",
+        formula: "n(NaOH) = C × V. Poiché il rapporto è 1:1, n(acido) = n(NaOH). C(acido) = n(acido)/V(acido).",
+        error: "L'errore più grande è superare il punto finale. Aggiungere goccia a goccia e agitare continuamente vicino al punto finale previsto. Una goccia in più può far superare il punto.",
+        result: "Titoli concordanti entro 0,10 mL l'uno dall'altro. Concentrazione dell'aceto: ~0,8-0,9 mol/L, equivalente a ~5% p/v di acido etanoico.",
+        real: "I produttori di vino titolano ogni lotto per assicurare che l'acidità sia nell'intervallo desiderato — troppo acido ha un sapore aspro, troppo poco e il vino risulta piatto.",
+        explain: "Al punto di equivalenza, ogni H⁺ dall'acido è stato neutralizzato da OH⁻ dalla base. L'indicatore cambia colore perché la soluzione diventa improvvisamente alcalina quando viene aggiunta anche solo una goccia extra di NaOH oltre questo punto.",
+        hook: "Nel XVIII secolo, il chimico francese Lavoisier usò la titolazione per smascherare i mercanti di vino che annacquavano il loro vino — la chimica ha catturato i truffatori!",
+        misconception: "Il punto finale NON è quando l'indicatore è completamente rosa — è il PRIMO rosa pallido permanente che persiste per 30 secondi. Un rosa intenso significa che hai superato il punto.",
+      },
+      hint: "Se superi il punto finale (rosa intenso), registra il titolo ma annota che è in eccesso. Fai un'altra prova — i risultati concordanti richiedono un'aggiunta attenta goccia a goccia vicino al punto finale.",
+      expected: "Titoli concordanti entro 0,10 mL. Titolo medio ~22-23 mL di NaOH 0,1 mol/L per 25 mL di aceto diluito (1:10). Concentrazione calcolata ~0,85 mol/L ≈ 5% p/v.",
+    },
+  },
+  {
+    num: 116,
+    title: "Azione Tampone",
+    section: "Acidi e Basi",
+    desc: "Dimostrare che le soluzioni tampone resistono ai cambiamenti di pH quando vengono aggiunte piccole quantità di acido o base, rispetto alle soluzioni non tamponate.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano come le soluzioni tampone mantengono un pH quasi costante neutralizzando l'acido o la base aggiunti, e comprendono la chimica dell'equilibrio alla base dell'azione tampone.",
+      instructions: [
+        "Preparare un tampone mescolando volumi uguali di acido etanoico 0,1 mol/L e etanoato di sodio 0,1 mol/L.",
+        "Preparare un controllo non tamponato: soluzione di NaCl 0,1 mol/L.",
+        "Misurare e registrare il pH iniziale di entrambe le soluzioni.",
+        "Aggiungere 1 mL di HCl 0,1 mol/L a 50 mL di ciascuna soluzione; registrare la variazione di pH.",
+        "Ripetere, aggiungendo 1 mL di NaOH 0,1 mol/L a nuovi campioni da 50 mL; registrare la variazione di pH.",
+      ],
+      expectedOutcome: "Il pH del tampone cambia di meno di 0,1 unità quando viene aggiunto acido o base. Il pH della soluzione di NaCl non tamponata cambia drasticamente (2–3 unità).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Acido etanoico 0,1 mol/L e etanoato di sodio 0,1 mol/L" },
+        { emoji: "🧪", name: "NaCl 0,1 mol/L (controllo), HCl 0,1 mol/L, NaOH 0,1 mol/L" },
+        { emoji: "📏", name: "pH-metro (calibrato)" },
+        { emoji: "💧", name: "Cilindri graduati e pipette" },
+        { emoji: "⏱️", name: "Becher (250 mL) e bacchette di vetro" },
+      ],
+      observationsToRecord: ["pH iniziale delle soluzioni tampone e di controllo", "pH dopo l'aggiunta di 1 mL di HCl a ciascuna", "pH dopo l'aggiunta di 1 mL di NaOH a ciascuna", "Variazione di pH (ΔpH) per tampone vs controllo"],
+      theoryPoints: [
+        "Un tampone è una soluzione di un acido debole e della sua base coniugata (o base debole e suo acido coniugato).",
+        "Quando si aggiunge acido a un tampone: CH₃COO⁻ + H⁺ → CH₃COOH (la base coniugata assorbe H⁺).",
+        "Quando si aggiunge base: CH₃COOH + OH⁻ → CH₃COO⁻ + H₂O (l'acido debole neutralizza OH⁻).",
+        "Equazione di Henderson-Hasselbalch: pH = pKa + log([A⁻]/[HA]).",
+      ],
+      realWorldConnections: [
+        "Il sangue è tamponato a pH 7,4 dal sistema tampone carbonato (H₂CO₃/HCO₃⁻).",
+        "Le reazioni enzimatiche nel corpo richiedono un controllo preciso del pH — i tamponi mantengono le condizioni ottimali.",
+        "L'acqua delle piscine utilizza un sistema tampone per prevenire drastiche oscillazioni di pH causate dal sudore dei nuotatori e dai prodotti chimici.",
+      ],
+      formula: "pH = pKa + log([A⁻]/[HA])  |  Equazione di Henderson-Hasselbalch",
+    },
+    questions: {
+      mcq: [
+        { text: "Una soluzione tampone contiene:", options: ["Un acido forte e una base forte", "Un acido debole e la sua base coniugata", "Due acidi forti", "Acqua e NaCl"], correctIndex: 1, explanation: "Un tampone richiede una coppia acido debole–base coniugata (o base debole–acido coniugato) per assorbire sia H⁺ che OH⁻ aggiunti senza grandi variazioni di pH." },
+        { text: "Quando si aggiunge HCl a un tampone acido etanoico/etanoato di sodio, quale specie neutralizza H⁺?", options: ["Acido etanoico (CH₃COOH)", "Etanoato di sodio (CH₃COO⁻)", "Acqua", "NaCl"], correctIndex: 1, explanation: "La base coniugata (CH₃COO⁻) reagisce con H⁺ aggiunto: CH₃COO⁻ + H⁺ → CH₃COOH, assorbendo l'acido e prevenendo la diminuzione del pH." },
+        { text: "L'equazione di Henderson-Hasselbalch è pH = pKa + log([A⁻]/[HA]). Quando [A⁻] = [HA], il pH è uguale a:", options: ["0", "7", "pKa", "14"], correctIndex: 2, explanation: "Quando [A⁻] = [HA], log(1) = 0, quindi pH = pKa + 0 = pKa. Questo è il pH a cui il tampone ha la massima capacità." },
+      ],
+      discussion: ["Spiega perché un tampone ha una capacità limitata — cosa succede se viene aggiunto troppo acido o base?", "Perché il sistema tampone del sangue (H₂CO₃/HCO₃⁻) è vitale per la sopravvivenza?", "Progetta un tampone con pH 9. Quale coppia acido debole/base coniugata sceglieresti?"],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Composizione e Azione del Tampone", pct: 40 },
+        { label: "Equazione di Henderson-Hasselbalch", pct: 25 },
+        { label: "Sistemi Tampone Biologici", pct: 20 },
+        { label: "Capacità Tampone", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che i tamponi mantengano il pH esattamente costante — resistono ai cambiamenti ma si spostano comunque leggermente.", "Molti credono che qualsiasi miscela di acido e base sia un tampone — deve essere un acido DEBOLE con la sua base coniugata (o viceversa)."],
+      hook: "Senza il tampone carbonato nel tuo sangue, mangiare un solo limone potrebbe abbassare il pH del sangue abbastanza da causare una crisi epilettica — i tamponi letteralmente ti mantengono in vita!",
+      khanLinks: [
+        { title: "Henderson-Hasselbalch", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/henderson-hasselbalch" },
+        { title: "Soluzione Tampone", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/buffer-solution" },
+      ],
+    },
+    dataTable: {
+      headers: ["Soluzione", "pH Iniziale", "pH dopo HCl", "ΔpH (acido)", "pH dopo NaOH", "ΔpH (base)"],
+      rows: 3,
+    },
+    observations: ["Registrare il pH iniziale del tampone e del controllo", "Registrare il pH dopo l'aggiunta di acido a ciascuna soluzione", "Registrare il pH dopo l'aggiunta di base a ciascuna soluzione e confrontare i valori di ΔpH"],
+    conclusion: "Confronta la stabilità del pH del tampone con il controllo non tamponato. Spiega il meccanismo dell'azione tampone usando equazioni e l'equazione di Henderson-Hasselbalch.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi scoprirai perché il tuo sangue non diventa pericolosamente acido dopo aver bevuto un bicchiere di succo d'arancia — è tutta questione di chimica dei tamponi!",
+      keywords: {
+        setup: "Calibra il pH-metro con standard di pH 4 e pH 7 prima di iniziare. Usa concentrazioni e volumi uguali per la coppia tampone.",
+        formula: "pH = pKa + log([CH₃COO⁻]/[CH₃COOH]). pKa(acido etanoico) = 4,76. Quando si mescolano moli uguali, pH = pKa = 4,76.",
+        error: "Assicurati che il pH-metro sia correttamente calibrato — anche un errore di 0,1 unità di pH può oscurare le piccole variazioni che stai misurando nel tampone.",
+        result: "ΔpH del tampone < 0,1 quando si aggiunge 1 mL di acido o base. ΔpH del controllo = 2–3 unità. La differenza drastica dimostra l'azione tampone.",
+        real: "Il pH del tuo sangue deve rimanere tra 7,35 e 7,45. Il sistema tampone bicarbonato gestisce l'acido prodotto dal metabolismo (CO₂ → H₂CO₃).",
+        explain: "Il tampone funziona perché l'acido debole HA può neutralizzare OH⁻ aggiunto, e la base coniugata A⁻ può neutralizzare H⁺ aggiunto. Entrambi i componenti sono presenti in grande riserva.",
+        hook: "L'acidificazione degli oceani sta sopraffacendo il tampone carbonato naturale dell'acqua di mare — le barriere coralline si stanno dissolvendo perché la capacità tampone dell'oceano viene superata dall'eccesso di CO₂.",
+        misconception: "Un tampone non mantiene il pH indefinitamente — ha una capacità finita. Una volta che tutto l'acido debole o la base coniugata sono consumati, il pH cambierà drasticamente.",
+      },
+      hint: "Se il pH del tampone cambia più del previsto, verifica che le concentrazioni di acido e base coniugata siano veramente uguali. Un tampone sbilanciato ha meno capacità.",
+      expected: "pH del tampone: iniziale ~4,76, cambia di < 0,1 unità con 1 mL di acido o base. Controllo: il pH cambia di 2–3 unità. Dimostrazione chiara della resistenza del tampone.",
+    },
+  },
+  {
+    num: 117,
+    title: "Indicatori di pH Naturali",
+    section: "Acidi e Basi",
+    desc: "Estrarre il succo di cavolo rosso come indicatore di pH naturale e testarlo su una gamma di valori di pH per creare uno spettro di colori.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che i pigmenti antocianici nel cavolo rosso cambiano colore su tutta la gamma di pH, agendo come un indicatore universale naturale.",
+      instructions: [
+        "Tagliare finemente il cavolo rosso e bollire in 200 mL di acqua distillata per 10 minuti.",
+        "Filtrare per ottenere un estratto viola scuro.",
+        "Preparare soluzioni di pH noto (1, 3, 5, 7, 9, 11, 13) usando tamponi o acidi/alcali diluiti.",
+        "Aggiungere 2 mL di estratto di cavolo a ciascuna soluzione e registrare il colore.",
+        "Disporre le provette in ordine di pH per visualizzare lo spettro completo dei colori.",
+      ],
+      expectedOutcome: "L'indicatore di cavolo rosso mostra: rosso (pH 1–2), rosa (pH 3–4), viola (pH 5–6), blu (pH 7–8), verde (pH 9–10), giallo (pH 11–12), e incolore/giallo (pH 13+).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🥬", name: "Cavolo rosso (un quarto di testa)" },
+        { emoji: "💧", name: "Acqua distillata (200 mL)" },
+        { emoji: "🧪", name: "Provette (7) e portaprovette" },
+        { emoji: "🔬", name: "Soluzioni di pH noto (1–13)" },
+        { emoji: "📏", name: "Carta da filtro e imbuto" },
+      ],
+      observationsToRecord: ["Colore dell'estratto di cavolo a ciascun valore di pH", "Transizioni di colore tra valori di pH adiacenti", "Confronto con i colori dell'indicatore universale", "Intervallo di pH dove si verifica il cambiamento di colore più drastico"],
+      theoryPoints: [
+        "Le antocianine sono pigmenti naturali la cui struttura molecolare cambia con il pH, alterando le lunghezze d'onda della luce assorbita.",
+        "A pH basso (acido), la molecola di antocianina acquista H⁺ → catione flavilio rosso.",
+        "A pH neutro, dominano le forme carbinolo (incolore) e chinoidale (blu/viola).",
+        "A pH alto (alcalino), la molecola perde più protoni → forma calcone verde/gialla.",
+      ],
+      realWorldConnections: [
+        "Il colore dei fiori di ortensia dipende dal pH del suolo: blu in terreno acido (Al³⁺ disponibile), rosa in terreno alcalino.",
+        "Il colore del vino rosso cambia con il pH — i produttori di vino regolano il pH per controllare l'intensità del colore.",
+        "La cartina al tornasole è fatta con pigmenti di licheni — gli indicatori di pH naturali sono usati da secoli.",
+      ],
+      formula: "Antocianina + H⁺ → Forma rossa  |  Antocianina → Forma viola/blu  |  Antocianina − H⁺ → Forma verde/gialla",
+    },
+    questions: {
+      mcq: [
+        { text: "Qual è il composto attivo indicatore di pH nel cavolo rosso?", options: ["Clorofilla", "Carotene", "Antocianina", "Melanina"], correctIndex: 2, explanation: "Le antocianine sono i pigmenti responsabili dei colori rosso, viola e blu in molti frutti e verdure. La loro struttura molecolare cambia con il pH, alterando il colore." },
+        { text: "A quale pH l'indicatore di cavolo rosso apparirebbe verde?", options: ["pH 2", "pH 5", "pH 7", "pH 10"], correctIndex: 3, explanation: "A pH 9–10, la molecola di antocianina adotta la forma calcone che assorbe diversamente, apparendo verde. Questa transisce al giallo a pH ancora più alto." },
+        { text: "Perché il cavolo rosso è un indicatore di pH migliore del tornasole?", options: ["È più colorato", "Mostra un cambiamento di colore continuo su tutta la gamma di pH invece di solo due colori", "È più facile da estrarre", "È più preciso"], correctIndex: 1, explanation: "Il tornasole mostra solo rosso (acido) o blu (alcalino). Il cavolo rosso mostra uno spettro completo di colori dal rosso attraverso viola, blu, verde, al giallo, dando valori approssimativi di pH." },
+      ],
+      discussion: ["Perché le ortensie cambiano colore in terreni diversi? Collega questo al pH e alla disponibilità di ioni alluminio.", "Potresti usare l'estratto di cavolo rosso come strumento quantitativo per la misurazione del pH? Quali sono i limiti?", "Suggerisci altre fonti naturali di antocianine che potrebbero essere usate come indicatori di pH."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Chimica degli Indicatori Naturali", pct: 35 },
+        { label: "Struttura delle Antocianine e pH", pct: 30 },
+        { label: "Gamma di pH e Spettro dei Colori", pct: 20 },
+        { label: "Applicazioni in Natura", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che gli indicatori naturali siano meno affidabili di quelli sintetici — per il pH approssimativo, il cavolo rosso è informativo quanto l'indicatore universale.", "Molti credono che solo i prodotti chimici possano essere indicatori — molti pigmenti vegetali rispondono ai cambiamenti di pH."],
+      hook: "Nel XVII secolo, Robert Boyle usò sciroppo di viole per testare acidi e basi — fu uno dei primi scienziati a usare indicatori naturali!",
+      khanLinks: [
+        { title: "Scala del pH", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/ph-scale" },
+        { title: "Acidi Forti e Basi Forti", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/strong-acids-and-strong-bases" },
+      ],
+    },
+    dataTable: {
+      headers: ["pH", "Tampone/Soluzione Usata", "Colore Indicatore Cavolo", "Colore Indicatore Universale"],
+      rows: 7,
+    },
+    observations: ["Registrare il colore a ciascun valore di pH", "Notare quale intervallo di pH mostra il cambiamento di colore più drastico", "Confrontare lo spettro dell'indicatore di cavolo con l'indicatore universale"],
+    conclusion: "Crea una tabella dei colori per l'indicatore di cavolo rosso su pH 1–13. Spiega la base molecolare dei cambiamenti di colore in termini di struttura delle antocianine.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai creando il tuo indicatore di pH dal cavolo rosso — un bellissimo arcobaleno di colori che rivela il pH nascosto di qualsiasi soluzione!",
+      keywords: {
+        setup: "Bolli il cavolo delicatamente — troppo calore può degradare le antocianine. Filtra bene per ottenere un estratto limpido.",
+        formula: "L'antocianina esiste in diversi stati di protonazione: rosso (H₃A⁺) → viola (H₂A) → blu (HA⁻) → verde/giallo (A²⁻) all'aumentare del pH.",
+        error: "Se i colori sono torbidi, l'estratto potrebbe essere troppo concentrato. Diluisci con acqua distillata finché non riesci a vedere attraverso la soluzione in una provetta.",
+        result: "pH 1: rosso. pH 3: rosa. pH 5: viola. pH 7: blu. pH 9: verde. pH 11: giallo. pH 13: incolore/giallo pallido.",
+        real: "Le ortensie sono pH-metri naturali — fiori blu significano terreno acido (pH < 6), fiori rosa significano terreno alcalino (pH > 7). I giardinieri aggiungono solfato di alluminio per renderle blu.",
+        explain: "A pH basso, l'eccesso di H⁺ protona l'antocianina, rendendola rossa. All'aumentare del pH, H⁺ viene rimosso passo dopo passo, cambiando la distribuzione elettronica e quindi il colore assorbito.",
+        hook: "Le antiche donne romane usavano bacche schiacciate (antocianine) come fard cosmetico — la pelle leggermente acida trasformava i pigmenti in un rosa lusinghiero!",
+        misconception: "L'indicatore di cavolo rosso non è impreciso — fornisce una stima continua del pH su tutta la gamma. Per misurazioni approssimative del pH, è utile quanto l'indicatore universale.",
+      },
+      hint: "Se il colore verde a pH 9–10 non è visibile, aggiungi più estratto di cavolo. Il verde si forma mescolando le forme blu e gialla e può essere sottile.",
+      expected: "Progressione arcobaleno chiara: rosso → rosa → viola → blu → verde → giallo su pH 1–13. Sette colori distinti visibili nelle provette disposte in ordine.",
+    },
+  },
+  {
+    num: 118,
+    title: "Antacid Effectiveness",
+    section: "Acidi e Basi",
+    desc: "Compare how much acid different commercial antacid tablets can neutralise to determine which is most effective.",
+    setupTime: "5 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Students apply neutralisation chemistry to compare the acid-neutralising capacity of different antacid brands using back-titration.",
+      instructions: [
+        "Crush one antacid tablet and add it to 50 mL of 0.5 mol/L HCl (excess acid).",
+        "Stir until the antacid is fully dissolved (5–10 minutes).",
+        "Titrate the remaining (unreacted) HCl with 0.1 mol/L NaOH using methyl orange indicator.",
+        "Calculate the moles of HCl neutralised by the antacid.",
+        "Repeat for two other antacid brands and compare effectiveness per gram.",
+      ],
+      expectedOutcome: "Different antacids neutralise different amounts of acid. Calcium carbonate-based antacids typically neutralise more acid per gram than magnesium hydroxide-based ones.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💊", name: "3 different antacid tablet brands" },
+        { emoji: "🧪", name: "0.5 mol/L HCl (50 mL per trial)" },
+        { emoji: "⚗️", name: "Burette with 0.1 mol/L NaOH" },
+        { emoji: "🟠", name: "Methyl orange indicator" },
+        { emoji: "⚖️", name: "Mortar and pestle, electronic balance" },
+      ],
+      observationsToRecord: ["Mass of each antacid tablet (g)", "Volume of NaOH used to neutralise excess HCl (mL)", "Moles of HCl neutralised by antacid", "Acid neutralised per gram of antacid"],
+      theoryPoints: [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ — calcium carbonate neutralises 2 moles of HCl per mole.",
+        "Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O — magnesium hydroxide also neutralises 2 moles of HCl per mole.",
+        "Back-titration is used because antacid tablets dissolve slowly and incompletely with stoichiometric acid.",
+        "Effectiveness = moles of acid neutralised per gram of antacid tablet.",
+      ],
+      realWorldConnections: [
+        "Antacids are a multi-billion pound industry — formulations are optimised for maximum neutralisation with minimum side effects.",
+        "Aluminium hydroxide antacids can cause constipation; magnesium hydroxide can cause diarrhoea — many formulations combine both.",
+        "Proton pump inhibitors (PPIs) work differently from antacids — they reduce acid production rather than neutralising existing acid.",
+      ],
+      formula: "n(HCl neutralised) = n(HCl added) − n(HCl remaining)  |  n(HCl remaining) = C(NaOH) × V(NaOH)",
+    },
+    questions: {
+      mcq: [
+        { text: "Why is back-titration used rather than direct titration of the antacid?", options: ["Direct titration is too fast", "Antacid tablets are insoluble in water and dissolve slowly — excess acid ensures complete reaction", "NaOH cannot neutralise antacids", "Back-titration is more colourful"], correctIndex: 1, explanation: "Antacid tablets contain insoluble compounds (CaCO₃, Mg(OH)₂) that dissolve slowly. Adding excess acid ensures complete reaction; the unreacted acid is then titrated with NaOH." },
+        { text: "Which antacid active ingredient neutralises the most acid per mole?", options: ["NaHCO₃ (1 mol HCl/mol)", "CaCO₃ (2 mol HCl/mol)", "Al(OH)₃ (3 mol HCl/mol)", "They all neutralise the same amount"], correctIndex: 2, explanation: "Al(OH)₃ has 3 OH groups, so it neutralises 3 moles of HCl per mole: Al(OH)₃ + 3HCl → AlCl₃ + 3H₂O. CaCO₃ neutralises 2, and NaHCO₃ only 1." },
+        { text: "If 50 mL of 0.5 mol/L HCl is added to an antacid, and 15 mL of 0.1 mol/L NaOH is needed to neutralise the excess, how many moles of HCl did the antacid neutralise?", options: ["0.0015 mol", "0.0235 mol", "0.025 mol", "0.0265 mol"], correctIndex: 1, explanation: "n(HCl added) = 0.5 × 0.050 = 0.025 mol. n(HCl remaining) = 0.1 × 0.015 = 0.0015 mol. n(HCl neutralised) = 0.025 − 0.0015 = 0.0235 mol." },
+      ],
+      discussion: ["Why do some antacids also contain simethicone (an anti-foaming agent)?", "Explain why taking too many calcium carbonate antacids can actually increase stomach acid production (acid rebound).", "Design an experiment to test whether liquid antacids are faster-acting than tablet antacids."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Back-Titration Method", pct: 35 },
+        { label: "Neutralisation Stoichiometry", pct: 30 },
+        { label: "Comparing Commercial Products", pct: 20 },
+        { label: "Pharmaceutical Chemistry", pct: 15 },
+      ],
+      misconceptions: ["Students often think all antacids are the same — different active ingredients have very different neutralising capacities per gram.", "Many forget that back-titration measures EXCESS acid, not the acid neutralised by the antacid — the calculation requires subtraction."],
+      hook: "The ancient Egyptians used crushed limestone (CaCO₃) to treat heartburn over 4,000 years ago — the same active ingredient found in many modern antacid tablets!",
+      khanLinks: [
+        { title: "Conjugate Acids and Bases", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/conjugate-acids-and-bases" },
+        { title: "Molecular, Complete, and Net Ionic Equations", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/net-ionic-equations/v/molecular-complete-and-net-ionic-equations" },
+      ],
+    },
+    dataTable: {
+      headers: ["Antacid Brand", "Mass (g)", "NaOH Titre (mL)", "HCl Neutralised (mol)", "mol HCl / g antacid"],
+      rows: 4,
+    },
+    observations: ["Record the mass and active ingredient of each antacid", "Record the NaOH titre for each back-titration", "Calculate acid neutralised per gram for comparison"],
+    conclusion: "Rank the antacids by effectiveness (moles of acid neutralised per gram). Relate the results to the active ingredient and its stoichiometry. Discuss value for money.",
+    ai: {
+      opening: "Hi! I'm Gali. Today you're putting antacid tablets to the test — which brand really does neutralise the most acid? Chemistry meets consumer science!",
+      keywords: {
+        setup: "Crush the tablet finely in a mortar to speed up dissolution. Stir the acid-antacid mixture for at least 5 minutes to ensure complete reaction.",
+        formula: "n(HCl neutralised) = n(HCl added) − n(excess HCl). n(excess) = C(NaOH) × V(NaOH titre).",
+        error: "Ensure the antacid has fully dissolved before titrating the excess acid. Undissolved antacid gives a falsely low result.",
+        result: "Typical: CaCO₃-based antacids neutralise ~0.020 mol HCl/g. Mg(OH)₂-based: ~0.017 mol/g. NaHCO₃-based: ~0.012 mol/g.",
+        real: "Pharmacists compare antacids by \"acid neutralising capacity\" (ANC) — exactly the measurement you are making today.",
+        explain: "The more hydroxide or carbonate ions per gram, the more HCl can be neutralised. CaCO₃ provides 2 mol H⁺ neutralised per 100 g; Mg(OH)₂ provides 2 mol per 58 g.",
+        hook: "Rennie, Tums, and Gaviscon all contain calcium carbonate — but at very different doses. Your experiment reveals which gives the best neutralisation per tablet.",
+        misconception: "More expensive does not mean more effective. A cheap generic CaCO₃ tablet may neutralise just as much acid as a premium branded one.",
+      },
+      hint: "If the antacid does not dissolve completely in the acid, warm the mixture gently or stir longer. Incomplete dissolution gives unreliable results.",
+      expected: "Clear ranking of antacid effectiveness per gram. CaCO₃-based typically most effective per gram. Back-titration results within 5% of theoretical values.",
+    },
+  },
+  {
+    num: 119,
+    title: "Esterificazione",
+    section: "Acidi e Basi",
+    desc: "Fai reagire l'etanolo con l'acido etanoico usando un catalizzatore H₂SO₄ per produrre etanoato di etile, identificato dal suo caratteristico odore fruttato.",
+    setupTime: "5 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che gli esteri si formano attraverso la reazione reversibile di condensazione tra un alcol e un acido carbossilico, catalizzata da un acido forte.",
+      instructions: [
+        "Mescola 5 mL di etanolo con 5 mL di acido etanoico glaciale in una provetta.",
+        "Aggiungi con cautela 1 mL di H₂SO₄ concentrato come catalizzatore.",
+        "Riscalda a bagnomaria a 70–80 °C per 10 minuti.",
+        "Versa la miscela in un becher contenente soluzione fredda di carbonato di sodio per neutralizzare l'acido in eccesso.",
+        "Osserva lo strato oleoso di etanoato di etile che galleggia in superficie e nota il suo odore fruttato.",
+      ],
+      expectedOutcome: "Uno strato oleoso dal profumo dolce e fruttato (estere etanoato di etile) si forma sopra lo strato acquoso dopo la neutralizzazione con carbonato di sodio.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Etanolo (5 mL)" },
+        { emoji: "🧪", name: "Acido etanoico glaciale (5 mL)" },
+        { emoji: "⚗️", name: "H₂SO₄ concentrato (1 mL, catalizzatore)" },
+        { emoji: "♨️", name: "Bagnomaria a 70–80 °C" },
+        { emoji: "💧", name: "Soluzione di carbonato di sodio (per la neutralizzazione)" },
+      ],
+      observationsToRecord: ["Odore della miscela di reazione durante il riscaldamento", "Aspetto quando versata nella soluzione di carbonato di sodio", "Odore dello strato oleoso dell'estere", "Se l'estere galleggia o affonda in acqua"],
+      theoryPoints: [
+        "Esterificazione: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (reversibile, catalizzatore: H₂SO₄).",
+        "Il catalizzatore H₂SO₄ protona l'ossigeno carbonilico, rendendo l'acido carbossilico più elettrofilo.",
+        "La reazione è reversibile — l'eccesso di un reagente o la rimozione dell'acqua sposta l'equilibrio verso destra.",
+        "Gli esteri sono responsabili di molte fragranze di frutta e fiori; sono anche usati come solventi e plastificanti.",
+      ],
+      realWorldConnections: [
+        "I sapori di frutta nelle caramelle e nelle bibite sono spesso esteri sintetici — l'etanoato di etile ha l'odore delle caramelle alla pera.",
+        "I poliesteri (plastica PET per bottiglie) si formano per esterificazione di acidi dicarbossilici con dioli.",
+        "L'aspirina (acido acetilsalicilico) è un estere — formato per esterificazione dell'acido salicilico con anidride etanoica.",
+      ],
+      formula: "CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O  (catalizzatore acido, reversibile)",
+    },
+    questions: {
+      mcq: [
+        { text: "Qual è il ruolo dell'H₂SO₄ nell'esterificazione?", options: ["Reagente", "Catalizzatore", "Solvente", "Neutralizzante"], correctIndex: 1, explanation: "L'H₂SO₄ agisce come catalizzatore — accelera la reazione protonando l'acido carbossilico ma non viene consumato complessivamente." },
+        { text: "L'esterificazione è una:", options: ["Reazione di decomposizione", "Reazione di condensazione (viene rilasciata acqua)", "Reazione di addizione", "Reazione di combustione"], correctIndex: 1, explanation: "L'esterificazione è una reazione di condensazione: una piccola molecola (acqua) viene eliminata quando l'acido e l'alcol si combinano per formare l'estere." },
+        { text: "Perché si aggiunge la soluzione di carbonato di sodio alla fine?", options: ["Per catalizzare la reazione", "Per neutralizzare l'acido in eccesso e permettere all'estere di separarsi come strato oleoso", "Per sciogliere l'estere", "Per aumentare la resa"], correctIndex: 1, explanation: "Il Na₂CO₃ neutralizza l'acido etanoico e l'H₂SO₄ in eccesso. L'estere è insolubile nello strato acquoso e si separa in superficie." },
+      ],
+      discussion: ["Perché la reazione di esterificazione è reversibile e come si potrebbe aumentare la resa dell'estere?", "Spiega perché gli esteri hanno punti di ebollizione più bassi degli acidi carbossilici da cui derivano.", "L'aspirina è un estere. Ricerca la sua sintesi e spiega la reazione di esterificazione coinvolta."],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Meccanismo di Esterificazione", pct: 40 },
+        { label: "Equilibrio e Principio di Le Chatelier", pct: 25 },
+        { label: "Proprietà e Usi degli Esteri", pct: 20 },
+        { label: "Catalisi", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che tutti gli esteri abbiano un odore gradevole — alcuni esteri hanno odori molto sgradevoli (es. quelli nel burro rancido).", "Molti pensano che l'H₂SO₄ sia un reagente — è un catalizzatore e viene rigenerato."],
+      hook: "L'odore di banane, ananas e caramelle alla pera sono tutti causati da esteri diversi — gli aromi artificiali alla frutta sono solo miscele di esteri sintetici!",
+      khanLinks: [
+        { title: "Equilibrio degli Acidi Deboli", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/weak-acid-base-equilibria/v/weak-acid-equilibrium" },
+        { title: "Henderson-Hasselbalch", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/henderson-hasselbalch" },
+      ],
+    },
+    dataTable: {
+      headers: ["Osservazione", "Prima del Riscaldamento", "Dopo il Riscaldamento", "Dopo la Neutralizzazione"],
+      rows: 4,
+    },
+    observations: ["Registra l'odore in ogni fase della reazione", "Nota la formazione dello strato oleoso dell'estere dopo la neutralizzazione", "Descrivi l'aspetto, l'odore e la solubilità dell'estere"],
+    conclusion: "Scrivi l'equazione bilanciata per l'esterificazione. Descrivi le prove che si è formato un nuovo prodotto (estere). Spiega perché questa reazione richiede un catalizzatore ed è reversibile.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai producendo un vero estere — lo stesso tipo di molecola che dà ai frutti i loro odori deliziosi. Il tuo laboratorio profumerà come un negozio di dolci!",
+      keywords: {
+        setup: "Aggiungi l'H₂SO₄ MOLTO attentamente alla miscela. È concentrato e causa gravi ustioni. Aggiungi sempre l'acido alla miscela, non la miscela all'acido.",
+        formula: "CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O. Il simbolo ⇌ indica che è reversibile — un equilibrio.",
+        error: "Non riscaldare sopra 80 °C — l'etanolo bolle a 78 °C e evaporerà, riducendo la resa. Mantieni il bagnomaria a temperatura moderata.",
+        result: "Odore dolce e fruttato (caramelle alla pera). Strato oleoso trasparente che galleggia sulla soluzione acquosa di carbonato di sodio dopo la neutralizzazione.",
+        real: "Le caramelle alla pera ottengono il loro sapore dall'etanoato di etile — esattamente l'estere che hai appena prodotto!",
+        explain: "L'OH dall'acido e l'H dall'alcol si combinano per formare acqua, lasciando il legame estere (C–O–C=O). L'H₂SO₄ fa avvenire questo più velocemente attivando il gruppo carbonilico.",
+        hook: "Diverse combinazioni alcol + acido danno odori di frutta diversi: etanoato di pentile = banana, etanoato di ottile = arancia, butanoato di metile = mela!",
+        misconception: "L'odore fruttato NON proviene dall'acido o dall'alcol non reagiti — è un nuovo composto (l'estere) con proprietà completamente diverse.",
+      },
+      hint: "Se non si rileva odore fruttato, la temperatura del bagnomaria potrebbe essere troppo bassa. Assicurati che rimanga a 70–80 °C per tutti i 10 minuti.",
+      expected: "Strato oleoso limpido e incolore con un forte odore dolce fruttato (caramelle alla pera). L'estere galleggia sullo strato acquoso. Distinto dall'odore di aceto dell'acido etanoico.",
+    },
+  },
+  {
+    num: 120,
+    title: "Saponificazione (Produzione del Sapone)",
+    section: "Acidi e Basi",
+    desc: "Fai reagire l'olio vegetale con NaOH per produrre sapone tramite saponificazione, poi testa il sapone con acqua dura e acqua dolce.",
+    setupTime: "5 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che il sapone è il sale sodico di un acido grasso, prodotto per idrolisi alcalina (saponificazione) di grassi e oli.",
+      instructions: [
+        "Riscalda 10 mL di olio vegetale con 20 mL di NaOH 6 mol/L in un becher a bagnomaria, mescolando continuamente.",
+        "Continua a riscaldare e mescolare per 15–20 minuti fino a quando la miscela si addensa.",
+        "Aggiungi soluzione satura di NaCl per 'salare fuori' il sapone — precipita come solido.",
+        "Filtra, lava e testa il sapone agitando una piccola quantità con acqua distillata (dolce) e acqua dura (soluzione di CaCl₂).",
+        "Confronta la formazione di schiuma in acqua dolce vs acqua dura.",
+      ],
+      expectedOutcome: "Il sapone fa molta schiuma in acqua dolce ma forma una patina bianca (stearato di calcio) in acqua dura, dimostrando la reazione del sapone con gli ioni Ca²⁺.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🫒", name: "Olio vegetale (oliva o cocco, 10 mL)" },
+        { emoji: "🧪", name: "Soluzione di NaOH 6 mol/L (20 mL)" },
+        { emoji: "🧂", name: "Soluzione satura di NaCl (per la salatura)" },
+        { emoji: "♨️", name: "Bagnomaria e bacchetta di vetro" },
+        { emoji: "💧", name: "Acqua dura (soluzione di CaCl₂) e acqua distillata" },
+      ],
+      observationsToRecord: ["Aspetto della miscela di reazione nel tempo (strato oleoso → pasta densa)", "Aspetto del sapone salato", "Qualità della schiuma in acqua distillata vs acqua dura", "Formazione di patina in acqua dura"],
+      theoryPoints: [
+        "Saponificazione: grasso/olio + NaOH → glicerolo + sale sodico dell'acido grasso (sapone).",
+        "Le molecole di sapone hanno una testa idrofila (COO⁻Na⁺) e una coda idrofoba (lunga catena di carbonio).",
+        "In acqua dura, il Ca²⁺ sostituisce il Na⁺ formando stearato di calcio insolubile (patina).",
+        "I detergenti (tensioattivi sintetici) funzionano in acqua dura perché non formano sali di calcio insolubili.",
+      ],
+      realWorldConnections: [
+        "La produzione di sapone è uno dei più antichi processi chimici conosciuti — gli antichi Babilonesi producevano sapone da grasso animale e cenere di legno (potassa/KOH) intorno al 2800 a.C.",
+        "Le moderne saponette sono ancora prodotte per saponificazione di oli (palma, cocco, oliva) con NaOH.",
+        "Le zone con acqua dura nel Regno Unito usano più detersivo perché il sapone forma patina invece di schiuma.",
+      ],
+      formula: "C₃H₅(OOCR)₃ + 3NaOH → C₃H₅(OH)₃ + 3RCOONa  (grasso + alcali → glicerolo + sapone)",
+    },
+    questions: {
+      mcq: [
+        { text: "La saponificazione è la reazione tra:", options: ["Un acido e una base", "Un grasso/olio e un alcali (NaOH o KOH)", "Un alcol e un acido carbossilico", "Un metallo e un acido"], correctIndex: 1, explanation: "La saponificazione è l'idrolisi alcalina di un estere (grasso/olio) con NaOH o KOH, producendo glicerolo e il sale sodico o potassico dell'acido grasso (sapone)." },
+        { text: "Perché il sapone forma patina in acqua dura?", options: ["L'acqua dura è troppo fredda per il sapone", "Gli ioni Ca²⁺ reagiscono con il sapone formando stearato di calcio insolubile", "L'acqua dura ha un pH troppo alto", "Il sapone si scioglie in acqua dura"], correctIndex: 1, explanation: "2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ + 2Na⁺. Il sapone di calcio è insolubile e precipita come patina bianca." },
+        { text: "Quale parte della molecola di sapone è idrofoba?", options: ["La testa COO⁻Na⁺", "La lunga coda idrocarburica", "Entrambe le parti ugualmente", "Nessuna — il sapone è completamente solubile"], correctIndex: 1, explanation: "La lunga catena di carbonio (C₁₂–C₁₈) è apolare e idrofoba — si scioglie nel grasso e nell'olio. La testa ionica COO⁻ è idrofila e si scioglie in acqua." },
+      ],
+      discussion: ["Spiega come le molecole di sapone rimuovono il grasso dai vestiti sporchi a livello molecolare.", "Perché i detergenti sintetici funzionano meglio del sapone nelle zone con acqua dura?", "Quali preoccupazioni ambientali sono associate all'uso di saponi e detergenti?"],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Reazione di Saponificazione", pct: 35 },
+        { label: "Struttura del Sapone (Idrofilo/Idrofobo)", pct: 30 },
+        { label: "Chimica dell'Acqua Dura", pct: 20 },
+        { label: "Contesto Storico e Industriale", pct: 15 },
+      ],
+      misconceptions: ["Gli studenti spesso pensano che sapone e detersivo siano la stessa cosa — il sapone è un prodotto naturale (sale di acido grasso) mentre i detersivi sono tensioattivi sintetici.", "Molti pensano che l'acqua dura non sia sicura da bere — è perfettamente sicura; causa solo problemi con il sapone."],
+      hook: "Fight Club ha mostrato famosamente il sapone fatto da grasso e liscivia — questa è esattamente la reazione di saponificazione che stai eseguendo oggi, anche se con olio vegetale piuttosto che qualcosa di sinistro!",
+      khanLinks: [
+        { title: "Definizione di Arrhenius di Acidi e Basi", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases" },
+        { title: "Soluzione Tampone", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/buffer-solution" },
+      ],
+    },
+    dataTable: {
+      headers: ["Test", "Risultato Acqua Dolce", "Risultato Acqua Dura", "Spiegazione"],
+      rows: 3,
+    },
+    observations: ["Registra i cambiamenti nella miscela olio-NaOH durante il riscaldamento", "Nota l'aspetto e la consistenza del sapone salato", "Confronta la formazione di schiuma e patina in acqua dolce vs acqua dura"],
+    conclusion: "Scrivi l'equazione per la saponificazione. Spiega la struttura molecolare del sapone e perché forma patina in acqua dura. Confronta il sapone con i detergenti sintetici.",
+    ai: {
+      opening: "Ciao! Sono Gali. Oggi stai producendo sapone da zero — uno dei processi chimici più antichi e importanti dell'umanità, risalente a quasi 5.000 anni fa!",
+      keywords: {
+        setup: "Mescola continuamente — l'olio e il NaOH non si mescoleranno facilmente all'inizio. Il bagnomaria previene il surriscaldamento. Indossa i guanti — il NaOH a questa concentrazione causa ustioni.",
+        formula: "Grasso + 3NaOH → glicerolo + 3 molecole di sapone (RCOONa). Il gruppo R è una catena idrocarburica C₁₂–C₁₈ dell'acido grasso.",
+        error: "Se la miscela non si addensa, la temperatura potrebbe essere troppo bassa o la mescolazione insufficiente. L'olio deve emulsionarsi con il NaOH affinché avvenga la saponificazione.",
+        result: "Si forma una pasta densa e opaca dopo 15–20 min. La salatura produce un solido bianco e ceroso. Fa buona schiuma in acqua dolce. Patina bianca in acqua dura.",
+        real: "Il tradizionale sapone di Marsiglia (francese) è fatto da olio d'oliva e NaOH — usando la stessa reazione da oltre 600 anni.",
+        explain: "Il NaOH rompe i legami esterei nel grasso, liberando glicerolo e convertendo le catene di acidi grassi nei loro sali sodici (sapone). Ogni molecola di sapone ha una testa che ama l'acqua e una coda che ama il grasso.",
+        hook: "La parola 'saponificazione' deriva dal latino 'sapo' che significa sapone. Il naturalista romano Plinio descrisse tribù germaniche che mescolavano grasso di capra con cenere di faggio per fare una tintura per capelli — che in realtà era sapone!",
+        misconception: "L'acqua dura non impedisce la pulizia — spreca solo sapone formando patina. Devi aggiungere più sapone o usare un detersivo che non formi sali di calcio insolubili.",
+      },
+      hint: "Se la salatura non produce sapone solido, aggiungi più soluzione di NaCl. Il sale diminuisce la solubilità del sapone, forzandolo a precipitare.",
+      expected: "Solido di sapone bianco e ceroso dopo la salatura. Buona schiuma in acqua dolce (distillata). Patina bianca e scarsa schiuma in acqua dura (soluzione di CaCl₂). Differenza visiva chiara.",
+    },
+  },
+  {
+    num: 121,
+    title: "Produzione e Proprietà dell'Anidride Carbonica",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti fanno reagire frammenti di marmo con acido cloridrico per produrre CO₂, lo raccolgono per spostamento verso il basso, lo testano con acqua di calce (diventa lattiginosa) e lo usano per spegnere una candela.",
+    setupTime: "8 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano come la CO₂ viene prodotta da un carbonato e un acido, e identificano le sue proprietà: rende lattiginosa l'acqua di calce, è più densa dell'aria e spegne le fiamme.",
+      instructions: [
+        "Posizionare i frammenti di marmo in una beuta conica e aggiungere HCl 2 mol/L.",
+        "Raccogliere la CO₂ per spostamento verso il basso dell'aria in una provetta tenuta capovolta sopra il tubo di erogazione.",
+        "Versare la CO₂ raccolta in una provetta contenente acqua di calce, tappare e agitare delicatamente osservando.",
+        "Versare con cautela la CO₂ dal recipiente di raccolta su una candela accesa e osservare.",
+        "Registrare tutte le osservazioni e collegare ciascuna alle proprietà della CO₂.",
+      ],
+      expectedOutcome: "L'acqua di calce diventa lattiginosa (Ca(OH)₂ + CO₂ → CaCO₃ + H₂O). La candela si spegne poiché la CO₂ sposta l'O₂. Il gorgogliamento sui frammenti di marmo conferma la produzione di gas.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🪨", name: "Frammenti di marmo (carbonato di calcio)" },
+        { emoji: "🧪", name: "Acido cloridrico (2 mol/L)" },
+        { emoji: "⚗️", name: "Beuta conica con tappo e tubo di erogazione" },
+        { emoji: "💧", name: "Acqua di calce (soluzione di idrossido di calcio)" },
+        { emoji: "🕯️", name: "Candela e fiammiferi" },
+      ],
+      observationsToRecord: [
+        "Velocità del gorgogliamento dai frammenti di marmo",
+        "Aspetto dell'acqua di calce prima e dopo l'aggiunta di CO₂",
+        "Effetto della CO₂ sulla candela accesa",
+        "Eventuali variazioni di temperatura nella beuta durante la reazione",
+      ],
+      theoryPoints: [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ (acido + carbonato → sale + acqua + CO₂).",
+        "La CO₂ rende lattiginosa l'acqua di calce: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O.",
+        "La CO₂ è più densa dell'aria (M = 44 g/mol contro aria ≈ 29 g/mol) — può essere versata e si accumula nei punti bassi.",
+        "La CO₂ non supporta la combustione e spegne le fiamme spostando l'O₂.",
+      ],
+      realWorldConnections: [
+        "Gli estintori a CO₂ utilizzano lo stesso principio — la CO₂ densa copre il combustibile, interrompendo l'apporto di ossigeno.",
+        "Il test dell'acqua di calce viene utilizzato nell'industria per monitorare la CO₂ nella qualità dell'aria interna e nei recipienti di fermentazione.",
+        "Le bevande gassate sono prodotte dissolvendo CO₂ sotto pressione — lo stesso gas che produci qui.",
+      ],
+      formula: "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂  |  Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quale osservazione conferma che il gas prodotto è anidride carbonica?",
+          options: [
+            "Ha un odore forte",
+            "Rende lattiginosa l'acqua di calce",
+            "Riaccende una stecca incandescente",
+            "Produce uno scoppiettio con una stecca accesa",
+          ],
+          correctIndex: 1,
+          explanation: "La CO₂ reagisce con l'acqua di calce (Ca(OH)₂) formando carbonato di calcio insolubile (CaCO₃), rendendo la soluzione bianca lattiginosa. Questo è il test standard per la CO₂.",
+        },
+        {
+          text: "Perché la CO₂ spegne una candela quando viene versata sopra di essa?",
+          options: [
+            "La CO₂ reagisce con la cera della candela",
+            "La CO₂ raffredda la fiamma al di sotto della temperatura di ignizione",
+            "La CO₂ è più densa dell'aria e sposta l'ossigeno necessario per la combustione",
+            "La CO₂ assorbe la radiazione infrarossa dalla fiamma",
+          ],
+          correctIndex: 2,
+          explanation: "La CO₂ (massa molare 44 g/mol) è più densa dell'aria (≈29 g/mol) e si deposita intorno alla fiamma, spostando l'ossigeno. Senza O₂, la combustione non può continuare.",
+        },
+        {
+          text: "Quale delle seguenti è l'equazione corretta per la reazione dei frammenti di marmo con HCl?",
+          options: [
+            "CaCO₃ + HCl → CaCl + H₂O + CO₂",
+            "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂",
+            "CaCO₃ + 2HCl → CaCl₂ + H₂ + CO₂",
+            "Ca + 2HCl → CaCl₂ + H₂",
+          ],
+          correctIndex: 1,
+          explanation: "L'equazione bilanciata è CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Sono necessarie due moli di HCl per reagire con una mole di CaCO₃, formando cloruro di calcio, acqua e anidride carbonica.",
+        },
+      ],
+      discussion: [
+        "Spiega perché aumentare la superficie dei frammenti di marmo (frantumandoli) accelera la velocità di reazione. Usa la teoria delle collisioni nella tua risposta.",
+        "L'acqua di calce diventa lattiginosa, poi si schiarisce nuovamente se viene fatto gorgogliare CO₂ in eccesso. Scrivi l'equazione della reazione di schiarimento e spiega cosa mostra riguardo alla CO₂ e al carbonato di calcio.",
+        "Descrivi come la densità della CO₂ sia sia utile (estintori) che pericolosa (può accumularsi in aree basse come scantinati e crateri vulcanici).",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Reazione acido-carbonato che produce CO₂", pct: 35 },
+        { label: "Test dell'acqua di calce per la CO₂", pct: 30 },
+        { label: "Proprietà fisiche della CO₂ (densità, non infiammabile)", pct: 25 },
+        { label: "Applicazioni reali della CO₂", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso confondono la CO₂ con il CO (monossido di carbonio) — la CO₂ non brucia e non è tossica a basse concentrazioni, a differenza del CO.",
+        "Molti pensano che l'acqua di calce rimanga permanentemente lattiginosa — l'eccesso di CO₂ dissolve il CaCO₃ formando Ca(HCO₃)₂ solubile, schiarendo la soluzione.",
+      ],
+      hook: "Gli estintori a CO₂ funzionano semplicemente versando una coltre invisibile di gas denso su un incendio. Un estintore da 2 kg contiene oltre 1.000 litri di gas CO₂ — tutto prodotto dalla stessa chimica che stai facendo oggi!",
+      khanLinks: [
+        { title: "Legge dei Gas Ideali", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/ideal-gas-equation-pv-nrt" },
+        { title: "Bilanciamento delle Equazioni Chimiche", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/balancing-chemical-equations/v/balancing-chemical-equations-intuition" },
+      ],
+    },
+    dataTable: {
+      headers: ["Test", "Osservazione Prima", "Osservazione Dopo", "Conclusione"],
+      rows: 4,
+    },
+    observations: [
+      "Registra la velocità del gorgogliamento dai frammenti di marmo",
+      "Registra l'aspetto dell'acqua di calce prima e dopo l'aggiunta di CO₂",
+      "Registra cosa succede alla candela quando la CO₂ viene versata sopra",
+    ],
+    conclusion: "Scrivi l'equazione bilanciata per la produzione di CO₂ dai frammenti di marmo e HCl. Conferma l'identità del gas usando il risultato del test dell'acqua di calce. Spiega perché la CO₂ spegne una candela usando le sue proprietà fisiche.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi produrrai un gas che rende lattiginosa una soluzione trasparente e spegne una candela senza toccarla — è l'anidride carbonica, e la stai producendo da rocce e acido!",
+      keywords: {
+        setup: "Assicurati che il tubo di erogazione sia immerso nell'acqua di calce prima di iniziare. Usa frammenti di marmo piuttosto che polvere — la polvere reagisce troppo velocemente. Tieni la candela accesa e pronta prima di raccogliere il gas.",
+        formula: "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Test dell'acqua di calce: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O (lattiginosa). CO₂ in eccesso: CaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂ (si schiarisce).",
+        error: "Errori comuni: non sigillare bene il tappo (la CO₂ sfugge prima di raggiungere l'acqua di calce), capovolgere scorrettamente la provetta di raccolta (entra aria), e non far gorgogliare abbastanza CO₂ per rendere lattiginosa l'acqua di calce.",
+        result: "L'acqua di calce diventa lattiginosa dopo 10-15 secondi di gorgogliamento. La candela si spegne entro 2-3 secondi dal versamento della CO₂. Il vigoroso gorgogliamento sui frammenti di marmo conferma la reazione.",
+        real: "Gli estintori a CO₂ contengono CO₂ liquida sotto pressione. Quando rilasciata, si espande a 500× il suo volume e forma una coltre densa invisibile che soffoca gli incendi senza danni da acqua — essenziale per gli incendi elettrici.",
+        explain: "Il marmo (carbonato di calcio) reagisce con l'acido cloridrico in una classica reazione acido-carbonato. Gli ioni H⁺ attaccano i gruppi CO₃²⁻, liberando gas CO₂. La CO₂ è più pesante dell'aria, quindi affonda — ecco perché puoi versarla su una candela e rimane lì abbastanza a lungo da spegnerla.",
+        hook: "Il Lago Nyos in Camerun si trova su una sorgente vulcanica di CO₂. Nel 1986, un rilascio improvviso di 1,6 milioni di tonnellate di CO₂ scese lungo le valli come un'alluvione invisibile — il gas si depositò nelle aree basse perché è più denso dell'aria, soffocando 1.800 persone e 3.500 capi di bestiame. La stessa proprietà che spegne le candele divenne un disastro naturale.",
+        misconception: "La CO₂ NON è la stessa cosa del monossido di carbonio (CO). La CO₂ è prodotta dalla respirazione e dalla combustione e non è tossica a livelli normali. Il CO è un gas incolore, inodore e altamente tossico prodotto dalla combustione incompleta. Non confondere mai i due!",
+      },
+      hint: "Se l'acqua di calce non diventa lattiginosa, controlla che il tubo di erogazione sia effettivamente immerso e che il tappo sia ermetico. Prova a usare una provetta più piccola di acqua di calce così serve meno gas per saturarla.",
+      expected: "L'acqua di calce diventa lattiginosa entro 15 s dal gorgogliamento di CO₂. La candela si spegne quando la CO₂ viene versata sopra. Chiaro gorgogliamento vigoroso sui frammenti di marmo conferma la produzione di gas. L'acqua di calce si schiarisce se viene fatto gorgogliare CO₂ in eccesso.",
+    },
+  },
+  {
+    num: 122,
+    title: "Produzione e Proprietà dell'Ossigeno",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti decompongono il perossido di idrogeno usando biossido di manganese come catalizzatore, raccolgono l'ossigeno prodotto e ne confermano l'identità riaccendendo una stecca incandescente.",
+    setupTime: "8 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che i catalizzatori accelerano le reazioni senza essere consumati, e che l'ossigeno supporta la combustione — confermato dal test della stecca incandescente.",
+      instructions: [
+        "Aggiungere H₂O₂ 20 vol in una beuta conica dotata di tappo e tubo di erogazione.",
+        "Aggiungere una spatola di polvere di MnO₂ e riposizionare rapidamente il tappo.",
+        "Raccogliere l'ossigeno per spostamento verso il basso dell'acqua (spostamento verso l'alto dal tubo di erogazione in una provetta capovolta riempita d'acqua).",
+        "Quando è stato raccolto gas sufficiente, testare con una stecca incandescente — portarla all'apertura della provetta.",
+        "Osservare e registrare: la stecca si riaccende?",
+      ],
+      expectedOutcome: "L'ossigeno viene prodotto rapidamente. La stecca incandescente si riaccende, confermando che il gas è ossigeno. Il MnO₂ può essere recuperato inalterato alla fine, confermando che è un catalizzatore.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💧", name: "Soluzione di perossido di idrogeno (20 vol)" },
+        { emoji: "🔬", name: "Polvere di biossido di manganese (MnO₂)" },
+        { emoji: "⚗️", name: "Beuta conica con tappo e tubo di erogazione" },
+        { emoji: "🪵", name: "Stecca di legno e fiammiferi" },
+        { emoji: "🧪", name: "Provetta di raccolta (spostamento d'acqua)" },
+      ],
+      observationsToRecord: [
+        "Velocità del gorgogliamento quando si aggiunge MnO₂ rispetto a senza catalizzatore",
+        "Risultato del test della stecca incandescente (si riaccende o no)",
+        "Aspetto del MnO₂ prima e dopo la reazione",
+        "Volume stimato di O₂ raccolto in 2 minuti",
+      ],
+      theoryPoints: [
+        "2H₂O₂ → 2H₂O + O₂ (il catalizzatore MnO₂ abbassa l'energia di attivazione).",
+        "Il MnO₂ è un catalizzatore: aumenta la velocità di reazione ma non viene consumato — stessa massa prima e dopo.",
+        "L'ossigeno supporta la combustione — fornisce l'ossidante che permette alla stecca di bruciare.",
+        "Test della stecca incandescente: l'O₂ riaccende una stecca incandescente (non fiammeggiante); l'H₂ produce uno scoppiettio; la CO₂ spegne.",
+      ],
+      realWorldConnections: [
+        "L'enzima catalasi nelle cellule viventi esegue la stessa reazione — l'H₂O₂ è un sottoprodotto tossico del metabolismo che deve essere rapidamente decomposto.",
+        "I concentratori di ossigeno negli ospedali e sugli aerei usano l'adsorbimento a oscillazione di pressione per separare l'O₂ dall'aria — lo stesso gas che stai raccogliendo qui.",
+        "I motori a razzo usano H₂O₂ (alta concentrazione) come ossidante — decomponendolo rapidamente per produrre vapore e O₂ per la combustione.",
+      ],
+      formula: "2H₂O₂ → 2H₂O + O₂  (catalizzatore MnO₂)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Qual è il ruolo del MnO₂ nella decomposizione del perossido di idrogeno?",
+          options: [
+            "È un reagente che viene consumato nella reazione",
+            "Fornisce atomi di ossigeno alla reazione",
+            "È un catalizzatore che accelera la reazione senza essere consumato",
+            "Reagisce con l'acqua per produrre ossigeno",
+          ],
+          correctIndex: 2,
+          explanation: "Il MnO₂ è un catalizzatore. Abbassa l'energia di attivazione della reazione di decomposizione, facendola procedere molto più velocemente, ma non viene consumato — la sua massa rimane invariata prima e dopo.",
+        },
+        {
+          text: "Come si conferma che il gas raccolto è ossigeno?",
+          options: [
+            "Rende lattiginosa l'acqua di calce",
+            "Produce uno scoppiettio con una stecca accesa",
+            "Una stecca incandescente si riaccende quando viene posta nel gas",
+            "Sbianca la cartina al tornasole umida",
+          ],
+          correctIndex: 2,
+          explanation: "Il test della stecca incandescente è il test standard per l'ossigeno. L'ossigeno supporta la combustione e riaccende una stecca fumante. La CO₂ spegne le fiamme; l'H₂ produce uno scoppiettio; il Cl₂ sbianca il tornasole.",
+        },
+        {
+          text: "Quante moli di O₂ vengono prodotte da 2 moli di H₂O₂?",
+          options: ["0,5 mol", "1 mol", "2 mol", "4 mol"],
+          correctIndex: 1,
+          explanation: "Dall'equazione 2H₂O₂ → 2H₂O + O₂, due moli di H₂O₂ producono una mole di O₂. Il rapporto molare di H₂O₂ : O₂ è 2:1.",
+        },
+      ],
+      discussion: [
+        "Spiega perché un catalizzatore è importante per i processi industriali, collegandoti ai costi energetici e alla fattibilità della reazione.",
+        "Confronta le velocità di decomposizione dell'H₂O₂ con MnO₂ e con l'enzima catalasi (presente nel fegato). Entrambi catalizzano la stessa reazione — cosa ci dice questo sul funzionamento degli enzimi?",
+        "Progetta un esperimento per dimostrare che il MnO₂ è un vero catalizzatore mostrando che non viene consumato durante la reazione.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Meccanismo di decomposizione catalitica", pct: 30 },
+        { label: "Test della stecca incandescente per l'ossigeno", pct: 30 },
+        { label: "Proprietà dell'ossigeno (supporta la combustione)", pct: 25 },
+        { label: "Applicazioni industriali e biologiche dell'O₂", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che il catalizzatore fornisca l'ossigeno — l'ossigeno proviene interamente dalla molecola di H₂O₂, non dal MnO₂.",
+        "Molti presumono che un catalizzatore venga consumato in una reazione — per definizione, un catalizzatore viene completamente recuperato alla fine senza variazione di massa.",
+      ],
+      hook: "Il tuo fegato contiene miliardi di molecole dell'enzima catalasi che fanno esattamente questa reazione — scompongono l'H₂O₂ tossico prodotto dal tuo metabolismo in acqua e ossigeno innocui. Metti un pezzo di fegato nell'H₂O₂ e guarda la schiuma — è la tua biologia in una provetta!",
+      khanLinks: [
+        { title: "Teoria Cinetica Molecolare", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/kinetic-molecular-theory-of-gases" },
+        { title: "Velocità di Reazione e Catalizzatori", url: "https://www.khanacademy.org/science/chemistry/chem-kinetics/reaction-rates-tutorial/v/introduction-to-reaction-rates" },
+      ],
+    },
+    dataTable: {
+      headers: ["Catalizzatore Usato", "Tempo per 10 cm³ O₂ (s)", "Risultato Test Stecca", "Catalizzatore Recuperato?"],
+      rows: 4,
+    },
+    observations: [
+      "Registra la velocità del gorgogliamento con e senza MnO₂",
+      "Registra il risultato del test della stecca incandescente",
+      "Pesa il MnO₂ prima e dopo per confermare che non è consumato",
+    ],
+    conclusion: "Scrivi l'equazione bilanciata per la decomposizione dell'H₂O₂. Indica come il test della stecca incandescente conferma che il prodotto è O₂. Spiega il ruolo del MnO₂ come catalizzatore usando il concetto di energia di attivazione.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi produrrai gas ossigeno — e dimostrerai che puoi accelerare una reazione senza energia aggiuntiva, semplicemente aggiungendo il catalizzatore giusto!",
+      keywords: {
+        setup: "Aggiungi prima il MnO₂ nella beuta, poi aggiungi rapidamente l'H₂O₂ e tappa. Per la raccolta per spostamento d'acqua: riempi completamente la provetta di raccolta con acqua, capovolgila su una vaschetta d'acqua e inserisci il tubo di erogazione sotto l'apertura.",
+        formula: "2H₂O₂(aq) → 2H₂O(l) + O₂(g). Il MnO₂ fornisce un percorso di reazione alternativo con energia di attivazione più bassa. Viene recuperato inalterato alla fine.",
+        error: "Errori comuni: non far diventare incandescente la stecca correttamente prima del test (deve essere incandescente, non fiammeggiante), far entrare aria nella provetta di raccolta prima che inizi la reazione, e usare H₂O₂ diluito (troppo lento).",
+        result: "Gorgogliamento rapido quando si aggiunge MnO₂. La stecca incandescente si riaccende brillantemente — conferma O₂. Massa del MnO₂ invariata. ~20 cm³ di O₂ raccolti in 2 min da 10 mL di H₂O₂ 20 vol.",
+        real: "L'ossigeno è usato nella produzione dell'acciaio (forno a ossigeno basico), nei ventilatori medici e nel trattamento delle acque reflue. Il Regno Unito produce circa 4 milioni di tonnellate di O₂ all'anno — principalmente per distillazione frazionata dell'aria liquida.",
+        explain: "L'H₂O₂ si decompone lentamente da solo, ma la barriera dell'energia di attivazione è troppo alta perché avvenga rapidamente a temperatura ambiente. Il MnO₂ fornisce un percorso di reazione alternativo che ha una collina di energia di attivazione più bassa da scalare — più molecole hanno energia sufficiente per reagire, quindi la reazione procede molto più velocemente.",
+        hook: "Il perossido di idrogeno è stato usato come propellente per razzi negli anni '50 — il razzo britannico Black Arrow usava H₂O₂ concentrato decomposto su reticoli di catalizzatori d'argento per produrre vapore surriscaldato e O₂ per la combustione. Una versione più grande del tuo esperimento ha lanciato satelliti!",
+        misconception: "L'H₂O₂ NON contiene MnO₂ — il MnO₂ è solo un catalizzatore. Tutto l'ossigeno nel gas proviene dalle molecole di H₂O₂ stesse. Puoi dimostrarlo pesando il MnO₂ prima e dopo — nessuna variazione di massa.",
+      },
+      hint: "Se la stecca non si riaccende, l'ossigeno potrebbe essere troppo diluito con aria nella provetta di raccolta. Raccogli più a lungo o riprova il test con una stecca appena resa incandescente tenuta proprio all'apertura della provetta.",
+      expected: "Gorgogliamento vigoroso immediatamente quando si aggiunge MnO₂. La stecca incandescente si riaccende confermando O₂. Massa del MnO₂ invariata (catalizzatore confermato). Velocità significativamente più alta della decomposizione non catalizzata.",
+    },
+  },
+  {
+    num: 123,
+    title: "Production and Properties of Hydrogen",
+    section: "Chimica dei Gas",
+    desc: "Students react zinc granules with hydrochloric acid to produce hydrogen gas, collect it by upward displacement of air, and confirm its identity with the squeaky pop test.",
+    setupTime: "8 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Students learn that metals above hydrogen in the reactivity series displace H₂ from acid, and confirm hydrogen by the characteristic squeaky pop with a lit splint.",
+      instructions: [
+        "Place zinc granules in a conical flask fitted with a bung and delivery tube.",
+        "Add 2 mol/L HCl and quickly replace the bung.",
+        "Collect H₂ in an inverted test tube by upward displacement (H₂ is lighter than air).",
+        "Cover the tube with a thumb, bring to a lit splint, and remove the thumb.",
+        "Record the result of the squeaky pop test.",
+      ],
+      expectedOutcome: "Hydrogen is produced steadily. The squeaky pop confirms the gas is H₂. The solution becomes warm as the exothermic reaction proceeds.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚙️", name: "Zinc granules" },
+        { emoji: "🧪", name: "Hydrochloric acid (2 mol/L)" },
+        { emoji: "⚗️", name: "Conical flask with bung and delivery tube" },
+        { emoji: "🪵", name: "Wooden splint and matches" },
+        { emoji: "🌡️", name: "Thermometer" },
+      ],
+      observationsToRecord: [
+        "Rate of bubbling from zinc granules",
+        "Result of squeaky pop test",
+        "Temperature change during reaction",
+        "Appearance of zinc granules over time",
+      ],
+      theoryPoints: [
+        "Zn + 2HCl → ZnCl₂ + H₂ (zinc displaces hydrogen from acid — single displacement reaction).",
+        "Zinc is above hydrogen in the reactivity series and so can displace H₂.",
+        "H₂ is the least dense gas (M = 2 g/mol) — it must be collected by upward displacement (inverted tube).",
+        "Squeaky pop: H₂ burns explosively with O₂ in the air: 2H₂ + O₂ → 2H₂O.",
+      ],
+      realWorldConnections: [
+        "Green hydrogen produced from water electrolysis is a major focus of UK net-zero energy policy.",
+        "Hydrogen fuel cells in cars and buses combine H₂ with O₂ to produce electricity and water — zero emissions at the exhaust.",
+        "The Hindenburg disaster (1937) was caused by ignition of H₂ in an airship — demonstrating hydrogen's flammability properties.",
+      ],
+      formula: "Zn + 2HCl → ZnCl₂ + H₂",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Why is hydrogen collected by upward displacement of air rather than downward?",
+          options: [
+            "Hydrogen reacts with water and cannot be collected over water",
+            "Hydrogen is less dense than air and rises to the top of an inverted tube",
+            "Hydrogen dissolves in water and cannot be collected",
+            "Downward displacement would mix hydrogen with oxygen",
+          ],
+          correctIndex: 1,
+          explanation: "Hydrogen (M = 2 g/mol) is much less dense than air (M ≈ 29 g/mol). It rises and collects at the top of an inverted tube. CO₂ (M = 44) sinks and is collected by downward displacement.",
+        },
+        {
+          text: "What is observed when a lit splint is held to a test tube of hydrogen?",
+          options: [
+            "The splint is extinguished immediately",
+            "A blue flame burns quietly",
+            "A squeaky pop is heard as the hydrogen burns rapidly",
+            "The splint relights if glowing",
+          ],
+          correctIndex: 2,
+          explanation: "When H₂ ignites in air, it burns rapidly with the surrounding O₂ (2H₂ + O₂ → 2H₂O), producing a characteristic squeaky pop. This is the standard confirmatory test for hydrogen gas.",
+        },
+        {
+          text: "Which metal would NOT react with dilute HCl to produce hydrogen?",
+          options: ["Magnesium", "Zinc", "Iron", "Copper"],
+          correctIndex: 3,
+          explanation: "Copper is below hydrogen in the reactivity series and cannot displace H₂ from acid. Only metals above hydrogen (Mg, Zn, Fe, Na, etc.) can displace hydrogen from dilute acids.",
+        },
+      ],
+      discussion: [
+        "Write the ionic equation for the reaction of zinc with hydrochloric acid and identify the oxidation state change for zinc.",
+        "Explain why magnesium reacts with HCl much faster than zinc, using the reactivity series and collision theory.",
+        "Discuss the advantages and safety risks of using hydrogen as a fuel in transport, comparing it to petrol and battery-electric vehicles.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Metal-acid reaction and displacement", pct: 35 },
+        { label: "Squeaky pop test for hydrogen", pct: 30 },
+        { label: "Reactivity series and hydrogen position", pct: 25 },
+        { label: "Green hydrogen and fuel cells", pct: 10 },
+      ],
+      misconceptions: [
+        "Students often think all metals react with acid to produce hydrogen — only metals above hydrogen in the reactivity series do.",
+        "Many think the squeaky pop is caused by oxygen — it is caused by hydrogen burning rapidly in air: 2H₂ + O₂ → 2H₂O.",
+      ],
+      hook: "A hydrogen fuel cell car emits only water vapour from its exhaust — and the \"fuel\" can be made by splitting water with renewable electricity. You're making the fuel of the future in a flask today!",
+      khanLinks: [
+        { title: "Oxidation States", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states" },
+        { title: "Types of Chemical Reactions", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/types-of-chemical-reactions/v/types-of-chemical-reactions" },
+      ],
+    },
+    dataTable: {
+      headers: ["Metal", "Acid Concentration (mol/L)", "Bubble Rate", "Squeaky Pop", "Temperature Change (°C)"],
+      rows: 4,
+    },
+    observations: [
+      "Record rate of bubbling from zinc granules",
+      "Record whether the squeaky pop test is positive",
+      "Record temperature at start and after 5 minutes of reaction",
+    ],
+    conclusion: "Write the balanced equation for Zn reacting with HCl. Confirm the gas is H₂ using the squeaky pop test result. Explain why copper would not react with HCl using the reactivity series.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. Today you're going to make hydrogen gas — the lightest element in the universe — and set it alight with a satisfying squeaky pop!",
+      keywords: {
+        setup: "Collect hydrogen by upward displacement (inverted test tube, no water needed — H₂ rises). Allow at least 30 s of bubbling before testing to flush out air. Test with a lit splint immediately after covering the tube with a thumb.",
+        formula: "Zn + 2HCl → ZnCl₂ + H₂. Ionic: Zn(s) + 2H⁺(aq) → Zn²⁺(aq) + H₂(g). Zn is oxidised (0 → +2); H is reduced (+1 → 0).",
+        error: "Common errors: tube not inverted properly (H₂ escapes), testing too quickly before air is flushed, and using copper instead of zinc (no reaction).",
+        result: "Steady vigorous bubbling from zinc. Squeaky pop confirmed. Solution warms during reaction (exothermic). Zinc granules gradually dissolve and solution turns colourless (ZnCl₂).",
+        real: "Toyota's Mirai hydrogen fuel cell car fills up with H₂ in 3 minutes and has a 650 km range. The exhaust is pure water. The H₂ reacts with O₂ in the fuel cell to produce electricity — the reverse of the electrolysis that makes H₂.",
+        explain: "Zinc atoms in the metal lattice have electrons they're willing to donate. The H⁺ ions in HCl accept those electrons and pair up to form H₂ gas. Zinc is oxidised (loses electrons), hydrogen ions are reduced (gain electrons). It's a redox reaction in disguise!",
+        hook: "The Hindenburg airship was filled with 200,000 m³ of hydrogen. In 1937 it caught fire and burned in 37 seconds — recorded on camera. The disaster ended the era of hydrogen airships. Today's hydrogen safety systems are far more sophisticated, making H₂ no more dangerous than petrol.",
+        misconception: "Not all metals react with acid to produce H₂. Copper, silver, and gold are below hydrogen in the reactivity series — they won't react with dilute acids at all. Only metals above H in the series can displace it.",
+      },
+      hint: "If the squeaky pop is too faint, you may have too much air mixed with the hydrogen. Let the reaction run for 30 seconds to flush the air out, collect a fresh tube, and test again immediately.",
+      expected: "Vigorous bubbling from zinc + HCl. Clear squeaky pop confirms H₂. Solution warms slightly (exothermic). Flask contains ZnCl₂ solution at end. No reaction if copper used instead of zinc.",
+    },
+  },
+  {
+    num: 124,
+    title: "Legge di Boyle",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti utilizzano una siringa sigillata per comprimere una massa fissa di gas a temperatura costante, registrando pressione e volume per verificare la relazione inversa P₁V₁ = P₂V₂.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti verificano la Legge di Boyle: a temperatura costante, pressione e volume di una massa fissa di gas sono inversamente proporzionali (P ∝ 1/V).",
+      instructions: [
+        "Impostare una siringa da 60 mL a 50 mL e sigillare l'ugello con un tappo o un dito.",
+        "Registrare la pressione iniziale (atmosferica, ~101 kPa) e il volume (50 mL).",
+        "Spingere lo stantuffo per comprimere il gas a 40, 30, 20 e 10 mL. Registrare la pressione a ogni volume usando un sensore di pressione o un manometro.",
+        "Tirare lo stantuffo fino a 60 mL e registrare la pressione.",
+        "Tracciare i grafici P vs V e P vs 1/V per confermare la relazione.",
+      ],
+      expectedOutcome: "P vs V produce un'iperbole (curva inversa). P vs 1/V produce una linea retta passante per l'origine, confermando la Legge di Boyle: PV = costante.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💉", name: "Siringa grande (60 mL) con tappo sigillante" },
+        { emoji: "📊", name: "Sensore di pressione o manometro Bourdon" },
+        { emoji: "📏", name: "Righello (per misurare la posizione dello stantuffo)" },
+        { emoji: "🌡️", name: "Termometro (per confermare la temperatura costante)" },
+        { emoji: "📋", name: "Carta millimetrata o software per grafici" },
+      ],
+      observationsToRecord: [
+        "Volume del gas nella siringa (mL) a ogni posizione dello stantuffo",
+        "Lettura della pressione (kPa) a ogni volume",
+        "Prodotto PV a ogni punto dati (dovrebbe essere costante)",
+        "Temperatura ambiente (confermare che sia costante durante tutto l'esperimento)",
+      ],
+      theoryPoints: [
+        "Legge di Boyle: P₁V₁ = P₂V₂ a temperatura costante per una massa fissa di gas.",
+        "Teoria cinetica molecolare: comprimere il gas in un volume minore → più collisioni con le pareti al secondo → pressione maggiore.",
+        "Dimezzare il volume raddoppia la pressione (se T e n sono costanti).",
+        "P vs 1/V dovrebbe dare una linea retta passante per l'origine con pendenza = nRT.",
+      ],
+      realWorldConnections: [
+        "I subacquei sperimentano direttamente la Legge di Boyle — l'aria nei loro polmoni si comprime in profondità (pressione maggiore) e si espande quando risalgono.",
+        "Le pompe per biciclette usano la Legge di Boyle: comprimere l'aria nel cilindro aumenta la pressione per spingere l'aria nel pneumatico.",
+        "La malattia da decompressione (\"embolia gassosa\") si verifica quando i subacquei risalgono troppo velocemente — i gas disciolti si espandono nel sangue secondo la Legge di Boyle.",
+      ],
+      formula: "P₁V₁ = P₂V₂  (T costante, n costante)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "La Legge di Boyle afferma che per una massa fissa di gas a temperatura costante:",
+          options: [
+            "La pressione è direttamente proporzionale al volume",
+            "La pressione è inversamente proporzionale al volume",
+            "La pressione è direttamente proporzionale alla temperatura",
+            "Il volume è indipendente dalla pressione",
+          ],
+          correctIndex: 1,
+          explanation: "Legge di Boyle: P ∝ 1/V a T e n costanti. Raddoppiare la pressione dimezza il volume. Il prodotto PV rimane costante.",
+        },
+        {
+          text: "Un gas ha un volume di 4 L a 100 kPa. Qual è il suo volume a 200 kPa (temperatura costante)?",
+          options: ["1 L", "2 L", "4 L", "8 L"],
+          correctIndex: 1,
+          explanation: "P₁V₁ = P₂V₂: 100 × 4 = 200 × V₂. V₂ = 400/200 = 2 L. Raddoppiare la pressione dimezza il volume.",
+        },
+        {
+          text: "Quale grafico conferma la Legge di Boyle?",
+          options: [
+            "Una linea retta di P vs V passante per l'origine",
+            "Una curva di P vs V (iperbole)",
+            "Una linea retta di P vs 1/V passante per l'origine",
+            "Una linea orizzontale di P vs V",
+          ],
+          correctIndex: 2,
+          explanation: "P vs 1/V dà una linea retta passante per l'origine se P ∝ 1/V (Legge di Boyle). P vs V dà un'iperbole — una curva, non una linea retta.",
+        },
+      ],
+      discussion: [
+        "Spiega la Legge di Boyle in termini di teoria cinetica molecolare — perché comprimere un gas aumenta la sua pressione?",
+        "I polmoni di un subacqueo contengono 6 L di aria in superficie (1 atm). A 30 m di profondità la pressione è 4 atm. Quale volume occupano i polmoni? Cosa succederebbe se il subacqueo trattenesse il respiro e risalisse rapidamente?",
+        "La Legge di Boyle presuppone un comportamento da gas ideale. Suggerisci condizioni in cui i gas reali deviano significativamente da questa legge.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Legge di Boyle (P ∝ 1/V a T costante)", pct: 40 },
+        { label: "Analisi grafica P vs 1/V", pct: 30 },
+        { label: "Spiegazione della teoria cinetica molecolare", pct: 20 },
+        { label: "Immersioni subacquee e applicazioni pratiche", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso confondono la Legge di Boyle con la Legge di Charles — Boyle mette in relazione P e V (T costante); Charles mette in relazione V e T (P costante).",
+        "Molti pensano che pressione e volume siano direttamente proporzionali — sono inversamente proporzionali. Comprimere il gas AUMENTA la pressione.",
+      ],
+      hook: "I subacquei non devono mai trattenere il respiro durante la risalita — quando la pressione diminuisce, l'aria nei loro polmoni si espande (Legge di Boyle) e potrebbe lacerare il tessuto polmonare. Tutti i corsi di immersione iniziano con questa lezione di chimica!",
+      khanLinks: [
+        { title: "Legge di Boyle", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/boyle-s-law" },
+        { title: "Leggi dei Gas", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/partial-pressure" },
+      ],
+    },
+    dataTable: {
+      headers: ["Volume (mL)", "Pressione (kPa)", "Prodotto PV (kPa·mL)", "1/V (mL⁻¹)"],
+      rows: 6,
+    },
+    observations: [
+      "Registrare la pressione a ogni volume della siringa (50, 40, 30, 20, 10 mL)",
+      "Calcolare il prodotto PV per ogni punto dati",
+      "Registrare la temperatura ambiente all'inizio e alla fine per confermare che T sia costante",
+    ],
+    conclusion: "Enuncia la Legge di Boyle e confermala usando il tuo grafico P vs 1/V. Calcola il prodotto PV medio e confrontalo con il valore teorico nRT. Descrivi un'applicazione reale della Legge di Boyle.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi comprimerai del gas in una siringa e scoprirai una delle leggi fondamentali dell'universo — la relazione tra pressione e volume che Robert Boyle pubblicò nel 1662!",
+      keywords: {
+        setup: "Sigilla completamente l'ugello della siringa prima di iniziare. Aspetta 10 secondi a ogni volume prima di leggere la pressione — lascia che il gas raggiunga l'equilibrio. Tieni una mano sul cilindro per evitare il rinculo.",
+        formula: "P₁V₁ = P₂V₂. Se V si dimezza, P raddoppia. PV = nRT = costante a T e n fissi. Per 1 mol a 25°C: PV ≈ 2479 J.",
+        error: "Errori comuni: siringa non sigillata (il gas fuoriesce, la pressione non aumenta), non aspettare l'equilibrio a ogni volume, e leggere il sensore di pressione prima che il display si stabilizzi.",
+        result: "Prodotto PV approssimativamente costante in tutti i punti dati (variazione < 5%). Grafico P vs 1/V: linea retta passante per l'origine. Conferma la Legge di Boyle.",
+        real: "Una pompa per biciclette comprime l'aria da circa 1 atm (atmosferica) a 6–8 atm in un pneumatico. Questa è una compressione di volume di 6–8 volte. La Legge di Boyle calcola esattamente quante pompate sono necessarie per raggiungere la pressione del pneumatico.",
+        explain: "Immagina le molecole di gas che rimbalzano all'interno della siringa. Quando comprimi il gas in uno spazio più piccolo, le molecole colpiscono le pareti più spesso — hanno meno distanza da percorrere prima di colpire di nuovo. Più urti al secondo = pressione maggiore. La temperatura resta costante, quindi le molecole non accelerano — semplicemente collidono più frequentemente.",
+        hook: "Robert Boyle pubblicò questa legge nel 1662 — oltre 350 anni fa — usando un tubo a forma di J riempito di mercurio per intrappolare e comprimere l'aria. Non aveva idea che stesse descrivendo collisioni molecolari; l'atomo non sarebbe stato definito correttamente per altri 200 anni. Misurò semplicemente con cura e trovò lo schema.",
+        misconception: "La Legge di Boyle si applica solo a temperatura COSTANTE. Se riscaldi o raffreddi il gas mentre lo comprimi, la legge non vale. Ecco perché la siringa deve rimanere a temperatura ambiente durante tutto l'esperimento — non stringerla con mani calde!",
+      },
+      hint: "Se il tuo prodotto PV non è costante, controlla se c'è una perdita di gas nella chiusura dell'ugello. Applica una piccola quantità di vaselina intorno allo stantuffo e all'ugello per migliorare la tenuta.",
+      expected: "Prodotto PV costante entro ±5%. P vs 1/V: linea retta passante per l'origine. A V = 25 mL, P ≈ 2× atmosferica. Conferma la Legge di Boyle: P ∝ 1/V a T costante.",
+    },
+  },
+  {
+    num: 125,
+    title: "Legge di Charles",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti riscaldano una siringa sigillata o un piccolo palloncino in bagni d'acqua a diverse temperature e registrano il volume a ogni temperatura per verificare la relazione diretta V ∝ T (in Kelvin).",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti verificano la Legge di Charles: a pressione costante, il volume di una massa fissa di gas è direttamente proporzionale alla sua temperatura assoluta (V ∝ T in Kelvin).",
+      instructions: [
+        "Sigillare una siringa da 60 mL con 20 mL di aria a temperatura ambiente, oppure legare un piccolo palloncino.",
+        "Preparare bagni d'acqua a 20°C, 40°C, 60°C e 80°C.",
+        "Immergere completamente la siringa/palloncino in ogni bagno d'acqua per 3 minuti per raggiungere l'equilibrio termico.",
+        "Registrare il volume a ogni temperatura.",
+        "Tracciare V vs T (°C) e V vs T (K) — notare quale dà una linea passante per l'origine.",
+      ],
+      expectedOutcome: "V vs T(K) dà una linea retta passante per l'origine (0 K = −273°C), confermando la Legge di Charles. V vs T(°C) dà una linea retta ma non passante per l'origine.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💉", name: "Siringa sigillata da 60 mL (o piccolo palloncino)" },
+        { emoji: "🌡️", name: "Termometro (0–100°C)" },
+        { emoji: "🪣", name: "Becher d'acqua a 20, 40, 60, 80°C" },
+        { emoji: "🔥", name: "Piastra riscaldante o becco Bunsen per preparare i bagni d'acqua" },
+        { emoji: "📋", name: "Carta millimetrata per i grafici V vs T" },
+      ],
+      observationsToRecord: [
+        "Temperatura del bagno d'acqua (°C e K)",
+        "Volume della siringa/palloncino a ogni temperatura",
+        "Se il volume aumenta proporzionalmente alla temperatura in Kelvin",
+        "Intercetta estrapolata sull'asse T dal grafico V vs T(°C)",
+      ],
+      theoryPoints: [
+        "Legge di Charles: V₁/T₁ = V₂/T₂ a pressione costante, dove T è in Kelvin.",
+        "La temperatura deve essere in Kelvin: T(K) = T(°C) + 273.",
+        "Estrapolando V vs T(°C) fino a V = 0 si ottiene circa −273°C = zero assoluto (0 K).",
+        "Teoria cinetica: T maggiore → molecole si muovono più velocemente → il gas si espande per mantenere la pressione costante.",
+      ],
+      realWorldConnections: [
+        "Le mongolfiere funzionano secondo la Legge di Charles — riscaldare l'aria all'interno aumenta il suo volume, rendendo la mongolfiera galleggiante.",
+        "Gli pneumatici delle auto appaiono leggermente sgonfi nelle mattine fredde perché l'aria fredda ha un volume minore (V ∝ T).",
+        "Lo zero assoluto (0 K = −273,15°C) è il punto teorico in cui il volume del gas sarebbe zero — non è mai stato raggiunto ma ci si è avvicinati a miliardesimi di grado.",
+      ],
+      formula: "V₁/T₁ = V₂/T₂  (P costante, T in Kelvin)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "La Legge di Charles afferma che per una massa fissa di gas a pressione costante:",
+          options: [
+            "Il volume è inversamente proporzionale alla temperatura in Kelvin",
+            "Il volume è direttamente proporzionale alla temperatura in Kelvin",
+            "Il volume è indipendente dalla temperatura",
+            "Il volume è direttamente proporzionale alla temperatura in Celsius",
+          ],
+          correctIndex: 1,
+          explanation: "Legge di Charles: V ∝ T (Kelvin) a P costante. Il volume raddoppia se la temperatura in Kelvin raddoppia. Questo NON funziona con i Celsius — devi prima convertire in Kelvin.",
+        },
+        {
+          text: "Un gas occupa 2 L a 300 K. Quale volume occupa a 600 K (pressione costante)?",
+          options: ["1 L", "2 L", "4 L", "6 L"],
+          correctIndex: 2,
+          explanation: "V₁/T₁ = V₂/T₂: 2/300 = V₂/600. V₂ = (2 × 600)/300 = 4 L. Raddoppiare la temperatura in Kelvin raddoppia il volume.",
+        },
+        {
+          text: "Perché la temperatura deve essere in Kelvin (non in Celsius) per i calcoli delle leggi dei gas?",
+          options: [
+            "I Kelvin sono più facili da misurare dei Celsius",
+            "Le temperature in Celsius possono essere negative, il che darebbe volumi negativi senza senso",
+            "I Kelvin hanno unità più piccole dei Celsius",
+            "Le leggi dei gas furono inventate da Lord Kelvin",
+          ],
+          correctIndex: 1,
+          explanation: "A 0 K (zero assoluto) un gas avrebbe teoricamente volume zero. La scala Celsius ha uno zero arbitrario (punto di congelamento dell'acqua) — se usi i Celsius, i calcoli danno risposte sbagliate inclusi volumi negativi impossibili.",
+        },
+      ],
+      discussion: [
+        "Spiega in termini di teoria cinetica molecolare perché un gas si espande quando viene riscaldato a pressione costante.",
+        "Descrivi come il grafico V vs T(°C) può essere estrapolato per stimare lo zero assoluto (−273°C). Quali ipotesi richiede questo?",
+        "Una mongolfiera ha un involucro a volume fisso. Usando la Legge di Charles, spiega come riscaldare l'aria all'interno fa alzare la mongolfiera.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Legge di Charles (V ∝ T in Kelvin)", pct: 40 },
+        { label: "Conversione da Celsius a Kelvin", pct: 20 },
+        { label: "Spiegazione della teoria cinetica della relazione V-T", pct: 25 },
+        { label: "Mongolfiere e applicazioni pratiche", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti usano frequentemente i Celsius invece dei Kelvin nei calcoli della Legge di Charles — questo dà sempre risposte sbagliate.",
+        "Molti confondono la Legge di Charles (V e T, P costante) con la Legge di Gay-Lussac (P e T, V costante).",
+      ],
+      hook: "Una mongolfiera pesa diverse tonnellate, eppure galleggia nell'aria. La Legge di Charles spiega come: riscaldare l'aria nella mongolfiera aumenta il suo volume (e quindi abbassa la sua densità) finché l'aria spostata pesa più della mongolfiera. La chimica fa galleggiare tonnellate di tessuto!",
+      khanLinks: [
+        { title: "Legge di Charles", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/charles-s-law" },
+        { title: "Distribuzione di Maxwell-Boltzmann", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/maxwell-boltzmann-distribution" },
+      ],
+    },
+    dataTable: {
+      headers: ["Temperatura (°C)", "Temperatura (K)", "Volume (mL)", "V/T (mL/K)"],
+      rows: 5,
+    },
+    observations: [
+      "Registrare il volume a ogni temperatura dopo 3 min di equilibrazione",
+      "Calcolare il rapporto V/T per ogni punto dati per confermare che sia costante",
+      "Tracciare V vs T(°C) e V vs T(K) e descrivere la differenza",
+    ],
+    conclusion: "Enuncia la Legge di Charles e confermala usando il tuo grafico V vs T(K). Spiega perché T deve essere in Kelvin. Estrapola il tuo grafico V vs T(°C) per stimare lo zero assoluto e confrontalo con −273°C.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi riscalderai del gas e lo guarderai espandersi — e se tracci il grafico correttamente, scoprirai lo zero assoluto senza mai avvicinarti a −273°C!",
+      keywords: {
+        setup: "Aspetta almeno 3 minuti a ogni temperatura prima di leggere il volume. Mantieni la siringa completamente immersa per garantire un riscaldamento uniforme. Non superare gli 80°C con una siringa di plastica — potrebbe deformarsi.",
+        formula: "V₁/T₁ = V₂/T₂. T(K) = T(°C) + 273. V/T = costante = nR/P. A STP (0°C, 1 atm), 1 mol di gas ideale = 22,4 L.",
+        error: "Errori comuni: usare i Celsius invece dei Kelvin (dà rapporti sbagliati), non aspettare l'equilibrio termico, e lo stantuffo della siringa che si blocca (l'attrito impedisce il movimento libero).",
+        result: "V aumenta con la temperatura. V/T(K) è approssimativamente costante. V vs T(K) linea retta passante per l'origine. V vs T(°C) linea retta ma incrocia l'asse T a circa −273°C.",
+        real: "Pneumatici delle auto: a 0°C uno pneumatico gonfiato a 2,4 bar a 20°C scende a circa 2,2 bar. Il volume dello pneumatico non cambia, ma il calo di temperatura (correlato alla Legge di Charles — Legge di Gay-Lussac) riduce la pressione, facendo sembrare lo pneumatico sgonfio.",
+        explain: "Quando riscaldi le molecole di gas, si muovono più velocemente. A pressione costante (la siringa può muoversi liberamente), le molecole più veloci spingono le pareti verso l'esterno per mantenere la stessa forza per unità di area. Il volume aumenta per mantenere la pressione costante. Più il gas è caldo, più volume gli serve.",
+        hook: "Jacques Charles (della Legge di Charles) fu anche la prima persona a salire in un pallone a idrogeno, nel 1783. Volò per 43 km attraverso la Francia, raggiunse i 3.000 m di altitudine, e divenne la prima persona a vedere il tramonto due volte nello stesso giorno — una volta da terra, poi di nuovo dal pallone mentre saliva!",
+        misconception: "La Legge di Charles funziona SOLO con temperature in Kelvin. Se raddoppiassi da 20°C a 40°C, potresti aspettarti che il volume raddoppi — ma 20°C sono 293 K e 40°C sono 313 K, che NON è il doppio. Il volume aumenta solo del 7%, non del 100%.",
+      },
+      hint: "Se i tuoi dati non danno una linea retta, controlla se lo stantuffo della siringa si muove liberamente. Applica una gocciolina d'olio per ridurre l'attrito. Assicurati anche che le temperature dei bagni d'acqua siano stabili prima di leggere.",
+      expected: "V/T(K) costante entro ±3%. V vs T(K) linea retta passante per l'origine conferma la Legge di Charles. L'estrapolazione di V vs T(°C) intercetta circa −273°C, stimando lo zero assoluto.",
+    },
+  },
+  {
+    num: 126,
+    title: "Legge di Graham — Diffusione dei Gas",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti imbevono tamponi di cotone idrofilo in soluzioni di HCl e ammoniaca, li inseriscono alle estremità opposte di un tubo di vetro sigillato e osservano dove si forma l'anello bianco di NH₄Cl per dimostrare che i gas più leggeri diffondono più velocemente.",
+    setupTime: "5 min",
+    duration: "15 min",
+    summary: {
+      whatTheyLearn: "Gli studenti verificano la Legge di Graham: la velocità di diffusione è inversamente proporzionale alla radice quadrata della massa molare. NH₃ (M = 17) diffonde più velocemente di HCl (M = 36,5), quindi l'anello bianco si forma più vicino all'estremità dell'HCl.",
+      instructions: [
+        "Montare un tubo di vetro orizzontale di 50 cm su un sostegno con pinza.",
+        "Inserire simultaneamente cotone idrofilo imbevuto di HCl concentrato a un'estremità e ammoniaca concentrata all'altra estremità.",
+        "Sigillare immediatamente entrambe le estremità con tappi di gomma.",
+        "Attendere 5-10 minuti e osservare dove si forma l'anello bianco di NH₄Cl.",
+        "Misurare la distanza da ciascun tampone di cotone all'anello bianco e calcolare il rapporto.",
+      ],
+      expectedOutcome: "L'anello bianco di NH₄Cl si forma più vicino all'estremità dell'HCl, confermando che NH₃ percorre una distanza maggiore. Rapporto delle distanze NH₃:HCl ≈ √(36,5/17) ≈ 1,47. L'anello si trova a circa il 60% della distanza dall'estremità dell'HCl.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Tubo di vetro orizzontale (50 cm)" },
+        { emoji: "🧴", name: "Soluzione di HCl concentrato" },
+        { emoji: "🧴", name: "Soluzione di ammoniaca concentrata (0,880)" },
+        { emoji: "🧶", name: "Tamponi di cotone idrofilo (due)" },
+        { emoji: "📏", name: "Righello e sostegno con pinze" },
+      ],
+      observationsToRecord: [
+        "Posizione dell'anello bianco da ciascun tampone di cotone (cm)",
+        "Tempo per la comparsa dell'anello (minuti)",
+        "Rapporto delle distanze (lato NH₃ : lato HCl)",
+        "Confronto del rapporto misurato con quello previsto √(M_HCl/M_NH₃)",
+      ],
+      theoryPoints: [
+        "Legge di Graham: velocità ∝ 1/√M. I gas più leggeri diffondono più velocemente di quelli più pesanti.",
+        "NH₃ (M = 17) diffonde più velocemente di HCl (M = 36,5).",
+        "Rapporto previsto delle velocità: √(36,5/17) ≈ 1,47 — NH₃ percorre circa 1,47× più distanza.",
+        "NH₃(g) + HCl(g) → NH₄Cl(s): si forma un solido bianco dove i gas si incontrano.",
+      ],
+      realWorldConnections: [
+        "Le centrifughe a gas utilizzate per arricchire l'uranio sfruttano la leggera differenza nella velocità di diffusione degli isotopi di UF₆ (²³⁵UF₆ vs ²³⁸UF₆) — lo stesso principio su scala industriale.",
+        "L'odore del profumo raggiunge il fondo di una stanza più velocemente in condizioni calde — la diffusione termica si basa sulla Legge di Graham.",
+        "Gli allarmi per CO₂ funzionano perché il CO₂ diffonde verso le membrane dei sensori — la sensibilità dell'allarme deve tenere conto delle velocità di diffusione.",
+      ],
+      formula: "velocità₁/velocità₂ = √(M₂/M₁)  |  NH₃/HCl: √(36,5/17) ≈ 1,47",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché l'anello bianco si forma più vicino all'estremità dell'HCl del tubo?",
+          options: [
+            "HCl è più reattivo di NH₃",
+            "NH₃ ha una massa molare inferiore e diffonde più velocemente, percorrendo una distanza maggiore",
+            "HCl si dissolve nel tubo di vetro e rallenta",
+            "L'ammoniaca è più pesante e affonda verso l'estremità dell'HCl",
+          ],
+          correctIndex: 1,
+          explanation: "NH₃ (M = 17 g/mol) diffonde più velocemente di HCl (M = 36,5 g/mol) perché le molecole più leggere si muovono più velocemente alla stessa temperatura. NH₃ copre più distanza prima che i gas si incontrino, quindi l'anello si forma più vicino al cotone con HCl.",
+        },
+        {
+          text: "Secondo la Legge di Graham, un gas con massa molare 16 g/mol diffonde quante volte più velocemente di uno con massa molare 64 g/mol?",
+          options: ["2 volte", "4 volte", "8 volte", "0,5 volte"],
+          correctIndex: 0,
+          explanation: "Rapporto delle velocità = √(M₂/M₁) = √(64/16) = √4 = 2. Il gas più leggero (M = 16) diffonde due volte più velocemente di quello più pesante (M = 64).",
+        },
+        {
+          text: "Qual è il solido bianco che si forma nel tubo?",
+          options: ["Idrossido di ammonio (NH₄OH)", "Cloruro di ammonio (NH₄Cl)", "Cloruro di sodio (NaCl)", "Carbonato di calcio (CaCO₃)"],
+          correctIndex: 1,
+          explanation: "NH₃(g) + HCl(g) → NH₄Cl(s). Il gas ammoniaca e il gas acido cloridrico reagiscono dove si incontrano per formare cloruro di ammonio, un solido bianco che si deposita come anello visibile.",
+        },
+      ],
+      discussion: [
+        "Spiega perché la separazione isotopica (ad es. arricchimento dell'uranio) richiede migliaia di stadi di diffusione piuttosto che uno solo, usando la Legge di Graham.",
+        "Se l'esperimento fosse ripetuto in un tubo a 60°C invece che a temperatura ambiente, prevedi come cambierebbe la posizione dell'anello e spiega perché.",
+        "Progetta una variante di questo esperimento per misurare la velocità di diffusione di un terzo gas (ad es. SO₂, M = 64) e prevedi dove si formerebbe il suo anello rispetto all'esperimento NH₃/HCl.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Legge di Graham (velocità ∝ 1/√M)", pct: 40 },
+        { label: "Misura del rapporto delle distanze di diffusione", pct: 30 },
+        { label: "Base della teoria cinetica della diffusione", pct: 20 },
+        { label: "Separazione isotopica e applicazioni industriali", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che i gas più pesanti non diffondano — lo fanno, solo più lentamente. Tutti i gas alla stessa temperatura hanno la stessa energia cinetica media, quindi quelli più pesanti si muovono più lentamente.",
+        "Molti si aspettano che l'anello si formi al centro — non è così. Il lato NH₃ è più vicino all'estremità dell'HCl perché NH₃ percorre una distanza maggiore.",
+      ],
+      hook: "Durante il Progetto Manhattan, gli scienziati dovevano separare l'uranio-235 (per le armi nucleari) dall'uranio-238. Usarono esattamente questo principio — diffusione attraverso barriere. Ci volle un enorme impianto a Oak Ridge, Tennessee con 12.000 lavoratori per arricchire abbastanza uranio. Chimica su scala industriale!",
+      khanLinks: [
+        { title: "Teoria Cinetica Molecolare e Leggi dei Gas", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/kinetic-molecular-theory-and-gas-laws" },
+        { title: "Stati della Materia", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter" },
+      ],
+    },
+    dataTable: {
+      headers: ["Distanza dall'estremità NH₃ (cm)", "Distanza dall'estremità HCl (cm)", "Lunghezza totale del tubo (cm)", "Rapporto distanze NH₃:HCl", "Rapporto previsto"],
+      rows: 3,
+    },
+    observations: [
+      "Registrare la posizione dell'anello bianco da ciascun tampone di cotone",
+      "Calcolare il rapporto delle distanze e confrontarlo con la previsione teorica",
+      "Registrare il tempo impiegato per la comparsa dell'anello",
+    ],
+    conclusion: "Enuncia la Legge di Graham e calcola il rapporto delle distanze previsto per NH₃ e HCl. Confronta con il rapporto misurato. Spiega eventuali discrepanze (ad es. correnti d'aria, concentrazioni diseguali dei gas rilasciati).",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi guarderai due gas invisibili gareggiare attraverso un tubo — e il vincitore lascerà un segno bianco che dimostra che i gas più pesanti si muovono più lentamente!",
+      keywords: {
+        setup: "Inserire entrambi i tamponi di cotone simultaneamente (usare due persone). Maneggiare HCl e ammoniaca in una cappa aspirante. Lavorare rapidamente — una volta inseriti i tappi, non disturbare il tubo. Montare orizzontalmente su un sostegno con pinza.",
+        formula: "Legge di Graham: velocità₁/velocità₂ = √(M₂/M₁). NH₃ vs HCl: √(36,5/17) = √2,15 ≈ 1,47. Posizione prevista dell'anello: 1,47/(1+1,47) = 59% dall'estremità HCl.",
+        error: "Errori comuni: inserire i tamponi in momenti diversi (un gas parte in vantaggio), disturbare il tubo (le correnti convettive influenzano i risultati) e usare soluzioni diluite (troppo lento, l'anello potrebbe non formarsi in tempo).",
+        result: "L'anello bianco appare dopo 5-8 minuti. L'anello si trova approssimativamente a 30-32 cm dall'estremità HCl in un tubo da 50 cm (≈ 60% dall'HCl). Rapporto misurato ≈ 1,4 (vicino al teorico 1,47).",
+        real: "L'arricchimento dell'uranio per l'energia nucleare usa gas UF₆ che diffonde attraverso membrane porose. ²³⁵UF₆ (M = 349) diffonde leggermente più velocemente di ²³⁸UF₆ (M = 352) — un rapporto di solo 1,004. Sono necessari migliaia di stadi per arricchire dallo 0,7% al 4% di ²³⁵U.",
+        explain: "Alla stessa temperatura, tutte le molecole di gas hanno la stessa energia cinetica media (½mv² = costante). Perché le molecole più pesanti abbiano la stessa energia, devono muoversi più lentamente (v più piccola). Le molecole più leggere di NH₃ si muovono più velocemente e coprono più distanza prima di incontrare le molecole più lente di HCl. Dove si incontrano: solido bianco.",
+        hook: "Thomas Graham scoprì questa legge nel 1848 cronometrando attentamente quanto velocemente diversi gas fuoriuscivano attraverso un tappo di gesso. Non aveva termometri abbastanza precisi per le leggi dei gas, ma la sua pazienza e misurazione accurata rivelarono che le velocità di diffusione dipendevano dalla massa — decenni prima che la teoria cinetica spiegasse il perché.",
+        misconception: "La Legge di Graham descrive la diffusione, non la velocità di reazione. La posizione dell'anello bianco riguarda la distanza percorsa da ciascun gas, non quale gas sia più reattivo. NH₃ e HCl reagiscono ugualmente bene — la posizione dipende puramente dalla velocità di diffusione.",
+      },
+      hint: "Se nessun anello appare dopo 15 minuti, verificare che siano state usate soluzioni concentrate e che entrambi i tappi siano ermetici. Un anello debole potrebbe richiedere retroilluminazione con una torcia.",
+      expected: "Anello bianco visibile dopo 5-10 min. Anello approssimativamente al 60% dall'estremità HCl (≈ 30 cm dall'HCl in un tubo da 50 cm). Rapporto delle distanze ≈ 1,4-1,5, vicino al teorico 1,47. Conferma che NH₃ più leggero diffonde più velocemente.",
+    },
+  },
+  {
+    num: 127,
+    title: "Solubilità del CO₂ vs Temperatura",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti agitano acqua frizzante satura di CO₂ a diverse temperature, confrontano l'intensità dell'effervescenza e misurano la variazione di pH per dimostrare che la solubilità dei gas diminuisce con la temperatura (Legge di Henry).",
+    setupTime: "10 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che il CO₂ diventa meno solubile all'aumentare della temperatura (i gas sono meno solubili nei liquidi caldi), e che il CO₂ disciolto rende l'acqua acida — misurabile con un pH-metro.",
+      instructions: [
+        "Preparare tre bottiglie identiche di acqua frizzante — una a 5°C (bagno di ghiaccio), una a 25°C (temperatura ambiente), una a 50°C (bagno di acqua calda).",
+        "Aprire ciascuna e misurare immediatamente il volume dell'effervescenza con un righello o ascoltando.",
+        "Aggiungere 5 gocce di indicatore universale a 50 mL di ciascun campione d'acqua e misurare o confrontare il pH.",
+        "Registrare le osservazioni e i valori di pH.",
+        "Tracciare un grafico pH vs temperatura per mostrare la relazione tra CO₂ disciolto e temperatura.",
+      ],
+      expectedOutcome: "La bottiglia calda produce l'effervescenza più vigorosa (CO₂ che fuoriesce). La bottiglia fredda ha il contenuto più alto di CO₂ disciolto e il pH più basso. Il pH aumenta con la temperatura man mano che il CO₂ fuoriesce.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🥤", name: "Bottiglie sigillate di acqua frizzante (tre identiche)" },
+        { emoji: "🌡️", name: "Termometro" },
+        { emoji: "🪣", name: "Bagni d'acqua a 5°C (ghiaccio), 25°C e 50°C" },
+        { emoji: "💊", name: "Soluzione di indicatore universale o pH-metro" },
+        { emoji: "🧪", name: "Provette o piccoli becher" },
+      ],
+      observationsToRecord: [
+        "Intensità dell'effervescenza all'apertura della bottiglia a ciascuna temperatura",
+        "pH del campione d'acqua a ciascuna temperatura",
+        "Aspetto dell'acqua (limpidezza, presenza di bolle)",
+        "Volume stimato di CO₂ rilasciato (qualitativo)",
+      ],
+      theoryPoints: [
+        "Legge di Henry: concentrazione del gas disciolto C = k × P (a T costante). Maggiore pressione di CO₂ disciolta = più CO₂ rimane in soluzione.",
+        "La solubilità dei gas diminuisce con la temperatura: l'acqua calda trattiene meno CO₂ disciolto.",
+        "Il CO₂ disciolto forma acido carbonico: CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (abbassando il pH).",
+        "Temperatura più bassa → più CO₂ disciolto → più H⁺ → pH più basso.",
+      ],
+      realWorldConnections: [
+        "Le bevande gassate calde perdono gas più velocemente — la solubilità del CO₂ diminuisce a temperature più alte.",
+        "Il riscaldamento degli oceani riduce l'assorbimento di CO₂ da parte dell'acqua marina — una preoccupazione importante per i cicli di feedback climatico.",
+        "La moria di pesci negli stagni caldi estivi si verifica perché l'acqua calda trattiene meno O₂ disciolto — stesso principio della Legge di Henry.",
+      ],
+      formula: "CO₂(g) ⇌ CO₂(aq)  |  CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻  |  Legge di Henry: C = k·P",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché una bevanda gassata calda perde gas più rapidamente di una fredda?",
+          options: [
+            "Il liquido caldo evapora più rapidamente, rilasciando CO₂",
+            "Il CO₂ è meno solubile a temperature più alte e fuoriesce dalla soluzione",
+            "Le bevande calde contengono meno zucchero per trattenere il CO₂",
+            "Il CO₂ reagisce con l'acqua calda per formare acido carbonico",
+          ],
+          correctIndex: 1,
+          explanation: "La solubilità dei gas diminuisce con la temperatura (Legge di Henry). A temperature più alte, le molecole di CO₂ hanno più energia cinetica e fuoriescono dalla fase liquida più facilmente, riducendo la concentrazione di CO₂ disciolto.",
+        },
+        {
+          text: "L'acqua frizzante fredda ha un pH più basso dell'acqua frizzante calda. Perché?",
+          options: [
+            "L'acqua fredda è più acida per natura",
+            "L'acqua fredda dissolve più CO₂, producendo più ioni H⁺ tramite CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻",
+            "L'acqua calda produce più OH⁻ che neutralizza l'acido",
+            "Il pH non è influenzato dalla temperatura",
+          ],
+          correctIndex: 1,
+          explanation: "Più CO₂ disciolto nell'acqua fredda porta a una maggiore formazione di acido carbonico e più ioni H⁺ in soluzione, dando un pH più basso. All'aumentare della temperatura e con la fuoriuscita del CO₂, H⁺ diminuisce e il pH aumenta.",
+        },
+        {
+          text: "Quale delle seguenti è una conseguenza reale del riscaldamento degli oceani che riduce la solubilità del CO₂?",
+          options: [
+            "Gli oceani assorbono più CO₂ dall'atmosfera",
+            "Gli oceani assorbono meno CO₂, lasciandone di più nell'atmosfera e accelerando il cambiamento climatico",
+            "L'acqua oceanica diventa più acida man mano che si riscalda",
+            "I pesci producono più CO₂ nell'acqua più calda",
+          ],
+          correctIndex: 1,
+          explanation: "Man mano che gli oceani si riscaldano, la loro capacità di dissolvere CO₂ diminuisce (Legge di Henry). Meno CO₂ viene assorbito dall'atmosfera, lasciando più gas serra nell'aria — un ciclo di feedback positivo che può accelerare il cambiamento climatico.",
+        },
+      ],
+      discussion: [
+        "Spiega perché le barriere coralline tropicali sono più minacciate dall'acidificazione degli oceani rispetto a quelle polari, usando la solubilità del CO₂ e la temperatura.",
+        "Un allevatore di pesci nota che i pesci in uno stagno muoiono nelle calde mattine estive. Usando la Legge di Henry, spiega cosa sta succedendo e suggerisci una soluzione pratica.",
+        "Descrivi come l'industria della birra controlla il CO₂ disciolto nella birra per ottenere il livello di carbonatazione desiderato.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Solubilità dei gas che diminuisce con la temperatura", pct: 35 },
+        { label: "Legge di Henry e CO₂ disciolto", pct: 30 },
+        { label: "Effetto del CO₂ e acido carbonico sul pH", pct: 25 },
+        { label: "Assorbimento di CO₂ oceanico e clima", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che tutte le sostanze diventino più solubili a temperature più alte — i gas sono un'eccezione; diventano meno solubili all'aumentare di T.",
+        "Molti pensano che il CO₂ acidifichi direttamente l'acqua senza reagire — in realtà reagisce: CO₂ + H₂O ⇌ H₂CO₃, che poi si dissocia per dare H⁺.",
+      ],
+      hook: "L'acidificazione degli oceani è una delle maggiori minacce per la vita marina. Dalla Rivoluzione Industriale, gli oceani hanno assorbito circa il 30% delle emissioni umane di CO₂ — rendendo l'acqua di mare più acida. Man mano che gli oceani si riscaldano, possono assorbirne ancora meno. La chimica sta rimodellando l'ecosistema oceanico!",
+      khanLinks: [
+        { title: "Stechiometria dei Gas", url: "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/gas-stoichiometry" },
+        { title: "Forze Intermolecolari", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams" },
+      ],
+    },
+    dataTable: {
+      headers: ["Temperatura (°C)", "Intensità Effervescenza (1-5)", "pH", "CO₂ Disciolto (qualitativo)"],
+      rows: 4,
+    },
+    observations: [
+      "Registrare l'intensità dell'effervescenza all'apertura di ciascuna bottiglia",
+      "Registrare il pH a ciascuna temperatura",
+      "Descrivere l'aspetto dell'acqua (limpida, con bolle, torbida)",
+    ],
+    conclusion: "Tracciare un grafico pH vs temperatura. Spiegare la relazione tra temperatura, CO₂ disciolto e pH usando la Legge di Henry. Indicare una conseguenza ambientale di questa relazione.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi scoprirai perché le bevande gassate calde perdono gas e perché quelle fredde rimangono frizzanti — e lo collegherai a uno dei problemi ambientali più urgenti sulla Terra!",
+      keywords: {
+        setup: "Usare bottiglie identiche — stessa marca, stessa dimensione, stesse condizioni iniziali. Pre-equilibrare le bottiglie nei bagni d'acqua per 30 min prima di aprirle. Misurare il pH immediatamente dopo l'apertura e l'aggiunta dell'indicatore.",
+        formula: "Legge di Henry: C = k × P (concentrazione gas disciolto ∝ pressione parziale). CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻. Kₐ₁ = 4,3 × 10⁻⁷ a 25°C.",
+        error: "Errori comuni: non equilibrare alla temperatura del bagno prima di misurare (CO₂ ancora in dissoluzione/fuoriuscita), e misurare il pH dopo che il CO₂ è in gran parte fuoriuscito dal campione caldo.",
+        result: "Fredda (5°C): effervescenza moderata, pH ≈ 4,5-5,0. Ambiente (25°C): effervescenza moderata, pH ≈ 5,0-5,5. Calda (50°C): effervescenza vigorosa, pH ≈ 5,5-6,0. Il pH aumenta con la temperatura, confermando meno CO₂ disciolto.",
+        real: "Il pH degli oceani è sceso da 8,2 a 8,1 dai tempi preindustriali — un aumento del 26% nella concentrazione di H⁺. Questo dissolve i gusci di carbonato di calcio di ostriche, cozze e coralli. Entro il 2100 potrebbe raggiungere 7,8, rendendo la vita per gli organismi con guscio quasi impossibile.",
+        explain: "Le molecole di gas in soluzione sono circondate da molecole d'acqua in modo leggermente ordinato. All'aumentare della temperatura, l'aumentata energia termica disturba questa disposizione, rendendo energeticamente sfavorevole la permanenza del gas in soluzione. Le molecole di CO₂ fuoriescono verso la fase gassosa — la bevanda perde gas, e meno molecole di CO₂ disciolte rimangono per formare acido carbonico.",
+        hook: "Una lattina di bevanda gassata contiene CO₂ a circa 3× la pressione atmosferica. A 5°C contiene circa 6 mL di CO₂ per mL di bevanda. A 25°C ne contiene solo 3 mL/mL. Ecco perché una lattina calda spruzza quando viene aperta e una fredda no — metà del CO₂ è già fuoriuscito prima di tirare la linguetta!",
+        misconception: "Il CO₂ non rende direttamente l'acqua acida — prima reagisce con l'acqua per formare acido carbonico (H₂CO₃), che poi si dissocia parzialmente. Il gas CO₂ puro non ha effetto sul pH; solo il CO₂ disciolto crea acidità.",
+      },
+      hint: "Se le differenze di pH sono piccole, provare a usare un pH-metro invece della cartina indicatrice. In alternativa, aggiungere un pizzico di carbonato di calcio alle bottiglie — si dissolverà meno nell'acqua fredda (acida) e più in quella calda (meno acida).",
+      expected: "Il pH aumenta di circa 0,5-1 unità da 5°C a 50°C. La bottiglia calda effervesca vigorosamente all'apertura. La bottiglia fredda ha il pH più basso (più CO₂ disciolto). Conferma la Legge di Henry: temperatura più bassa → maggiore solubilità del CO₂.",
+    },
+  },
+  {
+    num: 128,
+    title: "Molar Volume of Hydrogen",
+    section: "Chimica dei Gas",
+    desc: "Students collect hydrogen gas over water from the reaction of zinc with HCl, measure the volume at room temperature and pressure, and calculate the molar volume of a gas.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Students measure the volume of H₂ produced from a known mass of zinc, and use PV = nRT to calculate the molar volume (the volume of 1 mole of gas at their laboratory conditions, approximately 24 L/mol at 25°C).",
+      instructions: [
+        "Weigh approximately 0.10 g of zinc strips accurately on an analytical balance.",
+        "React zinc with excess 2 mol/L HCl in a flask connected by a delivery tube to a gas syringe or inverted measuring cylinder over water.",
+        "Collect all H₂ produced and record its volume.",
+        "Record room temperature and atmospheric pressure.",
+        "Calculate moles of H₂ from mass of Zn, then calculate molar volume = V/n.",
+      ],
+      expectedOutcome: "Molar volume ≈ 24.0 L/mol at 25°C and 1 atm. Students compare their experimental value to the theoretical value calculated from PV = nRT.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚙️", name: "Zinc strips" },
+        { emoji: "🧪", name: "Hydrochloric acid (2 mol/L, excess)" },
+        { emoji: "⚖️", name: "Analytical balance (±0.001 g)" },
+        { emoji: "💉", name: "Gas syringe or inverted measuring cylinder over water trough" },
+        { emoji: "📊", name: "Barometer (or known atmospheric pressure value)" },
+      ],
+      observationsToRecord: [
+        "Mass of zinc used (g)",
+        "Volume of H₂ collected (cm³)",
+        "Room temperature (°C and K)",
+        "Atmospheric pressure (kPa)",
+      ],
+      theoryPoints: [
+        "Zn + 2HCl → ZnCl₂ + H₂: 1 mol Zn produces 1 mol H₂.",
+        "n(Zn) = mass/M(Zn) = mass/65.4; n(H₂) = n(Zn).",
+        "Molar volume Vm = V/n (L/mol). Theoretical: Vm = RT/P = (8.314 × 298)/101325 ≈ 24.5 L/mol.",
+        "PV = nRT gives Vm = RT/P; at 25°C and 1 atm, Vm ≈ 24.5 L/mol.",
+      ],
+      realWorldConnections: [
+        "Gas stoichiometry is used in industrial processes to calculate how much gas is produced per kilogram of reagent.",
+        "The Haber Process uses molar volumes to calculate N₂ and H₂ feed ratios for ammonia synthesis.",
+        "Avogadro's molar volume (22.4 L/mol at STP, 0°C) underpins all gas-phase stoichiometric calculations.",
+      ],
+      formula: "Zn + 2HCl → ZnCl₂ + H₂  |  Vm = RT/P  |  PV = nRT",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "The molar volume of a gas at 25°C and 1 atm is approximately:",
+          options: ["22.4 L/mol", "24.5 L/mol", "44.8 L/mol", "11.2 L/mol"],
+          correctIndex: 1,
+          explanation: "At 0°C (STP), Vm = 22.4 L/mol. At 25°C (RTP), Vm = RT/P = (8.314 × 298)/101325 ≈ 24.5 L/mol. Students often confuse 22.4 (STP, 0°C) with the room temperature value of 24.5 L/mol.",
+        },
+        {
+          text: "0.10 g of zinc reacts completely with excess HCl. What volume of H₂ is produced at 25°C? (M(Zn) = 65.4, Vm = 24.5 L/mol)",
+          options: ["12.0 cm³", "24.5 cm³", "37.5 cm³", "49.0 cm³"],
+          correctIndex: 2,
+          explanation: "n(Zn) = 0.10/65.4 = 0.00153 mol. n(H₂) = 0.00153 mol. V = 0.00153 × 24.5 × 1000 = 37.5 cm³.",
+        },
+        {
+          text: "Why is the measured volume of H₂ slightly less than theoretically predicted when collecting over water?",
+          options: [
+            "Some H₂ dissolves in the water",
+            "The water vapour pressure reduces the partial pressure of H₂, and some H₂ dissolves",
+            "Zinc does not react completely",
+            "HCl absorbs the H₂ before it can be collected",
+          ],
+          correctIndex: 1,
+          explanation: "Water vapour exerts a partial pressure in the collected gas space, reducing the partial pressure of H₂. A small amount of H₂ also dissolves in the water. Both effects cause the measured volume to be slightly less than theoretical.",
+        },
+      ],
+      discussion: [
+        "Explain the difference between the molar volume at STP (0°C, 1 atm) and RTP (25°C, 1 atm) and calculate the ratio between them.",
+        "Why is it important to correct for water vapour pressure when collecting gas over water? How would you apply the vapour pressure correction?",
+        "Calculate the theoretical volume of H₂ produced when 1.00 g of magnesium reacts with excess HCl at 25°C. (M(Mg) = 24.3)",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Molar volume from PV = nRT", pct: 35 },
+        { label: "Gas collection and volume measurement", pct: 30 },
+        { label: "Stoichiometric calculation from mass of Zn", pct: 25 },
+        { label: "Sources of error (water vapour)", pct: 10 },
+      ],
+      misconceptions: [
+        "Students frequently use 22.4 L/mol at room temperature — this is only correct at exactly 0°C (STP). At 25°C, the correct value is approximately 24.5 L/mol.",
+        "Many think all gases have different molar volumes — at the same T and P, ALL ideal gases have the same molar volume (Avogadro's Law).",
+      ],
+      hook: "Avogadro's hypothesis (1811) — that equal volumes of gases at the same T and P contain equal numbers of molecules — was ignored for 50 years before it was accepted. It now underpins all of gas stoichiometry. One simple idea, decades of controversy, and now it's in every chemistry textbook!",
+      khanLinks: [
+        { title: "Stoichiometry", url: "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/stoichiometry-tutorial/v/stoichiometry" },
+        { title: "Avogadro's Number", url: "https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties/the-mole-and-avogadro-s-number/v/the-mole-and-avogadro-s-number" },
+      ],
+    },
+    dataTable: {
+      headers: ["Mass Zn (g)", "n(Zn) (mol)", "n(H₂) (mol)", "Volume H₂ (cm³)", "Molar Volume (L/mol)"],
+      rows: 3,
+    },
+    observations: [
+      "Record mass of zinc used accurately",
+      "Record volume of H₂ collected at end of reaction",
+      "Record temperature and atmospheric pressure",
+    ],
+    conclusion: "Calculate the molar volume from your data and compare to the theoretical value of 24.5 L/mol at 25°C. Calculate percentage error and identify the main sources of discrepancy.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. Today you're going to collect real hydrogen gas and use it to verify one of the most fundamental constants in chemistry — the molar volume!",
+      keywords: {
+        setup: "Weigh zinc accurately — this is the limiting reagent. Use excess HCl (2 mol/L, 20 mL). Ensure no gas escapes before collection starts. Allow reaction to go to completion (no more bubbles).",
+        formula: "n(Zn) = mass/65.4. n(H₂) = n(Zn) (1:1 ratio). Vm = V(cm³)/n × 1/1000 L/mol. Theoretical: Vm = RT/P = 8.314 × T(K)/101325.",
+        error: "Common errors: gas escaping before collection tube is in place, reading gas volume before the reaction is complete, and not accounting for water vapour pressure in the collected gas.",
+        result: "Experimental molar volume typically 23–26 L/mol (±10% of 24.5). Sources of error: water vapour pressure, gas leaks, temperature of gas not quite room temperature.",
+        real: "The natural gas (methane) industry uses molar volumes to measure gas in pipelines. A cubic metre of methane at standard conditions contains a specific number of moles — used for billing and combustion calculations.",
+        explain: "Avogadro's Law says equal volumes of gas (at same T and P) contain equal numbers of molecules — regardless of what the gas is! So once you know the volume and conditions, you know the moles. This is why molar volume is such a powerful tool: all ideal gases share the same value.",
+        hook: "A single mole of any gas at room temperature takes up about 24.5 litres — roughly the volume of a large beach ball. Whether it's hydrogen (the lightest gas) or xenon (a heavy noble gas), the molar volume is the same. Avogadro's Law is one of the most elegant equalities in chemistry.",
+        misconception: "Don't use 22.4 L/mol for room temperature calculations — that's only valid at 0°C (273 K). At 25°C (298 K), use 24.5 L/mol. The difference is 9%, enough to make a significant error in gas stoichiometry.",
+      },
+      hint: "If your molar volume is significantly less than 24.5 L/mol, check for gas leaks. If significantly more, you may have had air in the collection tube at the start — purge with H₂ for 30 seconds before starting to record.",
+      expected: "Molar volume 23–26 L/mol (±5–10% of 24.5). n(H₂) calculated accurately from mass of Zn. Main errors: water vapour, gas leaks, temperature of collected gas.",
+    },
+  },
+  {
+    num: 129,
+    title: "Decomposizione Catalitica di H₂O₂",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti confrontano la velocità di decomposizione di H₂O₂ usando MnO₂, soluzione di FeCl₃, fegato (enzima catalasi) e nessun catalizzatore, misurando il volume di O₂ nel tempo per determinare quale catalizzatore è più efficace.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che diversi catalizzatori hanno efficienze diverse e che gli enzimi (catalizzatori biologici) possono essere estremamente efficaci — la catalasi nel fegato può superare i catalizzatori inorganici a temperatura ambiente.",
+      instructions: [
+        "Preparare quattro beute identiche contenenti ciascuna 20 mL di H₂O₂ a 20 volumi collegate a siringhe per gas.",
+        "Beuta 1: aggiungere una spatola di MnO₂. Beuta 2: aggiungere 2 mL di soluzione di FeCl₃. Beuta 3: aggiungere un piccolo pezzo di fegato. Beuta 4: nessun catalizzatore (controllo).",
+        "Avviare il cronometro simultaneamente per tutte e quattro. Registrare il volume di O₂ ogni 30 secondi per 3 minuti.",
+        "Tracciare il grafico volume di O₂ vs tempo per tutte e quattro sugli stessi assi.",
+        "Confrontare le velocità iniziali (pendenza della tangente a t = 0).",
+      ],
+      expectedOutcome: "Tutti i catalizzatori producono O₂ più velocemente del controllo. MnO₂ e catalasi (fegato) sono tipicamente i più efficaci. Il controllo produce pochissimo O₂ in 3 minuti. Gli enzimi possono superare i catalizzatori inorganici a temperatura ambiente.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💧", name: "Soluzione di H₂O₂ (20 volumi), 80 mL totali" },
+        { emoji: "🔬", name: "Polvere di MnO₂" },
+        { emoji: "🧫", name: "Soluzione di FeCl₃ (0,1 mol/L)" },
+        { emoji: "🥩", name: "Pezzo di fegato fresco (piccolo, ~1 g)" },
+        { emoji: "💉", name: "Quattro siringhe per gas (100 cm³) con tubi di collegamento" },
+      ],
+      observationsToRecord: [
+        "Volume di O₂ (cm³) ogni 30 s per ciascuna beuta",
+        "Volume totale di O₂ dopo 3 minuti per ciascun catalizzatore",
+        "Velocità iniziale (cm³/s) dalla pendenza del grafico a t = 0",
+        "Osservazioni qualitative (intensità dell'effervescenza, eventuali cambiamenti di colore)",
+      ],
+      theoryPoints: [
+        "2H₂O₂ → 2H₂O + O₂ (il catalizzatore abbassa l'energia di attivazione — più molecole possono reagire al secondo).",
+        "MnO₂ è un catalizzatore inorganico eterogeneo (reazione superficiale).",
+        "Fe³⁺ (FeCl₃) è un catalizzatore inorganico omogeneo.",
+        "L'enzima catalasi è un catalizzatore biologico — può essere il più efficiente a temperatura ambiente grazie alla geometria del sito attivo.",
+      ],
+      realWorldConnections: [
+        "La catalasi nei globuli rossi e nelle cellule epatiche decompone H₂O₂ prodotto come scarto metabolico, prevenendo il danno ossidativo.",
+        "La decomposizione industriale di H₂O₂ utilizza catalizzatori di argento o platino per generare O₂ per propellenti di razzi e motori di sottomarini.",
+        "L'efficienza enzimatica (numero di turnover) può essere milioni di volte superiore ai catalizzatori inorganici equivalenti — la biotecnologia sfrutta questo nella produzione farmaceutica.",
+      ],
+      formula: "2H₂O₂ → 2H₂O + O₂  [il catalizzatore abbassa l'energia di attivazione]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quale proprietà di un catalizzatore spiega perché diversi catalizzatori danno diverse velocità di reazione?",
+          options: [
+            "I catalizzatori differiscono nella loro massa molare",
+            "I catalizzatori differiscono nell'energia di attivazione del percorso alternativo che forniscono",
+            "I catalizzatori differiscono nel loro colore",
+            "I catalizzatori differiscono nella loro solubilità",
+          ],
+          correctIndex: 1,
+          explanation: "Ogni catalizzatore fornisce un diverso percorso di reazione alternativo con una diversa energia di attivazione. Un catalizzatore che abbassa maggiormente l'energia di attivazione permetterà a una proporzione maggiore di molecole di reagire — dando una velocità più alta.",
+        },
+        {
+          text: "La catalasi del fegato decompone H₂O₂ più velocemente di MnO₂ a 37°C ma più lentamente a 80°C. Perché?",
+          options: [
+            "La catalasi reagisce con MnO₂ ad alte temperature",
+            "La catalasi è un enzima che si denatura ad alte temperature, perdendo la forma del suo sito attivo",
+            "MnO₂ diventa più reattivo a temperature più alte",
+            "H₂O₂ si decompone spontaneamente a 80°C senza catalizzatore",
+          ],
+          correctIndex: 1,
+          explanation: "Gli enzimi sono proteine la cui attività dipende dalla loro precisa forma 3D (sito attivo). Sopra i ~50–60°C, la struttura proteica si svolge (denatura), distruggendo il sito attivo. MnO₂ non ha struttura proteica e rimane efficace a temperature più alte.",
+        },
+        {
+          text: "Cosa puoi concludere se la beuta di controllo (senza catalizzatore) produce una piccola quantità di O₂ in 3 minuti?",
+          options: [
+            "H₂O₂ si decompone spontaneamente — i catalizzatori aumentano solo la velocità, non la fattibilità",
+            "La beuta di controllo deve essere stata contaminata",
+            "La reazione non avviene senza catalizzatore",
+            "H₂O₂ richiede calore per decomporsi senza catalizzatore",
+          ],
+          correctIndex: 0,
+          explanation: "H₂O₂ è termodinamicamente instabile e si decompone lentamente senza catalizzatore. I catalizzatori non cambiano se una reazione può avvenire — solo quanto velocemente. Questo conferma che i catalizzatori aumentano la velocità di reazione, non la fattibilità della reazione.",
+        },
+      ],
+      discussion: [
+        "Confronta le velocità iniziali di tutte e quattro le condizioni. Quale catalizzatore è più efficiente? Esprimi la velocità in cm³ O₂/s e collegala al concetto di energia di attivazione.",
+        "Spiega perché gli enzimi spesso superano i catalizzatori inorganici a temperatura corporea (37°C), ma i catalizzatori inorganici sono preferiti nei processi industriali ad alta temperatura.",
+        "Progetta un ulteriore esperimento per determinare la temperatura ottimale per l'attività della catalasi, prevedendo la forma di un grafico velocità vs temperatura.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Confronto dell'efficienza dei catalizzatori", pct: 35 },
+        { label: "Proprietà degli enzimi vs catalizzatori inorganici", pct: 30 },
+        { label: "Energia di attivazione e velocità", pct: 25 },
+        { label: "Ruolo biologico della catalasi", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che i catalizzatori vengano consumati — non lo sono; possono essere riutilizzati indefinitamente (in teoria). Il fegato può essere riaggiunto a H₂O₂ fresco.",
+        "Molti pensano che gli enzimi siano sempre più veloci dei catalizzatori inorganici — a temperature elevate, i catalizzatori inorganici superano gli enzimi perché gli enzimi si denaturano.",
+      ],
+      hook: "La catalasi è uno degli enzimi più veloci conosciuti — una singola molecola può decomporre 6 milioni di molecole di H₂O₂ al secondo! Se il tuo fegato smettesse di produrre catalasi, l'H₂O₂ prodotto dal tuo metabolismo distruggerebbe le tue cellule epatiche in poche ore. La chimica ti mantiene in vita a velocità molecolare!",
+      khanLinks: [
+        { title: "Energia di Attivazione e Catalizzatori", url: "https://www.khanacademy.org/science/chemistry/chem-kinetics/activation-energy/v/catalysts" },
+        { title: "Fattori che Influenzano la Velocità di Reazione", url: "https://www.khanacademy.org/science/chemistry/chem-kinetics/reaction-rates-tutorial/v/factors-affecting-reaction-rates" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo (s)", "Controllo (cm³)", "MnO₂ (cm³)", "FeCl₃ (cm³)", "Fegato (cm³)"],
+      rows: 7,
+    },
+    observations: [
+      "Registrare il volume di O₂ ogni 30 secondi per tutte e quattro le beute",
+      "Descrivere l'intensità dell'effervescenza in ciascuna beuta a t = 0",
+      "Calcolare la velocità iniziale (cm³/s) dalla pendenza di ciascuna curva a t = 0",
+    ],
+    conclusion: "Confronta le velocità iniziali per tutte e quattro le condizioni. Classifica i catalizzatori dal più al meno efficace. Spiega la differenza tra le prestazioni degli enzimi e dei catalizzatori inorganici in termini di sito attivo ed energia di attivazione.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi farai gareggiare quattro diversi catalizzatori l'uno contro l'altro — incluso uno biologico da un vero fegato. Il vincitore potrebbe sorprenderti!",
+      keywords: {
+        setup: "Avvia tutte e quattro le beute simultaneamente (fatti aiutare da un assistente). Usa beute di dimensioni identiche e volumi di H₂O₂ uguali. Aggiungi il fegato per ultimo (reagisce molto velocemente). Pre-taglia il fegato in dimensioni approssimativamente uguali.",
+        formula: "2H₂O₂ → 2H₂O + O₂. Velocità iniziale = ΔV/Δt a t = 0 (cm³/s). Energia di attivazione: Ea diminuisce con il catalizzatore, aumentando la velocità tramite k = Ae^(−Ea/RT).",
+        error: "Errori comuni: aggiungere catalizzatori in momenti diversi (confronto non equo), fegato appoggiato sul lato della beuta non a contatto con H₂O₂, e leggere la siringa per gas ad angolo (errore di parallasse).",
+        result: "Classifica tipica: catalasi (fegato) ≈ MnO₂ > FeCl₃ >> nessun catalizzatore. MnO₂: ~2 cm³/s. FeCl₃: ~1 cm³/s. Fegato: ~3 cm³/s. Controllo: ~0,1 cm³/s.",
+        real: "Una goccia di sangue (contenente catalasi) su H₂O₂ produce schiuma vigorosa — gli scienziati forensi usano questo come test presuntivo per il sangue. L'attività della catalasi è così alta che è rilevabile anche in campioni minuscoli.",
+        explain: "Ogni catalizzatore fornisce una diversa scorciatoia attraverso il paesaggio energetico della reazione. MnO₂ fornisce siti superficiali attivi dove le molecole di H₂O₂ possono adsorbirsi e rompersi. La catalasi ha un sito attivo perfettamente sagomato per legare H₂O₂ — come una chiave e una serratura — e l'atomo di ferro al suo centro rompe direttamente il legame O-O. Percorsi diversi, stessa destinazione.",
+        hook: "Alcune marmitte catalitiche nelle auto usano platino e palladio — metalli che valgono più di 1.000 € per oncia troy. La marmitta in un'auto tipica contiene circa 200 € di questi metalli. Ecco perché le marmitte catalitiche vengono rubate — i ladri conoscono la chimica!",
+        misconception: "I catalizzatori non cambiano la quantità finale di prodotto — cambiano solo quanto velocemente viene prodotto. Tutte e quattro le condizioni in questo esperimento produrranno alla fine la stessa quantità di O₂ (dalla stessa quantità di H₂O₂). I catalizzatori cambiano la VELOCITÀ, non la RESA.",
+      },
+      hint: "Se il fegato non reagisce vigorosamente, assicurati che sia fresco (non congelato e scongelato) e in buon contatto con il liquido H₂O₂. Tagliarlo in pezzi più piccoli aumenta la superficie e migliora i risultati.",
+      expected: "Catalasi (fegato) e MnO₂ danno le velocità iniziali più alte. FeCl₃ dà velocità intermedia. Controllo molto lento. Tutti producono O₂ — confermando che i catalizzatori cambiano solo la velocità. Classifiche coerenti con le riduzioni dell'energia di attivazione.",
+    },
+  },
+  {
+    num: 130,
+    title: "Fontana di Ammoniaca",
+    section: "Chimica dei Gas",
+    desc: "Gli studenti riempiono un pallone a fondo tondo con gas ammoniaca, lo capovolgono sopra acqua colorata con indicatore universale e aprono una valvola per creare una spettacolare fontana verso l'alto — dimostrando l'estrema solubilità di NH₃.",
+    setupTime: "15 min",
+    duration: "15 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che l'ammoniaca è estremamente solubile in acqua (circa 31 g/100 mL a 25°C), creando una differenza di pressione che spinge l'acqua drammaticamente nel pallone come una fontana.",
+      instructions: [
+        "Riempire completamente un pallone a fondo tondo asciutto con gas ammoniaca spostando l'aria dal basso (spostamento verso l'alto — NH₃ è meno denso dell'aria).",
+        "Chiudere il pallone con un tappo di gomma a un foro che porta un lungo tubo di vetro che arriva fino al fondo del pallone.",
+        "Capovolgere il pallone sopra un becher d'acqua contenente indicatore universale (giallo-verde, pH neutro).",
+        "Immergere la punta del tubo di vetro nell'acqua. Aprire il tubo (rimuovere il dito che copre l'estremità superiore).",
+        "Osservare la fontana e notare il cambiamento di colore mentre l'acqua sale.",
+      ],
+      expectedOutcome: "L'acqua sale velocemente nel pallone come una fontana colorata. L'indicatore diventa blu/viola mentre NH₃ si dissolve e forma la soluzione alcalina NH₄OH. Il pallone si riempie quasi completamente con la soluzione colorata.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚗️", name: "Pallone a fondo tondo (500 mL)" },
+        { emoji: "🔧", name: "Tappo di gomma a un foro con lungo tubo di vetro di erogazione" },
+        { emoji: "🧪", name: "Becher d'acqua con indicatore universale" },
+        { emoji: "🏗️", name: "Supporto a stativo e morsetto per tenere il pallone capovolto" },
+        { emoji: "💊", name: "Fornitura di gas ammoniaca (da soluzione NH₃ + NaOH o bombola di gas)" },
+      ],
+      observationsToRecord: [
+        "Velocità e altezza della fontana",
+        "Cambiamento di colore dell'acqua mentre entra nel pallone",
+        "pH della soluzione nel pallone dopo l'esperimento",
+        "Percentuale approssimativa del pallone riempita dall'acqua",
+      ],
+      theoryPoints: [
+        "Solubilità di NH₃ in acqua ≈ 31 g/100 mL a 25°C — molto più alta della maggior parte dei gas.",
+        "NH₃ si dissolve: NH₃(g) + H₂O(l) → NH₄⁺(aq) + OH⁻(aq) — soluzione alcalina.",
+        "La dissoluzione rapida crea un vuoto parziale nel pallone, e la pressione atmosferica spinge l'acqua verso l'alto.",
+        "Differenza di pressione: P_atm (esterno) >> P_interno (vicino a zero) → l'acqua viene spinta verso l'alto.",
+      ],
+      realWorldConnections: [
+        "I refrigeranti ad ammoniaca (R-717) usano cicli di condensazione ed evaporazione — le proprietà di solubilità sono critiche per la progettazione del sistema.",
+        "L'idrossido di ammonio (ammoniaca disciolta in acqua) è usato come detergente domestico — prodotto dalla stessa reazione che osservi.",
+        "Gli scrubber industriali ad ammoniaca usano acqua per assorbire NH₃ dai flussi di gas di scarico — la stessa alta solubilità sfruttata qui.",
+      ],
+      formula: "NH₃(g) + H₂O(l) → NH₄⁺(aq) + OH⁻(aq)  |  Solubilità NH₃: ~31 g/100 mL a 25°C",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché l'acqua sale drammaticamente nel pallone riempito di ammoniaca?",
+          options: [
+            "L'ammoniaca spinge l'acqua verso l'alto reagendo vigorosamente",
+            "NH₃ si dissolve estremamente rapidamente nell'acqua, creando un quasi-vuoto nel pallone; la pressione atmosferica spinge l'acqua dentro",
+            "L'acqua è meno densa della soluzione di ammoniaca",
+            "L'ammoniaca riscalda l'acqua, causandone l'espansione e la salita",
+          ],
+          correctIndex: 1,
+          explanation: "Quando il tubo viene aperto, l'acqua tocca il gas ammoniaca. NH₃ si dissolve quasi istantaneamente nell'acqua, rimuovendo gas dal pallone. La bassa pressione risultante all'interno è molto inferiore alla pressione atmosferica esterna, che spinge l'acqua verso l'alto drammaticamente.",
+        },
+        {
+          text: "Perché l'acqua nel pallone diventa blu/viola con l'indicatore universale?",
+          options: [
+            "NH₃ è un gas di colore blu",
+            "NH₃ si dissolve formando una soluzione alcalina (NH₄OH), facendo diventare l'indicatore blu/viola",
+            "La reazione produce idrossido di sodio",
+            "L'ammoniaca reagisce direttamente con il colorante indicatore",
+          ],
+          correctIndex: 1,
+          explanation: "NH₃ si dissolve in acqua: NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. Gli ioni OH⁻ rendono la soluzione alcalina (pH > 7). L'indicatore universale diventa blu-viola in condizioni alcaline.",
+        },
+        {
+          text: "Quale altro gas NON produrrebbe un esperimento di fontana come questo?",
+          options: ["Gas HCl (molto solubile)", "SO₂ (moderatamente solubile)", "O₂ (poco solubile)", "CO₂ (moderatamente solubile)"],
+          correctIndex: 2,
+          explanation: "O₂ è molto poco solubile in acqua (~0,004 g/100 mL). Non si dissolverebbe abbastanza velocemente da creare una caduta di pressione. La fontana funziona solo con gas che hanno solubilità in acqua molto alta (come NH₃ e HCl).",
+        },
+      ],
+      discussion: [
+        "Spiega quantitativamente perché quasi tutto il gas ammoniaca viene assorbito dall'acqua. Cosa ti dice questo sulla posizione di equilibrio per NH₃(g) ⇌ NH₃(aq)?",
+        "L'esperimento della fontana può essere fatto anche con gas cloruro di idrogeno. Prevedi il cambiamento di colore dell'indicatore e scrivi l'equazione per HCl che si dissolve in acqua.",
+        "Se l'acqua nel becher fosse sostituita con soluzione diluita di HCl, prevedi se la fontana sarebbe più o meno spettacolare, e spiega perché.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Estrema solubilità di NH₃ che crea differenza di pressione", pct: 40 },
+        { label: "Proprietà alcaline della soluzione di ammoniaca", pct: 25 },
+        { label: "Pressione atmosferica che guida la fontana", pct: 25 },
+        { label: "Usi industriali della solubilità dell'ammoniaca", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che la fontana sia causata dall'ammoniaca che \"spinge\" l'acqua — è causata dall'ammoniaca che scompare in soluzione, creando un vuoto che risucchia l'acqua dentro.",
+        "Molti pensano che la soluzione sia idrossido di sodio — è idrossido di ammonio/soluzione di ammoniaca, una base debole.",
+      ],
+      hook: "L'ammoniaca è così solubile che 1 litro d'acqua a temperatura ambiente può dissolvere 1.200 litri di gas NH₃! È un rapporto di volume 1.200:1. Nessun altro gas comune si avvicina. Questa estrema solubilità rende la fontana una delle dimostrazioni più spettacolari in chimica!",
+      khanLinks: [
+        { title: "Equilibrio Acido-Base", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases" },
+        { title: "Solubilità e Forze Intermolecolari", url: "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/solubility" },
+      ],
+    },
+    dataTable: {
+      headers: ["Osservazione", "Prima della Fontana", "Durante la Fontana", "Dopo la Fontana"],
+      rows: 4,
+    },
+    observations: [
+      "Registrare il colore della soluzione indicatrice prima e dopo la fontana",
+      "Registrare la percentuale approssimativa del pallone riempita dall'acqua",
+      "Registrare la velocità e la durata della fontana",
+    ],
+    conclusion: "Spiega perché la fontana si verifica usando i concetti di pressione e solubilità. Scrivi l'equazione per NH₃ che si dissolve in acqua. Indica cosa indica il cambiamento di colore riguardo al pH della soluzione nel pallone.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi creerai una delle dimostrazioni visivamente più spettacolari in chimica — una fontana di ammoniaca che riempie un pallone in pochi secondi — alimentata puramente dalla chimica della dissoluzione!",
+      keywords: {
+        setup: "Assicurati che il pallone sia completamente asciutto e pieno di NH₃ (niente aria) — qualsiasi aria rimasta riduce l'effetto fontana. Il tubo di vetro deve arrivare sotto la superficie dell'acqua. Tieni pronti i morsetti per tenere il pallone capovolto in modo sicuro.",
+        formula: "NH₃(g) + H₂O(l) ⇌ NH₄⁺(aq) + OH⁻(aq). pKb = 4,74. Solubilità: 31 g/100 mL = ~1.200 volumi a 25°C. Caduta di pressione: quasi-vuoto creato mentre NH₃ si dissolve.",
+        error: "Errori comuni: aria rimasta nel pallone (riduce l'altezza della fontana e riempie il pallone solo parzialmente), tubo non immerso nell'acqua (l'acqua non può entrare), e pallone non correttamente capovolto (perdite).",
+        result: "Fontana spettacolare che sale a riempire ≈ 90–95% del pallone. L'indicatore diventa blu/viola (pH 10–12). Il pallone si riempie in 5–15 secondi. Conferma l'estrema solubilità di NH₃ e il prodotto alcalino.",
+        real: "Nel 2013, una perdita di refrigerante in un sistema di raffreddamento industriale a base di ammoniaca in Cina causò 15 morti — i lavoratori furono esposti ad alte concentrazioni di NH₃. L'estrema solubilità che rende la fontana spettacolare rende anche NH₃ pericoloso per le mucose.",
+        explain: "Le molecole di ammoniaca hanno un doppietto elettronico solitario e una forte capacità di formare legami idrogeno — sono attratte estremamente fortemente dalle molecole d'acqua. Non appena NH₃ tocca l'acqua, si dissolve più velocemente di quanto possa essere reintegrato, rimuovendo molecole dalla fase gassosa. La pressione nel pallone scende quasi a zero. La pressione atmosferica (101 kPa) poi spinge l'acqua verso l'alto come spingere su una cannuccia.",
+        hook: "Prima che i frigoriferi usassero CFC e HFC, tutti i frigoriferi e i condizionatori usavano ammoniaca — inclusi i sistemi di refrigerazione del Titanic! L'estrema solubilità che rende questa fontana spettacolare rendeva anche le perdite di ammoniaca sul Titanic una preoccupazione minore rispetto agli iceberg.",
+        misconception: "La fontana NON è causata da una reazione chimica che produce gas o espansione. È causata dalla RIMOZIONE di gas (NH₃ che si dissolve), creando un vuoto parziale. La forza motrice è la pressione atmosferica dall'esterno — la stessa pressione che tiene un litro d'acqua sopra una colonna di mercurio in un barometro.",
+      },
+      hint: "Se la fontana è debole, il pallone potrebbe non essere completamente riempito di NH₃. Fai fluire NH₃ più a lungo prima di chiudere, o usa una fonte di NH₃ più grande. Assicurati che il becher d'acqua sia vicino sotto la punta del pallone.",
+      expected: "Fontana spettacolare che riempie il pallone ~90% entro 10–15 s. L'indicatore diventa blu/viola (alcalino). Il pallone si raffredda leggermente (la dissoluzione è esotermica ma rapida). Conferma la solubilità di NH₃ ~1.200:1 in volume.",
+    },
+  },
+  {
+    num: 131,
+    title: "Elettrolisi dell'Acqua",
+    section: "Elettrochimica",
+    desc: "Gli studenti elettrolizzano acido solforico diluito e raccolgono idrogeno e ossigeno gassosi per confermare il rapporto volumetrico 2:1.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che l'acqua viene scissa in idrogeno e ossigeno mediante elettrolisi, producendo un rapporto volumetrico 2:1 che conferma la formula molecolare H₂O.",
+      instructions: [
+        "Preparare un voltametro di Hoffman (o due provette capovolte) riempito con H₂SO₄ diluito (1 mol/L).",
+        "Collegare elettrodi di carbone o platino a un alimentatore DC da 6 V.",
+        "Accendere e raccogliere il gas in ciascun braccio per 10 minuti.",
+        "Registrare il volume di gas raccolto a ciascun elettrodo.",
+        "Testare il gas al catodo con una scheggia incandescente (H₂) e il gas all'anodo con una scheggia accesa (O₂).",
+      ],
+      expectedOutcome: "Il volume di idrogeno al catodo è circa il doppio del volume di ossigeno all'anodo, confermando il rapporto 2:1 previsto dalla formula dell'acqua H₂O.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚡", name: "Alimentatore DC 6 V e cavi di collegamento" },
+        { emoji: "🔬", name: "Elettrodi di carbone o platino" },
+        { emoji: "🧪", name: "Soluzione diluita di H₂SO₄ (1 mol/L)" },
+        { emoji: "💧", name: "Voltametro di Hoffman o due provette capovolte" },
+        { emoji: "🪵", name: "Schegge di legno per il test dei gas" },
+      ],
+      observationsToRecord: [
+        "Volume di gas al catodo (H₂) dopo 10 min (cm³)",
+        "Volume di gas all'anodo (O₂) dopo 10 min (cm³)",
+        "Rapporto dei volumi H₂:O₂",
+        "Risultati del test con scheggia che confermano l'identità dei gas",
+      ],
+      theoryPoints: [
+        "Catodo (−): 4H⁺ + 4e⁻ → 2H₂ (riduzione degli ioni idrogeno).",
+        "Anodo (+): 2H₂O → O₂ + 4H⁺ + 4e⁻ (ossidazione dell'acqua).",
+        "Complessivo: 2H₂O → 2H₂ + O₂; rapporto volumetrico H₂:O₂ = 2:1, che conferma la formula H₂O.",
+        "L'H₂SO₄ diluito viene utilizzato per aumentare la conducibilità; l'acqua pura ha troppo pochi ioni.",
+      ],
+      realWorldConnections: [
+        "La produzione di idrogeno verde mediante elettrolisi dell'acqua usando elettricità rinnovabile è centrale nella strategia net-zero del Regno Unito.",
+        "L'elettrolisi dell'acqua nei sottomarini e nelle stazioni spaziali fornisce ossigeno respirabile per l'equipaggio.",
+        "Il rapporto volumetrico 2:1 è una prova sperimentale diretta della formula molecolare dell'acqua — storicamente usata per stabilire H₂O.",
+      ],
+      formula: "Catodo: 4H⁺ + 4e⁻ → 2H₂  |  Anodo: 2H₂O → O₂ + 4H⁺ + 4e⁻  |  Complessivo: 2H₂O → 2H₂ + O₂",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "A quale elettrodo viene prodotto l'idrogeno durante l'elettrolisi dell'acqua?",
+          options: ["Anodo", "Catodo", "Entrambi gli elettrodi in ugual misura", "Nessun elettrodo"],
+          correctIndex: 1,
+          explanation: "Gli ioni idrogeno (H⁺) vengono ridotti al catodo (elettrodo negativo): 4H⁺ + 4e⁻ → 2H₂. L'anodo ossida l'acqua per produrre ossigeno.",
+        },
+        {
+          text: "Il rapporto volumetrico 2:1 di H₂:O₂ conferma quale fatto?",
+          options: [
+            "L'idrogeno è più leggero dell'ossigeno",
+            "La formula molecolare dell'acqua è H₂O",
+            "L'ossigeno è più denso dell'idrogeno",
+            "L'elettrolisi produce sempre il doppio del gas al catodo",
+          ],
+          correctIndex: 1,
+          explanation: "La formula H₂O significa due atomi di idrogeno per un atomo di ossigeno. Poiché 1 mole di qualsiasi gas nelle stesse condizioni occupa lo stesso volume, il rapporto volumetrico 2:1 conferma direttamente il rapporto atomico 2:1 in H₂O.",
+        },
+        {
+          text: "Perché si aggiunge H₂SO₄ diluito all'acqua per l'elettrolisi?",
+          options: [
+            "L'H₂SO₄ è un reagente che decompone l'acqua",
+            "L'H₂SO₄ fornisce ioni aggiuntivi per rendere la soluzione conduttrice",
+            "L'H₂SO₄ impedisce la formazione di O₂ all'anodo",
+            "L'H₂SO₄ reagisce con gli elettrodi di platino per pulirli",
+          ],
+          correctIndex: 1,
+          explanation: "L'acqua pura ha una concentrazione molto bassa di ioni H⁺ e OH⁻ e conduce male l'elettricità. L'aggiunta di H₂SO₄ aumenta notevolmente la concentrazione ionica, rendendo la soluzione un buon elettrolita.",
+        },
+      ],
+      discussion: [
+        "Scrivi le semi-equazioni per le reazioni al catodo e all'anodo e conferma che sono bilanciate per carica e atomi.",
+        "Spiega perché l'elettrolisi dell'acqua di mare produce cloro all'anodo invece di ossigeno, nonostante siano presenti sia Cl⁻ che acqua.",
+        "Calcola quante moli di H₂ verrebbero prodotte se una corrente di 1 A scorre per 1 ora. (Costante di Faraday F = 96.500 C/mol)",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Semi-equazioni dell'elettrolisi dell'acqua", pct: 35 },
+        { label: "Rapporto volumetrico dei gas 2:1 che conferma H₂O", pct: 30 },
+        { label: "Ossidazione all'anodo / riduzione al catodo", pct: 25 },
+        { label: "L'idrogeno come combustibile pulito", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso confondono quale gas si forma a quale elettrodo — ricorda OIL RIG: ossidazione all'anodo, riduzione al catodo.",
+        "Molti pensano che l'H₂SO₄ venga consumato nella reazione — fornisce solo ioni (conducibilità) e viene completamente recuperato.",
+      ],
+      hook: "La Stazione Spaziale Internazionale produce tutto il suo ossigeno respirabile mediante elettrolisi dell'acqua — la stessa reazione che stai facendo oggi, alimentata da pannelli solari nello spazio!",
+      khanLinks: [
+        { title: "Elettrolisi", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis" },
+        { title: "Introduzione agli Stati di Ossidazione", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo (min)", "Volume H₂ (cm³)", "Volume O₂ (cm³)", "Rapporto H₂:O₂"],
+      rows: 5,
+    },
+    observations: [
+      "Registra i volumi di gas al catodo e all'anodo ogni 2 minuti",
+      "Registra il risultato del test con scheggia per ciascun gas",
+      "Calcola il rapporto volumetrico effettivo H₂:O₂ e confrontalo con quello atteso 2:1",
+    ],
+    conclusion: "Scrivi le semi-equazioni e l'equazione complessiva per l'elettrolisi dell'acqua. Conferma il rapporto 2:1 dai tuoi dati. Spiega il collegamento tra questo rapporto e la formula molecolare dell'acqua.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi scenderai l'acqua nei suoi elementi — e i volumi di gas che raccoglierai dimostreranno che la formula dell'acqua è davvero H₂O!",
+      keywords: {
+        setup: "Riempi completamente entrambi i bracci del voltametro con soluzione di H₂SO₄ prima di iniziare. Assicurati che non ci siano bolle d'aria. Imposta la tensione a 6–9 V per velocità misurabili. Usa solo elettrodi di carbone o platino.",
+        formula: "Catodo: 4H⁺ + 4e⁻ → 2H₂. Anodo: 2H₂O → O₂ + 4H⁺ + 4e⁻. Complessivo: 2H₂O → 2H₂ + O₂. Rapporto atteso H₂:O₂ = 2:1.",
+        error: "Errori comuni: bolle d'aria nelle provette capovolte all'inizio (aumenta falsamente la lettura del volume iniziale), e leggere i volumi prima che il gas sia completamente raccolto. Verifica la polarità degli elettrodi.",
+        result: "Volume H₂ al catodo ≈ il doppio del volume O₂ all'anodo. Dopo 10 min a 6 V, tipico: H₂ ≈ 20 cm³, O₂ ≈ 10 cm³. Lo scoppiettio conferma H₂; la scheggia incandescente conferma O₂.",
+        real: "L'idrogeno verde dall'elettrolisi usando energia eolica o solare potrebbe sostituire i combustibili fossili nell'industria pesante e nella navigazione. Il governo del Regno Unito ha annunciato un importante programma di investimenti nell'idrogeno verde.",
+        explain: "L'elettricità forza gli elettroni a fluire. Al catodo, gli elettroni vengono forzati sugli ioni H⁺, formando gas H₂. All'anodo, le molecole d'acqua sono costrette a cedere elettroni, scindendosi in O₂ e H⁺. Due molecole di H₂ vengono prodotte per ogni molecola di O₂ — corrispondente al rapporto 2:1 in H₂O.",
+        hook: "Nel 1800, William Nicholson usò la prima batteria (appena inventata) per elettrolizzare l'acqua — e il rapporto dei gas 2:1 fu una delle prime prove sperimentali che l'acqua è H₂O, non HO come molti scienziati credevano all'epoca!",
+        misconception: "L'H₂SO₄ NON viene decomposto durante questa elettrolisi — è presente solo per trasportare corrente. Il reagente è l'acqua. Se iniziassi con H₂SO₄ puro, i prodotti sarebbero diversi (H₂ e O₂ dall'acqua, non composti dello zolfo a queste tensioni).",
+      },
+      hint: "Se il rapporto H₂:O₂ è significativamente diverso da 2:1, controlla eventuali perdite di gas oltre il tappo, o bolle d'aria residue che non sono state espulse prima di iniziare.",
+      expected: "Rapporto volumetrico H₂:O₂: 2,0 ± 0,2. H₂ confermato dallo scoppiettio; O₂ dalla riaccensione della scheggia incandescente. Corrente: 0,5–1 A a 6 V in H₂SO₄ 1 mol/L. Il rapporto conferma la formula molecolare H₂O.",
+    },
+  },
+  {
+    num: 132,
+    title: "Elettrolisi della Salamoia",
+    section: "Elettrochimica",
+    desc: "Gli studenti elettrolizzano una soluzione concentrata di sale per produrre cloro all'anodo, idrogeno al catodo e idrossido di sodio in soluzione.",
+    setupTime: "8 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono il processo industriale cloro-soda, identificando tre prodotti dell'elettrolisi della salamoia e comprendendo le reazioni selettive agli elettrodi.",
+      instructions: [
+        "Riempire un tubo a U o una cella elettrolitica con soluzione satura di NaCl.",
+        "Inserire elettrodi di carbone in ciascun braccio collegati a un alimentatore da 6 V.",
+        "Raccogliere i gas da ciascun elettrodo usando provette capovolte.",
+        "Testare il gas al catodo con una scheggia accesa (H₂) e il gas all'anodo con carta al tornasole umida (Cl₂).",
+        "Testare la soluzione catodica con fenolftaleina per la presenza di NaOH.",
+      ],
+      expectedOutcome: "Il cloro sbianca la carta al tornasole all'anodo; l'idrogeno produce uno scoppiettio al catodo; la fenolftaleina diventa rosa vicino al catodo, confermando la formazione di NaOH.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧂", name: "Soluzione satura di NaCl (salamoia)" },
+        { emoji: "⚡", name: "Alimentatore DC 6 V e cavi di collegamento" },
+        { emoji: "🔬", name: "Elettrodi di carbone" },
+        { emoji: "🧪", name: "Provette capovolte per la raccolta del gas" },
+        { emoji: "💧", name: "Carta al tornasole umida e indicatore fenolftaleina" },
+      ],
+      observationsToRecord: [
+        "Risposta della carta al tornasole al gas anodico (Cl₂)",
+        "Risultato del test con scheggia al catodo (H₂)",
+        "Colore della fenolftaleina vicino al catodo (NaOH)",
+        "Rapporto volumetrico di H₂:Cl₂ e confronto con quello atteso 1:1",
+      ],
+      theoryPoints: [
+        "Catodo (−): 2H⁺ + 2e⁻ → H₂ (gli ioni idrogeno vengono scaricati preferenzialmente).",
+        "Anodo (+): 2Cl⁻ → Cl₂ + 2e⁻ (gli ioni cloruro vengono scaricati preferenzialmente rispetto a OH⁻ nella salamoia concentrata).",
+        "Na⁺ e OH⁻ rimangono in soluzione → NaOH si forma vicino al catodo.",
+        "Il processo industriale cloro-soda produce Cl₂ (per PVC, candeggina), H₂ (per combustibile/Haber) e NaOH (per carta, sapone).",
+      ],
+      realWorldConnections: [
+        "L'industria cloro-soda è una delle più grandi industrie elettrochimiche a livello globale, producendo cloro per il trattamento dell'acqua, PVC e prodotti farmaceutici.",
+        "Il gas cloro fu usato come arma nella Prima Guerra Mondiale — comprendere la sua chimica e i suoi pericoli fa parte dell'educazione chimica.",
+        "L'idrossido di sodio prodotto dall'elettrolisi della salamoia viene usato per fare carta, sapone, alluminio e molti prodotti chimici.",
+      ],
+      formula: "Catodo: 2H⁺ + 2e⁻ → H₂  |  Anodo: 2Cl⁻ → Cl₂ + 2e⁻  |  Complessivo: 2NaCl + 2H₂O → Cl₂ + H₂ + 2NaOH",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quale gas viene prodotto all'anodo durante l'elettrolisi della salamoia concentrata?",
+          options: ["Ossigeno", "Idrogeno", "Cloro", "Sodio"],
+          correctIndex: 2,
+          explanation: "Nella salamoia concentrata, gli ioni cloruro (Cl⁻) vengono scaricati preferenzialmente all'anodo: 2Cl⁻ → Cl₂ + 2e⁻. Nella soluzione diluita di NaCl, OH⁻ dall'acqua viene scaricato preferenzialmente, producendo O₂.",
+        },
+        {
+          text: "Come viene rilevato il gas cloro?",
+          options: [
+            "Dal suo colore blu",
+            "Riaccendendo una scheggia incandescente",
+            "Sbiancando la carta al tornasole umida",
+            "Con il test dello scoppiettio",
+          ],
+          correctIndex: 2,
+          explanation: "Cl₂ è un gas ossidante giallo-verde che sbianca la carta al tornasole umida: reagisce con l'acqua per formare HCl e HOCl, che sbiancano il colorante indicatore nel tornasole.",
+        },
+        {
+          text: "Perché l'elettrolisi della soluzione DILUITA di NaCl produce ossigeno all'anodo invece di cloro?",
+          options: [
+            "La soluzione diluita non ha ioni Cl⁻",
+            "A basse concentrazioni di Cl⁻, gli ioni OH⁻ dall'acqua vengono scaricati più facilmente dei Cl⁻",
+            "L'ossigeno viene sempre prodotto all'anodo",
+            "La soluzione diluita ha una tensione più bassa",
+          ],
+          correctIndex: 1,
+          explanation: "La preferenza di scarica degli ioni dipende dalla concentrazione. Nella soluzione diluita, gli ioni OH⁻ dall'acqua sono in maggiore abbondanza relativa e vengono ossidati preferenzialmente a O₂ piuttosto che Cl⁻ a Cl₂.",
+        },
+      ],
+      discussion: [
+        "Scrivi le semi-equazioni per tutte le reazioni agli elettrodi nell'elettrolisi della salamoia e conferma il bilancio elettronico.",
+        "Spiega perché l'industria cloro-soda deve mantenere separati i prodotti cloro e idrossido di sodio durante il processo industriale.",
+        "Suggerisci una preoccupazione ambientale legata alla produzione di cloro e descrivi come viene mitigata negli impianti industriali moderni.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Scarica ionica selettiva nella salamoia concentrata", pct: 35 },
+        { label: "Tre prodotti e i loro test", pct: 30 },
+        { label: "Processo industriale cloro-soda", pct: 25 },
+        { label: "Effetti della concentrazione sulla preferenza di scarica", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso prevedono ossigeno all'anodo perché \"l'anodo produce prodotti ossidati\" — la chiave è che Cl⁻ viene scaricato preferenzialmente nella soluzione concentrata.",
+        "Molti pensano che venga prodotto sodio metallico — Na⁺ richiede una tensione molto alta per essere ridotto; H⁺ dall'acqua viene scaricato preferenzialmente al catodo.",
+      ],
+      hook: "L'impianto cloro-soda di Runcorn nel Cheshire produce oltre 300.000 tonnellate di cloro all'anno — tutto mediante elettrolisi del salgemma dalle vicine miniere di sale del Cheshire. Il tuo esperimento modella un'industria da miliardi di sterline!",
+      khanLinks: [
+        { title: "Elettrolisi", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis" },
+        { title: "Celle Galvaniche", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+      ],
+    },
+    dataTable: {
+      headers: ["Elettrodo", "Gas Prodotto", "Metodo di Test", "Risultato", "Prodotto Confermato"],
+      rows: 4,
+    },
+    observations: [
+      "Registra il risultato del test al tornasole per il gas anodico",
+      "Registra il risultato del test con scheggia per il gas catodico",
+      "Registra il risultato della fenolftaleina vicino al catodo per confermare NaOH",
+    ],
+    conclusion: "Scrivi l'equazione complessiva per l'elettrolisi della salamoia. Nomina e conferma i tre prodotti. Spiega perché nell'industria viene usata salamoia concentrata (non diluita) e le applicazioni di ciascun prodotto.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. L'elettrolisi della salamoia produce tre sostanze chimiche industriali incredibilmente importanti — stai eseguendo una delle reazioni economicamente più significative del mondo in una provetta oggi!",
+      keywords: {
+        setup: "Usa salamoia satura (concentrata) — NaCl diluito dà O₂ invece di Cl₂. Esegui in un'area ben ventilata o sotto cappa. Tieni pronta la carta al tornasole umida all'anodo prima di iniziare.",
+        formula: "Catodo: 2H⁺ + 2e⁻ → H₂. Anodo: 2Cl⁻ → Cl₂ + 2e⁻. Complessivo: 2NaCl + 2H₂O → H₂ + Cl₂ + 2NaOH.",
+        error: "Errori comuni: usare salamoia diluita (produce O₂ invece di Cl₂ all'anodo), non testare la formazione di NaOH con fenolftaleina, e confusione su quale elettrodo è positivo/negativo.",
+        result: "Anodo: gas Cl₂ giallo-verde sbianca il tornasole. Catodo: H₂ confermato dallo scoppiettio. La fenolftaleina diventa rosa vicino al catodo → NaOH. Rapporto volumetrico H₂:Cl₂ ≈ 1:1.",
+        real: "Cl₂ viene usato per fare plastica PVC, candeggina, farmaceutici e disinfettanti. NaOH viene usato per pasta di carta, sapone, raffinazione dell'alluminio. H₂ viene usato nel processo Haber per i fertilizzanti. Tutto dal comune sale da cucina!",
+        explain: "Nella salamoia concentrata, ci sono molti ioni Cl⁻ che spingono per essere scaricati all'anodo. Poiché ci sono molti più Cl⁻ rispetto a OH⁻, i Cl⁻ vengono scaricati preferenzialmente. Al catodo, H⁺ dall'acqua viene scaricato piuttosto che Na⁺ perché H⁺ richiede molta meno energia.",
+        hook: "Il comune sale da cucina (NaCl) è la materia prima per tre delle sostanze chimiche industriali più importanti: cloro (usato nell'85% di tutti i farmaceutici), gas idrogeno e idrossido di sodio. La chimica rende il sale molto più prezioso del suo prezzo!",
+        misconception: "Il sodio metallico NON viene prodotto al catodo — anche se gli ioni Na⁺ sono in soluzione. Na⁺ richiede un'enorme energia per essere ridotto, quindi H⁺ dall'acqua viene scaricato preferenzialmente. La produzione di sodio metallico richiede l'elettrolisi di sale fuso (temperatura molto più alta).",
+      },
+      hint: "Se ottieni O₂ invece di Cl₂ all'anodo (tornasole non sbiancato), la tua salamoia è troppo diluita. Sciogli più NaCl fino a quando non se ne scioglie più (soluzione satura) e riprova.",
+      expected: "Cl₂ all'anodo: sbianca immediatamente la carta al tornasole umida. H₂ al catodo: scoppiettio confermato. La fenolftaleina diventa rosa vicino al catodo confermando NaOH. Rapporto volumetrico H₂:Cl₂ ≈ 1:1 osservato.",
+    },
+  },
+  {
+    num: 133,
+    title: "Zinc-Copper Galvanic Cell",
+    section: "Elettrochimica",
+    desc: "Students construct a zinc-copper voltaic cell using a salt bridge and measure the cell voltage, observing anode dissolution and cathode deposition.",
+    setupTime: "8 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Students learn how spontaneous redox reactions generate electrical energy in a galvanic cell, and understand the roles of anode, cathode, and salt bridge.",
+      instructions: [
+        "Place a zinc electrode in 50 mL of 1 mol/L ZnSO₄ solution and a copper electrode in 50 mL of 1 mol/L CuSO₄ solution.",
+        "Connect the two solutions with a salt bridge (filter paper soaked in KNO₃).",
+        "Connect the electrodes to a voltmeter and measure the cell voltage.",
+        "Observe the electrodes over 10 minutes; note any colour changes or deposits.",
+        "Calculate the theoretical cell potential using standard electrode potentials.",
+      ],
+      expectedOutcome: "Cell voltage of approximately 1.1 V is measured. The zinc anode gradually dissolves (loses mass), and copper deposits on the copper cathode (gains mass), confirming spontaneous redox.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔋", name: "Zinc and copper electrodes (strips)" },
+        { emoji: "⚡", name: "Voltmeter (digital, 0–2 V range)" },
+        { emoji: "🧪", name: "1 mol/L ZnSO₄ and 1 mol/L CuSO₄ solutions" },
+        { emoji: "💧", name: "Salt bridge: filter paper soaked in saturated KNO₃" },
+        { emoji: "⚖️", name: "Balance to weigh electrodes before and after" },
+      ],
+      observationsToRecord: [
+        "Cell voltage measured (V)",
+        "Change in appearance of zinc anode (dissolution)",
+        "Change in appearance of copper cathode (deposition)",
+        "Mass change of each electrode after 10 min operation",
+      ],
+      theoryPoints: [
+        "Anode (Zn, −): Zn → Zn²⁺ + 2e⁻ (oxidation, spontaneous).",
+        "Cathode (Cu, +): Cu²⁺ + 2e⁻ → Cu (reduction, spontaneous).",
+        "Cell potential: E°cell = E°cathode − E°anode = +0.34 − (−0.76) = +1.10 V.",
+        "Salt bridge maintains charge neutrality by allowing ion flow between half-cells without mixing the solutions.",
+      ],
+      realWorldConnections: [
+        "The Daniel cell (zinc-copper galvanic cell) was the first practical battery, invented in 1836 by John Frederic Daniell for early telegraph systems.",
+        "Modern batteries (AA, car batteries) are based on the same galvanic cell principle with different electrode materials.",
+        "Corrosion of zinc roofing in contact with copper pipes is an unwanted galvanic cell — the zinc acts as the sacrificial anode.",
+      ],
+      formula: "Anode: Zn → Zn²⁺ + 2e⁻  |  Cathode: Cu²⁺ + 2e⁻ → Cu  |  E°cell = E°cathode − E°anode = +1.10 V",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "What is the function of the salt bridge in the galvanic cell?",
+          options: [
+            "To carry electrons from anode to cathode",
+            "To allow ion flow between half-cells to maintain charge neutrality without mixing solutions",
+            "To increase the cell voltage",
+            "To prevent the zinc from dissolving",
+          ],
+          correctIndex: 1,
+          explanation: "Without the salt bridge, a charge imbalance would build up (excess positive charge in ZnSO₄ as Zn²⁺ forms; excess negative charge in CuSO₄ as Cu²⁺ is removed), stopping the cell. The salt bridge allows ions to flow and neutralise this imbalance.",
+        },
+        {
+          text: "Which electrode gains mass during operation of the Zn-Cu galvanic cell?",
+          options: ["The zinc anode", "The copper cathode", "Both electrodes equally", "Neither electrode changes mass"],
+          correctIndex: 1,
+          explanation: "Cu²⁺ ions from solution are reduced and deposited as solid copper on the cathode: Cu²⁺ + 2e⁻ → Cu. The cathode gains mass as copper plates onto it.",
+        },
+        {
+          text: "The standard cell potential of the Zn-Cu cell is approximately:",
+          options: ["0.34 V", "0.76 V", "1.10 V", "−1.10 V"],
+          correctIndex: 2,
+          explanation: "E°cell = E°cathode − E°anode = (+0.34) − (−0.76) = +1.10 V. A positive value confirms the reaction is spontaneous.",
+        },
+      ],
+      discussion: [
+        "Explain why a positive E°cell indicates that the cell reaction is spontaneous.",
+        "What would happen to the cell voltage if you replaced the ZnSO₄ solution with MgSO₄ and used a magnesium anode?",
+        "Design an experiment to determine how cell voltage changes as the Cu²⁺ concentration decreases over time.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Galvanic cell operation (anode/cathode)", pct: 35 },
+        { label: "Standard electrode potentials & E°cell", pct: 30 },
+        { label: "Salt bridge function", pct: 20 },
+        { label: "Historical and modern battery applications", pct: 15 },
+      ],
+      misconceptions: [
+        "Students often say \"electrons flow from positive to negative terminal\" — in a galvanic cell, electrons flow from the negative anode to the positive cathode through the external circuit.",
+        "Many think the salt bridge carries electrons — it carries ions only. Electrons travel through the external wire.",
+      ],
+      hook: "The world's first battery — the Voltaic pile (1800) — was stacks of zinc and copper discs separated by brine-soaked cloth. Alessandro Volta invented it, and the volt is named after him. You're building the same basic cell today!",
+      khanLinks: [
+        { title: "Galvanic Cells", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+        { title: "Standard Cell Potential", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+      ],
+    },
+    dataTable: {
+      headers: ["Time (min)", "Cell Voltage (V)", "Zn electrode appearance", "Cu electrode appearance", "Notes"],
+      rows: 5,
+    },
+    observations: [
+      "Record the cell voltage immediately after connecting and every 2 minutes",
+      "Describe changes in the zinc and copper electrode surfaces",
+      "Weigh both electrodes before and after to calculate mass change",
+    ],
+    conclusion: "Write the half-equations and overall cell reaction. Calculate E°cell and compare to your measured value. Explain the roles of anode, cathode, and salt bridge in maintaining current flow.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. You're about to build a battery from scratch — the same design as the very first practical battery ever made, which powered the telegraph networks of the 1800s!",
+      keywords: {
+        setup: "Clean electrodes with sandpaper before use. Use fresh CuSO₄ and ZnSO₄ solutions of equal concentration. Renew the salt bridge for each trial — a dry bridge stops ion flow.",
+        formula: "Anode: Zn → Zn²⁺ + 2e⁻ (oxidation). Cathode: Cu²⁺ + 2e⁻ → Cu (reduction). E°cell = 0.34 − (−0.76) = +1.10 V.",
+        error: "Common errors: salt bridge drying out mid-experiment (voltage drops to zero), electrodes touching (short circuit), and measuring with an AC voltmeter instead of DC.",
+        result: "Expected cell voltage: ~1.0–1.1 V (close to theoretical 1.10 V). Zinc anode surface becomes rough/eaten. Copper deposits visibly on cathode. Mass: anode loses, cathode gains.",
+        real: "Modern alkaline AA batteries use zinc (anode) and MnO₂ (cathode) — same galvanic principle. Car batteries use lead-acid cells. Lithium-ion batteries in phones use lithium anode and metal oxide cathode.",
+        explain: "Zinc \"wants\" to lose electrons more than copper wants to keep them. When connected, electrons flow from zinc to copper through the wire. Zn²⁺ ions form in solution; Cu²⁺ ions from solution plate onto the copper. The salt bridge lets ions migrate to keep both solutions electrically neutral.",
+        hook: "Alessandro Volta invented the battery in 1800. Napoleon heard about it and demanded a private demonstration. The unit of voltage — the volt — is named after Volta. You're doing what impressed Napoleon!",
+        misconception: "The salt bridge doesn't connect the two solutions — it allows ions to pass between them while keeping the solutions separate. If you mixed the solutions, the chemical energy would be released as heat, not electricity.",
+      },
+      hint: "If the voltage reads near zero, check the salt bridge is moist and making good contact with both solutions. Also ensure voltmeter polarity is correct (positive lead to copper electrode).",
+      expected: "Cell voltage: 0.9–1.1 V (some variation from non-standard concentrations). Zinc anode: surface becomes granular/rough (dissolving). Copper cathode: bright copper deposit visible. Mass change confirms transfer.",
+    },
+  },
+  {
+    num: 134,
+    title: "Elettrodeposizione con Rame",
+    section: "Elettrochimica",
+    desc: "Gli studenti elettrodepositano rame su un chiodo di ferro e misurano la variazione di massa per comprendere l'elettrodeposizione industriale.",
+    setupTime: "8 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono come l'elettrolisi deposita metalli dalla soluzione su un catodo e quantificano la massa depositata usando le leggi di Faraday.",
+      instructions: [
+        "Pulire e pesare accuratamente un chiodo di ferro (catodo) e una lamina di rame (anodo).",
+        "Collegare il chiodo (catodo, −) e la lamina di rame (anodo, +) a un alimentatore da 6 V in una soluzione di CuSO₄.",
+        "Eseguire l'elettrolisi per esattamente 10 minuti a corrente costante; registrare la corrente.",
+        "Rimuovere, sciacquare, asciugare e ripesare entrambi gli elettrodi.",
+        "Calcolare la massa di rame depositata sul chiodo e confrontarla con la previsione teorica da Q = It e dalla legge di Faraday.",
+      ],
+      expectedOutcome: "Il chiodo di ferro è rivestito da uno strato visibile di rame rosso-marrone. Il catodo aumenta di massa e l'anodo perde approssimativamente la stessa massa, confermando la conservazione della materia.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔩", name: "Chiodo di ferro (catodo)" },
+        { emoji: "🟫", name: "Lamina di rame (anodo)" },
+        { emoji: "⚡", name: "Alimentatore DC 6 V con amperometro" },
+        { emoji: "💧", name: "Soluzione di CuSO₄ (0,5 mol/L), 200 mL" },
+        { emoji: "⚖️", name: "Bilancia analitica (±0,001 g)" },
+      ],
+      observationsToRecord: [
+        "Massa iniziale e finale del chiodo di ferro (catodo)",
+        "Massa iniziale e finale della lamina di rame (anodo)",
+        "Corrente (A) durante l'esperimento",
+        "Colore e uniformità del deposito di rame sul chiodo",
+      ],
+      theoryPoints: [
+        "Catodo (chiodo): Cu²⁺ + 2e⁻ → Cu (il rame si deposita sul chiodo).",
+        "Anodo (rame): Cu → Cu²⁺ + 2e⁻ (il rame si dissolve per reintegrare la soluzione).",
+        "Carica: Q = I × t (coulomb); moli di e⁻ = Q/F (F = 96.500 C/mol).",
+        "Massa depositata = moli di Cu × 63,5 (g/mol); Cu²⁺ richiede 2 elettroni per atomo.",
+      ],
+      realWorldConnections: [
+        "I gioielli vengono elettrodepositati con oro o argento per dare l'aspetto di metallo prezioso a basso costo.",
+        "La cromatura dei paraurti delle auto previene la corrosione e fornisce una finitura lucida.",
+        "I circuiti stampati (PCB) sono realizzati mediante elettrodeposizione selettiva di rame su substrati plastici.",
+      ],
+      formula: "Q = I × t  |  n(e⁻) = Q/F  |  n(Cu) = n(e⁻)/2  |  massa(Cu) = n(Cu) × 63,5",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Una corrente di 0,5 A scorre per 10 minuti. Quale massa di rame viene depositata? (F = 96.500 C/mol, M_Cu = 63,5 g/mol)",
+          options: ["0,01 g", "0,10 g", "0,99 g", "3,18 g"],
+          correctIndex: 1,
+          explanation: "Q = 0,5 × 600 = 300 C. n(e⁻) = 300/96500 = 0,00311 mol. n(Cu) = 0,00311/2 = 0,00155 mol. Massa = 0,00155 × 63,5 = 0,099 g ≈ 0,10 g.",
+        },
+        {
+          text: "Perché l'anodo deve essere fatto di rame puro in questo esperimento di elettrodeposizione?",
+          options: [
+            "Il rame è l'unico metallo che conduce elettricità",
+            "Un anodo di rame si dissolve per reintegrare gli ioni Cu²⁺ in soluzione, mantenendo costante la concentrazione",
+            "Il rame impedisce al chiodo di arrugginire",
+            "Un anodo inerte farebbe diventare blu la soluzione",
+          ],
+          correctIndex: 1,
+          explanation: "Un anodo di rame solubile si dissolve (Cu → Cu²⁺ + 2e⁻) alla stessa velocità con cui il rame si deposita al catodo, mantenendo costante la concentrazione di Cu²⁺ in soluzione.",
+        },
+        {
+          text: "Che tipo di reazione avviene al catodo durante l'elettrodeposizione?",
+          options: ["Ossidazione", "Riduzione", "Neutralizzazione", "Decomposizione"],
+          correctIndex: 1,
+          explanation: "Cu²⁺ + 2e⁻ → Cu è una riduzione (acquisizione di elettroni). La riduzione avviene sempre al catodo. Ricorda: Ossidazione = Perdita; Riduzione = Acquisto (di elettroni).",
+        },
+      ],
+      discussion: [
+        "Perché la qualità del rivestimento di rame sarebbe scarsa se la densità di corrente fosse troppo alta? Spiega in termini di diffusione ionica.",
+        "Spiega come la concentrazione di CuSO₄ rimane approssimativamente costante durante l'elettrodeposizione con un anodo di rame.",
+        "Suggerisci perché l'elettrodeposizione con oro viene usata per i connettori elettrici nei computer, anche se l'oro è molto costoso.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Meccanismo di elettrodeposizione (catodo/anodo)", pct: 35 },
+        { label: "Calcoli con la legge di Faraday", pct: 30 },
+        { label: "Conferma della variazione di massa", pct: 20 },
+        { label: "Applicazioni industriali dell'elettrodeposizione", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti a volte pensano che il chiodo di ferro si \"trasformi in rame\" — il ferro è ancora presente; il rame viene depositato come un sottile strato sopra.",
+        "Molti assumono che qualsiasi metallo possa essere l'anodo — usando un anodo inerte (grafite) con CuSO₄ la soluzione verrebbe impoverita di Cu²⁺ nel tempo.",
+      ],
+      hook: "Ogni circuito stampato in ogni smartphone, laptop e auto elettrica è realizzato usando l'elettrodeposizione di rame — lo stesso identico processo che stai facendo oggi con un chiodo e una batteria!",
+      khanLinks: [
+        { title: "Elettrolisi", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis" },
+        { title: "Potenziale di Cella Standard", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+      ],
+    },
+    dataTable: {
+      headers: ["Elettrodo", "Massa prima (g)", "Massa dopo (g)", "Variazione di massa (g)", "Massa teorica (g)"],
+      rows: 3,
+    },
+    observations: [
+      "Registrare il colore e la copertura del deposito di rame sul chiodo",
+      "Registrare le variazioni di massa per catodo (chiodo) e anodo (lamina di rame)",
+      "Confrontare la massa sperimentale depositata con la previsione teorica",
+    ],
+    conclusion: "Calcolare la massa teorica di rame depositata usando Q = It e la legge di Faraday. Confrontare con la massa sperimentale acquisita dal chiodo. Valutare le fonti di errore e enunciare la Prima Legge di Faraday.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi ricoprirai un chiodo di ferro con rame — un vero processo industriale usato per realizzare di tutto, dai gioielli ai circuiti stampati degli smartphone!",
+      keywords: {
+        setup: "Pulire il chiodo con carta vetrata e acetone prima della placcatura — qualsiasi grasso impedisce l'adesione. Assicurarsi che il chiodo sia completamente immerso e non tocchi la lamina di rame.",
+        formula: "Q = I × t. n(e⁻) = Q / 96.500. n(Cu) = n(e⁻) / 2 (Cu²⁺ richiede 2 e⁻). massa(Cu) = n(Cu) × 63,5 g/mol.",
+        error: "Errori comuni: non asciugare completamente gli elettrodi prima della pesata (l'acqua aggiunge massa), corrente fluttuante durante l'esperimento, e il chiodo che tocca l'anodo (cortocircuito).",
+        result: "Atteso: a 0,5 A per 10 min, ~0,10 g Cu depositati. Il chiodo guadagna ~0,10 g; l'anodo di rame perde ~0,10 g. Rivestimento di rame brillante e liscio visibile sul chiodo.",
+        real: "Cromatura su parti di auto: un sottile strato (< 1 µm) di cromo fornisce resistenza alla corrosione. Doratura sui connettori USB previene l'ossidazione, garantendo contatto elettrico affidabile per migliaia di cicli di inserimento.",
+        explain: "CuSO₄ contiene ioni Cu²⁺. Al catodo (chiodo), gli elettroni dall'alimentatore si combinano con Cu²⁺ per formare rame solido. All'anodo (lamina di rame), gli elettroni vengono estratti, dissolvendo il rame in Cu²⁺ — reintegrando ciò che è stato rimosso. Equilibrio perfetto!",
+        hook: "La Statua della Libertà era originariamente brillante e lucida — era rivestita con lastre di rame elettrodepositate. In oltre 130 anni, il rame si è ossidato nella famosa patina verde (carbonato di rame). La chimica ha cambiato un'icona!",
+        misconception: "Il chiodo di ferro non si trasforma in rame — è ancora ferro sotto. Il rame forma una sottile pellicola sopra. Se si graffia il deposito, si vede il ferro sotto. Ecco perché l'adesione (preparazione della superficie del chiodo) è critica.",
+      },
+      hint: "Se il deposito di rame è scuro, polveroso o poco aderente, la densità di corrente è troppo alta. Ridurre la tensione a 3–4 V e assicurarsi che la superficie del chiodo sia stata accuratamente pulita prima della placcatura.",
+      expected: "Deposito di rame brillante, liscio, rosso-marrone sul chiodo. Aumento di massa del chiodo ≈ perdita di massa della lamina di rame (entro il 5%). Massa sperimentale depositata entro il 10% del valore teorico dalla legge di Faraday.",
+    },
+  },
+  {
+    num: 135,
+    title: "Fattori che Influenzano la Corrosione",
+    section: "Elettrochimica",
+    desc: "Gli studenti collocano chiodi di ferro in diverse condizioni e osservano quali fattori accelerano o inibiscono l'arrugginimento nell'arco di diversi giorni.",
+    setupTime: "5 min",
+    duration: "10 min preparazione + osservazioni per 3–5 giorni",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che la corrosione del ferro richiede sia acqua che ossigeno, e che gli elettroliti (sale), il contatto diretto con metalli più reattivi, o rivestimenti protettivi modificano tutti la velocità di corrosione.",
+      instructions: [
+        "Preparare cinque provette ciascuna contenente un chiodo di ferro in diverse condizioni.",
+        "Chiodo A: acqua distillata bollita + strato d'olio (no O₂, no sale); Chiodo B: acqua + sale; Chiodo C: aria secca (essiccante CaCl₂); Chiodo D: olio minerale; Chiodo E: solo acqua (controllo).",
+        "Sigillare le provette e osservare giornalmente la formazione di ruggine (Fe₂O₃/Fe(OH)₃ marrone).",
+        "Dopo 3–5 giorni, classificare le condizioni per grado di arrugginimento.",
+        "Ripetere aggiungendo una lamina di zinco a contatto con il Chiodo B e confrontare con il Chiodo B senza zinco.",
+      ],
+      expectedOutcome: "Il Chiodo B (acqua salata) arrugginisce più velocemente; il Chiodo E (solo acqua) arrugginisce moderatamente; i Chiodi A, C, D mostrano ruggine minima o assente; il chiodo protetto con zinco mostra significativamente meno corrosione del chiodo in acqua salata non protetto.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔩", name: "5 chiodi di ferro identici (pre-carteggiati per rimuovere l'ossido esistente)" },
+        { emoji: "🧪", name: "5 provette con tappo" },
+        { emoji: "🧂", name: "Soluzione di NaCl (acqua salata), acqua bollita, olio, essiccante CaCl₂" },
+        { emoji: "📊", name: "Scala di valutazione della ruggine (0–5) o fotocamera per foto giornaliere" },
+        { emoji: "🔩", name: "Lamina di zinco per prova di protezione catodica" },
+      ],
+      observationsToRecord: [
+        "Valutazione giornaliera della ruggine per ogni chiodo (0 = nessuna, 5 = molto arrugginito)",
+        "Cambiamenti di colore osservati (argento → arancio-marrone → marrone scuro)",
+        "Confronto del chiodo in acqua salata con vs senza protezione di zinco",
+        "Classificazione finale delle condizioni dalla più alla meno corrosiva",
+      ],
+      theoryPoints: [
+        "Arrugginimento: 4Fe + 3O₂ + 2nH₂O → 2Fe₂O₃·nH₂O (ossido/idrossido di ferro, la ruggine arancio-marrone).",
+        "Sia O₂ che H₂O sono necessari — i chiodi in aria secca o in acqua deossigenata non arrugginiscono.",
+        "Il sale aumenta la conducibilità dell'elettrolita, accelerando la corrosione elettrochimica.",
+        "Lo zinco è più reattivo del ferro; a contatto, Zn agisce come anodo sacrificale — si corrode preferenzialmente, proteggendo il ferro.",
+      ],
+      realWorldConnections: [
+        "Le carrozzerie delle auto sono zincate (rivestite di zinco) per prevenire la ruggine — lo zinco fornisce sia una barriera fisica che protezione sacrificale.",
+        "I ponti in acciaio sono verniciati e a volte dotati di anodi sacrificali di zinco o magnesio attaccati alla struttura metallica.",
+        "Gli scafi delle navi hanno blocchi di zinco imbullonati sotto la linea di galleggiamento per agire come anodi sacrificali, prevenendo la corrosione dello scafo.",
+      ],
+      formula: "4Fe(s) + 3O₂(g) + 6H₂O(l) → 4Fe(OH)₃ (→ Fe₂O₃·3H₂O, ruggine)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quali condizioni sono ENTRAMBE necessarie affinché il ferro arrugginisca?",
+          options: ["Calore e luce", "Acqua e ossigeno", "Sale e anidride carbonica", "Alta pressione e acqua"],
+          correctIndex: 1,
+          explanation: "L'arrugginimento è un processo di ossidazione elettrochimica che richiede sia acqua (come elettrolita/solvente) che ossigeno disciolto. Rimuovendo uno dei due l'arrugginimento si ferma.",
+        },
+        {
+          text: "Perché un chiodo in acqua salata arrugginisce più velocemente di uno in acqua semplice?",
+          options: [
+            "Il sale reagisce direttamente con il ferro per formare ruggine",
+            "L'acqua salata conduce meglio l'elettricità, aumentando la velocità della corrosione elettrochimica",
+            "L'acqua salata contiene più ossigeno",
+            "Il sale impedisce all'acqua di evaporare, mantenendo il chiodo bagnato",
+          ],
+          correctIndex: 1,
+          explanation: "La corrosione è un processo elettrochimico. Gli ioni del sale aumentano la conducibilità dell'elettrolita, permettendo un trasferimento più rapido di elettroni/ioni e quindi una corrosione più veloce.",
+        },
+        {
+          text: "Come protegge lo zinco una struttura in acciaio mediante protezione sacrificale?",
+          options: [
+            "Lo zinco crea solo una barriera fisica",
+            "Lo zinco è più reattivo del ferro, quindi si ossida preferenzialmente, proteggendo il ferro",
+            "Lo zinco reagisce con l'acqua per formare un rivestimento stabile sul ferro",
+            "Lo zinco rende il ferro più inerte",
+          ],
+          correctIndex: 1,
+          explanation: "Lo zinco è sopra il ferro nella serie di reattività. Quando in contatto elettrico, lo zinco agisce come anodo in una cella galvanica e si corrode preferenzialmente (Zn → Zn²⁺ + 2e⁻), mentre il ferro agisce come catodo ed è protetto.",
+        },
+      ],
+      discussion: [
+        "Spiega perché verniciare il ferro fornisce una protezione temporanea ma non permanente contro l'arrugginimento, mentre la zincatura fornisce una protezione più duratura.",
+        "I produttori di auto ora usano acciaio rivestito di polimero e primer ricchi di zinco. Spiega il vantaggio elettrochimico di questi approcci combinati.",
+        "Progetta un esperimento per testare se il pH dell'acqua influenza la velocità di corrosione del ferro.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Requisiti per la corrosione del ferro (H₂O & O₂)", pct: 30 },
+        { label: "Meccanismo di corrosione elettrochimica", pct: 30 },
+        { label: "Protezione sacrificale (serie di reattività)", pct: 25 },
+        { label: "Metodi di prevenzione della corrosione", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che il sale causi direttamente l'arrugginimento — il sale accelera un processo elettrochimico già in corso aumentando la conducibilità.",
+        "Molti credono che le superfici verniciate siano protette permanentemente — la vernice fornisce solo una barriera fisica; una volta graffiata, l'arrugginimento procede rapidamente.",
+      ],
+      hook: "La corrosione costa all'economia globale oltre 2,5 trilioni di dollari all'anno — circa il 3,4% del PIL mondiale. La chimica che stai imparando oggi ha fatto risparmiare miliardi di dollari attraverso migliori strategie anti-corrosione!",
+      khanLinks: [
+        { title: "Celle Galvaniche", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+        { title: "Introduzione agli Stati di Ossidazione", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states" },
+      ],
+    },
+    dataTable: {
+      headers: ["Condizione", "Valutazione Ruggine Giorno 1", "Valutazione Ruggine Giorno 2", "Valutazione Ruggine Giorno 3", "Valutazione Ruggine Giorno 5"],
+      rows: 6,
+    },
+    observations: [
+      "Registrare le valutazioni giornaliere della ruggine per tutti e cinque i chiodi (scala 0–5)",
+      "Annotare il colore e la distribuzione della ruggine su ogni chiodo",
+      "Confrontare il chiodo protetto con zinco con quello in acqua salata non protetto",
+    ],
+    conclusion: "Indicare quali condizioni sono necessarie per la corrosione e classificare le condizioni per velocità di corrosione. Spiegare come il sale accelera la corrosione e come lo zinco fornisce protezione sacrificale usando principi elettrochimici.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. La corrosione del ferro costa al mondo trilioni di euro all'anno — capire cosa la causa e come fermarla è una delle applicazioni economicamente più importanti dell'elettrochimica!",
+      keywords: {
+        setup: "Carteggiare tutti i chiodi con carta vetrata della stessa grana per rimuovere l'ossido esistente. Preparare tutte le condizioni simultaneamente per un confronto equo. Sigillare le provette per mantenere condizioni costanti.",
+        formula: "4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ (ruggine). Sia O₂ CHE H₂O necessari. Il sale aumenta la conducibilità dell'elettrolita → corrosione più veloce. Zinco: Zn → Zn²⁺ + 2e⁻ (anodo sacrificale, protegge il ferro).",
+        error: "Errori comuni: non carteggiare i chiodi prima (condizione iniziale variabile), livelli di riempimento d'acqua inconsistenti, e disturbare le provette durante l'osservazione (mescolare lo strato d'olio nell'acqua).",
+        result: "Dopo 3 giorni: chiodo in acqua salata più arrugginito (valutazione 4–5); chiodo in acqua semplice moderatamente arrugginito (2–3); condizioni con olio e secche minime (0–1); acqua bollita con olio minima (0–1). Chiodo protetto con zinco in acqua salata molto meno arrugginito di quello non protetto.",
+        real: "Le navi hanno grandi blocchi di zinco imbullonati ai loro scafi sotto la linea di galleggiamento. Lo zinco si corrode nel corso dei mesi (diventa grigio-bianco) mentre lo scafo in acciaio rimane intatto. I blocchi di zinco vengono sostituiti ogni 1–3 anni — un'assicurazione economica contro il cedimento dello scafo.",
+        explain: "La corrosione del ferro è una minuscola cella elettrochimica: il ferro agisce come anodo (Fe → Fe²⁺ + 2e⁻) e l'acqua/ossigeno agisce come catodo (O₂ + 2H₂O + 4e⁻ → 4OH⁻). Il sale rende l'acqua più conduttiva, accelerando il trasferimento di elettroni. Lo zinco, essendo più reattivo, sostituisce il ferro come anodo e si corrode al suo posto.",
+        hook: "La Torre Eiffel sarebbe arrugginita da tempo senza il suo schema di protezione: 60 tonnellate di vernice vengono applicate ogni 7 anni, e un primer ricco di zinco viene usato alla base dove le condizioni sono più severe. La chimica mantiene un'icona!",
+        misconception: "Un chiodo verniciato ma graffiato arrugginirà PIÙ VELOCEMENTE al graffio rispetto a un chiodo non verniciato. Questo perché il graffio crea una minuscola cella galvanica — il ferro al graffio è l'anodo, e la grande superficie verniciata agisce come catodo, concentrando la corrosione nella piccola area esposta.",
+      },
+      hint: "Se tutti i chiodi sembrano arrugginire in modo simile, verificare che il chiodo in acqua bollita + olio non abbia intercapedini d'aria. L'ebollizione rimuove l'O₂ disciolto; lo strato d'olio previene il riassorbimento. Entrambe le condizioni sono necessarie per fermare l'arrugginimento.",
+      expected: "Classifiche al Giorno 3 (più → meno arrugginito): acqua salata >> acqua semplice > acqua salata + zinco > ricoperto d'olio > secco > acqua bollita + olio ≈ nessuna ruggine. Conferma il requisito di O₂ e H₂O e la protezione sacrificale dello Zn.",
+    },
+  },
+  {
+    num: 136,
+    title: "Prima Legge di Faraday",
+    section: "Elettrochimica",
+    desc: "Gli studenti misurano la massa depositata durante l'elettrolisi del rame a diversi tempi e correnti per verificare la Prima Legge di Faraday dell'elettrolisi.",
+    setupTime: "8 min",
+    duration: "30 min",
+    summary: {
+      whatTheyLearn: "Gli studenti verificano che la massa di sostanza depositata durante l'elettrolisi è direttamente proporzionale alla carica passata (Q = It), confermando la Prima Legge di Faraday.",
+      instructions: [
+        "Preparare una cella di elettrolisi del rame con soluzione di CuSO₄ e due elettrodi di rame.",
+        "Pesare accuratamente l'elettrodo catodico prima di iniziare.",
+        "Eseguire l'elettrolisi a 0,5 A per 5 min, 10 min e 15 min (prove separate con elettrodi nuovi).",
+        "Rimuovere, sciacquare, asciugare e ripesare il catodo dopo ogni prova.",
+        "Tracciare il grafico massa depositata vs carica (Q = I × t) e determinare la relazione.",
+      ],
+      expectedOutcome: "Un grafico lineare di massa vs carica passa attraverso l'origine, confermando la Prima Legge di Faraday: massa ∝ Q.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "⚡", name: "Alimentatore CC con amperometro (impostato a 0,5 A)" },
+        { emoji: "🟫", name: "Due elettrodi di rame" },
+        { emoji: "💧", name: "Soluzione di CuSO₄ (0,5 mol/L)" },
+        { emoji: "⚖️", name: "Bilancia analitica (±0,001 g)" },
+        { emoji: "⏱️", name: "Cronometro (temporizzazione precisa essenziale)" },
+      ],
+      observationsToRecord: [
+        "Corrente (A) e tempo (s) per ogni prova",
+        "Carica Q = I × t per ogni prova (coulomb)",
+        "Massa del catodo prima e dopo ogni prova",
+        "Massa depositata per prova (g)",
+      ],
+      theoryPoints: [
+        "Prima Legge di Faraday: la massa depositata (m) è proporzionale alla carica passata (Q): m = (M × Q) / (n × F).",
+        "Per il rame (M = 63,5 g/mol, n = 2): m = (63,5 × Q) / (2 × 96.500) = Q × 3,29 × 10⁻⁴ g/C.",
+        "Raddoppiando il tempo a corrente costante si raddoppia la carica e si raddoppia la massa depositata.",
+        "La pendenza del grafico massa vs Q = M / (nF) — l'equivalente elettrochimico.",
+      ],
+      realWorldConnections: [
+        "La raffinazione industriale del rame usa l'elettrolisi per purificare il rame dal 99% al 99,99% di purezza — necessaria per il cablaggio elettrico — usando la legge di Faraday per controllare il trasferimento di massa.",
+        "L'elettroformatura (produzione di monete e medaglie) usa calcoli precisi della legge di Faraday per controllare lo spessore degli strati.",
+        "La galvanoplastica di oro e argento usa la legge di Faraday per calcolare il tempo di placcatura necessario per uno spessore specifico del rivestimento.",
+      ],
+      formula: "m = (M × I × t) / (n × F)  |  F = 96.500 C/mol  |  n = elettroni per ione  |  M = massa molare",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "La Prima Legge di Faraday afferma che la massa depositata è proporzionale a:",
+          options: ["Tensione applicata", "Carica passata (Q = It)", "Temperatura della soluzione", "Concentrazione dell'elettrolita"],
+          correctIndex: 1,
+          explanation: "Prima Legge di Faraday: m ∝ Q = I × t. Più carica significa più elettroni, il che significa che più ioni metallici possono essere ridotti al catodo.",
+        },
+        {
+          text: "Un grafico di massa depositata (asse y) vs carica passata (asse x) per l'elettrolisi del rame dà:",
+          options: ["Una curva", "Una linea orizzontale", "Una retta passante per l'origine", "Una retta con intercetta y"],
+          correctIndex: 2,
+          explanation: "Poiché m ∝ Q, il grafico è lineare e passa per l'origine (carica zero = massa depositata zero). Il gradiente è uguale a M/(nF) per il metallo depositato.",
+        },
+        {
+          text: "Calcolare la massa di rame depositata quando passa una carica di 965 C. (M_Cu = 63,5, n = 2, F = 96.500)",
+          options: ["0,0033 g", "0,32 g", "3,18 g", "6,35 g"],
+          correctIndex: 1,
+          explanation: "m = (63,5 × 965) / (2 × 96.500) = 61.257,5 / 193.000 = 0,317 g ≈ 0,32 g.",
+        },
+      ],
+      discussion: [
+        "Spiega come il grafico di massa vs Q potrebbe essere usato per identificare un metallo sconosciuto depositato durante l'elettrolisi.",
+        "La Seconda Legge di Faraday afferma che per la stessa carica, la massa depositata è proporzionale a M/n. Confronta la massa di rame e argento depositata dalla stessa carica (M_Ag = 108, n = 1).",
+        "Perché il catodo deve essere completamente asciugato prima della pesatura, e quale errore sistematico risulterebbe da un elettrodo non completamente asciugato?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Prima Legge di Faraday (m ∝ Q)", pct: 40 },
+        { label: "Calcolo di carica e massa", pct: 30 },
+        { label: "Verifica grafica (massa vs Q)", pct: 20 },
+        { label: "Applicazioni dell'elettrolisi industriale", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti a volte pensano che aumentare la tensione aumenti direttamente la massa depositata — è la corrente (e quindi la carica) che conta, non la tensione.",
+        "Molti confondono la Prima e la Seconda Legge di Faraday — la Prima mette in relazione massa e carica; la Seconda mette in relazione massa e massa molare/elettroni per diversi elementi.",
+      ],
+      hook: "Michael Faraday scoprì queste leggi nel 1833 senza sapere degli elettroni — che non furono scoperti fino al 1897. Dedusse solo dalle misure di massa che l'elettricità veniva in \"pacchetti\" discreti. Stava inconsapevolmente misurando singoli elettroni!",
+      khanLinks: [
+        { title: "Elettrolisi", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis" },
+        { title: "Potenziale di cella standard", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+      ],
+    },
+    dataTable: {
+      headers: ["Prova", "Corrente (A)", "Tempo (s)", "Carica Q (C)", "Massa depositata (g)", "Massa teorica (g)"],
+      rows: 4,
+    },
+    observations: [
+      "Registrare corrente e tempo per ogni prova e calcolare la carica Q = I × t",
+      "Registrare l'aumento di massa del catodo dopo ogni prova",
+      "Tracciare il grafico massa vs Q e descrivere la relazione osservata",
+    ],
+    conclusion: "Enunciare la Prima Legge di Faraday e verificarla usando il grafico. Calcolare l'equivalente elettrochimico (gradiente) e confrontarlo con il valore teorico di 3,29 × 10⁻⁴ g/C per il rame.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Le leggi di Faraday sono il fondamento di tutta l'ingegneria elettrochimica — oggi stai verificando le stesse relazioni che hanno reso Michael Faraday uno dei più grandi scienziati della storia!",
+      keywords: {
+        setup: "Mantenere corrente costante durante tutto l'esperimento (controllare regolarmente l'amperometro). Asciugare il catodo a 60 °C per 5 min, poi raffreddare in essiccatore prima della pesatura. Usare elettrodi con superficie identica.",
+        formula: "m = (M × I × t) / (n × F). Per Cu: m = (63,5 × I × t) / (2 × 96500). Gradiente del grafico m vs Q = M/(nF) = 63,5/(2 × 96500) = 3,29 × 10⁻⁴ g/C.",
+        error: "Errori comuni: fluttuazione della corrente (leggere l'amperometro ogni minuto e fare la media), asciugatura incompleta del catodo prima della pesatura, e deposito di rame che si stacca se la corrente è troppo alta.",
+        result: "Atteso: 0,5 A × 300 s (5 min) = 150 C → 0,049 g; 600 s → 0,099 g; 900 s → 0,148 g. Retta passante per l'origine, gradiente ≈ 3,3 × 10⁻⁴ g/C. Conferma la Prima Legge.",
+        real: "Le raffinerie di rame eseguono elettrolisi in continuo, usando la legge di Faraday per calcolare esattamente quanto tempo placcare ogni lotto. Un catodo di rame da 1 tonnellata richiede tempo e corrente calcolati con precisione per raggiungere la massa target.",
+        explain: "Ogni elettrone che fluisce attraverso il circuito riduce uno ione Cu²⁺ ad atomo Cu al catodo. Raddoppia il tempo → raddoppia gli elettroni → raddoppia gli atomi di rame depositati. La massa è direttamente proporzionale alla carica. Semplice ed elegante!",
+        hook: "Faraday misurò le leggi dell'elettrolisi nel 1833, decenni prima che qualcuno sapesse cosa fossero gli elettroni. Chiamò l'unità fondamentale un \"faraday\" — 96.500 coulomb — che risulta essere la carica di una mole di elettroni. Aveva ragione senza sapere cosa stava contando!",
+        misconception: "Aumentare la TENSIONE non aumenta direttamente la massa depositata — ciò che conta è la CORRENTE (ampere), che determina la velocità del flusso di elettroni. Alta tensione attraverso alta resistenza dà bassa corrente e poca deposizione.",
+      },
+      hint: "Se il grafico non passa per l'origine, potrebbe esserci un errore sistematico nella misura della massa (umidità residua, o il deposito di rame si è staccato). Ripesare il catodo asciutto 3 volte e fare la media.",
+      expected: "Retta passante per l'origine per massa vs Q. Gradiente ≈ 3,3 × 10⁻⁴ g/C (Cu). Valori sperimentali entro 5–10% dal teorico. Prima Legge di Faraday confermata.",
+    },
+  },
+  {
+    num: 137,
+    title: "Conducibilità degli Elettroliti",
+    section: "Elettrochimica",
+    desc: "Gli studenti confrontano la conducibilità elettrica di varie soluzioni e solidi usando un semplice circuito LED per identificare elettroliti e non-elettroliti.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che la conducibilità dipende dalla presenza di ioni liberi, distinguendo elettroliti da non-elettroliti e elettroliti forti da deboli.",
+      instructions: [
+        "Preparare un circuito di conducibilità: batteria da 9 V in serie con un LED e due sonde a bacchetta di carbonio.",
+        "Immergere le sonde in ogni sostanza da testare e registrare la luminosità del LED.",
+        "Testare: acqua distillata, acqua del rubinetto, soluzione di NaCl, soluzione di zucchero, HCl (0,1 mol/L), acido etanoico (0,1 mol/L), soluzione di NaOH, etanolo, NaCl solido, NaCl fuso (se disponibile).",
+        "Registrare le osservazioni e classificare ciascuna come conduttore, non-conduttore o conduttore debole.",
+        "Mettere in relazione la conducibilità con il grado di ionizzazione.",
+      ],
+      expectedOutcome: "Le soluzioni ioniche (NaCl, NaOH, HCl) sono buoni conduttori. Le soluzioni molecolari (zucchero, etanolo) non conducono. L'acido debole (acido etanoico) è un conduttore debole, confermando la ionizzazione parziale.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "💡", name: "LED, batteria da 9 V, fili di collegamento" },
+        { emoji: "🔬", name: "Elettrodi a bacchetta di carbonio (2)" },
+        { emoji: "🧪", name: "Soluzioni test: NaCl, zucchero, HCl, CH₃COOH, NaOH, etanolo, acqua distillata" },
+        { emoji: "🧂", name: "NaCl solido (per confronto solido vs disciolto)" },
+        { emoji: "📏", name: "Provette e portaprovette" },
+      ],
+      observationsToRecord: [
+        "Luminosità del LED (spento / fioco / luminoso) per ogni sostanza",
+        "Classificazione: conduttore / conduttore debole / non-conduttore",
+        "Confronto di HCl vs CH₃COOH alla stessa concentrazione",
+        "Confronto di NaCl solido vs disciolto",
+      ],
+      theoryPoints: [
+        "Gli elettroliti sono sostanze che conducono elettricità quando disciolte in acqua grazie agli ioni liberi.",
+        "Gli elettroliti forti (NaCl, HCl, NaOH) si ionizzano completamente → molti ioni liberi → LED luminoso.",
+        "Gli elettroliti deboli (CH₃COOH) si ionizzano parzialmente → pochi ioni liberi → LED fioco.",
+        "I non-elettroliti (zucchero, etanolo) non si ionizzano → nessun ione libero → LED spento.",
+      ],
+      realWorldConnections: [
+        "Le bevande elettrolitiche (bevande sportive) reintegrano gli ioni Na⁺, K⁺, Ca²⁺ e Mg²⁺ persi con il sudore — essenziali per la funzione nervosa e muscolare.",
+        "I sensori di conducibilità negli impianti di trattamento dell'acqua rilevano gli ioni disciolti per garantire la qualità e la purezza dell'acqua.",
+        "Le macchine per dialisi rimuovono gli ioni di scarto dal sangue sfruttando la conducibilità ionica attraverso membrane selettive.",
+      ],
+      formula: "Conducibilità σ = (1/R) × (L/A)  |  Elettrolita forte: ionizzazione completa  |  Elettrolita debole: ionizzazione parziale",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Il NaCl solido non conduce elettricità, ma il NaCl disciolto sì. Perché?",
+          options: [
+            "Il NaCl cambia la sua formula chimica quando si dissolve",
+            "Nel NaCl solido, gli ioni sono fissati in un reticolo; la dissoluzione libera ioni Na⁺ e Cl⁻ liberi di muoversi",
+            "L'acqua reagisce con NaCl per formare un conduttore",
+            "Il NaCl disciolto ha una densità maggiore",
+          ],
+          correctIndex: 1,
+          explanation: "Allo stato solido, gli ioni Na⁺ e Cl⁻ sono bloccati in un reticolo cristallino rigido e non possono muoversi per trasportare corrente. La dissoluzione in acqua li libera come ioni liberi che possono trasportare carica.",
+        },
+        {
+          text: "Una soluzione di zucchero spegne il LED. Cosa ti dice questo sullo zucchero?",
+          options: [
+            "Lo zucchero è un elettrolita forte",
+            "Lo zucchero è un acido debole",
+            "Lo zucchero è un non-elettrolita — non produce ioni in soluzione",
+            "Lo zucchero conduce elettricità solo quando riscaldato",
+          ],
+          correctIndex: 2,
+          explanation: "Lo zucchero (saccarosio) è un composto molecolare covalente. Si dissolve in acqua formando molecole discrete, non ioni. Senza ioni, la soluzione non può trasportare corrente elettrica.",
+        },
+        {
+          text: "Il LED è fioco per acido etanoico 0,1 mol/L ma luminoso per HCl 0,1 mol/L. Questo perché:",
+          options: [
+            "L'acido etanoico è più concentrato dell'HCl",
+            "L'acido etanoico è un acido debole che si ionizza solo parzialmente, producendo meno ioni dell'HCl",
+            "L'acido etanoico reagisce con gli elettrodi",
+            "L'HCl contiene più molecole per litro",
+          ],
+          correctIndex: 1,
+          explanation: "L'HCl si ionizza completamente (acido forte), producendo molti ioni H⁺ e Cl⁻. L'acido etanoico si ionizza parzialmente (acido debole, Kₐ = 1,8 × 10⁻⁵), quindi sono presenti molti meno ioni liberi alla stessa concentrazione.",
+        },
+      ],
+      discussion: [
+        "Spiega perché l'acqua del rubinetto conduce leggermente elettricità, mentre l'acqua distillata conduce a malapena.",
+        "Prevedi la conducibilità di una soluzione concentrata di zucchero e una soluzione diluita di NaCl. Quale conduce meglio? Spiega.",
+        "Come le bevande elettrolitiche sportive aiutano gli atleti a performare meglio, in relazione a conducibilità e fisiologia?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Classificazione elettrolita vs non-elettrolita", pct: 35 },
+        { label: "Distinzione elettrolita forte vs debole", pct: 30 },
+        { label: "Mobilità ionica come base della conducibilità", pct: 25 },
+        { label: "Applicazioni in salute e trattamento acque", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che tutti i composti ionici conducano elettricità in tutti gli stati — i composti ionici solidi NON conducono (gli ioni sono fissi).",
+        "Molti assumono che le soluzioni concentrate conducano sempre meglio — un non-elettrolita concentrato (zucchero) ancora non conduce, indipendentemente dalla concentrazione.",
+      ],
+      hook: "Il tuo corpo usa segnali elettrici trasportati da ioni elettroliti per far battere il cuore, contrarre ogni muscolo e attivare ogni nervo. Se il tuo equilibrio elettrolitico viene alterato — diciamo per disidratazione estrema — il tuo cuore può fermarsi. La chimica ti mantiene in vita!",
+      khanLinks: [
+        { title: "Introduzione agli Stati di Ossidazione", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states" },
+        { title: "Elettrolisi", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis" },
+      ],
+    },
+    dataTable: {
+      headers: ["Sostanza", "Luminosità LED", "Tipo di Elettrolita", "Spiegazione"],
+      rows: 9,
+    },
+    observations: [
+      "Registrare la luminosità del LED per ogni sostanza e classificare come elettrolita forte/debole/non-elettrolita",
+      "Confrontare HCl con acido etanoico alla stessa concentrazione",
+      "Registrare se il NaCl solido conduce (non dovrebbe)",
+    ],
+    conclusion: "Classificare tutte le sostanze testate come elettrolita forte, elettrolita debole o non-elettrolita. Spiegare la base molecolare di ogni classificazione usando la teoria della ionizzazione.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi scoprirai quali sostanze possono trasportare elettricità e quali no — e la risposta rivela tutto su come sono legate a livello molecolare!",
+      keywords: {
+        setup: "Assicurarsi che le sonde di carbonio siano della stessa dimensione e pulite per ogni test. Mantenere costante la distanza tra le sonde. Sciacquare le sonde con acqua distillata tra i test per evitare contaminazioni incrociate.",
+        formula: "Conducibilità ∝ concentrazione ionica. Acido/base/sale forte: ionizzazione completa → LED luminoso. Acido debole: ionizzazione parziale → LED fioco. Non-elettrolita (zucchero, etanolo): nessun ione → LED spento.",
+        error: "Errori comuni: contaminare le soluzioni tra i test (sciacquare le sonde!), e confondere \"elettrolita\" (conduce quando disciolto) con \"conduttore\" (conduce sempre, come il rame).",
+        result: "LED luminoso: soluzione NaCl, HCl, NaOH. LED fioco: acido etanoico, acqua del rubinetto. Spento: acqua distillata, zucchero, etanolo. NaCl solido: spento. Conferma il requisito degli ioni per la conducibilità.",
+        real: "Le bevande sportive contengono ioni Na⁺, K⁺, Mg²⁺, Ca²⁺ — elettroliti per i segnali nervosi e le contrazioni muscolari. L'acqua pura non sostituisce gli elettroliti persi con il sudore — ecco perché la sola acqua non basta dopo un esercizio intenso.",
+        explain: "L'elettricità è il flusso di carica. Nei metalli, fluiscono gli elettroni. Nelle soluzioni, fluiscono gli ioni. Perché una soluzione conduca, deve contenere ioni liberi di muoversi. I composti ionici (NaCl, NaOH) li forniscono quando disciolti. I composti molecolari (zucchero, etanolo) non si ionizzano, quindi nessuna particella carica può fluire.",
+        hook: "I fulmini uccidono le persone attraverso gli elettroliti! La pelle pura non conduce bene, ma il sudore (contenente NaCl disciolto e altri elettroliti) aumenta drammaticamente la conducibilità. La pelle bagnata e sudata durante un temporale è pericolosamente conduttiva.",
+        misconception: "Un elettrolita NON è la stessa cosa di un conduttore elettrico! Il rame è un conduttore ma non un elettrolita. La soluzione di NaCl è un elettrolita ma non un conduttore metallico. Gli elettroliti conducono tramite ioni; i metalli conducono tramite elettroni.",
+      },
+      hint: "Se l'acqua del rubinetto dà un LED più luminoso del previsto, contiene minerali disciolti (Ca²⁺, Mg²⁺, HCO₃⁻). Usa sempre acqua distillata come bianco/controllo per vedere la differenza.",
+      expected: "Elettroliti forti: LED luminoso. Elettroliti deboli: LED fioco. Non-elettroliti: spento. NaCl solido: spento. Ordine di conducibilità: NaOH > HCl > NaCl > acido etanoico > acqua del rubinetto > acqua distillata > soluzione di zucchero.",
+    },
+  },
+  {
+    num: 138,
+    title: "Fruit Battery",
+    section: "Elettrochimica",
+    desc: "Students create galvanic cells using fruits and different metal pairs to generate measurable voltages and understand electrochemical potential.",
+    setupTime: "5 min",
+    duration: "20 min",
+    summary: {
+      whatTheyLearn: "Students learn that any electrolyte solution combined with two different metals creates a galvanic cell, and that the voltage depends on the difference in reactivity of the metals used.",
+      instructions: [
+        "Insert a zinc nail and a copper coin into a lemon about 2 cm apart (not touching).",
+        "Connect the metals to a voltmeter; record the voltage.",
+        "Repeat using different metal pairs: zinc-iron, copper-iron, magnesium-copper.",
+        "Try different fruits (lemon, orange, apple, banana) with the same metal pair.",
+        "Connect 3–4 lemons in series to increase voltage and light an LED.",
+      ],
+      expectedOutcome: "The zinc-copper pair in lemon juice produces approximately 0.9 V. Metals further apart in the reactivity series give higher voltages. Multiple cells in series add voltages.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🍋", name: "Lemons, oranges, apples, bananas" },
+        { emoji: "⚡", name: "Digital voltmeter (0–2 V range)" },
+        { emoji: "🔩", name: "Zinc nails, copper coins, iron nails, magnesium strips" },
+        { emoji: "💡", name: "LED (low voltage, 1.5–2 V threshold)" },
+        { emoji: "📏", name: "Alligator clip connecting wires" },
+      ],
+      observationsToRecord: [
+        "Voltage produced by each metal pair in lemon juice",
+        "Voltage produced by zinc-copper pair in different fruits",
+        "Voltage of 3–4 lemons in series (additive?)",
+        "Whether the LED lights from connected lemons",
+      ],
+      theoryPoints: [
+        "The more reactive metal acts as the anode (oxidises, loses electrons); the less reactive metal is the cathode.",
+        "Cell voltage ∝ difference in standard electrode potentials of the two metals.",
+        "Citric acid in fruit acts as the electrolyte, allowing ion flow between the metal electrodes.",
+        "Cells in series: total voltage = sum of individual cell voltages.",
+      ],
+      realWorldConnections: [
+        "The Bagdad Battery (c. 250 BC) consisted of a copper cylinder, iron rod, and vinegar — possibly the earliest known galvanic cell.",
+        "All batteries are galvanic cells; the chemistry is the same whether in a smartphone or a lemon.",
+        "Bioelectrical signals in the human body are generated by ion gradients across cell membranes — biological galvanic cells.",
+      ],
+      formula: "E°cell = E°cathode − E°anode  |  Series cells: V_total = V₁ + V₂ + V₃...",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Which metal pair would produce the highest voltage in a fruit battery?",
+          options: ["Copper-iron", "Zinc-copper", "Iron-copper", "Magnesium-zinc"],
+          correctIndex: 3,
+          explanation: "Voltage depends on the difference in reactivity (electrode potential). Magnesium (E° = −2.37 V) and zinc (E° = −0.76 V) are further apart in the activity series than zinc and copper (+0.34 V), giving a larger potential difference.",
+        },
+        {
+          text: "Why does the fruit battery stop producing current if the two metal electrodes touch inside the fruit?",
+          options: [
+            "The fruit's acid reacts with both metals simultaneously",
+            "A short circuit forms — electrons bypass the external circuit and flow directly between metals",
+            "Touching electrodes increase internal resistance",
+            "The metals form a new alloy that has no electrode potential",
+          ],
+          correctIndex: 1,
+          explanation: "When the electrodes touch, a short circuit forms. Electrons take the path of least resistance (direct metal contact) rather than through the external circuit. No current flows through the voltmeter.",
+        },
+        {
+          text: "If a single lemon cell gives 0.9 V, what voltage do four lemon cells in series give?",
+          options: ["0.9 V", "2.25 V", "3.6 V", "9.0 V"],
+          correctIndex: 2,
+          explanation: "Cells in series add their voltages: 4 × 0.9 V = 3.6 V. This is how torch batteries work — two 1.5 V cells in series give 3 V.",
+        },
+      ],
+      discussion: [
+        "Why does lemon juice work better as a fruit battery electrolyte than apple juice? (Hint: consider pH and ion concentration)",
+        "Explain why increasing the surface area of the electrodes inserted in the fruit increases the current but not the voltage.",
+        "If you replaced the zinc nail with a pure magnesium strip, predict the effect on voltage and explain using standard electrode potentials.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Galvanic cell principle in everyday materials", pct: 35 },
+        { label: "Electrode potential & metal reactivity", pct: 30 },
+        { label: "Series circuit voltage addition", pct: 20 },
+        { label: "Electrolyte role in fruit", pct: 15 },
+      ],
+      misconceptions: [
+        "Students often think the fruit provides the energy — the energy comes from the chemical reaction between the metals and electrolyte, not from the fruit itself.",
+        "Many assume any liquid will work as the electrolyte — pure water, oil, and non-conducting liquids will not support a fruit battery.",
+      ],
+      hook: "Scientists in 2011 used 800 lemons wired in series to power a smartphone for 30 seconds — at a cost of about £400 in lemons. Not practical, but a great demonstration that chemistry powers electronics!",
+      khanLinks: [
+        { title: "Galvanic Cells", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+        { title: "Standard Cell Potential", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+      ],
+    },
+    dataTable: {
+      headers: ["Metal Pair", "Fruit/Electrolyte", "Voltage (V)", "Anode (−)", "Cathode (+)"],
+      rows: 6,
+    },
+    observations: [
+      "Record voltage for each metal pair in lemon juice",
+      "Record voltage for zinc-copper in different fruits",
+      "Record total voltage of 4 lemons in series and whether it lights the LED",
+    ],
+    conclusion: "Explain which factors (metal pair and electrolyte type) most affect cell voltage. Relate results to standard electrode potentials. Describe how cells in series add voltages.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. You're about to make a battery from fruit — and if you wire enough lemons together, you might just power an LED with your lunch!",
+      keywords: {
+        setup: "Insert metals at least 2 cm apart and check they don't touch inside the fruit. Roll the fruit firmly before inserting metals — this releases more juice and improves conductivity.",
+        formula: "E°cell = E°cathode − E°anode. More different metals = higher voltage. Series: V_total = ΣV. Zinc (−0.76 V) + Copper (+0.34 V) → E° = 0.34 − (−0.76) = 1.10 V theoretical.",
+        error: "Common errors: electrodes touching inside the fruit (short circuit, voltage drops to zero), using corroded metals (lower voltage), and not connecting cells correctly in series.",
+        result: "Zn-Cu in lemon: ~0.9 V. Mg-Cu: ~2.0 V. Zn-Fe: ~0.3 V. 4 lemons in series: ~3.6 V — enough to light a low-voltage LED. Lemon > orange > apple for voltage (more citric acid).",
+        real: "Your phone battery is a lithium-ion galvanic cell. The principle is identical to your lemon battery — two different materials separated by an electrolyte, generating voltage from spontaneous redox reactions.",
+        explain: "The zinc nail \"wants\" to lose electrons more than copper wants to lose them. So zinc becomes the anode (Zn → Zn²⁺ + 2e⁻) and copper is the cathode (H⁺ + e⁻ → ½H₂ in acid). The citric acid in lemon provides the electrolyte for ion flow. The further apart the metals on the reactivity series, the higher the voltage.",
+        hook: "A Nepalese student in 2022 won a science prize for proving that tomato waste from ketchup factories could power small LED lights in rural villages — fruit batteries as sustainable village lighting!",
+        misconception: "The energy comes from the METAL dissolving in the electrolyte — NOT from the fruit. The fruit just provides the conducting acid solution. If you used the same zinc and copper with vinegar or lemon juice in a test tube, you'd get the same voltage.",
+      },
+      hint: "If voltage reads near zero, check that the metals are not touching inside the fruit. Insert a knife between them if necessary to confirm they are separated.",
+      expected: "Zn-Cu in lemon: ~0.9 V. Mg-Cu: ~1.8–2.0 V. 4 lemons in series: ~3.2–3.6 V. LED lights from 4 lemons. Voltage ranking: Mg-Cu > Zn-Cu > Fe-Cu > Zn-Fe. Confirms reactivity series prediction.",
+    },
+  },
+  {
+    num: 139,
+    title: "Potenziali Elettrodici Standard (Serie di Attività)",
+    section: "Elettrochimica",
+    desc: "Gli studenti confrontano quali metalli spostano altri dalla soluzione per costruire una serie di attività sperimentale e la mettono in relazione con i potenziali elettrodici standard.",
+    setupTime: "8 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che i metalli più reattivi spostano quelli meno reattivi dalle soluzioni ioniche, e questa attività di spostamento corrisponde direttamente ai potenziali elettrodici standard.",
+      instructions: [
+        "Preparare una griglia di provette: righe = lamine metalliche (Mg, Zn, Fe, Cu, Ag); colonne = soluzioni saline (MgSO₄, ZnSO₄, FeSO₄, CuSO₄, AgNO₃).",
+        "Aggiungere ogni lamina metallica a ogni soluzione e osservare per 5 minuti.",
+        "Registrare + (avviene spostamento) o − (nessuna reazione) per ogni combinazione.",
+        "Usare il pattern per classificare i metalli in ordine di reattività.",
+        "Confrontare la classificazione sperimentale con i potenziali elettrodici standard (valori E°).",
+      ],
+      expectedOutcome: "Gli studenti producono una serie di attività coerente con la serie elettrochimica standard: Mg > Zn > Fe > Cu > Ag, corrispondente ai valori E° dei libri di testo.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔩", name: "Lamine metalliche: magnesio, zinco, ferro, rame, argento" },
+        { emoji: "🧪", name: "Soluzioni saline: MgSO₄, ZnSO₄, FeSO₄, CuSO₄, AgNO₃ (0,1 mol/L ciascuna)" },
+        { emoji: "📊", name: "Griglia 5 × 5 di provette o piastra a pozzetti" },
+        { emoji: "🔬", name: "Lente di ingrandimento per osservare depositi sottili" },
+        { emoji: "⏱️", name: "Cronometro" },
+      ],
+      observationsToRecord: [
+        "Cambiamento di colore nella soluzione (es. CuSO₄ blu → incolore quando il Cu si deposita)",
+        "Deposito metallico sulla lamina inserita (colore, consistenza)",
+        "Risultati +/− per tutte le 25 combinazioni",
+        "Classificazione della serie di attività derivata",
+      ],
+      theoryPoints: [
+        "Un metallo più reattivo (E° più basso) sposta un metallo meno reattivo dalla soluzione: M₁ + M₂²⁺ → M₁²⁺ + M₂.",
+        "I potenziali elettrodici standard (E°) misurano la tendenza a essere ridotti; E° più negativo = più reattivo = miglior agente riducente.",
+        "Ordine della serie di attività: Mg (−2,37 V) > Zn (−0,76 V) > Fe (−0,44 V) > Cu (+0,34 V) > Ag (+0,80 V).",
+        "Regola della diagonale: il metallo A sposta il metallo B se E°(A) < E°(B) — solo per reazioni sopra la diagonale nella griglia.",
+      ],
+      realWorldConnections: [
+        "I tubi di ferro si corrodono più velocemente quando collegati a tubi di rame — il rame è meno reattivo, rendendo il ferro l'anodo in una cella galvanica involontaria.",
+        "Gli anodi sacrificali di zinco sugli scafi delle navi in acciaio funzionano perché lo Zn (più reattivo) si corrode preferenzialmente, proteggendo lo scafo in Fe.",
+        "La reazione della termite (Al che sposta Fe da Fe₂O₃) usa la serie di attività — l'alluminio è più reattivo del ferro.",
+      ],
+      formula: "M₁(s) + M₂²⁺(aq) → M₁²⁺(aq) + M₂(s)  (se E°(M₁) < E°(M₂))",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Il ferro viene aggiunto a una soluzione di CuSO₄. Quale osservazione conferma che è avvenuta una reazione?",
+          options: [
+            "La soluzione diventa più blu",
+            "Si deposita rame rosso-bruno sul ferro; la soluzione blu sbiadisce",
+            "Il ferro si dissolve senza alcun deposito visibile",
+            "Si formano bolle di gas",
+          ],
+          correctIndex: 1,
+          explanation: "Fe sposta Cu: Fe + Cu²⁺ → Fe²⁺ + Cu. Il rame rosso-bruno si deposita sulla lamina di ferro; la soluzione blu di CuSO₄ sbiadisce man mano che Cu²⁺ viene rimosso e sostituito da Fe²⁺ incolore.",
+        },
+        {
+          text: "Quale metallo NON PUÒ spostare il rame dalla soluzione di solfato di rame?",
+          options: ["Magnesio", "Zinco", "Ferro", "Argento"],
+          correctIndex: 3,
+          explanation: "L'argento ha un E° più positivo (+0,80 V) rispetto al rame (+0,34 V), quindi Ag è meno reattivo di Cu. Non può spostare il rame dalla soluzione — la reazione non sarebbe spontanea.",
+        },
+        {
+          text: "In una griglia di spostamento 5×5, quante delle 25 combinazioni mostrerebbero un risultato positivo?",
+          options: ["5", "10", "15", "20"],
+          correctIndex: 1,
+          explanation: "Solo i metalli più reattivi dello ione in soluzione mostrano spostamento. Per una serie di 5 metalli con reattività ordinata, questo forma un pattern triangolare: 0+1+2+3+4 = 10 spostamenti riusciti (sopra la diagonale).",
+        },
+      ],
+      discussion: [
+        "Spiega perché un metallo non può spostare se stesso dalla propria soluzione salina (es. zinco in ZnSO₄).",
+        "Usa i potenziali elettrodici standard per prevedere se il rame può spostare l'argento dalla soluzione di nitrato d'argento. Scrivi l'equazione ionica.",
+        "La reazione della termite usa l'alluminio per spostare il ferro dall'ossido di ferro. Perché questa reazione viene usata per saldare i binari ferroviari?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Serie di attività e reazioni di spostamento", pct: 40 },
+        { label: "Potenziali elettrodici standard (E°)", pct: 30 },
+        { label: "Previsione della fattibilità delle reazioni da E°", pct: 20 },
+        { label: "Applicazioni (protezione sacrificale, termite)", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso prevedono che tutti i metalli reagiscano con tutte le soluzioni saline — solo i metalli più reattivi (E° più basso) spostano quelli meno reattivi.",
+        "Molti confondono la serie di attività con la solubilità — il ferro che sposta il rame è una reazione redox, non un cambiamento di solubilità.",
+      ],
+      hook: "La reazione della termite — l'alluminio che sposta il ferro dall'ossido di ferro — brucia a 2.500 °C ed è stata usata per saldare i binari ferroviari sul campo per oltre un secolo. La serie di attività ha letteralmente costruito le reti ferroviarie!",
+      khanLinks: [
+        { title: "Potenziale Standard di Cella", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+        { title: "Celle Galvaniche", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+      ],
+    },
+    dataTable: {
+      headers: ["Metallo \\ Soluzione", "MgSO₄", "ZnSO₄", "FeSO₄", "CuSO₄", "AgNO₃"],
+      rows: 5,
+    },
+    observations: [
+      "Registra + o − per ogni combinazione metallo-soluzione nella griglia 5×5",
+      "Descrivi il cambiamento di colore nella soluzione e qualsiasi deposito sulle lamine metalliche",
+      "Deriva la serie di attività dal pattern dei risultati +",
+    ],
+    conclusion: "Scrivi l'equazione ionica per due reazioni di spostamento osservate. Classifica i metalli dal più al meno reattivo in base alla tua griglia. Confronta la tua classificazione sperimentale con i valori dei potenziali elettrodici standard.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Costruirai la serie di attività elettrochimica da zero — scoprendo attraverso l'esperimento la stessa classificazione che i chimici hanno impiegato due secoli a stabilire!",
+      keywords: {
+        setup: "Pre-taglia lamine metalliche di dimensioni simili e puliscile con carta vetrata. Usa soluzioni fresche. Osserva attentamente — alcune reazioni sono lente e producono depositi minuscoli che richiedono una lente di ingrandimento.",
+        formula: "M₁ + M₂²⁺ → M₁²⁺ + M₂ avviene se E°(M₁) < E°(M₂). Serie di attività: Mg (−2,37) > Zn (−0,76) > Fe (−0,44) > Cu (+0,34) > Ag (+0,80) V.",
+        error: "Errori comuni: non osservare abbastanza a lungo (le reazioni lente necessitano di 5+ minuti), e confondere lo ione in soluzione con la lamina metallica. La LAMINA reagisce con la SOLUZIONE, non viceversa.",
+        result: "Pattern triangolare di risultati +: Mg reagisce con tutti tranne MgSO₄; Zn reagisce con FeSO₄, CuSO₄, AgNO₃; Fe con CuSO₄ e AgNO₃; Cu solo con AgNO₃; Ag con nessuno. 10 risultati positivi in totale.",
+        real: "Zincatura dell'acciaio (rivestimento con zinco): Zn è più reattivo di Fe, quindi in qualsiasi cella galvanica che si forma, Zn è l'anodo e si corrode sacrificalmente. Stesso principio della tua griglia — Zn è sopra Fe nella serie di attività.",
+        explain: "I metalli più reattivi \"vogliono\" essere in forma ionica più di quelli meno reattivi. Quando un metallo reattivo entra in contatto con una soluzione di ioni di un metallo meno reattivo, essenzialmente \"compete\" con il metallo meno reattivo — donando elettroni e sostituendolo. Gli elettroni trasferiti fanno cambiare lo stato di ossidazione a entrambi i metalli.",
+        hook: "L'oro non si corrode mai in natura — ecco perché i gioielli dell'antico Egitto sembrano nuovi dopo 3.000 anni. L'oro ha il più alto E° dei metalli comuni, il che significa che non \"vuole\" mai donare elettroni ad altri ioni metallici. La tua griglia della serie di attività spiega perché l'oro vale così tanto!",
+        misconception: "Un metallo non reagisce con la PROPRIA soluzione salina — Fe in FeSO₄ non fa nulla, perché Fe²⁺ e Fe sono già in equilibrio (E°cella = 0). Lo spostamento avviene solo quando c'è una differenza nel potenziale elettrodico.",
+      },
+      hint: "Se non vedi reazione dove è prevista (es. Fe + CuSO₄), controlla la superficie del ferro per uno strato di ossido — puliscila prima con carta vetrata. Gli strati di ossido bloccano il trasferimento di elettroni.",
+      expected: "Triangolo di risultati positivi corrispondente alla serie di attività. CuSO₄ diventa incolore con Fe aggiunto (si forma deposito rosso di Cu). AgNO₃ con Cu: cristalli di argento si depositano sulla lamina di rame. Serie di attività derivata: Mg > Zn > Fe > Cu > Ag. Corrisponde alle previsioni E°.",
+    },
+  },
+  {
+    num: 140,
+    title: "Protezione Catodica",
+    section: "Elettrochimica",
+    desc: "Gli studenti dimostrano che lo zinco protegge il ferro dalla corrosione agendo come anodo sacrificale, modellando la zincatura e la protezione catodica delle strutture in acciaio.",
+    setupTime: "5 min",
+    duration: "20 min preparazione + osservazioni per 3 giorni",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono le basi elettrochimiche della protezione catodica e come lo zinco, essendo più reattivo del ferro, si corrode preferenzialmente e fornisce una protezione duratura.",
+      instructions: [
+        "Preparare tre chiodi di ferro: Chiodo A solo in acqua salata, Chiodo B avvolto strettamente con foglio di zinco in acqua salata, Chiodo C avvolto con foglio di rame in acqua salata.",
+        "Posizionare tutti e tre in becher separati di acqua salata (NaCl al 3%).",
+        "Aggiungere alcune gocce di indicatore ferrossile (ferricianuro di potassio + fenolftaleina) per mostrare la corrosione.",
+        "Osservare per 20 minuti e di nuovo a 24 e 48 ore.",
+        "Registrare i cambiamenti di colore: blu indica Fe²⁺ (ferro che si corrode); rosa indica OH⁻ (catodo).",
+      ],
+      expectedOutcome: "Il Chiodo A arrugginisce (il colore blu conferma Fe²⁺). Il Chiodo B (avvolto in zinco) non mostra blu sulla superficie del ferro — lo zinco si corrode invece. Il Chiodo C (avvolto in rame) arrugginisce più velocemente del Chiodo A — il rame rende il ferro l'anodo.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🔩", name: "3 chiodi di ferro" },
+        { emoji: "🔩", name: "Strisce di foglio di zinco e foglio di rame" },
+        { emoji: "🧂", name: "Soluzione di NaCl al 3% (acqua salata)" },
+        { emoji: "💧", name: "Indicatore ferrossile (ferricianuro di potassio + fenolftaleina)" },
+        { emoji: "📊", name: "3 piastre Petri o becher" },
+      ],
+      observationsToRecord: [
+        "Cambiamento di colore intorno a ogni chiodo dopo 20 min, 24 h, 48 h",
+        "Colore blu = Fe²⁺ in formazione (ferro che si corrode)",
+        "Colore rosa = OH⁻ in formazione (regione catodica, protetta)",
+        "Confronto dell'estensione della ruggine: chiodo A vs B vs C",
+      ],
+      theoryPoints: [
+        "Lo zinco (E° = −0,76 V) è più reattivo del ferro (E° = −0,44 V); quando in contatto, Zn è l'anodo e Fe è il catodo.",
+        "Protezione catodica: il ferro è forzato a essere il catodo → avviene solo riduzione sulla sua superficie → il ferro non si dissolve → niente ruggine.",
+        "Il rame (E° = +0,34 V) è meno reattivo del ferro; il rame diventa il catodo, rendendo il ferro l'anodo → corrosione accelerata.",
+        "Indicatore ferrossile: K₃[Fe(CN)₆] diventa blu in presenza di Fe²⁺; la fenolftaleina diventa rosa in presenza di OH⁻.",
+      ],
+      realWorldConnections: [
+        "Zincatura: il rivestimento di zinco sull'acciaio fornisce protezione catodica anche quando graffiato — finché lo zinco non si è completamente corroso.",
+        "Le piattaforme petrolifere del Mare del Nord hanno massicci blocchi di anodi di zinco o alluminio imbullonati alle loro gambe sottomarine in acciaio.",
+        "Le tubature in acciaio sotterranee hanno anodi sacrificali di magnesio o zinco sepolti nelle vicinanze, collegati al tubo tramite filo.",
+      ],
+      formula: "Zn → Zn²⁺ + 2e⁻ (anodo, sacrificale)  |  O₂ + 2H₂O + 4e⁻ → 4OH⁻ (catodo, Fe protetto)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché lo zinco protegge il ferro dalla ruggine quando i due metalli sono in contatto in acqua salata?",
+          options: [
+            "Lo zinco ricopre la superficie del ferro",
+            "Lo zinco è più reattivo e agisce come anodo, corrodendosi al posto del ferro",
+            "Lo zinco assorbe l'ossigeno dall'acqua",
+            "Lo zinco reagisce con il sale per formare un rivestimento protettivo",
+          ],
+          correctIndex: 1,
+          explanation: "Lo zinco ha un potenziale elettrodico più negativo del ferro. Nella cella galvanica che si forma, lo zinco è l'anodo e si ossida preferenzialmente (Zn → Zn²⁺ + 2e⁻), fornendo elettroni che costringono il ferro a essere il catodo (protetto dall'ossidazione).",
+        },
+        {
+          text: "Cosa rivela un colore blu nell'indicatore ferrossile?",
+          options: [
+            "Ioni OH⁻ che si formano al catodo",
+            "Ioni Fe²⁺ che si formano — il ferro si sta attivamente corrodendo",
+            "Zinco che si dissolve",
+            "Ossigeno che viene prodotto",
+          ],
+          correctIndex: 1,
+          explanation: "L'indicatore ferrossile (K₃[Fe(CN)₆]) reagisce con gli ioni Fe²⁺ per produrre un intenso colore blu (blu di Prussia), indicando che il ferro viene ossidato (si corrode) in quel punto.",
+        },
+        {
+          text: "Perché un chiodo di ferro avvolto in rame si corrode PIÙ VELOCEMENTE di un semplice chiodo di ferro?",
+          options: [
+            "Il rame reagisce con il ferro per indebolirlo",
+            "Il rame è meno reattivo — il ferro diventa l'anodo nella cella galvanica e si corrode in modo accelerato",
+            "Il rame blocca l'ossigeno dal raggiungere il ferro",
+            "Il rame aumenta la temperatura del ferro",
+          ],
+          correctIndex: 1,
+          explanation: "Il rame (E° = +0,34 V) è meno reattivo del ferro (E° = −0,44 V). Il ferro diventa l'anodo e si corrode preferenzialmente. L'ampia superficie catodica del rame rispetto a un piccolo anodo (graffio o ferro esposto) concentra la corrosione sul ferro.",
+        },
+      ],
+      discussion: [
+        "Spiega perché l'acciaio zincato fornisce protezione anche dopo che il rivestimento di zinco è graffiato, mentre l'acciaio verniciato no.",
+        "Le piattaforme petrolifere del Mare del Nord sostituiscono i loro anodi di zinco ogni 3-5 anni. Spiega perché è necessaria una sostituzione regolare e cosa succederebbe se gli anodi non venissero sostituiti.",
+        "Un vecchio idraulico collega tubi di rame a tubi di ferro con un giunto diretto. Prevedi cosa accadrà nel tempo e suggerisci come dovrebbe essere fatto correttamente.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Meccanismo di protezione catodica", pct: 40 },
+        { label: "Anodo sacrificale (reattività Zn vs Fe)", pct: 30 },
+        { label: "Chimica dell'indicatore ferrossile", pct: 20 },
+        { label: "Applicazioni industriali di protezione dalla corrosione", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che lo zinco funzioni solo come barriera fisica — anche quando graffiato e il ferro è esposto, lo zinco continua a fornire protezione elettrochimica finché rimane dello zinco in contatto.",
+        "Molti assumono che il rivestimento di rame proteggerebbe il ferro come fa lo zinco — è vero il contrario; il rame accelera la corrosione del ferro.",
+      ],
+      hook: "La struttura in ferro della Torre Eiffel è attualmente protetta da un primer ricco di zinco. Senza di esso, il ferro si sarebbe arrugginito al punto da cedere strutturalmente entro decenni. L'elettrochimica sta letteralmente sostenendo un'icona mondiale!",
+      khanLinks: [
+        { title: "Celle Galvaniche", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells" },
+        { title: "Potenziale Standard di Cella", url: "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo", "Chiodo A (solo)", "Chiodo B (+ zinco)", "Chiodo C (+ rame)", "Legenda colori indicatore"],
+      rows: 4,
+    },
+    observations: [
+      "Registra il colore dell'indicatore ferrossile intorno a ogni chiodo a 20 min, 24 h, 48 h",
+      "Quantifica l'area blu come approssimazione dell'estensione della corrosione",
+      "Confronta i risultati del chiodo B e C con il controllo chiodo A",
+    ],
+    conclusion: "Spiega il meccanismo della protezione catodica usando i valori del potenziale elettrodico. Prevedi cosa succederebbe se l'anodo di zinco sul Chiodo B venisse rimosso a metà esperimento. Discuti un'applicazione industriale.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. L'esperimento di oggi protegge il ferro dalla ruggine — non con vernice o lucidante, ma con pura elettrochimica. Lo stesso principio protegge piattaforme petrolifere, navi e tubature in tutto il mondo!",
+      keywords: {
+        setup: "Avvolgi i fogli di zinco e rame strettamente intorno ai chiodi per garantire un buon contatto elettrico. Usa acqua salata fresca con indicatore disciolto. Osserva entro 20 minuti per gli effetti iniziali — il confronto completo della ruggine richiede 2-3 giorni.",
+        formula: "Protezione catodica con zinco: Zn → Zn²⁺ + 2e⁻ (Zn è anodo, si corrode). Fe: O₂ + 2H₂O + 4e⁻ → 4OH⁻ (Fe è catodo, protetto). E°(Zn) = −0,76 V < E°(Fe) = −0,44 V → Zn più reattivo → Zn è anodo.",
+        error: "Errori comuni: contatto lento tra zinco e chiodo (la protezione fallisce se non c'è contatto elettrico), e non lasciare abbastanza tempo per vedere le differenze complete di corrosione.",
+        result: "Chiodo A: colore blu appare dopo 20-30 min, forte ruggine dopo 48 h. Chiodo B (zinco): nessun blu sulla superficie del ferro; blu/bianco sulla superficie dello zinco (Zn che si corrode). Chiodo C (rame): più blu del Chiodo A — il rame accelera la corrosione del ferro.",
+        real: "Il Trans-Alaska Pipeline (1.300 km di acciaio) è protetto da anodi di magnesio sepolti ogni poche centinaia di metri. Senza di essi, il tubo si corroderebbe completamente entro 10 anni nel terreno acido della tundra.",
+        explain: "Quando zinco e ferro sono in contatto elettrico in acqua salata, si forma una cella galvanica. L'E° dello zinco (−0,76 V) è più negativo di quello del ferro (−0,44 V) — lo zinco è il donatore di elettroni più disponibile, quindi agisce come anodo e si corrode. Il ferro riceve elettroni spinti su di esso — diventa il catodo e non si corrode.",
+        hook: "L'HMS Belfast (ormeggiata a Londra) ha anodi di zinco imbullonati al suo scafo sotto la linea di galleggiamento. Gli ingegneri della marina li sostituiscono ogni pochi anni. La nave è a galla dal 1938 — l'elettrochimica che protegge una nave da guerra della Seconda Guerra Mondiale!",
+        misconception: "La protezione catodica non rende il ferro inerte — rende il ferro un catodo (ricevitore di elettroni) invece di un anodo (donatore di elettroni). Finché il metallo più reattivo (Zn) è presente e in contatto elettrico, il ferro non può corrodersi.",
+      },
+      hint: "Se l'indicatore ferrossile non mostra cambiamenti di colore dopo 20 minuti per qualsiasi chiodo, aumenta la concentrazione di sale o graffia delicatamente la superficie del chiodo per esporre ferro fresco.",
+      expected: "Chiodo A: colore blu Fe²⁺ entro 30 min, ruggine estesa dopo 2 giorni. Chiodo B: nessun blu sulla superficie del ferro; superficie dello zinco si corrode (Zn(OH)₂ bianco). Chiodo C: più blu del Chiodo A entro 30 min — il rame accelera la corrosione del ferro. Conferma il meccanismo di protezione catodica.",
+    },
+  },
+  {
+    num: 141,
+    title: "Velocità della Fotosintesi (Elodea)",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti contano le bolle di ossigeno prodotte dall'Elodea a diverse intensità luminose (variando la distanza da una lampada) e tracciano il grafico della velocità di produzione delle bolle rispetto all'intensità luminosa per trovare la relazione.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che la velocità della fotosintesi aumenta con l'intensità luminosa fino a un punto di saturazione, misurata contando le bolle di O₂ prodotte da una pianta acquatica.",
+      instructions: [
+        "Posizionare un rametto di Elodea in un becher con soluzione di NaHCO₃ (0,5%) — il NaHCO₃ fornisce una fonte costante di CO₂.",
+        "Posizionare una lampada a 10 cm dal becher. Lasciare acclimatare per 2 minuti, poi contare le bolle per 1 minuto.",
+        "Ripetere a distanze della lampada di 20 cm, 30 cm, 40 cm e 50 cm (intensità luminosa ∝ 1/distanza²).",
+        "Mantenere la temperatura costante per tutto l'esperimento con una camicia d'acqua se possibile.",
+        "Tracciare il grafico della velocità delle bolle (bolle/min) rispetto a 1/distanza² (proxy dell'intensità luminosa).",
+      ],
+      expectedOutcome: "La velocità delle bolle aumenta man mano che la lampada si avvicina. A distanze molto ravvicinate la velocità si stabilizza (saturazione luminosa). La velocità diminuisce a grandi distanze. Il grafico mostra una curva crescente che poi raggiunge un plateau.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🌿", name: "Rametti di Elodea (pianta acquatica d'acqua dolce)" },
+        { emoji: "🪣", name: "Becher con soluzione di NaHCO₃ (0,5%, 500 mL)" },
+        { emoji: "💡", name: "Lampada luminosa (100 W o equivalente LED)" },
+        { emoji: "📏", name: "Righello per misurare la distanza della lampada" },
+        { emoji: "⏱️", name: "Cronometro" },
+      ],
+      observationsToRecord: [
+        "Numero di bolle di O₂ al minuto per ogni distanza della lampada",
+        "Temperatura dell'acqua all'inizio e alla fine",
+        "Distanza approssimativa alla quale la velocità raggiunge il plateau (punto di saturazione luminosa)",
+        "Qualsiasi variazione nella velocità quando il NaHCO₃ viene aumentato o rimosso",
+      ],
+      theoryPoints: [
+        "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (fotosintesi luce-dipendente).",
+        "La luce fornisce energia per le reazioni luce-dipendenti (fotofosforilazione, fotolisi dell'acqua).",
+        "La velocità aumenta con la luce fino alla saturazione; poi la CO₂ o la temperatura diventano fattori limitanti.",
+        "Intensità luminosa ∝ 1/d² (legge dell'inverso del quadrato); tracciando il grafico rispetto a 1/d² si ottengono risultati approssimativamente lineari.",
+      ],
+      realWorldConnections: [
+        "Le serre commerciali utilizzano illuminazione supplementare per estendere il fotoperiodo e aumentare i tassi di fotosintesi per la produzione di colture tutto l'anno.",
+        "La fotosintesi del fitoplancton negli oceani produce circa il 50% dell'O₂ della Terra — la disponibilità di luce nelle acque superficiali è la variabile chiave.",
+        "I crediti di carbonio per le foreste sono in parte calcolati utilizzando modelli di velocità di fotosintesi basati sulla disponibilità di luce.",
+      ],
+      formula: "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂  [la velocità aumenta con la luce fino alla saturazione]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché si aggiunge NaHCO₃ all'acqua nell'esperimento di fotosintesi con Elodea?",
+          options: [
+            "Per fornire nutrienti alla pianta",
+            "Per fornire una fonte costante di CO₂ disciolta in modo che la concentrazione di CO₂ non sia un fattore limitante",
+            "Per aumentare il pH e accelerare la reazione",
+            "Per dissolvere le bolle di ossigeno prodotte",
+          ],
+          correctIndex: 1,
+          explanation: "Il NaHCO₃ (idrogenocarbonato di sodio) si dissolve rilasciando CO₂ in soluzione, assicurando che la CO₂ non sia il fattore limitante. Questo permette all'esperimento di isolare l'intensità luminosa come variabile in esame.",
+        },
+        {
+          text: "A distanze molto ravvicinate della lampada, la velocità delle bolle smette di aumentare nonostante la luce più intensa. Cosa indica questo?",
+          options: [
+            "La pianta smette di fotosintetizzare quando la luce è troppo intensa",
+            "La luce non è più il fattore limitante — la CO₂ o la temperatura sono diventati limitanti",
+            "Le bolle di O₂ sono troppo grandi per essere contate accuratamente",
+            "La lampada sta danneggiando la pianta",
+          ],
+          correctIndex: 1,
+          explanation: "Alla saturazione luminosa, un altro fattore limita la velocità. Se la CO₂ è fornita e la temperatura è controllata, il fattore limitante è probabilmente la velocità massima delle reazioni luce-indipendenti (ciclo di Calvin) o l'attività enzimatica.",
+        },
+        {
+          text: "Come cambia l'intensità luminosa quando la distanza della lampada raddoppia da 20 cm a 40 cm?",
+          options: [
+            "Dimezzata", "Ridotta a un quarto", "Raddoppiata", "Rimane uguale",
+          ],
+          correctIndex: 1,
+          explanation: "L'intensità luminosa segue la legge dell'inverso del quadrato: I ∝ 1/d². Quando d raddoppia da 20 a 40 cm, d² aumenta di quattro volte, quindi l'intensità scende a ¼ (ridotta a un quarto).",
+        },
+      ],
+      discussion: [
+        "Spiega perché la temperatura deve essere mantenuta costante in questo esperimento, e prevedi cosa accadrebbe al punto di saturazione luminosa se la temperatura venisse aumentata da 20°C a 30°C.",
+        "Descrivi tre fattori limitanti per la fotosintesi e spiega come ciascuno limita la velocità a livello biochimico.",
+        "Suggerisci perché contare le singole bolle non è un metodo molto accurato. Proponi una tecnica più precisa per misurare la velocità di fotosintesi.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "La luce come fattore limitante per la fotosintesi", pct: 35 },
+        { label: "Legge dell'inverso del quadrato e intensità luminosa", pct: 25 },
+        { label: "Concetto di fattori limitanti", pct: 25 },
+        { label: "Produzione di O₂ delle piante acquatiche", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che le piante fotosintetizzino solo alla luce del sole — possono usare la luce artificiale a lunghezze d'onda appropriate altrettanto efficacemente.",
+        "Molti assumono che la velocità delle bolle sia sempre un proxy perfetto per la velocità di fotosintesi — le bolle dipendono anche dalla dimensione delle bolle, che può variare. Usare un sensore di O₂ per maggiore precisione.",
+      ],
+      hook: "Gli alberi della foresta amazzonica assorbono così tanta CO₂ attraverso la fotosintesi che influenzano i modelli climatici globali. Un singolo grande albero può fotosintetizzare abbastanza da assorbire 20 kg di CO₂ all'anno. Capire la velocità di fotosintesi è al centro della scienza del clima!",
+      khanLinks: [
+        { title: "Fotosintesi", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/introduction-to-stages-of-photosynthesis/v/photosynthesis" },
+        { title: "Reazioni Luce-Dipendenti", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-light-dependent-reactions-of-photosynthesis/v/light-dependent-reactions" },
+      ],
+    },
+    dataTable: {
+      headers: ["Distanza Lampada (cm)", "1/d² (cm⁻²)", "Bolle/min (Prova 1)", "Bolle/min (Prova 2)", "Media Bolle/min"],
+      rows: 6,
+    },
+    observations: [
+      "Contare le bolle al minuto per ogni distanza della lampada",
+      "Calcolare 1/d² per ogni distanza",
+      "Registrare la temperatura all'inizio e alla fine dell'esperimento",
+    ],
+    conclusion: "Tracciare il grafico della velocità delle bolle rispetto a 1/d² e descrivere la relazione. Identificare il punto di saturazione luminosa. Spiegare cosa limita la velocità di fotosintesi oltre il punto di saturazione usando il concetto di fattori limitanti.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi misurerai una pianta vivente che produce ossigeno in tempo reale — lo stesso processo che produce tutto l'O₂ che respiriamo!",
+      keywords: {
+        setup: "Usa Elodea appena tagliata — taglia il gambo in diagonale per massimizzare l'area esposta. Acclimata la pianta ad ogni livello di luce per 2 minuti prima di contare. Mantieni la temperatura costante con una camicia d'acqua (becher grande d'acqua tra la lampada e la pianta).",
+        formula: "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Intensità luminosa I ∝ 1/d². Velocità di fotosintesi ∝ [luce] finché un altro fattore non diventa limitante.",
+        error: "Errori comuni: non acclimatare ad ogni distanza prima di contare (la pianta si sta ancora adattando), temperatura che aumenta vicino alla lampada (confonde l'effetto dell'intensità luminosa), e contare bolle di dimensioni irregolari.",
+        result: "Risultati tipici: 5 cm → 60 bolle/min; 10 cm → 40; 20 cm → 20; 30 cm → 12; 50 cm → 5. Plateau visibile a distanze ravvicinate con NaHCO₃ presente.",
+        real: "Le vertical farm coltivano colture sotto luci LED in magazzini, usando esattamente questa scienza. Ottimizzando il colore della luce (lunghezze d'onda rosso e blu) e l'intensità, raggiungono rendimenti 100× maggiori per metro quadrato rispetto all'agricoltura tradizionale.",
+        explain: "La luce fornisce l'energia per scindere le molecole d'acqua (fotolisi) e creare ATP e NADPH nelle reazioni luce-dipendenti. Più luce significa più fotolisi, più ATP/NADPH, e più O₂ rilasciato. Ma se la CO₂ è bassa, il ciclo di Calvin non può usare tutto l'ATP — si verifica un ingorgo e la velocità smette di aumentare anche con più luce.",
+        hook: "Nel 2016, gli scienziati hanno coltivato lattughe sulla Stazione Spaziale Internazionale usando luci LED e hanno misurato la loro velocità di fotosintesi in assenza di gravità. Il risultato? La velocità di fotosintesi era quasi la stessa che sulla Terra — le piante non hanno bisogno della gravità per fotosintetizzare!",
+        misconception: "Le bolle sono O₂, non aria. La pianta sta producendo O₂ dalle molecole d'acqua nella reazione luce-dipendente (fotolisi). NON sta semplicemente rilasciando aria disciolta dall'acqua. Se usassi acqua bollita (degassata) con NaHCO₃, vedresti comunque bolle di O₂ dalla fotosintesi.",
+      },
+      hint: "Se non appaiono bolle, controlla che l'Elodea sia appena tagliata e sana (verde, non ingiallita). Aggiungere un pizzico di NaHCO₃ e spostare la lampada a 10 cm dovrebbe produrre bolle visibili entro 30 secondi.",
+      expected: "Chiaro aumento della velocità delle bolle man mano che la lampada si avvicina. Plateau a distanze ravvicinate quando è presente NaHCO₃. Velocità delle bolle ∝ approssimativamente 1/d² a distanze moderate. Temperatura costante per tutto l'esperimento.",
+    },
+  },
+  {
+    num: 142,
+    title: "Traspirazione (Potometro)",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti misurano la velocità di assorbimento dell'acqua da parte di un rametto fogliato usando un potometro in diverse condizioni — aria ferma, ventosa (ventilatore) e umida (sacchetto di plastica) — registrando il movimento della bolla d'aria nel tubo capillare.",
+    setupTime: "15 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che la traspirazione guida l'assorbimento dell'acqua nelle piante, e che il vento aumenta e l'alta umidità diminuisce la velocità di traspirazione influenzando il gradiente di concentrazione del vapore acqueo attraverso gli stomi fogliari.",
+      instructions: [
+        "Tagliare un rametto fogliato sott'acqua e inserirlo rapidamente nel potometro — nessuna aria deve entrare nello xilema.",
+        "Lasciare acclimatare il rametto per 5 minuti in aria ferma, poi misurare la distanza percorsa dalla bolla d'aria al minuto.",
+        "Ripetere con un ventilatore che soffia sulle foglie (vento aumentato).",
+        "Ripetere con un sacchetto di plastica lasciato sulle foglie (umidità aumentata).",
+        "Registrare la velocità di movimento della bolla (mm/min) come proxy per la velocità di assorbimento dell'acqua.",
+      ],
+      expectedOutcome: "Le condizioni ventose aumentano la velocità di movimento della bolla (traspirazione più veloce). Le condizioni umide diminuiscono il movimento della bolla (traspirazione più lenta). L'aria ferma dà risultati intermedi.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🌿", name: "Rametto fogliato (es. Pelargonium o qualsiasi pianta a foglie larghe)" },
+        { emoji: "⚗️", name: "Potometro con tubo capillare e serbatoio" },
+        { emoji: "📏", name: "Righello (scala mm)" },
+        { emoji: "⏱️", name: "Cronometro" },
+        { emoji: "💨", name: "Piccolo ventilatore (per il trattamento con vento)" },
+      ],
+      observationsToRecord: [
+        "Velocità di movimento della bolla (mm/min) in aria ferma",
+        "Velocità di movimento della bolla (mm/min) con vento",
+        "Velocità di movimento della bolla (mm/min) in condizioni umide",
+        "Temperatura e umidità relativa approssimativa in ogni condizione",
+      ],
+      theoryPoints: [
+        "La traspirazione è l'evaporazione dell'acqua dalle foglie attraverso gli stomi.",
+        "Gradiente di vapore acqueo: interno della foglia (saturo, ~100% UR) → esterno (UR inferiore) guida la diffusione.",
+        "Il vento rimuove l'aria umida da attorno agli stomi, aumentando il gradiente → traspirazione più veloce.",
+        "L'alta umidità riduce il gradiente → traspirazione più lenta.",
+      ],
+      realWorldConnections: [
+        "Gli alberi sulle colline ventose hanno foglie più piccole e cerose per ridurre la perdita d'acqua per traspirazione.",
+        "I sistemi di irrigazione nelle serre monitorano i tassi di traspirazione per ottimizzare i programmi di irrigazione.",
+        "La teoria della coesione-tensione spiega come l'acqua raggiunge le cime degli alberi alti — la traspirazione tira l'acqua su attraverso i vasi xilematici.",
+      ],
+      formula: "Velocità di traspirazione ∝ (gradiente di concentrazione H₂O) × (area stomatica / resistenza dello strato limite foglia-aria)",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché il vento aumenta la velocità di traspirazione?",
+          options: [
+            "Il vento raffredda le foglie, causando una maggiore evaporazione dell'acqua",
+            "Il vento rimuove l'aria umida da attorno agli stomi, mantenendo un ripido gradiente di concentrazione del vapore acqueo",
+            "Il vento apre gli stomi più ampiamente",
+            "Il vento aumenta l'intensità luminosa, aumentando la fotosintesi e l'uso dell'acqua",
+          ],
+          correctIndex: 1,
+          explanation: "Il vapore acqueo che diffonde fuori dagli stomi normalmente si accumula attorno alla superficie fogliare, riducendo il gradiente di concentrazione. Il vento disperde questo strato umido, ripristinando il ripido gradiente che guida la rapida diffusione (traspirazione).",
+        },
+        {
+          text: "Un potometro misura:",
+          options: [
+            "La velocità di fotosintesi direttamente",
+            "La velocità di assorbimento dell'acqua da parte del rametto (un proxy per la traspirazione)",
+            "La velocità di produzione di ossigeno",
+            "La superficie fogliare",
+          ],
+          correctIndex: 1,
+          explanation: "Un potometro misura quanto velocemente una bolla d'aria si muove lungo un tubo capillare mentre il rametto assorbe acqua per sostituire quella persa per traspirazione. È una misura dell'assorbimento dell'acqua, che approssima strettamente la velocità di traspirazione.",
+        },
+        {
+          text: "Quale fattore causerebbe la MAGGIORE diminuzione della velocità di traspirazione?",
+          options: [
+            "Raddoppiare la concentrazione di CO₂",
+            "Aumentare la temperatura di 5°C",
+            "Aumentare l'umidità relativa dal 50% al 90%",
+            "Raddoppiare l'intensità luminosa",
+          ],
+          correctIndex: 2,
+          explanation: "La traspirazione dipende dal gradiente di concentrazione del vapore acqueo tra l'interno della foglia e l'aria. Aumentare l'umidità dal 50% al 90% riduce notevolmente questo gradiente, rallentando drasticamente la traspirazione. I cambiamenti di luce e temperatura hanno effetti diretti minori.",
+        },
+      ],
+      discussion: [
+        "Spiega, usando la teoria della coesione-tensione, come l'acqua si muove dalle radici alla cima di un albero alto 100 metri guidata dalla traspirazione.",
+        "Gli stomi si aprono durante il giorno e si chiudono di notte. Spiega come questo controlla simultaneamente la perdita d'acqua e l'assorbimento di CO₂.",
+        "I cactus hanno foglie modificate (spine) e svolgono la fotosintesi CAM (stomi aperti di notte). Spiega come questo adattamento riduce la perdita d'acqua rispetto alle normali piante C3.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Meccanismo della traspirazione e gradiente motore", pct: 35 },
+        { label: "Effetto del vento e dell'umidità sulla traspirazione", pct: 30 },
+        { label: "Potometro come misura dell'assorbimento dell'acqua", pct: 20 },
+        { label: "Teoria della coesione-tensione", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che l'acqua sia pompata su dalle radici — la trazione traspiratoria (tensione) è la principale forza motrice per il movimento dell'acqua nello xilema, non la pressione radicale.",
+        "Molti pensano che chiudere gli stomi fermi completamente la traspirazione — una piccola quantità d'acqua evapora comunque attraverso la cuticola (traspirazione cuticolare).",
+      ],
+      hook: "Una grande quercia traspira oltre 150 litri d'acqua al giorno in estate — più di quanto un essere umano beva in 2 mesi! Ogni goccia deve viaggiare dalle radici alle foglie contro la gravità, tirata interamente dall'aspirazione creata dall'evaporazione sulle superfici fogliari. Chimica e fisica che lavorano insieme!",
+      khanLinks: [
+        { title: "Trasporto nelle Piante", url: "https://www.khanacademy.org/science/biology/plant-biology/plant-transport/v/how-plants-transport-water-the-cohesion-tension-theory" },
+        { title: "Ciclo di Calvin", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-calvin-cycle/v/the-calvin-cycle" },
+      ],
+    },
+    dataTable: {
+      headers: ["Condizione", "Distanza Bolla per min (mm)", "Velocità Relativa", "Spiegazione"],
+      rows: 4,
+    },
+    observations: [
+      "Registrare la distanza di movimento della bolla al minuto in ogni condizione",
+      "Annotare temperatura e umidità qualitativa in ogni condizione",
+      "Calcolare le velocità di traspirazione relative rispetto al controllo in aria ferma",
+    ],
+    conclusion: "Classificare le condizioni per velocità di traspirazione e spiegare ogni risultato in termini del gradiente di concentrazione del vapore acqueo. Spiegare come il risultato del potometro si relaziona alla reale perdita d'acqua fogliare.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi misurerai come una pianta beve — e scoprirai perché le foglie in una giornata ventosa perdono acqua molto più velocemente che in una giornata calma!",
+      keywords: {
+        setup: "Taglia il rametto sott'acqua per evitare che l'aria entri nello xilema — anche una piccola bolla d'aria blocca il movimento dell'acqua (embolia). Ritaglia se entra una bolla d'aria. Lascia 5 min di acclimatamento tra le condizioni.",
+        formula: "Velocità di traspirazione ∝ ΔC/Δx = (C_foglia − C_aria)/strato limite. Il vento riduce lo spessore dello strato limite → gradiente più ripido. L'umidità aumenta C_aria → gradiente più piatto.",
+        error: "Errori comuni: bolla d'aria che entra nello xilema (ricominciare), non acclimatare tra le condizioni, e serbatoio del potometro che si svuota (riempire prima di ogni prova).",
+        result: "Risultati tipici: aria ferma ~2 mm/min; vento ~5 mm/min (2,5× più veloce); sacchetto umido ~0,5 mm/min (4× più lento). Effetto temperatura: +5°C può aumentare la velocità ~20%.",
+        real: "I sistemi di irrigazione a goccia agricoli sono calibrati usando modelli di traspirazione basati su temperatura, umidità e vento. Gli agricoltori nelle regioni aride irrigano all'alba (aria fresca, ferma, alta umidità) per minimizzare la perdita evaporativa e massimizzare l'efficienza di assorbimento della pianta.",
+        explain: "L'acqua all'interno di una foglia è vicina al 100% di umidità relativa (aria satura). Fuori dalla foglia, l'aria è più secca. Il vapore acqueo diffonde fuori attraverso gli stomi lungo questo gradiente di concentrazione. Il vento spazza via lo strato d'aria umida appena fuori dagli stomi, mantenendo il gradiente ripido. L'alta umidità esterna significa che il gradiente è piatto — meno forza motrice, meno traspirazione.",
+        hook: "Una singola pianta di girasole traspira oltre 1 litro d'acqua al giorno al picco dell'estate. L'intero contenuto d'acqua dell'atmosfera della foresta amazzonica è in gran parte mantenuto dalla traspirazione degli alberi — letteralmente creano le nuvole che li irrigano. Taglia gli alberi e la pioggia si ferma. La chimica modella il tempo atmosferico.",
+        misconception: "Il potometro misura l'ASSORBIMENTO dell'acqua, non la traspirazione reale. Quasi tutta (>99%) l'acqua assorbita viene traspirata, quindi è un buon proxy. Una piccola frazione va alla fotosintesi e alla crescita cellulare, ma questo è trascurabile in questo esperimento.",
+      },
+      hint: "Se la bolla non si muove, controlla la presenza di aria nello xilema (ritaglia sott'acqua), assicurati che il potometro sia a tenuta stagna e conferma che il serbatoio abbia acqua. L'appassimento fogliare ferma anche la traspirazione — usa un rametto sano e turgido.",
+      expected: "Condizione con vento: velocità della bolla circa doppia rispetto all'aria ferma. Condizione umida: velocità della bolla circa la metà dell'aria ferma. Conferma che il gradiente di umidità guida la traspirazione. Temperatura mantenuta costante per isolare la variabile.",
+    },
+  },
+  {
+    num: 143,
+    title: "Osmosis in Plant Cells",
+    section: "Fisiologia Vegetale",
+    desc: "Students cut potato strips, weigh them, place them in NaCl solutions of 0, 0.25, 0.5, and 1.0 mol/L for 30 minutes, and weigh again to find percentage mass change — determining the solute concentration of potato cells.",
+    setupTime: "10 min",
+    duration: "40 min",
+    summary: {
+      whatTheyLearn: "Students learn that osmosis moves water across a semi-permeable membrane from low to high solute concentration. They determine the solute concentration of potato cells from the point of zero mass change.",
+      instructions: [
+        "Cut 16 potato strips of equal dimensions (approx. 5 cm × 1 cm × 0.5 cm). Weigh 4 strips per concentration.",
+        "Prepare beakers with 0, 0.25, 0.5, and 1.0 mol/L NaCl solutions.",
+        "Place strips in solutions and leave for 30 minutes.",
+        "Remove strips, blot dry with paper towel, and reweigh.",
+        "Calculate percentage mass change for each concentration: % change = (final−initial)/initial × 100.",
+      ],
+      expectedOutcome: "Strips in distilled water gain mass (water enters by osmosis). Strips in 1.0 mol/L lose mass (water leaves). There is one concentration at which mass does not change — this is the solute concentration of potato cells (approximately 0.3–0.4 mol/L for potato).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🥔", name: "Large potato (peeled)" },
+        { emoji: "🧂", name: "NaCl solutions: 0, 0.25, 0.5, 1.0 mol/L" },
+        { emoji: "⚖️", name: "Balance (±0.01 g)" },
+        { emoji: "🔪", name: "Scalpel and cutting board" },
+        { emoji: "📋", name: "Paper towels and forceps" },
+      ],
+      observationsToRecord: [
+        "Initial and final mass of each set of strips",
+        "Percentage mass change at each NaCl concentration",
+        "Physical appearance of strips after treatment (firm/flaccid/turgid)",
+        "NaCl concentration at which mass change = 0",
+      ],
+      theoryPoints: [
+        "Osmosis: net movement of water molecules through a semi-permeable membrane from low solute to high solute concentration.",
+        "If external solution is hypotonic to cells: water enters → cells become turgid → mass increases.",
+        "If external solution is hypertonic to cells: water leaves → cells become flaccid → mass decreases.",
+        "Isotonic point (no mass change) = solute concentration of potato cell contents (~0.3–0.4 mol/L).",
+      ],
+      realWorldConnections: [
+        "Salting vegetables draws out water by osmosis (high salt concentration outside creates hypertonic solution) — used in food preservation.",
+        "Intravenous drip solutions must be isotonic with blood cells (~0.9% NaCl, 0.154 mol/L) to prevent osmotic damage to red blood cells.",
+        "Sports drinks are formulated to be isotonic with body cells to enable rapid absorption.",
+      ],
+      formula: "% mass change = (m_final − m_initial) / m_initial × 100  |  Zero change = isotonic point",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "A potato strip placed in 1.0 mol/L NaCl solution loses mass. What does this indicate?",
+          options: [
+            "The potato cells have a solute concentration greater than 1.0 mol/L",
+            "The external solution is hypertonic — water leaves the cells by osmosis",
+            "The potato is dissolving in the salt solution",
+            "Salt is entering the potato cells",
+          ],
+          correctIndex: 1,
+          explanation: "If the external solution (1.0 mol/L NaCl) is more concentrated than the cell contents, it is hypertonic. Water moves out of the cells by osmosis down the water potential gradient, causing the cells to lose mass and become flaccid.",
+        },
+        {
+          text: "At which NaCl concentration would a potato strip show no change in mass?",
+          options: [
+            "0 mol/L (distilled water)",
+            "0.5 mol/L (if potato cells are approximately 0.5 mol/L)",
+            "The strip always gains mass in any NaCl solution",
+            "1.0 mol/L",
+          ],
+          correctIndex: 1,
+          explanation: "When the external solution is isotonic with the cell contents, there is no net osmosis and the mass stays constant. The actual concentration depends on the potato used (typically 0.3–0.4 mol/L for standard potato).",
+        },
+        {
+          text: "Why must strips be blotted dry before weighing?",
+          options: [
+            "To stop osmosis from continuing",
+            "To remove surface water that would add to the measured mass but is not part of the cell contents",
+            "To clean the salt off the surface",
+            "Blotting is not necessary",
+          ],
+          correctIndex: 1,
+          explanation: "Surface water from the solution clings to the strip and would be measured as part of the mass, giving a false reading. Blotting removes this surface water so only the mass of the potato tissue itself is measured.",
+        },
+      ],
+      discussion: [
+        "Explain why a strip in distilled water becomes turgid and firm while one in concentrated NaCl becomes flaccid and soft, using water potential concepts.",
+        "In a red blood cell experiment, the cells burst in distilled water and shrink in concentrated NaCl. Explain these observations and state why the isotonic point for blood is 0.9% NaCl.",
+        "A student forgets to blot one set of strips dry before weighing. Predict whether this would cause the % mass change to be overestimated or underestimated, and explain.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Osmosis mechanism and semi-permeable membranes", pct: 35 },
+        { label: "Isotonic, hypertonic, hypotonic solutions", pct: 30 },
+        { label: "Percentage mass change calculation", pct: 25 },
+        { label: "Medical and food science applications", pct: 10 },
+      ],
+      misconceptions: [
+        "Students often say \"salt moves in\" rather than \"water moves out\" — osmosis is always described in terms of water movement, not solute movement.",
+        "Many think the cell membrane is completely impermeable to everything — it allows water to pass freely but restricts most solutes.",
+      ],
+      hook: "Hospital IV bags must be precisely isotonic with blood — if they were pure water, every red blood cell would burst within seconds (haemolysis). If they were too concentrated, the blood cells would shrink and become non-functional. A tiny chemistry error in an IV bag can be fatal. Osmosis keeps you alive!",
+      khanLinks: [
+        { title: "Osmosis", url: "https://www.khanacademy.org/science/biology/membranes-and-transport/osmosis/v/osmosis" },
+        { title: "Introduction to Enzymes", url: "https://www.khanacademy.org/science/biology/energy-and-enzymes/introduction-to-enzymes/v/introduction-to-enzymes" },
+      ],
+    },
+    dataTable: {
+      headers: ["NaCl Concentration (mol/L)", "Initial Mass (g)", "Final Mass (g)", "Mass Change (g)", "% Mass Change"],
+      rows: 5,
+    },
+    observations: [
+      "Record initial and final mass for strips at each NaCl concentration",
+      "Calculate percentage mass change for each concentration",
+      "Plot % mass change vs NaCl concentration and identify the isotonic point",
+    ],
+    conclusion: "Plot % mass change vs concentration and draw a line of best fit. Read off the NaCl concentration at which % change = 0 — this is the solute concentration of potato cells. Explain the results for hypotonic and hypertonic solutions.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. Today you'll find out how concentrated potato cells really are — by using osmosis to weigh what's inside them, without cutting them open!",
+      keywords: {
+        setup: "Cut all strips from the same potato to minimise variation. Use a sharp scalpel and template for identical dimensions. Weigh each strip individually before and after. Blot strips for equal time (5 s).",
+        formula: "% mass change = (m_f − m_i)/m_i × 100. Plot this vs [NaCl]. Isotonic point (% change = 0) gives cell solute concentration. For potato: typically 0.3–0.4 mol/L NaCl.",
+        error: "Common errors: unequal blotting time, strips of different sizes, and leaving strips in solution for different times. Use a timer to remove all strips simultaneously.",
+        result: "Typical results: 0 mol/L: +8–12% (water gains). 0.25 mol/L: +2–5%. 0.5 mol/L: −2 to −5%. 1.0 mol/L: −10 to −15%. Isotonic point ≈ 0.3–0.4 mol/L.",
+        real: "Crisps (chips) are made by frying thin potato slices in oil. The frying removes almost all water (osmosis through heat and evaporation). A raw potato is ~80% water; a crisp is <5% water. Same chemistry, different scale.",
+        explain: "Potato cells contain a solution of sugars, salts, and other molecules inside a vacuole surrounded by a semi-permeable cell membrane. Water molecules pass freely through this membrane, moving from the more dilute side to the more concentrated side (net movement down water potential gradient). In distilled water (no solutes), water rushes in; in concentrated salt (high solutes), water rushes out.",
+        hook: "Ancient Egyptians preserved fish and meat by packing them in salt — the high salt concentration draws water out of bacteria by osmosis, killing them and preserving the food. Modern food preservation (curing, brining, pickling) still uses this 4,000-year-old chemistry!",
+        misconception: "Osmosis is passive — it does not require energy from the cell. Water moves spontaneously down its water potential gradient (from low solute to high solute). Active transport of solutes requires energy, but osmosis itself does not.",
+      },
+      hint: "If all strips show mass gain, your NaCl solutions may be too dilute. Make fresh solutions carefully. If all strips lose mass, check whether your \"distilled water\" was accidentally mixed with salt.",
+      expected: "% mass change clearly positive in distilled water, zero at ~0.3–0.4 mol/L, negative at 1.0 mol/L. Good straight-line fit through the data points. Isotonic point identifiable from graph.",
+    },
+  },
+  {
+    num: 144,
+    title: "Cromatografia dei Pigmenti Fogliari",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti triturano foglie in acetone, applicano l'estratto su carta da cromatografia, sviluppano con solvente etere di petrolio:acetone e identificano clorofilla a/b e carotenoidi tramite i loro valori Rf e colori.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che le foglie contengono molteplici pigmenti fotosintetici — clorofilla a, clorofilla b, xantofilla e β-carotene — che si separano per cromatografia grazie alle loro diverse polarità.",
+      instructions: [
+        "Triturare foglie fresche in un mortaio con una piccola quantità di acetone per estrarre i pigmenti.",
+        "Applicare una macchia concentrata di estratto sulla linea di base della carta da cromatografia usando un tubo capillare. Asciugare tra le applicazioni (ripetere 10 volte).",
+        "Posizionare la carta nella vaschetta cromatografica contenente etere di petrolio:acetone (9:1).",
+        "Lasciare che il solvente salga fino a 1 cm dalla sommità della carta, poi rimuovere e segnare il fronte del solvente.",
+        "Calcolare l'Rf per ogni banda e identificare i pigmenti in base al colore e al valore Rf.",
+      ],
+      expectedOutcome: "Da quattro a cinque bande visibili dal basso verso l'alto: giallo/arancione (xantofille, Rf ≈ 0,3), verde-giallo brillante (clorofilla b, Rf ≈ 0,45), verde-blu (clorofilla a, Rf ≈ 0,65) e arancione brillante (β-carotene, Rf ≈ 0,95).",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🌿", name: "Foglie fresche (spinaci, ortica o qualsiasi foglia verde scuro)" },
+        { emoji: "🧪", name: "Acetone (per l'estrazione)" },
+        { emoji: "📋", name: "Strisce di carta da cromatografia" },
+        { emoji: "⚗️", name: "Vaschetta cromatografica con etere di petrolio:acetone (9:1)" },
+        { emoji: "📏", name: "Righello (per misurare i valori Rf)" },
+      ],
+      observationsToRecord: [
+        "Numero e colori delle bande di pigmento",
+        "Distanza dalla linea di base a ogni banda (cm)",
+        "Distanza dalla linea di base al fronte del solvente (cm)",
+        "Valore Rf calcolato per ogni banda",
+      ],
+      theoryPoints: [
+        "Rf = distanza percorsa dal pigmento / distanza percorsa dal fronte del solvente.",
+        "I pigmenti non polari (β-carotene) si spostano di più nel solvente non polare.",
+        "I pigmenti più polari (clorofilla b, xantofille) sono trattenuti maggiormente dalla carta polare → Rf più basso.",
+        "La separazione dipende dall'affinità relativa di ogni pigmento per la fase mobile (solvente) rispetto alla fase stazionaria (carta).",
+      ],
+      realWorldConnections: [
+        "I pigmenti vegetali assorbono diverse lunghezze d'onda — più pigmenti ampliano la gamma di luce che può alimentare la fotosintesi.",
+        "I colori autunnali delle foglie si manifestano quando le clorofille si degradano, rivelando i carotenoidi arancioni e gialli che erano sempre presenti.",
+        "La cromatografia viene usata nei test alimentari per rilevare additivi coloranti artificiali nei prodotti — lo stesso principio dell'Rf.",
+      ],
+      formula: "Rf = distanza percorsa dalla macchia / distanza percorsa dal fronte del solvente",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché il β-carotene si sposta di più nel solvente etere di petrolio:acetone?",
+          options: [
+            "Il β-carotene è la molecola più piccola",
+            "Il β-carotene è non polare e ha la maggiore affinità per il solvente non polare",
+            "Il β-carotene è il pigmento più solubile in acqua",
+            "Il β-carotene ha la massa molecolare più alta",
+          ],
+          correctIndex: 1,
+          explanation: "La cromatografia separa i composti in base alle loro affinità relative per le fasi mobile e stazionaria. Il β-carotene è altamente non polare e preferisce il solvente non polare (etere di petrolio), quindi viene trasportato con il fronte del solvente, dando l'Rf più alto.",
+        },
+        {
+          text: "Una macchia di pigmento si sposta di 4,0 cm e il fronte del solvente si sposta di 6,0 cm. Qual è il valore Rf?",
+          options: ["0,40", "0,50", "0,67", "1,50"],
+          correctIndex: 2,
+          explanation: "Rf = distanza percorsa dal pigmento / distanza percorsa dal solvente = 4,0/6,0 = 0,67.",
+        },
+        {
+          text: "Perché la presenza di più pigmenti fogliari è vantaggiosa per una pianta?",
+          options: [
+            "I diversi pigmenti creano il colore verde",
+            "I diversi pigmenti assorbono diverse lunghezze d'onda della luce, permettendo la fotosintesi su uno spettro più ampio",
+            "Più pigmenti rendono la foglia più rigida",
+            "I carotenoidi proteggono la clorofilla solo dalla luce UV",
+          ],
+          correctIndex: 1,
+          explanation: "I diversi pigmenti hanno spettri di assorbimento differenti. La clorofilla a assorbe rosso e blu; la clorofilla b assorbe blu; i carotenoidi assorbono blu e verde. Insieme, catturano una gamma più ampia di lunghezze d'onda, aumentando l'efficienza fotosintetica.",
+        },
+      ],
+      discussion: [
+        "Spiega perché le foglie appaiono verdi — quali lunghezze d'onda vengono assorbite e quali vengono riflesse?",
+        "Perché le foglie diventano arancioni e gialle in autunno? Metti in relazione il cambiamento di colore con i pigmenti separati in questo esperimento.",
+        "Alcune alghe di acque profonde contengono pigmenti rossi e marroni invece delle clorofille verdi. Spiega questo adattamento usando le tue conoscenze sull'assorbimento della luce in profondità.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Calcolo dell'Rf e principio della cromatografia", pct: 35 },
+        { label: "Identità dei pigmenti fogliari e loro colori", pct: 30 },
+        { label: "Polarità e meccanismo di separazione", pct: 25 },
+        { label: "Ruolo ecologico dei molteplici pigmenti", pct: 10 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che le foglie contengano solo clorofilla — contengono molteplici pigmenti; le clorofille sono solo dominanti e mascherano gli altri.",
+        "Molti pensano che i valori Rf siano costanti universali — dipendono dal sistema di solventi usato. L'Rf deve sempre essere indicato con la composizione del solvente.",
+      ],
+      hook: "Ogni autunno, la chimica rivela ciò che era nascosto per tutta l'estate. I brillanti arancioni e rossi delle foglie autunnali sono carotenoidi che erano sempre presenti — solo mascherati dall'abbondante clorofilla verde. Quando le giornate si accorciano, la clorofilla si degrada e gli altri pigmenti diventano finalmente visibili. Oggi stai separando quegli stessi pigmenti nascosti!",
+      khanLinks: [
+        { title: "Panoramica sulla Fotosintesi", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/introduction-to-stages-of-photosynthesis/v/intro-to-photosynthesis" },
+        { title: "Risposte delle Piante alla Luce", url: "https://www.khanacademy.org/science/biology/plant-biology/photoperiodism/v/plant-responses-to-light" },
+      ],
+    },
+    dataTable: {
+      headers: ["Colore della Banda", "Distanza dalla Linea di Base (cm)", "Fronte del Solvente (cm)", "Valore Rf", "Identità del Pigmento"],
+      rows: 5,
+    },
+    observations: [
+      "Registra il colore e la posizione di ogni banda di pigmento",
+      "Misura la distanza di ogni banda e del fronte del solvente dalla linea di base",
+      "Calcola l'Rf per ogni banda e confronta con i valori noti",
+    ],
+    conclusion: "Calcola i valori Rf per tutte le bande e identifica ogni pigmento. Spiega perché i pigmenti si separano in base alla polarità. Indica la funzione di ogni pigmento nella fotosintesi.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi scoprirai che una foglia verde non è di un solo colore — contiene un intero arcobaleno nascosto di pigmenti che separerai e rivelerai con la chimica!",
+      keywords: {
+        setup: "Usa foglie fresche, verde scuro per la migliore concentrazione di pigmenti. Applica la macchia di estratto in molti strati sottili (10+ applicazioni), asciugando tra ogni applicazione. Mantieni il diametro della macchia sotto i 5 mm. Assicurati che il livello del solvente nella vaschetta sia sotto la linea di base.",
+        formula: "Rf = d(macchia)/d(fronte). Valori tipici in etere di petrolio:acetone 9:1: β-carotene ~0,95, clorofilla a ~0,65, clorofilla b ~0,45, xantofille ~0,3.",
+        error: "Errori comuni: applicare un estratto troppo diluito (bande invisibili), solvente che tocca la macchia prima dello sviluppo (la macchia si dissolve), e lasciare che il solvente scorra oltre la sommità della carta.",
+        result: "Quattro bande dall'alto verso il basso: β-carotene arancione (Rf ≈ 0,95), clorofilla a verde-blu (Rf ≈ 0,65), clorofilla b giallo-verde (Rf ≈ 0,45), xantofille gialle (Rf ≈ 0,3). Valori Rf riproducibili ±0,05.",
+        real: "I produttori alimentari testano la presenza di coloranti artificiali illegali usando la cromatografia su carta — stessa tecnica, stesso principio dell'Rf. Gli ispettori britannici degli standard commerciali testano prodotti come lo zafferano per coloranti non dichiarati usando l'HPLC (cromatografia liquida ad alte prestazioni — la versione evoluta del tuo esperimento).",
+        explain: "Nella cromatografia, ogni molecola affronta un tiro alla fune tra il solvente in movimento (fase mobile) e la carta stazionaria (fase stazionaria). Le molecole non polari come il β-carotene preferiscono dissolversi nel solvente non polare e vengono trasportate velocemente. Le molecole polari come le xantofille preferiscono aderire alla carta polare e si muovono lentamente. Polarità diverse → valori Rf diversi → separazione visibile.",
+        hook: "Il botanico russo Mikhail Tsvet nel 1906 inventò la cromatografia specificamente per separare i pigmenti fogliari — chiamò la tecnica dal greco 'chroma' (colore) e 'graphein' (scrivere). La sua tecnica di separare bande colorate era così bella che la chiamò scrittura del colore. Oltre 100 anni dopo, stai facendo esattamente lo stesso esperimento.",
+        misconception: "L'Rf non è la distanza assoluta percorsa da un pigmento — è il RAPPORTO tra il movimento del pigmento e il movimento del solvente. Questo rende l'Rf riproducibile indipendentemente da quanto lontano viaggia il solvente, purché si usi lo stesso sistema di solventi.",
+      },
+      hint: "Se le bande sono deboli o mancanti, prova a triturare le foglie più accuratamente nell'acetone e ad applicare 15 strati invece di 10. Conservare l'estratto in ghiaccio prima dell'applicazione aiuta anche a preservare le clorofille instabili.",
+      expected: "Quattro bande visibili con valori Rf tipici. β-carotene (arancione, Rf più alto), clorofilla a (verde-blu), clorofilla b (giallo-verde), xantofille (giallo, più basso). Valori Rf entro ±0,05 dai valori standard.",
+    },
+  },
+  {
+    num: 145,
+    title: "Attività dell'Enzima Amilasi",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti mescolano soluzione di amido con amilasi salivare a 20°C, 37°C e 60°C, testando con soluzione di iodio ogni minuto fino alla scomparsa del colore blu-nero, per trovare la temperatura ottimale per l'attività dell'amilasi.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che gli enzimi hanno una temperatura ottimale per l'attività, che si denaturano ad alte temperature, e che la velocità di reazione può essere misurata dal tempo necessario per consumare un substrato.",
+      instructions: [
+        "Preparare una piastra a pozzetti con soluzione di iodio in ogni pozzetto.",
+        "Mescolare soluzione di amido (1%) e saliva diluita (1:10) pre-equilibrate a 20°C. Trasferire una goccia sulla piastra a pozzetti ogni minuto e controllare il colore blu-nero.",
+        "Registrare il tempo fino a quando non si produce più colore blu-nero (amido completamente digerito).",
+        "Ripetere a 37°C e 60°C usando soluzioni pre-equilibrate.",
+        "Tracciare un grafico tempo di scomparsa dell'amido vs temperatura e determinare la temperatura ottimale.",
+      ],
+      expectedOutcome: "Digestione dell'amido più veloce a circa 37°C (temperatura corporea). Molto più lenta a 20°C. A 60°C, l'enzima è parzialmente denaturato e l'attività è ridotta o assente.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧪", name: "Soluzione di amido (1%)" },
+        { emoji: "💧", name: "Saliva diluita (1:10 in acqua distillata)" },
+        { emoji: "💊", name: "Soluzione di iodio (ioduro di potassio + iodio)" },
+        { emoji: "📋", name: "Piastra a pozzetti (porcellana)" },
+        { emoji: "🌡️", name: "Bagnomaria a 20°C, 37°C, 60°C" },
+      ],
+      observationsToRecord: [
+        "Tempo per la scomparsa del colore blu-nero a ogni temperatura (min)",
+        "Velocità di reazione = 1/tempo a ogni temperatura (min⁻¹)",
+        "Presenza o assenza di attività a 60°C",
+        "Progressione del cambiamento di colore sulla piastra a pozzetti nel tempo",
+      ],
+      theoryPoints: [
+        "L'amilasi catalizza: amido + H₂O → maltosio (idrolisi catalizzata da enzimi).",
+        "Temperatura più alta → più energia cinetica → più collisioni enzima-substrato → velocità maggiore.",
+        "Sopra la temperatura ottimale (~55°C per l'amilasi salivare), l'enzima si denatura (perde la struttura 3D).",
+        "Test dello iodio: il complesso iodio-amido è blu-nero; incolore o arancione quando l'amido è assente.",
+      ],
+      realWorldConnections: [
+        "L'amilasi salivare inizia la digestione dell'amido in bocca — parte del motivo per cui il pane ha un sapore dolce se lo mastichi a lungo.",
+        "Le amilasi industriali sono usate nell'industria della birra per convertire l'amido dell'orzo in maltosio per la fermentazione.",
+        "I detersivi biologici contengono enzimi proteasi e lipasi ottimizzati per 30–40°C per rimuovere le macchie senza acqua calda.",
+      ],
+      formula: "Amido + H₂O → maltosio  [catalizzato da enzimi; temperatura ottimale ~37°C per l'amilasi salivare]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché l'attività dell'amilasi è massima a circa 37°C?",
+          options: [
+            "Le molecole si muovono più velocemente a 37°C e non si denaturano mai",
+            "A 37°C l'enzima ha la massima energia cinetica senza denaturarsi — questa è la sua temperatura ottimale",
+            "37°C è la temperatura più alta possibile in un bagnomaria",
+            "L'amilasi funziona solo nella saliva umana a 37°C",
+          ],
+          correctIndex: 1,
+          explanation: "Fino alla temperatura ottimale (~37°C per l'amilasi salivare), l'aumento della temperatura aumenta la velocità di reazione. Al di sopra, l'energia termica rompe i legami idrogeno e altre interazioni che mantengono la struttura 3D dell'enzima, denaturandolo e riducendo/arrestando l'attività.",
+        },
+        {
+          text: "Cosa succede quando l'amilasi viene riscaldata a 80°C e poi raffreddata a 37°C?",
+          options: [
+            "Riacquista piena attività quando viene raffreddata",
+            "Rimane denaturata e inattiva — la denaturazione è irreversibile",
+            "Funziona ancora più velocemente perché è stata riscaldata",
+            "Si converte in una forma più attiva",
+          ],
+          correctIndex: 1,
+          explanation: "La denaturazione dell'amilasi (e della maggior parte degli enzimi) è irreversibile. La struttura terziaria della proteina viene permanentemente alterata ad alte temperature. Il raffreddamento non ripristina la geometria originale del sito attivo.",
+        },
+        {
+          text: "La soluzione di iodio diventa blu-nero in presenza di amido perché:",
+          options: [
+            "L'amido è un pigmento blu",
+            "Lo iodio reagisce con l'amido per formare un complesso amido-iodio blu-nero",
+            "Lo iodio si dissolve nelle molecole di amido",
+            "L'amido è basico e lo iodio è acido",
+          ],
+          correctIndex: 1,
+          explanation: "Le molecole di iodio (I₂) rimangono intrappolate nelle spirali elicoidali dell'amilosio (un componente dell'amido), formando un complesso a trasferimento di carica che assorbe la luce nella gamma rosso/arancione, dando il caratteristico colore blu-nero.",
+        },
+      ],
+      discussion: [
+        "Disegna un grafico dell'attività enzimatica vs temperatura per l'amilasi salivare e spiega la forma della curva su ogni lato dell'ottimo.",
+        "Spiega perché gli enzimi dei detersivi biologici devono funzionare efficacemente a 30–40°C ma sarebbero inutili se usati con acqua bollente.",
+        "Uno studente usa amilasi da un batterio termofilo trovato in sorgenti calde. Prevedi come differirebbe il grafico attività vs temperatura e spiega perché.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Effetto della temperatura sull'attività enzimatica", pct: 35 },
+        { label: "Denaturazione degli enzimi ad alte temperature", pct: 30 },
+        { label: "Test dello iodio per l'amido", pct: 20 },
+        { label: "Applicazioni industriali degli enzimi", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che gli enzimi vengano 'uccisi' dal calore — vengono denaturati (la loro forma viene irreversibilmente alterata). L'enzima è ancora presente come polipeptide, solo non funzionale.",
+        "Molti pensano che una temperatura più alta significhi sempre un'attività enzimatica più veloce — sopra l'ottimo, la denaturazione compensa più che ampiamente l'aumento di energia cinetica.",
+      ],
+      hook: "Masticare il pane per 30–60 secondi lo fa diventare dolce — l'amilasi salivare ha già trasformato parte dell'amido in maltosio dolce nella tua bocca. Stai facendo questo esperimento ogni volta che mangi un panino! Oggi lo rendi solo visibile con lo iodio.",
+      khanLinks: [
+        { title: "Attività Enzimatica", url: "https://www.khanacademy.org/science/biology/energy-and-enzymes/enzyme-regulation/v/enzyme-activity" },
+        { title: "Introduzione alla Respirazione Cellulare", url: "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/intro-to-cellular-respiration/v/introduction-to-cellular-respiration" },
+      ],
+    },
+    dataTable: {
+      headers: ["Temperatura (°C)", "Tempo di Scomparsa dell'Amido (min)", "Velocità = 1/Tempo (min⁻¹)", "Osservazione"],
+      rows: 4,
+    },
+    observations: [
+      "Registra il tempo necessario affinché il test dello iodio blu-nero diventi negativo a ogni temperatura",
+      "Calcola la velocità come 1/tempo per ogni temperatura",
+      "Descrivi eventuali differenze nell'aspetto del colore dello iodio nel tempo",
+    ],
+    conclusion: "Traccia un grafico velocità vs temperatura e identifica la temperatura ottimale per l'amilasi salivare. Spiega la forma del grafico su ogni lato dell'ottimo usando la teoria cinetica e la denaturazione degli enzimi.",
+    ai: {
+      opening: "Ciao! Sono Gali, la tua assistente di laboratorio. Oggi troverai la temperatura perfetta per un enzima del tuo stesso corpo — lo stesso enzima che digerisce la tua colazione ogni mattina!",
+      keywords: {
+        setup: "Equilibra SEPARATAMENTE sia l'amido che l'amilasi nel bagnomaria per 5 minuti prima di mescolarli. Testa una goccia di iodio con l'amido prima di iniziare per confermare il colore blu-nero. Riempi preventivamente tutti i pozzetti della piastra con iodio.",
+        formula: "Velocità = 1/t (dove t = tempo per la scomparsa dell'amido). T ottimale per l'amilasi salivare ≈ 37°C. La velocità aumenta con T fino all'ottimo; la denaturazione sopra l'ottimo riduce la velocità.",
+        error: "Errori comuni: non pre-equilibrare le soluzioni alla temperatura del bagno prima di mescolare, testare lo iodio troppo raramente (mancando il punto finale) e usare saliva vecchia e stantia (attività enzimatica inferiore).",
+        result: "Risultati tipici: 20°C: ~8–10 min. 37°C: ~2–4 min (più veloce). 60°C: >15 min o nessuna scomparsa (denaturato). Velocità a 37°C circa 3–5× più veloce che a 20°C.",
+        real: "I detersivi biologici (es. Persil Bio) contengono lipasi e proteasi ingegnerizzate per funzionare a 30–40°C. Nel 2020, gli scienziati hanno sviluppato un enzima che digerisce il PET (PETasi) da un batterio trovato in un impianto di riciclaggio della plastica giapponese — lo stesso approccio (ottimizzazione degli enzimi) usato per sviluppare enzimi per detersivi migliori.",
+        explain: "All'aumentare della temperatura, le molecole di enzima e substrato si muovono più velocemente e collidono più spesso. Più collisioni → più reazioni riuscite al secondo → velocità maggiore. Ma gli enzimi sono proteine la cui funzione dipende dalla loro esatta forma 3D. Oltre l'ottimo, il calore rompe i deboli legami idrogeno e le forze di van der Waals che mantengono questa forma. Il sito attivo si distorce e non si adatta più al substrato — l'enzima è denaturato.",
+        hook: "Nel 1833, Anselme Payen scoprì la diastasi (ora chiamata amilasi) — il primo enzima mai isolato da materiale vivente. Notò che una sostanza nell'estratto di malto degradava l'amido molto più velocemente di qualsiasi sostanza chimica conoscesse. Aveva scoperto la catalisi biologica prima che qualcuno sapesse cosa fossero le proteine o il DNA. L'amilasi fu la porta d'accesso a tutta l'enzimologia!",
+        misconception: "L'amilasi salivare smette di funzionare nello stomaco — non a causa della temperatura (anche il tuo stomaco è a 37°C) ma perché l'acido gastrico (pH 2) la denatura. Enzimi diversi hanno pH ottimali diversi. L'amilasi funziona meglio a pH 7; la pepsina gastrica funziona meglio a pH 2.",
+      },
+      hint: "Se l'amido non scompare nemmeno a 37°C dopo 10 minuti, la tua amilasi potrebbe essere troppo diluita. Usa meno acqua nella diluizione (prova 1:5 invece di 1:10). La saliva appena raccolta dà risultati migliori.",
+      expected: "Scomparsa più veloce a 37°C (~2–4 min). Più lenta a 20°C (~8 min). Scomparsa minima o nulla a 60°C (denaturato). Il grafico velocità vs temperatura ha un picco a 37°C e scende bruscamente al di sopra.",
+    },
+  },
+  {
+    num: 146,
+    title: "Respirazione Anaerobica nel Lievito",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti mescolano lievito con soluzione di glucosio a diverse temperature, usano acqua di calce o sensori di CO₂ per catturare la produzione di CO₂ e misurano la velocità di fermentazione per 20 minuti.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che il lievito fermenta il glucosio in modo anaerobico producendo etanolo e CO₂, e che la velocità di fermentazione raggiunge il picco intorno ai 35–40°C prima di diminuire quando le cellule del lievito vengono danneggiate.",
+      instructions: [
+        "Preparare una soluzione di glucosio (10%) e una sospensione di lievito (5 g di lievito in 50 mL di acqua tiepida).",
+        "Preparare i palloni a 20°C, 35°C e 50°C in bagnomaria. Aggiungere 20 mL di glucosio + 5 mL di lievito a ciascun pallone.",
+        "Collegare ogni pallone tramite un tubo di raccordo a una provetta contenente acqua di calce.",
+        "Contare le bolle di CO₂ che passano attraverso l'acqua di calce al minuto (o misurare il volume di CO₂) ogni 2 minuti per 20 minuti.",
+        "Confrontare le velocità a ciascuna temperatura e correlarle all'optimum enzimatico.",
+      ],
+      expectedOutcome: "La velocità di fermentazione è massima a circa 35°C. Molto lenta a 20°C. L'acqua di calce diventa lattiginosa a tutte le temperature tranne possibilmente a 50°C se gli enzimi del lievito sono danneggiati. Odore di etanolo rilevabile nel pallone a 35°C.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🍞", name: "Lievito secco (5 g per pallone)" },
+        { emoji: "🍬", name: "Soluzione di glucosio (10%), 20 mL per pallone" },
+        { emoji: "⚗️", name: "Palloni conici con tappi e tubi di raccordo" },
+        { emoji: "💧", name: "Acqua di calce in provette" },
+        { emoji: "🌡️", name: "Bagnomaria a 20°C, 35°C, 50°C" },
+      ],
+      observationsToRecord: [
+        "Velocità delle bolle di CO₂ attraverso l'acqua di calce (bolle/min) ogni 2 min",
+        "Torbidità dell'acqua di calce dopo 20 minuti a ciascuna temperatura",
+        "Eventuale odore di etanolo dai palloni (specialmente a 35°C)",
+        "CO₂ totale prodotta dopo 20 minuti a ciascuna temperatura",
+      ],
+      theoryPoints: [
+        "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ (fermentazione anaerobica del lievito).",
+        "La fermentazione è catalizzata dagli enzimi del lievito (complesso zimasi) con un optimum di ~35°C.",
+        "A bassa T: attività enzimatica bassa, molecole lente → fermentazione lenta.",
+        "Ad alta T (>45°C): gli enzimi del lievito si denaturano → la velocità di fermentazione diminuisce.",
+      ],
+      realWorldConnections: [
+        "La panificazione utilizza la fermentazione del lievito — le bolle di CO₂ fanno lievitare l'impasto; la cottura uccide il lievito e fissa il pane.",
+        "La produzione di vino e birra sfrutta la fermentazione a temperature controllate (tipicamente 20–25°C per i lieviti da ale).",
+        "Il bioetanolo combustibile è prodotto fermentando zuccheri da colture — la stessa chimica su scala industriale.",
+      ],
+      formula: "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂  [fermentazione; optimum ~35°C]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Quali sono i due prodotti della fermentazione anaerobica del glucosio da parte del lievito?",
+          options: [
+            "CO₂ e acqua",
+            "Etanolo e CO₂",
+            "Acido lattico e acqua",
+            "Etanolo e ossigeno",
+          ],
+          correctIndex: 1,
+          explanation: "Fermentazione del lievito (fermentazione alcolica): C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂. È anaerobica — non serve O₂. La fermentazione lattica (nelle cellule muscolari) produce acido lattico, non etanolo.",
+        },
+        {
+          text: "Perché la fermentazione rallenta a 50°C?",
+          options: [
+            "Tutto il glucosio è stato consumato",
+            "La CO₂ si accumula e inibisce la reazione",
+            "Gli enzimi del lievito si denaturano ad alte temperature, riducendo l'attività catalitica",
+            "La concentrazione di etanolo diventa tossica per il lievito",
+          ],
+          correctIndex: 2,
+          explanation: "Gli enzimi (complesso zimasi) che catalizzano la fermentazione sono proteine. A 50°C, l'energia termica denatura questi enzimi, distorcendo permanentemente i loro siti attivi. Meno enzimi funzionali significa minor velocità di fermentazione.",
+        },
+        {
+          text: "Come conferma la produzione di CO₂ che la fermentazione sta avvenendo?",
+          options: [
+            "La CO₂ è prodotta durante la fotosintesi e conferma che lo zucchero viene sintetizzato",
+            "La CO₂ è un prodotto della fermentazione e rende l'acqua di calce lattiginosa — confermando che la reazione sta procedendo",
+            "La CO₂ converte l'etanolo in acido lattico",
+            "La CO₂ è prodotta solo nella respirazione aerobica",
+          ],
+          correctIndex: 1,
+          explanation: "La CO₂ è prodotta nell'equazione della fermentazione (C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂). Quando questa CO₂ viene fatta gorgogliare attraverso l'acqua di calce, reagisce formando CaCO₃, rendendo la soluzione lattiginosa — confermando che la fermentazione sta avvenendo.",
+        },
+      ],
+      discussion: [
+        "Spiega perché il pane lievita durante la lievitazione (prima della cottura) e poi si fissa durante la cottura, usando la chimica della fermentazione del lievito.",
+        "Confronta la respirazione aerobica e anaerobica nel lievito: quale produce più ATP per molecola di glucosio, e quali sono le condizioni per ciascuna?",
+        "Il vino si 'guasta' (diventa aceto) se lasciato aperto all'aria. Spiega la chimica: cosa permette l'ossigeno e quale prodotto si forma?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Equazione della fermentazione e prodotti", pct: 35 },
+        { label: "Effetto della temperatura sulla velocità di fermentazione", pct: 30 },
+        { label: "Rilevamento della CO₂ con acqua di calce", pct: 20 },
+        { label: "Applicazioni industriali della fermentazione", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che la fermentazione avvenga solo nella produzione di alcol — la fermentazione avviene nella panificazione, yogurt, kombucha e molti altri prodotti alimentari.",
+        "Molti confondono la respirazione aerobica (produce CO₂ + acqua) con la fermentazione (produce CO₂ + etanolo). Entrambe producono CO₂ ma l'altro prodotto e le condizioni sono diverse.",
+      ],
+      hook: "La birra viene prodotta per fermentazione da oltre 7.000 anni — gli antichi Sumeri avevano oltre 20 parole per diversi tipi di birra e la producevano con ceppi di lievito tramandati per generazioni. La chimica della fermentazione ha plasmato la civiltà umana prima che qualcuno sapesse cosa fosse una reazione chimica!",
+      khanLinks: [
+        { title: "Fasi della Respirazione Aerobica", url: "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/aerobic-respiration/v/steps-of-cellular-respiration" },
+        { title: "Fermentazione", url: "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/fermentation/v/fermentation" },
+      ],
+    },
+    dataTable: {
+      headers: ["Tempo (min)", "Bolle/min a 20°C", "Bolle/min a 35°C", "Bolle/min a 50°C"],
+      rows: 6,
+    },
+    observations: [
+      "Registrare la velocità delle bolle di CO₂ ogni 2 minuti per ciascuna temperatura",
+      "Registrare la torbidità dell'acqua di calce dopo 20 minuti",
+      "Annotare eventuali odori di etanolo dal pallone a 35°C",
+    ],
+    conclusion: "Tracciare il grafico velocità di CO₂ vs tempo per tutte e tre le temperature. Confrontare le velocità e identificare la temperatura ottimale. Spiegare la diminuzione della velocità a 50°C in termini di denaturazione enzimatica.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi stai eseguendo la stessa chimica che fa lievitare il pane, fermentare il vino e gorgogliare la birra — e troverai la temperatura perfetta che rende il lievito più felice!",
+      keywords: {
+        setup: "Pre-riscaldare il lievito in acqua a 35°C per 10 minuti prima dell'uso — questo attiva il lievito. Usare lievito secco fresco (non scaduto). Assicurarsi che il tappo e il tubo di raccordo siano ermetici prima di avviare il cronometro.",
+        formula: "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂. M(glucosio) = 180. Ogni mole di glucosio produce 2 mol di CO₂ e 2 mol di etanolo. T ottimale per gli enzimi del lievito ≈ 35°C.",
+        error: "Errori comuni: aria nel sistema prima di iniziare (dà un conteggio iniziale di bolle falso), lievito non miscelato correttamente con il glucosio, e non equilibrare il lievito alla temperatura del bagno prima di iniziare.",
+        result: "Risultati tipici: 20°C: 1–3 bolle/min. 35°C: 10–20 bolle/min. 50°C: esplosione iniziale poi rallentamento a 0–5 bolle/min dopo 10 min (enzimi che si denaturano). Acqua di calce lattiginosa a 35°C.",
+        real: "Il lievito da panificazione è costituito da ceppi di Saccharomyces cerevisiae ottimizzati per millenni per prestazioni costanti a 25–35°C. I panifici commerciali usano cicli di lievitazione temporizzati e a temperatura controllata basati esattamente su questa scienza.",
+        explain: "Il glucosio entra nella cellula del lievito e viene scomposto dagli enzimi nel citoplasma (glicolisi e poi fermentazione) senza bisogno di ossigeno. La CO₂ prodotta gonfia l'impasto del pane (intrappolata nel glutine) e l'etanolo evapora durante la cottura. Temperature più alte fanno lavorare gli enzimi più velocemente — fino al punto in cui il calore rompe la struttura dell'enzima.",
+        hook: "Louis Pasteur dimostrò nel 1857 che la fermentazione è causata da microrganismi viventi (lievito) — non dalla 'forza vitale' degli ingredienti grezzi, come molti chimici credevano. Il suo esperimento consisteva nel far bollire il succo d'uva (uccidendo il lievito) e mostrare che NON avrebbe fermentato. Pasteur lanciò la scienza della microbiologia con una bottiglia di vino!",
+        misconception: "La fermentazione NON è la stessa cosa della respirazione aerobica. La respirazione aerobica richiede O₂ e produce CO₂ + H₂O + molto più ATP. La fermentazione non richiede O₂, produce CO₂ + etanolo + molto meno ATP. Il lievito preferisce condizioni aerobiche ma può passare alla fermentazione quando l'O₂ si esaurisce.",
+      },
+      hint: "Se non ci sono bolle a 35°C dopo 5 minuti, controllare che il tubo dell'acqua di calce sia sommerso e che il tappo sia sigillato. Provare a far roteare delicatamente il pallone per mescolare meglio lievito e glucosio.",
+      expected: "Velocità di CO₂ più alta a 35°C (~15–20 bolle/min al picco). Più lenta a 20°C. 50°C mostra attività iniziale poi declino. L'acqua di calce diventa lattiginosa più velocemente a 35°C. Odore di etanolo rilevabile nel pallone a 35°C.",
+    },
+  },
+  {
+    num: 147,
+    title: "Effetto della Concentrazione di CO₂ sulla Fotosintesi",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti variano la concentrazione di CO₂ aggiungendo diverse quantità di NaHCO₃ a un becher con Elodea e contano la velocità delle bolle a ciascuna concentrazione, a una distanza fissa dalla lampada.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti imparano che la CO₂ è un substrato per la fotosintesi (ciclo di Calvin), e aumentare la concentrazione di CO₂ aumenta la velocità di fotosintesi — fino al punto in cui la luce diventa limitante.",
+      instructions: [
+        "Preparare rametti di Elodea in becher di acqua distillata con soluzioni di NaHCO₃ allo 0%, 0,1%, 0,5% e 1,0%.",
+        "Posizionare una lampada a distanza fissa (20 cm) da ciascun becher.",
+        "Attendere 2 minuti di acclimatazione, poi contare le bolle al minuto per ciascuna concentrazione.",
+        "Mantenere costanti temperatura e intensità luminosa.",
+        "Tracciare il grafico velocità delle bolle vs concentrazione di NaHCO₃.",
+      ],
+      expectedOutcome: "La velocità delle bolle aumenta con la concentrazione di NaHCO₃ fino a circa lo 0,5%, poi si stabilizza quando la luce diventa il fattore limitante. Zero NaHCO₃ dà la velocità più bassa.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🌿", name: "Rametti di Elodea (4 rametti uguali)" },
+        { emoji: "🧪", name: "Soluzioni di NaHCO₃ (0, 0,1, 0,5, 1,0%)" },
+        { emoji: "💡", name: "Lampada a distanza fissa (20 cm)" },
+        { emoji: "⏱️", name: "Cronometro" },
+        { emoji: "🪣", name: "4 becher identici (500 mL)" },
+      ],
+      observationsToRecord: [
+        "Velocità delle bolle (bolle/min) a ciascuna concentrazione di NaHCO₃",
+        "Temperatura di ciascun becher",
+        "Intensità luminosa (confermare che la distanza della lampada è uguale per tutti)",
+        "Concentrazione di NaHCO₃ alla quale la velocità delle bolle si stabilizza",
+      ],
+      theoryPoints: [
+        "La CO₂ è fissata nel ciclo di Calvin (reazioni luce-indipendenti): CO₂ + RuBP → 2× 3-fosfoglicerato.",
+        "Più CO₂ significa più substrato per l'enzima RuBisCO → più 3-PGA → più G3P → più glucosio → più O₂.",
+        "Ad alta CO₂, la luce diventa limitante — nessun ulteriore aumento della velocità anche con CO₂ extra.",
+        "NaHCO₃ + H₂O ⇌ H⁺ + HCO₃⁻ → CO₂(aq) + H₂O: fornisce CO₂ disciolta in quantità controllate.",
+      ],
+      realWorldConnections: [
+        "Le serre commerciali spesso arricchiscono l'aria con CO₂ fino a 1.000–1.500 ppm (l'atmosferica è ~420 ppm) per aumentare le rese delle colture.",
+        "Il cambiamento climatico che aumenta la CO₂ atmosferica da 280 ppm (pre-industriale) a 420 ppm ha aumentato misurabilmente i tassi di crescita di alcune piante.",
+        "La cattura e lo stoccaggio del carbonio mirano a ridurre la CO₂ atmosferica, il che ridurrebbe questo effetto fertilizzante.",
+      ],
+      formula: "CO₂ + H₂O → (CH₂O) + O₂  [CO₂ è substrato; velocità limitata dalla CO₂ finché la luce non diventa limitante]",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Perché aumentare la concentrazione di NaHCO₃ aumenta la velocità di fotosintesi dell'Elodea?",
+          options: [
+            "NaHCO₃ fornisce azoto per la produzione di clorofilla",
+            "NaHCO₃ rilascia CO₂ in soluzione, aumentando la concentrazione di substrato CO₂ per il ciclo di Calvin",
+            "NaHCO₃ aumenta il pH, attivando gli enzimi della clorofilla",
+            "NaHCO₃ fornisce ioni Na⁺ necessari per la fotosintesi",
+          ],
+          correctIndex: 1,
+          explanation: "NaHCO₃ si dissolve in acqua e rilascia CO₂ (tramite l'equilibrio HCO₃⁻). La CO₂ è il substrato per il ciclo di Calvin — più CO₂ significa più substrato per RuBisCO e fissazione del carbonio più veloce, producendo più O₂.",
+        },
+        {
+          text: "Sopra lo 0,5% di NaHCO₃, la velocità delle bolle smette di aumentare. Cosa indica questo?",
+          options: [
+            "La pianta ha assorbito tutto il NaHCO₃",
+            "La luce è diventata il fattore limitante — più CO₂ non aiuta se non c'è abbastanza energia luminosa",
+            "La pianta ha prodotto abbastanza ossigeno e smette di fotosintetizzare",
+            "NaHCO₃ ad alte concentrazioni inibisce gli enzimi",
+          ],
+          correctIndex: 1,
+          explanation: "Una volta che la CO₂ non è più limitante, la velocità di fotosintesi è controllata da un altro fattore — a distanza fissa dalla lampada e temperatura costante, questo è probabilmente l'intensità luminosa. Aggiungere più CO₂ non può aumentare ulteriormente la velocità perché le reazioni luminose non possono fornire ATP e NADPH più velocemente.",
+        },
+        {
+          text: "In quale parte della pianta avviene la fissazione della CO₂?",
+          options: [
+            "Mitocondri, durante la respirazione aerobica",
+            "Stroma del cloroplasto, durante il ciclo di Calvin",
+            "Membrana tilacoidale, durante le reazioni luminose",
+            "Vacuolo, durante l'osmosi",
+          ],
+          correctIndex: 1,
+          explanation: "La CO₂ è fissata nel ciclo di Calvin (reazioni luce-indipendenti) nello stroma del cloroplasto. L'enzima RuBisCO catalizza l'attacco della CO₂ al ribulosio bisfosfato (RuBP).",
+        },
+      ],
+      discussion: [
+        "Spiega come l'arricchimento di CO₂ in una serra può aumentare la resa delle colture, e suggerisci una concentrazione pratica di CO₂ per il massimo beneficio.",
+        "Descrivi i tre fattori limitanti per la fotosintesi e spiega come interagiscono — cosa succede quando aumenti la CO₂ ma mantieni basse luce e temperatura?",
+        "Suggerisci perché il conteggio delle bolle è meno accurato a concentrazioni molto alte di CO₂, e proponi un metodo più accurato.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "CO₂ come substrato per il ciclo di Calvin", pct: 35 },
+        { label: "Fattori limitanti e saturazione", pct: 30 },
+        { label: "NaHCO₃ come fonte di CO₂ negli esperimenti", pct: 20 },
+        { label: "Arricchimento di CO₂ nell'orticoltura commerciale", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che le piante assorbano CO₂ attraverso le radici — la CO₂ entra principalmente attraverso gli stomi nelle foglie (diffusione lungo il gradiente di concentrazione).",
+        "Molti confondono le reazioni luminose (avvengono nei tilacoidi, producono ATP/NADPH) con il ciclo di Calvin (avviene nello stroma, fissa la CO₂). La CO₂ è usata solo nel ciclo di Calvin.",
+      ],
+      hook: "La NASA sta ricercando la coltivazione di piante su Marte usando la fotosintesi. La sfida? L'atmosfera di Marte è 96% CO₂ a pressione molto bassa — troppa CO₂! Gli scienziati devono progettare serre marziane con concentrazioni di CO₂ controllate ottimizzate per la fotosintesi. Il tuo esperimento è la scienza fondamentale dietro l'agricoltura marziana!",
+      khanLinks: [
+        { title: "Reazioni Luce-Indipendenti", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-calvin-cycle/v/light-and-dark-reactions-in-photosynthesis" },
+        { title: "Fattori Limitanti nella Fotosintesi", url: "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-light-dependent-reactions-of-photosynthesis/v/photosynthesis-light-reactions-and-photophosphorylation" },
+      ],
+    },
+    dataTable: {
+      headers: ["Concentrazione NaHCO₃ (%)", "Bolle/min (Prova 1)", "Bolle/min (Prova 2)", "Media Bolle/min"],
+      rows: 5,
+    },
+    observations: [
+      "Contare le bolle al minuto a ciascuna concentrazione di NaHCO₃ dopo 2 min di acclimatazione",
+      "Registrare la temperatura di ciascun becher",
+      "Identificare la concentrazione alla quale la velocità si stabilizza",
+    ],
+    conclusion: "Tracciare il grafico velocità delle bolle vs concentrazione di NaHCO₃. Identificare il punto di saturazione della CO₂. Spiegare perché aumentare la CO₂ aumenta la velocità fino a un certo punto, e indicare quale fattore limitante subentra sopra il punto di saturazione.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi stai cambiando un ingrediente nella ricetta della fotosintesi — la CO₂ — e guardando la pianta rispondere in tempo reale. Troverai il punto in cui aggiungere più CO₂ smette di aiutare!",
+      keywords: {
+        setup: "Preparare le soluzioni di NaHCO₃ con cura (pesare accuratamente). Usare rametti uguali dalla stessa pianta. Mantenere la lampada esattamente a 20 cm per tutti i becher. Acclimatare per 2 minuti completi a ciascuna concentrazione prima di contare.",
+        formula: "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Ciclo di Calvin: CO₂ + RuBP → 2× 3-PGA (RuBisCO). Velocità ∝ [CO₂] finché luce o T non sono limitanti.",
+        error: "Errori comuni: differenze di temperatura tra i becher (la lampada riscalda quello più vicino), uso di rametti di Elodea diversi di diversa salute, e non acclimatare abbastanza a lungo prima di contare.",
+        result: "Tipico: 0% NaHCO₃: ~2 bolle/min. 0,1%: ~15. 0,5%: ~25. 1,0%: ~26. Plateau visibile tra 0,5% e 1,0%. Conferma CO₂ limitante a bassa concentrazione, luce limitante ad alta concentrazione.",
+        real: "I coltivatori commerciali di cetrioli nel Regno Unito iniettano CO₂ nelle serre da serbatoi, alzando la concentrazione da 420 ppm a 1.200 ppm. Questo aumenta le rese del 20–30% e riduce la stagione di crescita. La CO₂ spesso proviene da impianti di fermentazione vicini — un uso di economia circolare della CO₂ 'di scarto'.",
+        explain: "La CO₂ è la fonte di carbonio per produrre zucchero nel ciclo di Calvin. RuBisCO afferra le molecole di CO₂ e le attacca a una molecola a 5 atomi di carbonio (RuBP) per iniziare a produrre glucosio. Più CO₂ = più molecole di RuBisCO occupate = più prodotti a 3 atomi di carbonio = più glucosio = più O₂ come sottoprodotto. Ma alla fine, le reazioni luminose non possono fornire ATP e NADPH abbastanza velocemente da tenere il passo, e la velocità smette di aumentare.",
+        hook: "I livelli globali di CO₂ sono saliti da 280 ppm (pre-industriale) a 421 ppm (2024). Gli scienziati hanno misurato un 'effetto fertilizzante della CO₂' — alcuni ecosistemi mostrano il 5–15% in più di crescita vegetale grazie alla CO₂ più alta. Ma gli aumenti di temperatura e lo stress idrico dovuti al cambiamento climatico possono più che compensare questo. L'effetto netto sull'agricoltura è incerto — il tuo esperimento è la scienza fondamentale dietro questo dibattito!",
+        misconception: "NaHCO₃ NON è cibo per la pianta. Fornisce CO₂ disciolta come substrato per la fotosintesi, ma non è un nutriente. La pianta usa la CO₂ come fonte di carbonio — gli atomi di carbonio finiscono nelle molecole di glucosio.",
+      },
+      hint: "Se non vedi differenze tra le concentrazioni, prova ad aumentare la luminosità della lampada (avvicinala a 10 cm) e controlla che le soluzioni di NaHCO₃ siano concentrate correttamente. Un rametto fresco di Elodea dà risultati più consistenti.",
+      expected: "Chiaro aumento della velocità delle bolle da 0 a 0,5% NaHCO₃. La velocità si stabilizza all'1,0% (luce limitante). Conferma la CO₂ come fattore limitante a basse concentrazioni con luce in eccesso.",
+    },
+  },
+  {
+    num: 148,
+    title: "Seed Germination Conditions",
+    section: "Fisiologia Vegetale",
+    desc: "Students set up cress or radish seeds in four conditions — warm+water, cold+water, warm+no water, dark+warm+water — record germination percentage after 5 days, and identify the essential requirements for germination.",
+    setupTime: "10 min",
+    duration: "10 min setup + observations over 5 days",
+    summary: {
+      whatTheyLearn: "Students learn that seeds require water, warmth, and oxygen to germinate — but not light. They identify which conditions are essential and which are merely beneficial by comparing germination percentages.",
+      instructions: [
+        "Set up four Petri dishes each with 10 seeds on moist cotton wool.",
+        "Dish A: warm (20°C) + water (moist cotton wool). Dish B: cold (4°C fridge) + water.",
+        "Dish C: warm (20°C) + dry cotton wool (no water). Dish D: warm (20°C) + water + dark box.",
+        "Leave for 5 days; check daily and count germinated seeds (visible radicle ≥ 2 mm).",
+        "Calculate % germination for each condition.",
+      ],
+      expectedOutcome: "Dish A: ~90% germination. Dish B (cold): low germination (~10%). Dish C (dry): 0% germination. Dish D (dark): ~90% germination — confirming light is not required.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🌱", name: "Cress or radish seeds (10 per dish)" },
+        { emoji: "📋", name: "4 Petri dishes with lids" },
+        { emoji: "🧶", name: "Cotton wool (for each dish)" },
+        { emoji: "💧", name: "Distilled water (for moist conditions)" },
+        { emoji: "📦", name: "Dark cardboard box (for Dish D)" },
+      ],
+      observationsToRecord: [
+        "Number of seeds germinated per day (5-day period)",
+        "Percentage germination after 5 days for each condition",
+        "Appearance of seedlings (radicle length, shoot length)",
+        "Any mould growth (note and consider as a factor)",
+      ],
+      theoryPoints: [
+        "Germination requires: water (activates enzymes, hydrates cells), warmth (enzyme activity), and O₂ (aerobic respiration for growth).",
+        "Light is NOT required for germination — the seed uses stored food reserves (endosperm) for initial growth.",
+        "Water activates hydrolytic enzymes (amylases, proteases) that break down starch and protein reserves in the endosperm.",
+        "Temperature affects enzyme reaction rates — cold slows germination; optimum typically 15–25°C for most species.",
+      ],
+      realWorldConnections: [
+        "Farmers time their planting based on soil temperature — many crops require >10°C soil temperature for reliable germination.",
+        "Seed banks (e.g. Svalbard Global Seed Vault) store seeds in cold, dry conditions — the opposite of germination requirements — to maximise longevity.",
+        "Stratification (cold treatment of seeds before planting) mimics winter conditions and breaks dormancy in many temperate plant species.",
+      ],
+      formula: "% germination = (number germinated / total seeds) × 100  |  Requirements: water + warmth (15–25°C) + O₂",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Which conditions are ESSENTIAL for seed germination?",
+          options: [
+            "Light, water, and warmth",
+            "Water, warmth, and oxygen",
+            "Soil, water, and light",
+            "Nitrogen, CO₂, and water",
+          ],
+          correctIndex: 1,
+          explanation: "Seeds need water (to activate enzymes and hydrate cells), warmth (for enzyme activity), and oxygen (for aerobic respiration to provide energy for growth). Light is NOT required for germination — seeds germinate underground in the dark.",
+        },
+        {
+          text: "Why do seeds placed in cold (4°C) conditions germinate poorly?",
+          options: [
+            "Cold water cannot enter the seed",
+            "Low temperature reduces enzyme activity, slowing the metabolic processes needed for germination",
+            "Seeds freeze at 4°C",
+            "Oxygen is less available in cold water",
+          ],
+          correctIndex: 1,
+          explanation: "Germination requires enzyme-catalysed reactions (amylases, proteases, etc.) to mobilise food reserves. These enzymes work much slower at 4°C than at the optimum temperature (~20°C), so germination is greatly delayed or prevented.",
+        },
+        {
+          text: "Seeds in a dark box (Dish D) germinate at the same rate as seeds in light (Dish A). What does this demonstrate?",
+          options: [
+            "Seeds need darkness to germinate",
+            "Light is not a requirement for germination — seeds use stored food reserves",
+            "Photosynthesis occurs inside the seed during germination",
+            "The dark box maintained a higher temperature",
+          ],
+          correctIndex: 1,
+          explanation: "Seeds contain stored food reserves (starch, proteins, fats in the endosperm and cotyledons). They do not need light for energy during germination — they break down these reserves aerobically. Light only becomes important once the seedling's first leaves emerge and photosynthesis begins.",
+        },
+      ],
+      discussion: [
+        "Explain at a molecular level why water is essential for germination — what processes does water enable within the seed?",
+        "Many seeds in temperate climates are dormant and require a cold period before they will germinate. Explain the ecological advantage of this dormancy mechanism.",
+        "A farmer planted seeds in March and found poor germination. Suggest and explain two possible abiotic factors that could have caused this, and how they might be remedied.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Essential conditions for germination (water, warmth, O₂)", pct: 40 },
+        { label: "Role of enzymes in mobilising food reserves", pct: 30 },
+        { label: "Light not required for germination", pct: 20 },
+        { label: "Agricultural and seed bank applications", pct: 10 },
+      ],
+      misconceptions: [
+        "Students often think light is required for germination — it is not. Light is required for photosynthesis, which only begins after the seedling emerges and develops leaves.",
+        "Many think soil is required for germination — seeds germinate perfectly well on moist cotton wool or filter paper in laboratory conditions.",
+      ],
+      hook: "The Svalbard Global Seed Vault in Norway stores 1.3 million seed varieties in frozen tunnels inside an Arctic mountain — conditions perfectly opposite to those needed for germination (cold and dry). It is the most important insurance policy in human history: if crops are wiped out by disease or climate change, we can restart agriculture from these seeds.",
+      khanLinks: [
+        { title: "Plant Growth Responses", url: "https://www.khanacademy.org/science/biology/plant-biology/plant-responses/v/plant-growth-responses" },
+        { title: "Introduction to Cellular Respiration", url: "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/intro-to-cellular-respiration/v/steps-of-aerobic-respiration" },
+      ],
+    },
+    dataTable: {
+      headers: ["Condition", "Day 1", "Day 2", "Day 3", "Day 5", "% Germination (Day 5)"],
+      rows: 5,
+    },
+    observations: [
+      "Count germinated seeds daily for 5 days in each Petri dish",
+      "Record cumulative % germination for each condition",
+      "Note the length and appearance of radicles in germinated seeds",
+    ],
+    conclusion: "State the three essential requirements for germination based on your results. Explain the result for Dish D (dark) and what it demonstrates. Describe one agricultural implication of your findings.",
+    ai: {
+      opening: "Hi! I'm Gali, your lab assistant. Today you'll find out what seeds really need to germinate — and test whether they actually need light. The answer might surprise you!",
+      keywords: {
+        setup: "Use equal numbers of seeds from the same packet. Pre-soak seeds for 1 hour in water before setting up to improve germination rates. Keep Dish D truly dark — seal the box with tape.",
+        formula: "% germination = (germinated/total) × 100. Essential conditions: H₂O (enzyme activation, cell hydration), T (enzyme activity; 15–25°C optimal), O₂ (aerobic respiration for growth).",
+        error: "Common errors: Dish C (dry) having condensation inside the Petri dish (secretly moist), mould growing in over-wet dishes, and not checking daily (missing when germination occurred).",
+        result: "Day 5 results: Dish A (warm + water): ~90%. Dish B (cold + water): ~10–20%. Dish C (warm + dry): 0%. Dish D (dark + warm + water): ~85–90%.",
+        real: "Farmers in East Africa use simple soil temperature thermometers to decide when to plant maize. Maize needs >12°C soil temperature. Planting too early means seeds rot rather than germinate — understanding germination requirements is basic crop science.",
+        explain: "Inside a dry seed, all metabolism is almost completely stopped — the seed can survive for years in this dormant state. When water enters, it activates enzymes dormant in the seed. Amylases break down starch to glucose, proteases break down storage proteins to amino acids. These provide energy (via aerobic respiration using O₂) and building blocks for the growing embryo. Warmth speeds up all these enzyme-catalysed reactions.",
+        hook: "In 2012, scientists in Russia grew a fertile plant from a seed found in a 32,000-year-old squirrel burrow frozen in Siberian permafrost. The oldest successfully germinated seed was from a Judean date palm found at Masada — 2,000 years old. Seeds are biological time capsules that only chemistry can unlock!",
+        misconception: "Light is for photosynthesis, not germination. Seeds contain enough stored energy (starch, oils, proteins) to support the entire germination process and initial growth without any photosynthesis. Only when the seedling's first true leaves unfold does light become essential.",
+      },
+      hint: "If Dish A shows low germination, check the seeds are not too old (test viability by floating in water — sinkers are viable, floaters may not be). Replace with fresh seeds if necessary.",
+      expected: "Dish A: ~90% germination. Dish B (cold): ~10%. Dish C (dry): 0%. Dish D (dark): ~90%. Confirms water and warmth essential; light not required. Oxygen confirmed by aerobic respiration in seedlings.",
+    },
+  },
+  {
+    num: 149,
+    title: "pH del Suolo e Nutrienti Vegetali",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti raccolgono campioni di suolo da diversi siti, misurano il pH usando una soluzione indicatrice o un pH-metro, collegano i risultati alla disponibilità dei nutrienti ed esaminano indicatori visibili di salute nelle piante cresciute in quei suoli.",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che il pH del suolo influenza la solubilità e la disponibilità dei nutrienti minerali, e che la maggior parte delle piante prospera nell'intervallo di pH 6–7 dove i nutrienti chiave sono più accessibili.",
+      instructions: [
+        "Raccogliere campioni di suolo da 3 diverse località (es. giardino, vicino a una pianta acidofila, vicino a un sentiero trattato con calce).",
+        "Pesare 10 g di ciascun suolo, aggiungere 20 mL di acqua distillata, agitare per 2 minuti e filtrare.",
+        "Misurare il pH di ciascun filtrato usando un pH-metro o un indicatore per suolo.",
+        "Registrare il colore dell'indicatore e la lettura esatta del pH.",
+        "Collegare il pH alla disponibilità dei nutrienti usando una tabella di disponibilità dei nutrienti.",
+      ],
+      expectedOutcome: "Suoli diversi danno letture di pH diverse. Gli studenti possono collegare il pH alla presenza di piante acidofile (eriche, mirtilli a pH 4–5) o suoli ricchi di calcio (pH 7–8). I suoli a pH più basso hanno maggiore disponibilità di Fe, Mn, Zn; il pH neutro è migliore per N, P, K.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🪣", name: "Campioni di suolo da 3 diverse località (~50 g ciascuno)" },
+        { emoji: "💧", name: "Acqua distillata (100 mL per campione)" },
+        { emoji: "⚗️", name: "Becher, imbuti e carta da filtro" },
+        { emoji: "🔬", name: "pH-metro (o soluzione indicatrice per suolo e scala cromatica)" },
+        { emoji: "⚖️", name: "Bilancia (precisione 10 g ± 0,1 g)" },
+      ],
+      observationsToRecord: [
+        "pH dell'estratto di suolo da ciascuna località",
+        "Colore dell'indicatore in ciascun campione",
+        "Descrizione della vegetazione in ciascun sito di raccolta",
+        "Previsione di quali nutrienti sono più/meno disponibili a ciascun pH",
+      ],
+      theoryPoints: [
+        "Il pH influenza la solubilità dei minerali: i suoli acidi (pH < 5) aumentano la solubilità di Fe²⁺, Mn²⁺, Al³⁺ (possono raggiungere livelli tossici).",
+        "I suoli alcalini (pH > 7,5) riducono la disponibilità di Fe, Mn, Zn — le piante possono mostrare clorosi (ingiallimento delle foglie).",
+        "Azoto (NO₃⁻, NH₄⁺), fosforo (H₂PO₄⁻) e potassio (K⁺) sono più disponibili a pH 6–7.",
+        "La calce (CaCO₃ o Ca(OH)₂) viene aggiunta per alzare il pH del suolo; lo zolfo o i fertilizzanti acidi lo abbassano.",
+      ],
+      realWorldConnections: [
+        "I mirtilli richiedono suolo acido (pH 4,5–5,5) per l'assorbimento del ferro — i coltivatori acidificano deliberatamente il suolo.",
+        "I campi da golf e i prati vengono regolarmente calcitati per mantenere il pH 6–7 per una crescita ottimale dell'erba.",
+        "Le piogge acide (pH < 5) liscivia i nutrienti dal suolo e rilascia Al³⁺ tossico, danneggiando le radici degli alberi nelle foreste.",
+      ],
+      formula: "Il pH influenza la solubilità: Fe, Mn, Zn solubili a pH basso  |  N, P, K più disponibili a pH 6–7",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "In quale intervallo di pH azoto, fosforo e potassio sono più disponibili per le piante?",
+          options: ["pH 4–5", "pH 5–6", "pH 6–7", "pH 8–9"],
+          correctIndex: 2,
+          explanation: "La maggior parte dei macronutrienti (N, P, K) sono più solubili e disponibili per le piante a pH 6–7 (quasi neutro). Sotto pH 6, il fosfato forma composti insolubili con Fe e Al. Sopra pH 7, molti micronutrienti diventano meno disponibili.",
+        },
+        {
+          text: "Un giardiniere nota che i suoi rododendri hanno foglie ingiallite (clorosi). Il pH del suolo è misurato a 7,5. Qual è la causa più probabile del problema?",
+          options: [
+            "Troppo azoto nel suolo",
+            "Il suolo alcalino rende il ferro insolubile, causando clorosi da carenza di ferro",
+            "Il suolo è troppo acido per l'assorbimento del ferro",
+            "I rododendri preferiscono suoli neutri",
+          ],
+          correctIndex: 1,
+          explanation: "La clorosi (ingiallimento dovuto a insufficiente clorofilla) nelle piante acidofile come i rododendri in suolo alcalino è tipicamente dovuta a carenza di ferro. Fe³⁺ è insolubile ad alto pH e non disponibile per le piante. La soluzione è acidificare il suolo (es. con zolfo o compost per ericacee).",
+        },
+        {
+          text: "Come migliora la crescita delle piante la calce (CaCO₃) applicata al suolo acido?",
+          options: [
+            "La calce fornisce calcio solo come macronutriente",
+            "La calce alza il pH del suolo, rendendo i nutrienti più disponibili e riducendo le concentrazioni tossiche di Al³⁺ e Mn²⁺",
+            "La calce uccide i batteri del suolo che competono con le piante",
+            "La calce neutralizza l'eccesso di fosforo",
+          ],
+          correctIndex: 1,
+          explanation: "CaCO₃ + 2H⁺ → Ca²⁺ + H₂O + CO₂. Reagendo con gli ioni H⁺ del suolo, la calce alza il pH. Questo riduce la solubilità di Al³⁺ e Mn²⁺ potenzialmente tossici, e porta il pH più vicino all'ottimale (6–7) per la disponibilità dei nutrienti.",
+        },
+      ],
+      discussion: [
+        "Spiega perché le piogge acide (pH 4–5) sono particolarmente dannose per i suoli forestali in termini di lisciviazione dei nutrienti e rilascio di ioni tossici.",
+        "Un agricoltore vuole coltivare mirtilli su un suolo calcareo (alcalino). Suggerisci tre ammendanti chimici che potrebbero abbassare il pH del suolo e spiega la chimica di ciascuno.",
+        "Spiega come i batteri coinvolti nel ciclo dell'azoto sono influenzati dal pH del suolo, e perché un pH estremo impedisce alle colture di accedere all'azoto anche se è presente nel suolo.",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Relazione tra pH e disponibilità dei nutrienti", pct: 35 },
+        { label: "Effetto del pH sulla solubilità dei minerali", pct: 30 },
+        { label: "Misurazione accurata del pH del suolo", pct: 20 },
+        { label: "Gestione agricola del pH", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso pensano che il suolo acido sia sempre negativo — molte colture importanti (mirtilli, patate, tè) in realtà preferiscono condizioni acide.",
+        "Molti assumono che tutti i nutrienti diventino più disponibili al diminuire del pH — alcuni diventano tossici a pH molto basso (Al³⁺, Mn²⁺), e la disponibilità del fosfato in realtà raggiunge il picco a pH 6–7.",
+      ],
+      hook: "L'industria britannica dei mirtilli è cresciuta da quasi nulla nel 2000 a oltre 10.000 tonnellate all'anno. Ogni azienda di mirtilli richiede suolo acidificato (pH 4,5–5,5) — i coltivatori aggiungono pacciame di corteccia di pino, zolfo o fertilizzanti acidi per ottenere questo. La conoscenza chimica del pH del suolo guida direttamente un'industria multimilionaria!",
+      khanLinks: [
+        { title: "Scala del pH", url: "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/the-ph-scale" },
+        { title: "Cicli dei Nutrienti", url: "https://www.khanacademy.org/science/biology/ecology/biogeochemical-cycles/v/nitrogen-cycle" },
+      ],
+    },
+    dataTable: {
+      headers: ["Località del Campione", "Lettura pH", "Colore Indicatore", "Vegetazione Presente", "Nutriente Limitante Previsto"],
+      rows: 4,
+    },
+    observations: [
+      "Registrare pH e colore dell'indicatore per ciascun campione di suolo",
+      "Descrivere la vegetazione presente in ciascun sito di raccolta",
+      "Prevedere quali nutrienti sono più e meno disponibili a ciascun pH",
+    ],
+    conclusion: "Confronta il pH dei tuoi tre campioni di suolo. Collega ciascun pH alla disponibilità dei nutrienti. Suggerisci un trattamento agricolo che migliorerebbe la crescita delle piante per il campione con il pH più estremo e spiega la chimica.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi scoprirai com'è davvero il terreno sotto i tuoi piedi dal punto di vista chimico — e capirai perché alcune piante amano il suolo acido mentre altre lo detestano!",
+      keywords: {
+        setup: "Raccogli suolo da diversi microhabitat se possibile (sotto conifere per acido, vicino a un muro di cemento per alcalino). Usa acqua distillata — l'acqua del rubinetto può avere un pH diverso. Lascia sedimentare la miscela suolo:acqua prima di testare il surnatante.",
+        formula: "pH = −log[H⁺]. Per il trattamento con calce: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Picchi di disponibilità dei nutrienti: Fe, Mn a pH basso (3–5); N, P, K a pH 6–7; Mo a pH alto (>7).",
+        error: "Errori comuni: usare acqua del rubinetto invece di distillata (l'acqua del rubinetto ha un suo pH). Il suolo con alto contenuto di materia organica può dare risultati diversi dal suolo minerale. Lasciare 24 h per una migliore equilibrazione se i risultati sono incoerenti.",
+        result: "Giardino scolastico tipico: pH 6,5–7,0. Sotto i pini: pH 4,5–5,5. Vicino a sentiero di cemento: pH 7,5–8,0. Ampia gamma visibile da siti diversi. Il pH-metro è più accurato dell'indicatore (±0,1 vs ±0,5).",
+        real: "La mappa del pH del suolo del Regno Unito mostra chiari pattern regionali: suoli acidi nelle Highland scozzesi e in Galles (granito, alta piovosità), suoli neutri o leggermente alcalini nell'Inghilterra pianeggiante (calcare/gesso). Gli agricoltori britannici spendono oltre 250 milioni di sterline all'anno in calce per gestire il pH del suolo.",
+        explain: "Il pH del suolo determina se i nutrienti minerali sono disciolti (disponibili per le radici delle piante) o precipitati (bloccati in composti insolubili). Il fosfato è un esempio perfetto: a pH basso, Fe e Al legano il fosfato come FePO₄ e AlPO₄ insolubili. A pH alto, il calcio lo lega come Ca₃(PO₄)₂. Solo a pH 6–7 abbastanza fosfato rimane disciolto come H₂PO₄⁻ perché le piante lo assorbano.",
+        hook: "Le piante di tè in Assam (India) crescono su suoli naturalmente acidi da secoli di lettiera fogliare — pH 5,5–6,0. I tentativi britannici di coltivare tè in suoli alcalini del Regno Unito fallirono finché gli agricoltori non acidificarono il suolo. Ecco perché i giardini di tè del Regno Unito (come Tregothnan in Cornovaglia) richiedono una gestione costante della chimica del suolo. Il tuo tè mattutino dipende dalla chimica del pH!",
+        misconception: "Il pH influenza la DISPONIBILITÀ dei nutrienti, non la PRESENZA dei nutrienti. Il suolo potrebbe contenere molto ferro, ma a pH 8, è bloccato come Fe(OH)₃ insolubile e la pianta non può assorbirlo attraverso le sue radici. Aggiungere fertilizzante di ferro al suolo alcalino crea solo più ferro insolubile — devi prima abbassare il pH.",
+      },
+      hint: "Se tutti i tuoi campioni di suolo danno pH simili, prova a raccoglierne uno da sotto pini o abeti (lettiera fogliare acida) e uno da un'area recentemente calcitata o calcarea per un intervallo più ampio.",
+      expected: "Il pH varia tra i siti (intervallo target pH 4,5–8,0 se i siti sono scelti bene). Gli studenti possono collegare la vegetazione (piante acidofile vs piante neutrofile) al pH misurato. Le previsioni della tabella di disponibilità dei nutrienti sono coerenti con le osservazioni.",
+    },
+  },
+  {
+    num: 150,
+    title: "Plasmolisi e Deplasmolisi",
+    section: "Fisiologia Vegetale",
+    desc: "Gli studenti immergono cellule di cipolla rossa o barbabietola in soluzione di NaCl 1 mol/L (causando plasmolisi) e osservano la membrana cellulare che si stacca dalla parete cellulare al microscopio, poi aggiungono acqua distillata per invertire il processo (deplasmolisi).",
+    setupTime: "10 min",
+    duration: "25 min",
+    summary: {
+      whatTheyLearn: "Gli studenti apprendono che le membrane delle cellule vegetali sono semipermeabili: in soluzioni ipertoniche, l'acqua esce dal vacuolo per osmosi e il protoplasto si stacca dalla rigida parete cellulare (plasmolisi). Il processo è reversibile (deplasmolisi).",
+      instructions: [
+        "Preparare un preparato fresco di cellule epidermiche di cipolla rossa in acqua — osservare le normali cellule turgide.",
+        "Rimuovere l'acqua e aggiungere soluzione di NaCl 1 mol/L al vetrino. Attendere 3–5 minuti.",
+        "Osservare al microscopio: il vacuolo pigmentato di rosso si restringe e la membrana si stacca dalla parete cellulare.",
+        "Rimuovere la soluzione di NaCl e aggiungere acqua distillata. Attendere 5 minuti.",
+        "Osservare nuovamente — le cellule dovrebbero recuperare (deplasmolisi).",
+      ],
+      expectedOutcome: "In NaCl: le cellule mostrano chiara plasmolisi — il vacuolo rosso si restringe e il citoplasma si stacca dalla parete cellulare, lasciando uno spazio chiaro. Dopo acqua distillata: le cellule recuperano l'aspetto turgido (deplasmolisi), confermando che il processo è reversibile.",
+    },
+    experiment: {
+      equipment: [
+        { emoji: "🧅", name: "Cipolla rossa (o fetta di barbabietola)" },
+        { emoji: "🔬", name: "Microscopio ottico (×100 o ×400)" },
+        { emoji: "📋", name: "Vetrini portaoggetto e coprioggetto" },
+        { emoji: "🧂", name: "Soluzione di NaCl 1 mol/L" },
+        { emoji: "💧", name: "Acqua distillata" },
+      ],
+      observationsToRecord: [
+        "Aspetto delle cellule in acqua (turgide, vacuolo che riempie la cellula)",
+        "Aspetto delle cellule in NaCl 1 mol/L dopo 5 min (plasmolizzate)",
+        "Spazio tra membrana cellulare e parete cellulare (plasmolisi)",
+        "Aspetto dopo il ritorno in acqua distillata (deplasmolisi)",
+      ],
+      theoryPoints: [
+        "Osmosi: l'acqua si sposta dalla soluzione diluita (dentro la cellula) alla soluzione concentrata (fuori dalla cellula, NaCl 1 mol/L) attraverso la membrana cellulare semipermeabile.",
+        "Plasmolisi: l'acqua esce dal vacuolo → il vacuolo centrale si restringe → il tonoplasto e la membrana cellulare si ritirano verso l'interno → spazio tra membrana e parete cellulare.",
+        "Deplasmolisi: l'acqua rientra quando si aggiunge acqua distillata → il vacuolo si gonfia → la membrana ritorna a contatto con la parete cellulare.",
+        "La parete cellulare è rigida e non si restringe; solo la membrana e il vacuolo cambiano dimensione.",
+      ],
+      realWorldConnections: [
+        "Lo stress salino in agricoltura (suoli salini) causa plasmolisi nelle radici delle colture, compromettendo l'assorbimento di acqua e nutrienti.",
+        "La conservazione degli alimenti mediante salatura (es. carni sotto sale, verdure in salamoia) usa la plasmolisi per uccidere i batteri estraendo l'acqua dalle loro cellule.",
+        "La formulazione delle bevande sportive assicura l'isotonicità — troppo concentrate causerebbero plasmolisi delle cellule intestinali, impedendo l'assorbimento.",
+      ],
+      formula: "L'acqua esce dalla cellula per osmosi (NaCl ipertonico) → il protoplasto si restringe → la parete cellulare rimane rigida → plasmolisi",
+    },
+    questions: {
+      mcq: [
+        {
+          text: "Cosa si osserva durante la plasmolisi?",
+          options: [
+            "La parete cellulare si restringe staccandosi dalla membrana cellulare",
+            "La membrana cellulare e il citoplasma si staccano dalla rigida parete cellulare",
+            "La cellula si divide in due",
+            "La cellula assorbe acqua e scoppia",
+          ],
+          correctIndex: 1,
+          explanation: "Durante la plasmolisi, l'acqua esce dal vacuolo per osmosi. Il citoplasma e la membrana cellulare si restringono mentre il vacuolo si sgonfia, ma la rigida parete cellulare rimane invariata. Appare uno spazio visibile tra la membrana cellulare e la parete cellulare.",
+        },
+        {
+          text: "Perché la parete cellulare non si restringe durante la plasmolisi?",
+          options: [
+            "La parete cellulare è fatta di proteine e non può restringersi",
+            "La parete cellulare è rigida (fatta di microfibrille di cellulosa) e mantiene la sua forma indipendentemente dalla pressione interna",
+            "La parete cellulare assorbe la soluzione salina per mantenere il suo volume",
+            "La parete cellulare si espande per riempire lo spazio lasciato dalla membrana che si restringe",
+          ],
+          correctIndex: 1,
+          explanation: "Le pareti cellulari vegetali sono fatte di microfibrille di cellulosa — una struttura rigida e inestensibile. Forniscono supporto e mantengono la loro forma. Solo la membrana cellulare flessibile e il contenuto del vacuolo cambiano dimensione durante l'osmosi.",
+        },
+        {
+          text: "Cosa succede quando si aggiunge acqua distillata alle cellule plasmolizzate?",
+          options: [
+            "Le cellule rimangono plasmolizzate perché il danno è permanente",
+            "L'acqua entra nel vacuolo per osmosi, il vacuolo si espande e la membrana ritorna alla parete cellulare (deplasmolisi)",
+            "Il NaCl viene diluito quindi il sale distrugge la membrana",
+            "Le cellule scoppiano perché l'acqua entra troppo rapidamente",
+          ],
+          correctIndex: 1,
+          explanation: "Aggiungere acqua distillata crea un ambiente ipotonico all'esterno delle cellule. L'acqua ora si muove nuovamente nel vacuolo per osmosi (da bassa concentrazione di soluti all'esterno ad alta concentrazione di soluti all'interno). Il vacuolo si espande, spingendo la membrana di nuovo contro la parete cellulare — deplasmolisi.",
+        },
+      ],
+      discussion: [
+        "Spiega, usando i concetti di potenziale idrico, perché l'acqua esce dal vacuolo quando le cellule sono immerse in NaCl 1 mol/L.",
+        "Se la concentrazione di NaCl fosse aumentata a 3 mol/L per un'ora, prevedi se la deplasmolisi avverrebbe ancora e spiega il tuo ragionamento.",
+        "Confronta il comportamento di una cellula vegetale e di una cellula animale (es. un globulo rosso) quando immerse nella stessa soluzione di NaCl 1 mol/L. Quali diverse osservazioni ti aspetteresti e perché?",
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: "Osmosi nelle cellule vegetali (soluzione ipertonica)", pct: 35 },
+        { label: "Meccanismo della plasmolisi e ruolo della parete cellulare", pct: 30 },
+        { label: "Reversibilità (deplasmolisi)", pct: 20 },
+        { label: "Applicazioni agricole e nella scienza alimentare", pct: 15 },
+      ],
+      misconceptions: [
+        "Gli studenti spesso dicono \"la parete cellulare si restringe durante la plasmolisi\" — la parete cellulare è rigida e non si restringe. Solo la membrana cellulare e il contenuto del vacuolo cambiano.",
+        "Molti pensano che la plasmolisi uccida la cellula — le cellule possono sopravvivere e recuperare per deplasmolisi se riportate in una soluzione ipotonica in tempo. La plasmolisi prolungata o estrema è irreversibile.",
+      ],
+      hook: "Le lumache muoiono quando gli si versa sale addosso — la rapida plasmolisi delle loro cellule corporee estrae tutta la loro acqua per osmosi. La loro mancanza di una rigida parete cellulare significa che semplicemente collassano. La stessa chimica che fa restringere le tue cellule di cipolla rossa viene usata come controllo dei parassiti in giardino. L'osmosi è brutale!",
+      khanLinks: [
+        { title: "Osmosi e Tonicità", url: "https://www.khanacademy.org/science/biology/membranes-and-transport/osmosis/v/osmosis-and-tonicity" },
+        { title: "Struttura della Membrana Cellulare", url: "https://www.khanacademy.org/science/biology/membranes-and-transport/diffusion-and-osmosis/v/diffusion-and-osmosis" },
+      ],
+    },
+    dataTable: {
+      headers: ["Soluzione", "Aspetto Cellula", "Dimensione Vacuolo", "Spazio tra Membrana e Parete", "Stato"],
+      rows: 3,
+    },
+    observations: [
+      "Disegnare l'aspetto della cellula in acqua, in NaCl e dopo il ritorno in acqua",
+      "Registrare se esiste uno spazio visibile tra la membrana cellulare e la parete",
+      "Annotare l'intensità del colore del vacuolo rosso in ciascuna condizione",
+    ],
+    conclusion: "Descrivi e spiega la plasmolisi usando l'osmosi e il potenziale idrico. Indica cosa dimostra la reversibilità del processo riguardo all'integrità della membrana cellulare. Spiega il significato della rigida parete cellulare nella plasmolisi.",
+    ai: {
+      opening: "Ciao! Sono Gali, il tuo assistente di laboratorio. Oggi guarderai una cellula vegetale vivente restringersi al microscopio — e poi la vedrai recuperare — usando nient'altro che il potere dell'osmosi!",
+      keywords: {
+        setup: "Stacca il sottile strato epidermico da una cipolla rossa (lo strato cellulare rosso-viola — non il parenchima bianco). Monta prima in una goccia d'acqua per vedere le cellule normali. Aggiungi la soluzione di NaCl usando una pipetta al bordo del coprioggetto e trascinala attraverso con carta da filtro.",
+        formula: "Osmosi: l'acqua si muove da Ψ_alto (meno negativo, basso soluto) a Ψ_basso (più negativo, alto soluto). Plasmolisi: Ψ_esterno (NaCl 1 mol/L, Ψ ≈ −2,7 MPa) < Ψ_interno (vacuolo cellulare, Ψ ≈ −0,9 MPa). L'acqua esce.",
+        error: "Errori comuni: preparare una sezione spessa invece di un singolo strato cellulare (non si vedono le singole cellule), usare NaCl troppo diluito (nessuna plasmolisi), e non aspettare abbastanza (minimo 5 min per una plasmolisi chiara).",
+        result: "Cellule normali: vacuolo rosso che riempie ~80% del volume cellulare. Dopo NaCl: il vacuolo si restringe a ~40%, spazio chiaro tra membrana viola e parete cellulare incolore. Dopo acqua distillata: il vacuolo ritorna a ~80% (deplasmolisi). Processo completamente reversibile entro 10 min.",
+        real: "I suoli salini nelle aree costiere e nei terreni irrigati hanno alte concentrazioni di NaCl. Le colture sensibili al sale (mais, fagioli) mostrano plasmolisi delle cellule radicali nei suoli salini, riducendo l'assorbimento di acqua — lo stress salino è una delle principali cause di perdite di raccolto a livello globale, colpendo il 20% dei terreni irrigati.",
+        explain: "Le cellule vegetali contengono un grande vacuolo centrale riempito di succo cellulare — una miscela di zuccheri, sali e altre molecole. La membrana cellulare (tonoplasto + membrana plasmatica) è semipermeabile. Quando l'esterno diventa più salato (ipertonico), il gradiente di potenziale idrico si inverte — l'acqua lascia il vacuolo per osmosi. Il vacuolo si restringe e tira la membrana verso l'interno. La rigida parete cellulare di cellulosa rimane ferma, quindi appare uno spazio.",
+        hook: "Quando la lattuga appassita viene messa in acqua fredda, diventa di nuovo croccante — perché l'acqua ipotonica causa un rapido assorbimento di acqua (deplasmolisi e aumento della pressione di turgore). Gli chef usano questa tecnica regolarmente. Il tuo esperimento spiega perché l'insalata fresca rimane croccante e l'insalata appassita può essere rivitalizzata — pura osmosi!",
+        misconception: "La plasmolisi NON è causata dal cloruro di sodio che reagisce con la cellula — è puramente un effetto fisico di osmosi. Il NaCl non danneggia la membrana (a 1 mol/L per pochi minuti). La cellula può recuperare completamente perché la membrana è intatta e il processo è solo movimento di acqua.",
+      },
+      hint: "Se la plasmolisi non è visibile dopo 5 minuti, prova una soluzione di NaCl più concentrata (2 mol/L) o una cipolla rossa fresca (le cellule più colorate sono più facili da osservare). Assicurati che il coprioggetto non intrappoli bolle d'aria, che possono distorcere l'immagine.",
+      expected: "Plasmolisi chiara visibile dopo 5 min in NaCl 1 mol/L: vacuolo rosso visibilmente più piccolo, spazio alla parete cellulare. Deplasmolisi completa dopo 5–10 min in acqua distillata: il vacuolo ritorna a riempire la cellula. Processo completamente reversibile conferma l'integrità della membrana.",
+    },
+  },
+]

@@ -43,10 +43,15 @@ export default function RoboticsPage() {
       <div className="app-main">
         {/* Hero header */}
         <div className="browse-header robotics-header">
-          <div className="browse-header-content">
-            <h1 className="browse-title">⚙️ {t('robotics.title')}</h1>
-            <p className="browse-subtitle">{t('robotics.subtitle')}</p>
-            <p className="courses-note">{t('robotics.note')}</p>
+          <div className="browse-header-row">
+            <div className="browse-header-content">
+              <h1 className="browse-title">⚙️ {t('robotics.title')}</h1>
+              <p className="browse-subtitle">{t('robotics.subtitle')}</p>
+              <p className="courses-note">{t('robotics.note')}</p>
+            </div>
+            <button className="ask-gali-hero" onClick={() => setGaliOpen(true)}>
+              ✦ {t('experiment.ask_gali')}
+            </button>
           </div>
         </div>
 
