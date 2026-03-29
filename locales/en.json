@@ -26,13 +26,15 @@
     "copyright": "© {year} ATP Technologies"
   },
   "browse": {
-    "physics_title": "🔭 Browse Physics Experiments",
-    "physics_subtitle": "{count} physics experiments for the ATP Mobile Lab 4900.00",
-    "chemistry_title": "⚗️ Browse Chemistry Experiments",
-    "chemistry_subtitle": "{count} chemistry & plant physiology experiments for the ATP Mobile Lab 4900.00",
+    "physics_title": "🔭 Physics",
+    "physics_subtitle": "Hands-on experiments in Mechanics, Heat, Acoustics, Optics, Magnetism & Electricity",
+    "chemistry_title": "⚗️ Chemistry",
+    "chemistry_subtitle": "Experiments in solutions, acids & bases, gas chemistry, electrochemistry and plant physiology",
     "browse_all": "Browse all",
     "all_filter": "All",
-    "search_btn": "Search"
+    "search_btn": "Search",
+    "physics_note": "41 experiments designed for the ATP Mobile Lab 4900.00",
+    "chemistry_note": "50 experiments designed for the ATP Mobile Lab 4900.00"
   },
   "sections": {
     "mechanics": "Mechanics",

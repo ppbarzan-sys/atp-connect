@@ -21,6 +21,7 @@ interface BrowseViewProps {
   sectionEmojiMap?: Record<string, string>
   heroTitle?: string
   heroSubtitle?: string
+  heroNote?: string
 }
 
 export default function BrowseView({
@@ -34,6 +35,7 @@ export default function BrowseView({
   sectionEmojiMap,
   heroTitle,
   heroSubtitle,
+  heroNote,
 }: BrowseViewProps) {
   const { t, locale } = useI18n()
   const allExperiments = expData ?? getExperiments(locale)
@@ -59,6 +61,7 @@ export default function BrowseView({
 
   const title = heroTitle ?? t('browse.physics_title')
   const subtitle = heroSubtitle ?? t('browse.physics_subtitle', { count: allExperiments.length })
+  const note = heroNote ?? t('browse.physics_note')
 
   return (
     <div className="main-area">
@@ -66,9 +69,10 @@ export default function BrowseView({
         {/* Hero */}
         <div className="browse-hero">
           <div className="browse-hero-row">
-            <div>
-              <h1>{title}</h1>
-              <p>{subtitle}</p>
+            <div className="browse-hero-content">
+              <h1 className="browse-hero-title">{title}</h1>
+              <p className="browse-hero-subtitle">{subtitle}</p>
+              {note && <p className="browse-hero-note">{note}</p>}
             </div>
             {onAskGali && (
               <button className="ask-gali-hero" onClick={() => onAskGali()}>

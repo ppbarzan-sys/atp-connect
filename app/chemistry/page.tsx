@@ -44,6 +44,7 @@ export default function ChemistryPage() {
         sectionEmojiMap={chemistrySectionEmojis}
         heroTitle={t('browse.chemistry_title')}
         heroSubtitle={t('browse.chemistry_subtitle', { count: chemistryExperiments.length })}
+        heroNote={t('browse.chemistry_note')}
       />
 
       {searchOpen && (

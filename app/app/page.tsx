@@ -36,6 +36,7 @@ export default function AppHome() {
         onAskGali={() => setGaliOpen(true)}
         heroTitle={t('browse.physics_title')}
         heroSubtitle={t('browse.physics_subtitle', { count: experiments.length })}
+        heroNote={t('browse.physics_note')}
       />
       {searchOpen && (
         <SearchOverlay

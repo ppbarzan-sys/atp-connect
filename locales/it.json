@@ -26,13 +26,15 @@
     "copyright": "© {year} ATP Technologies"
   },
   "browse": {
-    "physics_title": "🔭 Esplora Esperimenti di Fisica",
-    "physics_subtitle": "{count} esperimenti di fisica per il Laboratorio Mobile ATP 4900.00",
-    "chemistry_title": "⚗️ Esplora Esperimenti di Chimica",
-    "chemistry_subtitle": "{count} esperimenti di chimica e fisiologia vegetale per il Laboratorio Mobile ATP 4900.00",
+    "physics_title": "🔭 Fisica",
+    "physics_subtitle": "Esperimenti pratici di Meccanica, Calore, Acustica, Ottica, Magnetismo ed Elettricità",
+    "chemistry_title": "⚗️ Chimica",
+    "chemistry_subtitle": "Esperimenti su soluzioni, acidi e basi, chimica dei gas, elettrochimica e fisiologia vegetale",
     "browse_all": "Vedi tutti",
     "all_filter": "Tutti",
-    "search_btn": "Cerca"
+    "search_btn": "Cerca",
+    "physics_note": "41 esperimenti progettati per il Laboratorio Mobile ATP 4900.00",
+    "chemistry_note": "50 esperimenti progettati per il Laboratorio Mobile ATP 4900.00"
   },
   "sections": {
     "mechanics": "Meccanica",

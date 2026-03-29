@@ -37,9 +37,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 #view-browse::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
 .browse-hero{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);padding:32px 40px 28px;color:#fff;position:relative;overflow:hidden;}
 .browse-hero::after{content:'';position:absolute;right:-20px;top:-20px;width:200px;height:200px;background:rgba(255,255,255,.06);border-radius:50%;}
-.browse-hero h1{font-size:28px;font-weight:800;margin-bottom:6px;}
-.browse-hero p{opacity:.85;font-size:14px;}
-.browse-hero-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+.browse-hero-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;position:relative;z-index:1;}
+.browse-hero-content{position:relative;z-index:1;}
+.browse-hero-title{font-size:28px;font-weight:800;margin-bottom:6px;}
+.browse-hero-subtitle{opacity:.85;font-size:14px;margin:0;}
+.browse-hero-note{color:rgba(255,255,255,0.85);font-size:13px;margin-top:8px;opacity:0.75;}
 .browse-header-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;position:relative;z-index:1;}
 .ask-gali-hero{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:8px 18px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(4px);transition:background .15s;white-space:nowrap;flex-shrink:0;align-self:flex-start;margin-top:4px;}
 .ask-gali-hero:hover{background:rgba(255,255,255,.25);}
@@ -430,8 +432,8 @@ body.teacher-mode .teacher-mode-bar{display:block;}
   .browse-hero{
     padding:calc(20px + env(safe-area-inset-top,0px)) 16px 20px;
   }
-  .browse-hero h1{font-size:22px;margin-bottom:4px;}
-  .browse-hero p{font-size:13px;}
+  .browse-hero-title{font-size:22px;margin-bottom:4px;}
+  .browse-hero-subtitle{font-size:13px;}
   .browse-hero-row{gap:8px;}
   .browse-header-row{gap:8px;flex-direction:column;}
   .ask-gali-hero{padding:7px 14px;font-size:12px;align-self:flex-start;}
@@ -550,7 +552,7 @@ body.teacher-mode .teacher-mode-bar{display:block;}
    RESPONSIVE — small phones (≤ 390px)
 ══════════════════════════════════════════════════════ */
 @media(max-width:390px){
-  .browse-hero h1{font-size:20px;}
+  .browse-hero-title{font-size:20px;}
   .exp-h1{font-size:18px;}
   .main-tab{padding:7px 11px;font-size:11px;}
   .cards-row{grid-template-columns:1fr 1fr;gap:10px;}
