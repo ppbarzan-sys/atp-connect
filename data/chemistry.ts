@@ -23,6 +23,7 @@ export const chemistryExperiments: Experiment[] = [
   // ─── SECTION 1: Matter & Solutions (101–110) ───────────────────────────────
   {
     num: 101,
+    cardEmoji: "⚖️",
     title: 'Law of Mass Conservation',
     section: 'Matter & Solutions',
     desc: 'Mix KI and AgNO₃ solutions in a sealed flask and weigh before and after to verify Lavoisier\'s Law.',
@@ -154,6 +155,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 102,
+    cardEmoji: "💧",
     title: 'Diffusion in Solution',
     section: 'Matter & Solutions',
     desc: 'Drop a KMnO₄ crystal into still water and watch the purple colour spread slowly without stirring.',
@@ -285,6 +287,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 103,
+    cardEmoji: "🥛",
     title: 'Colloids',
     section: 'Matter & Solutions',
     desc: 'Dissolve sulphur in ethanol, add to water to create a colloid, then compare it to a true solution using a filter.',
@@ -416,6 +419,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 104,
+    cardEmoji: "🔦",
     title: 'Properties of Colloids',
     section: 'Matter & Solutions',
     desc: 'Demonstrate the Tyndall effect with a torch, coagulate a colloid with NaCl, and test milk as a natural colloid.',
@@ -546,6 +550,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 105,
+    cardEmoji: "💎",
     title: 'Coordination Complexes',
     section: 'Matter & Solutions',
     desc: 'Add ammonia to CuSO₄ to form a deep blue complex, and NaCl to form a bright green complex.',
@@ -676,6 +681,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 106,
+    cardEmoji: "🌡️",
     title: 'Temperature Effects on Solubility',
     section: 'Matter & Solutions',
     desc: 'Test the solubility of CaCO₃, CuSO₄, NaCl, and sucrose at room temperature and at 70°C.',
@@ -806,6 +812,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 107,
+    cardEmoji: "🧊",
     title: 'Density of Substances',
     section: 'Matter & Solutions',
     desc: 'Measure the density of water, glycerol, a solid object, and ice using a graduated cylinder and balance.',
@@ -937,6 +944,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 108,
+    cardEmoji: "💠",
     title: 'Water of Crystallization',
     section: 'Matter & Solutions',
     desc: 'Heat blue CuSO₄·5H₂O until it turns white, then add water to restore the blue colour.',
@@ -1067,6 +1075,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 109,
+    cardEmoji: "🟡",
     title: 'Melting of Sulphur',
     section: 'Matter & Solutions',
     desc: 'Heat sulphur slowly and observe the transitions: yellow solid → liquid → viscous plastic → gas. Compare with sucrose decomposition.',
@@ -1197,6 +1206,7 @@ export const chemistryExperiments: Experiment[] = [
 
   {
     num: 110,
+    cardEmoji: "🟣",
     title: 'Iodine Sublimation',
     section: 'Matter & Solutions',
     desc: 'Heat iodine crystals gently and observe purple vapour forming and recrystallising without passing through a liquid phase.',
@@ -1330,6 +1340,7 @@ export const chemistryExperiments: Experiment[] = [
   // ─── SECTION 2: Acids & Bases (111–120) ───────────────────────────────────
   {
     num: 111,
+    cardEmoji: "🧪",
     title: 'Universal Indicator & pH Scale',
     section: 'Acids & Bases',
     desc: 'Test household solutions (vinegar, baking soda, lemon juice, bleach, milk) with universal indicator and rank them on the pH scale.',
@@ -1414,6 +1425,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 112,
+    cardEmoji: "⚡",
     title: 'Strong vs Weak Acids (Conductivity)',
     section: 'Acids & Bases',
     desc: 'Compare the electrical conductivity of HCl and ethanoic acid at the same concentration to distinguish strong and weak acids.',
@@ -1498,6 +1510,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 113,
+    cardEmoji: "🌡️",
     title: 'Neutralisation & Temperature Change',
     section: 'Acids & Bases',
     desc: 'Mix HCl and NaOH solutions and measure the temperature rise to demonstrate that neutralisation is exothermic.',
@@ -1582,6 +1595,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 114,
+    cardEmoji: "🏛️",
     title: 'Acid Rain Effect on Marble',
     section: 'Acids & Bases',
     desc: 'Drip dilute HCl on marble chips to simulate acid rain, measuring CO₂ production and mass loss over time.',
@@ -1666,6 +1680,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 115,
+    cardEmoji: "💉",
     title: 'Acid-Base Titration',
     section: 'Acids & Bases',
     desc: 'Titrate the acetic acid in vinegar with NaOH using phenolphthalein indicator to determine vinegar\'s acid concentration.',
@@ -1750,6 +1765,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 116,
+    cardEmoji: "🛡️",
     title: 'Buffer Action',
     section: 'Acids & Bases',
     desc: 'Demonstrate that buffer solutions resist pH change when small amounts of acid or base are added, compared to unbuffered solutions.',
@@ -1834,6 +1850,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 117,
+    cardEmoji: "🌺",
     title: 'Natural pH Indicators',
     section: 'Acids & Bases',
     desc: 'Extract red cabbage juice as a natural pH indicator and test it across a range of pH values to create a colour spectrum.',
@@ -1918,6 +1935,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 118,
+    cardEmoji: "💊",
     title: 'Antacid Effectiveness',
     section: 'Acids & Bases',
     desc: 'Compare how much acid different commercial antacid tablets can neutralise to determine which is most effective.',
@@ -2002,6 +2020,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 119,
+    cardEmoji: "🍎",
     title: 'Esterification',
     section: 'Acids & Bases',
     desc: 'React ethanol with ethanoic acid using an H₂SO₄ catalyst to produce ethyl ethanoate, identified by its characteristic fruity smell.',
@@ -2086,6 +2105,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 120,
+    cardEmoji: "🧼",
     title: 'Saponification (Soap Making)',
     section: 'Acids & Bases',
     desc: 'React vegetable oil with NaOH to make soap via saponification, then test the soap with hard water and soft water.',
@@ -2172,6 +2192,7 @@ export const chemistryExperiments: Experiment[] = [
   // ─── SECTION 3: Gas Chemistry (121–130) ──────────────────────────────────
   {
     num: 121,
+    cardEmoji: "💨",
     title: 'Production and Properties of Carbon Dioxide',
     section: 'Gas Chemistry',
     desc: 'Students react marble chips with hydrochloric acid to produce CO₂, collect it by downward displacement, test with limewater (turns milky), and use it to extinguish a candle.',
@@ -2302,6 +2323,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 122,
+    cardEmoji: "🫁",
     title: 'Production and Properties of Oxygen',
     section: 'Gas Chemistry',
     desc: 'Students decompose hydrogen peroxide using manganese dioxide as a catalyst, collect the oxygen produced, and confirm its identity by relighting a glowing splint.',
@@ -2427,6 +2449,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 123,
+    cardEmoji: "💥",
     title: 'Production and Properties of Hydrogen',
     section: 'Gas Chemistry',
     desc: 'Students react zinc granules with hydrochloric acid to produce hydrogen gas, collect it by upward displacement of air, and confirm its identity with the squeaky pop test.',
@@ -2922,6 +2945,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 127,
+    cardEmoji: "🥤",
     title: 'CO₂ Solubility vs Temperature',
     section: 'Gas Chemistry',
     desc: 'Students shake CO₂-saturated fizzy water at different temperatures, compare fizzing intensity, and measure pH change to demonstrate that gas solubility decreases with temperature (Henry\'s Law).',
@@ -3052,6 +3076,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 128,
+    cardEmoji: "🎈",
     title: 'Molar Volume of Hydrogen',
     section: 'Gas Chemistry',
     desc: 'Students collect hydrogen gas over water from the reaction of zinc with HCl, measure the volume at room temperature and pressure, and calculate the molar volume of a gas.',
@@ -3172,6 +3197,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 129,
+    cardEmoji: "🧫",
     title: 'Catalytic Decomposition of H₂O₂',
     section: 'Gas Chemistry',
     desc: 'Students compare the rate of H₂O₂ decomposition using MnO₂, FeCl₃ solution, liver (catalase enzyme), and no catalyst, measuring O₂ volume over time to determine which catalyst is most effective.',
@@ -3302,6 +3328,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 130,
+    cardEmoji: "⛲",
     title: 'Ammonia Fountain',
     section: 'Gas Chemistry',
     desc: 'Students fill a round-bottom flask with ammonia gas, invert it over coloured water with universal indicator, and open a valve to create a dramatic upward fountain — demonstrating the extreme solubility of NH₃.',
@@ -3428,6 +3455,7 @@ export const chemistryExperiments: Experiment[] = [
   // ─── SECTION 4: Electrochemistry (131–140) ───────────────────────────────
   {
     num: 131,
+    cardEmoji: "🔋",
     title: 'Electrolysis of Water',
     section: 'Electrochemistry',
     desc: 'Students electrolyse dilute sulphuric acid and collect hydrogen and oxygen gases to confirm the 2:1 volume ratio.',
@@ -3553,6 +3581,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 132,
+    cardEmoji: "🧂",
     title: 'Electrolysis of Brine',
     section: 'Electrochemistry',
     desc: 'Students electrolyse concentrated salt solution to produce chlorine at the anode, hydrogen at the cathode, and sodium hydroxide in solution.',
@@ -3678,6 +3707,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 133,
+    cardEmoji: "🪙",
     title: 'Zinc-Copper Galvanic Cell',
     section: 'Electrochemistry',
     desc: 'Students construct a zinc-copper voltaic cell using a salt bridge and measure the cell voltage, observing anode dissolution and cathode deposition.',
@@ -3798,6 +3828,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 134,
+    cardEmoji: "✨",
     title: 'Electroplating with Copper',
     section: 'Electrochemistry',
     desc: 'Students electroplate an iron nail with copper and measure the mass change to understand industrial electroplating.',
@@ -3918,6 +3949,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 135,
+    cardEmoji: "🪤",
     title: 'Factors Affecting Corrosion',
     section: 'Electrochemistry',
     desc: 'Students place iron nails in different conditions and observe which factors accelerate or inhibit rusting over several days.',
@@ -4158,6 +4190,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 137,
+    cardEmoji: "⚡",
     title: 'Conductivity of Electrolytes',
     section: 'Electrochemistry',
     desc: 'Students compare the electrical conductivity of various solutions and solids using a simple LED circuit to identify electrolytes and non-electrolytes.',
@@ -4288,6 +4321,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 138,
+    cardEmoji: "🍋",
     title: 'Fruit Battery',
     section: 'Electrochemistry',
     desc: 'Students create galvanic cells using fruits and different metal pairs to generate measurable voltages and understand electrochemical potential.',
@@ -4408,6 +4442,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 139,
+    cardEmoji: "📊",
     title: 'Standard Electrode Potentials (Activity Series)',
     section: 'Electrochemistry',
     desc: 'Students compare which metals displace others from solution to construct an experimental activity series and relate it to standard electrode potentials.',
@@ -4528,6 +4563,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 140,
+    cardEmoji: "🛡️",
     title: 'Cathodic Protection',
     section: 'Electrochemistry',
     desc: 'Students demonstrate that zinc protects iron from corrosion by acting as a sacrificial anode, modelling galvanising and cathodic protection of steel structures.',
@@ -4660,6 +4696,7 @@ export const chemistryExperiments: Experiment[] = [
   // ─── SECTION 5: Plant Physiology (141–150) ───────────────────────────────
   {
     num: 141,
+    cardEmoji: "🌿",
     title: 'Photosynthesis Rate (Elodea)',
     section: 'Plant Physiology',
     desc: 'Students count oxygen bubbles produced by Elodea at different light intensities (varying the distance from a lamp) and plot bubble rate vs light intensity to find the relationship.',
@@ -4787,6 +4824,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 142,
+    cardEmoji: "💦",
     title: 'Transpiration (Potometer)',
     section: 'Plant Physiology',
     desc: 'Students measure water uptake rate by a leafy shoot using a potometer under different conditions — still air, windy (fan), and humid (plastic bag) — recording air bubble movement in the capillary tube.',
@@ -4917,6 +4955,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 143,
+    cardEmoji: "🧅",
     title: 'Osmosis in Plant Cells',
     section: 'Plant Physiology',
     desc: 'Students cut potato strips, weigh them, place them in NaCl solutions of 0, 0.25, 0.5, and 1.0 mol/L for 30 minutes, and weigh again to find percentage mass change — determining the solute concentration of potato cells.',
@@ -5047,6 +5086,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 144,
+    cardEmoji: "🍃",
     title: 'Chromatography of Leaf Pigments',
     section: 'Plant Physiology',
     desc: 'Students crush leaves in acetone, apply the extract to chromatography paper, develop with petroleum ether:acetone solvent, and identify chlorophyll a/b and carotenoids by their Rf values and colours.',
@@ -5172,6 +5212,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 145,
+    cardEmoji: "🧬",
     title: 'Amylase Enzyme Activity',
     section: 'Plant Physiology',
     desc: 'Students mix starch solution with salivary amylase at 20°C, 37°C, and 60°C, testing with iodine solution every minute until the blue-black colour disappears, to find the optimum temperature for amylase activity.',
@@ -5302,6 +5343,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 146,
+    cardEmoji: "🍞",
     title: 'Anaerobic Respiration in Yeast',
     section: 'Plant Physiology',
     desc: 'Students mix yeast with glucose solution at different temperatures, use limewater or CO₂ sensors to capture CO₂ production, and measure fermentation rate over 20 minutes.',
@@ -5432,6 +5474,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 147,
+    cardEmoji: "🌱",
     title: 'Effect of CO₂ Concentration on Photosynthesis',
     section: 'Plant Physiology',
     desc: 'Students vary CO₂ concentration by adding different amounts of NaHCO₃ to an Elodea beaker and count the bubble rate at each concentration, at a fixed lamp distance.',
@@ -5562,6 +5605,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 148,
+    cardEmoji: "🌻",
     title: 'Seed Germination Conditions',
     section: 'Plant Physiology',
     desc: 'Students set up cress or radish seeds in four conditions — warm+water, cold+water, warm+no water, dark+warm+water — record germination percentage after 5 days, and identify the essential requirements for germination.',
@@ -5692,6 +5736,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 149,
+    cardEmoji: "🪴",
     title: 'Soil pH and Plant Nutrients',
     section: 'Plant Physiology',
     desc: 'Students collect soil samples from different sites, measure pH using indicator solution or a pH meter, relate results to nutrient availability, and examine visible plant health indicators in plants grown in the soils.',
@@ -5817,6 +5862,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 150,
+    cardEmoji: "🔬",
     title: 'Plasmolysis and Deplasmolysis',
     section: 'Plant Physiology',
     desc: 'Students place red onion or beetroot cells in 1 mol/L NaCl solution (causing plasmolysis) and observe the cell membrane pulling away from the cell wall under a microscope, then add distilled water to reverse the process (deplasmolysis).',

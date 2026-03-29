@@ -22,6 +22,7 @@ export const chemistrySectionEmojis: Record<string, string> = {
 export const chemistryExperiments: Experiment[] = [
   {
     num: 101,
+    cardEmoji: "⚖️",
     title: "Legge della Conservazione della Massa",
     section: "Materia e Soluzioni",
     desc: "Mescola soluzioni di KI e AgNO₃ in un pallone sigillato e pesa prima e dopo per verificare la Legge di Lavoisier.",
@@ -152,6 +153,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 102,
+    cardEmoji: "💧",
     title: "Diffusione in Soluzione",
     section: "Materia e Soluzioni",
     desc: "Lascia cadere un cristallo di KMnO₄ in acqua ferma e osserva il colore viola diffondersi lentamente senza agitare.",
@@ -282,6 +284,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 103,
+    cardEmoji: "🥛",
     title: "Colloidi",
     section: "Materia e Soluzioni",
     desc: "Sciogliere zolfo in etanolo, aggiungerlo all'acqua per creare un colloide, poi confrontarlo con una vera soluzione usando un filtro.",
@@ -412,6 +415,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 104,
+    cardEmoji: "🔦",
     title: "Proprietà dei Colloidi",
     section: "Materia e Soluzioni",
     desc: "Dimostrare l'effetto Tyndall con una torcia, coagulare un colloide con NaCl e testare il latte come colloide naturale.",
@@ -541,6 +545,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 105,
+    cardEmoji: "💎",
     title: "Complessi di Coordinazione",
     section: "Materia e Soluzioni",
     desc: "Aggiungere ammoniaca a CuSO₄ per formare un complesso blu intenso, e NaCl per formare un complesso verde brillante.",
@@ -670,6 +675,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 106,
+    cardEmoji: "🌡️",
     title: "Effetti della Temperatura sulla Solubilità",
     section: "Materia e Soluzioni",
     desc: "Testare la solubilità di CaCO₃, CuSO₄, NaCl e saccarosio a temperatura ambiente e a 70°C.",
@@ -799,6 +805,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 107,
+    cardEmoji: "🧊",
     title: "Densità delle Sostanze",
     section: "Materia e Soluzioni",
     desc: "Misurare la densità di acqua, glicerolo, un oggetto solido e ghiaccio usando un cilindro graduato e una bilancia.",
@@ -929,6 +936,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 108,
+    cardEmoji: "💠",
     title: "Acqua di Cristallizzazione",
     section: "Materia e Soluzioni",
     desc: "Riscaldare il CuSO₄·5H₂O blu finché non diventa bianco, poi aggiungere acqua per ripristinare il colore blu.",
@@ -1058,6 +1066,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 109,
+    cardEmoji: "🟡",
     title: "Fusione dello Zolfo",
     section: "Materia e Soluzioni",
     desc: "Riscalda lentamente lo zolfo e osserva le transizioni: solido giallo → liquido → plastico viscoso → gas. Confronta con la decomposizione del saccarosio.",
@@ -1187,6 +1196,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 110,
+    cardEmoji: "🟣",
     title: "Sublimazione dello Iodio",
     section: "Materia e Soluzioni",
     desc: "Riscalda delicatamente i cristalli di iodio e osserva il vapore viola che si forma e ricristallizza senza passare attraverso una fase liquida.",
@@ -1317,6 +1327,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 111,
+    cardEmoji: "🧪",
     title: "Indicatore Universale e Scala del pH",
     section: "Acidi e Basi",
     desc: "Testa soluzioni domestiche (aceto, bicarbonato di sodio, succo di limone, candeggina, latte) con indicatore universale e classificale sulla scala del pH.",
@@ -1401,6 +1412,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 112,
+    cardEmoji: "⚡",
     title: "Acidi Forti vs Deboli (Conducibilità)",
     section: "Acidi e Basi",
     desc: "Confronta la conducibilità elettrica di HCl e acido etanoico alla stessa concentrazione per distinguere acidi forti e deboli.",
@@ -1485,6 +1497,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 113,
+    cardEmoji: "🌡️",
     title: "Neutralizzazione e Variazione di Temperatura",
     section: "Acidi e Basi",
     desc: "Mescolare soluzioni di HCl e NaOH e misurare l'aumento di temperatura per dimostrare che la neutralizzazione è esotermica.",
@@ -1600,6 +1613,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 114,
+    cardEmoji: "🏛️",
     title: "Effetto delle Piogge Acide sul Marmo",
     section: "Acidi e Basi",
     desc: "Gocciolare HCl diluito su frammenti di marmo per simulare le piogge acide, misurando la produzione di CO₂ e la perdita di massa nel tempo.",
@@ -1684,6 +1698,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 115,
+    cardEmoji: "💉",
     title: "Titolazione Acido-Base",
     section: "Acidi e Basi",
     desc: "Titolare l'acido acetico nell'aceto con NaOH usando l'indicatore fenolftaleina per determinare la concentrazione dell'acido nell'aceto.",
@@ -1768,6 +1783,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 116,
+    cardEmoji: "🛡️",
     title: "Azione Tampone",
     section: "Acidi e Basi",
     desc: "Dimostrare che le soluzioni tampone resistono ai cambiamenti di pH quando vengono aggiunte piccole quantità di acido o base, rispetto alle soluzioni non tamponate.",
@@ -1852,6 +1868,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 117,
+    cardEmoji: "🌺",
     title: "Indicatori di pH Naturali",
     section: "Acidi e Basi",
     desc: "Estrarre il succo di cavolo rosso come indicatore di pH naturale e testarlo su una gamma di valori di pH per creare uno spettro di colori.",
@@ -1936,6 +1953,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 118,
+    cardEmoji: "💊",
     title: "Efficacia degli Antiacidi",
     section: "Acidi e Basi",
     desc: "Confrontare la quantità di acido che diverse compresse antiacide commerciali possono neutralizzare per determinare quale è più efficace.",
@@ -2061,6 +2079,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 119,
+    cardEmoji: "🍎",
     title: "Esterificazione",
     section: "Acidi e Basi",
     desc: "Fai reagire l'etanolo con l'acido etanoico usando un catalizzatore H₂SO₄ per produrre etanoato di etile, identificato dal suo caratteristico odore fruttato.",
@@ -2145,6 +2164,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 120,
+    cardEmoji: "🧼",
     title: "Saponificazione (Produzione del Sapone)",
     section: "Acidi e Basi",
     desc: "Fai reagire l'olio vegetale con NaOH per produrre sapone tramite saponificazione, poi testa il sapone con acqua dura e acqua dolce.",
@@ -2229,6 +2249,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 121,
+    cardEmoji: "💨",
     title: "Produzione e Proprietà dell'Anidride Carbonica",
     section: "Chimica dei Gas",
     desc: "Gli studenti fanno reagire frammenti di marmo con acido cloridrico per produrre CO₂, lo raccolgono per spostamento verso il basso, lo testano con acqua di calce (diventa lattiginosa) e lo usano per spegnere una candela.",
@@ -2359,6 +2380,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 122,
+    cardEmoji: "🫁",
     title: "Produzione e Proprietà dell'Ossigeno",
     section: "Chimica dei Gas",
     desc: "Gli studenti decompongono il perossido di idrogeno usando biossido di manganese come catalizzatore, raccolgono l'ossigeno prodotto e ne confermano l'identità riaccendendo una stecca incandescente.",
@@ -2484,6 +2506,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 123,
+    cardEmoji: "💥",
     title: "Produzione e Proprietà dell'Idrogeno",
     section: "Chimica dei Gas",
     desc: "Gli studenti fanno reagire granuli di zinco con acido cloridrico per produrre gas idrogeno, lo raccolgono per spostamento verso l'alto dell'aria e ne confermano l'identità con il test del pop cigolante.",
@@ -2979,6 +3002,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 127,
+    cardEmoji: "🥤",
     title: "Solubilità del CO₂ vs Temperatura",
     section: "Chimica dei Gas",
     desc: "Gli studenti agitano acqua frizzante satura di CO₂ a diverse temperature, confrontano l'intensità dell'effervescenza e misurano la variazione di pH per dimostrare che la solubilità dei gas diminuisce con la temperatura (Legge di Henry).",
@@ -3109,6 +3133,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 128,
+    cardEmoji: "🎈",
     title: "Volume Molare dell'Idrogeno",
     section: "Chimica dei Gas",
     desc: "Gli studenti raccolgono gas idrogeno sull'acqua dalla reazione di zinco con HCl, misurano il volume a temperatura e pressione ambiente e calcolano il volume molare di un gas.",
@@ -3229,6 +3254,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 129,
+    cardEmoji: "🧫",
     title: "Decomposizione Catalitica di H₂O₂",
     section: "Chimica dei Gas",
     desc: "Gli studenti confrontano la velocità di decomposizione di H₂O₂ usando MnO₂, soluzione di FeCl₃, fegato (enzima catalasi) e nessun catalizzatore, misurando il volume di O₂ nel tempo per determinare quale catalizzatore è più efficace.",
@@ -3359,6 +3385,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 130,
+    cardEmoji: "⛲",
     title: "Fontana di Ammoniaca",
     section: "Chimica dei Gas",
     desc: "Gli studenti riempiono un pallone a fondo tondo con gas ammoniaca, lo capovolgono sopra acqua colorata con indicatore universale e aprono una valvola per creare una spettacolare fontana verso l'alto — dimostrando l'estrema solubilità di NH₃.",
@@ -3484,6 +3511,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 131,
+    cardEmoji: "🔋",
     title: "Elettrolisi dell'Acqua",
     section: "Elettrochimica",
     desc: "Gli studenti elettrolizzano acido solforico diluito e raccolgono idrogeno e ossigeno gassosi per confermare il rapporto volumetrico 2:1.",
@@ -3609,6 +3637,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 132,
+    cardEmoji: "🧂",
     title: "Elettrolisi della Salamoia",
     section: "Elettrochimica",
     desc: "Gli studenti elettrolizzano una soluzione concentrata di sale per produrre cloro all'anodo, idrogeno al catodo e idrossido di sodio in soluzione.",
@@ -3734,6 +3763,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 133,
+    cardEmoji: "🪙",
     title: "Cella Galvanica Zinco-Rame",
     section: "Elettrochimica",
     desc: "Gli studenti costruiscono una cella voltaica zinco-rame usando un ponte salino e misurano la tensione della cella, osservando la dissoluzione dell'anodo e la deposizione al catodo.",
@@ -3854,6 +3884,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 134,
+    cardEmoji: "✨",
     title: "Elettrodeposizione con Rame",
     section: "Elettrochimica",
     desc: "Gli studenti elettrodepositano rame su un chiodo di ferro e misurano la variazione di massa per comprendere l'elettrodeposizione industriale.",
@@ -3974,6 +4005,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 135,
+    cardEmoji: "🪤",
     title: "Fattori che Influenzano la Corrosione",
     section: "Elettrochimica",
     desc: "Gli studenti collocano chiodi di ferro in diverse condizioni e osservano quali fattori accelerano o inibiscono l'arrugginimento nell'arco di diversi giorni.",
@@ -4214,6 +4246,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 137,
+    cardEmoji: "⚡",
     title: "Conducibilità degli Elettroliti",
     section: "Elettrochimica",
     desc: "Gli studenti confrontano la conducibilità elettrica di varie soluzioni e solidi usando un semplice circuito LED per identificare elettroliti e non-elettroliti.",
@@ -4344,6 +4377,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 138,
+    cardEmoji: "🍋",
     title: "Batteria di Frutta",
     section: "Elettrochimica",
     desc: "Gli studenti creano celle galvaniche usando frutta e diverse coppie di metalli per generare tensioni misurabili e comprendere il potenziale elettrochimico.",
@@ -4464,6 +4498,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 139,
+    cardEmoji: "📊",
     title: "Potenziali Elettrodici Standard (Serie di Attività)",
     section: "Elettrochimica",
     desc: "Gli studenti confrontano quali metalli spostano altri dalla soluzione per costruire una serie di attività sperimentale e la mettono in relazione con i potenziali elettrodici standard.",
@@ -4584,6 +4619,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 140,
+    cardEmoji: "🛡️",
     title: "Protezione Catodica",
     section: "Elettrochimica",
     desc: "Gli studenti dimostrano che lo zinco protegge il ferro dalla corrosione agendo come anodo sacrificale, modellando la zincatura e la protezione catodica delle strutture in acciaio.",
@@ -4714,6 +4750,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 141,
+    cardEmoji: "🌿",
     title: "Velocità della Fotosintesi (Elodea)",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti contano le bolle di ossigeno prodotte dall'Elodea a diverse intensità luminose (variando la distanza da una lampada) e tracciano il grafico della velocità di produzione delle bolle rispetto all'intensità luminosa per trovare la relazione.",
@@ -4841,6 +4878,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 142,
+    cardEmoji: "💦",
     title: "Traspirazione (Potometro)",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti misurano la velocità di assorbimento dell'acqua da parte di un rametto fogliato usando un potometro in diverse condizioni — aria ferma, ventosa (ventilatore) e umida (sacchetto di plastica) — registrando il movimento della bolla d'aria nel tubo capillare.",
@@ -4971,6 +5009,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 143,
+    cardEmoji: "🧅",
     title: "Osmosi nelle Cellule Vegetali",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti tagliano strisce di patate, le pesano, le mettono in soluzioni di NaCl 0, 0,25, 0,5 e 1,0 mol/L per 30 minuti e ripesano per trovare la variazione percentuale di massa — determinando la concentrazione di soluto delle cellule della patata.",
@@ -5101,6 +5140,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 144,
+    cardEmoji: "🍃",
     title: "Cromatografia dei Pigmenti Fogliari",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti triturano foglie in acetone, applicano l'estratto su carta da cromatografia, sviluppano con solvente etere di petrolio:acetone e identificano clorofilla a/b e carotenoidi tramite i loro valori Rf e colori.",
@@ -5226,6 +5266,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 145,
+    cardEmoji: "🧬",
     title: "Attività dell'Enzima Amilasi",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti mescolano soluzione di amido con amilasi salivare a 20°C, 37°C e 60°C, testando con soluzione di iodio ogni minuto fino alla scomparsa del colore blu-nero, per trovare la temperatura ottimale per l'attività dell'amilasi.",
@@ -5356,6 +5397,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 146,
+    cardEmoji: "🍞",
     title: "Respirazione Anaerobica nel Lievito",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti mescolano lievito con soluzione di glucosio a diverse temperature, usano acqua di calce o sensori di CO₂ per catturare la produzione di CO₂ e misurano la velocità di fermentazione per 20 minuti.",
@@ -5486,6 +5528,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 147,
+    cardEmoji: "🌱",
     title: "Effetto della Concentrazione di CO₂ sulla Fotosintesi",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti variano la concentrazione di CO₂ aggiungendo diverse quantità di NaHCO₃ a un becher con Elodea e contano la velocità delle bolle a ciascuna concentrazione, a una distanza fissa dalla lampada.",
@@ -5616,6 +5659,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 148,
+    cardEmoji: "🌻",
     title: "Condizioni di Germinazione dei Semi",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti preparano semi di crescione o ravanello in quattro condizioni — caldo+acqua, freddo+acqua, caldo+senza acqua, buio+caldo+acqua — registrano la percentuale di germinazione dopo 5 giorni e identificano i requisiti essenziali per la germinazione.",
@@ -5746,6 +5790,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 149,
+    cardEmoji: "🪴",
     title: "pH del Suolo e Nutrienti Vegetali",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti raccolgono campioni di suolo da diversi siti, misurano il pH usando una soluzione indicatrice o un pH-metro, collegano i risultati alla disponibilità dei nutrienti ed esaminano indicatori visibili di salute nelle piante cresciute in quei suoli.",
@@ -5871,6 +5916,7 @@ export const chemistryExperiments: Experiment[] = [
   },
   {
     num: 150,
+    cardEmoji: "🔬",
     title: "Plasmolisi e Deplasmolisi",
     section: "Fisiologia Vegetale",
     desc: "Gli studenti immergono cellule di cipolla rossa o barbabietola in soluzione di NaCl 1 mol/L (causando plasmolisi) e osservano la membrana cellulare che si stacca dalla parete cellulare al microscopio, poi aggiungono acqua distillata per invertire il processo (deplasmolisi).",

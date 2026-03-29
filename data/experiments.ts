@@ -2,6 +2,7 @@
 
 export interface Experiment {
   num: number;
+  cardEmoji?: string;
   title: string;
   section: string;
   desc: string;
@@ -82,6 +83,7 @@ export const ATP_LOGO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUUAAACEC
 export const experiments: Experiment[] = [
   {
     "num": 1,
+    "cardEmoji": "⚖️",
     "title": "First class levers",
     "section": "Mechanics",
     "desc": "Investigate equilibrium of a first-class lever by balancing known masses on either side of a central pivot.",
@@ -249,6 +251,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 2,
+    "cardEmoji": "🏗️",
     "title": "First class levers and equilibrium positions",
     "section": "Mechanics",
     "desc": "Measure moments about a pivot and verify the principle of moments using a lever with loads at known distances.",
@@ -415,6 +418,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 3,
+    "cardEmoji": "📏",
     "title": "Sensitivity of a balance",
     "section": "Mechanics",
     "desc": "Determine the sensitivity of a beam balance by measuring how many scale divisions correspond to a known added mass.",
@@ -577,6 +581,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 4,
+    "cardEmoji": "🔧",
     "title": "Second and third class levers",
     "section": "Mechanics",
     "desc": "Study a second-class lever with the fulcrum at one end and verify the principle of moments for non-central pivots.",
@@ -745,6 +750,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 5,
+    "cardEmoji": "📐",
     "title": "Measurement of a length",
     "section": "Mechanics",
     "desc": "Measure the diameter and height of metal cylinders using a Vernier calliper and calculate their volumes.",
@@ -912,6 +918,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 6,
+    "cardEmoji": "🧊",
     "title": "Measurement of density",
     "section": "Mechanics",
     "desc": "Determine the density of metal cylinders by two methods: mass/volume and using a displacement vessel.",
@@ -1083,6 +1090,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 8,
+    "cardEmoji": "➡️",
     "title": "Composition and decomposition of forces",
     "section": "Mechanics",
     "desc": "Find the resultant of two concurrent forces using the parallelogram rule and verify it with a third equilibrant force.",
@@ -1249,6 +1257,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 9,
+    "cardEmoji": "🪝",
     "title": "Fixed Pulleys",
     "section": "Mechanics",
     "desc": "Show that a single fixed pulley changes the direction of force but not its magnitude; mechanical advantage = 1.",
@@ -1408,6 +1417,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 10,
+    "cardEmoji": "🔄",
     "title": "Mobile Pulley",
     "section": "Mechanics",
     "desc": "Demonstrate that a single movable pulley provides a mechanical advantage of 2, halving the required effort.",
@@ -1572,6 +1582,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 11,
+    "cardEmoji": "⛓️",
     "title": "Fixed and Mobile Pulleys",
     "section": "Mechanics",
     "desc": "Combine a fixed and a movable pulley and show that the system still yields MA ≈ 2 with the benefit of direction change.",
@@ -1737,6 +1748,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 12,
+    "cardEmoji": "📐",
     "title": "Inclined Plane",
     "section": "Mechanics",
     "desc": "Measure the force needed to slide a mass up an inclined plane and compare with the theoretical component of gravity along the slope.",
@@ -1903,6 +1915,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 13,
+    "cardEmoji": "🪃",
     "title": "Hooke’s Law",
     "section": "Mechanics",
     "desc": "Verify Hooke's Law by measuring spring extension as a function of applied force and determine the spring constant k.",
@@ -2069,6 +2082,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 14,
+    "cardEmoji": "🔗",
     "title": "Springs in series and in parallel",
     "section": "Mechanics",
     "desc": "Measure the effective spring constant for springs connected in series and in parallel, and explore the surprising 'spring paradox'.",
@@ -2233,6 +2247,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 15,
+    "cardEmoji": "🕰️",
     "title": "Simple Pendulum",
     "section": "Mechanics",
     "desc": "Measure the period of a simple pendulum for different lengths and verify T = 2π√(L/g).",
@@ -2398,6 +2413,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 16,
+    "cardEmoji": "💫",
     "title": "Spring Pendulum",
     "section": "Mechanics",
     "desc": "Measure the period of a spring-mass oscillator and verify T = 2π√(m/k).",
@@ -2563,6 +2579,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 17,
+    "cardEmoji": "🫗",
     "title": "Communicating Vessels",
     "section": "Mechanics",
     "desc": "Observe that a connected liquid reaches the same level in all tubes, verifying Stevino's law p = ρgh.",
@@ -2726,6 +2743,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 18,
+    "cardEmoji": "🛁",
     "title": "Archimedes’ Principle",
     "section": "Mechanics",
     "desc": "Verify Archimedes' principle by measuring the buoyant force on submerged objects and comparing it with the weight of fluid displaced.",
@@ -2894,6 +2912,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 19,
+    "cardEmoji": "🌡️",
     "title": "Equilibrium temperature of mixed liquids",
     "section": "Heat",
     "desc": "Mix equal volumes of hot and cold water and measure the equilibrium temperature to verify heat exchange.",
@@ -3055,6 +3074,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 20,
+    "cardEmoji": "🧤",
     "title": "Heat transfer and thermal insulation",
     "section": "Heat",
     "desc": "Compare the cooling rate of hot water with no insulation, one insulating layer, and two insulating layers.",
@@ -3218,6 +3238,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 21,
+    "cardEmoji": "🔥",
     "title": "Specific heat capacity of solids",
     "section": "Heat",
     "desc": "Determine the specific heat capacity of metals by measuring temperature changes when hot metal is dropped into cold water.",
@@ -3388,6 +3409,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 22,
+    "cardEmoji": "🤚",
     "title": "Heat Sensitivity",
     "section": "Heat",
     "desc": "Demonstrate the subjectivity of temperature perception using Locke's three-bowl experiment.",
@@ -3551,6 +3573,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 23,
+    "cardEmoji": "🫧",
     "title": "Pulse Glass",
     "section": "Heat",
     "desc": "Observe the pulse glass (Franklin's toy) to understand how reduced pressure lowers the boiling point of a liquid.",
@@ -3704,6 +3727,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 24,
+    "cardEmoji": "⏱️",
     "title": "Thermometer’s time constant",
     "section": "Heat",
     "desc": "Measure how quickly a thermometer responds to a step change in temperature and determine its time constant τ.",
@@ -3863,6 +3887,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 25,
+    "cardEmoji": "🌡️",
     "title": "The Manometer",
     "section": "Mechanics",
     "desc": "Use a U-tube manometer to qualitatively measure gas pressure differences by observing liquid level differences.",
@@ -4028,6 +4053,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 26,
+    "cardEmoji": "🎵",
     "title": "Use of the Tuning Forks",
     "section": "Acoustics",
     "desc": "Find the resonance length of an air column for a 440 Hz tuning fork and determine the speed of sound.",
@@ -4192,6 +4218,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 27,
+    "cardEmoji": "🔔",
     "title": "The Phenomenon of Resonance",
     "section": "Acoustics",
     "desc": "Demonstrate sympathetic resonance between two identical tuning forks on resonance boxes facing each other.",
@@ -4351,6 +4378,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 28,
+    "cardEmoji": "🎶",
     "title": "Beats and Interference in Acoustics",
     "section": "Acoustics",
     "desc": "Produce beats by sounding two tuning forks with slightly different frequencies and measure the beat frequency.",
@@ -4511,6 +4539,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 29,
+    "cardEmoji": "🔍",
     "title": "Focal Length",
     "section": "Optics",
     "desc": "Measure the focal lengths of biconcave and biconvex lenses by focusing parallel light or using distant objects.",
@@ -4674,6 +4703,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 30,
+    "cardEmoji": "👓",
     "title": "Thin Lens Equation",
     "section": "Optics",
     "desc": "Verify the thin lens equation 1/p + 1/q = 1/f using a converging lens and measuring object and image distances.",
@@ -4836,6 +4866,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 31,
+    "cardEmoji": "🔬",
     "title": "Magnification",
     "section": "Optics",
     "desc": "Measure the linear magnification of a converging lens by comparing image and object sizes and verifying m = −v/u.",
@@ -5000,6 +5031,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 32,
+    "cardEmoji": "🌈",
     "title": "Mixing of Colours",
     "section": "Optics",
     "desc": "Mix coloured lights (additive synthesis) and coloured filters (subtractive synthesis) to understand colour perception.",
@@ -5162,6 +5194,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 33,
+    "cardEmoji": "🔭",
     "title": "Microscope – Telescope",
     "section": "Optics",
     "desc": "Build a simple microscope and telescope using available lenses and measure their magnifications.",
@@ -5327,6 +5360,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 34,
+    "cardEmoji": "🔺",
     "title": "Prism: Composition of Light",
     "section": "Optics",
     "desc": "Pass white light through a glass prism to produce a visible spectrum and observe wavelength-dependent refraction (dispersion).",
@@ -5487,6 +5521,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 35,
+    "cardEmoji": "🌗",
     "title": "Shadows and Penumbra",
     "section": "Optics",
     "desc": "Investigate how shadow size and sharpness depend on source size and the relative positions of source, object, and screen.",
@@ -5652,6 +5687,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 36,
+    "cardEmoji": "🪞",
     "title": "Mirrors",
     "section": "Optics",
     "desc": "Investigate image formation by concave and convex mirrors for objects at different distances.",
@@ -5819,6 +5855,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 37,
+    "cardEmoji": "🧲",
     "title": "Attractive and repulsive Magnetic force",
     "section": "Magnetism",
     "desc": "Investigate the forces between bar magnets and map the regions of attraction and repulsion.",
@@ -5975,6 +6012,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 38,
+    "cardEmoji": "🌀",
     "title": "Magnetic Field Forces",
     "section": "Magnetism",
     "desc": "Map the magnetic field of a U-shaped magnet using a 2D field chamber with iron filings.",
@@ -6130,6 +6168,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 39,
+    "cardEmoji": "🧭",
     "title": "Compass and Magnetism",
     "section": "Magnetism",
     "desc": "Use a compass to map the direction of a magnetic field and observe how a compass aligns with an external field.",
@@ -6288,6 +6327,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 40,
+    "cardEmoji": "🎯",
     "title": "A Fairly Common Magnetic Toy",
     "section": "Magnetism",
     "desc": "Explore how a steel ball bearing between two like-pole magnets reverses the apparent interaction from repulsion to attraction.",
@@ -6443,6 +6483,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 41,
+    "cardEmoji": "💡",
     "title": "Electric Resistance",
     "section": "Electricity",
     "desc": "Verify Ohm's Law by measuring the current through a resistor at different voltages and determining the resistance.",
@@ -6605,6 +6646,7 @@ export const experiments: Experiment[] = [
   },
   {
     "num": 42,
+    "cardEmoji": "⚡",
     "title": "Series versus parallel circuits",
     "section": "Electricity",
     "desc": "Measure the total resistance for series and parallel resistor combinations and verify the combination formulas.",

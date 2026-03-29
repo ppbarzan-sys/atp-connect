@@ -3,6 +3,7 @@ import type { Experiment } from './experiments'
 export const experiments: Experiment[] = [
   {
     num: 1,
+    cardEmoji: "⚖️",
     title: 'Leve di primo genere',
     section: 'Mechanics',
     desc: 'Studia l\'equilibrio di una leva di primo genere bilanciando masse note su entrambi i lati di un fulcro centrale.',
@@ -160,6 +161,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 2,
+    cardEmoji: "🏗️",
     title: 'Leve di primo genere e posizioni di equilibrio',
     section: 'Mechanics',
     desc: 'Misura i momenti rispetto a un fulcro e verifica il principio dei momenti usando una leva con carichi a distanze note.',
@@ -310,6 +312,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 3,
+    cardEmoji: "📏",
     title: 'Sensibilità di una bilancia',
     section: 'Mechanics',
     desc: 'Misura la sensibilità di una bilancia aggiungendo masse sempre più piccole e osservando la minima massa rilevabile.',
@@ -457,6 +460,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 4,
+    cardEmoji: "🔧",
     title: 'Leve di secondo e terzo genere',
     section: 'Mechanics',
     desc: 'Confronta leve di secondo e terzo genere, misurando le forze necessarie per bilanciare carichi a varie distanze.',
@@ -606,6 +610,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 5,
+    cardEmoji: "📐",
     title: 'Misura di una lunghezza',
     section: 'Mechanics',
     desc: 'Misura la stessa lunghezza con strumenti diversi (righello, calibro, micrometro) e confronta precisione e incertezza.',
@@ -762,6 +767,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 6,
+    cardEmoji: "🧊",
     title: 'Misura della densità',
     section: 'Mechanics',
     desc: 'Determina la densità di solidi e liquidi misurando massa e volume con gli strumenti di laboratorio.',
@@ -914,6 +920,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 8,
+    cardEmoji: "➡️",
     title: 'Composizione e scomposizione delle forze',
     section: 'Mechanics',
     desc: 'Trova la risultante di forze concorrenti usando il metodo del parallelogramma e verifica con un dinamometro.',
@@ -1062,6 +1069,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 9,
+    cardEmoji: "🪝",
     title: 'Pulegge fisse',
     section: 'Mechanics',
     desc: 'Studia come una puleggia fissa cambia la direzione di una forza ma non il suo modulo.',
@@ -1205,6 +1213,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 10,
+    cardEmoji: "🔄",
     title: 'Puleggia mobile',
     section: 'Mechanics',
     desc: 'Usa una puleggia mobile per dimezzare la forza necessaria a sollevare un carico.',
@@ -1348,6 +1357,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 11,
+    cardEmoji: "⛓️",
     title: 'Pulegge fisse e mobili',
     section: 'Mechanics',
     desc: 'Combina pulegge fisse e mobili per ottenere diversi vantaggi meccanici.',
@@ -1495,6 +1505,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 12,
+    cardEmoji: "📐",
     title: 'Piano inclinato',
     section: 'Mechanics',
     desc: 'Misura la forza necessaria per spingere un carico su piani inclinati a diverse angolazioni.',
@@ -1643,6 +1654,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 13,
+    cardEmoji: "🪃",
     title: 'Legge di Hooke',
     section: 'Mechanics',
     desc: 'Applica forze crescenti a una molla e verifica la proporzionalità tra forza e allungamento (legge di Hooke).',
@@ -1792,6 +1804,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 14,
+    cardEmoji: "🔗",
     title: 'Molle in serie e in parallelo',
     section: 'Mechanics',
     desc: 'Confronta l\'allungamento di molle in serie e in parallelo sotto lo stesso carico.',
@@ -1939,6 +1952,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 15,
+    cardEmoji: "🕰️",
     title: 'Pendolo semplice',
     section: 'Mechanics',
     desc: 'Misura il periodo di un pendolo semplice al variare della lunghezza e verifica la formula T = 2π√(l/g).',
@@ -2087,6 +2101,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 16,
+    cardEmoji: "💫",
     title: 'Pendolo a molla',
     section: 'Mechanics',
     desc: 'Studia le oscillazioni di un pendolo a molla e determina la costante elastica dalla misura del periodo.',
@@ -2230,6 +2245,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 17,
+    cardEmoji: "🫗",
     title: 'Vasi comunicanti',
     section: 'Mechanics',
     desc: 'Osserva come il livello dell\'acqua si equalizza in vasi collegati, indipendentemente dalla forma dei contenitori.',
@@ -2382,6 +2398,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 18,
+    cardEmoji: "🛁",
     title: 'Principio di Archimede',
     section: 'Mechanics',
     desc: 'Misura la forza di spinta di Archimede su corpi immersi in acqua e verifica la legge di Archimede.',
@@ -2539,6 +2556,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 19,
+    cardEmoji: "🌡️",
     title: 'Temperatura di equilibrio dei liquidi mescolati',
     section: 'Heat',
     desc: 'Mescola liquidi a temperature diverse e misura la temperatura di equilibrio, confrontando il dato con la previsione teorica.',
@@ -2692,6 +2710,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 20,
+    cardEmoji: "🧤",
     title: 'Trasferimento di calore e isolamento termico',
     section: 'Heat',
     desc: 'Confronta la velocità di raffreddamento di oggetti con diverso isolamento termico.',
@@ -2844,6 +2863,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 21,
+    cardEmoji: "🔥",
     title: 'Calore specifico dei solidi',
     section: 'Heat',
     desc: 'Riscalda campioni solidi di materiale noto e calcola il calore specifico dalla variazione di temperatura.',
@@ -3003,6 +3023,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 22,
+    cardEmoji: "🤚",
     title: 'Sensibilità al calore',
     section: 'Heat',
     desc: 'Testa la sensibilità delle dita al calore e determina la soglia di percezione termica.',
@@ -3155,6 +3176,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 23,
+    cardEmoji: "🫧",
     title: 'Bicchiere a impulso (Pulse Glass)',
     section: 'Heat',
     desc: 'Osserva il trasferimento di calore per evaporazione e condensazione nel bicchiere a impulso.',
@@ -3294,6 +3316,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 24,
+    cardEmoji: "⏱️",
     title: 'Costante di tempo del termometro',
     section: 'Heat',
     desc: 'Misura quanto impiega il termometro a raggiungere la temperatura dell\'ambiente e determina la costante di tempo.',
@@ -3433,6 +3456,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 25,
+    cardEmoji: "🌡️",
     title: 'Il manometro',
     section: 'Mechanics',
     desc: 'Costruisci un manometro a U e misura la pressione di gas in contenitori chiusi.',
@@ -3576,6 +3600,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 26,
+    cardEmoji: "🎵",
     title: 'Uso dei diapason',
     section: 'Acoustics',
     desc: 'Usa i diapason per esplorare frequenza, ampiezza e battimenti nei suoni.',
@@ -3724,6 +3749,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 27,
+    cardEmoji: "🔔",
     title: 'Il fenomeno della risonanza',
     section: 'Acoustics',
     desc: 'Dimostra la risonanza facendo vibrare un secondo diapason senza toccarlo, usando le onde sonore.',
@@ -3872,6 +3898,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 28,
+    cardEmoji: "🎶",
     title: 'Battimenti e interferenza acustica',
     section: 'Acoustics',
     desc: 'Sovrapponi due suoni di frequenza simile e osserva i battimenti — variazioni periodiche del volume.',
@@ -4015,6 +4042,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 29,
+    cardEmoji: "🔍",
     title: 'Lunghezza focale',
     section: 'Optics',
     desc: 'Misura la lunghezza focale di lenti convergenti e divergenti usando oggetti a distanza nota.',
@@ -4162,6 +4190,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 30,
+    cardEmoji: "👓",
     title: 'Equazione delle lenti sottili',
     section: 'Optics',
     desc: 'Verifica l\'equazione delle lenti sottili (1/f = 1/v − 1/u) misurando distanze dell\'immagine e dell\'oggetto.',
@@ -4296,6 +4325,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 31,
+    cardEmoji: "🔬",
     title: 'Ingrandimento',
     section: 'Optics',
     desc: 'Misura l\'ingrandimento prodotto da lenti e specchi in diverse configurazioni.',
@@ -4447,6 +4477,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 32,
+    cardEmoji: "🌈",
     title: 'Mescolanza dei colori',
     section: 'Optics',
     desc: 'Mescola luci colorate primarie e studia la sintesi additiva dei colori.',
@@ -4589,6 +4620,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 33,
+    cardEmoji: "🔭",
     title: 'Microscopio e cannocchiale',
     section: 'Optics',
     desc: 'Costruisci un microscopio e un cannocchiale semplici con due lenti e studia i loro ingrandimenti.',
@@ -4736,6 +4768,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 34,
+    cardEmoji: "🔺",
     title: 'Prisma: composizione della luce',
     section: 'Optics',
     desc: 'Usa un prisma per scomporre la luce bianca nello spettro visibile e studiare la dispersione della luce.',
@@ -4880,6 +4913,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 35,
+    cardEmoji: "🌗",
     title: 'Ombre e penombre',
     section: 'Optics',
     desc: 'Studia la formazione di ombre e penombre proiettate da sorgenti luminose di diverse dimensioni.',
@@ -5033,6 +5067,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 36,
+    cardEmoji: "🪞",
     title: 'Specchi',
     section: 'Optics',
     desc: 'Esplora la riflessione della luce su specchi piani, concavi e convessi e verifica la legge della riflessione.',
@@ -5192,6 +5227,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 37,
+    cardEmoji: "🧲",
     title: 'Forza magnetica attrattiva e repulsiva',
     section: 'Magnetism',
     desc: 'Esplora le forze attrattive e repulsive tra magneti permanenti e misura la variazione con la distanza.',
@@ -5331,6 +5367,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 38,
+    cardEmoji: "🌀",
     title: 'Forze del campo magnetico',
     section: 'Magnetism',
     desc: 'Mappa le linee del campo magnetico intorno a un magnete a barra usando limatura di ferro e bussoline.',
@@ -5480,6 +5517,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 39,
+    cardEmoji: "🧭",
     title: 'Bussola e magnetismo',
     section: 'Magnetism',
     desc: 'Usa una bussola per studiare il campo magnetico terrestre e l\'influenza dei magneti.',
@@ -5628,6 +5666,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 40,
+    cardEmoji: "🎯",
     title: 'Un comune giocattolo magnetico',
     section: 'Magnetism',
     desc: 'Studia l\'equilibrio di un giocattolo magnetico e spiega il principio fisico che lo fa galleggiare.',
@@ -5773,6 +5812,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 41,
+    cardEmoji: "💡",
     title: 'Resistenza elettrica',
     section: 'Electricity',
     desc: 'Misura la resistenza di diversi conduttori con il metodo voltamperometrico e verifica la legge di Ohm.',
@@ -5920,6 +5960,7 @@ export const experiments: Experiment[] = [
   },
   {
     num: 42,
+    cardEmoji: "⚡",
     title: 'Circuiti in serie e in parallelo',
     section: 'Electricity',
     desc: 'Confronta la corrente e la tensione in circuiti in serie e in parallelo e verifica le leggi di Kirchhoff.',
