@@ -22,7 +22,9 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
   const pathname = usePathname()
   const { t } = useI18n()
   const isChemistry = pathname?.startsWith('/chemistry') ?? false
-  const isPhysicsActive = !isChemistry
+  const isAI = pathname?.startsWith('/ai') ?? false
+  const isRobotics = pathname?.startsWith('/robotics') ?? false
+  const isPhysicsActive = !isChemistry && !isAI && !isRobotics
 
   return (
     <aside className="sidebar">
@@ -48,6 +50,26 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       >
         <span>⚗️</span>
         <span className="label">{t('nav.chemistry')}</span>
+      </button>
+
+      {/* AI */}
+      <button
+        className={`nav-icon${isAI ? ' active' : ''}`}
+        onClick={() => router.push('/ai')}
+        title={t('nav.ai_title')}
+      >
+        <span>🤖</span>
+        <span className="label">{t('nav.ai')}</span>
+      </button>
+
+      {/* Robotics */}
+      <button
+        className={`nav-icon${isRobotics ? ' active' : ''}`}
+        onClick={() => router.push('/robotics')}
+        title={t('nav.robotics_title')}
+      >
+        <span>⚙️</span>
+        <span className="label">{t('nav.robotics')}</span>
       </button>
 
       {/* Search */}
