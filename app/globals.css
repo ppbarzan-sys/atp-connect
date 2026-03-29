@@ -867,6 +867,65 @@ body.teacher-mode .teacher-mode-bar{display:block;}
 }
 @keyframes landing-spin{to{transform:rotate(360deg)}}
 
+
+/* Pitch block — below sign-in button */
+.landing-pitch{
+  width:100%;
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  text-align:center;
+}
+.landing-pitch-desc{
+  font-size:13px;
+  color:var(--text);
+  line-height:1.65;
+  font-weight:400;
+  margin:0;
+}
+.landing-subjects{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:4px 8px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--teal);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.landing-dot{
+  color:#CBD5E1;
+  font-weight:400;
+  font-size:13px;
+}
+.landing-pitch-value{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.55;
+  margin:0;
+}
+.landing-pitch-cta{
+  font-size:14px;
+  font-weight:800;
+  color:var(--text);
+  line-height:1.4;
+  letter-spacing:-.01em;
+  margin:0;
+}
+.landing-pitch-credits{
+  font-size:10.5px;
+  color:#CBD5E1;
+  line-height:1.7;
+  letter-spacing:.01em;
+  margin:0;
+}
+
 /* Footer */
 .landing-footer{
   position:relative;
@@ -901,6 +960,10 @@ body.teacher-mode .teacher-mode-bar{display:block;}
   .landing-card{padding:36px 24px 32px;}
   .landing-title{font-size:28px;}
   .landing-logo{height:44px;}
+  .landing-pitch{margin-top:20px;padding-top:20px;gap:8px;}
+  .landing-pitch-desc{font-size:12.5px;}
+  .landing-pitch-cta{font-size:13px;}
+  .landing-subjects{font-size:10px;}
 }
 
 /* ══════════════════════════════════════════════════════
