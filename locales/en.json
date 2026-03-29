@@ -23,7 +23,16 @@
     "signing_in": "Signing in…",
     "error_invalid": "Invalid username or password.",
     "error_generic": "Something went wrong. Please try again.",
-    "copyright": "© {year} ATP Technologies"
+    "copyright": "© {year} ATP Technologies",
+    "pitch_desc": "The only STEM platform that unites a physical mobile lab with an AI-powered digital workspace, built for the next generation of builders.",
+    "pitch_subjects_physics": "Physics",
+    "pitch_subjects_chemistry": "Chemistry",
+    "pitch_subjects_robotics": "Robotics",
+    "pitch_subjects_ai": "Artificial Intelligence",
+    "pitch_value": "100+ hands-on experiments. A personal tutor that never sleeps.",
+    "pitch_cta": "Build faster. Learn deeper. Create without limits.",
+    "pitch_built_by": "Built by ATP Technologies",
+    "pitch_powered_by": "Powered by leading innovators"
   },
   "browse": {
     "physics_title": "🔭 Physics",

@@ -23,7 +23,16 @@
     "signing_in": "Accesso in corso…",
     "error_invalid": "Nome utente o password non validi.",
     "error_generic": "Qualcosa è andato storto. Riprova.",
-    "copyright": "© {year} ATP Technologies"
+    "copyright": "© {year} ATP Technologies",
+    "pitch_desc": "L'unica piattaforma STEM che unisce un laboratorio mobile fisico con uno spazio di lavoro digitale potenziato dall'IA, costruita per la prossima generazione di innovatori.",
+    "pitch_subjects_physics": "Fisica",
+    "pitch_subjects_chemistry": "Chimica",
+    "pitch_subjects_robotics": "Robotica",
+    "pitch_subjects_ai": "Intelligenza Artificiale",
+    "pitch_value": "Oltre 100 esperimenti pratici. Un tutor personale che non dorme mai.",
+    "pitch_cta": "Costruisci più velocemente. Impara più a fondo. Crea senza limiti.",
+    "pitch_built_by": "Sviluppato da ATP Technologies",
+    "pitch_powered_by": "Supportato da innovatori di riferimento"
   },
   "browse": {
     "physics_title": "🔭 Fisica",

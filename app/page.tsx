@@ -113,26 +113,26 @@ export default function LandingPage() {
         {/* Below-fold pitch block */}
         <div className="landing-pitch">
           <p className="landing-pitch-desc">
-            The only STEM platform that unites a physical mobile lab with an AI-powered digital workspace, built for the next generation of builders.
+            {t('landing.pitch_desc')}
           </p>
           <div className="landing-subjects">
-            <span>Physics</span>
+            <span>{t('landing.pitch_subjects_physics')}</span>
             <span className="landing-dot">·</span>
-            <span>Chemistry</span>
+            <span>{t('landing.pitch_subjects_chemistry')}</span>
             <span className="landing-dot">·</span>
-            <span>Robotics</span>
+            <span>{t('landing.pitch_subjects_robotics')}</span>
             <span className="landing-dot">·</span>
-            <span>Artificial Intelligence</span>
+            <span>{t('landing.pitch_subjects_ai')}</span>
           </div>
           <p className="landing-pitch-value">
-            100+ hands-on experiments. A personal tutor that never sleeps.
+            {t('landing.pitch_value')}
           </p>
           <p className="landing-pitch-cta">
-            Build faster. Learn deeper. Create without limits.
+            {t('landing.pitch_cta')}
           </p>
           <div className="landing-credits-box">
-            <p className="landing-credits-built">Built by ATP Technologies</p>
-            <p className="landing-credits-label">Powered by leading innovators</p>
+            <p className="landing-credits-built">{t('landing.pitch_built_by')}</p>
+            <p className="landing-credits-label">{t('landing.pitch_powered_by')}</p>
             <div className="landing-credits-badges">
               <span className="landing-credits-badge">Anthropic</span>
               <span className="landing-credits-badge">Arduino Education</span>
