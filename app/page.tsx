@@ -130,9 +130,17 @@ export default function LandingPage() {
           <p className="landing-pitch-cta">
             Build faster. Learn deeper. Create without limits.
           </p>
-          <p className="landing-pitch-credits">
-            Built by ATP Technologies · Powered by leading innovators: Anthropic · Arduino Education · Harvard University · Raspberry Pi Foundation · Khan Academy
-          </p>
+          <div className="landing-credits-box">
+            <p className="landing-credits-built">Built by ATP Technologies</p>
+            <p className="landing-credits-label">Powered by leading innovators</p>
+            <div className="landing-credits-badges">
+              <span className="landing-credits-badge">Anthropic</span>
+              <span className="landing-credits-badge">Arduino Education</span>
+              <span className="landing-credits-badge">Harvard University</span>
+              <span className="landing-credits-badge">Raspberry Pi Foundation</span>
+              <span className="landing-credits-badge">Khan Academy</span>
+            </div>
+          </div>
         </div>
       </main>
 

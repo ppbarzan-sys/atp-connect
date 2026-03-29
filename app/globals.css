@@ -918,12 +918,41 @@ body.teacher-mode .teacher-mode-bar{display:block;}
   letter-spacing:-.01em;
   margin:0;
 }
-.landing-pitch-credits{
-  font-size:10.5px;
-  color:#CBD5E1;
-  line-height:1.7;
-  letter-spacing:.01em;
-  margin:0;
+.landing-credits-box{
+  width:100%;
+  background:#f4faf8;
+  border:1px solid #9fe1cb;
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  text-align:center;
+}
+.landing-credits-built{
+  color:#0f6e56;
+  font-size:13px;
+  font-weight:600;
+  margin:0 0 6px 0;
+}
+.landing-credits-label{
+  color:#888;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin:0 0 8px 0;
+}
+.landing-credits-badges{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:6px;
+}
+.landing-credits-badge{
+  background:#fff;
+  border:1px solid #c8e8e0;
+  border-radius:6px;
+  padding:3px 10px;
+  font-size:12px;
+  font-weight:500;
+  color:#0d2d2d;
 }
 
 /* Footer */
