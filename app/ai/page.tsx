@@ -18,7 +18,7 @@ export default function AIPage() {
   const courses = getAICourses(locale)
   const filtered = activeFilter === 'all' ? courses : courses.filter(c => c.category === activeFilter)
 
-  const galiCtx: GaliContext = { section: 'all' }
+  const galiCtx: GaliContext = { subject: 'ai' }
 
   const getCategoryLabel = (cat: string) => {
     if (cat === 'students') return t('ai.category_students')

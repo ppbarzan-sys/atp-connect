@@ -18,7 +18,7 @@ export default function RoboticsPage() {
   const courses = getRoboticsCourses(locale)
   const filtered = activeFilter === 'all' ? courses : courses.filter(c => c.category === activeFilter)
 
-  const galiCtx: GaliContext = { section: 'all' }
+  const galiCtx: GaliContext = { subject: 'robotics' }
 
   const getCategoryLabel = (cat: string) => {
     if (cat === 'arduino') return t('robotics.category_arduino')

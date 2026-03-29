@@ -11,65 +11,99 @@ interface ChatContext {
   section?: string
   experimentTitle?: string
   experimentNum?: number
+  subject?: 'physics' | 'chemistry' | 'ai' | 'robotics'
+  courseTitle?: string
+  courseProvider?: string
 }
 
 const CHEMISTRY_SECTIONS = new Set([
-  'Matter & Solutions',
-  'Acids & Bases',
-  'Gas Chemistry',
-  'Electrochemistry',
-  'Plant Physiology',
+  'Matter & Solutions', 'Acids & Bases', 'Gas Chemistry',
+  'Electrochemistry', 'Plant Physiology'
 ])
 
 function isChemistryContext(context?: ChatContext): boolean {
-  if (!context) return false
-  if (context.experimentNum && context.experimentNum >= 101) return true
-  if (context.section && CHEMISTRY_SECTIONS.has(context.section)) return true
+  if (context?.subject === 'chemistry') return true
+  if (context?.subject === 'physics') return false
+  if (context?.section) return CHEMISTRY_SECTIONS.has(context.section)
   return false
 }
 
 function buildSystemPrompt(context?: ChatContext): string {
-  const isChemistry = isChemistryContext(context)
+  const subject = context?.subject || (isChemistryContext(context) ? 'chemistry' : 'physics')
 
   let contextLine: string
-  if (context?.experimentTitle) {
-    const subject = isChemistry ? 'chemistry' : 'physics'
-    contextLine = `The student is currently working on ${subject} experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
+  if (subject === 'ai') {
+    if (context?.courseTitle) {
+      contextLine = `The student is looking at the AI course: "${context.courseTitle}" by ${context.courseProvider || 'Anthropic'}.`
+    } else {
+      contextLine = 'The student is browsing the AI courses section, which features free Anthropic courses on artificial intelligence.'
+    }
+  } else if (subject === 'robotics') {
+    if (context?.courseTitle) {
+      contextLine = `The student is looking at the Robotics & CS course: "${context.courseTitle}" by ${context.courseProvider || 'the course provider'}.`
+    } else {
+      contextLine = 'The student is browsing the Robotics & CS section, which features courses from Arduino, Raspberry Pi Foundation, and Harvard CS50.'
+    }
+  } else if (context?.experimentTitle) {
+    const subjectName = subject === 'chemistry' ? 'chemistry' : 'physics'
+    contextLine = `The student is currently working on ${subjectName} experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
   } else if (context?.section && context.section !== 'all') {
-    const subject = CHEMISTRY_SECTIONS.has(context.section) ? 'chemistry' : 'physics'
-    contextLine = `The student is browsing the "${context.section}" section of the ${subject} lab.`
+    const subjectName = CHEMISTRY_SECTIONS.has(context.section) ? 'chemistry' : 'physics'
+    contextLine = `The student is browsing the "${context.section}" section of the ${subjectName} lab.`
   } else {
-    contextLine = 'The student is browsing the full ATP Lab catalogue (physics + chemistry experiments).'
+    contextLine = 'The student is browsing the ATP Connect platform.'
   }
 
-  const subjectScope = isChemistry
-    ? `chemistry concepts (acid/base reactions, gas laws, electrochemistry, plant physiology, stoichiometry, pH, titration, electrolysis, etc.)`
-    : `physics concepts (mechanics, forces, thermodynamics, acoustics, optics, magnetism, electricity, etc.)`
+  let subjectScope: string
+  if (subject === 'ai') {
+    subjectScope = `artificial intelligence concepts including:
+- What AI is and how it works (machine learning, neural networks, LLMs)
+- How to use AI tools like Claude responsibly and effectively
+- Prompt engineering — how to write clear instructions for AI
+- AI ethics, bias, safety, and responsible use
+- How AI is transforming education, science, and everyday life
+- The difference between narrow AI and general AI
+- How students can build projects with AI APIs
+- Career paths in AI and machine learning`
+  } else if (subject === 'robotics') {
+    subjectScope = `robotics, electronics, and computer science concepts including:
+- Arduino programming (C/C++), circuits, sensors, actuators, and IoT
+- Raspberry Pi, Python programming, GPIO, and physical computing
+- Computer science fundamentals: algorithms, data structures, problem-solving
+- Electronics basics: voltage, current, resistance, LEDs, motors, breadboards
+- How to build real projects: robots, smart devices, sensor networks
+- The connection between hardware and software
+- How to debug circuits and code
+- Career paths in robotics, embedded systems, and software engineering`
+  } else if (subject === 'chemistry') {
+    subjectScope = `chemistry concepts (acid/base reactions, gas laws, electrochemistry, plant physiology, stoichiometry, pH, titration, electrolysis, etc.)`
+  } else {
+    subjectScope = `physics concepts (mechanics, forces, thermodynamics, acoustics, optics, magnetism, electricity, etc.)`
+  }
 
-  return `You are Gali ✦, an enthusiastic and knowledgeable AI science lab assistant for ATP Mobile Lab — an interactive science manual with:
+  return `You are Gali ✦, an enthusiastic and knowledgeable AI STEM assistant for ATP Connect — an interactive learning platform for schools in Africa with:
 - 41 physics experiments across Mechanics, Heat, Acoustics, Optics, Magnetism, and Electricity
 - 50 chemistry experiments across Matter & Solutions, Acids & Bases, Gas Chemistry, Electrochemistry, and Plant Physiology
+- 12 free AI courses from Anthropic (for students, educators, and advanced learners)
+- 9 free Robotics & CS courses from Arduino Education, Raspberry Pi Foundation, and Harvard CS50
 
 ${contextLine}
 
 Your role is to:
 - Help students understand ${subjectScope}
-- Explain formulas and show how to apply them step-by-step
-- Guide students on what to observe and record during experiments
-- Describe expected results and how to interpret collected data
-- Connect science to real-world applications and everyday examples
-- Address common mistakes and misconceptions clearly
-- Encourage curiosity, scientific thinking, and deeper exploration
+- Explain concepts clearly with real-world examples
+- Guide students step-by-step through problems and projects
+- Encourage curiosity, critical thinking, and hands-on experimentation
+- Suggest relevant courses or experiments from the platform when helpful
+- Be supportive and patient — many students are encountering these topics for the first time
 
 Response formatting guidelines:
 - Keep responses concise: 2–4 short paragraphs or a bullet list
 - Use **bold** for key terms, formulas, and important values
 - For numbered steps use "1. step", "2. step" format
 - For lists use "- item" format
-- For inline formulas write them inline with **bold**, e.g. **F = ma** or **pH = -log[H⁺]**
 - Use friendly, encouraging language appropriate for high school or early university students
-- Never invent specific numerical experiment results — refer students to their own data
-- If asked something completely off-topic, gently redirect back to STEM and the experiment context`
+- If asked something completely off-topic, gently redirect back to STEM subjects`
 }
 
 export async function POST(req: NextRequest) {

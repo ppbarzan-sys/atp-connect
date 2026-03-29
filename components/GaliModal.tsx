@@ -6,6 +6,9 @@ export interface GaliContext {
   section?: string
   experimentTitle?: string
   experimentNum?: number
+  subject?: 'physics' | 'chemistry' | 'ai' | 'robotics'
+  courseTitle?: string
+  courseProvider?: string
 }
 
 interface Message {
@@ -119,6 +122,14 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // ── Build welcome message ────────────────────────────────────────────────
   function buildWelcome(): string {
+    if (context?.subject === 'ai') {
+      if (context?.courseTitle) return t('gali.welcome_ai_course', { title: context.courseTitle })
+      return t('gali.welcome_ai')
+    }
+    if (context?.subject === 'robotics') {
+      if (context?.courseTitle) return t('gali.welcome_robotics_course', { title: context.courseTitle, provider: context.courseProvider || '' })
+      return t('gali.welcome_robotics')
+    }
     if (context?.experimentTitle) {
       const key = isChemistry(context)
         ? 'gali.welcome_exp_chemistry'
@@ -136,6 +147,8 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // ── Quick prompts ────────────────────────────────────────────────────────
   function getQuickPrompts(): string[] {
+    if (context?.subject === 'ai') return [t('gali.quick_ai_1'), t('gali.quick_ai_2'), t('gali.quick_ai_3')]
+    if (context?.subject === 'robotics') return [t('gali.quick_robotics_1'), t('gali.quick_robotics_2'), t('gali.quick_robotics_3')]
     if (context?.experimentTitle) {
       return isChemistry(context)
         ? [t('gali.quick_chem_reaction'), t('gali.quick_chem_safety'), t('gali.quick_chem_read')]
@@ -150,6 +163,8 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   }
 
   function getPlaceholder(): string {
+    if (context?.subject === 'ai') return t('gali.placeholder_ai')
+    if (context?.subject === 'robotics') return t('gali.placeholder_robotics')
     if (context?.experimentTitle) return t('gali.placeholder_exp', { title: context.experimentTitle })
     if (context?.section && context.section !== 'all') return t('gali.placeholder_section', { section: context.section })
     return t('gali.placeholder_general')
@@ -296,7 +311,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       if (res.status === 503) {
         setApiAvailable(false)
         const topic = context?.experimentTitle || context?.section || 'science'
-        const fallbackText = getFallback(userText, topic, t)
+        const fallbackText = getFallback(userText, topic, t, context?.subject)
         setMessages(prev => [...prev, { role: 'gali', content: fallbackText }])
         speakText(fallbackText)
         return
@@ -516,8 +531,28 @@ function MarkdownText({ text }: { text: string }) {
 // ─── Keyword fallback when no API key ─────────────────────────────────────────
 type TFn = (path: string, vars?: Record<string, string | number>) => string
 
-function getFallback(text: string, topic: string, t: TFn): string {
+function getFallback(text: string, topic: string, t: TFn, subject?: 'physics' | 'chemistry' | 'ai' | 'robotics'): string {
   const lower = text.toLowerCase()
+  // AI-specific fallbacks
+  if (subject === 'ai') {
+    if (lower.includes('prompt') || lower.includes('write') || lower.includes('instruction'))
+      return t('gali.fallback_ai_prompting')
+    if (lower.includes('ethic') || lower.includes('bias') || lower.includes('safe') || lower.includes('responsible'))
+      return t('gali.fallback_ai_ethics')
+    if (lower.includes('how') || lower.includes('work') || lower.includes('what is'))
+      return t('gali.fallback_ai_howworks')
+    return t('gali.fallback_ai_general')
+  }
+  // Robotics-specific fallbacks
+  if (subject === 'robotics') {
+    if (lower.includes('arduino') || lower.includes('circuit') || lower.includes('led') || lower.includes('sensor'))
+      return t('gali.fallback_robotics_arduino')
+    if (lower.includes('raspberry') || lower.includes('python') || lower.includes('gpio'))
+      return t('gali.fallback_robotics_rpi')
+    if (lower.includes('algorithm') || lower.includes('code') || lower.includes('program') || lower.includes('cs50'))
+      return t('gali.fallback_robotics_cs')
+    return t('gali.fallback_robotics_general')
+  }
   if (lower.includes('setup') || lower.includes('set up') || lower.includes('equipment') || lower.includes('preparaz') || lower.includes('strument'))
     return t('gali.fallback_setup')
   if (lower.includes('formula') || lower.includes('equation') || lower.includes('law'))
