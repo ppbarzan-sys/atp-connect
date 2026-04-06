@@ -5,6 +5,7 @@ const META: Record<Locale, { flag: string; label: string }> = {
   en: { flag: '🇬🇧', label: 'EN' },
   it: { flag: '🇮🇹', label: 'IT' },
   fr: { flag: '🇫🇷', label: 'FR' },
+  es: { flag: '🇪🇸', label: 'ES' },
 }
 
 export default function LanguageSwitcher() {

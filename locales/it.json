@@ -11,7 +11,9 @@
     "physics_title": "Esperimenti di Fisica",
     "chemistry_title": "Esperimenti di Chimica",
     "gali_title": "Chiedi a Gali IA",
-    "sign_out": "Esci"
+    "sign_out": "Esci",
+    "dashboard": "Progressi",
+    "dashboard_title": "I Miei Progressi"
   },
   "landing": {
     "tagline": "Accendi la Curiosità. Ispira l'Innovazione.",
@@ -297,7 +299,33 @@
     "label": "Lingua",
     "en": "English",
     "it": "Italiano",
-    "fr": "Français"
+    "fr": "Français",
+    "es": "Español"
+  },
+  "offline": {
+    "title": "Sei Offline",
+    "message": "Connettiti a internet per accedere agli esperimenti",
+    "retry": "Riprova"
+  },
+  "install": {
+    "prompt": "Installa ATP Connect per l'uso offline",
+    "install": "Installa",
+    "dismiss": "Non ora"
+  },
+  "dashboard": {
+    "title": "I Miei Progressi",
+    "overall": "Progresso Generale",
+    "completed": "Completati",
+    "average_score": "Punteggio Medio",
+    "last_activity": "Ultima Attività",
+    "physics": "Fisica",
+    "chemistry": "Chimica",
+    "experiments_done": "{count} di {total} esperimenti",
+    "continue": "Continua",
+    "section_breakdown": "Per Sezione",
+    "recent": "Attività Recente",
+    "no_progress": "Inizia un esperimento per monitorare i tuoi progressi!",
+    "score": "Punteggio"
   },
   "card": {
     "items": "elementi"

@@ -1,0 +1,8469 @@
+// Spanish translation of chemistry experiments
+import type { Experiment } from './experiments'
+
+export const chemistryExperimentsEs: Experiment[] = 
+[
+  {
+    "num": 101,
+    "cardEmoji": "⚖️",
+    "title": "Ley de conservación de la masa",
+    "section": "Matter & Solutions",
+    "desc": "Mezclar soluciones de KI y AgNO₃ en un matraz sellado y pesar antes y después para verificar la Ley de Lavoisier.",
+    "setupTime": "10 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes confirman that mass is conserved in a chemical reaction: the total mass of reactants equals the total mass of products.",
+      "instructions": [
+        "Pesar a sealed flask containing KI solution plus a small inner vial of AgNO₃ solution.",
+        "Tip the flask to mix the solutions; a yellow AgI precipitate forms immediately.",
+        "Pesar the sealed flask again without opening it.",
+        "Registrar both masses and calculate the difference.",
+        "Discutir why no mass change is observed."
+      ],
+      "expectedOutcome": "La masa antes y después reaction is identical (dentro de la precisión de la balanza ±0.01 g), confirmando la conservación de la masa."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚗️",
+          "name": "Matraz Erlenmeyer sellado (250 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "KI solución (0.1 M, 50 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "AgNO₃ solución (0.1 M, 10 mL)"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balanza electrónica (±0.01 g)"
+        },
+        {
+          "emoji": "🧊",
+          "name": "Small inner vial or tubo de ensayo"
+        }
+      ],
+      "observationsToRecord": [
+        "Masa de sealed flask antes mixing (g)",
+        "Cambio de color observed upon mixing",
+        "Masa de sealed flask después mixing (g)",
+        "Difference between antes and después masses (g)"
+      ],
+      "theoryPoints": [
+        "Lavoisier's Law establece que matter is neither created nor destroyed in a chemical reaction.",
+        "KI + AgNO₃ → AgI↓ + KNO₃; the yellow AgI precipitate forms but stays inside the sealed flask.",
+        "Atoms are rearranged, not lost; sealing the flask prevents any mass from escaping as gas.",
+        "Modern atomic theory explains conservation of mass through conservation of atoms."
+      ],
+      "realWorldConnections": [
+        "Los procesos industriales chemical plants monitor mass balance to detect leaks and ensure no reactants are wasted.",
+        "Forensic chemists use mass balance calculations to reconstruct what chemicals were involved in a reaction.",
+        "Pharmaceutical manufacturing relies on stoichiometry (based on conservation of mass) to achieve precise drug dosages."
+      ],
+      "formula": "mass(reactants) = mass(products)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What does Lavoisier's Law of Mass Conservation state?",
+          "options": [
+            "Energy is conserved in all chemical reactions",
+            "The total mass of reactants equals the total mass of products",
+            "The number of molecules is conserved in a reaction",
+            "Reactions always produce gases"
+          ],
+          "correctIndex": 1,
+          "explanation": "Lavoisier's Law states that mass is conserved: the total mass of reactants equals the total mass of products, because atoms are rearranged, not created or destroyed."
+        },
+        {
+          "text": "Why must the flask be sealed during the KI + AgNO₃ experiment?",
+          "options": [
+            "To speed up the reaction",
+            "To prevent the yellow precipitate from forming",
+            "To ensure no matter (gas or liquid) can escape, keeping mass constant",
+            "To keep the temperature stable"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sealing the flask ensures no matter escapes as vapour or liquid. If the flask were open, evaporating water could reduce the measured mass, making it appear that mass was lost."
+        },
+        {
+          "text": "In KI + AgNO₃ → AgI + KNO₃, which product is a yellow precipitate?",
+          "options": [
+            "KNO₃",
+            "KI",
+            "AgNO₃",
+            "AgI"
+          ],
+          "correctIndex": 3,
+          "explanation": "Silver iodide (AgI) is an insoluble yellow solid that precipitates out of solution when KI and AgNO₃ are mixed."
+        }
+      ],
+      "discussion": [
+        "If you performed this experiment in an open beaker and observed a tiny mass decrease, what might explain it? Does this disprove Lavoisier's Law?",
+        "How does the law of conservation of mass relate to balancing chemical equations?",
+        "Can you think of an everyday situation where it might appear that mass is not conserved? What is actually happening?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Conservation of Mass",
+          "pct": 40
+        },
+        {
+          "label": "Precipitation Reactions",
+          "pct": 30
+        },
+        {
+          "label": "Experimental Measurement",
+          "pct": 20
+        },
+        {
+          "label": "Atomic Theory",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan that burning or dissolving destroys matter; in reality, mass is conserved but products may be invisible gases.",
+        "Some students confuse conservation of mass with conservation of molecules — the number of molecules can change even though mass is conserved."
+      ],
+      "hook": "Antoine Lavoisier was so precise with his balance that he discovered a fundamental law of the universe in 1789 — using equipment you could hold in one hand!",
+      "khanLinks": [
+        {
+          "title": "Law of Conservation of Mass",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/conservation-of-mass/v/law-of-conservation-of-mass"
+        },
+        {
+          "title": "Balancing Chemical Equations",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/balancing-chemical-equations/v/balancing-chemical-equations"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Ensayo",
+        "Masa Before (g)",
+        "Masa After (g)",
+        "Difference (g)",
+        "Observación"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Colour of KI solution before mixing",
+      "Colour change when solutions mix (yellow precipitate of AgI)",
+      "Mass reading before and after mixing"
+    ],
+    "conclusion": "Write a conclusion stating whether mass was conserved, and link your result to Lavoisier's Law and atomic theory.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're testing one of chemistry's most fundamental laws — conservation of mass. Let's make sure your experiment is set up correctly!",
+      "keywords": {
+        "setup": "Make sure the flask is fully sealed before tipping. Place the AgNO₃ in the inner vial so mixing only happens when you tip the flask.",
+        "formula": "The key relationship is: mass(reactants) = mass(products). Any difference you measure is experimental error, not actual mass loss.",
+        "error": "The most common mistake is not sealing the flask tightly, allowing vapour to escape and making the after-mass appear smaller.",
+        "result": "You should find the mass before and after mixing is the same within ±0.02 g, confirming conservation of mass.",
+        "real": "This law underpins all of industrial chemistry — factories use it to track reactants and ensure nothing is wasted or leaked.",
+        "explain": "Atoms are rearranged in chemical reactions, not destroyed. Since atoms have mass, the total mass cannot change.",
+        "hook": "Lavoisier guillotined during the French Revolution, but his law of conservation of mass survived and became the foundation of modern chemistry!",
+        "misconception": "Many people think burning destroys matter — but the smoke and CO₂ released have the same total mass as the original fuel and oxygen."
+      },
+      "hint": "If your masses differ by more than 0.05 g, check that the flask lid is airtight and re-zero the balance before each measurement.",
+      "expected": "Mass before = mass after (within ±0.02 g). A yellow precipitate of AgI forms inside the flask."
+    }
+  },
+  {
+    "num": 102,
+    "cardEmoji": "💧",
+    "title": "Propiedades de sólidos, líquidos y gases",
+    "section": "Matter & Solutions",
+    "desc": "Comparar las propiedades de los tres estados de la materia: forma, volumen, compresibilidad y difusión.",
+    "setupTime": "5 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes observan how dissolved particles spread from high to low concentration by diffusion, driven by random thermal motion.",
+      "instructions": [
+        "Fill a large beaker with 300 mL of distilled water and let it stand until perfectly still.",
+        "Carefully drop one small KMnO₄ crystal into the centre of the beaker without disturbing the water.",
+        "Observar and sketch the spread of purple colour every 5 minutes for 20 minutes.",
+        "Registrar the approximate radius of the purple zone at each time point.",
+        "Compare the rate of diffusion at the start versus near the end."
+      ],
+      "expectedOutcome": "A purple halo slowly spreads outward from the crystal over 20 minutes, demonstrating that molecules move from regions of high to low concentration."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🥛",
+          "name": "Large vaso de precipitados (500 mL)"
+        },
+        {
+          "emoji": "🔮",
+          "name": "KMnO₄ crystals (1–2 small grains)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (300 mL)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Timer"
+        }
+      ],
+      "observationsToRecord": [
+        "Radius of purple zone at 0, 5, 10, 15, 20 minutes",
+        "Colour intensity at the crystal centre vs. the edge",
+        "Shape of the diffusion front (circular? irregular?)",
+        "Whether the water was disturbed during the observation"
+      ],
+      "theoryPoints": [
+        "Diffusion is the net movement of particles from a region of high concentration to low concentration.",
+        "Diffusion is driven by random thermal (Brownian) motion of molecules — no energy input is required.",
+        "The rate of diffusion depends on temperature, particle size, and concentration gradient.",
+        "Fick's First Law: flux ∝ concentration gradient; steeper gradient = faster diffusion."
+      ],
+      "realWorldConnections": [
+        "Oxygen diffuses from alveoli in the lungs into the bloodstream across a concentration gradient.",
+        "Perfume molecules diffuse through air from high concentration near the source to lower concentration throughout a room.",
+        "Nutrients diffuse from the intestine into surrounding capillaries during digestion."
+      ],
+      "formula": "J = −D (dC/dx)  [Fick's First Law]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What drives diffusion in solution?",
+          "options": [
+            "An electrical gradient between charges",
+            "Random thermal motion of molecules",
+            "Gravity pulling particles downward",
+            "Active pumping by the solvent"
+          ],
+          "correctIndex": 1,
+          "explanation": "Diffusion is driven by the random thermal (Brownian) motion of molecules. No energy input is needed; particles simply move randomly and over time spread from high to low concentration."
+        },
+        {
+          "text": "Why does the purple colour spread outward from the KMnO₄ crystal?",
+          "options": [
+            "The crystal is denser than water and sinks, releasing colour downward",
+            "KMnO₄ ions move from high concentration near the crystal to lower concentration farther away",
+            "Water molecules push the KMnO₄ away from the centre",
+            "The electric charge on KMnO₄ repels the ions outward"
+          ],
+          "correctIndex": 1,
+          "explanation": "KMnO₄ dissolves and releases MnO₄⁻ ions. These ions are highly concentrated near the crystal and diffuse outward to regions of lower concentration, creating the spreading purple halo."
+        },
+        {
+          "text": "What would happen to the rate of diffusion if the water temperature were increased to 60°C?",
+          "options": [
+            "Diffusion would slow down because heat makes water more viscous",
+            "Diffusion would stop because heat destroys KMnO₄",
+            "Diffusion would speed up because molecules have more thermal energy",
+            "Diffusion rate would be unchanged; only concentration matters"
+          ],
+          "correctIndex": 2,
+          "explanation": "Higher temperature gives molecules more kinetic energy, increasing the frequency and speed of random collisions. This speeds up diffusion."
+        }
+      ],
+      "discussion": [
+        "Why does the rate of diffusion appear to slow down as the experiment progresses, even though temperature has not changed?",
+        "If you repeated this experiment at 60°C, predict what difference you would see and explain why.",
+        "How does diffusion in solution compare to diffusion in a gas? Which is faster and why?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Diffusion & Concentration Gradient",
+          "pct": 45
+        },
+        {
+          "label": "Kinetic Molecular Theory",
+          "pct": 30
+        },
+        {
+          "label": "Fick's Law",
+          "pct": 15
+        },
+        {
+          "label": "Experimental Observation",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan diffusion requires stirring or an external force — in reality it is driven entirely by random molecular motion.",
+        "Many students think diffusion continues until all molecules reach the centre; in fact it stops when concentration is uniform (equilibrium)."
+      ],
+      "hook": "Without diffusion, your lungs could not transfer oxygen into your blood — every breath you take relies on this simple process!",
+      "khanLinks": [
+        {
+          "title": "Diffusion and Osmosis",
+          "url": "https://www.khanacademy.org/science/ap-biology/cell-structure-and-function/passive-transport/v/diffusion-and-osmosis"
+        },
+        {
+          "title": "Kinetic Molecular Theory",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory/v/kinetic-molecular-theory-of-gas-phase"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "Radius of Purple Zone (cm)",
+        "Color Intensity (1–5)",
+        "Notes"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Sketch the spread of purple colour at each 5-minute interval",
+      "Estimate the radius of the purple zone at each time point",
+      "Note whether the spreading appears uniform in all directions"
+    ],
+    "conclusion": "Explain how your observations confirm that diffusion moves particles from high to low concentration without any external force.",
+    "ai": {
+      "opening": "Hello! I'm Gali. Today you're watching diffusion in action — one of the most important processes in all of biology and chemistry. Let's observe carefully!",
+      "keywords": {
+        "setup": "Add the KMnO₄ crystal very gently so you don't create currents in the water. The beaker should sit on a vibration-free surface.",
+        "formula": "Fick's First Law: J = −D(dC/dx). Diffusion flux is proportional to the concentration gradient — steeper gradient means faster spreading.",
+        "error": "Avoid disturbing the beaker during the experiment. Even a small vibration creates convection currents that mask true diffusion.",
+        "result": "You should see a purple halo that grows slowly, with the colour most intense near the crystal and fading toward the edges.",
+        "real": "Oxygen diffuses from your lungs into your blood using the same principle — high O₂ in the alveoli, low O₂ in blood, so it moves across.",
+        "explain": "Diffusion is caused by random molecular motion. KMnO₄ molecules move randomly, but because there are more near the crystal, the net movement is outward.",
+        "hook": "KMnO₄ crystals are a deep purple-black — but dissolve them in water and you get a stunning violet colour used as a disinfectant and water treatment chemical!",
+        "misconception": "Diffusion does NOT stop when the gradient disappears — molecules keep moving randomly, they just have no net direction anymore (dynamic equilibrium)."
+      },
+      "hint": "If the purple colour spreads unevenly, check for air conditioning drafts or vibrations from other equipment affecting the beaker.",
+      "expected": "A circular purple zone expands from the crystal at roughly 0.5–1 cm per 5 minutes at room temperature."
+    }
+  },
+  {
+    "num": 103,
+    "cardEmoji": "🥛",
+    "title": "Mezcla vs. compuesto",
+    "section": "Matter & Solutions",
+    "desc": "Distinguir mezclas de compuestos comparando la mezcla de limaduras de hierro y azufre con el sulfuro de hierro.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Students distinguish between true solutions, colloids, and suspensions by preparing a sulphur colloid and testing it with filtration.",
+      "instructions": [
+        "Dissolve a small amount of sulphur powder in 5 mL of ethanol in a test tube.",
+        "Slowly add the sulphur-ethanol solution to 50 mL of distilled water while stirring.",
+        "Observar the milky appearance of the colloid that forms.",
+        "Filtrar the colloid through filter paper and compare the filtrate to the original.",
+        "Compare the colloid appearance with a true NaCl solution and a chalk suspension."
+      ],
+      "expectedOutcome": "The sulphur colloid appears milky and opalescent. Unlike a suspension, it passes through filter paper. Unlike a true solution, it scatters light visibly."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos and rack"
+        },
+        {
+          "emoji": "🔆",
+          "name": "Sulphur powder (0.1 g)"
+        },
+        {
+          "emoji": "🍶",
+          "name": "Ethanol (5 mL)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (100 mL)"
+        },
+        {
+          "emoji": "📄",
+          "name": "Papel de filtro and embudo"
+        },
+        {
+          "emoji": "🥛",
+          "name": "Vaso de precipitados (100 mL)"
+        }
+      ],
+      "observationsToRecord": [
+        "Apariencia of sulphur-ethanol solution (clear or cloudy?)",
+        "Apariencia después adding to water (colour, turbidity)",
+        "Whether colloid passes through filter paper",
+        "Comparison with true NaCl solution and chalk suspension"
+      ],
+      "theoryPoints": [
+        "A colloid contains particles 1–1000 nm in diameter dispersed in a medium — too small to filter but large enough to scatter light.",
+        "True solutions have particle sizes <1 nm and are transparent; suspensions have particles >1000 nm that settle and can be filtered.",
+        "When sulphur (insoluble in water) is added via ethanol, it precipitates as colloidal particles stabilised in water.",
+        "Colloids are thermodynamically metastable: they appear stable but can be destabilised by changes in temperature or electrolyte concentration."
+      ],
+      "realWorldConnections": [
+        "Milk is a colloid of fat droplets dispersed in water — it looks white because colloidal particles scatter light.",
+        "Blood plasma is a colloid; proper colloid behaviour is essential for oxygen and nutrient transport.",
+        "Fog is a colloid of water droplets in air; aerosol sprays are colloids of liquid in gas."
+      ],
+      "formula": "Particle diameter: 1 nm < d < 1000 nm (colloid range)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What distinguishes a colloid from a true solution?",
+          "options": [
+            "Colloids contain ions; solutions contain molecules",
+            "Colloid particles are 1–1000 nm and scatter light; solution particles are <1 nm and do not",
+            "Colloids can be filtered; solutions cannot",
+            "Colloids always appear clear; solutions appear milky"
+          ],
+          "correctIndex": 1,
+          "explanation": "Colloid particles (1–1000 nm) are large enough to scatter light (Tyndall effect) but small enough to pass through filter paper. True solution particles (<1 nm) are too small to scatter light and the solution appears clear."
+        },
+        {
+          "text": "Why does sulphur form a colloid when the ethanol solution is added to water?",
+          "options": [
+            "Sulphur dissolves in water to form ions",
+            "Ethanol reacts with water to release sulphur gas",
+            "Sulphur is insoluble in water and precipitates as tiny colloidal particles stabilised by the solvent change",
+            "Water oxidises sulphur into a new compound"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sulphur dissolves in ethanol but not in water. When the ethanol solution is added to water, sulphur precipitates as very fine particles (colloid size) rather than a bulk precipitate, because the sudden change in solvent prevents large crystal formation."
+        },
+        {
+          "text": "What happens when you filter a colloid through ordinary filter paper?",
+          "options": [
+            "The colloid is completely retained by the filter paper",
+            "The colloid passes through because colloidal particles are smaller than filter paper pores",
+            "Filtration converts the colloid into a true solution",
+            "The filter paper changes colour permanently"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ordinary filter paper has pore sizes much larger than colloidal particles (1–1000 nm), so the colloid passes through unchanged. This is why colloids cannot be separated by simple filtration — unlike suspensions."
+        }
+      ],
+      "discussion": [
+        "How would you tell the difference between a colloid, a true solution, and a suspension without using a filter? What tests would you do?",
+        "Why does milk look white? Use your knowledge of colloids to explain.",
+        "Colloids are described as \"metastable.\" What does this mean and what could cause a colloid to destabilise?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Colloid vs. Solution vs. Suspension",
+          "pct": 40
+        },
+        {
+          "label": "Particle Size & Properties",
+          "pct": 30
+        },
+        {
+          "label": "Light Scattering (Tyndall Effect)",
+          "pct": 20
+        },
+        {
+          "label": "Filtration & Separation",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan colloids are the same as suspensions — but suspensions settle and can be filtered, while colloids do neither.",
+        "Many students assume that if a liquid looks cloudy it must be a suspension — in fact, many colloids appear cloudy or milky."
+      ],
+      "hook": "Milk, fog, blood, and even jelly are all colloids — one of the most important types of mixture in nature and industry!",
+      "khanLinks": [
+        {
+          "title": "Introduction to Solutions",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Sample",
+        "Appearance",
+        "Passes Filter?",
+        "Scatters Light?",
+        "Classification"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the appearance (colour, clarity) of each mixture",
+      "Note whether each sample passes through filter paper",
+      "Observe which samples scatter a torch beam (Tyndall effect)"
+    ],
+    "conclusion": "Summarise the key differences between the three types of mixture based on your observations and link to particle size theory.",
+    "ai": {
+      "opening": "Hey! I'm Gali. You're making a colloid today — a mysterious type of mixture that's neither a true solution nor a suspension. Fascinating stuff!",
+      "keywords": {
+        "setup": "Add the sulphur-ethanol solution dropwise to water while stirring gently. Adding it too fast may create larger particles that settle.",
+        "formula": "Colloid particle diameter: 1 nm to 1000 nm. This size range gives colloids their unique optical properties.",
+        "error": "Do not use too much sulphur — excess sulphur creates a visible suspension that settles, instead of a true colloid.",
+        "result": "Expect a milky-white opalescent liquid that passes through filter paper but scatters a light beam (Tyndall effect).",
+        "real": "Milk is a colloid of fat in water; the white colour comes from light scattering by colloidal fat droplets — same physics as your sulphur colloid!",
+        "explain": "Colloidal particles are large enough to scatter light but small enough to stay suspended indefinitely due to Brownian motion.",
+        "hook": "The sky is blue because air acts like a colloid — tiny dust and gas molecules scatter short-wavelength blue light more than red light!",
+        "misconception": "A colloid is NOT a solution — the sulphur is not dissolved at the atomic level. But it is NOT a suspension either — it does not settle."
+      },
+      "hint": "If your colloid settles after a few minutes, the particles are too large. Dilute the original sulphur-ethanol solution more before adding to water.",
+      "expected": "A milky opalescent colloid that passes through filter paper and shows the Tyndall effect when a torch beam is shone through it."
+    }
+  },
+  {
+    "num": 104,
+    "cardEmoji": "🔦",
+    "title": "Separación por destilación",
+    "section": "Matter & Solutions",
+    "desc": "Separar una mezcla líquida por destilación simple y medir las temperaturas de ebullición.",
+    "setupTime": "10 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes investigan the two defining properties of colloids: light scattering (Tyndall effect) and coagulation by electrolytes.",
+      "instructions": [
+        "Prepare the sulphur colloid from Experiment 103, or use diluted milk.",
+        "Shine a laser or torch beam through the colloid in a darkened room — observe the light path.",
+        "Shine the same beam through a true NaCl solution for comparison.",
+        "Añadir 1 mL of saturated NaCl solution to the colloid and observe the change.",
+        "Registrar whether the colloid becomes turbid or settles after adding salt."
+      ],
+      "expectedOutcome": "The colloid shows a visible light beam (Tyndall effect); the NaCl solution does not. Adding NaCl causes the colloid to coagulate and settle."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔦",
+          "name": "Torch or laser pointer"
+        },
+        {
+          "emoji": "🥛",
+          "name": "Sulphur colloid or diluted milk"
+        },
+        {
+          "emoji": "🧂",
+          "name": "Saturated NaCl solución (5 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos (x4)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada"
+        }
+      ],
+      "observationsToRecord": [
+        "Visibility of light beam in colloid vs. true solution",
+        "Apariencia of colloid antes and después adding NaCl",
+        "Time for coagulated particles to settle",
+        "Comparison between milk and sulphur colloid Tyndall effect"
+      ],
+      "theoryPoints": [
+        "The Tyndall effect: colloidal particles scatter light, making the beam visible; true solutions do not scatter light significantly.",
+        "Colloids are stabilised by surface charges (zeta potential) that keep particles repelling each other.",
+        "Adding electrolytes (NaCl) neutralises surface charges, allowing particles to aggregate (coagulate) and settle.",
+        "Milk is a natural colloid of casein proteins and fat globules dispersed in water."
+      ],
+      "realWorldConnections": [
+        "Water treatment plants use aluminium sulfate to coagulate colloidal impurities and make them settle for removal.",
+        "The Tyndall effect explains why car headlights are visible as beams in foggy conditions.",
+        "Adding salt or acid to milk causes it to curdle (coagulate) — the basis of cheese-making."
+      ],
+      "formula": "Tyndall effect: I_scatter ∝ 1/λ⁴ (Rayleigh scattering for small particles)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is the Tyndall effect?",
+          "options": [
+            "The heating of a colloid by light absorption",
+            "The scattering of a light beam by colloidal particles, making it visible",
+            "The colour change of a colloid when electrolytes are added",
+            "The settling of particles in a suspension over time"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Tyndall effect is the scattering of light by colloidal particles. Because colloidal particles (1–1000 nm) are comparable in size to the wavelength of visible light, they scatter the light beam and make it visible."
+        },
+        {
+          "text": "Why does adding NaCl cause a colloid to coagulate?",
+          "options": [
+            "NaCl reacts chemically with the colloidal particles",
+            "NaCl increases the viscosity of the water, slowing particles",
+            "Na⁺ and Cl⁻ ions neutralise the surface charges that keep colloidal particles apart",
+            "NaCl absorbs the particles onto its crystal surface"
+          ],
+          "correctIndex": 2,
+          "explanation": "Colloidal particles are stabilised by electrical charges on their surfaces. When NaCl is added, the ions neutralise these charges, reducing the repulsion between particles. Without repulsion, particles collide and stick together (coagulate), then settle."
+        },
+        {
+          "text": "Which of the following is a real-world example of coagulation of a colloid?",
+          "options": [
+            "Dissolving salt in water",
+            "Ice melting in a warm room",
+            "Milk curdling when acid or salt is added",
+            "Steam condensing on a cold window"
+          ],
+          "correctIndex": 2,
+          "explanation": "Milk is a colloid of protein (casein) particles. Adding acid or salt neutralises the surface charges on casein, causing the protein particles to coagulate and form curds — the first step in cheese-making."
+        }
+      ],
+      "discussion": [
+        "How could you use the Tyndall effect to determine whether a drink has been adulterated with a colloidal additive?",
+        "In water treatment, why is coagulation followed by filtration? What would happen if you only did one step?",
+        "Why does the sky appear blue during the day but red/orange at sunset? How does this relate to the Tyndall effect?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Tyndall Effect & Light Scattering",
+          "pct": 35
+        },
+        {
+          "label": "Coagulation & Zeta Potential",
+          "pct": 35
+        },
+        {
+          "label": "Colloid Stability",
+          "pct": 20
+        },
+        {
+          "label": "Real-World Applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students think all white or cloudy liquids scatter the Tyndall effect — but the intensity depends on particle size and concentration.",
+        "Many think coagulation destroys the particles — in reality the particles still exist, they just clump together and settle."
+      ],
+      "hook": "The Tyndall effect is why you can see a laser beam through foggy air — and why the sky is blue!",
+      "khanLinks": [
+        {
+          "title": "Introduction to Solutions",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Sample",
+        "Tyndall Effect?",
+        "Appearance Before NaCl",
+        "Appearance After NaCl",
+        "Tiempo to Settle (min)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Visibility and brightness of the light beam through each sample",
+      "Change in appearance of the colloid after adding NaCl solution",
+      "Whether coagulated particles eventually settle to the bottom"
+    ],
+    "conclusion": "Explain how the Tyndall effect and coagulation demonstrate the unique properties of colloids compared to true solutions.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're exploring what makes colloids unique — from beautiful light beams to the science of cheese-making. Exciting!",
+      "keywords": {
+        "setup": "Use a torch in a darkened room for the best Tyndall effect. Shine through the side of the test tube, not the top.",
+        "formula": "The Tyndall effect intensity relates to Rayleigh scattering: I ∝ 1/λ⁴ — shorter wavelengths (blue light) scatter more.",
+        "error": "Using too much NaCl at once may give an unclear result. Add it dropwise and observe the gradual coagulation.",
+        "result": "The torch beam should be clearly visible in the colloid but invisible in the NaCl solution. After adding salt, the colloid should turn cloudy and then settle.",
+        "real": "Water treatment plants use exactly this process — add alum (an electrolyte) to coagulate colloidal mud and bacteria, then filter the settled sludge.",
+        "explain": "Surface charges on colloidal particles keep them apart. Electrolytes neutralise those charges, allowing particles to clump (coagulate) and eventually settle out.",
+        "hook": "The blue colour of the sky is actually a Tyndall-like effect — tiny air molecules scatter blue light more than red, making the sky look blue!",
+        "misconception": "Coagulation is NOT the same as crystallisation — the particles don't form a crystal structure, they just clump together into larger aggregates."
+      },
+      "hint": "If coagulation is slow, warm the solution slightly — higher temperature speeds up particle collisions and coagulation.",
+      "expected": "Clear Tyndall beam in colloid; no beam in solution. NaCl addition causes visible cloudiness followed by settling of sulphur particles."
+    }
+  },
+  {
+    "num": 105,
+    "cardEmoji": "💎",
+    "title": "Separación por cromatografía",
+    "section": "Matter & Solutions",
+    "desc": "Separar los pigmentos de la tinta usando cromatografía en papel.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes observan how metal ions form coordination complexes with different ligands, producing characteristic colours.",
+      "instructions": [
+        "Prepare 20 mL of 0.1 M CuSO₄ solution in a beaker.",
+        "Slowly add dilute ammonia (NH₃) solution dropwise while stirring; observe the colour change.",
+        "Continue adding NH₃ until the solution turns deep blue — record the colour at each stage.",
+        "In a separate beaker, add solid NaCl to CuSO₄ solution and observe the colour change to bright green.",
+        "Compare the two complexes and discuss how ligands affect colour."
+      ],
+      "expectedOutcome": "CuSO₄ + NH₃ produces a deep blue tetraamminecopper(II) complex [Cu(NH₃)₄]²⁺. CuSO₄ + NaCl produces a bright green chlorocopper complex."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔵",
+          "name": "CuSO₄ solución (0.1 M, 50 mL)"
+        },
+        {
+          "emoji": "🧴",
+          "name": "Dilute ammonia solución (NH₃, 25 mL)"
+        },
+        {
+          "emoji": "🧂",
+          "name": "NaCl solid (2 g)"
+        },
+        {
+          "emoji": "🥛",
+          "name": "Vaso de precipitadoss (100 mL, x2)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Dropper pipeta"
+        }
+      ],
+      "observationsToRecord": [
+        "Colour of CuSO₄ solution antes any additions (pale blue)",
+        "Colour at each stage of NH₃ addition (pale blue → blue-green → deep blue)",
+        "Colour of CuSO₄ después adding NaCl (bright green)",
+        "Any precipitate formation (pale blue Cu(OH)₂ antes excess NH₃)"
+      ],
+      "theoryPoints": [
+        "Coordination complexes form when ligands donate electron pairs to a central metal ion.",
+        "[Cu(H₂O)₄]²⁺ (pale blue) is replaced by [Cu(NH₃)₄]²⁺ (deep blue) as NH₃ displaces water ligands.",
+        "The colour of a complex depends on the ligand field splitting (d-orbital energy difference) — different ligands give different colours.",
+        "Cl⁻ ligands create a weaker field than NH₃, giving the green chlorocopper complex a different d-d transition energy."
+      ],
+      "realWorldConnections": [
+        "Coordination complexes are used in electroplating — copper plating uses [Cu(CN)₄]²⁻ complexes for uniform deposition.",
+        "Haemoglobin is an iron coordination complex that binds and releases oxygen in the body.",
+        "EDTA, used in blood collection tubes, is a ligand that forms stable complexes with Ca²⁺ to prevent blood clotting."
+      ],
+      "formula": "Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺  (deep blue)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is a ligand in a coordination complex?",
+          "options": [
+            "The central metal ion that accepts electrons",
+            "A molecule or ion that donates a lone pair of electrons to the metal ion",
+            "A salt that dissolves in water to form ions",
+            "An insoluble precipitate formed by the metal"
+          ],
+          "correctIndex": 1,
+          "explanation": "A ligand is a molecule or ion that donates a lone pair of electrons to the central metal ion, forming a coordinate (dative) bond. NH₃ and Cl⁻ are both ligands in this experiment."
+        },
+        {
+          "text": "Why does the colour of the solution change when NH₃ is added to CuSO₄?",
+          "options": [
+            "NH₃ reacts with SO₄²⁻ to form a new compound that absorbs different light",
+            "NH₃ reduces Cu²⁺ to Cu metal, which is a different colour",
+            "NH₃ replaces water ligands around Cu²⁺, changing the d-orbital energy splitting and thus the colour",
+            "NH₃ increases the concentration of Cu²⁺ ions, intensifying the blue colour"
+          ],
+          "correctIndex": 2,
+          "explanation": "Different ligands split the d-orbitals of Cu²⁺ by different amounts (ligand field theory). NH₃ splits them more than H₂O, changing the energy of d-d transitions and therefore the wavelength of light absorbed — resulting in a deeper blue colour."
+        },
+        {
+          "text": "What initially forms when a small amount of NH₃ is added to CuSO₄ solution?",
+          "options": [
+            "Deep blue [Cu(NH₃)₄]²⁺ immediately",
+            "A pale blue Cu(OH)₂ precipitate, before excess NH₃ dissolves it",
+            "A red precipitate of copper metal",
+            "No visible change occurs"
+          ],
+          "correctIndex": 1,
+          "explanation": "Initially, NH₃ raises the pH and causes Cu(OH)₂ to precipitate (pale blue solid). With excess NH₃, this dissolves as Cu²⁺ forms the stable deep blue [Cu(NH₃)₄]²⁺ tetraamminecopper(II) complex."
+        }
+      ],
+      "discussion": [
+        "Why does changing the ligand around a metal ion change the colour of the complex? Explain in terms of electron energy levels.",
+        "Haemoglobin is a coordination complex of iron. Why might carbon monoxide (CO) poisoning be so dangerous based on what you know about ligand competition?",
+        "If you added EDTA to your deep blue [Cu(NH₃)₄]²⁺ solution, what might happen and why?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Coordination Chemistry & Ligands",
+          "pct": 40
+        },
+        {
+          "label": "Colour from d-Orbital Splitting",
+          "pct": 30
+        },
+        {
+          "label": "Ligand Substitution Reactions",
+          "pct": 20
+        },
+        {
+          "label": "Biological & Industrial Applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the colour change is due to a chemical reaction producing a new compound — it is actually a change in the coordination environment around the same Cu²⁺ ion.",
+        "Many think all copper compounds are blue — in reality, different ligands give Cu²⁺ very different colours (blue, green, colourless)."
+      ],
+      "hook": "The deep blue of [Cu(NH₃)₄]²⁺ was used by ancient Egyptians as a pigment — and the same chemistry explains why your blood is red (iron complex)!",
+      "khanLinks": [
+        {
+          "title": "Oxidation States",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/introduction-to-oxidation-reduction-reactions/v/introduction-to-oxidation-states"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Addition",
+        "Volumen Added (mL)",
+        "Color Observed",
+        "Any Precipitate?",
+        "Notes"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Colour of the solution at each stage of NH₃ addition",
+      "Formation and dissolution of any precipitate",
+      "Final colour of both complexes (NH₃ complex and NaCl complex)"
+    ],
+    "conclusion": "Explain how different ligands (NH₃ vs Cl⁻ vs H₂O) affect the colour of copper complexes, and relate this to ligand field theory.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're making coordination complexes — the same type of chemistry that makes your blood red and copper minerals blue. Incredible!",
+      "keywords": {
+        "setup": "Add NH₃ dropwise and stir continuously. Adding too fast causes an excess of precipitate before the complex forms.",
+        "formula": "Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺. This is a ligand substitution where 4 water molecules around Cu²⁺ are replaced by 4 ammonia molecules.",
+        "error": "A common mistake is stopping at the pale blue precipitate stage — keep adding NH₃ until the precipitate fully dissolves and the deep blue complex forms.",
+        "result": "With NH₃: deep blue solution. With NaCl: bright green solution. These are two different copper coordination complexes.",
+        "real": "Haemoglobin (blood) and chlorophyll (plants) are both coordination complexes — haem is iron-based, chlorophyll is magnesium-based.",
+        "explain": "Different ligands split the d-orbitals of Cu²⁺ differently (ligand field splitting). This changes which wavelengths of light are absorbed, changing the colour.",
+        "hook": "The Statue of Liberty is made of copper — it's green because atmospheric moisture and CO₂ form copper carbonate complexes on its surface!",
+        "misconception": "The colour change is NOT because a completely new element is formed — Cu²⁺ is still there, just surrounded by different ligands that change its optical properties."
+      },
+      "hint": "If the solution turns green instead of blue with NH₃, you may have added NaCl contamination — rinse all glassware thoroughly before starting.",
+      "expected": "Deep blue [Cu(NH₃)₄]²⁺ with excess ammonia; bright green complex with Cl⁻ ligands from NaCl addition."
+    }
+  },
+  {
+    "num": 106,
+    "cardEmoji": "🌡️",
+    "title": "Difusión en líquidos",
+    "section": "Matter & Solutions",
+    "desc": "Observar la difusión de permanganato de potasio en agua a diferentes temperaturas.",
+    "setupTime": "15 min",
+    "duration": "35 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes descubren that temperature affects the solubility of different solutes differently: most ionic salts and molecular compounds become more soluble when heated.",
+      "instructions": [
+        "Prepare four test tubes with 10 mL of distilled water each at room temperature.",
+        "Añadir equal spatulas of CaCO₃, CuSO₄, NaCl, and sucrose to each test tube and stir.",
+        "Registrar how much dissolves at room temperature (qualitative: none/partial/full).",
+        "Calentar the test tubes in a 70°C water bath for 5 minutes and stir.",
+        "Registrar the change in solubility for each solute at the higher temperature."
+      ],
+      "expectedOutcome": "CuSO₄, NaCl, and sucrose show increased solubility at 70°C; CaCO₃ remains nearly insoluble at both temperatures."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos (x4)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Water bath or hot plate (70°C)"
+        },
+        {
+          "emoji": "🔵",
+          "name": "CuSO₄ (0.5 g)"
+        },
+        {
+          "emoji": "🧂",
+          "name": "NaCl (0.5 g), sucrose (0.5 g), CaCO₃ (0.5 g)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (50 mL)"
+        }
+      ],
+      "observationsToRecord": [
+        "Amount dissolved at room temperature for each solute",
+        "Amount dissolved at 70°C for each solute",
+        "Colour and clarity of each solution at both temperatures",
+        "Any colour changes (CuSO₄ is blue; CaCO₃ is white and insoluble)"
+      ],
+      "theoryPoints": [
+        "Solubility is the maximum amount of solute that dissolves in a given volume of solvent at a specific temperature.",
+        "For most ionic solids (NaCl, CuSO₄), solubility increases with temperature because the dissolution process is endothermic.",
+        "CaCO₃ is highly insoluble because the lattice energy of its crystal is very high relative to the hydration energy.",
+        "Temperature changes shift the dissolution equilibrium according to Le Chatelier's Principle: heating favours the endothermic dissolution direction."
+      ],
+      "realWorldConnections": [
+        "Hot water dissolves more coffee or tea compounds — the increased solubility at higher temperature extracts more flavour.",
+        "Water pipes develop CaCO₃ (limescale) deposits as hot water loses dissolved CO₂, reducing carbonate solubility.",
+        "Fish require dissolved oxygen — warmer water holds less O₂, which is why fish kills occur during summer heat waves."
+      ],
+      "formula": "Ksp (CaCO₃) = [Ca²⁺][CO₃²⁻] = 3.3 × 10⁻⁹ mol²/L²"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is meant by the solubility of a substance?",
+          "options": [
+            "The rate at which a substance dissolves in water",
+            "The maximum mass of a solute that dissolves in 100 g of solvent at a given temperature",
+            "The volume of solvent needed to dissolve 1 g of any solute",
+            "The temperature at which a substance starts to dissolve"
+          ],
+          "correctIndex": 1,
+          "explanation": "Solubility is the maximum amount (usually in grams) of solute that dissolves completely in 100 g (or 100 mL) of solvent at a specific temperature to form a saturated solution."
+        },
+        {
+          "text": "Why does sucrose become more soluble in water as temperature increases?",
+          "options": [
+            "Sucrose reacts with hot water to produce ions that dissolve more easily",
+            "Higher temperature gives water molecules more energy to break apart sucrose crystal bonds",
+            "Hot water evaporates, leaving more room for sucrose molecules",
+            "Sucrose melts at 70°C and becomes a liquid that mixes with water"
+          ],
+          "correctIndex": 1,
+          "explanation": "Higher temperature increases the kinetic energy of water molecules. This gives them more energy to break the intermolecular bonds holding sucrose crystals together, allowing more sucrose to dissolve."
+        },
+        {
+          "text": "CaCO₃ is nearly insoluble at both room temperature and 70°C. What best explains this?",
+          "options": [
+            "CaCO₃ is a gas at high temperatures",
+            "CaCO₃ has a very high lattice energy that is not overcome by hydration energy, even at 70°C",
+            "Calcium cannot form ions in water",
+            "The CO₃²⁻ ion reacts with water and prevents dissolution"
+          ],
+          "correctIndex": 1,
+          "explanation": "CaCO₃ has an extremely high lattice energy (strong crystal bonds). The energy released by hydration of its ions is insufficient to overcome this lattice energy, so very little dissolves regardless of temperature."
+        }
+      ],
+      "discussion": [
+        "Oxygen gas becomes less soluble in water as temperature increases. How does this differ from most ionic solids, and what does it tell you about the sign of ΔH for dissolving gas in water?",
+        "Using Le Chatelier's Principle, explain why heating increases the solubility of NaCl if the dissolution reaction is endothermic.",
+        "How might climate change (increasing ocean temperatures) affect the ability of ocean water to dissolve CO₂? What are the environmental consequences?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Solubility & Saturation",
+          "pct": 35
+        },
+        {
+          "label": "Effect of Temperature on Solubility",
+          "pct": 35
+        },
+        {
+          "label": "Lattice Energy vs. Hydration Energy",
+          "pct": 20
+        },
+        {
+          "label": "Le Chatelier's Principle",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often assume all substances become more soluble when heated — gases actually become less soluble at higher temperatures.",
+        "Many think a substance is \"insoluble\" only if nothing dissolves — even CaCO₃ dissolves a tiny amount (Ksp = 3.3 × 10⁻⁹)."
+      ],
+      "hook": "Why do fish die in very warm water? Because warm water holds less dissolved oxygen — the solubility of O₂ drops with rising temperature!",
+      "khanLinks": [
+        {
+          "title": "Solubility and Intermolecular Forces",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/solutions-chemistry/v/solubility-and-intermolecular-forces"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Solute",
+        "Dissolved at 20°C (g/100mL)",
+        "Dissolved at 70°C (g/100mL)",
+        "Change",
+        "Observación"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Clarity and colour of each solution at room temperature",
+      "Visual change in amount dissolved after heating to 70°C",
+      "Which solutes show the greatest change in solubility with temperature"
+    ],
+    "conclusion": "Compare how temperature affects each solute and link the results to lattice energy, hydration energy, and Le Chatelier's Principle.",
+    "ai": {
+      "opening": "Hey! I'm Gali. Today you're exploring how temperature changes how much of a substance can dissolve — a question crucial to everything from cooking to environmental science!",
+      "keywords": {
+        "setup": "Use equal amounts of each solute for a fair comparison. Control the water bath temperature carefully — use a thermometer.",
+        "formula": "Solubility product: Ksp = [Ca²⁺][CO₃²⁻]. For CaCO₃ this is 3.3 × 10⁻⁹, explaining its near-zero solubility.",
+        "error": "Don't add too much solute at once — you want to see the saturation point, so add small amounts and observe whether each addition dissolves.",
+        "result": "CuSO₄ and sucrose will clearly dissolve more at 70°C. NaCl shows only a modest increase. CaCO₃ remains mostly undissolved at both temperatures.",
+        "real": "Hot springs around the world precipitate minerals (CaCO₃, silicates) as the water cools — the minerals that were dissolved at high temperature drop out of solution.",
+        "explain": "Dissolution of most ionic compounds is endothermic — adding heat shifts the equilibrium towards more dissolving (Le Chatelier's Principle).",
+        "hook": "Instant coffee dissolves in hot water but not cold water — you're using temperature to increase solubility every morning!",
+        "misconception": "Stirring speeds up the rate of dissolution but does NOT increase the maximum solubility (the final saturated concentration). Solubility is a temperature-dependent property only."
+      },
+      "hint": "If CuSO₄ does not seem to dissolve more at 70°C, check that you are measuring by mass dissolved per unit volume, not just by visual appearance.",
+      "expected": "Increased solubility for CuSO₄, NaCl, and sucrose at 70°C; CaCO₃ essentially insoluble at both temperatures."
+    }
+  },
+  {
+    "num": 107,
+    "cardEmoji": "🧊",
+    "title": "Difusión en gases",
+    "section": "Matter & Solutions",
+    "desc": "Comparar las velocidades de difusión de HCl y NH₃ gaseosos en un tubo de vidrio.",
+    "setupTime": "10 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Students calculate density (mass/volume) for different states of matter and learn why ice floats on water.",
+      "instructions": [
+        "Medir the mass and volume of 50 mL of distilled water using a balance and graduated cylinder.",
+        "Repetir for 50 mL of glycerol.",
+        "Medir the mass and volume of a solid object (metal cylinder or stone) using water displacement.",
+        "Medir the mass and volume of an ice cube just after removal from the freezer.",
+        "Calcular density = mass/volume for each and compare."
+      ],
+      "expectedOutcome": "Water ≈ 1.00 g/mL, glycerol ≈ 1.26 g/mL, ice ≈ 0.917 g/mL. Ice density is less than water, explaining why it floats."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "📐",
+          "name": "Probeta graduada (100 mL)"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balanza electrónica (±0.01 g)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (100 mL)"
+        },
+        {
+          "emoji": "🍯",
+          "name": "Glycerol (50 mL)"
+        },
+        {
+          "emoji": "🧊",
+          "name": "Ice cube"
+        },
+        {
+          "emoji": "🪨",
+          "name": "Small solid object (metal cylinder)"
+        }
+      ],
+      "observationsToRecord": [
+        "Mass and volume of each sample",
+        "Calculated density for each substance",
+        "Comparison of measured densities to literature values",
+        "Observation of ice floating on water"
+      ],
+      "theoryPoints": [
+        "Density (ρ) = mass (m) / volume (V); units are g/mL or g/cm³.",
+        "Denser liquids sink below less dense ones: glycerol sinks below water, which sinks below oil.",
+        "Ice is less dense than liquid water (0.917 vs 1.00 g/mL) because the hexagonal hydrogen-bond network in ice takes up more space.",
+        "Volume displacement: submerged volume = volume of water displaced; this allows measuring irregular solid volumes."
+      ],
+      "realWorldConnections": [
+        "Icebergs float with about 10% above water (density of ice ~0.917 g/mL vs sea water ~1.025 g/mL).",
+        "Density differences between saltwater and freshwater create ocean current layering, driving global climate patterns.",
+        "Hydrometry (measuring liquid density) is used in breweries to measure alcohol content during fermentation."
+      ],
+      "formula": "ρ = m/V  [g/mL or g/cm³]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which formula correctly expresses density?",
+          "options": [
+            "ρ = V/m",
+            "ρ = m × V",
+            "ρ = m/V",
+            "ρ = m − V"
+          ],
+          "correctIndex": 2,
+          "explanation": "Density equals mass divided by volume: ρ = m/V. For example, water has a mass of 100 g and a volume of 100 mL, giving ρ = 1.00 g/mL."
+        },
+        {
+          "text": "Why does ice float on liquid water?",
+          "options": [
+            "Ice is warmer than liquid water and heat makes things float",
+            "Ice has a lower density than liquid water because hydrogen bonding creates a less compact crystal structure",
+            "Ice is lighter because it contains fewer molecules than liquid water",
+            "Ice floats because water molecules push it up through convection"
+          ],
+          "correctIndex": 1,
+          "explanation": "In ice, water molecules form a rigid hexagonal hydrogen-bond network that keeps them more widely spaced than in liquid water. This makes ice less dense (0.917 g/mL) than liquid water (1.00 g/mL), so it floats."
+        },
+        {
+          "text": "You have 50 mL of glycerol with a mass of 63 g. What is its density?",
+          "options": [
+            "0.79 g/mL",
+            "1.00 g/mL",
+            "1.26 g/mL",
+            "2.52 g/mL"
+          ],
+          "correctIndex": 2,
+          "explanation": "Density = mass/volume = 63 g / 50 mL = 1.26 g/mL, which is the correct density of glycerol."
+        }
+      ],
+      "discussion": [
+        "If you poured glycerol, water, and vegetable oil into a tall cylinder, predict the order of layers from bottom to top. Explain your reasoning.",
+        "Why is the fact that ice is less dense than water biologically important for aquatic life in cold climates?",
+        "How could you use density measurements to determine whether a piece of metal is pure gold (ρ = 19.3 g/cm³) or a gold-plated fake?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Density Measurement & Calculation",
+          "pct": 40
+        },
+        {
+          "label": "States of Matter & Structure",
+          "pct": 30
+        },
+        {
+          "label": "Water Displacement Method",
+          "pct": 20
+        },
+        {
+          "label": "Real-World Density Applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students think heavier objects always sink — in reality, it is density (mass per volume), not total mass, that determines whether something floats.",
+        "Many think ice floats because it is \"lighter\" — but a large block of ice is very heavy; it floats because of its lower density."
+      ],
+      "hook": "If ice were denser than liquid water — like almost every other solid — lakes would freeze solid from the bottom up, killing all aquatic life every winter!",
+      "khanLinks": [
+        {
+          "title": "States of Matter",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Substance",
+        "Masa (g)",
+        "Volumen (mL)",
+        "Density (g/mL)",
+        "Literature Value (g/mL)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Mass and volume of each substance",
+      "Whether ice floats or sinks when placed in water",
+      "Visual layering when glycerol, water, and oil are combined"
+    ],
+    "conclusion": "Summarise the density values obtained, compare to literature values, and explain why ice floats based on the density concept.",
+    "ai": {
+      "opening": "Hello! I'm Gali. Today you're measuring density — the property that explains why ships float, icebergs exist, and salad dressing separates into layers!",
+      "keywords": {
+        "setup": "Zero (tare) the balance before placing the container on it. Measure the liquid volume at eye level to avoid parallax error.",
+        "formula": "ρ = m/V. Record mass in grams and volume in millilitres — the result is in g/mL. Water should give ~1.00 g/mL.",
+        "error": "The most common error is not accounting for the mass of the container (forgetting to tare the balance).",
+        "result": "Water: 1.00 g/mL, Glycerol: 1.26 g/mL, Ice: ~0.917 g/mL. Ice floats on water because it is less dense.",
+        "real": "Archimedes discovered the principle of fluid displacement when asked to check if a crown was pure gold — he measured its density using water displacement!",
+        "explain": "Ice has a hexagonal hydrogen-bond crystal structure that spaces molecules further apart than in liquid water — giving it lower density.",
+        "hook": "A steel ship can float because its total density (hull + air inside) is less than water, even though steel alone sinks!",
+        "misconception": "Density is not the same as mass — a tiny cube of gold is denser than a large block of wood, even though the wood is heavier."
+      },
+      "hint": "If your ice density seems too high, the ice may have started melting. Work quickly — measure ice immediately after removing from the freezer.",
+      "expected": "Measured densities: water ~1.00, glycerol ~1.26, ice ~0.917 g/mL. Ice floats on water; glycerol sinks below water."
+    }
+  },
+  {
+    "num": 108,
+    "cardEmoji": "💠",
+    "title": "Solubilidad y temperatura",
+    "section": "Matter & Solutions",
+    "desc": "Medir la solubilidad de una sal a diferentes temperaturas y construir una curva de solubilidad.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes descubren that some ionic compounds contain water molecules in their crystal structure, and that heating removes this water reversibly.",
+      "instructions": [
+        "Pesar 2 g of blue CuSO₄·5H₂O crystals and place in an evaporating dish.",
+        "Calentar gently over a Bunsen burner, observing the colour change from blue to white.",
+        "Continue heating until no further colour change occurs; allow to cool.",
+        "Pesar the anhydrous white CuSO₄ and calculate the mass of water lost.",
+        "Añadir 2–3 drops of distilled water to the white powder and observe the colour returning to blue."
+      ],
+      "expectedOutcome": "Blue CuSO₄·5H₂O turns white (anhydrous CuSO₄) on heating. Adding water restores the blue colour, confirming the reversible nature of hydration."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔵",
+          "name": "CuSO₄·5H₂O blue crystals (2 g)"
+        },
+        {
+          "emoji": "🍳",
+          "name": "Cápsula de evaporación"
+        },
+        {
+          "emoji": "🔥",
+          "name": "Mechero Bunsen or hot plate"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balanza electrónica (±0.01 g)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Dropper with distilled water"
+        }
+      ],
+      "observationsToRecord": [
+        "Colour of CuSO₄·5H₂O antes heating (blue)",
+        "Colour during and después heating (blue → white)",
+        "Mass antes and después heating (calculate mass of water lost)",
+        "Cambio de color when water is added to anhydrous CuSO₄ (white → blue)"
+      ],
+      "theoryPoints": [
+        "Water of crystallization consists of water molecules incorporated into the crystal lattice of an ionic compound.",
+        "CuSO₄·5H₂O contains five water molecules per formula unit; the colour is due to [Cu(H₂O)₄]²⁺ complexes.",
+        "Heating drives off the water molecules: CuSO₄·5H₂O → CuSO₄ + 5H₂O; the anhydrous salt is white because Cu²⁺ has no water ligands.",
+        "The reaction is reversible: adding water rehydrates the salt and restores the blue coordination complex."
+      ],
+      "realWorldConnections": [
+        "Anhydrous CaCl₂ and silica gel are used as desiccants because they readily absorb water of crystallization from the air.",
+        "Gypsum (CaSO₄·2H₂O) is heated to form plaster of Paris (CaSO₄·½H₂O), which rehydrates and hardens when mixed with water.",
+        "CuSO₄ anhydrous is used as a test for water because it turns visibly blue when even traces of water are present."
+      ],
+      "formula": "CuSO₄·5H₂O → CuSO₄ + 5H₂O  (ΔH > 0, endothermic)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is \"water of crystallization\"?",
+          "options": [
+            "Water molecules trapped on the surface of crystals",
+            "Water molecules that form the crystal lattice of ice",
+            "Water molecules that are chemically incorporated into the crystal structure of an ionic compound",
+            "Water that is produced when a crystal dissolves in a solvent"
+          ],
+          "correctIndex": 2,
+          "explanation": "Water of crystallization consists of water molecules that are chemically bound within the crystal structure of an ionic salt, forming part of the repeating unit cell. They are not just surface water — they are part of the chemical formula."
+        },
+        {
+          "text": "Why does CuSO₄·5H₂O turn white when heated?",
+          "options": [
+            "The heat breaks down CuSO₄ into copper metal and SO₃ gas",
+            "The water molecules are driven off, removing the water ligands from Cu²⁺, which eliminates the blue colour",
+            "The high temperature oxidises Cu²⁺ to Cu³⁺, which is white",
+            "The crystal structure collapses and Cu²⁺ becomes colourless"
+          ],
+          "correctIndex": 1,
+          "explanation": "The blue colour of CuSO₄·5H₂O is due to [Cu(H₂O)₄]²⁺ coordination complexes. Heating drives off the water molecules; without water ligands, Cu²⁺ has a different electronic environment and appears white."
+        },
+        {
+          "text": "CuSO₄·5H₂O has a molar mass of 249.7 g/mol and CuSO₄ is 159.6 g/mol. What percentage of the mass is water?",
+          "options": [
+            "36.1%",
+            "15.2%",
+            "49.3%",
+            "22.5%"
+          ],
+          "correctIndex": 0,
+          "explanation": "Mass of water = 249.7 − 159.6 = 90.1 g/mol. Percentage = (90.1/249.7) × 100 = 36.1%. This confirms that about one-third of the mass of blue vitriol is water."
+        }
+      ],
+      "discussion": [
+        "Why is anhydrous CuSO₄ used to test for the presence of water? What would you observe and what does it prove?",
+        "Gypsum (CaSO₄·2H₂O) is heated to make plaster of Paris, which then sets hard when water is added. How does this process relate to what you observed with CuSO₄?",
+        "If you left white anhydrous CuSO₄ in a humid room overnight, what would you expect to find in the morning, and why?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Water of Crystallization",
+          "pct": 40
+        },
+        {
+          "label": "Coordination Chemistry (Cu²⁺ colour)",
+          "pct": 30
+        },
+        {
+          "label": "Reversible Reactions",
+          "pct": 20
+        },
+        {
+          "label": "Stoichiometry (% water)",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the colour of CuSO₄ is an intrinsic property of copper — but it depends entirely on the ligands around Cu²⁺.",
+        "Many think \"water of crystallization\" means the crystal is wet — but the water is chemically bonded inside the crystal structure."
+      ],
+      "hook": "Anhydrous copper sulfate is the world's simplest water test — place a drop of any liquid on it: if it turns blue, water is present!",
+      "khanLinks": [
+        {
+          "title": "States of Matter",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Stage",
+        "Masa (g)",
+        "Color",
+        "Notes"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Colour of crystals at each stage (before heating, during heating, after cooling, after adding water)",
+      "Mass of sample before and after heating",
+      "Calculated mass and percentage of water lost"
+    ],
+    "conclusion": "State the mass of water lost per gram of CuSO₄·5H₂O, compare to the theoretical value (36.1%), and explain the reversible colour change.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're exploring a beautiful reversible reaction — watch blue crystals turn white, then blue again just by adding water. Like magic, but chemistry!",
+      "keywords": {
+        "setup": "Heat gently and evenly. Too much heat can decompose CuSO₄ into CuO (black), which is not reversible.",
+        "formula": "CuSO₄·5H₂O → CuSO₄ + 5H₂O. Molar masses: 249.7 → 159.6 + 90.1. So 36.1% of the mass is water.",
+        "error": "Do not overheat — if the dish turns black, you have decomposed CuSO₄ to CuO, not just removed water. Use gentle heat.",
+        "result": "Blue crystals → white powder on heating. White powder → blue on adding water. Mass loss ≈ 36% of original mass.",
+        "real": "Plaster of Paris (CaSO₄·½H₂O) hardens when mixed with water because it rehydrates to gypsum (CaSO₄·2H₂O) — same principle as this experiment.",
+        "explain": "The blue colour comes from water molecules acting as ligands around Cu²⁺. Remove the water ligands, and Cu²⁺ is in a different environment — no blue colour.",
+        "hook": "Silica gel (the little packets in new shoes) is a desiccant — it absorbs water of crystallization from the air to keep products dry, just like anhydrous CuSO₄!",
+        "misconception": "The water in CuSO₄·5H₂O is NOT surface moisture — it is chemically part of the crystal, and removing it completely changes the compound's properties."
+      },
+      "hint": "If your mass loss is less than 30%, the heating may not be complete. Continue heating until the mass stays constant between measurements.",
+      "expected": "Mass loss of ~36% (water). Blue to white colour change on heating. Instant return of blue colour when water is added to anhydrous powder."
+    }
+  },
+  {
+    "num": 109,
+    "cardEmoji": "🟡",
+    "title": "Preparación de una solución estándar",
+    "section": "Matter & Solutions",
+    "desc": "Preparar 250 mL de una solución estándar de Na₂CO₃ de concentración conocida.",
+    "setupTime": "10 min",
+    "duration": "35 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes observan allotropic transitions in sulphur and compare physical melting (sulphur) with chemical decomposition (sucrose).",
+      "instructions": [
+        "Colocar a small amount of sulphur powder in a test tube and heat slowly over a Bunsen burner.",
+        "Registrar the appearance at each temperature stage: yellow solid, pale yellow liquid (rhombic region), amber liquid, dark viscous liquid (plastic sulphur), and gas.",
+        "In a separate test tube, heat a small amount of sucrose and record the colour and smell.",
+        "Compare: sulphur melting (physical change) vs. sucrose caramelising and decomposing (chemical change)."
+      ],
+      "expectedOutcome": "Sulphur undergoes physical allotropic changes: yellow → liquid → dark viscous plastic sulphur → gas. Sucrose browns, smells of caramel, and chars to black carbon — a chemical change."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🟡",
+          "name": "Sulphur powder (2 g)"
+        },
+        {
+          "emoji": "🍬",
+          "name": "Sucrose (1 g)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Borosilicate tubo de ensayos (x2)"
+        },
+        {
+          "emoji": "🔥",
+          "name": "Mechero Bunsen"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro (up to 300°C)"
+        }
+      ],
+      "observationsToRecord": [
+        "Colour and state of sulphur at each temperature range",
+        "Temperatura at which sulphur begins to melt",
+        "Apariencia of viscous dark liquid at ~160°C",
+        "Changes observed when sucrose is heated (colour, smell, residue)"
+      ],
+      "theoryPoints": [
+        "Sulphur exists in two crystalline allotropes: rhombic (stable below 96°C) and monoclinic (stable 96–119°C).",
+        "Above 119°C, sulphur melts to a pale yellow mobile liquid; above ~160°C, S₈ rings break open into long chains (plastic sulphur) — dark and viscous.",
+        "Physical changes (allotropic transitions, melting) are reversible; chemical changes (decomposition of sucrose) are not.",
+        "Sucrose (C₁₂H₂₂O₁₁) decomposes on heating: water is driven off, and carbon remains as a black char — this is a chemical change."
+      ],
+      "realWorldConnections": [
+        "Plastic sulphur can be made by pouring molten sulphur into cold water — used to make flexible sulphur compounds in industrial processes.",
+        "Sulphur is used in vulcanisation of rubber — heat and sulphur create cross-links between polymer chains, making rubber harder.",
+        "Sucrose caramelisation is exploited in cooking — the browning and flavour development of caramel and candy are chemical changes from sulphur-like ring-opening reactions (but for carbon)."
+      ],
+      "formula": "S₈ (rhombic) → S₈ (monoclinic) → liquid S → Sₙ chains (plastic) → S₂/S gas"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is an allotrope?",
+          "options": [
+            "A radioactive form of an element",
+            "A different physical state (solid, liquid, gas) of an element",
+            "A different structural form of the same element with different physical properties",
+            "A compound formed when an element reacts with oxygen"
+          ],
+          "correctIndex": 2,
+          "explanation": "Allotropes are different structural (molecular or crystal) forms of the same element. Rhombic and monoclinic sulphur are both pure sulphur but have different crystal structures and different physical properties."
+        },
+        {
+          "text": "Why does molten sulphur become dark and viscous above about 160°C?",
+          "options": [
+            "Sulphur reacts with air to form SO₂, which is dark",
+            "The S₈ rings break open and form long tangled chains that resist flow",
+            "Impurities in the sulphur concentrate as water evaporates",
+            "Sulphur crystallises back into rhombic form, increasing viscosity"
+          ],
+          "correctIndex": 1,
+          "explanation": "Above ~160°C, the S₈ ring molecules break open and polymerise into long chains of millions of sulphur atoms. These long, entangled chains dramatically increase viscosity, making the liquid dark and thick (plastic sulphur)."
+        },
+        {
+          "text": "How can you distinguish sulphur melting from sucrose decomposing as a physical vs. chemical change?",
+          "options": [
+            "Sulphur changes colour; sucrose does not",
+            "Sulphur melting is reversible (it solidifies on cooling); sucrose decomposition is not reversible (black carbon remains)",
+            "Sulphur produces a gas; sucrose does not",
+            "Sulphur requires higher temperature than sucrose"
+          ],
+          "correctIndex": 1,
+          "explanation": "Physical changes like melting are reversible — cooled sulphur solidifies back to a yellow solid. Sucrose decomposition is a chemical change: it produces water vapour and carbon (black char), and cannot be reversed to regenerate sucrose."
+        }
+      ],
+      "discussion": [
+        "Carbon also has allotropes (graphite and diamond). How do they differ in structure and properties, and how is this analogous to sulphur's allotropes?",
+        "If you poured the viscous dark plastic sulphur into cold water, what would happen and what form of sulphur would you get?",
+        "When sucrose burns, you see black carbon and steam. Is this the same process as caramelisation? How can you tell?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Allotropy & Crystal Structure",
+          "pct": 35
+        },
+        {
+          "label": "Physical vs. Chemical Changes",
+          "pct": 30
+        },
+        {
+          "label": "Phase Transitions",
+          "pct": 25
+        },
+        {
+          "label": "Polymers (Long-chain Sulphur)",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan any colour change must be a chemical change — but sulphur's colour changes during melting are physical changes (no new substance is formed).",
+        "Many think \"melting\" always means becoming a clear liquid — but plastic sulphur is dark and viscous, which confuses students."
+      ],
+      "hook": "Plastic sulphur is a rubbery, stretchy material — and you can make it in the lab just by pouring molten sulphur into cold water!",
+      "khanLinks": [
+        {
+          "title": "States of Matter",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter"
+        },
+        {
+          "title": "Phase Diagrams",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Temperatura (°C)",
+        "Appearance of Sulphur",
+        "Physical State",
+        "Reversible?"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record the colour and consistency of sulphur at each temperature stage",
+      "Note the smell produced (sulphur dioxide is toxic — work in a fume hood or well-ventilated area)",
+      "Record all changes observed when heating sucrose"
+    ],
+    "conclusion": "Distinguish the allotropic changes of sulphur (physical) from the decomposition of sucrose (chemical), and explain why one is reversible and the other is not.",
+    "ai": {
+      "opening": "Hello! I'm Gali. Today you get to watch sulphur transform into a rubbery, stretchy plastic — one of chemistry's most dramatic physical changes!",
+      "keywords": {
+        "setup": "Heat slowly and observe each stage. Work near an open window or fume cupboard — sulphur vapour and SO₂ are unpleasant and harmful.",
+        "formula": "S₈ rings (rhombic/monoclinic) → long Sₙ chains (plastic sulphur) at ~160°C.",
+        "error": "Heating too quickly skips the interesting intermediate stages. Heat slowly so you can observe each colour change in sequence.",
+        "result": "Sulphur: yellow solid → pale liquid → amber → dark viscous liquid → gas. Sucrose: melts → browns → chars to black carbon.",
+        "real": "The rubber tyres on your car exist because of sulphur — vulcanisation uses sulphur chains to cross-link rubber molecules and make them durable.",
+        "explain": "Physical changes involve the same molecules in different arrangements; chemical changes break and form bonds, creating entirely new substances.",
+        "hook": "Sulphur deposits near volcanoes form beautiful yellow crystals (rhombic sulphur) — the same material you're heating in the lab!",
+        "misconception": "The dark colour of plastic sulphur is NOT because it is burning or reacting — it is a physical change from ring molecules to long chains."
+      },
+      "hint": "If sulphur starts burning with a blue flame and producing SO₂, reduce the heat immediately — you've gone past the plastic stage into combustion.",
+      "expected": "Distinct colour and viscosity changes at each temperature stage. Sucrose turns brown then black (irreversible). Sulphur changes are reversible on cooling."
+    }
+  },
+  {
+    "num": 110,
+    "cardEmoji": "🟣",
+    "title": "Curva de solubilidad del KNO₃",
+    "section": "Matter & Solutions",
+    "desc": "Determinar la solubilidad del KNO₃ a varias temperaturas y trazar la curva de solubilidad.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes observan sublimation — the direct solid-to-gas transition — and the reverse process (deposition) of iodine crystals.",
+      "instructions": [
+        "Colocar a few iodine crystals at the bottom of a test tube.",
+        "Loosely plug the top with cotton wool and place in a hot water bath (80°C).",
+        "Observar the purple vapour filling the test tube as iodine sublimes.",
+        "Colocar an ice-cold glass rod or test tube on top to observe purple-black crystals forming (deposition).",
+        "Sketch and describe the changes observed."
+      ],
+      "expectedOutcome": "Iodine crystals produce a characteristic purple vapour without any visible liquid phase. Crystals reform on the cold surface above, demonstrating deposition."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⬛",
+          "name": "Iodine crystals (0.1 g)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayo"
+        },
+        {
+          "emoji": "♨️",
+          "name": "Hot water bath (80°C)"
+        },
+        {
+          "emoji": "🧊",
+          "name": "Ice or cold glass rod"
+        },
+        {
+          "emoji": "🔌",
+          "name": "Cotton wool (loose plug)"
+        }
+      ],
+      "observationsToRecord": [
+        "Apariencia of iodine crystals antes heating",
+        "Colour of vapour produced during heating",
+        "Whether any liquid iodine is observed",
+        "Apariencia of crystals on the cold surface (deposition)"
+      ],
+      "theoryPoints": [
+        "Sublimation is the direct transition from solid to gas without passing through the liquid phase.",
+        "Iodine has a relatively high vapour pressure at room temperature and sublimes easily when gently heated.",
+        "The reverse process (gas to solid) is called deposition; crystals form on cold surfaces.",
+        "Sublimation occurs when ambient pressure is below the triple-point pressure for a substance, or when vapour pressure equals ambient pressure below the melting point."
+      ],
+      "realWorldConnections": [
+        "Dry ice (solid CO₂) sublimes at atmospheric pressure — used in special effects fog because it produces cold vapour without liquid.",
+        "Freeze-drying (lyophilisation) uses sublimation to remove water from food or pharmaceuticals without heat damage.",
+        "Iodine sublimation is used in forensic science to reveal fingerprints — iodine vapour condenses on oily fingerprint residues."
+      ],
+      "formula": "I₂ (s) → I₂ (g)  [sublimation, direct solid-to-gas]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is sublimation?",
+          "options": [
+            "The melting of a solid into a liquid at high temperature",
+            "The direct conversion of a solid to a gas without passing through the liquid phase",
+            "The evaporation of a liquid to form a gas",
+            "The condensation of a gas into a solid on a cold surface"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sublimation is the direct phase transition from solid to gas, bypassing the liquid phase entirely. It occurs when the substance's vapour pressure exceeds atmospheric pressure below its melting point."
+        },
+        {
+          "text": "What colour is iodine vapour?",
+          "options": [
+            "Colourless",
+            "Yellow-green",
+            "Purple/violet",
+            "Brown-orange"
+          ],
+          "correctIndex": 2,
+          "explanation": "Iodine vapour (I₂ gas) is a characteristic purple or violet colour. This makes sublimation of iodine one of the most visually striking demonstrations of this phase transition."
+        },
+        {
+          "text": "What is the reverse process of sublimation called?",
+          "options": [
+            "Evaporation",
+            "Condensation",
+            "Deposition",
+            "Crystallisation from solution"
+          ],
+          "correctIndex": 2,
+          "explanation": "Deposition is the direct transition from gas to solid without passing through the liquid phase. In this experiment, iodine vapour deposits as solid crystals on the cold glass surface above the heated crystals."
+        }
+      ],
+      "discussion": [
+        "Why does iodine sublime at atmospheric pressure, but water requires very low pressure (freeze-drying conditions) to sublime?",
+        "Forensic scientists use iodine vapour to reveal fingerprints. Explain the mechanism using your knowledge of sublimation and intermolecular forces.",
+        "What conditions (temperature and pressure) would be needed to observe liquid iodine? Refer to the concept of the triple point."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Sublimation & Phase Transitions",
+          "pct": 40
+        },
+        {
+          "label": "Vapour Pressure",
+          "pct": 25
+        },
+        {
+          "label": "Deposition (Reverse Sublimation)",
+          "pct": 20
+        },
+        {
+          "label": "Intermolecular Forces in Iodine",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan sublimation requires extreme conditions — but iodine sublimes noticeably even at room temperature.",
+        "Many students confuse deposition with crystallisation from solution — deposition is gas directly becoming solid with no liquid involved."
+      ],
+      "hook": "Forensic scientists find fingerprints at crime scenes using iodine vapour — the same purple gas you're making in this experiment!",
+      "khanLinks": [
+        {
+          "title": "Phase Diagrams",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams"
+        },
+        {
+          "title": "States of Matter",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "Observación",
+        "State Present",
+        "Color"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record when purple vapour first appears",
+      "Note whether any liquid iodine is observed at any stage",
+      "Describe the crystals that form on the cold surface (size, colour, shape)"
+    ],
+    "conclusion": "Confirm that iodine undergoes sublimation (not melting), and explain this in terms of vapour pressure and intermolecular forces.",
+    "ai": {
+      "opening": "Hi! I'm Gali. You're about to watch a solid transform directly into a purple gas — iodine sublimation is one of the most visually stunning demonstrations in chemistry!",
+      "keywords": {
+        "setup": "Use only a tiny amount of iodine (a few crystals). A gentle 80°C water bath is enough — do not overheat or use a direct flame, as iodine vapour is irritating.",
+        "formula": "I₂(s) → I₂(g): sublimation. I₂(g) → I₂(s): deposition (on the cold surface above).",
+        "error": "Heating too strongly produces excessive vapour that can escape the cotton wool plug. Use the minimum heat needed to observe purple vapour.",
+        "result": "Purple vapour forms above the crystals with no visible liquid stage. Black-purple crystals form on the cold glass surface above.",
+        "real": "Freeze-drying coffee (instant coffee) uses sublimation — ice in the frozen coffee is removed as water vapour under vacuum, preserving flavour.",
+        "explain": "Iodine has weak van der Waals forces between I₂ molecules. These are weak enough that the molecules can escape from the solid directly into the gas phase.",
+        "hook": "Dry ice (solid CO₂) is the most famous subliming substance — it goes directly from solid to gas, creating the fog effect used in concerts and theatres!",
+        "misconception": "Iodine does NOT melt first — sublimation is a direct solid-to-gas transition. If you see liquid, either the pressure is very high or you have overheated."
+      },
+      "hint": "If no vapour is visible, ensure the water bath is hot enough (≥70°C). The test tube must be closed enough to allow vapour concentration to build up.",
+      "expected": "Purple iodine vapour visible within 2–3 minutes. No liquid phase observed. Black-purple crystals deposit on the cold glass surface above."
+    }
+  },
+  {
+    "num": 111,
+    "cardEmoji": "🧪",
+    "title": "Propiedades de ácidos y bases",
+    "section": "Acids & Bases",
+    "desc": "Probar ácidos y bases comunes con indicadores y clasificar sus propiedades.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden to measure pH using universal indicator and classify common substances as acidic, neutral, or alkaline.",
+      "instructions": [
+        "Verter 10 mL of each household solution into separate test tubes.",
+        "Añadir 3–4 drops of universal indicator to each test tube and swirl gently.",
+        "Compare the colour obtained to a pH colour chart and record the pH.",
+        "Rank all solutions from most acidic to most alkaline.",
+        "Confirm selected pH values using a calibrated pH meter or pH paper."
+      ],
+      "expectedOutcome": "Lemon juice and vinegar turn red/orange (pH 2–3), milk turns yellow-green (pH 6–7), baking soda turns blue (pH 8–9), bleach turns purple (pH 12–13)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos and rack (6)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Indicador universal solución"
+        },
+        {
+          "emoji": "🍋",
+          "name": "Household solucións: vinegar, lemon juice, milk, baking soda solución, bleach, distilled water"
+        },
+        {
+          "emoji": "📏",
+          "name": "pH colour chart"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "pH meter or pH paper (for confirmation)"
+        }
+      ],
+      "observationsToRecord": [
+        "Colour produced by each solution with universal indicator",
+        "pH value estimated from colour chart",
+        "pH value from pH meter/paper (if available)",
+        "Ranking from most acidic to most alkaline"
+      ],
+      "theoryPoints": [
+        "The pH scale runs from 0 (strongly acidic) to 14 (strongly alkaline), with 7 as neutral.",
+        "pH = −log₁₀[H⁺]; each pH unit represents a tenfold change in H⁺ concentration.",
+        "Universal indicator is a mixture of dyes that changes colour continuously across the pH range.",
+        "Acids produce H⁺ ions in solution; alkalis produce OH⁻ ions in solution."
+      ],
+      "realWorldConnections": [
+        "Soil pH determines which nutrients are available to plants — most crops grow best at pH 6–7.",
+        "Blood pH is tightly regulated at 7.35–7.45; even small deviations can be life-threatening.",
+        "Swimming pool water is maintained at pH 7.2–7.8 for comfort and effective chlorine disinfection."
+      ],
+      "formula": "pH = −log₁₀[H⁺]  |  pOH = −log₁₀[OH⁻]  |  pH + pOH = 14"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What pH value indicates a neutral solution?",
+          "options": [
+            "0",
+            "7",
+            "10",
+            "14"
+          ],
+          "correctIndex": 1,
+          "explanation": "A neutral solution has equal concentrations of H⁺ and OH⁻ ions, giving pH = 7 at 25 °C."
+        },
+        {
+          "text": "A solution has a pH of 3. How many times more H⁺ ions does it contain compared to a solution of pH 5?",
+          "options": [
+            "2 times",
+            "20 times",
+            "100 times",
+            "1000 times"
+          ],
+          "correctIndex": 2,
+          "explanation": "Each pH unit represents a tenfold change in [H⁺]. Two pH units difference = 10² = 100 times more H⁺ ions."
+        },
+        {
+          "text": "Which household substance would have the highest pH?",
+          "options": [
+            "Lemon juice",
+            "Vinegar",
+            "Milk",
+            "Bleach"
+          ],
+          "correctIndex": 3,
+          "explanation": "Bleach (sodium hypochlorite solution) is strongly alkaline with a pH of 12–13, the highest of the listed substances."
+        }
+      ],
+      "discussion": [
+        "Why does universal indicator give a range of colours while litmus only gives two? What advantage does this provide?",
+        "Explain why stomach acid (pH 1–2) does not damage the stomach lining under normal conditions.",
+        "If you dilute a strong acid from pH 1 to pH 4, by what factor have you diluted it?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "pH Scale & Logarithmic Nature",
+          "pct": 40
+        },
+        {
+          "label": "Acid/Alkali Classification",
+          "pct": 25
+        },
+        {
+          "label": "Indicator Chemistry",
+          "pct": 20
+        },
+        {
+          "label": "Real-World pH Applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan pH is a linear scale — it is logarithmic; pH 3 is not \"twice as acidic\" as pH 6, it is 1000 times more acidic.",
+        "Many believe all acids are dangerous — milk and lemon juice are mildly acidic but perfectly safe to consume."
+      ],
+      "hook": "Your stomach contains hydrochloric acid at pH 1–2, strong enough to dissolve iron nails — yet it does not digest your own stomach because of a protective mucus lining!",
+      "khanLinks": [
+        {
+          "title": "pH Scale",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/ph-scale"
+        },
+        {
+          "title": "Arrhenius Definition of Acids and Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Substance",
+        "Indicator Color",
+        "pH (chart)",
+        "pH (meter)",
+        "Classification"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record colour change for each substance with universal indicator",
+      "Record estimated pH from colour chart",
+      "Rank all substances from most acidic to most alkaline"
+    ],
+    "conclusion": "Summarise the pH values obtained for each household substance, explain what determines whether a substance is acidic or alkaline, and discuss why pH is measured on a logarithmic scale.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're testing everyday substances to discover their hidden acid-base identities — you might be surprised which household items are strongly acidic or alkaline!",
+      "keywords": {
+        "setup": "Use clean test tubes for each substance to prevent cross-contamination. Add indicator drops to the solution, not the other way around.",
+        "formula": "pH = −log₁₀[H⁺]. Each pH unit = 10× change in H⁺ concentration. pH 7 = neutral. Below 7 = acidic. Above 7 = alkaline.",
+        "error": "The most common error is contaminating the indicator bottle by dipping it into the solution. Always use a dropper and never return unused indicator to the bottle.",
+        "result": "Lemon juice: pH ~2 (red). Vinegar: pH ~3 (orange). Milk: pH ~6.5 (yellow-green). Water: pH 7 (green). Baking soda: pH ~9 (blue). Bleach: pH ~12 (purple).",
+        "real": "Blood pH must stay between 7.35 and 7.45. Buffers in the blood (carbonate system) prevent dangerous pH swings from exercise or diet.",
+        "explain": "Acids release H⁺ ions into solution; the more H⁺ ions, the lower the pH. Alkalis release OH⁻ ions, which combine with H⁺ to raise pH.",
+        "hook": "Bee stings are acidic (formic acid) and wasp stings are alkaline — that is why different remedies are recommended for each!",
+        "misconception": "pH 7 is only neutral at 25 °C. At higher temperatures, the neutral pH shifts slightly below 7 because water autoionises more."
+      },
+      "hint": "If colours are hard to distinguish, hold the test tube against a white background and compare to the colour chart in good lighting.",
+      "expected": "Clear colour gradient from red (pH 2) through green (pH 7) to purple (pH 12). All pH values within ±0.5 of expected literature values."
+    }
+  },
+  {
+    "num": 112,
+    "cardEmoji": "⚡",
+    "title": "Escala de pH con indicadores",
+    "section": "Acids & Bases",
+    "desc": "Usar indicadores universales y papel pH para medir el pH de soluciones domésticas.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that strong acids fully ionise in solution while weak acids only partially ionise, resulting in different conductivities at the same concentration.",
+      "instructions": [
+        "Prepare 0.1 mol/L solutions of HCl (strong acid) and ethanoic acid (weak acid).",
+        "Preparar a conductivity circuit with an LED and two carbon electrodes.",
+        "Dip electrodes into HCl solution and record LED brightness.",
+        "Rinse electrodes and dip into ethanoic acid solution; record LED brightness.",
+        "Medir pH of both solutions and compare to theoretical values."
+      ],
+      "expectedOutcome": "HCl solution gives a bright LED and pH ~1. Ethanoic acid gives a dim LED and pH ~2.9, confirming partial ionisation."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💡",
+          "name": "LED conductivity circuit (9 V batería, LED, carbon probes)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "0.1 mol/L HCl solución"
+        },
+        {
+          "emoji": "🧪",
+          "name": "0.1 mol/L ethanoic acid (CH₃COOH) solución"
+        },
+        {
+          "emoji": "📏",
+          "name": "pH meter or narrow-range pH paper"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro"
+        }
+      ],
+      "observationsToRecord": [
+        "LED brightness in HCl (bright/medium/dim)",
+        "LED brightness in ethanoic acid (bright/medium/dim)",
+        "pH de HCl solution",
+        "pH de ethanoic acid solution"
+      ],
+      "theoryPoints": [
+        "Strong acids (HCl, H₂SO₄, HNO₃) ionise completely: HCl → H⁺ + Cl⁻ (100% ionisation).",
+        "Weak acids (CH₃COOH) ionise partially: CH₃COOH ⇌ CH₃COO⁻ + H⁺ (about 1.3% ionised at 0.1 mol/L).",
+        "More ions = higher conductivity = brighter LED.",
+        "The equilibrium constant Ka quantifies the degree of ionisation: Ka(CH₃COOH) = 1.8 × 10⁻⁵."
+      ],
+      "realWorldConnections": [
+        "Vinegar (ethanoic acid, ~5%) is safe to consume because it is a weak acid; consuming the same concentration of HCl would cause severe burns.",
+        "Citric acid in soft drinks is a weak acid — it gives a sour taste without dangerously lowering stomach pH.",
+        "Car battery acid (H₂SO₄) is a strong acid — even dilute splashes can damage skin and clothing."
+      ],
+      "formula": "Strong acid: HCl → H⁺ + Cl⁻ (100%)  |  Weak acid: CH₃COOH ⇌ CH₃COO⁻ + H⁺ (Kₐ = 1.8 × 10⁻⁵)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "At the same concentration, a strong acid has a _____ pH than a weak acid.",
+          "options": [
+            "Higher",
+            "Lower",
+            "Same",
+            "Variable"
+          ],
+          "correctIndex": 1,
+          "explanation": "A strong acid fully ionises, producing more H⁺ ions at the same concentration, resulting in a lower pH."
+        },
+        {
+          "text": "Why does 0.1 mol/L ethanoic acid have a pH of about 2.9 rather than 1.0?",
+          "options": [
+            "Ethanoic acid is more concentrated",
+            "Ethanoic acid only partially ionises, producing fewer H⁺ ions",
+            "Ethanoic acid reacts with water",
+            "The pH meter is inaccurate for weak acids"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ethanoic acid is a weak acid with Ka = 1.8 × 10⁻⁵. Only about 1.3% of molecules ionise at 0.1 mol/L, giving [H⁺] ≈ 1.3 × 10⁻³ mol/L, hence pH ≈ 2.9."
+        },
+        {
+          "text": "Which of these is a strong acid?",
+          "options": [
+            "Ethanoic acid",
+            "Citric acid",
+            "Carbonic acid",
+            "Hydrochloric acid"
+          ],
+          "correctIndex": 3,
+          "explanation": "HCl is a strong acid that fully ionises in water. Ethanoic, citric, and carbonic acids are all weak acids with incomplete ionisation."
+        }
+      ],
+      "discussion": [
+        "Explain why a weak acid can still have a very low pH if it is concentrated enough.",
+        "Why is it important to distinguish between acid strength and acid concentration?",
+        "Predict what happens to the conductivity of ethanoic acid if you dilute it tenfold. Explain."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Strong vs Weak Acid Ionisation",
+          "pct": 40
+        },
+        {
+          "label": "Conductivity & Ion Concentration",
+          "pct": 25
+        },
+        {
+          "label": "Ka and Equilibrium",
+          "pct": 20
+        },
+        {
+          "label": "Safety & Real-World Context",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students often confuse acid strength with concentration — a concentrated weak acid can have more total acid molecules than a dilute strong acid.",
+        "Many think weak acids are harmless — concentrated ethanoic acid (glacial acetic acid) can cause burns."
+      ],
+      "hook": "Hydrofluoric acid (HF) is technically a weak acid, yet it is one of the most dangerous because it penetrates skin and dissolves bone — acid strength and danger are not the same thing!",
+      "khanLinks": [
+        {
+          "title": "Strong Acids and Strong Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/strong-acids-and-strong-bases"
+        },
+        {
+          "title": "Weak Acid Equilibrium",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/weak-acid-base-equilibria/v/weak-acid-equilibrium"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Acid",
+        "Concentración (mol/L)",
+        "LED Brightness",
+        "pH",
+        "% Ionisation"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record LED brightness for each acid solution",
+      "Record pH meter readings for both solutions",
+      "Calculate approximate percentage ionisation for the weak acid"
+    ],
+    "conclusion": "Compare the conductivity and pH of HCl and ethanoic acid at the same concentration. Explain the difference in terms of degree of ionisation and relate to Ka.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you'll discover why two acids at the same concentration can behave very differently — one is a tiger, the other a kitten!",
+      "keywords": {
+        "setup": "Use the same concentration (0.1 mol/L) for both acids so the comparison is fair. Rinse electrodes with distilled water between tests.",
+        "formula": "HCl → H⁺ + Cl⁻ (100% ionised). CH₃COOH ⇌ CH₃COO⁻ + H⁺ (Ka = 1.8 × 10⁻⁵, ~1.3% ionised at 0.1 mol/L).",
+        "error": "Do not confuse strength with concentration. Always state both when describing an acid.",
+        "result": "HCl: bright LED, pH ~1.0. Ethanoic acid: dim LED, pH ~2.9. Same concentration but vastly different ion concentrations.",
+        "real": "Vinegar (5% ethanoic acid) is safe in salads. The same concentration of HCl would cause chemical burns. Strength matters!",
+        "explain": "A strong acid donates all its H⁺ ions to water. A weak acid reaches an equilibrium where most molecules stay intact. Fewer ions means lower conductivity and higher pH.",
+        "hook": "The acid in your stomach (HCl) is a strong acid at pH 1–2. The acid in an ant bite (methanoic acid) is a weak acid — but it still hurts!",
+        "misconception": "A high concentration of a weak acid can have a lower pH than a low concentration of a strong acid. Strength and concentration are independent properties."
+      },
+      "hint": "If LED brightness is hard to compare, try using a multimeter to measure actual current through each solution for a quantitative comparison.",
+      "expected": "HCl: bright LED, pH 1.0 ± 0.1. Ethanoic acid: dim LED, pH 2.9 ± 0.2. Conductivity ratio approximately 10:1 in favour of HCl."
+    }
+  },
+  {
+    "num": 113,
+    "cardEmoji": "🌡️",
+    "title": "Neutralización ácido-base",
+    "section": "Acids & Bases",
+    "desc": "Realizar una reacción de neutralización y medir el cambio de temperatura.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that acid-base neutralisation releases heat energy and can calculate the enthalpy of neutralisation from temperature change data.",
+      "instructions": [
+        "Medir 25 mL of 1.0 mol/L HCl into a polystyrene cup and record initial temperature.",
+        "Medir 25 mL of 1.0 mol/L NaOH and record its initial temperature.",
+        "Verter the NaOH into the HCl, stir, and record the highest temperature reached.",
+        "Calcular the temperature change (ΔT) and the heat released (q = mcΔT).",
+        "Calcular the molar enthalpy of neutralisation (ΔH)."
+      ],
+      "expectedOutcome": "Temperature rises by approximately 6–7 °C, giving an experimental enthalpy of neutralisation close to −57 kJ/mol for a strong acid–strong base pair."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "1.0 mol/L HCl (25 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "1.0 mol/L NaOH (25 mL)"
+        },
+        {
+          "emoji": "☕",
+          "name": "Polystyrene cup (calorimeter)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro (±0.5 °C)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Measuring cylinder (25 mL)"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial temperature of HCl (°C)",
+        "Initial temperature of NaOH (°C)",
+        "Maximum temperature después mixing (°C)",
+        "Temperatura change ΔT (°C)"
+      ],
+      "theoryPoints": [
+        "Neutralisation: HCl + NaOH → NaCl + H₂O (exothermic).",
+        "The ionic equation is: H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ/mol.",
+        "All strong acid–strong base neutralisations give approximately the same ΔH because the net reaction is always H⁺ + OH⁻ → H₂O.",
+        "Heat energy: q = mcΔT, where m = total mass of solution (g), c = 4.18 J/g/°C, ΔT = temperature rise."
+      ],
+      "realWorldConnections": [
+        "Antacid tablets neutralise excess stomach acid — the reaction releases a small amount of heat inside the stomach.",
+        "Los procesos industriales neutralisation of acidic waste water must account for heat release to prevent boiling or thermal damage to equipment.",
+        "Lime (Ca(OH)₂) is added to acidic lake water to neutralise acid rain effects — the temperature rise is negligible in large water bodies."
+      ],
+      "formula": "q = mcΔT  |  ΔH = −q/n  |  H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ/mol"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Neutralisation of a strong acid with a strong base is:",
+          "options": [
+            "Endothermic",
+            "Exothermic",
+            "Neither — no energy change",
+            "Sometimes endothermic, sometimes exothermic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Strong acid–strong base neutralisation is always exothermic (ΔH ≈ −57 kJ/mol) because forming the strong O–H bond in water releases energy."
+        },
+        {
+          "text": "If 50 mL of mixed solution rises by 6.5 °C, what is q? (c = 4.18 J/g/°C, assume density = 1 g/mL)",
+          "options": [
+            "209 J",
+            "1,359 J",
+            "2,717 J",
+            "13,585 J"
+          ],
+          "correctIndex": 1,
+          "explanation": "q = mcΔT = 50 × 4.18 × 6.5 = 1,358.5 J ≈ 1,359 J."
+        },
+        {
+          "text": "Why do all strong acid–strong base neutralisations give approximately the same ΔH?",
+          "options": [
+            "They all produce NaCl",
+            "The net ionic reaction is always H⁺ + OH⁻ → H₂O",
+            "Strong acids are all the same",
+            "Temperature does not vary"
+          ],
+          "correctIndex": 1,
+          "explanation": "Regardless of the specific strong acid and base, the spectator ions do not participate. The actual reaction is always H⁺ + OH⁻ → H₂O, which has a fixed ΔH of −57.1 kJ/mol."
+        }
+      ],
+      "discussion": [
+        "Why would neutralisation of a weak acid with a strong base give a slightly different ΔH than a strong acid–strong base pair?",
+        "What are the main sources of heat loss in this experiment, and how could you reduce them?",
+        "Explain why using a polystyrene cup is better than a glass beaker for this calorimetry experiment."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Neutralisation Reaction",
+          "pct": 35
+        },
+        {
+          "label": "Calorimetry (q = mcΔT)",
+          "pct": 30
+        },
+        {
+          "label": "Enthalpy of Neutralisation",
+          "pct": 25
+        },
+        {
+          "label": "Energy Changes in Reactions",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan mixing any acid and base always produces a neutral solution — this is only true when exact stoichiometric amounts are used.",
+        "Many forget that ΔH for neutralisation is negative (exothermic) and report a positive value."
+      ],
+      "hook": "When concentrated sulphuric acid is mixed with water, so much heat is released that the water can boil violently — that is why you always add acid to water, never water to acid!",
+      "khanLinks": [
+        {
+          "title": "Acid-Base Titration",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/acid-base-titration"
+        },
+        {
+          "title": "Conjugate Acids and Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/conjugate-acids-and-bases"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Measurement",
+        "Ensayo 1",
+        "Ensayo 2",
+        "Ensayo 3",
+        "Average"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record initial and final temperatures for each trial",
+      "Note any visible changes (e.g., solution feels warm to touch)",
+      "Calculate ΔT and q for each trial"
+    ],
+    "conclusion": "Calculate the experimental enthalpy of neutralisation and compare to the accepted value of −57.1 kJ/mol. Discuss sources of error and suggest improvements.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're measuring the heat released when an acid meets a base — neutralisation is one of the most fundamentally important reactions in all of chemistry!",
+      "keywords": {
+        "setup": "Use a polystyrene cup as a calorimeter to minimise heat loss. Ensure both solutions start at the same temperature. Stir continuously after mixing.",
+        "formula": "q = mcΔT. ΔH = −q/n. For 25 mL of 1.0 mol/L each: n = 0.025 mol. Expected ΔT ≈ 6.8 °C → q ≈ 1,423 J → ΔH ≈ −56.9 kJ/mol.",
+        "error": "Heat loss to the surroundings is the main source of error. Using a lid on the cup and stirring quickly minimises this.",
+        "result": "Temperature rise of ~6–7 °C. Calculated ΔH ≈ −55 to −58 kJ/mol. Accepted value: −57.1 kJ/mol.",
+        "real": "Acid spills in laboratories are neutralised with sodium bicarbonate — the neutralisation is exothermic, so large spills require careful addition to avoid boiling.",
+        "explain": "When H⁺ meets OH⁻, they form a very stable O–H bond in water. This bond formation releases 57 kJ of energy per mole — that energy heats the solution.",
+        "hook": "Mixing concentrated H₂SO₄ with water releases so much heat it can boil. Always add acid to water (not water to acid) to prevent violent spattering!",
+        "misconception": "Neutralisation does not always produce pH 7. A strong acid + weak base gives a salt that is slightly acidic (pH < 7). Only strong acid + strong base gives pH 7."
+      },
+      "hint": "If your ΔH is significantly less than 57 kJ/mol, heat loss is likely the cause. Try adding a lid with a hole for the thermometer to reduce evaporative cooling.",
+      "expected": "ΔT ≈ 6.5–7.0 °C. Calculated ΔH ≈ −55 to −58 kJ/mol. Close agreement with the accepted value of −57.1 kJ/mol confirms the exothermic nature of neutralisation."
+    }
+  },
+  {
+    "num": 114,
+    "cardEmoji": "🏛️",
+    "title": "Titulación ácido fuerte – base fuerte",
+    "section": "Acids & Bases",
+    "desc": "Realizar una titulación ácido-base usando un indicador para encontrar la concentración desconocida.",
+    "setupTime": "5 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that acid rain (containing H₂SO₄ and HNO₃) attacks calcium carbonate in marble and limestone, producing CO₂ and causing erosion.",
+      "instructions": [
+        "Pesar 5 g of marble chips and place in a conical flask.",
+        "Añadir 50 mL of dilute HCl (0.5 mol/L) and immediately connect a gas syringe or inverted measuring cylinder.",
+        "Registrar the volume of CO₂ collected every minute for 10 minutes.",
+        "Reweigh the remaining marble chips after the reaction slows.",
+        "Probar the gas with limewater to confirm CO₂."
+      ],
+      "expectedOutcome": "Vigorous fizzing produces CO₂ (confirmed by limewater turning milky). Marble chips lose mass. The rate of gas production decreases as acid is consumed."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🪨",
+          "name": "Marble chips (CaCO₃, ~5 g)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Dilute HCl (0.5 mol/L, 50 mL)"
+        },
+        {
+          "emoji": "💨",
+          "name": "Gas syringe or inverted measuring cylinder"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balanza electrónica (±0.01 g)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Limewater (Ca(OH)₂ solución)"
+        }
+      ],
+      "observationsToRecord": [
+        "Volumen de CO₂ collected every minute (cm³)",
+        "Masa de marble antes and después reaction (g)",
+        "Limewater test result",
+        "Rate of fizzing over time (fast → slow → stopped)"
+      ],
+      "theoryPoints": [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ — acid reacts with carbonate to produce carbon dioxide.",
+        "Acid rain contains dissolved SO₂ and NOₓ that form H₂SO₃, H₂SO₄, and HNO₃ in rainwater.",
+        "Limestone and marble buildings erode over decades due to this reaction with acid rain.",
+        "The rate of reaction decreases over time as the acid concentration falls (reactant is consumed)."
+      ],
+      "realWorldConnections": [
+        "The Parthenon in Athens has suffered more erosion in the last 50 years from acid rain than in the previous 2,400 years.",
+        "Limestone headstones in old cemeteries show visible erosion patterns from decades of acid rain exposure.",
+        "Flue gas desulphurisation in power stations uses limestone to remove SO₂ — the same reaction but used beneficially."
+      ],
+      "formula": "CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What gas is produced when acid reacts with marble?",
+          "options": [
+            "Hydrogen",
+            "Oxygen",
+            "Carbon dioxide",
+            "Chlorine"
+          ],
+          "correctIndex": 2,
+          "explanation": "Marble is calcium carbonate (CaCO₃). When it reacts with acid, CO₂ gas is released: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂."
+        },
+        {
+          "text": "How is CO₂ gas confirmed in this experiment?",
+          "options": [
+            "Glowing splint relights",
+            "Squeaky pop",
+            "Limewater turns milky",
+            "Turns litmus red"
+          ],
+          "correctIndex": 2,
+          "explanation": "CO₂ turns limewater (Ca(OH)₂ solution) milky white due to formation of insoluble calcium carbonate: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O."
+        },
+        {
+          "text": "Why does the rate of CO₂ production decrease over time?",
+          "options": [
+            "The marble runs out of surface area",
+            "The acid concentration decreases as it reacts",
+            "CO₂ builds up and stops the reaction",
+            "The temperature drops"
+          ],
+          "correctIndex": 1,
+          "explanation": "As HCl reacts with CaCO₃, its concentration decreases. Lower concentration means fewer successful collisions per second, reducing the rate."
+        }
+      ],
+      "discussion": [
+        "How could you increase the rate of this reaction without changing the acid concentration?",
+        "Explain why powdered marble reacts faster than marble chips with the same mass of acid.",
+        "Suggest how the experiment could be modified to model the effect of different acid rain severities."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Acid–Carbonate Reactions",
+          "pct": 35
+        },
+        {
+          "label": "Rate of Reaction Concepts",
+          "pct": 25
+        },
+        {
+          "label": "Environmental Impact (Acid Rain)",
+          "pct": 25
+        },
+        {
+          "label": "Gas Collection & Testing",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan acid rain is a strong acid — it typically has pH 4–5, only slightly more acidic than normal rain (pH 5.6).",
+        "Many believe acid rain only affects stone buildings — it also damages forests, lakes, and metal structures."
+      ],
+      "hook": "Cleopatra reportedly dissolved a pearl (calcium carbonate) in vinegar to win a bet that she could consume the wealth of a nation in a single meal — the same reaction you are observing today!",
+      "khanLinks": [
+        {
+          "title": "Molecular, Complete, and Net Ionic Equations",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/net-ionic-equations/v/molecular-complete-and-net-ionic-equations"
+        },
+        {
+          "title": "Titration Introduction",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/titration-introduction"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "Total CO₂ Volumen (cm³)",
+        "Velocidad (cm³/min)",
+        "Observacións"
+      ],
+      "rows": 10
+    },
+    "observations": [
+      "Record CO₂ volume every minute for 10 minutes",
+      "Note changes in fizzing intensity over time",
+      "Record mass of marble chips before and after reaction"
+    ],
+    "conclusion": "Plot a graph of CO₂ volume vs time. Explain why the curve flattens. Calculate the mass of CaCO₃ that reacted and compare to the measured mass loss.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're simulating acid rain attacking marble — the same process that is slowly dissolving some of the world's most famous ancient monuments!",
+      "keywords": {
+        "setup": "Connect the gas collection apparatus quickly after adding acid — you will lose the initial burst of CO₂ if there is a delay.",
+        "formula": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. From stoichiometry: 100 g CaCO₃ produces 44 g CO₂ (one mole of each).",
+        "error": "Ensure all connections are gas-tight. Any leak means your measured CO₂ volume will be too low.",
+        "result": "Rapid fizzing initially (~10 cm³/min), slowing to ~1 cm³/min after 8 minutes. Total CO₂ ≈ 50–60 cm³. Mass loss of marble ≈ 2–3 g.",
+        "real": "The Taj Mahal's white marble is yellowing and eroding from acid rain caused by nearby industrial pollution. India has imposed emission controls to protect it.",
+        "explain": "Acid attacks the carbonate ions in marble: 2H⁺ + CO₃²⁻ → H₂O + CO₂. As acid is used up, fewer H⁺ ions are available, so the reaction slows.",
+        "hook": "Limestone caves and stalactites are formed by the reverse process — slightly acidic rainwater slowly dissolves limestone over millions of years!",
+        "misconception": "Acid rain is not caused by CO₂ — it is caused by SO₂ and NOₓ from burning fossil fuels. CO₂ makes rain very slightly acidic (pH 5.6), but SO₂ and NOₓ can lower it to pH 4 or below."
+      },
+      "hint": "If gas production seems too slow, check that your acid is fresh and at the correct concentration. Old dilute HCl may have lost strength.",
+      "expected": "Rapid initial fizzing, decreasing rate over 10 minutes. Total CO₂: 50–70 cm³. Limewater turns milky. Mass loss consistent with stoichiometric calculation."
+    }
+  },
+  {
+    "num": 115,
+    "cardEmoji": "💉",
+    "title": "Preparación de una sal por neutralización",
+    "section": "Acids & Bases",
+    "desc": "Preparar cristales de cloruro de sodio por neutralización de HCl con NaOH.",
+    "setupTime": "10 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden the technique of titration and use it to determine the concentration of ethanoic acid in household vinegar.",
+      "instructions": [
+        "Pipette 25.0 mL of diluted vinegar (1:10) into a conical flask.",
+        "Añadir 2–3 drops of phenolphthalein indicator.",
+        "Fill a burette with standardised 0.1 mol/L NaOH solution.",
+        "Titrate slowly, swirling continuously, until a permanent pale pink colour appears.",
+        "Registrar the titre volume. Repetir until concordant titres (within 0.10 mL) are obtained."
+      ],
+      "expectedOutcome": "Concordant titres give a mean volume from which the concentration of ethanoic acid in vinegar can be calculated as approximately 0.8–0.9 mol/L (about 5% w/v)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Bureta (50 mL) with NaOH (0.1 mol/L)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Conical flask (250 mL)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Pipeta (25 mL) and pipeta filler"
+        },
+        {
+          "emoji": "🟣",
+          "name": "Phenolphthalein indicator"
+        },
+        {
+          "emoji": "📏",
+          "name": "White tile (to see colour change)"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial and final burette readings for each titre",
+        "Titre volume for each trial (mL)",
+        "End-point colour (colourless → pale pink)",
+        "Concordant titre values"
+      ],
+      "theoryPoints": [
+        "CH₃COOH + NaOH → CH₃COONa + H₂O — one mole of acid reacts with one mole of base (1:1 stoichiometry).",
+        "Phenolphthalein is colourless in acid and pink in alkali; the end point is the first permanent pale pink.",
+        "At the equivalence point: moles acid = moles base → CₐVₐ = CᵦVᵦ.",
+        "Concordant titres (agreeing within 0.10 mL) ensure precision and reliability."
+      ],
+      "realWorldConnections": [
+        "Food manufacturers use titration to verify the acidity of vinegar, fruit juices, and wine meets specification.",
+        "Pharmaceutical companies titrate active ingredients to ensure each tablet contains the correct dose.",
+        "Water treatment plants monitor alkalinity by titrating water samples with standard acid."
+      ],
+      "formula": "CₐVₐ = CᵦVᵦ  |  n(acid) = n(base)  |  concentration = n/V"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "At the equivalence point of a titration, which statement is true?",
+          "options": [
+            "pH is always exactly 7",
+            "Moles of acid equal moles of base",
+            "All indicator has changed colour",
+            "The solution is always neutral"
+          ],
+          "correctIndex": 1,
+          "explanation": "At the equivalence point, the moles of acid exactly equal the moles of base (for 1:1 stoichiometry). The pH depends on the salt formed and may not be exactly 7."
+        },
+        {
+          "text": "Why is phenolphthalein a good indicator for this titration?",
+          "options": [
+            "It changes colour at pH 7 exactly",
+            "Its colour change range (pH 8.2–10) falls within the steep pH curve at the equivalence point of a weak acid–strong base titration",
+            "It is the only available indicator",
+            "It reacts with NaOH"
+          ],
+          "correctIndex": 1,
+          "explanation": "For a weak acid–strong base titration, the equivalence point pH is above 7 (about 8.7). Phenolphthalein changes at pH 8.2–10, which matches this equivalence point well."
+        },
+        {
+          "text": "If 25 mL of vinegar requires 22.5 mL of 0.1 mol/L NaOH, what is the concentration of acid in vinegar?",
+          "options": [
+            "0.045 mol/L",
+            "0.090 mol/L",
+            "0.111 mol/L",
+            "0.225 mol/L"
+          ],
+          "correctIndex": 1,
+          "explanation": "n(NaOH) = 0.1 × 0.0225 = 0.00225 mol = n(acid). C(acid) = 0.00225/0.025 = 0.090 mol/L."
+        }
+      ],
+      "discussion": [
+        "Why is it important to add the NaOH dropwise near the end point?",
+        "What would happen if you used methyl orange instead of phenolphthalein for this titration?",
+        "How would you modify this experiment to find the concentration of citric acid in lemon juice?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Titration Technique",
+          "pct": 35
+        },
+        {
+          "label": "Stoichiometry (CₐVₐ = CᵦVᵦ)",
+          "pct": 30
+        },
+        {
+          "label": "Indicator Selection",
+          "pct": 20
+        },
+        {
+          "label": "Precision & Concordance",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the end point and equivalence point are the same — the end point is where the indicator changes; the equivalence point is where moles are equal. Ideally they coincide.",
+        "Many read the burette from top to bottom but forget that burettes read from 0 at the top, so the titre is final minus initial reading."
+      ],
+      "hook": "Vinegar labelled \"5% acidity\" means 5 g of acetic acid per 100 mL — you can verify this claim yourself with a simple titration!",
+      "khanLinks": [
+        {
+          "title": "Titration Introduction",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/titration-introduction"
+        },
+        {
+          "title": "Acid-Base Titration",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/titrations/v/acid-base-titration"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Ensayo",
+        "Initial Reading (mL)",
+        "Final Reading (mL)",
+        "Titre (mL)",
+        "Concordant?"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record burette readings for each trial",
+      "Note the exact colour at end point",
+      "Identify concordant titres and calculate mean"
+    ],
+    "conclusion": "Calculate the concentration of ethanoic acid in vinegar using your mean concordant titre. Convert to % w/v and compare to the label claim. Evaluate precision.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're performing a titration — the most precise and elegant quantitative technique in chemistry. By the end, you'll know exactly how much acid is in your vinegar!",
+      "keywords": {
+        "setup": "Rinse the burette with NaOH solution before filling. Rinse the pipette with vinegar solution. Remove the air bubble below the burette tap before starting.",
+        "formula": "n(NaOH) = C × V. Since ratio is 1:1, n(acid) = n(NaOH). C(acid) = n(acid)/V(acid).",
+        "error": "The biggest error is overshooting the end point. Add dropwise and swirl continuously near the expected end point. One extra drop can overshoot.",
+        "result": "Concordant titres within 0.10 mL of each other. Vinegar concentration: ~0.8–0.9 mol/L, equivalent to ~5% w/v ethanoic acid.",
+        "real": "Wine producers titrate every batch to ensure acidity is within the desired range — too acidic tastes sharp, too little and the wine tastes flat.",
+        "explain": "At the equivalence point, every H⁺ from the acid has been neutralised by OH⁻ from the base. The indicator changes colour because the solution suddenly becomes alkaline when even one extra drop of NaOH is added beyond this point.",
+        "hook": "In the 18th century, French chemist Lavoisier used titration to expose wine merchants who were watering down their wine — chemistry caught the cheaters!",
+        "misconception": "The end point is NOT when the indicator is fully pink — it is the FIRST permanent pale pink that persists for 30 seconds. A deep pink means you have overshot."
+      },
+      "hint": "If you overshoot the end point (deep pink), record the titre but note it is over. Do another trial — concordant results require careful dropwise addition near the end.",
+      "expected": "Concordant titres within 0.10 mL. Mean titre ~22–23 mL of 0.1 mol/L NaOH for 25 mL diluted vinegar (1:10). Calculated concentration ~0.85 mol/L ≈ 5% w/v."
+    }
+  },
+  {
+    "num": 116,
+    "cardEmoji": "🛡️",
+    "title": "Reacciones de ácidos con metales",
+    "section": "Acids & Bases",
+    "desc": "Hacer reaccionar ácido con diferentes metales y recoger el hidrógeno producido.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden how buffer solutions maintain nearly constant pH by neutralising added acid or base, and understand the equilibrium chemistry behind buffer action.",
+      "instructions": [
+        "Prepare a buffer by mixing equal volumes of 0.1 mol/L ethanoic acid and 0.1 mol/L sodium ethanoate.",
+        "Prepare an unbuffered control: 0.1 mol/L NaCl solution.",
+        "Medir and record the initial pH of both solutions.",
+        "Añadir 1 mL of 0.1 mol/L HCl to 50 mL of each solution; record pH change.",
+        "Repeat, adding 1 mL of 0.1 mol/L NaOH to fresh 50 mL samples; record pH change."
+      ],
+      "expectedOutcome": "Buffer pH changes by less than 0.1 unit when acid or base is added. Unbuffered NaCl solution pH changes dramatically (2–3 units)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "0.1 mol/L ethanoic acid and 0.1 mol/L sodium ethanoate"
+        },
+        {
+          "emoji": "🧪",
+          "name": "0.1 mol/L NaCl (control), 0.1 mol/L HCl, 0.1 mol/L NaOH"
+        },
+        {
+          "emoji": "📏",
+          "name": "pH meter (calibrated)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Measuring cylinders and pipetas"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Vaso de precipitadoss (250 mL) and stirring rods"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial pH de buffer and control solutions",
+        "pH después adding 1 mL HCl to each",
+        "pH después adding 1 mL NaOH to each",
+        "pH change (ΔpH) for buffer vs control"
+      ],
+      "theoryPoints": [
+        "A buffer is a solution of a weak acid and its conjugate base (or weak base and its conjugate acid).",
+        "When acid is added to a buffer: CH₃COO⁻ + H⁺ → CH₃COOH (the conjugate base absorbs H⁺).",
+        "When base is added: CH₃COOH + OH⁻ → CH₃COO⁻ + H₂O (the weak acid neutralises OH⁻).",
+        "Henderson-Hasselbalch equation: pH = pKa + log([A⁻]/[HA])."
+      ],
+      "realWorldConnections": [
+        "Blood is buffered at pH 7.4 by the carbonate buffer system (H₂CO₃/HCO₃⁻).",
+        "Enzyme reactions in the body require precise pH control — buffers maintain optimal conditions.",
+        "Swimming pool water uses a buffer system to prevent drastic pH swings from swimmer perspiration and chemicals."
+      ],
+      "formula": "pH = pKa + log([A⁻]/[HA])  |  Henderson-Hasselbalch equation"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "A buffer solution contains:",
+          "options": [
+            "A strong acid and a strong base",
+            "A weak acid and its conjugate base",
+            "Two strong acids",
+            "Water and NaCl"
+          ],
+          "correctIndex": 1,
+          "explanation": "A buffer requires a weak acid–conjugate base pair (or weak base–conjugate acid pair) to absorb both added H⁺ and OH⁻ without large pH changes."
+        },
+        {
+          "text": "When HCl is added to an ethanoic acid/sodium ethanoate buffer, which species neutralises the H⁺?",
+          "options": [
+            "Ethanoic acid (CH₃COOH)",
+            "Sodium ethanoate (CH₃COO⁻)",
+            "Water",
+            "NaCl"
+          ],
+          "correctIndex": 1,
+          "explanation": "The conjugate base (CH₃COO⁻) reacts with added H⁺: CH₃COO⁻ + H⁺ → CH₃COOH, absorbing the acid and preventing pH drop."
+        },
+        {
+          "text": "The Henderson-Hasselbalch equation is pH = pKa + log([A⁻]/[HA]). When [A⁻] = [HA], pH equals:",
+          "options": [
+            "0",
+            "7",
+            "pKa",
+            "14"
+          ],
+          "correctIndex": 2,
+          "explanation": "When [A⁻] = [HA], log(1) = 0, so pH = pKa + 0 = pKa. This is the pH at which the buffer has maximum capacity."
+        }
+      ],
+      "discussion": [
+        "Explain why a buffer has a limited capacity — what happens if too much acid or base is added?",
+        "Why is the blood buffer system (H₂CO₃/HCO₃⁻) vital for survival?",
+        "Design a buffer with pH 9. Which weak acid/conjugate base pair would you choose?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Buffer Composition & Action",
+          "pct": 40
+        },
+        {
+          "label": "Henderson-Hasselbalch Equation",
+          "pct": 25
+        },
+        {
+          "label": "Biological Buffer Systems",
+          "pct": 20
+        },
+        {
+          "label": "Buffer Capacity",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan buffers keep pH exactly constant — they resist change but still shift slightly.",
+        "Many believe any mixture of acid and base is a buffer — it must be a WEAK acid with its conjugate base (or vice versa)."
+      ],
+      "hook": "Without the carbonate buffer in your blood, eating a single lemon could drop your blood pH enough to cause a seizure — buffers literally keep you alive!",
+      "khanLinks": [
+        {
+          "title": "Henderson-Hasselbalch",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/henderson-hasselbalch"
+        },
+        {
+          "title": "Buffer Solution",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/buffer-solution"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Solution",
+        "Initial pH",
+        "pH after HCl",
+        "ΔpH (acid)",
+        "pH after NaOH",
+        "ΔpH (base)"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record initial pH of buffer and control",
+      "Record pH after adding acid to each",
+      "Record pH after adding base to each and compare ΔpH values"
+    ],
+    "conclusion": "Compare the pH stability of the buffer to the unbuffered control. Explain the mechanism of buffer action using equations and the Henderson-Hasselbalch equation.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you'll discover why your blood doesn't become dangerously acidic after you drink a glass of orange juice — it's all about buffer chemistry!",
+      "keywords": {
+        "setup": "Calibrate the pH meter with pH 4 and pH 7 standards before starting. Use equal concentrations and volumes for the buffer pair.",
+        "formula": "pH = pKa + log([CH₃COO⁻]/[CH₃COOH]). pKa(ethanoic acid) = 4.76. When equal moles are mixed, pH = pKa = 4.76.",
+        "error": "Ensure the pH meter is properly calibrated — even 0.1 pH unit error can obscure the small changes you are measuring in the buffer.",
+        "result": "Buffer ΔpH < 0.1 when 1 mL acid or base added. Control ΔpH = 2–3 units. Dramatic difference demonstrates buffer action.",
+        "real": "Your blood pH must stay between 7.35 and 7.45. The bicarbonate buffer system handles the acid produced by metabolism (CO₂ → H₂CO₃).",
+        "explain": "The buffer works because the weak acid HA can neutralise added OH⁻, and the conjugate base A⁻ can neutralise added H⁺. Both components are present in large reserve.",
+        "hook": "Ocean acidification is overwhelming the natural carbonate buffer of seawater — coral reefs are dissolving because the ocean's buffer capacity is being exceeded by excess CO₂.",
+        "misconception": "A buffer does not maintain pH indefinitely — it has a finite capacity. Once all the weak acid or conjugate base is consumed, the pH will change dramatically."
+      },
+      "hint": "If the buffer pH changes more than expected, check that the concentrations of acid and conjugate base are truly equal. An imbalanced buffer has less capacity.",
+      "expected": "Buffer pH: initial ~4.76, changes by < 0.1 unit with 1 mL of acid or base. Control: pH changes by 2–3 units. Clear demonstration of buffer resistance."
+    }
+  },
+  {
+    "num": 117,
+    "cardEmoji": "🌺",
+    "title": "Reacciones de ácidos con carbonatos",
+    "section": "Acids & Bases",
+    "desc": "Hacer reaccionar ácido con carbonatos y observar la producción de CO₂.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that anthocyanin pigments in red cabbage change colour across the entire pH range, acting as a natural universal indicator.",
+      "instructions": [
+        "Chop red cabbage finely and boil in 200 mL of distilled water for 10 minutes.",
+        "Filtrar to obtain a deep purple extract.",
+        "Prepare solutions of known pH (1, 3, 5, 7, 9, 11, 13) using buffers or diluted acids/alkalis.",
+        "Añadir 2 mL of cabbage extract to each solution and record the colour.",
+        "Arrange test tubes in pH order to display the complete colour spectrum."
+      ],
+      "expectedOutcome": "Red cabbage indicator shows: red (pH 1–2), pink (pH 3–4), purple (pH 5–6), blue (pH 7–8), green (pH 9–10), yellow (pH 11–12), and colourless/yellow (pH 13+)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🥬",
+          "name": "Red cabbage (quarter head)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (200 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos (7) and rack"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Solutions of known pH (1–13)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Papel de filtro and embudo"
+        }
+      ],
+      "observationsToRecord": [
+        "Colour of cabbage extract at each pH value",
+        "Colour transitions between adjacent pH values",
+        "Comparison with universal indicator colours",
+        "pH range where most dramatic colour change occurs"
+      ],
+      "theoryPoints": [
+        "Anthocyanins are natural pigments whose molecular structure changes with pH, altering the wavelengths of light absorbed.",
+        "At low pH (acidic), the anthocyanin molecule gains H⁺ → red flavylium cation.",
+        "At neutral pH, the carbinol (colourless) and quinoidal (blue/purple) forms dominate.",
+        "At high pH (alkaline), the molecule loses more protons → green/yellow chalcone form."
+      ],
+      "realWorldConnections": [
+        "Hydrangea flower colour depends on soil pH: blue in acidic soil (Al³⁺ available), pink in alkaline soil.",
+        "Red wine colour changes with pH — winemakers adjust pH to control colour intensity.",
+        "Litmus paper is made from lichen pigments — natural pH indicators have been used for centuries."
+      ],
+      "formula": "Anthocyanin + H⁺ → Red form  |  Anthocyanin → Purple/Blue form  |  Anthocyanin − H⁺ → Green/Yellow form"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is the active pH-indicating compound in red cabbage?",
+          "options": [
+            "Chlorophyll",
+            "Carotene",
+            "Anthocyanin",
+            "Melanin"
+          ],
+          "correctIndex": 2,
+          "explanation": "Anthocyanins are the pigments responsible for the red, purple, and blue colours in many fruits and vegetables. Their molecular structure changes with pH, altering the colour."
+        },
+        {
+          "text": "At what pH would red cabbage indicator appear green?",
+          "options": [
+            "pH 2",
+            "pH 5",
+            "pH 7",
+            "pH 10"
+          ],
+          "correctIndex": 3,
+          "explanation": "At pH 9–10, the anthocyanin molecule adopts the chalcone form which absorbs differently, appearing green. This transitions to yellow at even higher pH."
+        },
+        {
+          "text": "Why does red cabbage make a better pH indicator than litmus?",
+          "options": [
+            "It is more colourful",
+            "It shows a continuous colour change across the entire pH range rather than just two colours",
+            "It is easier to extract",
+            "It is more accurate"
+          ],
+          "correctIndex": 1,
+          "explanation": "Litmus only shows red (acid) or blue (alkali). Red cabbage shows a full spectrum of colours from red through purple, blue, green, to yellow, giving approximate pH values."
+        }
+      ],
+      "discussion": [
+        "Why do hydrangeas change colour in different soils? Relate this to pH and aluminium ion availability.",
+        "Could you use red cabbage extract as a quantitative pH measurement tool? What are the limitations?",
+        "Suggest other natural sources of anthocyanins that could be used as pH indicators."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Natural Indicator Chemistry",
+          "pct": 35
+        },
+        {
+          "label": "Anthocyanin Structure & pH",
+          "pct": 30
+        },
+        {
+          "label": "pH Range & Colour Spectrum",
+          "pct": 20
+        },
+        {
+          "label": "Applications in Nature",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan natural indicators are less reliable than synthetic ones — for approximate pH, red cabbage is as informative as universal indicator.",
+        "Many believe only chemicals can be indicators — many plant pigments respond to pH changes."
+      ],
+      "hook": "In the 17th century, Robert Boyle used violet syrup from violets to test for acids and bases — he was one of the first scientists to use natural indicators!",
+      "khanLinks": [
+        {
+          "title": "pH Scale",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/ph-scale"
+        },
+        {
+          "title": "Strong Acids and Strong Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/strong-acids-and-strong-bases"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "pH",
+        "Buffer/Solution Used",
+        "Cabbage Indicator Color",
+        "Universal Indicator Color"
+      ],
+      "rows": 7
+    },
+    "observations": [
+      "Record the colour at each pH value",
+      "Note which pH range shows the most dramatic colour change",
+      "Compare the cabbage indicator spectrum to universal indicator"
+    ],
+    "conclusion": "Create a colour chart for red cabbage indicator across pH 1–13. Explain the molecular basis for the colour changes in terms of anthocyanin structure.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're making your own pH indicator from red cabbage — a beautiful rainbow of colours that reveals the hidden pH of any solution!",
+      "keywords": {
+        "setup": "Boil the cabbage gently — too much heat can degrade the anthocyanins. Filter well to get a clear extract.",
+        "formula": "Anthocyanin exists in different protonation states: red (H₃A⁺) → purple (H₂A) → blue (HA⁻) → green/yellow (A²⁻) as pH increases.",
+        "error": "If colours are muddy, the extract may be too concentrated. Dilute with distilled water until you can see through the solution in a test tube.",
+        "result": "pH 1: red. pH 3: pink. pH 5: purple. pH 7: blue. pH 9: green. pH 11: yellow. pH 13: colourless/pale yellow.",
+        "real": "Hydrangeas are natural pH meters — blue flowers mean acidic soil (pH < 6), pink flowers mean alkaline soil (pH > 7). Gardeners add aluminium sulphate to make them blue.",
+        "explain": "At low pH, excess H⁺ protonates the anthocyanin, making it red. As pH increases, H⁺ is removed step by step, changing the electron distribution and therefore the colour absorbed.",
+        "hook": "Ancient Roman women used crushed berries (anthocyanins) as cosmetic blush — the slightly acidic skin turned the pigments a flattering pink!",
+        "misconception": "Red cabbage indicator is not inaccurate — it gives a continuous pH estimate across the full range. For rough pH measurement, it is just as useful as universal indicator."
+      },
+      "hint": "If the green colour at pH 9–10 is not visible, add more cabbage extract. The green is formed by mixing the blue and yellow forms and can be subtle.",
+      "expected": "Clear rainbow progression: red → pink → purple → blue → green → yellow across pH 1–13. Seven distinct colours visible in arranged test tubes."
+    }
+  },
+  {
+    "num": 118,
+    "cardEmoji": "💊",
+    "title": "Ácidos y bases en la vida cotidiana",
+    "section": "Acids & Bases",
+    "desc": "Identificar ácidos y bases en productos del hogar usando indicadores.",
+    "setupTime": "5 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Students apply neutralisation chemistry to compare the acid-neutralising capacity of different antacid brands using back-titration.",
+      "instructions": [
+        "Crush one antacid tablet and add it to 50 mL of 0.5 mol/L HCl (excess acid).",
+        "Agitar until the antacid is fully dissolved (5–10 minutes).",
+        "Titrate the remaining (unreacted) HCl with 0.1 mol/L NaOH using methyl orange indicator.",
+        "Calcular the moles of HCl neutralised by the antacid.",
+        "Repetir for two other antacid brands and compare effectiveness per gram."
+      ],
+      "expectedOutcome": "Different antacids neutralise different amounts of acid. Calcium carbonate-based antacids typically neutralise more acid per gram than magnesium hydroxide-based ones."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💊",
+          "name": "3 different antacid tablet brands"
+        },
+        {
+          "emoji": "🧪",
+          "name": "0.5 mol/L HCl (50 mL per trial)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Bureta with 0.1 mol/L NaOH"
+        },
+        {
+          "emoji": "🟠",
+          "name": "Methyl orange indicator"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Mortar and pestle, electronic balance"
+        }
+      ],
+      "observationsToRecord": [
+        "Masa de each antacid tablet (g)",
+        "Volumen de NaOH used to neutralise excess HCl (mL)",
+        "Moles of HCl neutralised by antacid",
+        "Acid neutralised per gram of antacid"
+      ],
+      "theoryPoints": [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ — calcium carbonate neutralises 2 moles of HCl per mole.",
+        "Mg(OH)₂ + 2HCl → MgCl₂ + 2H₂O — magnesium hydroxide also neutralises 2 moles of HCl per mole.",
+        "Back-titration is used because antacid tablets dissolve slowly and incompletely with stoichiometric acid.",
+        "Effectiveness = moles of acid neutralised per gram of antacid tablet."
+      ],
+      "realWorldConnections": [
+        "Antacids are a multi-billion pound industry — formulations are optimised for maximum neutralisation with minimum side effects.",
+        "Aluminium hydroxide antacids can cause constipation; magnesium hydroxide can cause diarrhoea — many formulations combine both.",
+        "Proton pump inhibitors (PPIs) work differently from antacids — they reduce acid production rather than neutralising existing acid."
+      ],
+      "formula": "n(HCl neutralised) = n(HCl added) − n(HCl remaining)  |  n(HCl remaining) = C(NaOH) × V(NaOH)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why is back-titration used rather than direct titration of the antacid?",
+          "options": [
+            "Direct titration is too fast",
+            "Antacid tablets are insoluble in water and dissolve slowly — excess acid ensures complete reaction",
+            "NaOH cannot neutralise antacids",
+            "Back-titration is more colourful"
+          ],
+          "correctIndex": 1,
+          "explanation": "Antacid tablets contain insoluble compounds (CaCO₃, Mg(OH)₂) that dissolve slowly. Adding excess acid ensures complete reaction; the unreacted acid is then titrated with NaOH."
+        },
+        {
+          "text": "Which antacid active ingredient neutralises the most acid per mole?",
+          "options": [
+            "NaHCO₃ (1 mol HCl/mol)",
+            "CaCO₃ (2 mol HCl/mol)",
+            "Al(OH)₃ (3 mol HCl/mol)",
+            "They all neutralise the same amount"
+          ],
+          "correctIndex": 2,
+          "explanation": "Al(OH)₃ has 3 OH groups, so it neutralises 3 moles of HCl per mole: Al(OH)₃ + 3HCl → AlCl₃ + 3H₂O. CaCO₃ neutralises 2, and NaHCO₃ only 1."
+        },
+        {
+          "text": "If 50 mL of 0.5 mol/L HCl is added to an antacid, and 15 mL of 0.1 mol/L NaOH is needed to neutralise the excess, how many moles of HCl did the antacid neutralise?",
+          "options": [
+            "0.0015 mol",
+            "0.0235 mol",
+            "0.025 mol",
+            "0.0265 mol"
+          ],
+          "correctIndex": 1,
+          "explanation": "n(HCl added) = 0.5 × 0.050 = 0.025 mol. n(HCl remaining) = 0.1 × 0.015 = 0.0015 mol. n(HCl neutralised) = 0.025 − 0.0015 = 0.0235 mol."
+        }
+      ],
+      "discussion": [
+        "Why do some antacids also contain simethicone (an anti-foaming agent)?",
+        "Explain why taking too many calcium carbonate antacids can actually increase stomach acid production (acid rebound).",
+        "Design an experiment to test whether liquid antacids are faster-acting than tablet antacids."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Back-Titration Method",
+          "pct": 35
+        },
+        {
+          "label": "Neutralisation Stoichiometry",
+          "pct": 30
+        },
+        {
+          "label": "Comparing Commercial Products",
+          "pct": 20
+        },
+        {
+          "label": "Pharmaceutical Chemistry",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan all antacids are the same — different active ingredients have very different neutralising capacities per gram.",
+        "Many forget that back-titration measures EXCESS acid, not the acid neutralised by the antacid — the calculation requires subtraction."
+      ],
+      "hook": "The ancient Egyptians used crushed limestone (CaCO₃) to treat heartburn over 4,000 years ago — the same active ingredient found in many modern antacid tablets!",
+      "khanLinks": [
+        {
+          "title": "Conjugate Acids and Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/conjugate-acids-and-bases"
+        },
+        {
+          "title": "Molecular, Complete, and Net Ionic Equations",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/net-ionic-equations/v/molecular-complete-and-net-ionic-equations"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Antacid Brand",
+        "Masa (g)",
+        "NaOH Titre (mL)",
+        "HCl Neutralised (mol)",
+        "mol HCl / g antacid"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the mass and active ingredient of each antacid",
+      "Record the NaOH titre for each back-titration",
+      "Calculate acid neutralised per gram for comparison"
+    ],
+    "conclusion": "Rank the antacids by effectiveness (moles of acid neutralised per gram). Relate the results to the active ingredient and its stoichiometry. Discuss value for money.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're putting antacid tablets to the test — which brand really does neutralise the most acid? Chemistry meets consumer science!",
+      "keywords": {
+        "setup": "Crush the tablet finely in a mortar to speed up dissolution. Stir the acid-antacid mixture for at least 5 minutes to ensure complete reaction.",
+        "formula": "n(HCl neutralised) = n(HCl added) − n(excess HCl). n(excess) = C(NaOH) × V(NaOH titre).",
+        "error": "Ensure the antacid has fully dissolved before titrating the excess acid. Undissolved antacid gives a falsely low result.",
+        "result": "Typical: CaCO₃-based antacids neutralise ~0.020 mol HCl/g. Mg(OH)₂-based: ~0.017 mol/g. NaHCO₃-based: ~0.012 mol/g.",
+        "real": "Pharmacists compare antacids by \"acid neutralising capacity\" (ANC) — exactly the measurement you are making today.",
+        "explain": "The more hydroxide or carbonate ions per gram, the more HCl can be neutralised. CaCO₃ provides 2 mol H⁺ neutralised per 100 g; Mg(OH)₂ provides 2 mol per 58 g.",
+        "hook": "Rennie, Tums, and Gaviscon all contain calcium carbonate — but at very different doses. Your experiment reveals which gives the best neutralisation per tablet.",
+        "misconception": "More expensive does not mean more effective. A cheap generic CaCO₃ tablet may neutralise just as much acid as a premium branded one."
+      },
+      "hint": "If the antacid does not dissolve completely in the acid, warm the mixture gently or stir longer. Incomplete dissolution gives unreliable results.",
+      "expected": "Clear ranking of antacid effectiveness per gram. CaCO₃-based typically most effective per gram. Back-titration results within 5% of theoretical values."
+    }
+  },
+  {
+    "num": 119,
+    "cardEmoji": "🍎",
+    "title": "Titulación de retroceso",
+    "section": "Acids & Bases",
+    "desc": "Determinar la pureza de una muestra usando titulación de retroceso.",
+    "setupTime": "5 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that esters are formed by the reversible condensation reaction of an alcohol and a carboxylic acid, catalysed by a strong acid.",
+      "instructions": [
+        "Mezclar 5 mL of ethanol with 5 mL of glacial ethanoic acid in a boiling tube.",
+        "Carefully add 1 mL of concentrated H₂SO₄ as catalyst.",
+        "Calentar in a water bath at 70–80 °C for 10 minutes.",
+        "Verter the mixture into a beaker of cold sodium carbonate solution to neutralise excess acid.",
+        "Observar the oily layer of ethyl ethanoate floating on top and note its fruity smell."
+      ],
+      "expectedOutcome": "A sweet, fruity-smelling oily layer (ethyl ethanoate ester) forms on top of the aqueous layer after neutralisation with sodium carbonate."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Ethanol (5 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Glacial ethanoic acid (5 mL)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Concentrated H₂SO₄ (1 mL, catalyst)"
+        },
+        {
+          "emoji": "♨️",
+          "name": "Water bath at 70–80 °C"
+        },
+        {
+          "emoji": "💧",
+          "name": "Sodium carbonate solución (for neutralisation)"
+        }
+      ],
+      "observationsToRecord": [
+        "Smell of the reaction mixture during heating",
+        "Apariencia when poured into sodium carbonate solution",
+        "Smell of the oily ester layer",
+        "Whether the ester floats or sinks in water"
+      ],
+      "theoryPoints": [
+        "Esterification: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (reversible, catalyst: H₂SO₄).",
+        "The H₂SO₄ catalyst protonates the carbonyl oxygen, making the carboxylic acid more electrophilic.",
+        "The reaction is reversible — excess of one reactant or removal of water drives equilibrium to the right.",
+        "Esters are responsible for many fruit and flower fragrances; they are also used as solvents and plasticisers."
+      ],
+      "realWorldConnections": [
+        "Fruit flavours in sweets and soft drinks are often synthetic esters — ethyl ethanoate smells of pear drops.",
+        "Polyesters (PET plastic for bottles) are formed by esterification of dicarboxylic acids with diols.",
+        "Aspirin (acetylsalicylic acid) is an ester — formed by esterification of salicylic acid with ethanoic anhydride."
+      ],
+      "formula": "CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O  (acid catalyst, reversible)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is the role of H₂SO₄ in esterification?",
+          "options": [
+            "Reactant",
+            "Catalyst",
+            "Solvent",
+            "Neutraliser"
+          ],
+          "correctIndex": 1,
+          "explanation": "H₂SO₄ acts as a catalyst — it speeds up the reaction by protonating the carboxylic acid but is not consumed overall."
+        },
+        {
+          "text": "Esterification is a:",
+          "options": [
+            "Decomposition reaction",
+            "Condensation reaction (water is released)",
+            "Addition reaction",
+            "Combustion reaction"
+          ],
+          "correctIndex": 1,
+          "explanation": "Esterification is a condensation reaction: a small molecule (water) is eliminated when the acid and alcohol combine to form the ester."
+        },
+        {
+          "text": "Why is sodium carbonate solution added at the end?",
+          "options": [
+            "To catalyse the reaction",
+            "To neutralise excess acid and allow the ester to separate as an oily layer",
+            "To dissolve the ester",
+            "To increase yield"
+          ],
+          "correctIndex": 1,
+          "explanation": "Na₂CO₃ neutralises the excess ethanoic acid and H₂SO₄. The ester is insoluble in the aqueous layer and separates on top."
+        }
+      ],
+      "discussion": [
+        "Why is the esterification reaction reversible, and how could you increase the yield of ester?",
+        "Explain why esters have lower boiling points than the carboxylic acids from which they are made.",
+        "Aspirin is an ester. Research its synthesis and explain the esterification reaction involved."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Esterification Mechanism",
+          "pct": 40
+        },
+        {
+          "label": "Equilibrium & Le Chatelier's Principle",
+          "pct": 25
+        },
+        {
+          "label": "Ester Properties & Uses",
+          "pct": 20
+        },
+        {
+          "label": "Catalysis",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan all esters smell pleasant — some esters have very unpleasant odours (e.g., those in rancid butter).",
+        "Many think the H₂SO₄ is a reactant — it is a catalyst and is regenerated."
+      ],
+      "hook": "The smell of bananas, pineapples, and pear drops are all caused by different esters — artificial fruit flavourings are just mixtures of synthetic esters!",
+      "khanLinks": [
+        {
+          "title": "Weak Acid Equilibrium",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/weak-acid-base-equilibria/v/weak-acid-equilibrium"
+        },
+        {
+          "title": "Henderson-Hasselbalch",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/henderson-hasselbalch"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Observación",
+        "Before Heating",
+        "After Heating",
+        "After Neutralisation"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the smell at each stage of the reaction",
+      "Note the formation of the oily ester layer after neutralisation",
+      "Describe the ester's appearance, smell, and solubility"
+    ],
+    "conclusion": "Write the balanced equation for esterification. Describe the evidence that a new product (ester) was formed. Explain why this reaction requires a catalyst and is reversible.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're making a real ester — the same type of molecule that gives fruits their delicious smells. Your lab will smell like a sweet shop!",
+      "keywords": {
+        "setup": "Add the H₂SO₄ VERY carefully to the mixture. It is concentrated and causes severe burns. Always add acid to the mixture, not the mixture to acid.",
+        "formula": "CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O. The ⇌ symbol shows this is reversible — an equilibrium.",
+        "error": "Do not heat above 80 °C — ethanol boils at 78 °C and will evaporate, reducing yield. Keep the water bath gentle.",
+        "result": "Sweet, fruity smell (pear drops). Clear oily layer floats on the aqueous sodium carbonate solution after neutralisation.",
+        "real": "Pear drop sweets get their flavour from ethyl ethanoate — the exact ester you have just made!",
+        "explain": "The OH from the acid and the H from the alcohol combine to form water, leaving the ester bond (C–O–C=O). H₂SO₄ makes this happen faster by activating the carbonyl group.",
+        "hook": "Different alcohol + acid combinations give different fruit smells: pentyl ethanoate = banana, octyl ethanoate = orange, methyl butanoate = apple!",
+        "misconception": "The fruity smell does NOT come from the unreacted acid or alcohol — it is a new compound (the ester) with completely different properties."
+      },
+      "hint": "If no fruity smell is detected, the water bath temperature may be too low. Ensure it stays at 70–80 °C for the full 10 minutes.",
+      "expected": "Clear, colourless oily layer with a strong sweet fruity smell (pear drops). Ester floats on aqueous layer. Distinct from the vinegar smell of ethanoic acid."
+    }
+  },
+  {
+    "num": 120,
+    "cardEmoji": "🧼",
+    "title": "Efecto tampón",
+    "section": "Acids & Bases",
+    "desc": "Preparar una solución tampón y demostrar su resistencia al cambio de pH.",
+    "setupTime": "5 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that soap is the sodium salt of a fatty acid, produced by alkaline hydrolysis (saponification) of fats and oils.",
+      "instructions": [
+        "Calentar 10 mL of vegetable oil with 20 mL of 6 mol/L NaOH in a beaker on a water bath, stirring continuously.",
+        "Continue heating and stirring for 15–20 minutes until the mixture thickens.",
+        "Añadir saturated NaCl solution to \"salt out\" the soap — it precipitates as a solid.",
+        "Filter, wash, and test the soap by shaking a small amount with distilled water (soft) and hard water (CaCl₂ solution).",
+        "Compare lather formation in soft vs hard water."
+      ],
+      "expectedOutcome": "Soap lathers well in soft water but forms a white scum (calcium stearate) in hard water, demonstrating the reaction of soap with Ca²⁺ ions."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🫒",
+          "name": "Vegetable oil (olive or coconut, 10 mL)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "6 mol/L NaOH solución (20 mL)"
+        },
+        {
+          "emoji": "🧂",
+          "name": "Saturated NaCl solución (for salting out)"
+        },
+        {
+          "emoji": "♨️",
+          "name": "Water bath and stirring rod"
+        },
+        {
+          "emoji": "💧",
+          "name": "Hard water (CaCl₂ solución) and distilled water"
+        }
+      ],
+      "observationsToRecord": [
+        "Apariencia of the reaction mixture over time (oil layer → thick paste)",
+        "Apariencia of salted-out soap",
+        "Lather quality in distilled water vs hard water",
+        "Scum formation in hard water"
+      ],
+      "theoryPoints": [
+        "Saponification: fat/oil + NaOH → glycerol + sodium salt of fatty acid (soap).",
+        "Soap molecules have a hydrophilic head (COO⁻Na⁺) and a hydrophobic tail (long carbon chain).",
+        "In hard water, Ca²⁺ replaces Na⁺ to form insoluble calcium stearate (scum).",
+        "Detergents (synthetic surfactants) work in hard water because they do not form insoluble calcium salts."
+      ],
+      "realWorldConnections": [
+        "Soap making is one of the oldest known chemical processes — the ancient Babylonians made soap from animal fat and wood ash (potash/KOH) around 2800 BC.",
+        "Modern soap bars are still made by saponification of oils (palm, coconut, olive) with NaOH.",
+        "Hard water areas in the UK use more detergent because soap forms scum instead of lather."
+      ],
+      "formula": "C₃H₅(OOCR)₃ + 3NaOH → C₃H₅(OH)₃ + 3RCOONa  (fat + alkali → glycerol + soap)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Saponification is the reaction between:",
+          "options": [
+            "An acid and a base",
+            "A fat/oil and an alkali (NaOH or KOH)",
+            "An alcohol and a carboxylic acid",
+            "A metal and an acid"
+          ],
+          "correctIndex": 1,
+          "explanation": "Saponification is the alkaline hydrolysis of an ester (fat/oil) with NaOH or KOH, producing glycerol and the sodium or potassium salt of the fatty acid (soap)."
+        },
+        {
+          "text": "Why does soap form scum in hard water?",
+          "options": [
+            "Hard water is too cold for soap",
+            "Ca²⁺ ions react with soap to form insoluble calcium stearate",
+            "Hard water has too high a pH",
+            "Soap dissolves in hard water"
+          ],
+          "correctIndex": 1,
+          "explanation": "2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ + 2Na⁺. The calcium soap is insoluble and precipitates as a white scum."
+        },
+        {
+          "text": "Which part of the soap molecule is hydrophobic?",
+          "options": [
+            "The COO⁻Na⁺ head",
+            "The long hydrocarbon tail",
+            "Both parts equally",
+            "Neither — soap is fully soluble"
+          ],
+          "correctIndex": 1,
+          "explanation": "The long carbon chain (C₁₂–C₁₈) is nonpolar and hydrophobic — it dissolves in grease and oil. The ionic COO⁻ head is hydrophilic and dissolves in water."
+        }
+      ],
+      "discussion": [
+        "Explain how soap molecules remove grease from dirty clothes at the molecular level.",
+        "Why do synthetic detergents work better than soap in hard water areas?",
+        "What environmental concerns are associated with soap and detergent use?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Saponification Reaction",
+          "pct": 35
+        },
+        {
+          "label": "Soap Structure (Hydrophilic/Hydrophobic)",
+          "pct": 30
+        },
+        {
+          "label": "Hard Water Chemistry",
+          "pct": 20
+        },
+        {
+          "label": "Historical & Industrial Context",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan soap and detergent are the same — soap is a natural product (fatty acid salt) while detergents are synthetic surfactants.",
+        "Many think hard water is unsafe to drink — it is perfectly safe; it just causes problems with soap."
+      ],
+      "hook": "Fight Club famously showed soap being made from fat and lye — that is exactly the saponification reaction you are performing today, though with vegetable oil rather than anything sinister!",
+      "khanLinks": [
+        {
+          "title": "Arrhenius Definition of Acids and Bases",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases"
+        },
+        {
+          "title": "Buffer Solution",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/buffers-topic/v/buffer-solution"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Test",
+        "Soft Water Resultado",
+        "Hard Water Resultado",
+        "Explanation"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record changes in the oil-NaOH mixture during heating",
+      "Note the appearance and texture of the salted-out soap",
+      "Compare lather and scum formation in soft vs hard water"
+    ],
+    "conclusion": "Write the equation for saponification. Explain the molecular structure of soap and why it forms scum in hard water. Compare soap to synthetic detergents.",
+    "ai": {
+      "opening": "Hi! I'm Gali. Today you're making soap from scratch — one of humanity's oldest and most important chemical processes, dating back nearly 5,000 years!",
+      "keywords": {
+        "setup": "Stir continuously — the oil and NaOH will not mix easily at first. A water bath prevents overheating. Wear gloves — NaOH at this concentration causes burns.",
+        "formula": "Fat + 3NaOH → glycerol + 3 soap molecules (RCOONa). The R group is a C₁₂–C₁₈ hydrocarbon chain from the fatty acid.",
+        "error": "If the mixture does not thicken, the temperature may be too low or stirring insufficient. The oil must emulsify with the NaOH for saponification to occur.",
+        "result": "Thick, opaque paste forms after 15–20 min. Salting out produces a white, waxy solid. Lathers well in soft water. White scum in hard water.",
+        "real": "Traditional Marseille soap (French) is made from olive oil and NaOH — using the same reaction for over 600 years.",
+        "explain": "The NaOH breaks the ester bonds in the fat, releasing glycerol and converting fatty acid chains into their sodium salts (soap). Each soap molecule has a water-loving head and a grease-loving tail.",
+        "hook": "The word \"saponification\" comes from the Latin \"sapo\" meaning soap. Roman naturalist Pliny described Germanic tribes mixing goat fat with beech ash to make a hair dye — which was actually soap!",
+        "misconception": "Hard water does not prevent cleaning — it just wastes soap by forming scum. You need to add more soap or use a detergent that does not form insoluble calcium salts."
+      },
+      "hint": "If salting out does not produce solid soap, add more NaCl solution. The salt decreases the solubility of the soap, forcing it to precipitate.",
+      "expected": "White, waxy soap solid after salting out. Good lather in soft water (distilled). White scum and poor lather in hard water (CaCl₂ solution). Clear visual difference."
+    }
+  },
+  {
+    "num": 121,
+    "cardEmoji": "💨",
+    "title": "Preparación de oxígeno",
+    "section": "Gas Chemistry",
+    "desc": "Producir oxígeno por descomposición catalítica de H₂O₂ y recoger por desplazamiento de agua.",
+    "setupTime": "8 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden how CO₂ is produced from a carbonate and acid, and identify its properties: it turns limewater milky, is denser than air, and extinguishes flames.",
+      "instructions": [
+        "Colocar marble chips in a conical flask and add 2 mol/L HCl.",
+        "Recoger CO₂ by downward displacement of air in a test tube held inverted over the delivery tube.",
+        "Verter collected CO₂ into a test tube of limewater and stopper — shake gently and observe.",
+        "Carefully pour CO₂ from the collection vessel over a lighted candle and observe.",
+        "Registrar all observations and link each to the properties of CO₂."
+      ],
+      "expectedOutcome": "Limewater turns milky (Ca(OH)₂ + CO₂ → CaCO₃ + H₂O). The candle extinguishes as CO₂ displaces O₂. Bubbling at the marble chips confirms gas production."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🪨",
+          "name": "Marble chips (calcium carbonate)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Hydrochloric acid (2 mol/L)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Conical flask with bung and delivery tube"
+        },
+        {
+          "emoji": "💧",
+          "name": "Limewater (calcium hydroxide solución)"
+        },
+        {
+          "emoji": "🕯️",
+          "name": "Candle and matches"
+        }
+      ],
+      "observationsToRecord": [
+        "Rate of bubbling from marble chips",
+        "Apariencia of limewater antes and después CO₂ addition",
+        "Effect of CO₂ on the burning candle",
+        "Any temperature change in the flask during reaction"
+      ],
+      "theoryPoints": [
+        "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ (acid + carbonate → salt + water + CO₂).",
+        "CO₂ turns limewater milky: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O.",
+        "CO₂ is denser than air (M = 44 g/mol vs air ≈ 29 g/mol) — it can be poured and collects at low points.",
+        "CO₂ does not support combustion and extinguishes flames by displacing O₂."
+      ],
+      "realWorldConnections": [
+        "CO₂ fire extinguishers use the same principle — dense CO₂ blankets the fuel, cutting off oxygen supply.",
+        "The limewater test is used in industry to monitor CO₂ in indoor air quality and fermentation vessels.",
+        "Carbonated drinks are made by dissolving CO₂ under pressure — the same gas you produce here."
+      ],
+      "formula": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂  |  Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What observation confirms that the gas produced is carbon dioxide?",
+          "options": [
+            "It has a strong smell",
+            "It turns limewater milky",
+            "It relights a glowing splint",
+            "It produces a squeaky pop with a lit splint"
+          ],
+          "correctIndex": 1,
+          "explanation": "CO₂ reacts with limewater (Ca(OH)₂) to form insoluble calcium carbonate (CaCO₃), turning the solution milky white. This is the standard test for CO₂."
+        },
+        {
+          "text": "Why does CO₂ extinguish a candle when poured over it?",
+          "options": [
+            "CO₂ reacts with the candle wax",
+            "CO₂ cools the flame below ignition temperature",
+            "CO₂ is denser than air and displaces the oxygen needed for combustion",
+            "CO₂ absorbs infrared radiation from the flame"
+          ],
+          "correctIndex": 2,
+          "explanation": "CO₂ (molar mass 44 g/mol) is denser than air (≈29 g/mol) and settles around the flame, displacing the oxygen. Without O₂, combustion cannot continue."
+        },
+        {
+          "text": "Which of these is the correct equation for the reaction of marble chips with HCl?",
+          "options": [
+            "CaCO₃ + HCl → CaCl + H₂O + CO₂",
+            "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂",
+            "CaCO₃ + 2HCl → CaCl₂ + H₂ + CO₂",
+            "Ca + 2HCl → CaCl₂ + H₂"
+          ],
+          "correctIndex": 1,
+          "explanation": "The balanced equation is CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Two moles of HCl are needed to react with one mole of CaCO₃, forming calcium chloride, water, and carbon dioxide."
+        }
+      ],
+      "discussion": [
+        "Explain why increasing the surface area of marble chips (crushing them) speeds up the reaction rate. Use collision theory in your answer.",
+        "The limewater turns milky, then clears again if excess CO₂ is bubbled through. Write the equation for the clearing reaction and explain what it shows about CO₂ and calcium carbonate.",
+        "Describe how the density of CO₂ is both useful (fire extinguishers) and a hazard (it can accumulate in low-lying areas like basements and volcanic craters)."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Acid-carbonate reaction producing CO₂",
+          "pct": 35
+        },
+        {
+          "label": "Limewater test for CO₂",
+          "pct": 30
+        },
+        {
+          "label": "Physical properties of CO₂ (density, non-flammable)",
+          "pct": 25
+        },
+        {
+          "label": "Real-world applications of CO₂",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often confuse CO₂ with CO (carbon monoxide) — CO₂ does not burn and is not toxic at low concentrations, unlike CO.",
+        "Many think limewater stays milky permanently — excess CO₂ dissolves the CaCO₃ to form soluble Ca(HCO₃)₂, clearing the solution."
+      ],
+      "hook": "CO₂ fire extinguishers work by simply pouring an invisible blanket of dense gas over a fire. A 2 kg extinguisher contains over 1,000 litres of CO₂ gas — all made from the same chemistry you're doing today!",
+      "khanLinks": [
+        {
+          "title": "Ideal Gas Law",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/ideal-gas-equation-pv-nrt"
+        },
+        {
+          "title": "Balancing Chemical Equations",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/balancing-chemical-equations/v/balancing-chemical-equations-intuition"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Test",
+        "Observación Before",
+        "Observación After",
+        "Conclusion"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record rate of bubbling from marble chips",
+      "Record limewater appearance before and after CO₂ addition",
+      "Record what happens to the candle when CO₂ is poured over it"
+    ],
+    "conclusion": "Write the balanced equation for the production of CO₂ from marble chips and HCl. Confirm the identity of the gas using the limewater test result. Explain why CO₂ extinguishes a candle using its physical properties.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to make a gas that turns a clear solution milky and puts out a candle without touching it — it's carbon dioxide, and you're making it from rocks and acid!",
+      "keywords": {
+        "setup": "Ensure the delivery tube is submerged in limewater before starting. Use marble chips rather than powder — powder reacts too fast. Have the candle lit and ready before collecting gas.",
+        "formula": "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Limewater test: Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O (milky). Excess CO₂: CaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂ (clears again).",
+        "error": "Common errors: not sealing the bung tightly (CO₂ escapes before reaching limewater), inverting the collection test tube incorrectly (air enters), and not bubbling enough CO₂ to turn limewater milky.",
+        "result": "Limewater turns milky after 10–15 seconds of bubbling. Candle extinguishes within 2–3 seconds of CO₂ being poured over it. Vigorous bubbling at marble chips confirms reaction.",
+        "real": "CO₂ fire extinguishers contain liquid CO₂ under pressure. When released, it expands to 500× its volume and forms a dense invisible blanket that smothers fires without water damage — essential for electrical fires.",
+        "explain": "Marble (calcium carbonate) reacts with hydrochloric acid in a classic acid-carbonate reaction. The H⁺ ions attack the CO₃²⁻ groups, releasing CO₂ gas. CO₂ is heavier than air, so it sinks — which is why you can pour it onto a candle and it stays there long enough to put it out.",
+        "hook": "Lake Nyos in Cameroon sits on a volcanic CO₂ source. In 1986, a sudden release of 1.6 million tonnes of CO₂ swept down valleys like an invisible flood — the gas settled in low areas because it's denser than air, suffocating 1,800 people and 3,500 livestock. The same property that extinguishes candles became a natural disaster.",
+        "misconception": "CO₂ is NOT the same as carbon monoxide (CO). CO₂ is produced by breathing and combustion and is not toxic at normal levels. CO is a colourless, odourless, highly toxic gas produced by incomplete combustion. Never confuse the two!"
+      },
+      "hint": "If the limewater doesn't turn milky, check that the delivery tube is actually submerged and that your bung seal is airtight. Try using a smaller test tube of limewater so less gas is needed to saturate it.",
+      "expected": "Limewater turns milky within 15 s of bubbling CO₂. Candle extinguishes when CO₂ poured over. Clear vigorous bubbling at marble chips confirms gas production. Limewater clears if excess CO₂ is bubbled through."
+    }
+  },
+  {
+    "num": 122,
+    "cardEmoji": "🫁",
+    "title": "Preparación de dióxido de carbono",
+    "section": "Gas Chemistry",
+    "desc": "Producir CO₂ por reacción de ácido con carbonato y recoger por desplazamiento hacia abajo.",
+    "setupTime": "8 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that catalysts speed up reactions without being consumed, and that oxygen supports combustion — confirmed by the glowing splint test.",
+      "instructions": [
+        "Añadir 20 vol H₂O₂ to a conical flask fitted with a bung and delivery tube.",
+        "Añadir a spatula of MnO₂ powder and quickly replace the bung.",
+        "Recoger oxygen by downward displacement of water (upward displacement from the delivery tube into an inverted water-filled tube).",
+        "When sufficient gas is collected, test with a glowing splint — bring it to the mouth of the tube.",
+        "Observar and record: does the splint relight?"
+      ],
+      "expectedOutcome": "Oxygen is produced rapidly. The glowing splint relights, confirming the gas is oxygen. The MnO₂ can be recovered unchanged at the end, confirming it is a catalyst."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💧",
+          "name": "Hydrogen peroxide solución (20 vol)"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Manganese dioxide (MnO₂) powder"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Conical flask with bung and delivery tube"
+        },
+        {
+          "emoji": "🪵",
+          "name": "Wooden splint and matches"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Collection tubo de ensayo (water displacement)"
+        }
+      ],
+      "observationsToRecord": [
+        "Rate of bubbling when MnO₂ is added vs without catalyst",
+        "Result of glowing splint test (relights or not)",
+        "Apariencia of MnO₂ antes and después reaction",
+        "Estimated volume of O₂ collected in 2 minutes"
+      ],
+      "theoryPoints": [
+        "2H₂O₂ → 2H₂O + O₂ (MnO₂ catalyst lowers activation energy).",
+        "MnO₂ is a catalyst: it increases reaction rate but is not consumed — same mass before and after.",
+        "Oxygen supports combustion — it provides the oxidant that allows the splint to burn.",
+        "Glowing splint test: O₂ relights a glowing (not flaming) splint; H₂ gives a squeaky pop; CO₂ extinguishes."
+      ],
+      "realWorldConnections": [
+        "Catalase enzyme in living cells performs the same reaction — H₂O₂ is a toxic by-product of metabolism that must be quickly decomposed.",
+        "Oxygen concentrators in hospitals and on aircraft use pressure-swing adsorption to separate O₂ from air — same gas you're collecting here.",
+        "Rocket engines use H₂O₂ (high concentration) as an oxidant — decomposing it rapidly to produce steam and O₂ for combustion."
+      ],
+      "formula": "2H₂O₂ → 2H₂O + O₂  (MnO₂ catalyst)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is the role of MnO₂ in the decomposition of hydrogen peroxide?",
+          "options": [
+            "It is a reactant that is used up in the reaction",
+            "It provides oxygen atoms to the reaction",
+            "It is a catalyst that speeds up the reaction without being consumed",
+            "It reacts with water to produce oxygen"
+          ],
+          "correctIndex": 2,
+          "explanation": "MnO₂ is a catalyst. It lowers the activation energy of the decomposition reaction, making it proceed much faster, but is not consumed — its mass remains unchanged before and after."
+        },
+        {
+          "text": "How do you confirm that the gas collected is oxygen?",
+          "options": [
+            "It turns limewater milky",
+            "It produces a squeaky pop with a lit splint",
+            "A glowing splint relights when placed in the gas",
+            "It bleaches damp litmus paper"
+          ],
+          "correctIndex": 2,
+          "explanation": "The glowing splint test is the standard test for oxygen. Oxygen supports combustion and re-ignites a smouldering splint. CO₂ extinguishes flames; H₂ produces a squeaky pop; Cl₂ bleaches litmus."
+        },
+        {
+          "text": "How many moles of O₂ are produced from 2 moles of H₂O₂?",
+          "options": [
+            "0.5 mol",
+            "1 mol",
+            "2 mol",
+            "4 mol"
+          ],
+          "correctIndex": 1,
+          "explanation": "From the equation 2H₂O₂ → 2H₂O + O₂, two moles of H₂O₂ produce one mole of O₂. The mole ratio of H₂O₂ : O₂ is 2:1."
+        }
+      ],
+      "discussion": [
+        "Explain why a catalyst is important for industrial processes, linking to energy costs and reaction feasibility.",
+        "Compare the rates of H₂O₂ decomposition with MnO₂ and with catalase enzyme (found in liver). Both catalyse the same reaction — what does this tell us about how enzymes work?",
+        "Design an experiment to prove that MnO₂ is a true catalyst by showing it is not consumed during the reaction."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Catalytic decomposition mechanism",
+          "pct": 30
+        },
+        {
+          "label": "Glowing splint test for oxygen",
+          "pct": 30
+        },
+        {
+          "label": "Properties of oxygen (supports combustion)",
+          "pct": 25
+        },
+        {
+          "label": "Industrial and biological applications of O₂",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the catalyst provides the oxygen — the oxygen comes entirely from the H₂O₂ molecule, not from MnO₂.",
+        "Many assume a catalyst is used up in a reaction — by definition, a catalyst is fully recovered at the end without change in mass."
+      ],
+      "hook": "Your liver contains billions of catalase enzyme molecules doing exactly this reaction — breaking down toxic H₂O₂ produced by your metabolism into harmless water and oxygen. Drop a piece of liver into H₂O₂ and watch the froth — that's your biology in a test tube!",
+      "khanLinks": [
+        {
+          "title": "Kinetic Molecular Theory",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/kinetic-molecular-theory-of-gases"
+        },
+        {
+          "title": "Reaction Rates and Catalysts",
+          "url": "https://www.khanacademy.org/science/chemistry/chem-kinetics/reaction-rates-tutorial/v/introduction-to-reaction-rates"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Catalyst Used",
+        "Tiempo for 10 cm³ O₂ (s)",
+        "Splint Test Resultado",
+        "Catalyst Recovered?"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record rate of bubbling with and without MnO₂",
+      "Record the result of the glowing splint test",
+      "Weigh MnO₂ before and after to confirm it is not consumed"
+    ],
+    "conclusion": "Write the balanced equation for the decomposition of H₂O₂. State how the glowing splint test confirms the product is O₂. Explain the role of MnO₂ as a catalyst using the concept of activation energy.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to make oxygen gas — and show that you can speed up a reaction without any extra energy, just by adding the right catalyst!",
+      "keywords": {
+        "setup": "Add MnO₂ to the flask first, then quickly add H₂O₂ and bung. For water displacement collection: fill collection tube completely with water, invert over a water trough, and insert delivery tube under the opening.",
+        "formula": "2H₂O₂(aq) → 2H₂O(l) + O₂(g). MnO₂ provides an alternative reaction pathway with lower activation energy. It is recovered unchanged at the end.",
+        "error": "Common errors: not glowing the splint properly before testing (must be glowing, not flaming), allowing air into the collection tube before the reaction starts, and using dilute H₂O₂ (too slow).",
+        "result": "Rapid bubbling when MnO₂ added. Glowing splint relights brightly — confirms O₂. MnO₂ mass unchanged. ~20 cm³ O₂ collected in 2 min from 10 mL of 20 vol H₂O₂.",
+        "real": "Oxygen is used in steel production (basic oxygen furnace), medical ventilators, and wastewater treatment. The UK produces about 4 million tonnes of O₂ per year — mostly by fractional distillation of liquid air.",
+        "explain": "H₂O₂ slowly decomposes on its own, but the activation energy barrier is too high for it to go quickly at room temperature. MnO₂ provides an alternative reaction pathway that has a lower activation energy hill to climb — more molecules have enough energy to react, so the reaction goes much faster.",
+        "hook": "Hydrogen peroxide was used as rocket propellant in the 1950s — the British Black Arrow rocket used concentrated H₂O₂ decomposed over silver gauze catalysts to produce superheated steam and O₂ for combustion. A bigger version of your experiment launched satellites!",
+        "misconception": "H₂O₂ does NOT contain MnO₂ — the MnO₂ is only a catalyst. All the oxygen in the gas comes from the H₂O₂ molecules themselves. You can prove this by weighing MnO₂ before and after — no change in mass."
+      },
+      "hint": "If the splint doesn't relight, the oxygen may be too diluted with air in the collection tube. Collect for longer or try the test again with a freshly-glowed splint held right at the tube opening.",
+      "expected": "Vigorous bubbling immediately when MnO₂ added. Glowing splint relights confirming O₂. MnO₂ mass unchanged (confirmed catalyst). Rate significantly faster than uncatalysed decomposition."
+    }
+  },
+  {
+    "num": 123,
+    "cardEmoji": "💥",
+    "title": "Preparación de hidrógeno",
+    "section": "Gas Chemistry",
+    "desc": "Producir hidrógeno por reacción de zinc con ácido clorhídrico diluido.",
+    "setupTime": "8 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that metals above hydrogen in the reactivity series displace H₂ from acid, and confirm hydrogen by the characteristic squeaky pop with a lit splint.",
+      "instructions": [
+        "Colocar zinc granules in a conical flask fitted with a bung and delivery tube.",
+        "Añadir 2 mol/L HCl and quickly replace the bung.",
+        "Recoger H₂ in an inverted test tube by upward displacement (H₂ is lighter than air).",
+        "Cover the tube with a thumb, bring to a lit splint, and remove the thumb.",
+        "Registrar the result of the squeaky pop test."
+      ],
+      "expectedOutcome": "Hydrogen is produced steadily. The squeaky pop confirms the gas is H₂. The solution becomes warm as the exothermic reaction proceeds."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚙️",
+          "name": "Zinc granules"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Hydrochloric acid (2 mol/L)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Conical flask with bung and delivery tube"
+        },
+        {
+          "emoji": "🪵",
+          "name": "Wooden splint and matches"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro"
+        }
+      ],
+      "observationsToRecord": [
+        "Rate of bubbling from zinc granules",
+        "Result of squeaky pop test",
+        "Temperatura change during reaction",
+        "Apariencia of zinc granules over time"
+      ],
+      "theoryPoints": [
+        "Zn + 2HCl → ZnCl₂ + H₂ (zinc displaces hydrogen from acid — single displacement reaction).",
+        "Zinc is above hydrogen in the reactivity series and so can displace H₂.",
+        "H₂ is the least dense gas (M = 2 g/mol) — it must be collected by upward displacement (inverted tube).",
+        "Squeaky pop: H₂ burns explosively with O₂ in the air: 2H₂ + O₂ → 2H₂O."
+      ],
+      "realWorldConnections": [
+        "Green hydrogen produced from water electrolysis is a major focus of UK net-zero energy policy.",
+        "Hydrogen fuel cells in cars and buses combine H₂ with O₂ to produce electricity and water — zero emissions at the exhaust.",
+        "The Hindenburg disaster (1937) was caused by ignition of H₂ in an airship — demonstrating hydrogen's flammability properties."
+      ],
+      "formula": "Zn + 2HCl → ZnCl₂ + H₂"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why is hydrogen collected by upward displacement of air rather than downward?",
+          "options": [
+            "Hydrogen reacts with water and cannot be collected over water",
+            "Hydrogen is less dense than air and rises to the top of an inverted tube",
+            "Hydrogen dissolves in water and cannot be collected",
+            "Downward displacement would mix hydrogen with oxygen"
+          ],
+          "correctIndex": 1,
+          "explanation": "Hydrogen (M = 2 g/mol) is much less dense than air (M ≈ 29 g/mol). It rises and collects at the top of an inverted tube. CO₂ (M = 44) sinks and is collected by downward displacement."
+        },
+        {
+          "text": "What is observed when a lit splint is held to a test tube of hydrogen?",
+          "options": [
+            "The splint is extinguished immediately",
+            "A blue flame burns quietly",
+            "A squeaky pop is heard as the hydrogen burns rapidly",
+            "The splint relights if glowing"
+          ],
+          "correctIndex": 2,
+          "explanation": "When H₂ ignites in air, it burns rapidly with the surrounding O₂ (2H₂ + O₂ → 2H₂O), producing a characteristic squeaky pop. This is the standard confirmatory test for hydrogen gas."
+        },
+        {
+          "text": "Which metal would NOT react with dilute HCl to produce hydrogen?",
+          "options": [
+            "Magnesium",
+            "Zinc",
+            "Iron",
+            "Copper"
+          ],
+          "correctIndex": 3,
+          "explanation": "Copper is below hydrogen in the reactivity series and cannot displace H₂ from acid. Only metals above hydrogen (Mg, Zn, Fe, Na, etc.) can displace hydrogen from dilute acids."
+        }
+      ],
+      "discussion": [
+        "Write the ionic equation for the reaction of zinc with hydrochloric acid and identify the oxidation state change for zinc.",
+        "Explain why magnesium reacts with HCl much faster than zinc, using the reactivity series and collision theory.",
+        "Discuss the advantages and safety risks of using hydrogen as a fuel in transport, comparing it to petrol and battery-electric vehicles."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Metal-acid reaction and displacement",
+          "pct": 35
+        },
+        {
+          "label": "Squeaky pop test for hydrogen",
+          "pct": 30
+        },
+        {
+          "label": "Reactivity series and hydrogen position",
+          "pct": 25
+        },
+        {
+          "label": "Green hydrogen and fuel cells",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan all metals react with acid to produce hydrogen — only metals above hydrogen in the reactivity series do.",
+        "Many think the squeaky pop is caused by oxygen — it is caused by hydrogen burning rapidly in air: 2H₂ + O₂ → 2H₂O."
+      ],
+      "hook": "A hydrogen fuel cell car emits only water vapour from its exhaust — and the \"fuel\" can be made by splitting water with renewable electricity. You're making the fuel of the future in a flask today!",
+      "khanLinks": [
+        {
+          "title": "Oxidation States",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states"
+        },
+        {
+          "title": "Types of Chemical Reactions",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/types-of-chemical-reactions/v/types-of-chemical-reactions"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Metal",
+        "Acid Concentración (mol/L)",
+        "Bubble Velocidad",
+        "Squeaky Pop",
+        "Temperatura Change (°C)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record rate of bubbling from zinc granules",
+      "Record whether the squeaky pop test is positive",
+      "Record temperature at start and after 5 minutes of reaction"
+    ],
+    "conclusion": "Write the balanced equation for Zn reacting with HCl. Confirm the gas is H₂ using the squeaky pop test result. Explain why copper would not react with HCl using the reactivity series.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to make hydrogen gas — the lightest element in the universe — and set it alight with a satisfying squeaky pop!",
+      "keywords": {
+        "setup": "Collect hydrogen by upward displacement (inverted test tube, no water needed — H₂ rises). Allow at least 30 s of bubbling before testing to flush out air. Test with a lit splint immediately after covering the tube with a thumb.",
+        "formula": "Zn + 2HCl → ZnCl₂ + H₂. Ionic: Zn(s) + 2H⁺(aq) → Zn²⁺(aq) + H₂(g). Zn is oxidised (0 → +2); H is reduced (+1 → 0).",
+        "error": "Common errors: tube not inverted properly (H₂ escapes), testing too quickly before air is flushed, and using copper instead of zinc (no reaction).",
+        "result": "Steady vigorous bubbling from zinc. Squeaky pop confirmed. Solution warms during reaction (exothermic). Zinc granules gradually dissolve and solution turns colourless (ZnCl₂).",
+        "real": "Toyota's Mirai hydrogen fuel cell car fills up with H₂ in 3 minutes and has a 650 km range. The exhaust is pure water. The H₂ reacts with O₂ in the fuel cell to produce electricity — the reverse of the electrolysis that makes H₂.",
+        "explain": "Zinc atoms in the metal lattice have electrons they're willing to donate. The H⁺ ions in HCl accept those electrons and pair up to form H₂ gas. Zinc is oxidised (loses electrons), hydrogen ions are reduced (gain electrons). It's a redox reaction in disguise!",
+        "hook": "The Hindenburg airship was filled with 200,000 m³ of hydrogen. In 1937 it caught fire and burned in 37 seconds — recorded on camera. The disaster ended the era of hydrogen airships. Today's hydrogen safety systems are far more sophisticated, making H₂ no more dangerous than petrol.",
+        "misconception": "Not all metals react with acid to produce H₂. Copper, silver, and gold are below hydrogen in the reactivity series — they won't react with dilute acids at all. Only metals above H in the series can displace it."
+      },
+      "hint": "If the squeaky pop is too faint, you may have too much air mixed with the hydrogen. Let the reaction run for 30 seconds to flush the air out, collect a fresh tube, and test again immediately.",
+      "expected": "Vigorous bubbling from zinc + HCl. Clear squeaky pop confirms H₂. Solution warms slightly (exothermic). Flask contains ZnCl₂ solution at end. No reaction if copper used instead of zinc."
+    }
+  },
+  {
+    "num": 124,
+    "title": "Prueba de gases: O₂, CO₂, H₂",
+    "section": "Gas Chemistry",
+    "desc": "Identificar O₂, CO₂ y H₂ usando pruebas estándar (astilla incandescente, agua de cal, estallido).",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes verifican Boyle's Law: at constant temperature, pressure and volume of a fixed mass of gas are inversely proportional (P ∝ 1/V).",
+      "instructions": [
+        "Set a 60 mL syringe to 50 mL and seal the nozzle with a cap or finger.",
+        "Registrar the initial pressure (atmospheric, ~101 kPa) and volume (50 mL).",
+        "Push the plunger to compress the gas to 40, 30, 20, and 10 mL. Registrar pressure at each volume using a pressure sensor or manometer.",
+        "Pull the plunger out to 60 mL and record pressure.",
+        "Plot P vs V and P vs 1/V graphs to confirm the relationship."
+      ],
+      "expectedOutcome": "P vs V gives a hyperbola (inverse curve). P vs 1/V gives a straight line through the origin, confirming Boyle's Law: PV = constant."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💉",
+          "name": "Large syringe (60 mL) with sealed nozzle cap"
+        },
+        {
+          "emoji": "📊",
+          "name": "Pressure sensor or Bourdon gauge manometer"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler (to measure plunger position)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro (to confirm constant temperature)"
+        },
+        {
+          "emoji": "📋",
+          "name": "Graph paper or plotting software"
+        }
+      ],
+      "observationsToRecord": [
+        "Volumen de gas in syringe (mL) at each plunger position",
+        "Pressure reading (kPa) at each volume",
+        "Product PV at each data point (should be constant)",
+        "Room temperature (confirm constant throughout)"
+      ],
+      "theoryPoints": [
+        "Boyle's Law: P₁V₁ = P₂V₂ at constant temperature for a fixed mass of gas.",
+        "Kinetic molecular theory: compressing gas into smaller volume → more collisions with walls per second → higher pressure.",
+        "Halving the volume doubles the pressure (if T and n are constant).",
+        "P vs 1/V should give a straight line through the origin with gradient = nRT."
+      ],
+      "realWorldConnections": [
+        "Scuba divers experience Boyle's Law directly — the air in their lungs compresses at depth (higher pressure) and expands as they ascend.",
+        "Bicycle pumps use Boyle's Law: compressing air in the cylinder increases pressure to push air into the tyre.",
+        "Decompression sickness (\"the bends\") occurs when divers ascend too quickly — dissolved gases expand in the blood according to Boyle's Law."
+      ],
+      "formula": "P₁V₁ = P₂V₂  (constant T, constant n)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Boyle's Law states that for a fixed mass of gas at constant temperature:",
+          "options": [
+            "Pressure is directly proportional to volume",
+            "Pressure is inversely proportional to volume",
+            "Pressure is directly proportional to temperature",
+            "Volume is independent of pressure"
+          ],
+          "correctIndex": 1,
+          "explanation": "Boyle's Law: P ∝ 1/V at constant T and n. Doubling the pressure halves the volume. The product PV remains constant."
+        },
+        {
+          "text": "A gas has a volume of 4 L at 100 kPa. What is its volume at 200 kPa (constant temperature)?",
+          "options": [
+            "1 L",
+            "2 L",
+            "4 L",
+            "8 L"
+          ],
+          "correctIndex": 1,
+          "explanation": "P₁V₁ = P₂V₂: 100 × 4 = 200 × V₂. V₂ = 400/200 = 2 L. Doubling pressure halves the volume."
+        },
+        {
+          "text": "Which graph confirms Boyle's Law?",
+          "options": [
+            "A straight line of P vs V through the origin",
+            "A curve of P vs V (hyperbola)",
+            "A straight line of P vs 1/V through the origin",
+            "A horizontal line of P vs V"
+          ],
+          "correctIndex": 2,
+          "explanation": "P vs 1/V gives a straight line through the origin if P ∝ 1/V (Boyle's Law). P vs V gives a hyperbola — a curve, not a straight line."
+        }
+      ],
+      "discussion": [
+        "Explain Boyle's Law in terms of kinetic molecular theory — why does compressing a gas increase its pressure?",
+        "A scuba diver's lungs contain 6 L of air at the surface (1 atm). At 30 m depth the pressure is 4 atm. What volume do the lungs contain? What would happen if the diver held their breath and ascended rapidly?",
+        "Boyle's Law assumes ideal gas behaviour. Suggest conditions under which real gases deviate significantly from this law."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Boyle's Law (P ∝ 1/V at constant T)",
+          "pct": 40
+        },
+        {
+          "label": "P vs 1/V graphical analysis",
+          "pct": 30
+        },
+        {
+          "label": "Kinetic molecular theory explanation",
+          "pct": 20
+        },
+        {
+          "label": "Diving and practical applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often confuse Boyle's Law with Charles's Law — Boyle's relates P and V (constant T); Charles's relates V and T (constant P).",
+        "Many think pressure and volume are directly proportional — they are inversely proportional. Compressing gas INCREASES pressure."
+      ],
+      "hook": "Scuba divers must never hold their breath while ascending — as pressure decreases, the air in their lungs expands (Boyle's Law) and could rupture lung tissue. All dive training starts with this chemistry lesson!",
+      "khanLinks": [
+        {
+          "title": "Boyle's Law",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/boyle-s-law"
+        },
+        {
+          "title": "Gas Laws",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/partial-pressure"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Volumen (mL)",
+        "Presión (kPa)",
+        "PV product (kPa·mL)",
+        "1/V (mL⁻¹)"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record pressure at each syringe volume (50, 40, 30, 20, 10 mL)",
+      "Calculate PV product for each data point",
+      "Record room temperature at start and end to confirm constant T"
+    ],
+    "conclusion": "State Boyle's Law and confirm it using your P vs 1/V graph. Calculate the average PV product and compare to the theoretical value nRT. Describe one real-world application of Boyle's Law.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to compress gas in a syringe and discover one of the fundamental laws of the universe — the relationship between pressure and volume that Robert Boyle published in 1662!",
+      "keywords": {
+        "setup": "Seal the syringe nozzle completely before starting. Allow 10 seconds at each volume before reading pressure — let the gas reach equilibrium. Keep one hand on the barrel to prevent recoil.",
+        "formula": "P₁V₁ = P₂V₂. If V halves, P doubles. PV = nRT = constant at fixed T and n. For 1 mol at 25°C: PV ≈ 2479 J.",
+        "error": "Common errors: syringe not sealed (gas leaks, pressure doesn't increase), not waiting for equilibrium at each volume, and reading the pressure sensor before the display stabilises.",
+        "result": "PV product approximately constant across all data points (variation < 5%). P vs 1/V graph: straight line through origin. Confirms Boyle's Law.",
+        "real": "A bicycle pump compresses air from about 1 atm (atmospheric) to 6–8 atm in a tyre. That's a volume compression of 6–8 times. Boyle's Law calculates exactly how many pump strokes are needed to reach tyre pressure.",
+        "explain": "Imagine gas molecules bouncing around inside the syringe. When you compress the gas into a smaller space, the molecules hit the walls more often — they have less distance to travel before hitting again. More hits per second = higher pressure. Temperature stays constant, so the molecules don't speed up — they just collide more frequently.",
+        "hook": "Robert Boyle published this law in 1662 — over 350 years ago — using a J-shaped tube filled with mercury to trap and compress air. He had no idea he was describing molecular collisions; the atom wouldn't be properly defined for another 200 years. He just measured carefully and found the pattern.",
+        "misconception": "Boyle's Law only applies at CONSTANT temperature. If you warm or cool the gas while compressing it, the law doesn't hold. This is why the syringe must stay at room temperature throughout — don't grip it with warm hands!"
+      },
+      "hint": "If your PV product is not constant, check for a gas leak at the nozzle seal. Apply a small amount of petroleum jelly around the plunger and nozzle to improve the seal.",
+      "expected": "PV product constant within ±5%. P vs 1/V: straight line through origin. At V = 25 mL, P ≈ 2× atmospheric. Confirms Boyle's Law: P ∝ 1/V at constant T."
+    }
+  },
+  {
+    "num": 125,
+    "title": "Ley de difusión de Graham",
+    "section": "Gas Chemistry",
+    "desc": "Comparar las velocidades de difusión de gases de diferentes masas molares.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes verifican Charles's Law: at constant pressure, the volume of a fixed mass of gas is directly proportional to its absolute temperature (V ∝ T in Kelvin).",
+      "instructions": [
+        "Seal a 60 mL syringe at 20 mL of air at room temperature, or tie off a small balloon.",
+        "Prepare water baths at 20°C, 40°C, 60°C, and 80°C.",
+        "Submerge the syringe/balloon fully in each water bath for 3 minutes to reach thermal equilibrium.",
+        "Registrar the volume at each temperature.",
+        "Plot V vs T (°C) and V vs T (K) — note which gives a line through the origin."
+      ],
+      "expectedOutcome": "V vs T(K) gives a straight line through the origin (0 K = −273°C), confirming Charles's Law. V vs T(°C) gives a straight line but not through the origin."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💉",
+          "name": "Sealed 60 mL syringe (or small balloon)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro (0–100°C)"
+        },
+        {
+          "emoji": "🪣",
+          "name": "Vaso de precipitadoss of water at 20, 40, 60, 80°C"
+        },
+        {
+          "emoji": "🔥",
+          "name": "Hotplate or Mechero Bunsen to prepare water baths"
+        },
+        {
+          "emoji": "📋",
+          "name": "Graph paper for V vs T plots"
+        }
+      ],
+      "observationsToRecord": [
+        "Temperatura of water bath (°C and K)",
+        "Volumen de syringe/balloon at each temperature",
+        "Whether volume increases proportionally with temperature in Kelvin",
+        "Extrapolated intercept on T-axis from V vs T(°C) graph"
+      ],
+      "theoryPoints": [
+        "Charles's Law: V₁/T₁ = V₂/T₂ at constant pressure, where T is in Kelvin.",
+        "Temperature must be in Kelvin: T(K) = T(°C) + 273.",
+        "Extrapolating V vs T(°C) to V = 0 gives approximately −273°C = absolute zero (0 K).",
+        "Kinetic theory: higher T → molecules move faster → gas expands to maintain constant pressure."
+      ],
+      "realWorldConnections": [
+        "Hot air balloons work on Charles's Law — heating the air inside increases its volume, making the balloon buoyant.",
+        "Car tyres appear slightly deflated on cold mornings because cold air has lower volume (V ∝ T).",
+        "Absolute zero (0 K = −273.15°C) is the theoretical point at which gas volume would be zero — it has never been reached but has been approached to within billionths of a degree."
+      ],
+      "formula": "V₁/T₁ = V₂/T₂  (constant P, T in Kelvin)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Charles's Law states that for a fixed mass of gas at constant pressure:",
+          "options": [
+            "Volume is inversely proportional to temperature in Kelvin",
+            "Volume is directly proportional to temperature in Kelvin",
+            "Volume is independent of temperature",
+            "Volume is directly proportional to temperature in Celsius"
+          ],
+          "correctIndex": 1,
+          "explanation": "Charles's Law: V ∝ T (Kelvin) at constant P. The volume doubles if the Kelvin temperature doubles. This does NOT work with Celsius — you must convert to Kelvin first."
+        },
+        {
+          "text": "A gas occupies 2 L at 300 K. What volume does it occupy at 600 K (constant pressure)?",
+          "options": [
+            "1 L",
+            "2 L",
+            "4 L",
+            "6 L"
+          ],
+          "correctIndex": 2,
+          "explanation": "V₁/T₁ = V₂/T₂: 2/300 = V₂/600. V₂ = (2 × 600)/300 = 4 L. Doubling Kelvin temperature doubles the volume."
+        },
+        {
+          "text": "Why must temperature be in Kelvin (not Celsius) for gas law calculations?",
+          "options": [
+            "Kelvin is easier to measure than Celsius",
+            "Celsius temperatures can be negative, which would give nonsensical negative volumes",
+            "Kelvin has smaller units than Celsius",
+            "Gas laws were invented by Lord Kelvin"
+          ],
+          "correctIndex": 1,
+          "explanation": "At 0 K (absolute zero) a gas would theoretically have zero volume. The Celsius scale has an arbitrary zero (water freezing point) — if you use Celsius, the maths gives wrong answers including impossible negative volumes."
+        }
+      ],
+      "discussion": [
+        "Explain in terms of kinetic molecular theory why a gas expands when heated at constant pressure.",
+        "Describe how the V vs T(°C) graph can be extrapolated to estimate absolute zero (−273°C). What assumptions does this require?",
+        "A hot air balloon has a fixed volume envelope. Using Charles's Law, explain how heating the air inside makes the balloon rise."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Charles's Law (V ∝ T in Kelvin)",
+          "pct": 40
+        },
+        {
+          "label": "Converting Celsius to Kelvin",
+          "pct": 20
+        },
+        {
+          "label": "Kinetic theory explanation of V-T relationship",
+          "pct": 25
+        },
+        {
+          "label": "Hot air balloons and practical applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students frequently use Celsius instead of Kelvin in Charles's Law calculations — this always gives wrong answers.",
+        "Many confuse Charles's Law (V and T, constant P) with Gay-Lussac's Law (P and T, constant V)."
+      ],
+      "hook": "A hot air balloon weighs several tonnes, yet floats on air. Charles's Law explains how: heating air in the balloon increases its volume (and therefore lowers its density) until the displaced air weighs more than the balloon. Chemistry makes tonnes of fabric float!",
+      "khanLinks": [
+        {
+          "title": "Charles's Law",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/charles-s-law"
+        },
+        {
+          "title": "Maxwell-Boltzmann Distribution",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/maxwell-boltzmann-distribution"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Temperatura (°C)",
+        "Temperatura (K)",
+        "Volumen (mL)",
+        "V/T (mL/K)"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record volume at each temperature after 3 min equilibration",
+      "Calculate V/T ratio for each data point to confirm it is constant",
+      "Plot V vs T(°C) and V vs T(K) and describe the difference"
+    ],
+    "conclusion": "State Charles's Law and confirm it using your V vs T(K) graph. Explain why T must be in Kelvin. Extrapolate your V vs T(°C) graph to estimate absolute zero and compare to −273°C.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to heat gas and watch it expand — and if you plot it correctly, you'll discover absolute zero without ever going near −273°C!",
+      "keywords": {
+        "setup": "Allow at least 3 minutes at each temperature before reading volume. Keep the syringe fully submerged to ensure uniform heating. Do not exceed 80°C with a plastic syringe — it may deform.",
+        "formula": "V₁/T₁ = V₂/T₂. T(K) = T(°C) + 273. V/T = constant = nR/P. At STP (0°C, 1 atm), 1 mol ideal gas = 22.4 L.",
+        "error": "Common errors: using Celsius instead of Kelvin (gives wrong ratios), not waiting for thermal equilibrium, and the syringe plunger sticking (friction prevents free movement).",
+        "result": "V increases with temperature. V/T(K) is approximately constant. V vs T(K) straight line through origin. V vs T(°C) straight line but crosses T-axis at approximately −273°C.",
+        "real": "Car tyres: at 0°C a tyre inflated to 2.4 bar at 20°C drops to about 2.2 bar. The volume of the tyre doesn't change, but the temperature drop (Charles's Law related — Gay-Lussac's Law) reduces the pressure, making the tyre appear soft.",
+        "explain": "When you heat gas molecules, they move faster. At constant pressure (the syringe can move freely), faster molecules push the walls outward to maintain the same force per unit area. The volume increases to keep pressure constant. The hotter the gas, the more volume it needs.",
+        "hook": "Jacques Charles (of Charles's Law) was also the first person to ascend in a hydrogen balloon, in 1783. He flew 43 km across France, reached 3,000 m altitude, and became the first person to see the sun set twice in one day — once from the ground, then again from the balloon as he ascended!",
+        "misconception": "Charles's Law ONLY works with Kelvin temperatures. If you doubled from 20°C to 40°C, you might expect volume to double — but 20°C is 293 K and 40°C is 313 K, which is NOT double. Volume increases by only 7%, not 100%."
+      },
+      "hint": "If your data doesn't give a straight line, check whether the syringe plunger moves freely. Apply a tiny drop of oil to reduce friction. Also ensure water bath temperatures are stable before reading.",
+      "expected": "V/T(K) constant to within ±3%. V vs T(K) straight line through origin confirms Charles's Law. Extrapolation of V vs T(°C) intercepts approximately −273°C, estimating absolute zero."
+    }
+  },
+  {
+    "num": 126,
+    "title": "La ley de Boyle",
+    "section": "Gas Chemistry",
+    "desc": "Verificar que a temperatura constante, P × V = constante para un gas.",
+    "setupTime": "5 min",
+    "duration": "15 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes verifican Graham's Law: rate of diffusion is inversely proportional to the square root of molar mass. NH₃ (M = 17) diffuses faster than HCl (M = 36.5), so the white ring forms closer to the HCl end.",
+      "instructions": [
+        "Preparar a 50 cm horizontal glass tube on a retort stand.",
+        "Simultaneously insert cotton wool soaked in concentrated HCl at one end and concentrated ammonia at the other end.",
+        "Seal both ends with rubber bungs immediately.",
+        "Esperar 5–10 minutes and observe where the white ring of NH₄Cl forms.",
+        "Medir the distance from each cotton wool plug to the white ring and calculate the ratio."
+      ],
+      "expectedOutcome": "White NH₄Cl ring forms closer to the HCl end, confirming NH₃ travels further. Distance ratio NH₃:HCl ≈ √(36.5/17) ≈ 1.47. The ring is about 60% of the way from the HCl end."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Horizontal glass tube (50 cm)"
+        },
+        {
+          "emoji": "🧴",
+          "name": "Concentrated HCl solución"
+        },
+        {
+          "emoji": "🧴",
+          "name": "Concentrated ammonia solución (0.880)"
+        },
+        {
+          "emoji": "🧶",
+          "name": "Cotton wool plugs (two)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler and retort stand with clamps"
+        }
+      ],
+      "observationsToRecord": [
+        "Position of white ring from each cotton wool plug (cm)",
+        "Time for ring to appear (minutes)",
+        "Ratio of distances (NH₃ side : HCl side)",
+        "Comparison of measured ratio to predicted √(M_HCl/M_NH₃)"
+      ],
+      "theoryPoints": [
+        "Graham's Law: rate ∝ 1/√M. Lighter gases diffuse faster than heavier ones.",
+        "NH₃ (M = 17) diffuses faster than HCl (M = 36.5).",
+        "Predicted ratio of rates: √(36.5/17) ≈ 1.47 — NH₃ travels about 1.47× further.",
+        "NH₃(g) + HCl(g) → NH₄Cl(s): white solid forms where gases meet."
+      ],
+      "realWorldConnections": [
+        "Gas centrifuges used to enrich uranium use the slight difference in diffusion rate of UF₆ isotopes (²³⁵UF₆ vs ²³⁸UF₆) — the same principle at industrial scale.",
+        "The smell of perfume reaches the back of a room faster in warm conditions — thermal diffusion builds on Graham's Law.",
+        "CO₂ alarms work because CO₂ diffuses to sensor membranes — alarm sensitivity must account for diffusion rates."
+      ],
+      "formula": "rate₁/rate₂ = √(M₂/M₁)  |  NH₃/HCl: √(36.5/17) ≈ 1.47"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does the white ring form closer to the HCl end of the tube?",
+          "options": [
+            "HCl is more reactive than NH₃",
+            "NH₃ has a lower molar mass and diffuses faster, travelling a greater distance",
+            "HCl dissolves in the glass tube and slows down",
+            "Ammonia is heavier and sinks towards the HCl end"
+          ],
+          "correctIndex": 1,
+          "explanation": "NH₃ (M = 17 g/mol) diffuses faster than HCl (M = 36.5 g/mol) because lighter molecules travel faster at the same temperature. NH₃ covers more distance before the gases meet, so the ring forms nearer to the HCl cotton wool."
+        },
+        {
+          "text": "According to Graham's Law, a gas with molar mass 16 g/mol diffuses how many times faster than one with molar mass 64 g/mol?",
+          "options": [
+            "2 times",
+            "4 times",
+            "8 times",
+            "0.5 times"
+          ],
+          "correctIndex": 0,
+          "explanation": "Rate ratio = √(M₂/M₁) = √(64/16) = √4 = 2. The lighter gas (M = 16) diffuses twice as fast as the heavier one (M = 64)."
+        },
+        {
+          "text": "What is the white solid that forms in the tube?",
+          "options": [
+            "Ammonium hydroxide (NH₄OH)",
+            "Ammonium chloride (NH₄Cl)",
+            "Sodium chloride (NaCl)",
+            "Calcium carbonate (CaCO₃)"
+          ],
+          "correctIndex": 1,
+          "explanation": "NH₃(g) + HCl(g) → NH₄Cl(s). Ammonia gas and hydrogen chloride gas react where they meet to form ammonium chloride, a white solid that deposits as a visible ring."
+        }
+      ],
+      "discussion": [
+        "Explain why isotope separation (e.g. uranium enrichment) requires thousands of diffusion stages rather than just one, using Graham's Law.",
+        "If the experiment were repeated in a tube at 60°C instead of room temperature, predict how the position of the ring would change and explain why.",
+        "Design a variation of this experiment to measure the diffusion rate of a third gas (e.g. SO₂, M = 64) and predict where its ring would form relative to the NH₃/HCl experiment."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Graham's Law (rate ∝ 1/√M)",
+          "pct": 40
+        },
+        {
+          "label": "Diffusion distance ratio measurement",
+          "pct": 30
+        },
+        {
+          "label": "Kinetic theory basis of diffusion",
+          "pct": 20
+        },
+        {
+          "label": "Isotope separation and industrial applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan heavier gases don't diffuse — they do, just more slowly. All gases at the same temperature have the same average kinetic energy, so heavier ones move more slowly.",
+        "Many expect the ring to form in the middle — it doesn't. The NH₃ side is closer to the HCl end because NH₃ travels further."
+      ],
+      "hook": "During the Manhattan Project, scientists had to separate uranium-235 (for nuclear weapons) from uranium-238. They used exactly this principle — diffusion through barriers. It took an enormous facility in Oak Ridge, Tennessee with 12,000 workers to enrich enough uranium. Chemistry at industrial scale!",
+      "khanLinks": [
+        {
+          "title": "Kinetic Molecular Theory and Gas Laws",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory-of-gases-tut/v/kinetic-molecular-theory-and-gas-laws"
+        },
+        {
+          "title": "States of Matter",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Distance from NH₃ end (cm)",
+        "Distance from HCl end (cm)",
+        "Total tube length (cm)",
+        "Ratio NH₃:HCl distances",
+        "Predicted ratio"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record the position of the white ring from each cotton wool plug",
+      "Calculate the ratio of distances and compare to the theoretical prediction",
+      "Record the time taken for the ring to appear"
+    ],
+    "conclusion": "State Graham's Law and calculate the expected distance ratio for NH₃ and HCl. Compare to your measured ratio. Explain any discrepancy (e.g. air currents, unequal concentrations of gases released).",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to watch two invisible gases race each other across a tube — and the winner will leave a white mark that proves heavier gases move more slowly!",
+      "keywords": {
+        "setup": "Insert both cotton wool plugs simultaneously (use two people). Handle HCl and ammonia in a fume cupboard. Work quickly — once bungs are in, do not disturb the tube. Mount horizontally on a retort stand.",
+        "formula": "Graham's Law: rate₁/rate₂ = √(M₂/M₁). NH₃ vs HCl: √(36.5/17) = √2.15 ≈ 1.47. Expected ring position: 1.47/(1+1.47) = 59% from HCl end.",
+        "error": "Common errors: inserting plugs at different times (one gas gets a head start), disturbing the tube (convection currents affect results), and using dilute solutions (too slow, ring may not form in time).",
+        "result": "White ring appears after 5–8 minutes. Ring is approximately 30–32 cm from HCl end in a 50 cm tube (≈ 60% from HCl). Measured ratio ≈ 1.4 (close to theoretical 1.47).",
+        "real": "Uranium enrichment for nuclear power uses UF₆ gas diffusing through porous membranes. ²³⁵UF₆ (M = 349) diffuses slightly faster than ²³⁸UF₆ (M = 352) — a ratio of only 1.004. Thousands of stages are needed to enrich from 0.7% to 4% ²³⁵U.",
+        "explain": "At the same temperature, all gas molecules have the same average kinetic energy (½mv² = constant). For heavier molecules to have the same energy, they must move more slowly (smaller v). Lighter NH₃ molecules move faster and cover more distance before meeting the slower HCl molecules. Where they meet: white solid.",
+        "hook": "Thomas Graham discovered this law in 1848 by carefully timing how fast different gases leaked through a plaster plug. He had no thermometers accurate enough for gas laws, but his patience and careful measurement revealed that diffusion rates depended on mass — decades before kinetic theory explained why.",
+        "misconception": "Graham's Law describes diffusion, not reaction speed. The white ring position is about distance covered by each gas, not about which gas is more reactive. NH₃ and HCl react equally well — the position is purely about diffusion speed."
+      },
+      "hint": "If no ring appears after 15 minutes, check that concentrated solutions were used and that both bungs are airtight. A faint ring may require back-lighting with a torch.",
+      "expected": "White ring visible after 5–10 min. Ring approximately 60% from HCl end (≈ 30 cm from HCl in 50 cm tube). Distance ratio ≈ 1.4–1.5, close to theoretical 1.47. Confirms lighter NH₃ diffuses faster."
+    }
+  },
+  {
+    "num": 127,
+    "cardEmoji": "🥤",
+    "title": "La ley de Charles",
+    "section": "Gas Chemistry",
+    "desc": "Verificar que a presión constante, V/T = constante para un gas.",
+    "setupTime": "10 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that CO₂ becomes less soluble as temperature increases (gases are less soluble in hot liquids), and that dissolved CO₂ makes water acidic — measurable with a pH meter.",
+      "instructions": [
+        "Prepare three identical bottles of fizzy water — one at 5°C (ice bath), one at 25°C (room temperature), one at 50°C (warm water bath).",
+        "Open each and immediately measure the volume of fizzing with a ruler or by listening.",
+        "Añadir 5 drops of universal indicator to 50 mL of each water sample and measure or compare pH.",
+        "Registrar observations and pH values.",
+        "Plot pH vs temperature to show the relationship between dissolved CO₂ and temperature."
+      ],
+      "expectedOutcome": "The warm bottle fizzes most vigorously (CO₂ escaping). The cold bottle has the highest dissolved CO₂ content and lowest pH. pH increases with temperature as CO₂ escapes."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🥤",
+          "name": "Sealed fizzy water bottles (three identical)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Termómetro"
+        },
+        {
+          "emoji": "🪣",
+          "name": "Water baths at 5°C (ice), 25°C, and 50°C"
+        },
+        {
+          "emoji": "💊",
+          "name": "Indicador universal solución or pH meter"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Tubo de ensayos or small vaso de precipitadoss"
+        }
+      ],
+      "observationsToRecord": [
+        "Fizzing intensity when bottle opened at each temperature",
+        "pH de water sample at each temperature",
+        "Apariencia of water (clarity, bubble presence)",
+        "Estimated volume of CO₂ released (qualitative)"
+      ],
+      "theoryPoints": [
+        "Henry's Law: concentration of dissolved gas C = k × P (at constant T). More CO₂ pressure dissolved = more CO₂ stays in.",
+        "Gas solubility decreases with temperature: warm water holds less dissolved CO₂.",
+        "Dissolved CO₂ forms carbonic acid: CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (lowering pH).",
+        "Lower temperature → more dissolved CO₂ → more H⁺ → lower pH."
+      ],
+      "realWorldConnections": [
+        "Warm carbonated drinks go flat faster — CO₂ solubility falls at higher temperatures.",
+        "Ocean warming reduces CO₂ absorption by seawater — a major concern for climate feedback loops.",
+        "Fish kills in warm summer ponds occur because warm water holds less dissolved O₂ — same Henry's Law principle."
+      ],
+      "formula": "CO₂(g) ⇌ CO₂(aq)  |  CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻  |  Henry's Law: C = k·P"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does a warm fizzy drink go flat more quickly than a cold one?",
+          "options": [
+            "Warm liquid evaporates more quickly, releasing CO₂",
+            "CO₂ is less soluble at higher temperatures and escapes from solution",
+            "Warm drinks contain less sugar to hold the CO₂",
+            "CO₂ reacts with the warm water to form carbonic acid"
+          ],
+          "correctIndex": 1,
+          "explanation": "Gas solubility decreases with temperature (Henry's Law). At higher temperatures, CO₂ molecules have more kinetic energy and escape the liquid phase more easily, reducing dissolved CO₂ concentration."
+        },
+        {
+          "text": "Cold fizzy water has a lower pH than warm fizzy water. Why?",
+          "options": [
+            "Cold water is more acidic by nature",
+            "Cold water dissolves more CO₂, producing more H⁺ ions via CO₂ + H₂O → H₂CO₃ → H⁺ + HCO₃⁻",
+            "Warm water produces more OH⁻ which neutralises acid",
+            "pH is not affected by temperature"
+          ],
+          "correctIndex": 1,
+          "explanation": "More dissolved CO₂ in cold water leads to more carbonic acid formation and more H⁺ ions in solution, giving a lower pH. As temperature rises and CO₂ escapes, H⁺ decreases and pH rises."
+        },
+        {
+          "text": "Which of the following is a real-world consequence of ocean warming reducing CO₂ solubility?",
+          "options": [
+            "Oceans absorb more CO₂ from the atmosphere",
+            "Oceans absorb less CO₂, leaving more in the atmosphere and accelerating climate change",
+            "Ocean water becomes more acidic as it warms",
+            "Fish produce more CO₂ in warmer water"
+          ],
+          "correctIndex": 1,
+          "explanation": "As oceans warm, their capacity to dissolve CO₂ decreases (Henry's Law). Less CO₂ is absorbed from the atmosphere, leaving more greenhouse gas in the air — a positive feedback loop that can accelerate climate change."
+        }
+      ],
+      "discussion": [
+        "Explain why tropical coral reefs are more threatened by ocean acidification than polar reefs, using CO₂ solubility and temperature.",
+        "A fish farmer notices that fish in a pond die on hot summer mornings. Using Henry's Law, explain what is happening and suggest a practical solution.",
+        "Describe how the brewing industry controls dissolved CO₂ in beer to achieve the desired carbonation level."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Gas solubility decreasing with temperature",
+          "pct": 35
+        },
+        {
+          "label": "Henry's Law and dissolved CO₂",
+          "pct": 30
+        },
+        {
+          "label": "CO₂ and carbonic acid pH effect",
+          "pct": 25
+        },
+        {
+          "label": "Ocean CO₂ absorption and climate",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan all substances become more soluble at higher temperatures — gases are an exception; they become less soluble as T increases.",
+        "Many think CO₂ directly acidifies water without reacting — it actually reacts: CO₂ + H₂O ⇌ H₂CO₃, which then dissociates to give H⁺."
+      ],
+      "hook": "Ocean acidification is one of the biggest threats to marine life. Since the Industrial Revolution, oceans have absorbed about 30% of human CO₂ emissions — making seawater more acidic. As oceans warm, they can absorb even less. Chemistry is reshaping the ocean ecosystem!",
+      "khanLinks": [
+        {
+          "title": "Gas Stoichiometry",
+          "url": "https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/ideal-gas-laws/v/gas-stoichiometry"
+        },
+        {
+          "title": "Intermolecular Forces",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Temperatura (°C)",
+        "Fizzing Intensity (1–5)",
+        "pH",
+        "Dissolved CO₂ (qualitative)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record fizzing intensity when each bottle is opened",
+      "Record pH at each temperature",
+      "Describe the appearance of the water (clear, bubbling, cloudy)"
+    ],
+    "conclusion": "Plot pH vs temperature. Explain the relationship between temperature, dissolved CO₂, and pH using Henry's Law. State one environmental consequence of this relationship.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you'll discover why warm fizzy drinks go flat and why cold drinks stay bubbly — and connect it to one of the most pressing environmental problems on Earth!",
+      "keywords": {
+        "setup": "Use identical bottles — same brand, same size, same initial conditions. Pre-equilibrate bottles in water baths for 30 min before opening. Measure pH immediately after opening and adding indicator.",
+        "formula": "Henry's Law: C = k × P (dissolved gas concentration ∝ partial pressure). CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻. Kₐ₁ = 4.3 × 10⁻⁷ at 25°C.",
+        "error": "Common errors: not equilibrating to bath temperature before measuring (CO₂ still dissolving/escaping), and measuring pH after CO₂ has mostly escaped from the warm sample.",
+        "result": "Cold (5°C): fizzing moderate, pH ≈ 4.5–5.0. Room (25°C): fizzing moderate, pH ≈ 5.0–5.5. Warm (50°C): vigorous fizzing, pH ≈ 5.5–6.0. pH increases with temperature, confirming less dissolved CO₂.",
+        "real": "Ocean pH has dropped from 8.2 to 8.1 since pre-industrial times — a 26% increase in H⁺ concentration. This dissolves the calcium carbonate shells of oysters, mussels, and coral. By 2100 it could reach 7.8, making life for shelled organisms almost impossible.",
+        "explain": "Gas molecules in solution are surrounded by water molecules in a slightly ordered way. As temperature rises, the increased thermal energy disrupts this arrangement, making it energetically unfavourable for the gas to stay dissolved. CO₂ molecules escape to the gas phase — the drink goes flat, and fewer dissolved CO₂ molecules remain to form carbonic acid.",
+        "hook": "A can of fizzy drink contains CO₂ at about 3× atmospheric pressure. At 5°C it holds about 6 mL CO₂ per mL of drink. At 25°C it holds only 3 mL/mL. That's why a warm can sprays when opened and a cold one doesn't — half the CO₂ has already escaped before you pop the ring pull!",
+        "misconception": "CO₂ does not directly make water acidic — it reacts with water first to form carbonic acid (H₂CO₃), which then partially dissociates. Pure CO₂ gas has no effect on pH; only dissolved CO₂ creates acidity."
+      },
+      "hint": "If pH differences are small, try using a pH meter instead of indicator paper. Alternatively, add a pinch of calcium carbonate to the bottles — it will dissolve less in the cold (acidic) water and more in the warm (less acidic) water.",
+      "expected": "pH increases by approximately 0.5–1 unit from 5°C to 50°C. Warm bottle fizzes vigorously on opening. Cold bottle has lowest pH (most dissolved CO₂). Confirms Henry's Law: lower temperature → higher CO₂ solubility."
+    }
+  },
+  {
+    "num": 128,
+    "cardEmoji": "🎈",
+    "title": "Presión de gas y ley combinada",
+    "section": "Gas Chemistry",
+    "desc": "Explorar la relación entre presión, volumen y temperatura de un gas.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes miden the volume of H₂ produced from a known mass of zinc, and use PV = nRT to calculate the molar volume (the volume of 1 mole of gas at their laboratory conditions, approximately 24 L/mol at 25°C).",
+      "instructions": [
+        "Pesar approximately 0.10 g of zinc strips accurately on an analytical balance.",
+        "React zinc with excess 2 mol/L HCl in a flask connected by a delivery tube to a gas syringe or inverted measuring cylinder over water.",
+        "Recoger all H₂ produced and record its volume.",
+        "Registrar room temperature and atmospheric pressure.",
+        "Calcular moles of H₂ from mass of Zn, then calculate molar volume = V/n."
+      ],
+      "expectedOutcome": "Molar volume ≈ 24.0 L/mol at 25°C and 1 atm. Students compare their experimental value to the theoretical value calculated from PV = nRT."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚙️",
+          "name": "Zinc strips"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Hydrochloric acid (2 mol/L, excess)"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Analytical balance (±0.001 g)"
+        },
+        {
+          "emoji": "💉",
+          "name": "Gas syringe or inverted measuring cylinder over water cubeta"
+        },
+        {
+          "emoji": "📊",
+          "name": "Barometer (or known atmospheric pressure value)"
+        }
+      ],
+      "observationsToRecord": [
+        "Masa de zinc used (g)",
+        "Volumen de H₂ collected (cm³)",
+        "Room temperature (°C and K)",
+        "Atmospheric pressure (kPa)"
+      ],
+      "theoryPoints": [
+        "Zn + 2HCl → ZnCl₂ + H₂: 1 mol Zn produces 1 mol H₂.",
+        "n(Zn) = mass/M(Zn) = mass/65.4; n(H₂) = n(Zn).",
+        "Molar volume Vm = V/n (L/mol). Theoretical: Vm = RT/P = (8.314 × 298)/101325 ≈ 24.5 L/mol.",
+        "PV = nRT gives Vm = RT/P; at 25°C and 1 atm, Vm ≈ 24.5 L/mol."
+      ],
+      "realWorldConnections": [
+        "Gas stoichiometry is used in industrial processes to calculate how much gas is produced per kilogram of reagent.",
+        "The Haber Process uses molar volumes to calculate N₂ and H₂ feed ratios for ammonia synthesis.",
+        "Avogadro's molar volume (22.4 L/mol at STP, 0°C) underpins all gas-phase stoichiometric calculations."
+      ],
+      "formula": "Zn + 2HCl → ZnCl₂ + H₂  |  Vm = RT/P  |  PV = nRT"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "The molar volume of a gas at 25°C and 1 atm is approximately:",
+          "options": [
+            "22.4 L/mol",
+            "24.5 L/mol",
+            "44.8 L/mol",
+            "11.2 L/mol"
+          ],
+          "correctIndex": 1,
+          "explanation": "At 0°C (STP), Vm = 22.4 L/mol. At 25°C (RTP), Vm = RT/P = (8.314 × 298)/101325 ≈ 24.5 L/mol. Students often confuse 22.4 (STP, 0°C) with the room temperature value of 24.5 L/mol."
+        },
+        {
+          "text": "0.10 g of zinc reacts completely with excess HCl. What volume of H₂ is produced at 25°C? (M(Zn) = 65.4, Vm = 24.5 L/mol)",
+          "options": [
+            "12.0 cm³",
+            "24.5 cm³",
+            "37.5 cm³",
+            "49.0 cm³"
+          ],
+          "correctIndex": 2,
+          "explanation": "n(Zn) = 0.10/65.4 = 0.00153 mol. n(H₂) = 0.00153 mol. V = 0.00153 × 24.5 × 1000 = 37.5 cm³."
+        },
+        {
+          "text": "Why is the measured volume of H₂ slightly less than theoretically predicted when collecting over water?",
+          "options": [
+            "Some H₂ dissolves in the water",
+            "The water vapour pressure reduces the partial pressure of H₂, and some H₂ dissolves",
+            "Zinc does not react completely",
+            "HCl absorbs the H₂ before it can be collected"
+          ],
+          "correctIndex": 1,
+          "explanation": "Water vapour exerts a partial pressure in the collected gas space, reducing the partial pressure of H₂. A small amount of H₂ also dissolves in the water. Both effects cause the measured volume to be slightly less than theoretical."
+        }
+      ],
+      "discussion": [
+        "Explain the difference between the molar volume at STP (0°C, 1 atm) and RTP (25°C, 1 atm) and calculate the ratio between them.",
+        "Why is it important to correct for water vapour pressure when collecting gas over water? How would you apply the vapour pressure correction?",
+        "Calculate the theoretical volume of H₂ produced when 1.00 g of magnesium reacts with excess HCl at 25°C. (M(Mg) = 24.3)"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Molar volume from PV = nRT",
+          "pct": 35
+        },
+        {
+          "label": "Gas collection and volume measurement",
+          "pct": 30
+        },
+        {
+          "label": "Stoichiometric calculation from mass of Zn",
+          "pct": 25
+        },
+        {
+          "label": "Sources of error (water vapour)",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students frequently use 22.4 L/mol at room temperature — this is only correct at exactly 0°C (STP). At 25°C, the correct value is approximately 24.5 L/mol.",
+        "Many think all gases have different molar volumes — at the same T and P, ALL ideal gases have the same molar volume (Avogadro's Law)."
+      ],
+      "hook": "Avogadro's hypothesis (1811) — that equal volumes of gases at the same T and P contain equal numbers of molecules — was ignored for 50 years before it was accepted. It now underpins all of gas stoichiometry. One simple idea, decades of controversy, and now it's in every chemistry textbook!",
+      "khanLinks": [
+        {
+          "title": "Stoichiometry",
+          "url": "https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/stoichiometry-tutorial/v/stoichiometry"
+        },
+        {
+          "title": "Avogadro's Number",
+          "url": "https://www.khanacademy.org/science/chemistry/atomic-structure-and-properties/the-mole-and-avogadro-s-number/v/the-mole-and-avogadro-s-number"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Masa Zn (g)",
+        "n(Zn) (mol)",
+        "n(H₂) (mol)",
+        "Volumen H₂ (cm³)",
+        "Molar Volumen (L/mol)"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record mass of zinc used accurately",
+      "Record volume of H₂ collected at end of reaction",
+      "Record temperature and atmospheric pressure"
+    ],
+    "conclusion": "Calculate the molar volume from your data and compare to the theoretical value of 24.5 L/mol at 25°C. Calculate percentage error and identify the main sources of discrepancy.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to collect real hydrogen gas and use it to verify one of the most fundamental constants in chemistry — the molar volume!",
+      "keywords": {
+        "setup": "Weigh zinc accurately — this is the limiting reagent. Use excess HCl (2 mol/L, 20 mL). Ensure no gas escapes before collection starts. Allow reaction to go to completion (no more bubbles).",
+        "formula": "n(Zn) = mass/65.4. n(H₂) = n(Zn) (1:1 ratio). Vm = V(cm³)/n × 1/1000 L/mol. Theoretical: Vm = RT/P = 8.314 × T(K)/101325.",
+        "error": "Common errors: gas escaping before collection tube is in place, reading gas volume before the reaction is complete, and not accounting for water vapour pressure in the collected gas.",
+        "result": "Experimental molar volume typically 23–26 L/mol (±10% of 24.5). Sources of error: water vapour pressure, gas leaks, temperature of gas not quite room temperature.",
+        "real": "The natural gas (methane) industry uses molar volumes to measure gas in pipelines. A cubic metre of methane at standard conditions contains a specific number of moles — used for billing and combustion calculations.",
+        "explain": "Avogadro's Law says equal volumes of gas (at same T and P) contain equal numbers of molecules — regardless of what the gas is! So once you know the volume and conditions, you know the moles. This is why molar volume is such a powerful tool: all ideal gases share the same value.",
+        "hook": "A single mole of any gas at room temperature takes up about 24.5 litres — roughly the volume of a large beach ball. Whether it's hydrogen (the lightest gas) or xenon (a heavy noble gas), the molar volume is the same. Avogadro's Law is one of the most elegant equalities in chemistry.",
+        "misconception": "Don't use 22.4 L/mol for room temperature calculations — that's only valid at 0°C (273 K). At 25°C (298 K), use 24.5 L/mol. The difference is 9%, enough to make a significant error in gas stoichiometry."
+      },
+      "hint": "If your molar volume is significantly less than 24.5 L/mol, check for gas leaks. If significantly more, you may have had air in the collection tube at the start — purge with H₂ for 30 seconds before starting to record.",
+      "expected": "Molar volume 23–26 L/mol (±5–10% of 24.5). n(H₂) calculated accurately from mass of Zn. Main errors: water vapour, gas leaks, temperature of collected gas."
+    }
+  },
+  {
+    "num": 129,
+    "cardEmoji": "🧫",
+    "title": "Electrólisis del agua",
+    "section": "Gas Chemistry",
+    "desc": "Descomponer agua en H₂ y O₂ por electrólisis y verificar la proporción 2:1.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that different catalysts have different efficiencies, and that enzymes (biological catalysts) can be extremely effective — catalase in liver may outperform inorganic catalysts at room temperature.",
+      "instructions": [
+        "Preparar four identical flasks each containing 20 mL of 20 vol H₂O₂ connected to gas syringes.",
+        "Flask 1: add a spatula of MnO₂. Flask 2: add 2 mL FeCl₃ solution. Flask 3: add a small piece of liver. Flask 4: no catalyst (control).",
+        "Start stopwatch simultaneously for all four. Registrar O₂ volume every 30 seconds for 3 minutes.",
+        "Plot O₂ volume vs time for all four on the same axes.",
+        "Compare initial rates (gradient of tangent at t = 0)."
+      ],
+      "expectedOutcome": "All catalysts produce O₂ faster than the control. MnO₂ and catalase (liver) are typically most effective. The control produces very little O₂ in 3 minutes. Enzymes may outperform inorganic catalysts at room temperature."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💧",
+          "name": "H₂O₂ solución (20 vol), 80 mL total"
+        },
+        {
+          "emoji": "🔬",
+          "name": "MnO₂ powder"
+        },
+        {
+          "emoji": "🧫",
+          "name": "FeCl₃ solución (0.1 mol/L)"
+        },
+        {
+          "emoji": "🥩",
+          "name": "Fresh liver piece (small, ~1 g)"
+        },
+        {
+          "emoji": "💉",
+          "name": "Four gas syringes (100 cm³) with connecting tubing"
+        }
+      ],
+      "observationsToRecord": [
+        "O₂ volume (cm³) every 30 s for each flask",
+        "Total O₂ volume después 3 minutes for each catalyst",
+        "Initial rate (cm³/s) from gradient of graph at t = 0",
+        "Qualitative observations (vigour of fizzing, any colour changes)"
+      ],
+      "theoryPoints": [
+        "2H₂O₂ → 2H₂O + O₂ (catalyst lowers activation energy — more molecules can react per second).",
+        "MnO₂ is a heterogeneous inorganic catalyst (surface reaction).",
+        "Fe³⁺ (FeCl₃) is a homogeneous inorganic catalyst.",
+        "Catalase enzyme is a biological catalyst — may be most efficient at room temperature due to active site geometry."
+      ],
+      "realWorldConnections": [
+        "Catalase in red blood cells and liver cells breaks down H₂O₂ produced as a metabolic waste product, preventing oxidative damage.",
+        "Los procesos industriales H₂O₂ decomposition uses silver or platinum catalysts to generate O₂ for rocket propellants and submarine motors.",
+        "Enzyme efficiency (turnover number) can be millions of times greater than equivalent inorganic catalysts — biotechnology exploits this in pharmaceutical manufacturing."
+      ],
+      "formula": "2H₂O₂ → 2H₂O + O₂  [catalyst lowers activation energy]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which property of a catalyst explains why different catalysts give different reaction rates?",
+          "options": [
+            "Catalysts differ in their molar mass",
+            "Catalysts differ in the activation energy of the alternative pathway they provide",
+            "Catalysts differ in their colour",
+            "Catalysts differ in their solubility"
+          ],
+          "correctIndex": 1,
+          "explanation": "Each catalyst provides a different alternative reaction pathway with a different activation energy. A catalyst that lowers activation energy more will allow a greater proportion of molecules to react — giving a faster rate."
+        },
+        {
+          "text": "Liver catalase decomposes H₂O₂ faster than MnO₂ at 37°C but slower at 80°C. Why?",
+          "options": [
+            "Catalase reacts with MnO₂ at high temperatures",
+            "Catalase is an enzyme that denatures at high temperatures, losing its active site shape",
+            "MnO₂ becomes more reactive at higher temperatures",
+            "H₂O₂ decomposes spontaneously at 80°C without a catalyst"
+          ],
+          "correctIndex": 1,
+          "explanation": "Enzymes are proteins whose activity depends on their precise 3D shape (active site). Above ~50–60°C, the protein structure unfolds (denatures), destroying the active site. MnO₂ has no protein structure and remains effective at higher temperatures."
+        },
+        {
+          "text": "What can you conclude if the control flask (no catalyst) produces a small amount of O₂ over 3 minutes?",
+          "options": [
+            "H₂O₂ decomposes spontaneously — catalysts only increase the rate, not the feasibility",
+            "The control flask must have been contaminated",
+            "The reaction does not occur without a catalyst",
+            "H₂O₂ requires heat to decompose without a catalyst"
+          ],
+          "correctIndex": 0,
+          "explanation": "H₂O₂ is thermodynamically unstable and slowly decomposes without a catalyst. Catalysts do not change whether a reaction can occur — only how fast. This confirms that catalysts increase reaction rate, not reaction feasibility."
+        }
+      ],
+      "discussion": [
+        "Compare the initial rates of all four conditions. Which catalyst is most efficient? Express the rate as cm³ O₂/s and relate it to the concept of activation energy.",
+        "Explain why enzymes often outperform inorganic catalysts at body temperature (37°C), but inorganic catalysts are preferred in industrial high-temperature processes.",
+        "Design a further experiment to determine the optimum temperature for catalase activity, predicting the shape of a rate vs temperature graph."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Comparing catalyst efficiency",
+          "pct": 35
+        },
+        {
+          "label": "Enzyme vs inorganic catalyst properties",
+          "pct": 30
+        },
+        {
+          "label": "Activation energy and rate",
+          "pct": 25
+        },
+        {
+          "label": "Biological role of catalase",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan catalysts are consumed — they are not; they can be reused indefinitely (in theory). The liver can be re-added to fresh H₂O₂.",
+        "Many think enzymes are always faster than inorganic catalysts — at elevated temperatures, inorganic catalysts outperform enzymes because enzymes denature."
+      ],
+      "hook": "Catalase is one of the fastest enzymes known — a single molecule can decompose 6 million H₂O₂ molecules per second! If your liver stopped making catalase, the H₂O₂ produced by your metabolism would destroy your liver cells within hours. Chemistry keeps you alive at molecular speed!",
+      "khanLinks": [
+        {
+          "title": "Activation Energy and Catalysts",
+          "url": "https://www.khanacademy.org/science/chemistry/chem-kinetics/activation-energy/v/catalysts"
+        },
+        {
+          "title": "Reaction Rate Factors",
+          "url": "https://www.khanacademy.org/science/chemistry/chem-kinetics/reaction-rates-tutorial/v/factors-affecting-reaction-rates"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (s)",
+        "Control (cm³)",
+        "MnO₂ (cm³)",
+        "FeCl₃ (cm³)",
+        "Liver (cm³)"
+      ],
+      "rows": 7
+    },
+    "observations": [
+      "Record O₂ volume every 30 seconds for all four flasks",
+      "Describe the vigour of fizzing in each flask at t = 0",
+      "Calculate the initial rate (cm³/s) from the gradient of each curve at t = 0"
+    ],
+    "conclusion": "Compare the initial rates for all four conditions. Rank catalysts from most to least effective. Explain the difference between enzyme and inorganic catalyst performance in terms of active site and activation energy.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're racing four different catalysts against each other — including a biological one from a real liver. The winner might surprise you!",
+      "keywords": {
+        "setup": "Start all four flasks simultaneously (have an assistant). Use identical flask sizes and H₂O₂ volumes. Add liver last (it reacts very quickly). Pre-cut liver to approximately equal size.",
+        "formula": "2H₂O₂ → 2H₂O + O₂. Initial rate = ΔV/Δt at t = 0 (cm³/s). Activation energy: Ea decreases with catalyst, increasing rate via k = Ae^(−Ea/RT).",
+        "error": "Common errors: adding catalysts at different times (unfair comparison), liver sitting on the side of the flask not in contact with H₂O₂, and reading the gas syringe at an angle (parallax error).",
+        "result": "Typical ranking: catalase (liver) ≈ MnO₂ > FeCl₃ >> no catalyst. MnO₂: ~2 cm³/s. FeCl₃: ~1 cm³/s. Liver: ~3 cm³/s. Control: ~0.1 cm³/s.",
+        "real": "A drop of blood (containing catalase) on H₂O₂ froths vigorously — forensic scientists use this as a presumptive test for blood. Catalase activity is so high it's detectable even in tiny samples.",
+        "explain": "Every catalyst provides a different shortcut through the energy landscape of the reaction. MnO₂ provides active surface sites where H₂O₂ molecules can adsorb and break apart. Catalase has an active site perfectly shaped to bind H₂O₂ — like a lock and key — and the iron atom in its centre directly breaks the O-O bond. Different routes, same destination.",
+        "hook": "Some industrial catalytic converters in cars use platinum and palladium — metals worth more than £1,000 per troy ounce. The converter in a typical car contains about £200 worth of these metals. That's why catalytic converters are stolen — thieves know the chemistry!",
+        "misconception": "Catalysts do not change the final amount of product — they only change how fast it's produced. All four conditions in this experiment will eventually produce the same amount of O₂ (from the same amount of H₂O₂). Catalysts change RATE, not YIELD."
+      },
+      "hint": "If the liver does not react vigorously, ensure it is fresh (not frozen and thawed) and in good contact with the H₂O₂ liquid. Cutting it into smaller pieces increases surface area and improves results.",
+      "expected": "Catalase (liver) and MnO₂ give highest initial rates. FeCl₃ gives intermediate rate. Control very slow. All produce O₂ — confirming catalysts change rate only. Rankings consistent with activation energy reductions."
+    }
+  },
+  {
+    "num": 130,
+    "cardEmoji": "⛲",
+    "title": "Electrólisis de solución de CuSO₄",
+    "section": "Gas Chemistry",
+    "desc": "Electrolizar solución de CuSO₄ con electrodos de carbono y observar los productos.",
+    "setupTime": "15 min",
+    "duration": "15 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that ammonia is extremely soluble in water (about 31 g/100 mL at 25°C), creating a pressure differential that drives water dramatically into the flask as a fountain.",
+      "instructions": [
+        "Fill a dry round-bottom flask completely with ammonia gas by displacing air from below (upward displacement — NH₃ is less dense than air).",
+        "Fit the flask with a one-hole rubber stopper carrying a long glass tube reaching to the bottom of the flask.",
+        "Invert the flask over a beaker of water containing universal indicator (yellow-green, neutral pH).",
+        "Submerge the glass tube tip into the water. Open the tube (remove the finger covering the top end).",
+        "Observar the fountain and note the colour change as water rises."
+      ],
+      "expectedOutcome": "Water rushes up into the flask as a coloured fountain. The indicator turns blue/purple as NH₃ dissolves and forms the alkaline solution NH₄OH. The flask fills almost completely with the coloured solution."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚗️",
+          "name": "Round-bottom flask (500 mL)"
+        },
+        {
+          "emoji": "🔧",
+          "name": "One-hole rubber stopper with long glass delivery tube"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Vaso de precipitados of water with universal indicator"
+        },
+        {
+          "emoji": "🏗️",
+          "name": "Retort stand and clamp to hold flask inverted"
+        },
+        {
+          "emoji": "💊",
+          "name": "Ammonia gas supply (from NH₃ solución + NaOH or gas cylinder)"
+        }
+      ],
+      "observationsToRecord": [
+        "Speed and height of the fountain",
+        "Cambio de color of the water as it enters the flask",
+        "pH de the solution in the flask después the experiment",
+        "Approximate percentage of flask filled by water"
+      ],
+      "theoryPoints": [
+        "NH₃ solubility in water ≈ 31 g/100 mL at 25°C — much higher than most gases.",
+        "NH₃ dissolves: NH₃(g) + H₂O(l) → NH₄⁺(aq) + OH⁻(aq) — alkaline solution.",
+        "Rapid dissolution creates a partial vacuum in the flask, and atmospheric pressure drives water up.",
+        "Pressure differential: P_atm (outside) >> P_inside (near zero) → water is pushed up."
+      ],
+      "realWorldConnections": [
+        "Ammonia refrigerants (R-717) use condensation and evaporation cycles — solubility properties are critical for system design.",
+        "Ammonium hydroxide (ammonia dissolved in water) is used as a household cleaner — produced by the same reaction you observe.",
+        "Los procesos industriales ammonia scrubbers use water to absorb NH₃ from waste gas streams — the same high solubility exploited here."
+      ],
+      "formula": "NH₃(g) + H₂O(l) → NH₄⁺(aq) + OH⁻(aq)  |  NH₃ solubility: ~31 g/100 mL at 25°C"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does water rise dramatically into the ammonia-filled flask?",
+          "options": [
+            "Ammonia pushes the water upward by reacting vigorously",
+            "NH₃ dissolves extremely rapidly in water, creating a near-vacuum in the flask; atmospheric pressure pushes water in",
+            "Water is less dense than ammonia solution",
+            "Ammonia heats the water, causing it to expand and rise"
+          ],
+          "correctIndex": 1,
+          "explanation": "When the tube is opened, water touches the ammonia gas. NH₃ dissolves almost instantly into the water, removing gas from the flask. The resulting low pressure inside is far less than atmospheric pressure outside, which pushes the water up dramatically."
+        },
+        {
+          "text": "Why does the water in the flask turn blue/purple with universal indicator?",
+          "options": [
+            "NH₃ is a blue-coloured gas",
+            "NH₃ dissolves to form an alkaline solution (NH₄OH), turning the indicator blue/purple",
+            "The reaction produces sodium hydroxide",
+            "Ammonia reacts with the indicator dye directly"
+          ],
+          "correctIndex": 1,
+          "explanation": "NH₃ dissolves in water: NH₃ + H₂O ⇌ NH₄⁺ + OH⁻. The OH⁻ ions make the solution alkaline (pH > 7). Universal indicator turns blue-purple in alkaline conditions."
+        },
+        {
+          "text": "Which other gas would NOT produce a fountain experiment like this?",
+          "options": [
+            "HCl gas (very soluble)",
+            "SO₂ (moderately soluble)",
+            "O₂ (poorly soluble)",
+            "CO₂ (moderately soluble)"
+          ],
+          "correctIndex": 2,
+          "explanation": "O₂ is very poorly soluble in water (~0.004 g/100 mL). It would not dissolve fast enough to create a pressure drop. The fountain only works with gases that have very high water solubility (like NH₃ and HCl)."
+        }
+      ],
+      "discussion": [
+        "Explain quantitatively why nearly all the ammonia gas is absorbed by the water. What does this tell you about the equilibrium position for NH₃(g) ⇌ NH₃(aq)?",
+        "The fountain experiment can also be done with hydrogen chloride gas. Predict the colour change of the indicator and write the equation for HCl dissolving in water.",
+        "If the water in the beaker were replaced with dilute HCl solution, predict whether the fountain would be more or less dramatic, and explain why."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Extreme solubility of NH₃ creating pressure differential",
+          "pct": 40
+        },
+        {
+          "label": "Alkaline properties of ammonia solution",
+          "pct": 25
+        },
+        {
+          "label": "Atmospheric pressure driving the fountain",
+          "pct": 25
+        },
+        {
+          "label": "Industrial uses of ammonia solubility",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the fountain is caused by the ammonia \"pushing\" the water — it is caused by the ammonia disappearing into solution, creating a vacuum that sucks water in.",
+        "Many think the solution is sodium hydroxide — it is ammonium hydroxide/ammonia solution, a weak base."
+      ],
+      "hook": "Ammonia is so soluble that 1 litre of water at room temperature can dissolve 1,200 litres of NH₃ gas! That's a 1,200:1 volume ratio. No other common gas comes close. This extreme solubility makes the fountain one of the most dramatic demonstrations in chemistry!",
+      "khanLinks": [
+        {
+          "title": "Acid-Base Equilibrium",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/arrhenius-definition-of-acids-and-bases"
+        },
+        {
+          "title": "Solubility and Intermolecular Forces",
+          "url": "https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/solubility"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Observación",
+        "Before Fountain",
+        "During Fountain",
+        "After Fountain"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the colour of the indicator solution before and after the fountain",
+      "Record the approximate percentage of the flask filled by water",
+      "Record the speed and duration of the fountain"
+    ],
+    "conclusion": "Explain why the fountain occurs using pressure and solubility concepts. Write the equation for NH₃ dissolving in water. State what the colour change indicates about the pH of the solution in the flask.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to create one of the most visually spectacular demonstrations in chemistry — an ammonia fountain that fills a flask in seconds — powered purely by the chemistry of dissolution!",
+      "keywords": {
+        "setup": "Ensure flask is completely dry and full of NH₃ (no air) — any air left reduces the fountain effect. The glass tube must reach below the water surface. Have clamps ready to hold the inverted flask securely.",
+        "formula": "NH₃(g) + H₂O(l) ⇌ NH₄⁺(aq) + OH⁻(aq). pKb = 4.74. Solubility: 31 g/100 mL = ~1,200 volumes at 25°C. Pressure drop: near-vacuum created as NH₃ dissolves.",
+        "error": "Common errors: air left in the flask (reduces fountain height and fills flask only partially), tube not submerged in water (water cannot enter), and flask not properly inverted (leaks).",
+        "result": "Dramatic fountain rises to fill ≈ 90–95% of flask. Indicator turns blue/purple (pH 10–12). Flask fills in 5–15 seconds. Confirms extreme NH₃ solubility and alkaline product.",
+        "real": "In 2013, a refrigerant leak in an ammonia-based industrial cooling system in China caused 15 deaths — workers were exposed to high concentrations of NH₃. The extreme solubility that makes the fountain dramatic also makes NH₃ dangerous to mucous membranes.",
+        "explain": "Ammonia molecules have a lone pair of electrons and strong hydrogen-bond forming ability — they are attracted extremely strongly to water molecules. As soon as NH₃ touches the water, it dissolves faster than it can be replenished, removing molecules from the gas phase. The pressure in the flask drops almost to zero. Atmospheric pressure (101 kPa) then pushes the water up like pushing on a straw.",
+        "hook": "Before refrigerators used CFCs and HFCs, all fridges and air conditioners used ammonia — including the Titanic's refrigeration systems! The extreme solubility that makes this fountain spectacular also made ammonia leaks on the Titanic a minor concern compared to the icebergs.",
+        "misconception": "The fountain is NOT caused by a chemical reaction producing gas or expansion. It is caused by the REMOVAL of gas (NH₃ dissolving), creating a partial vacuum. The driving force is atmospheric pressure from outside — the same pressure that holds a litre of water on top of a mercury column in a barometer."
+      },
+      "hint": "If the fountain is weak, the flask may not be completely filled with NH₃. Flush with NH₃ for longer before capping, or use a larger NH₃ source. Ensure the water beaker is close below the flask tip.",
+      "expected": "Spectacular fountain fills flask ~90% within 10–15 s. Indicator turns blue/purple (alkaline). Flask cools slightly (dissolution is exothermic but rapid). Confirms NH₃ solubility ~1,200:1 by volume."
+    }
+  },
+  {
+    "num": 131,
+    "cardEmoji": "🔋",
+    "title": "Galvanización (electrodeposición)",
+    "section": "Electrochemistry",
+    "desc": "Recubrir un objeto metálico con cobre mediante electrodeposición.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that water is split into hydrogen and oxygen by electrolysis, producing a 2:1 volume ratio that confirms the molecular formula H₂O.",
+      "instructions": [
+        "Preparar a Hoffman voltameter (or two inverted test tubes) filled with dilute H₂SO₄ (1 mol/L).",
+        "Conectar carbon or platinum electrodes to a 6 V DC power supply.",
+        "Switch on and collect gas in each arm for 10 minutes.",
+        "Registrar the volume of gas collected at each electrode.",
+        "Probar cathode gas with a glowing splint (H₂) and anode gas with a lit splint (O₂)."
+      ],
+      "expectedOutcome": "Hydrogen volume at the cathode is approximately twice the oxygen volume at the anode, confirming the 2:1 ratio predicted by water's formula H₂O."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚡",
+          "name": "6 V DC power supply and connecting wires"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Carbon or platinum electrodos"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Dilute H₂SO₄ solución (1 mol/L)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Hoffman voltameter or two inverted tubo de ensayos"
+        },
+        {
+          "emoji": "🪵",
+          "name": "Wooden splints for gas testing"
+        }
+      ],
+      "observationsToRecord": [
+        "Volumen de gas at cathode (H₂) después 10 min (cm³)",
+        "Volumen de gas at anode (O₂) después 10 min (cm³)",
+        "Ratio of H₂:O₂ volumes",
+        "Splint test results confirming gas identities"
+      ],
+      "theoryPoints": [
+        "Cathode (−): 4H⁺ + 4e⁻ → 2H₂ (reduction of hydrogen ions).",
+        "Anode (+): 2H₂O → O₂ + 4H⁺ + 4e⁻ (oxidation of water).",
+        "Overall: 2H₂O → 2H₂ + O₂; volume ratio H₂:O₂ = 2:1, confirming H₂O formula.",
+        "Dilute H₂SO₄ is used to increase conductivity; water alone has too few ions."
+      ],
+      "realWorldConnections": [
+        "Green hydrogen production by electrolysis of water using renewable electricity is central to the UK's net-zero strategy.",
+        "Electrolysis of water in submarines and space stations provides breathable oxygen for crew.",
+        "The 2:1 volume ratio is direct experimental evidence for the molecular formula of water — historically used to establish H₂O."
+      ],
+      "formula": "Cathode: 4H⁺ + 4e⁻ → 2H₂  |  Anode: 2H₂O → O₂ + 4H⁺ + 4e⁻  |  Overall: 2H₂O → 2H₂ + O₂"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "At which electrode is hydrogen produced during electrolysis of water?",
+          "options": [
+            "Anode",
+            "Cathode",
+            "Both electrodes equally",
+            "Neither electrode"
+          ],
+          "correctIndex": 1,
+          "explanation": "Hydrogen ions (H⁺) are reduced at the cathode (negative electrode): 4H⁺ + 4e⁻ → 2H₂. The anode oxidises water to produce oxygen."
+        },
+        {
+          "text": "The 2:1 volume ratio of H₂:O₂ confirms which fact?",
+          "options": [
+            "Hydrogen is lighter than oxygen",
+            "The molecular formula of water is H₂O",
+            "Oxygen is denser than hydrogen",
+            "Electrolysis always produces twice as much gas at the cathode"
+          ],
+          "correctIndex": 1,
+          "explanation": "The formula H₂O means two hydrogen atoms per one oxygen. Since 1 mole of any gas at the same conditions occupies the same volume, 2:1 volume ratio directly confirms 2:1 atom ratio in H₂O."
+        },
+        {
+          "text": "Why is dilute H₂SO₄ added to the water for electrolysis?",
+          "options": [
+            "H₂SO₄ is a reactant that breaks down water",
+            "H₂SO₄ provides additional ions to make the solution conducting",
+            "H₂SO₄ prevents O₂ from forming at the anode",
+            "H₂SO₄ reacts with platinum electrodes to clean them"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pure water has a very low concentration of H⁺ and OH⁻ ions and conducts electricity poorly. Adding H₂SO₄ greatly increases ion concentration, making the solution a good electrolyte."
+        }
+      ],
+      "discussion": [
+        "Write the half-equations for the cathode and anode reactions and confirm they are balanced for charge and atoms.",
+        "Explain why electrolysis of seawater produces chlorine at the anode instead of oxygen, despite both Cl⁻ and water being present.",
+        "Calculate how many moles of H₂ would be produced if a current of 1 A flows for 1 hour. (Faraday constant F = 96,500 C/mol)"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Electrolysis of water half-equations",
+          "pct": 35
+        },
+        {
+          "label": "2:1 gas volume ratio confirming H₂O",
+          "pct": 30
+        },
+        {
+          "label": "Oxidation at anode / reduction at cathode",
+          "pct": 25
+        },
+        {
+          "label": "Hydrogen as a clean fuel",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often mix up which gas forms at which electrode — remember OIL RIG: oxidation at the anode, reduction at the cathode.",
+        "Many think the H₂SO₄ is consumed in the reaction — it only provides ions (conductivity) and is fully recovered."
+      ],
+      "hook": "The International Space Station produces all its breathable oxygen by electrolysis of water — the same reaction you're doing today, powered by solar panels in space!",
+      "khanLinks": [
+        {
+          "title": "Electrolysis",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis"
+        },
+        {
+          "title": "Introduction to Oxidation States",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "H₂ volume (cm³)",
+        "O₂ volume (cm³)",
+        "H₂:O₂ ratio"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record gas volumes at cathode and anode every 2 minutes",
+      "Record splint test result for each gas",
+      "Calculate the actual H₂:O₂ volume ratio and compare to expected 2:1"
+    ],
+    "conclusion": "Write the half-equations and overall equation for the electrolysis of water. Confirm the 2:1 ratio from your data. Explain the link between this ratio and the molecular formula of water.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to split water into its elements — and the volumes of gas you collect will prove that the formula of water really is H₂O!",
+      "keywords": {
+        "setup": "Fill both arms of the voltameter completely with H₂SO₄ solution before starting. Ensure no air bubbles. Set voltage to 6–9 V for measurable rates. Use carbon or platinum electrodes only.",
+        "formula": "Cathode: 4H⁺ + 4e⁻ → 2H₂. Anode: 2H₂O → O₂ + 4H⁺ + 4e⁻. Overall: 2H₂O → 2H₂ + O₂. Expected ratio H₂:O₂ = 2:1.",
+        "error": "Common errors: air bubbles in the inverted tubes at the start (falsely increases initial volume reading), and reading volumes before gas is fully collected. Check for electrode polarity.",
+        "result": "H₂ volume at cathode ≈ twice O₂ volume at anode. After 10 min at 6 V, typical: H₂ ≈ 20 cm³, O₂ ≈ 10 cm³. Squeaky pop confirms H₂; glowing splint confirms O₂.",
+        "real": "Green hydrogen from electrolysis using wind or solar power could replace fossil fuels in heavy industry and shipping. The UK government has announced a major green hydrogen investment programme.",
+        "explain": "Electricity forces electrons to flow. At the cathode, electrons are forced onto H⁺ ions, forming H₂ gas. At the anode, water molecules are forced to give up electrons, splitting into O₂ and H⁺. Two H₂ molecules are made for every one O₂ — matching the 2:1 ratio in H₂O.",
+        "hook": "In 1800, William Nicholson used the first battery (just invented) to electrolyse water — and the 2:1 gas ratio was one of the first experimental proofs that water is H₂O, not HO as many scientists believed at the time!",
+        "misconception": "H₂SO₄ is NOT decomposed during this electrolysis — it is just there to carry current. The reactant is water. If you started with pure H₂SO₄, the products would be different (H₂ and O₂ from water, not sulphur compounds at these voltages)."
+      },
+      "hint": "If the H₂:O₂ ratio is significantly different from 2:1, check for gas leaks past the bung, or residual air bubbles that were not expelled before starting.",
+      "expected": "H₂:O₂ volume ratio: 2.0 ± 0.2. H₂ confirmed by squeaky pop; O₂ by relighting glowing splint. Current: 0.5–1 A at 6 V in 1 mol/L H₂SO₄. Ratio confirms H₂O molecular formula."
+    }
+  },
+  {
+    "num": 132,
+    "cardEmoji": "🧂",
+    "title": "Celda voltaica simple",
+    "section": "Electrochemistry",
+    "desc": "Construir una celda galvánica simple con electrodos de zinc y cobre.",
+    "setupTime": "8 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden the industrial chlor-alkali process, identifying three products of brine electrolysis and understanding selective electrode reactions.",
+      "instructions": [
+        "Fill a U-tube or electrolysis cell with saturated NaCl solution.",
+        "Insert carbon electrodes into each arm connected to a 6 V power supply.",
+        "Recoger gases from each electrode using inverted test tubes.",
+        "Probar cathode gas with a lit splint (H₂) and anode gas with damp litmus paper (Cl₂).",
+        "Probar the cathode solution with phenolphthalein for NaOH presence."
+      ],
+      "expectedOutcome": "Chlorine bleaches litmus paper at the anode; hydrogen produces a squeaky pop at the cathode; phenolphthalein turns pink near the cathode, confirming NaOH formation."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧂",
+          "name": "Saturated NaCl (brine) solución"
+        },
+        {
+          "emoji": "⚡",
+          "name": "6 V DC power supply and connecting wires"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Carbon electrodos"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Inverted tubo de ensayos for gas collection"
+        },
+        {
+          "emoji": "💧",
+          "name": "Damp litmus paper and phenolphthalein indicator"
+        }
+      ],
+      "observationsToRecord": [
+        "Litmus paper response to anode gas (Cl₂)",
+        "Splint test result at cathode (H₂)",
+        "Phenolphthalein colour near cathode (NaOH)",
+        "Volume ratio of H₂:Cl₂ and comparison to expected 1:1"
+      ],
+      "theoryPoints": [
+        "Cathode (−): 2H⁺ + 2e⁻ → H₂ (hydrogen ions preferentially discharged).",
+        "Anode (+): 2Cl⁻ → Cl₂ + 2e⁻ (chloride ions preferentially discharged over OH⁻ in concentrated brine).",
+        "Na⁺ and OH⁻ remain in solution → NaOH formed near cathode.",
+        "Industrial chlor-alkali process produces Cl₂ (for PVC, bleach), H₂ (for fuel/Haber), and NaOH (for paper, soap)."
+      ],
+      "realWorldConnections": [
+        "The chlor-alkali industry is one of the largest electrochemical industries globally, producing chlorine for water treatment, PVC, and pharmaceuticals.",
+        "Chlorine gas was used as a weapon in WWI — understanding its chemistry and hazards is part of chemistry education.",
+        "Sodium hydroxide produced from brine electrolysis is used to make paper, soap, aluminium, and many chemicals."
+      ],
+      "formula": "Cathode: 2H⁺ + 2e⁻ → H₂  |  Anode: 2Cl⁻ → Cl₂ + 2e⁻  |  Overall: 2NaCl + 2H₂O → Cl₂ + H₂ + 2NaOH"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which gas is produced at the anode during electrolysis of concentrated brine?",
+          "options": [
+            "Oxygen",
+            "Hydrogen",
+            "Chlorine",
+            "Sodium"
+          ],
+          "correctIndex": 2,
+          "explanation": "In concentrated brine, chloride ions (Cl⁻) are preferentially discharged at the anode: 2Cl⁻ → Cl₂ + 2e⁻. In dilute NaCl solution, OH⁻ from water is preferentially discharged instead, producing O₂."
+        },
+        {
+          "text": "How is chlorine gas detected?",
+          "options": [
+            "By its blue colour",
+            "By relighting a glowing splint",
+            "By bleaching damp litmus paper",
+            "By the squeaky pop test"
+          ],
+          "correctIndex": 2,
+          "explanation": "Cl₂ is a green-yellow oxidising gas that bleaches damp litmus paper: it reacts with water to form HCl and HOCl, which bleaches the indicator dye in the litmus."
+        },
+        {
+          "text": "Why does electrolysis of DILUTE NaCl solution produce oxygen at the anode rather than chlorine?",
+          "options": [
+            "Dilute solution has no Cl⁻ ions",
+            "At low Cl⁻ concentrations, OH⁻ ions from water are more readily discharged than Cl⁻",
+            "Oxygen is always produced at the anode",
+            "Dilute solution has a lower voltage"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ion discharge preference depends on concentration. In dilute solution, OH⁻ ions from water are in greater relative abundance and are preferentially oxidised to O₂ rather than Cl⁻ to Cl₂."
+        }
+      ],
+      "discussion": [
+        "Write half-equations for all electrode reactions in brine electrolysis and confirm electron balance.",
+        "Explain why the chlor-alkali industry must keep the chlorine and sodium hydroxide products separated during the industrial process.",
+        "Suggest an environmental concern with chlorine production and describe how it is mitigated in modern industrial plants."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Selective ion discharge in concentrated brine",
+          "pct": 35
+        },
+        {
+          "label": "Three products and their tests",
+          "pct": 30
+        },
+        {
+          "label": "Industrial chlor-alkali process",
+          "pct": 25
+        },
+        {
+          "label": "Concentration effects on discharge preference",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often predict oxygen at the anode because \"anode produces oxidised products\" — the key is that Cl⁻ is preferentially discharged in concentrated solution.",
+        "Many think sodium metal is produced — Na⁺ requires very high voltage to reduce; H⁺ from water is discharged preferentially at the cathode."
+      ],
+      "hook": "The Runcorn chlor-alkali plant in Cheshire produces over 300,000 tonnes of chlorine per year — all by electrolysis of rock salt from nearby Cheshire salt mines. Your experiment models a billion-pound industry!",
+      "khanLinks": [
+        {
+          "title": "Electrolysis",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis"
+        },
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Electrode",
+        "Gas Produced",
+        "Test Method",
+        "Resultado",
+        "Product Confirmed"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record litmus test result for anode gas",
+      "Record splint test result for cathode gas",
+      "Record phenolphthalein result near cathode to confirm NaOH"
+    ],
+    "conclusion": "Write the overall equation for brine electrolysis. Name and confirm the three products. Explain why concentrated (not dilute) brine is used in industry and the applications of each product.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Brine electrolysis produces three incredibly important industrial chemicals — you're running one of the world's most economically significant reactions in a test tube today!",
+      "keywords": {
+        "setup": "Use saturated (concentrated) brine — dilute NaCl gives O₂ instead of Cl₂. Perform in a well-ventilated area or fume cupboard. Have damp litmus paper ready at the anode before starting.",
+        "formula": "Cathode: 2H⁺ + 2e⁻ → H₂. Anode: 2Cl⁻ → Cl₂ + 2e⁻. Overall: 2NaCl + 2H₂O → H₂ + Cl₂ + 2NaOH.",
+        "error": "Common errors: using dilute brine (produces O₂ instead of Cl₂ at anode), not testing NaOH formation with phenolphthalein, and confusion between which electrode is positive/negative.",
+        "result": "Anode: yellow-green Cl₂ gas bleaches litmus. Cathode: H₂ confirmed by squeaky pop. Phenolphthalein turns pink near cathode → NaOH. Volume ratio H₂:Cl₂ ≈ 1:1.",
+        "real": "Cl₂ is used to make PVC plastic, bleach, pharmaceuticals, and disinfectants. NaOH is used for paper pulp, soap, aluminium refining. H₂ is used in the Haber process for fertilisers. All from common salt!",
+        "explain": "In concentrated brine, there are lots of Cl⁻ ions jostling to be discharged at the anode. Because there are so many Cl⁻ compared to OH⁻, the Cl⁻ get discharged preferentially. At the cathode, H⁺ from water gets discharged rather than Na⁺ because H⁺ requires much less energy.",
+        "hook": "Common table salt (NaCl) is the raw material for three of the most important industrial chemicals: chlorine (used in 85% of all pharmaceuticals), hydrogen gas, and sodium hydroxide. Chemistry makes salt worth far more than its price!",
+        "misconception": "Sodium metal is NOT produced at the cathode — even though Na⁺ ions are in solution. Na⁺ requires enormous energy to reduce, so H⁺ from water is preferentially discharged instead. Sodium metal production requires molten salt electrolysis (much higher temperature)."
+      },
+      "hint": "If you're getting O₂ instead of Cl₂ at the anode (litmus not bleached), your brine is too dilute. Dissolve more NaCl until no more dissolves (saturated solution) and retry.",
+      "expected": "Cl₂ at anode: bleaches damp litmus paper immediately. H₂ at cathode: squeaky pop confirmed. Phenolphthalein turns pink near cathode confirming NaOH. Volume H₂:Cl₂ ≈ 1:1 ratio observed."
+    }
+  },
+  {
+    "num": 133,
+    "cardEmoji": "🪙",
+    "title": "Serie de actividad de metales",
+    "section": "Electrochemistry",
+    "desc": "Ordenar metales por reactividad observando reacciones de desplazamiento.",
+    "setupTime": "8 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden how spontaneous redox reactions generate electrical energy in a galvanic cell, and understand the roles of anode, cathode, and salt bridge.",
+      "instructions": [
+        "Colocar a zinc electrode in 50 mL of 1 mol/L ZnSO₄ solution and a copper electrode in 50 mL of 1 mol/L CuSO₄ solution.",
+        "Conectar the two solutions with a salt bridge (filter paper soaked in KNO₃).",
+        "Conectar the electrodes to a voltmeter and measure the cell voltage.",
+        "Observar the electrodes over 10 minutes; note any colour changes or deposits.",
+        "Calcular the theoretical cell potential using standard electrode potentials."
+      ],
+      "expectedOutcome": "Cell voltage of approximately 1.1 V is measured. The zinc anode gradually dissolves (loses mass), and copper deposits on the copper cathode (gains mass), confirming spontaneous redox."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔋",
+          "name": "Zinc and copper electrodos (strips)"
+        },
+        {
+          "emoji": "⚡",
+          "name": "Voltmeter (digital, 0–2 V range)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "1 mol/L ZnSO₄ and 1 mol/L CuSO₄ solucións"
+        },
+        {
+          "emoji": "💧",
+          "name": "Salt bridge: papel de filtro soaked in saturated KNO₃"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balance to weigh electrodos before and after"
+        }
+      ],
+      "observationsToRecord": [
+        "Cell voltage measured (V)",
+        "Change in appearance of zinc anode (dissolution)",
+        "Change in appearance of copper cathode (deposition)",
+        "Mass change of each electrode después 10 min operation"
+      ],
+      "theoryPoints": [
+        "Anode (Zn, −): Zn → Zn²⁺ + 2e⁻ (oxidation, spontaneous).",
+        "Cathode (Cu, +): Cu²⁺ + 2e⁻ → Cu (reduction, spontaneous).",
+        "Cell potential: E°cell = E°cathode − E°anode = +0.34 − (−0.76) = +1.10 V.",
+        "Salt bridge maintains charge neutrality by allowing ion flow between half-cells without mixing the solutions."
+      ],
+      "realWorldConnections": [
+        "The Daniel cell (zinc-copper galvanic cell) was the first practical battery, invented in 1836 by John Frederic Daniell for early telegraph systems.",
+        "Modern batteries (AA, car batteries) are based on the same galvanic cell principle with different electrode materials.",
+        "Corrosion of zinc roofing in contact with copper pipes is an unwanted galvanic cell — the zinc acts as the sacrificial anode."
+      ],
+      "formula": "Anode: Zn → Zn²⁺ + 2e⁻  |  Cathode: Cu²⁺ + 2e⁻ → Cu  |  E°cell = E°cathode − E°anode = +1.10 V"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is the function of the salt bridge in the galvanic cell?",
+          "options": [
+            "To carry electrons from anode to cathode",
+            "To allow ion flow between half-cells to maintain charge neutrality without mixing solutions",
+            "To increase the cell voltage",
+            "To prevent the zinc from dissolving"
+          ],
+          "correctIndex": 1,
+          "explanation": "Without the salt bridge, a charge imbalance would build up (excess positive charge in ZnSO₄ as Zn²⁺ forms; excess negative charge in CuSO₄ as Cu²⁺ is removed), stopping the cell. The salt bridge allows ions to flow and neutralise this imbalance."
+        },
+        {
+          "text": "Which electrode gains mass during operation of the Zn-Cu galvanic cell?",
+          "options": [
+            "The zinc anode",
+            "The copper cathode",
+            "Both electrodes equally",
+            "Neither electrode changes mass"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cu²⁺ ions from solution are reduced and deposited as solid copper on the cathode: Cu²⁺ + 2e⁻ → Cu. The cathode gains mass as copper plates onto it."
+        },
+        {
+          "text": "The standard cell potential of the Zn-Cu cell is approximately:",
+          "options": [
+            "0.34 V",
+            "0.76 V",
+            "1.10 V",
+            "−1.10 V"
+          ],
+          "correctIndex": 2,
+          "explanation": "E°cell = E°cathode − E°anode = (+0.34) − (−0.76) = +1.10 V. A positive value confirms the reaction is spontaneous."
+        }
+      ],
+      "discussion": [
+        "Explain why a positive E°cell indicates that the cell reaction is spontaneous.",
+        "What would happen to the cell voltage if you replaced the ZnSO₄ solution with MgSO₄ and used a magnesium anode?",
+        "Design an experiment to determine how cell voltage changes as the Cu²⁺ concentration decreases over time."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Galvanic cell operation (anode/cathode)",
+          "pct": 35
+        },
+        {
+          "label": "Standard electrode potentials & E°cell",
+          "pct": 30
+        },
+        {
+          "label": "Salt bridge function",
+          "pct": 20
+        },
+        {
+          "label": "Historical and modern battery applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students often say \"electrons flow from positive to negative terminal\" — in a galvanic cell, electrons flow from the negative anode to the positive cathode through the external circuit.",
+        "Many think the salt bridge carries electrons — it carries ions only. Electrons travel through the external wire."
+      ],
+      "hook": "The world's first battery — the Voltaic pile (1800) — was stacks of zinc and copper discs separated by brine-soaked cloth. Alessandro Volta invented it, and the volt is named after him. You're building the same basic cell today!",
+      "khanLinks": [
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        },
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "Cell Voltaje (V)",
+        "Zn electrode appearance",
+        "Cu electrode appearance",
+        "Notes"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record the cell voltage immediately after connecting and every 2 minutes",
+      "Describe changes in the zinc and copper electrode surfaces",
+      "Weigh both electrodes before and after to calculate mass change"
+    ],
+    "conclusion": "Write the half-equations and overall cell reaction. Calculate E°cell and compare to your measured value. Explain the roles of anode, cathode, and salt bridge in maintaining current flow.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. You're about to build a battery from scratch — the same design as the very first practical battery ever made, which powered the telegraph networks of the 1800s!",
+      "keywords": {
+        "setup": "Clean electrodes with sandpaper before use. Use fresh CuSO₄ and ZnSO₄ solutions of equal concentration. Renew the salt bridge for each trial — a dry bridge stops ion flow.",
+        "formula": "Anode: Zn → Zn²⁺ + 2e⁻ (oxidation). Cathode: Cu²⁺ + 2e⁻ → Cu (reduction). E°cell = 0.34 − (−0.76) = +1.10 V.",
+        "error": "Common errors: salt bridge drying out mid-experiment (voltage drops to zero), electrodes touching (short circuit), and measuring with an AC voltmeter instead of DC.",
+        "result": "Expected cell voltage: ~1.0–1.1 V (close to theoretical 1.10 V). Zinc anode surface becomes rough/eaten. Copper deposits visibly on cathode. Mass: anode loses, cathode gains.",
+        "real": "Modern alkaline AA batteries use zinc (anode) and MnO₂ (cathode) — same galvanic principle. Car batteries use lead-acid cells. Lithium-ion batteries in phones use lithium anode and metal oxide cathode.",
+        "explain": "Zinc \"wants\" to lose electrons more than copper wants to keep them. When connected, electrons flow from zinc to copper through the wire. Zn²⁺ ions form in solution; Cu²⁺ ions from solution plate onto the copper. The salt bridge lets ions migrate to keep both solutions electrically neutral.",
+        "hook": "Alessandro Volta invented the battery in 1800. Napoleon heard about it and demanded a private demonstration. The unit of voltage — the volt — is named after Volta. You're doing what impressed Napoleon!",
+        "misconception": "The salt bridge doesn't connect the two solutions — it allows ions to pass between them while keeping the solutions separate. If you mixed the solutions, the chemical energy would be released as heat, not electricity."
+      },
+      "hint": "If the voltage reads near zero, check the salt bridge is moist and making good contact with both solutions. Also ensure voltmeter polarity is correct (positive lead to copper electrode).",
+      "expected": "Cell voltage: 0.9–1.1 V (some variation from non-standard concentrations). Zinc anode: surface becomes granular/rough (dissolving). Copper cathode: bright copper deposit visible. Mass change confirms transfer."
+    }
+  },
+  {
+    "num": 134,
+    "cardEmoji": "✨",
+    "title": "Corrosión y prevención de la oxidación",
+    "section": "Electrochemistry",
+    "desc": "Investigar las condiciones para la oxidación y métodos de prevención.",
+    "setupTime": "8 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden how electrolysis deposits metals from solution onto a cathode, and quantify mass deposited using Faraday's laws.",
+      "instructions": [
+        "Clean and weigh an iron nail (cathode) and a copper strip (anode) accurately.",
+        "Conectar the nail (cathode, −) and copper strip (anode, +) to a 6 V power supply in a CuSO₄ solution.",
+        "Run the electrolysis for exactly 10 minutes at constant current; record the current.",
+        "Remove, rinse, dry, and reweigh both electrodes.",
+        "Calcular the mass of copper deposited on the nail and compare to the theoretical prediction from Q = It and Faraday's law."
+      ],
+      "expectedOutcome": "The iron nail is coated with a visible red-brown copper layer. The cathode gains mass and the anode loses approximately the same mass, confirming conservation of matter."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔩",
+          "name": "Iron nail (cathode)"
+        },
+        {
+          "emoji": "🟫",
+          "name": "Copper strip (anode)"
+        },
+        {
+          "emoji": "⚡",
+          "name": "6 V DC power supply with amperímetro"
+        },
+        {
+          "emoji": "💧",
+          "name": "CuSO₄ solución (0.5 mol/L), 200 mL"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Analytical balance (±0.001 g)"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial and final mass of iron nail (cathode)",
+        "Initial and final mass of copper strip (anode)",
+        "Current (A) throughout the experiment",
+        "Colour and uniformity of copper deposit on nail"
+      ],
+      "theoryPoints": [
+        "Cathode (nail): Cu²⁺ + 2e⁻ → Cu (copper deposits on nail).",
+        "Anode (copper): Cu → Cu²⁺ + 2e⁻ (copper dissolves to replenish solution).",
+        "Charge: Q = I × t (coulombs); moles of e⁻ = Q/F (F = 96,500 C/mol).",
+        "Mass deposited = moles of Cu × 63.5 (g/mol); Cu²⁺ requires 2 electrons per atom."
+      ],
+      "realWorldConnections": [
+        "Jewellery is electroplated with gold or silver to give appearance of precious metal at low cost.",
+        "Chromium electroplating of car bumpers prevents corrosion and provides a shiny finish.",
+        "Printed circuit boards (PCBs) are made by selective copper electroplating onto plastic substrates."
+      ],
+      "formula": "Q = I × t  |  n(e⁻) = Q/F  |  n(Cu) = n(e⁻)/2  |  mass(Cu) = n(Cu) × 63.5"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "A current of 0.5 A flows for 10 minutes. What mass of copper is deposited? (F = 96,500 C/mol, M_Cu = 63.5 g/mol)",
+          "options": [
+            "0.01 g",
+            "0.10 g",
+            "0.99 g",
+            "3.18 g"
+          ],
+          "correctIndex": 1,
+          "explanation": "Q = 0.5 × 600 = 300 C. n(e⁻) = 300/96500 = 0.00311 mol. n(Cu) = 0.00311/2 = 0.00155 mol. Mass = 0.00155 × 63.5 = 0.099 g ≈ 0.10 g."
+        },
+        {
+          "text": "Why must the anode be made of pure copper in this electroplating experiment?",
+          "options": [
+            "Copper is the only metal that conducts electricity",
+            "A copper anode dissolves to replenish Cu²⁺ ions in solution, keeping concentration constant",
+            "Copper prevents the nail from rusting",
+            "An inert anode would cause the solution to turn blue"
+          ],
+          "correctIndex": 1,
+          "explanation": "A soluble copper anode dissolves (Cu → Cu²⁺ + 2e⁻) at the same rate that copper deposits at the cathode, maintaining constant Cu²⁺ concentration in solution."
+        },
+        {
+          "text": "What type of reaction occurs at the cathode during electroplating?",
+          "options": [
+            "Oxidation",
+            "Reduction",
+            "Neutralisation",
+            "Decomposition"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cu²⁺ + 2e⁻ → Cu is reduction (gaining electrons). Reduction always occurs at the cathode. Remember OIL RIG: Oxidation Is Loss; Reduction Is Gain (of electrons)."
+        }
+      ],
+      "discussion": [
+        "Why would the quality of the copper coating be poor if the current density were too high? Explain in terms of ion diffusion.",
+        "Explain how the CuSO₄ concentration stays approximately constant throughout electroplating with a copper anode.",
+        "Suggest why electroplating with gold is used for electrical connectors in computers, even though gold is very expensive."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Electroplating mechanism (cathode/anode)",
+          "pct": 35
+        },
+        {
+          "label": "Faraday's law calculations",
+          "pct": 30
+        },
+        {
+          "label": "Mass change confirmation",
+          "pct": 20
+        },
+        {
+          "label": "Industrial electroplating applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students sometimes think the iron nail is \"turned into copper\" — the iron is still there; copper is deposited as a thin layer on top.",
+        "Many assume any metal can be the anode — using an inert anode (graphite) with CuSO₄ would cause the solution to be depleted of Cu²⁺ over time."
+      ],
+      "hook": "Every circuit board in every smartphone, laptop, and electric car is made using copper electroplating — the exact same process you're doing today with a nail and a battery!",
+      "khanLinks": [
+        {
+          "title": "Electrolysis",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis"
+        },
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Electrode",
+        "Masa before (g)",
+        "Masa after (g)",
+        "Masa change (g)",
+        "Theoretical mass (g)"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Record the colour and coverage of the copper deposit on the nail",
+      "Record mass changes for both cathode (nail) and anode (copper strip)",
+      "Compare experimental mass deposited to theoretical prediction"
+    ],
+    "conclusion": "Calculate theoretical copper mass deposited using Q = It and Faraday's law. Compare to experimental mass gained by the nail. Evaluate sources of error and state Faraday's First Law.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're coating an iron nail in copper — a real industrial process used to make everything from jewellery to smartphone circuit boards!",
+      "keywords": {
+        "setup": "Clean the nail with sandpaper and acetone before plating — any grease prevents adhesion. Ensure the nail is fully submerged and not touching the copper strip.",
+        "formula": "Q = I × t. n(e⁻) = Q / 96,500. n(Cu) = n(e⁻) / 2 (Cu²⁺ needs 2 e⁻). mass(Cu) = n(Cu) × 63.5 g/mol.",
+        "error": "Common errors: not drying electrodes completely before weighing (water adds mass), current fluctuating during experiment, and the nail touching the anode (short circuit).",
+        "result": "Expected: at 0.5 A for 10 min, ~0.10 g Cu deposited. Nail gains ~0.10 g; copper anode loses ~0.10 g. Bright, smooth copper coating visible on nail.",
+        "real": "Chrome plating on car parts: a thin (< 1 µm) layer of chromium gives corrosion resistance. Gold plating on USB connectors prevents oxidation, ensuring reliable electrical contact for thousands of plug cycles.",
+        "explain": "CuSO₄ contains Cu²⁺ ions. At the cathode (nail), electrons from the power supply combine with Cu²⁺ to form solid copper. At the anode (copper strip), electrons are pulled away, dissolving copper into Cu²⁺ — replenishing what was removed. Perfect balance!",
+        "hook": "The Statue of Liberty was originally bright and shiny — it was electroplated with copper sheets. Over 130 years, the copper oxidised to the famous green patina (copper carbonate). Chemistry changed an icon!",
+        "misconception": "The iron nail doesn't transform into copper — it's still iron underneath. The copper forms a thin skin on top. If you scratch the deposit, you see the iron underneath. This is why adhesion (nail surface preparation) is critical."
+      },
+      "hint": "If the copper deposit is dark, powdery, or poorly adhered, the current density is too high. Reduce the voltage to 3–4 V and ensure the nail surface was thoroughly cleaned before plating.",
+      "expected": "Bright, smooth, red-brown copper deposit on nail. Mass gain of nail ≈ mass loss of copper strip (within 5%). Experimental mass deposited within 10% of theoretical value from Faraday's law."
+    }
+  },
+  {
+    "num": 135,
+    "cardEmoji": "🪤",
+    "title": "Celda de concentración",
+    "section": "Electrochemistry",
+    "desc": "Construir una celda de concentración y medir la diferencia de potencial.",
+    "setupTime": "5 min",
+    "duration": "10 min setup + observations over 3–5 days",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that corrosion of iron requires both water and oxygen, and that electrolytes (salt), direct contact with more reactive metals, or protective coatings all modify the corrosion rate.",
+      "instructions": [
+        "Preparar five test tubes each containing an iron nail in different conditions.",
+        "Nail A: boiled distilled water + oil layer (no O₂, no salt); Nail B: water + salt; Nail C: dry air (CaCl₂ desiccant); Nail D: mineral oil; Nail E: water only (control).",
+        "Seal test tubes and observe daily for rust formation (brown Fe₂O₃/Fe(OH)₃).",
+        "After 3–5 days, rank conditions by degree of rusting.",
+        "Repetir adding a zinc strip touching Nail B and compare to Nail B without zinc."
+      ],
+      "expectedOutcome": "Nail B (salt water) rusts fastest; Nail E (water alone) rusts moderately; Nails A, C, D show minimal or no rust; the zinc-protected nail shows significantly less corrosion than unprotected salt-water nail."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔩",
+          "name": "5 identical iron nails (pre-sanded to remove existing oxide)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "5 tubo de ensayos with lids"
+        },
+        {
+          "emoji": "🧂",
+          "name": "NaCl solución (salt water), boiled water, oil, CaCl₂ desiccant"
+        },
+        {
+          "emoji": "📊",
+          "name": "Rust rating scale (0–5) or camera for daily photos"
+        },
+        {
+          "emoji": "🔩",
+          "name": "Zinc strip for cathodic protection trial"
+        }
+      ],
+      "observationsToRecord": [
+        "Daily rust rating for each nail (0 = none, 5 = heavily rusted)",
+        "Cambio de colors observed (silver → orange-brown → dark brown)",
+        "Comparison of nail in salt water with vs without zinc protection",
+        "Final ranking of conditions from most to least corrosion"
+      ],
+      "theoryPoints": [
+        "Rusting: 4Fe + 3O₂ + 2nH₂O → 2Fe₂O₃·nH₂O (iron oxide/hydroxide, the orange-brown rust).",
+        "Both O₂ and H₂O are required — nails in dry air or in deoxygenated water do not rust.",
+        "Salt increases electrolyte conductivity, accelerating electrochemical corrosion.",
+        "Zinc is more reactive than iron; in contact, Zn acts as sacrificial anode — it corrodes preferentially, protecting iron."
+      ],
+      "realWorldConnections": [
+        "Car bodies are galvanised (zinc-coated) to prevent rust — the zinc provides both a physical barrier and sacrificial protection.",
+        "Steel bridges are painted and sometimes fitted with zinc or magnesium sacrificial anodes attached to the metal structure.",
+        "Ship hulls have zinc blocks bolted to them below the waterline to act as sacrificial anodes, preventing hull corrosion."
+      ],
+      "formula": "4Fe(s) + 3O₂(g) + 6H₂O(l) → 4Fe(OH)₃ (→ Fe₂O₃·3H₂O, rust)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which conditions are BOTH required for iron to rust?",
+          "options": [
+            "Heat and light",
+            "Water and oxygen",
+            "Salt and carbon dioxide",
+            "High pressure and water"
+          ],
+          "correctIndex": 1,
+          "explanation": "Rusting is an electrochemical oxidation process that requires both water (as electrolyte/solvent) and dissolved oxygen. Remove either and rusting stops."
+        },
+        {
+          "text": "Why does a nail in salt water rust faster than one in plain water?",
+          "options": [
+            "Salt reacts directly with iron to form rust",
+            "Salt water conducts electricity better, increasing the rate of electrochemical corrosion",
+            "Salt water contains more oxygen",
+            "Salt prevents water from evaporating, keeping the nail wet"
+          ],
+          "correctIndex": 1,
+          "explanation": "Corrosion is an electrochemical process. Salt ions increase the conductivity of the electrolyte, allowing faster electron/ion transfer and therefore faster corrosion."
+        },
+        {
+          "text": "How does zinc protect a steel structure by sacrificial protection?",
+          "options": [
+            "Zinc creates a physical barrier only",
+            "Zinc is more reactive than iron, so it oxidises preferentially, protecting the iron",
+            "Zinc reacts with water to form a stable coating on iron",
+            "Zinc makes iron more inert"
+          ],
+          "correctIndex": 1,
+          "explanation": "Zinc is above iron in the reactivity series. When in electrical contact, zinc acts as the anode in a galvanic cell and corrodes preferentially (Zn → Zn²⁺ + 2e⁻), while iron acts as the cathode and is protected."
+        }
+      ],
+      "discussion": [
+        "Explain why painting iron provides temporary but not permanent protection against rusting, while galvanising provides more durable protection.",
+        "Car manufacturers now use polymer-coated steel and zinc-rich primers. Explain the electrochemical advantage of these combined approaches.",
+        "Design an experiment to test whether the pH of water affects the rate of iron corrosion."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Requirements for iron corrosion (H₂O & O₂)",
+          "pct": 30
+        },
+        {
+          "label": "Electrochemical corrosion mechanism",
+          "pct": 30
+        },
+        {
+          "label": "Sacrificial protection (reactivity series)",
+          "pct": 25
+        },
+        {
+          "label": "Corrosion prevention methods",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan salt causes rusting directly — salt accelerates an already-occurring electrochemical process by increasing conductivity.",
+        "Many believe painted surfaces are permanently protected — paint provides only a physical barrier; once scratched, rusting proceeds rapidly."
+      ],
+      "hook": "Corrosion costs the global economy over $2.5 trillion per year — about 3.4% of global GDP. The chemistry you're learning today has saved billions of dollars through better anti-corrosion strategies!",
+      "khanLinks": [
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        },
+        {
+          "title": "Introduction to Oxidation States",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Condition",
+        "Day 1 Rust Rating",
+        "Day 2 Rust Rating",
+        "Day 3 Rust Rating",
+        "Day 5 Rust Rating"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record daily rust ratings for all five nails (0–5 scale)",
+      "Note the colour and distribution of rust on each nail",
+      "Compare the zinc-protected nail to the unprotected salt-water nail"
+    ],
+    "conclusion": "State which conditions are necessary for corrosion and rank conditions by corrosion rate. Explain how salt accelerates corrosion and how zinc provides sacrificial protection using electrochemical principles.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Iron corrosion costs the world trillions of pounds a year — understanding what causes it and how to stop it is one of the most economically important applications of electrochemistry!",
+      "keywords": {
+        "setup": "Sand all nails with the same grade sandpaper to remove existing oxide. Set up all conditions simultaneously for fair comparison. Seal test tubes to maintain consistent conditions.",
+        "formula": "4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ (rust). Both O₂ AND H₂O required. Salt increases electrolyte conductivity → faster corrosion. Zinc: Zn → Zn²⁺ + 2e⁻ (sacrificial anode, protects iron).",
+        "error": "Common errors: not pre-sanding nails (variable starting condition), inconsistent water fill levels, and disturbing the test tubes when observing (mixing oil layer into water).",
+        "result": "After 3 days: salt water nail most rusted (rating 4–5); plain water nail moderately rusted (2–3); oil and dry conditions minimal (0–1); boiled water with oil minimal (0–1). Zinc-protected nail in salt water much less rusted than unprotected.",
+        "real": "Ships have large zinc blocks bolted to their hulls below the waterline. The zinc corrodes over months (turns grey-white) while the steel hull stays intact. The zinc blocks are replaced every 1–3 years — cheap insurance against hull failure.",
+        "explain": "Iron corrosion is a tiny electrochemical cell: iron acts as the anode (Fe → Fe²⁺ + 2e⁻) and the water/oxygen acts as the cathode (O₂ + 2H₂O + 4e⁻ → 4OH⁻). Salt makes the water more conductive, speeding up electron transfer. Zinc, being more reactive, displaces iron as the anode and corrodes instead.",
+        "hook": "The Eiffel Tower would have rusted away long ago without its protection scheme: 60 tonnes of paint are applied every 7 years, and zinc-rich primer is used at the base where conditions are most severe. Chemistry maintains an icon!",
+        "misconception": "A nail that is painted but scratched will rust FASTER at the scratch than an unpainted nail. This is because the scratch creates a tiny galvanic cell — the iron at the scratch is the anode, and the large painted surface acts as the cathode, concentrating corrosion at the small exposed area."
+      },
+      "hint": "If all nails appear to rust similarly, check that the boiled water + oil nail has no air gap. Boiling removes dissolved O₂; the oil layer prevents re-absorption. Both conditions are needed to stop rusting.",
+      "expected": "Day 3 rankings (most → least rusted): salt water >> plain water > salt water + zinc > oil-covered > dry > boiled water + oil ≈ no rust. Confirms O₂ and H₂O requirement and sacrificial Zn protection."
+    }
+  },
+  {
+    "num": 136,
+    "title": "Leyes de electrólisis de Faraday",
+    "section": "Electrochemistry",
+    "desc": "Verificar las leyes de Faraday midiendo la masa depositada vs. la carga eléctrica.",
+    "setupTime": "8 min",
+    "duration": "30 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes verifican that the mass of substance deposited during electrolysis is directly proportional to the charge passed (Q = It), confirming Faraday's First Law.",
+      "instructions": [
+        "Preparar a copper electrolysis cell with CuSO₄ solution and two copper electrodes.",
+        "Pesar the cathode electrode accurately before starting.",
+        "Run electrolysis at 0.5 A for 5 min, 10 min, and 15 min (separate trials with fresh electrodes).",
+        "Remove, rinse, dry and reweigh the cathode after each trial.",
+        "Plot mass deposited vs charge (Q = I × t) and determine the relationship."
+      ],
+      "expectedOutcome": "A straight-line graph of mass vs charge passes through the origin, confirming Faraday's First Law: mass ∝ Q."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "⚡",
+          "name": "DC power supply with amperímetro (set to 0.5 A)"
+        },
+        {
+          "emoji": "🟫",
+          "name": "Two copper electrodos"
+        },
+        {
+          "emoji": "💧",
+          "name": "CuSO₄ solución (0.5 mol/L)"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Analytical balance (±0.001 g)"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro (precise timing essential)"
+        }
+      ],
+      "observationsToRecord": [
+        "Current (A) and time (s) for each trial",
+        "Charge Q = I × t for each trial (coulombs)",
+        "Masa de cathode antes and después each trial",
+        "Mass deposited per trial (g)"
+      ],
+      "theoryPoints": [
+        "Faraday's First Law: mass deposited (m) is proportional to charge passed (Q): m = (M × Q) / (n × F).",
+        "For copper (M = 63.5 g/mol, n = 2): m = (63.5 × Q) / (2 × 96,500) = Q × 3.29 × 10⁻⁴ g/C.",
+        "Doubling the time at constant current doubles the charge and doubles the mass deposited.",
+        "The slope of the mass vs Q graph = M / (nF) — the electrochemical equivalent."
+      ],
+      "realWorldConnections": [
+        "Los procesos industriales copper refining uses electrolysis to purify copper from 99% to 99.99% purity — required for electrical wiring — using Faraday's law to control mass transfer.",
+        "Electroforming (making coins and medals) uses precise Faraday's law calculations to control layer thickness.",
+        "Gold and silver electroplating uses Faraday's law to calculate plating time needed for a specific coating thickness."
+      ],
+      "formula": "m = (M × I × t) / (n × F)  |  F = 96,500 C/mol  |  n = electrons per ion  |  M = molar mass"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Faraday's First Law states that mass deposited is proportional to:",
+          "options": [
+            "Voltage applied",
+            "Charge passed (Q = It)",
+            "Temperature of solution",
+            "Concentration of electrolyte"
+          ],
+          "correctIndex": 1,
+          "explanation": "Faraday's First Law: m ∝ Q = I × t. More charge means more electrons, which means more metal ions can be reduced at the cathode."
+        },
+        {
+          "text": "A graph of mass deposited (y-axis) vs charge passed (x-axis) for copper electrolysis gives:",
+          "options": [
+            "A curve",
+            "A horizontal line",
+            "A straight line through the origin",
+            "A straight line with a y-intercept"
+          ],
+          "correctIndex": 2,
+          "explanation": "Since m ∝ Q, the graph is linear and passes through the origin (zero charge = zero mass deposited). The gradient equals M/(nF) for the metal being deposited."
+        },
+        {
+          "text": "Calculate the mass of copper deposited when a charge of 965 C passes. (M_Cu = 63.5, n = 2, F = 96,500)",
+          "options": [
+            "0.0033 g",
+            "0.32 g",
+            "3.18 g",
+            "6.35 g"
+          ],
+          "correctIndex": 1,
+          "explanation": "m = (63.5 × 965) / (2 × 96,500) = 61,257.5 / 193,000 = 0.317 g ≈ 0.32 g."
+        }
+      ],
+      "discussion": [
+        "Explain how the graph of mass vs Q could be used to identify an unknown metal deposited during electrolysis.",
+        "Faraday's Second Law states that for the same charge, the mass deposited is proportional to M/n. Compare the mass of copper and silver deposited by the same charge (M_Ag = 108, n = 1).",
+        "Why must the cathode be dried completely before weighing, and what systematic error would result from an incompletely dried electrode?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Faraday's First Law (m ∝ Q)",
+          "pct": 40
+        },
+        {
+          "label": "Calculating charge and mass",
+          "pct": 30
+        },
+        {
+          "label": "Graphical verification (mass vs Q)",
+          "pct": 20
+        },
+        {
+          "label": "Industrial electrolysis applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students sometimes think increasing voltage directly increases mass deposited — it's the current (and therefore charge) that matters, not voltage.",
+        "Many confuse Faraday's First and Second Laws — First relates mass to charge; Second relates mass to molar mass/electrons for different elements."
+      ],
+      "hook": "Michael Faraday discovered these laws in 1833 without knowing about electrons — which weren't discovered until 1897. He deduced from mass measurements alone that electricity came in discrete \"chunks\". He was unwittingly measuring individual electrons!",
+      "khanLinks": [
+        {
+          "title": "Electrolysis",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis"
+        },
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Ensayo",
+        "Corriente (A)",
+        "Tiempo (s)",
+        "Charge Q (C)",
+        "Masa deposited (g)",
+        "Theoretical mass (g)"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record current and time for each trial and calculate charge Q = I × t",
+      "Record mass gain of cathode after each trial",
+      "Plot mass vs Q and describe the relationship observed"
+    ],
+    "conclusion": "State Faraday's First Law and verify it using your graph. Calculate the electrochemical equivalent (gradient) and compare to the theoretical value of 3.29 × 10⁻⁴ g/C for copper.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Faraday's laws are the foundation of all electrochemical engineering — today you're verifying the same relationships that made Michael Faraday one of the greatest scientists in history!",
+      "keywords": {
+        "setup": "Maintain constant current throughout (check ammeter regularly). Dry cathode at 60 °C for 5 min, then cool in desiccator before weighing. Use identical surface area electrodes.",
+        "formula": "m = (M × I × t) / (n × F). For Cu: m = (63.5 × I × t) / (2 × 96500). Gradient of m vs Q graph = M/(nF) = 63.5/(2 × 96500) = 3.29 × 10⁻⁴ g/C.",
+        "error": "Common errors: current fluctuation (read ammeter every minute and average), incomplete drying of cathode before weighing, and copper deposit falling off if current too high.",
+        "result": "Expected: 0.5 A × 300 s (5 min) = 150 C → 0.049 g; 600 s → 0.099 g; 900 s → 0.148 g. Straight line through origin, gradient ≈ 3.3 × 10⁻⁴ g/C. Confirms First Law.",
+        "real": "Copper refineries run electrolysis continuously, using Faraday's law to calculate exactly how long to plate each batch. A 1-tonne copper cathode requires precisely calculated time and current to achieve target mass.",
+        "explain": "Every electron that flows through the circuit reduces one Cu²⁺ ion to Cu atom at the cathode. Double the time → double the electrons → double the copper atoms deposited. Mass is directly proportional to charge. Simple and elegant!",
+        "hook": "Faraday measured the laws of electrolysis in 1833, decades before anyone knew what electrons were. He called the fundamental unit a \"faraday\" — 96,500 coulombs — which turns out to be the charge of one mole of electrons. He got it right without knowing what he was counting!",
+        "misconception": "Increasing VOLTAGE doesn't directly increase mass deposited — what matters is CURRENT (amps), which determines the rate of electron flow. High voltage across high resistance gives low current and little deposition."
+      },
+      "hint": "If your graph doesn't pass through the origin, there may be a systematic error in mass measurement (residual moisture, or the copper deposit detached). Reweigh the dry cathode 3 times and average.",
+      "expected": "Straight line through origin for mass vs Q. Gradient ≈ 3.3 × 10⁻⁴ g/C (Cu). Experimental values within 5–10% of theoretical. Faraday's First Law confirmed."
+    }
+  },
+  {
+    "num": 137,
+    "cardEmoji": "⚡",
+    "title": "Celda electrolítica vs. celda galvánica",
+    "section": "Electrochemistry",
+    "desc": "Comparar las características de celdas electrolíticas y galvánicas.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that conductivity depends on the presence of free ions, distinguishing electrolytes from non-electrolytes and strong from weak electrolytes.",
+      "instructions": [
+        "Preparar a conductivity circuit: 9 V battery in series with an LED and two carbon rod probes.",
+        "Dip probes into each test substance and record LED brightness.",
+        "Test: distilled water, tap water, NaCl solution, sugar solution, HCl (0.1 mol/L), ethanoic acid (0.1 mol/L), NaOH solution, ethanol, solid NaCl, molten NaCl (if available).",
+        "Registrar observations and classify each as conductor, non-conductor, or weak conductor.",
+        "Relate conductivity to degree of ionisation."
+      ],
+      "expectedOutcome": "Ionic solutions (NaCl, NaOH, HCl) are good conductors. Molecular solutions (sugar, ethanol) do not conduct. Weak acid (ethanoic acid) is a weak conductor, confirming partial ionisation."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "💡",
+          "name": "LED, 9 V batería, connecting wires"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Carbon rod electrodos (2)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Test solucións: NaCl, sugar, HCl, CH₃COOH, NaOH, ethanol, distilled water"
+        },
+        {
+          "emoji": "🧂",
+          "name": "Solid NaCl (for solid vs dissolved comparison)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Tubo de ensayos and rack"
+        }
+      ],
+      "observationsToRecord": [
+        "LED brightness (off / dim / bright) for each substance",
+        "Classification: conductor / weak conductor / non-conductor",
+        "Comparison of HCl vs CH₃COOH at same concentration",
+        "Comparison of solid vs dissolved NaCl"
+      ],
+      "theoryPoints": [
+        "Electrolytes are substances that conduct electricity when dissolved in water due to free ions.",
+        "Strong electrolytes (NaCl, HCl, NaOH) fully ionise → many free ions → bright LED.",
+        "Weak electrolytes (CH₃COOH) partially ionise → few free ions → dim LED.",
+        "Non-electrolytes (sugar, ethanol) do not ionise → no free ions → LED off."
+      ],
+      "realWorldConnections": [
+        "Electrolyte drinks (sports drinks) replenish Na⁺, K⁺, Ca²⁺, and Mg²⁺ ions lost in sweat — essential for nerve and muscle function.",
+        "Conductivity sensors in water treatment plants detect dissolved ions to ensure water quality and purity.",
+        "Dialysis machines remove waste ions from blood by exploiting ion conductivity through selective membranes."
+      ],
+      "formula": "Conductivity σ = (1/R) × (L/A)  |  Strong electrolyte: full ionisation  |  Weak electrolyte: partial ionisation"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Solid NaCl does not conduct electricity, but dissolved NaCl does. Why?",
+          "options": [
+            "NaCl changes its chemical formula when dissolved",
+            "In solid NaCl, ions are fixed in a lattice; dissolving releases free-moving Na⁺ and Cl⁻ ions",
+            "Water reacts with NaCl to form a conductor",
+            "Dissolved NaCl has a higher density"
+          ],
+          "correctIndex": 1,
+          "explanation": "In the solid state, Na⁺ and Cl⁻ ions are locked in a rigid crystal lattice and cannot move to carry current. Dissolving in water releases them as free-moving ions that can carry charge."
+        },
+        {
+          "text": "A sugar solution turns the LED off. What does this tell you about sugar?",
+          "options": [
+            "Sugar is a strong electrolyte",
+            "Sugar is a weak acid",
+            "Sugar is a non-electrolyte — it does not produce ions in solution",
+            "Sugar conducts electricity only when heated"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sugar (sucrose) is a covalent molecular compound. It dissolves in water to form discrete molecules, not ions. Without ions, the solution cannot carry electrical current."
+        },
+        {
+          "text": "The LED is dim for 0.1 mol/L ethanoic acid but bright for 0.1 mol/L HCl. This is because:",
+          "options": [
+            "Ethanoic acid is more concentrated than HCl",
+            "Ethanoic acid is a weak acid that only partially ionises, producing fewer ions than HCl",
+            "Ethanoic acid reacts with the electrodes",
+            "HCl contains more molecules per litre"
+          ],
+          "correctIndex": 1,
+          "explanation": "HCl fully ionises (strong acid), producing many H⁺ and Cl⁻ ions. Ethanoic acid partially ionises (weak acid, Kₐ = 1.8 × 10⁻⁵), so far fewer free ions are present at the same concentration."
+        }
+      ],
+      "discussion": [
+        "Explain why tap water conducts electricity slightly, while distilled water barely conducts.",
+        "Predict the conductivity of a concentrated sugar solution and a dilute NaCl solution. Which conducts better? Explain.",
+        "How do electrolyte sports drinks help athletes perform better, relating to conductivity and physiology?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Electrolyte vs non-electrolyte classification",
+          "pct": 35
+        },
+        {
+          "label": "Strong vs weak electrolyte distinction",
+          "pct": 30
+        },
+        {
+          "label": "Ion mobility as basis for conductivity",
+          "pct": 25
+        },
+        {
+          "label": "Applications in health and water treatment",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan all ionic compounds conduct electricity in all states — solid ionic compounds do NOT conduct (ions are fixed).",
+        "Many assume concentrated solutions always conduct better — a concentrated non-electrolyte (sugar) still doesn't conduct, regardless of concentration."
+      ],
+      "hook": "Your body uses electrical signals carried by electrolyte ions to beat your heart, contract every muscle, and fire every nerve. If your electrolyte balance is disrupted — say by extreme dehydration — your heart can stop. Chemistry keeps you alive!",
+      "khanLinks": [
+        {
+          "title": "Introduction to Oxidation States",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/oxidation-states-2/v/introduction-to-oxidation-states"
+        },
+        {
+          "title": "Electrolysis",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrolytic-cells/v/electrolysis"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Substance",
+        "LED Brightness",
+        "Electrolyte Type",
+        "Explanation"
+      ],
+      "rows": 9
+    },
+    "observations": [
+      "Record LED brightness for each substance and classify as strong/weak/non-electrolyte",
+      "Compare HCl to ethanoic acid at the same concentration",
+      "Record whether solid NaCl conducts (it should not)"
+    ],
+    "conclusion": "Classify all tested substances as strong electrolyte, weak electrolyte, or non-electrolyte. Explain the molecular basis for each classification using ionisation theory.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to find out which substances can carry electricity and which can't — and the answer reveals everything about how they're bonded at the molecular level!",
+      "keywords": {
+        "setup": "Ensure carbon probes are the same size and clean for each test. Keep probe distance constant. Rinse probes with distilled water between tests to avoid cross-contamination.",
+        "formula": "Conductivity ∝ ion concentration. Strong acid/base/salt: full ionisation → bright LED. Weak acid: partial ionisation → dim LED. Non-electrolyte (sugar, ethanol): no ions → LED off.",
+        "error": "Common errors: contaminating solutions between tests (rinse probes!), and confusing \"electrolyte\" (conducts when dissolved) with \"conductor\" (always conducts, like copper).",
+        "result": "Bright LED: NaCl solution, HCl, NaOH. Dim LED: ethanoic acid, tap water. Off: distilled water, sugar, ethanol. Solid NaCl: off. Confirms ion requirement for conductivity.",
+        "real": "Sports drinks contain Na⁺, K⁺, Mg²⁺, Ca²⁺ ions — electrolytes for nerve signals and muscle contractions. Pure water doesn't replace electrolytes lost in sweat — that's why water alone isn't enough after intense exercise.",
+        "explain": "Electricity is the flow of charge. In metals, electrons flow. In solutions, ions flow. For a solution to conduct, it must contain free-moving ions. Ionic compounds (NaCl, NaOH) provide these when dissolved. Molecular compounds (sugar, ethanol) don't ionise, so no charged particles can flow.",
+        "hook": "Lightning kills people through electrolytes! Pure skin doesn't conduct well, but sweat (containing dissolved NaCl and other electrolytes) dramatically increases conductivity. Wet, sweaty skin in a thunderstorm is dangerously conductive.",
+        "misconception": "An electrolyte is NOT the same as an electrical conductor! Copper is a conductor but not an electrolyte. NaCl solution is an electrolyte but not a metallic conductor. Electrolytes conduct via ions; metals conduct via electrons."
+      },
+      "hint": "If tap water gives a brighter LED than expected, it contains dissolved minerals (Ca²⁺, Mg²⁺, HCO₃⁻). Always use distilled water as your blank/control to see the difference.",
+      "expected": "Strong electrolytes: bright LED. Weak electrolytes: dim LED. Non-electrolytes: off. Solid NaCl: off. Order of conductivity: NaOH > HCl > NaCl > ethanoic acid > tap water > distilled water > sugar solution."
+    }
+  },
+  {
+    "num": 138,
+    "cardEmoji": "🍋",
+    "title": "Pilas secas y alcalinas",
+    "section": "Electrochemistry",
+    "desc": "Desarmar y examinar pilas secas y alcalinas, identificando componentes.",
+    "setupTime": "5 min",
+    "duration": "20 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that any electrolyte solution combined with two different metals creates a galvanic cell, and that the voltage depends on the difference in reactivity of the metals used.",
+      "instructions": [
+        "Insert a zinc nail and a copper coin into a lemon about 2 cm apart (not touching).",
+        "Conectar the metals to a voltmeter; record the voltage.",
+        "Repetir using different metal pairs: zinc-iron, copper-iron, magnesium-copper.",
+        "Try different fruits (lemon, orange, apple, banana) with the same metal pair.",
+        "Conectar 3–4 lemons in series to increase voltage and light an LED."
+      ],
+      "expectedOutcome": "The zinc-copper pair in lemon juice produces approximately 0.9 V. Metals further apart in the reactivity series give higher voltages. Multiple cells in series add voltages."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🍋",
+          "name": "Lemons, oranges, apples, bananas"
+        },
+        {
+          "emoji": "⚡",
+          "name": "Digital voltmeter (0–2 V range)"
+        },
+        {
+          "emoji": "🔩",
+          "name": "Zinc nails, copper coins, iron nails, magnesium strips"
+        },
+        {
+          "emoji": "💡",
+          "name": "LED (low voltage, 1.5–2 V threshold)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Alligator clip connecting wires"
+        }
+      ],
+      "observationsToRecord": [
+        "Voltage produced by each metal pair in lemon juice",
+        "Voltage produced by zinc-copper pair in different fruits",
+        "Voltage of 3–4 lemons in series (additive?)",
+        "Whether the LED lights from connected lemons"
+      ],
+      "theoryPoints": [
+        "The more reactive metal acts as the anode (oxidises, loses electrons); the less reactive metal is the cathode.",
+        "Cell voltage ∝ difference in standard electrode potentials of the two metals.",
+        "Citric acid in fruit acts as the electrolyte, allowing ion flow between the metal electrodes.",
+        "Cells in series: total voltage = sum of individual cell voltages."
+      ],
+      "realWorldConnections": [
+        "The Bagdad Battery (c. 250 BC) consisted of a copper cylinder, iron rod, and vinegar — possibly the earliest known galvanic cell.",
+        "All batteries are galvanic cells; the chemistry is the same whether in a smartphone or a lemon.",
+        "Bioelectrical signals in the human body are generated by ion gradients across cell membranes — biological galvanic cells."
+      ],
+      "formula": "E°cell = E°cathode − E°anode  |  Series cells: V_total = V₁ + V₂ + V₃..."
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which metal pair would produce the highest voltage in a fruit battery?",
+          "options": [
+            "Copper-iron",
+            "Zinc-copper",
+            "Iron-copper",
+            "Magnesium-zinc"
+          ],
+          "correctIndex": 3,
+          "explanation": "Voltage depends on the difference in reactivity (electrode potential). Magnesium (E° = −2.37 V) and zinc (E° = −0.76 V) are further apart in the activity series than zinc and copper (+0.34 V), giving a larger potential difference."
+        },
+        {
+          "text": "Why does the fruit battery stop producing current if the two metal electrodes touch inside the fruit?",
+          "options": [
+            "The fruit's acid reacts with both metals simultaneously",
+            "A short circuit forms — electrons bypass the external circuit and flow directly between metals",
+            "Touching electrodes increase internal resistance",
+            "The metals form a new alloy that has no electrode potential"
+          ],
+          "correctIndex": 1,
+          "explanation": "When the electrodes touch, a short circuit forms. Electrons take the path of least resistance (direct metal contact) rather than through the external circuit. No current flows through the voltmeter."
+        },
+        {
+          "text": "If a single lemon cell gives 0.9 V, what voltage do four lemon cells in series give?",
+          "options": [
+            "0.9 V",
+            "2.25 V",
+            "3.6 V",
+            "9.0 V"
+          ],
+          "correctIndex": 2,
+          "explanation": "Cells in series add their voltages: 4 × 0.9 V = 3.6 V. This is how torch batteries work — two 1.5 V cells in series give 3 V."
+        }
+      ],
+      "discussion": [
+        "Why does lemon juice work better as a fruit battery electrolyte than apple juice? (Hint: consider pH and ion concentration)",
+        "Explain why increasing the surface area of the electrodes inserted in the fruit increases the current but not the voltage.",
+        "If you replaced the zinc nail with a pure magnesium strip, predict the effect on voltage and explain using standard electrode potentials."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Galvanic cell principle in everyday materials",
+          "pct": 35
+        },
+        {
+          "label": "Electrode potential & metal reactivity",
+          "pct": 30
+        },
+        {
+          "label": "Series circuit voltage addition",
+          "pct": 20
+        },
+        {
+          "label": "Electrolyte role in fruit",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan the fruit provides the energy — the energy comes from the chemical reaction between the metals and electrolyte, not from the fruit itself.",
+        "Many assume any liquid will work as the electrolyte — pure water, oil, and non-conducting liquids will not support a fruit battery."
+      ],
+      "hook": "Scientists in 2011 used 800 lemons wired in series to power a smartphone for 30 seconds — at a cost of about £400 in lemons. Not practical, but a great demonstration that chemistry powers electronics!",
+      "khanLinks": [
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        },
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Metal Pair",
+        "Fruit/Electrolyte",
+        "Voltaje (V)",
+        "Anode (−)",
+        "Cathode (+)"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record voltage for each metal pair in lemon juice",
+      "Record voltage for zinc-copper in different fruits",
+      "Record total voltage of 4 lemons in series and whether it lights the LED"
+    ],
+    "conclusion": "Explain which factors (metal pair and electrolyte type) most affect cell voltage. Relate results to standard electrode potentials. Describe how cells in series add voltages.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. You're about to make a battery from fruit — and if you wire enough lemons together, you might just power an LED with your lunch!",
+      "keywords": {
+        "setup": "Insert metals at least 2 cm apart and check they don't touch inside the fruit. Roll the fruit firmly before inserting metals — this releases more juice and improves conductivity.",
+        "formula": "E°cell = E°cathode − E°anode. More different metals = higher voltage. Series: V_total = ΣV. Zinc (−0.76 V) + Copper (+0.34 V) → E° = 0.34 − (−0.76) = 1.10 V theoretical.",
+        "error": "Common errors: electrodes touching inside the fruit (short circuit, voltage drops to zero), using corroded metals (lower voltage), and not connecting cells correctly in series.",
+        "result": "Zn-Cu in lemon: ~0.9 V. Mg-Cu: ~2.0 V. Zn-Fe: ~0.3 V. 4 lemons in series: ~3.6 V — enough to light a low-voltage LED. Lemon > orange > apple for voltage (more citric acid).",
+        "real": "Your phone battery is a lithium-ion galvanic cell. The principle is identical to your lemon battery — two different materials separated by an electrolyte, generating voltage from spontaneous redox reactions.",
+        "explain": "The zinc nail \"wants\" to lose electrons more than copper wants to lose them. So zinc becomes the anode (Zn → Zn²⁺ + 2e⁻) and copper is the cathode (H⁺ + e⁻ → ½H₂ in acid). The citric acid in lemon provides the electrolyte for ion flow. The further apart the metals on the reactivity series, the higher the voltage.",
+        "hook": "A Nepalese student in 2022 won a science prize for proving that tomato waste from ketchup factories could power small LED lights in rural villages — fruit batteries as sustainable village lighting!",
+        "misconception": "The energy comes from the METAL dissolving in the electrolyte — NOT from the fruit. The fruit just provides the conducting acid solution. If you used the same zinc and copper with vinegar or lemon juice in a test tube, you'd get the same voltage."
+      },
+      "hint": "If voltage reads near zero, check that the metals are not touching inside the fruit. Insert a knife between them if necessary to confirm they are separated.",
+      "expected": "Zn-Cu in lemon: ~0.9 V. Mg-Cu: ~1.8–2.0 V. 4 lemons in series: ~3.2–3.6 V. LED lights from 4 lemons. Voltage ranking: Mg-Cu > Zn-Cu > Fe-Cu > Zn-Fe. Confirms reactivity series prediction."
+    }
+  },
+  {
+    "num": 139,
+    "cardEmoji": "📊",
+    "title": "Efecto de la concentración en la velocidad de reacción",
+    "section": "Electrochemistry",
+    "desc": "Medir cómo la concentración del reactivo afecta la velocidad de reacción.",
+    "setupTime": "8 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that more reactive metals displace less reactive ones from ionic solutions, and this displacement activity directly corresponds to standard electrode potentials.",
+      "instructions": [
+        "Preparar a grid of test tubes: rows = metal strips (Mg, Zn, Fe, Cu, Ag); columns = salt solutions (MgSO₄, ZnSO₄, FeSO₄, CuSO₄, AgNO₃).",
+        "Añadir each metal strip to each solution and observe for 5 minutes.",
+        "Registrar + (displacement occurs) or − (no reaction) for each combination.",
+        "Use the pattern to rank metals in order of reactivity.",
+        "Compare experimental ranking to standard electrode potentials (E° values)."
+      ],
+      "expectedOutcome": "Students produce an activity series consistent with the standard electrochemical series: Mg > Zn > Fe > Cu > Ag, matching textbook E° values."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔩",
+          "name": "Metal strips: magnesium, zinc, iron, copper, silver"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Salt solucións: MgSO₄, ZnSO₄, FeSO₄, CuSO₄, AgNO₃ (0.1 mol/L each)"
+        },
+        {
+          "emoji": "📊",
+          "name": "5 × 5 grid of tubo de ensayos or well plate"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Magnifying glass for observing fine deposits"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro"
+        }
+      ],
+      "observationsToRecord": [
+        "Cambio de color in solution (e.g. CuSO₄ blue → colourless as Cu deposits)",
+        "Metal deposit on inserted metal strip (colour, texture)",
+        "+/− results for all 25 combinations",
+        "Derived activity series ranking"
+      ],
+      "theoryPoints": [
+        "A more reactive metal (lower E°) displaces a less reactive metal from solution: M₁ + M₂²⁺ → M₁²⁺ + M₂.",
+        "Standard electrode potentials (E°) measure tendency to be reduced; more negative E° = more reactive = better reducing agent.",
+        "Activity series order: Mg (−2.37 V) > Zn (−0.76 V) > Fe (−0.44 V) > Cu (+0.34 V) > Ag (+0.80 V).",
+        "Diagonal rule: metal A displaces metal B if E°(A) < E°(B) — only for reactions above the diagonal in the grid."
+      ],
+      "realWorldConnections": [
+        "Iron pipes corrode faster when connected to copper pipes — copper is less reactive, making iron the anode in an inadvertent galvanic cell.",
+        "Sacrificial zinc anodes on steel ship hulls work because Zn (more reactive) corrodes preferentially, protecting the Fe hull.",
+        "Thermite reaction (Al displacing Fe from Fe₂O₃) uses the activity series — aluminium is more reactive than iron."
+      ],
+      "formula": "M₁(s) + M₂²⁺(aq) → M₁²⁺(aq) + M₂(s)  (if E°(M₁) < E°(M₂))"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Iron is added to CuSO₄ solution. Which observation confirms a reaction has occurred?",
+          "options": [
+            "The solution becomes more blue",
+            "Red-brown copper deposits on the iron; the blue solution fades",
+            "The iron dissolves without any visible deposit",
+            "Gas bubbles form"
+          ],
+          "correctIndex": 1,
+          "explanation": "Fe displaces Cu: Fe + Cu²⁺ → Fe²⁺ + Cu. Red-brown copper deposits on the iron strip; the blue CuSO₄ solution fades as Cu²⁺ is removed and replaced by colourless Fe²⁺."
+        },
+        {
+          "text": "Which metal CANNOT displace copper from copper sulphate solution?",
+          "options": [
+            "Magnesium",
+            "Zinc",
+            "Iron",
+            "Silver"
+          ],
+          "correctIndex": 3,
+          "explanation": "Silver has a more positive E° (+0.80 V) than copper (+0.34 V), so Ag is less reactive than Cu. It cannot displace copper from solution — the reaction would not be spontaneous."
+        },
+        {
+          "text": "In a 5×5 displacement grid, how many of the 25 combinations would show a positive result?",
+          "options": [
+            "5",
+            "10",
+            "15",
+            "20"
+          ],
+          "correctIndex": 1,
+          "explanation": "Only metals more reactive than the ion in solution show displacement. For a 5-metal series with ordered reactivity, this forms a triangular pattern: 0+1+2+3+4 = 10 successful displacements (above the diagonal)."
+        }
+      ],
+      "discussion": [
+        "Explain why a metal cannot displace itself from its own salt solution (e.g. zinc in ZnSO₄).",
+        "Use standard electrode potentials to predict whether copper can displace silver from silver nitrate solution. Write the ionic equation.",
+        "The thermite reaction uses aluminium to displace iron from iron oxide. Why is this reaction used to weld railway tracks?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Activity series & displacement reactions",
+          "pct": 40
+        },
+        {
+          "label": "Standard electrode potentials (E°)",
+          "pct": 30
+        },
+        {
+          "label": "Predicting reaction feasibility from E°",
+          "pct": 20
+        },
+        {
+          "label": "Applications (sacrificial protection, thermite)",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often predict all metals react with all salt solutions — only more reactive metals (lower E°) displace less reactive ones.",
+        "Many confuse activity series with solubility — iron displacing copper is a redox reaction, not a solubility change."
+      ],
+      "hook": "The thermite reaction — aluminium displacing iron from iron oxide — burns at 2,500 °C and was used to weld railway tracks in the field for over a century. The activity series literally built railway networks!",
+      "khanLinks": [
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        },
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Metal \\ Solution",
+        "MgSO₄",
+        "ZnSO₄",
+        "FeSO₄",
+        "CuSO₄",
+        "AgNO₃"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record + or − for each metal-solution combination in the 5×5 grid",
+      "Describe the colour change in solution and any deposit on metal strips",
+      "Derive the activity series from the pattern of + results"
+    ],
+    "conclusion": "Write the ionic equation for two displacement reactions observed. Rank metals from most to least reactive based on your grid. Compare your experimental ranking to standard electrode potential values.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. You're going to build the electrochemical activity series from scratch — discovering through experiment the same ranking that chemists took two centuries to establish!",
+      "keywords": {
+        "setup": "Pre-cut metal strips of similar size and clean with sandpaper. Use fresh solutions. Observe carefully — some reactions are slow and produce tiny deposits that require a magnifying glass.",
+        "formula": "M₁ + M₂²⁺ → M₁²⁺ + M₂ occurs if E°(M₁) < E°(M₂). Activity series: Mg (−2.37) > Zn (−0.76) > Fe (−0.44) > Cu (+0.34) > Ag (+0.80) V.",
+        "error": "Common errors: not observing for long enough (slow reactions need 5+ minutes), and confusing the ion in solution with the metal strip. The STRIP reacts with the SOLUTION, not vice versa.",
+        "result": "Triangle pattern of + results: Mg reacts with all except MgSO₄; Zn reacts with FeSO₄, CuSO₄, AgNO₃; Fe with CuSO₄ and AgNO₃; Cu with AgNO₃ only; Ag with none. 10 positive results total.",
+        "real": "Galvanising steel (coating with zinc): Zn is more reactive than Fe, so in any galvanic cell that forms, Zn is the anode and sacrificially corrodes. Same principle as your grid — Zn is above Fe in the activity series.",
+        "explain": "More reactive metals \"want\" to be in ionic form more than less reactive ones. When a reactive metal contacts a solution of a less reactive metal's ions, it essentially \"outcompetes\" the less reactive metal — donating electrons and replacing it. The electrons transferred make both metals change oxidation state.",
+        "hook": "Gold never corrodes in nature — that's why ancient Egyptian jewellery looks brand new after 3,000 years. Gold has the highest E° of common metals, meaning it never \"wants\" to donate electrons to other metal ions. Your activity series grid explains why gold is worth so much!",
+        "misconception": "A metal doesn't react with its OWN salt solution — Fe in FeSO₄ does nothing, because Fe²⁺ and Fe are already in equilibrium (E°cell = 0). Displacement only occurs when there's a difference in electrode potential."
+      },
+      "hint": "If you see no reaction where one is expected (e.g. Fe + CuSO₄), check the iron surface for an oxide layer — clean it with sandpaper first. Oxide layers block electron transfer.",
+      "expected": "Triangle of positive results matching activity series. CuSO₄ turns colourless with Fe added (red Cu deposit forms). AgNO₃ with Cu: silver crystals deposit on copper strip. Activity series derived: Mg > Zn > Fe > Cu > Ag. Matches E° predictions."
+    }
+  },
+  {
+    "num": 140,
+    "cardEmoji": "🛡️",
+    "title": "Efecto de la temperatura en la velocidad de reacción",
+    "section": "Electrochemistry",
+    "desc": "Medir cómo la temperatura afecta la velocidad de una reacción química.",
+    "setupTime": "5 min",
+    "duration": "20 min setup + observations over 3 days",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden the electrochemical basis of cathodic protection and how zinc, being more reactive than iron, corrodes preferentially and provides lasting protection.",
+      "instructions": [
+        "Prepare three iron nails: Nail A alone in salt water, Nail B wrapped tightly with zinc foil in salt water, Nail C wrapped with copper foil in salt water.",
+        "Colocar all three in separate beakers of salt water (3% NaCl).",
+        "Añadir a few drops of ferroxyl indicator (potassium ferricyanide + phenolphthalein) to show corrosion.",
+        "Observar for 20 minutes and again at 24 and 48 hours.",
+        "Registrar colour changes: blue indicates Fe²⁺ (iron corroding); pink indicates OH⁻ (cathode)."
+      ],
+      "expectedOutcome": "Nail A rusts (blue colour confirms Fe²⁺). Nail B (zinc-wrapped) shows no blue at the iron surface — zinc corrodes instead. Nail C (copper-wrapped) rusts faster than Nail A — copper makes iron the anode."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🔩",
+          "name": "3 iron nails"
+        },
+        {
+          "emoji": "🔩",
+          "name": "Zinc foil and copper foil strips"
+        },
+        {
+          "emoji": "🧂",
+          "name": "3% NaCl solución (salt water)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Ferroxyl indicator (potassium ferricyanide + phenolphthalein)"
+        },
+        {
+          "emoji": "📊",
+          "name": "3 Petri dishes or vaso de precipitadoss"
+        }
+      ],
+      "observationsToRecord": [
+        "Cambio de color around each nail después 20 min, 24 h, 48 h",
+        "Blue colour = Fe²⁺ forming (iron corroding)",
+        "Pink colour = OH⁻ forming (cathode region, protected)",
+        "Comparison of rust extent: nail A vs B vs C"
+      ],
+      "theoryPoints": [
+        "Zinc (E° = −0.76 V) is more reactive than iron (E° = −0.44 V); when in contact, Zn is the anode and Fe is the cathode.",
+        "Cathodic protection: iron is forced to be the cathode → only reduction occurs at its surface → no iron dissolves → no rusting.",
+        "Copper (E° = +0.34 V) is less reactive than iron; copper becomes the cathode, making iron the anode → accelerated corrosion.",
+        "Ferroxyl indicator: K₃[Fe(CN)₆] turns blue in presence of Fe²⁺; phenolphthalein turns pink in presence of OH⁻."
+      ],
+      "realWorldConnections": [
+        "Galvanising: zinc coating on steel provides cathodic protection even when scratched — until the zinc is fully corroded.",
+        "North Sea oil platforms have massive zinc or aluminium anode blocks bolted to their underwater steel legs.",
+        "Underground steel pipelines have sacrificial magnesium or zinc anodes buried nearby, connected by wire to the pipe."
+      ],
+      "formula": "Zn → Zn²⁺ + 2e⁻ (anode, sacrificial)  |  O₂ + 2H₂O + 4e⁻ → 4OH⁻ (cathode, Fe protected)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does zinc protect iron from rusting when the two metals are in contact in salt water?",
+          "options": [
+            "Zinc paints over the iron surface",
+            "Zinc is more reactive and acts as the anode, corroding instead of iron",
+            "Zinc absorbs oxygen from the water",
+            "Zinc reacts with salt to form a protective coating"
+          ],
+          "correctIndex": 1,
+          "explanation": "Zinc has a more negative electrode potential than iron. In the galvanic cell formed, zinc is the anode and oxidises preferentially (Zn → Zn²⁺ + 2e⁻), providing electrons that force iron to be the cathode (protected from oxidation)."
+        },
+        {
+          "text": "What does a blue colour in the ferroxyl indicator reveal?",
+          "options": [
+            "OH⁻ ions forming at the cathode",
+            "Fe²⁺ ions forming — iron is actively corroding",
+            "Zinc dissolving",
+            "Oxygen being produced"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ferroxyl indicator (K₃[Fe(CN)₆]) reacts with Fe²⁺ ions to produce an intense blue colour (Prussian blue), indicating that iron is being oxidised (corroding) at that location."
+        },
+        {
+          "text": "Why does an iron nail wrapped in copper corrode FASTER than a plain iron nail?",
+          "options": [
+            "Copper reacts with iron to weaken it",
+            "Copper is less reactive — iron becomes the anode in the galvanic cell and corrodes accelerated",
+            "Copper blocks oxygen from reaching the iron",
+            "Copper increases the temperature of the iron"
+          ],
+          "correctIndex": 1,
+          "explanation": "Copper (E° = +0.34 V) is less reactive than iron (E° = −0.44 V). Iron becomes the anode and corrodes preferentially. The large copper cathode surface area relative to a small anode (scratch or bare iron) concentrates corrosion at the iron."
+        }
+      ],
+      "discussion": [
+        "Explain why galvanised steel provides protection even after the zinc coating is scratched, while painted steel does not.",
+        "North Sea oil rigs replace their zinc anodes every 3–5 years. Explain why regular replacement is necessary and what would happen if the anodes were not replaced.",
+        "An old plumber connects copper pipes to iron pipes with a direct joint. Predict what will happen over time and suggest how it should be done correctly."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Cathodic protection mechanism",
+          "pct": 40
+        },
+        {
+          "label": "Sacrificial anode (Zn vs Fe reactivity)",
+          "pct": 30
+        },
+        {
+          "label": "Ferroxyl indicator chemistry",
+          "pct": 20
+        },
+        {
+          "label": "Industrial corrosion protection applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan zinc only works as a physical barrier — even when scratched and iron is exposed, zinc continues to provide electrochemical protection as long as some zinc remains in contact.",
+        "Many assume copper coating would protect iron like zinc does — the opposite is true; copper accelerates iron corrosion."
+      ],
+      "hook": "The Eiffel Tower's iron structure is currently protected by zinc-rich primer. Without it, the iron would have rusted to the point of structural failure within decades. Electrochemistry is literally holding up a world icon!",
+      "khanLinks": [
+        {
+          "title": "Galvanic Cells",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/galvanic-cells/v/galvanic-cells"
+        },
+        {
+          "title": "Standard Cell Potential",
+          "url": "https://www.khanacademy.org/science/chemistry/oxidation-reduction/standard-electrode-potential/v/standard-cell-potential"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo",
+        "Nail A (alone)",
+        "Nail B (+ zinc)",
+        "Nail C (+ copper)",
+        "Indicator colour key"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record ferroxyl indicator colour around each nail at 20 min, 24 h, 48 h",
+      "Quantify blue area as a proxy for corrosion extent",
+      "Compare nail B and C results to nail A control"
+    ],
+    "conclusion": "Explain the mechanism of cathodic protection using electrode potential values. Predict what would happen if the zinc anode on Nail B were removed mid-experiment. Discuss one industrial application.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today's experiment protects iron from rusting — not with paint or polish, but with pure electrochemistry. The same principle protects oil rigs, ships, and pipelines worldwide!",
+      "keywords": {
+        "setup": "Wrap zinc and copper foils tightly around nails to ensure good electrical contact. Use fresh salt water with dissolved indicator. Observe within 20 minutes for initial effects — full rust comparison takes 2–3 days.",
+        "formula": "Zinc cathodic protection: Zn → Zn²⁺ + 2e⁻ (Zn is anode, corrodes). Fe: O₂ + 2H₂O + 4e⁻ → 4OH⁻ (Fe is cathode, protected). E°(Zn) = −0.76 V < E°(Fe) = −0.44 V → Zn more reactive → Zn is anode.",
+        "error": "Common errors: loose contact between zinc and nail (protection fails if not in electrical contact), and not leaving enough time to see full corrosion differences.",
+        "result": "Nail A: blue colour appears after 20–30 min, heavy rust after 48 h. Nail B (zinc): no blue at iron surface; blue/white at zinc surface (Zn corroding). Nail C (copper): more blue than Nail A — copper accelerates iron corrosion.",
+        "real": "The Trans-Alaska Pipeline (1,300 km of steel) is protected by buried magnesium anodes every few hundred metres. Without them, the pipe would corrode through within 10 years in the acidic tundra soil.",
+        "explain": "When zinc and iron are in electrical contact in salt water, a galvanic cell forms. Zinc's E° (−0.76 V) is more negative than iron's (−0.44 V) — zinc is the more eager electron donor, so it acts as the anode and corrodes. Iron gets electrons pushed onto it — it becomes the cathode and doesn't corrode.",
+        "hook": "HMS Belfast (moored in London) has zinc anodes bolted to her hull below the waterline. Navy engineers replace them every few years. The ship has been afloat since 1938 — electrochemistry protecting a WWII warship!",
+        "misconception": "Cathodic protection doesn't make iron inert — it makes iron act as a cathode (receiver of electrons) rather than an anode (donor of electrons). As long as the more reactive metal (Zn) is present and in electrical contact, iron cannot corrode."
+      },
+      "hint": "If the ferroxyl indicator shows no colour change after 20 minutes for any nail, increase salt concentration or gently scratch the nail surface to expose fresh iron.",
+      "expected": "Nail A: blue Fe²⁺ colour within 30 min, extensive rust after 2 days. Nail B: no blue at iron surface; zinc surface corrodes (white Zn(OH)₂). Nail C: more blue than Nail A within 30 min — copper accelerates iron corrosion. Confirms cathodic protection mechanism."
+    }
+  },
+  {
+    "num": 141,
+    "cardEmoji": "🌿",
+    "title": "Efecto del catalizador en la velocidad de reacción",
+    "section": "Plant Physiology",
+    "desc": "Comparar la velocidad de descomposición de H₂O₂ con y sin catalizador MnO₂.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that the rate of photosynthesis increases with light intensity up to a saturation point, measured by counting O₂ bubbles produced by an aquatic plant.",
+      "instructions": [
+        "Colocar an Elodea sprig in a beaker of NaHCO₃ solution (0.5%) — NaHCO₃ provides a constant CO₂ source.",
+        "Position a lamp at 10 cm from the beaker. Allow 2 minutes to acclimatise, then count bubbles for 1 minute.",
+        "Repetir at lamp distances of 20 cm, 30 cm, 40 cm, and 50 cm (light intensity ∝ 1/distance²).",
+        "Keep temperature constant throughout with a water jacket if possible.",
+        "Plot bubble rate (bubbles/min) vs 1/distance² (light intensity proxy)."
+      ],
+      "expectedOutcome": "Bubble rate increases as the lamp is moved closer. At very close distances the rate levels off (light saturation). Rate drops at large distances. Graph shows increasing then plateau curve."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🌿",
+          "name": "Elodea sprigs (freshwater aquatic plant)"
+        },
+        {
+          "emoji": "🪣",
+          "name": "Vaso de precipitados of NaHCO₃ solución (0.5%, 500 mL)"
+        },
+        {
+          "emoji": "💡",
+          "name": "Bright lamp (100 W or LED equivalent)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler for measuring lamp distance"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro"
+        }
+      ],
+      "observationsToRecord": [
+        "Number of O₂ bubbles per minute at each lamp distance",
+        "Temperatura of water at start and end",
+        "Approximate distance at which rate plateaus (light saturation point)",
+        "Any change in rate when NaHCO₃ is increased or removed"
+      ],
+      "theoryPoints": [
+        "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (light-dependent photosynthesis).",
+        "Light provides energy for the light-dependent reactions (photophosphorylation, water photolysis).",
+        "Rate increases with light up to saturation; then CO₂ or temperature becomes limiting.",
+        "Light intensity ∝ 1/d² (inverse square law); plotting vs 1/d² gives approximately linear results."
+      ],
+      "realWorldConnections": [
+        "Commercial greenhouses use supplemental lighting to extend the photoperiod and increase photosynthesis rates for year-round crop production.",
+        "Phytoplankton photosynthesis in the ocean produces approximately 50% of Earth's O₂ — light availability in surface waters is the key variable.",
+        "Carbon credits for forests are partly calculated using photosynthesis rate models based on light availability."
+      ],
+      "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂  [rate increases with light up to saturation]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why is NaHCO₃ added to the water in the Elodea photosynthesis experiment?",
+          "options": [
+            "To provide nutrients for the plant",
+            "To provide a constant source of dissolved CO₂ so CO₂ concentration is not a limiting factor",
+            "To increase the pH and speed up the reaction",
+            "To dissolve the oxygen bubbles produced"
+          ],
+          "correctIndex": 1,
+          "explanation": "NaHCO₃ (sodium hydrogencarbonate) dissolves to release CO₂ in solution, ensuring CO₂ is not the limiting factor. This allows the experiment to isolate light intensity as the variable being tested."
+        },
+        {
+          "text": "At very close lamp distances, the bubble rate stops increasing despite brighter light. What does this indicate?",
+          "options": [
+            "The plant stops photosynthesising when light is too bright",
+            "Light is no longer the limiting factor — CO₂ or temperature has become limiting",
+            "The O₂ bubbles are too large to count accurately",
+            "The lamp is damaging the plant"
+          ],
+          "correctIndex": 1,
+          "explanation": "At light saturation, another factor limits the rate. If CO₂ is supplied and temperature is controlled, the limiting factor is likely the maximum rate of the light-independent reactions (Calvin cycle) or enzyme activity."
+        },
+        {
+          "text": "How does light intensity change when the lamp distance is doubled from 20 cm to 40 cm?",
+          "options": [
+            "Halved",
+            "Quartered",
+            "Doubled",
+            "Stays the same"
+          ],
+          "correctIndex": 1,
+          "explanation": "Light intensity follows the inverse square law: I ∝ 1/d². When d doubles from 20 to 40 cm, d² increases fourfold, so intensity drops to ¼ (quartered)."
+        }
+      ],
+      "discussion": [
+        "Explain why temperature must be kept constant in this experiment, and predict what would happen to the light saturation point if temperature were increased from 20°C to 30°C.",
+        "Describe three limiting factors for photosynthesis and explain how each limits the rate at a biochemical level.",
+        "Suggest why counting individual bubbles is not a very accurate method. Propose a more precise technique for measuring photosynthesis rate."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Light as a limiting factor for photosynthesis",
+          "pct": 35
+        },
+        {
+          "label": "Inverse square law and light intensity",
+          "pct": 25
+        },
+        {
+          "label": "Limiting factors concept",
+          "pct": 25
+        },
+        {
+          "label": "Aquatic plant O₂ production",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan plants only photosynthesise in sunlight — they can use artificial light at appropriate wavelengths just as effectively.",
+        "Many assume the bubble rate is always a perfect proxy for photosynthesis rate — bubbles also depend on bubble size, which can vary. Use an O₂ sensor for precision."
+      ],
+      "hook": "Amazon rainforest trees absorb so much CO₂ by photosynthesis that they influence global climate patterns. A single large tree can photosynthesise enough to absorb 20 kg of CO₂ per year. Understanding photosynthesis rate is at the heart of climate science!",
+      "khanLinks": [
+        {
+          "title": "Photosynthesis",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/introduction-to-stages-of-photosynthesis/v/photosynthesis"
+        },
+        {
+          "title": "Light-Dependent Reactions",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-light-dependent-reactions-of-photosynthesis/v/light-dependent-reactions"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Lamp Distance (cm)",
+        "1/d² (cm⁻²)",
+        "Bubbles/min (Ensayo 1)",
+        "Bubbles/min (Ensayo 2)",
+        "Mean Bubbles/min"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Count bubbles per minute at each lamp distance",
+      "Calculate 1/d² for each distance",
+      "Record temperature at start and end of experiment"
+    ],
+    "conclusion": "Plot bubble rate vs 1/d² and describe the relationship. Identify the light saturation point. Explain what limits photosynthesis rate beyond the saturation point using the concept of limiting factors.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to measure a living plant making oxygen in real time — the same process that produces all the O₂ we breathe!",
+      "keywords": {
+        "setup": "Use freshly cut Elodea — cut the stem at an angle to maximise exposed area. Acclimatise the plant at each light level for 2 minutes before counting. Keep temperature constant with a water jacket (large beaker of water between lamp and plant).",
+        "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Light intensity I ∝ 1/d². Rate of photosynthesis ∝ [light] until another factor limits.",
+        "error": "Common errors: not acclimatising at each distance before counting (plant still adjusting), temperature increasing near the lamp (confounds light intensity effect), and counting irregular-sized bubbles.",
+        "result": "Typical results: 5 cm → 60 bubbles/min; 10 cm → 40; 20 cm → 20; 30 cm → 12; 50 cm → 5. Plateau visible at close distances with NaHCO₃ present.",
+        "real": "Vertical farms grow crops under LED lights in warehouses, using exactly this science. By optimising light colour (red and blue wavelengths) and intensity, they achieve yields 100× greater per square metre than traditional farming.",
+        "explain": "Light provides the energy to split water molecules (photolysis) and create ATP and NADPH in the light-dependent reactions. More light means more photolysis, more ATP/NADPH, and more O₂ released. But if CO₂ is low, the Calvin cycle can't use all the ATP — a traffic jam occurs and the rate stops increasing even with more light.",
+        "hook": "In 2016, scientists grew lettuces on the International Space Station using LED lights and measured their photosynthesis rate in zero gravity. The result? Photosynthesis rate was nearly the same as on Earth — plants don't need gravity to photosynthesise!",
+        "misconception": "Bubbles are O₂, not air. The plant is making O₂ from water molecules in the light-dependent reaction (photolysis). It is NOT simply releasing dissolved air from the water. If you used boiled (degassed) water with NaHCO₃, you would still see O₂ bubbles from photosynthesis."
+      },
+      "hint": "If no bubbles appear, check that the Elodea is freshly cut and healthy (green, not yellowing). Adding a tiny pinch of NaHCO₃ and moving the lamp to 10 cm should produce visible bubbles within 30 seconds.",
+      "expected": "Clear increase in bubble rate as lamp moves closer. Plateau at close distances when NaHCO₃ is present. Bubble rate ∝ approximately 1/d² at moderate distances. Temperature consistent throughout."
+    }
+  },
+  {
+    "num": 142,
+    "cardEmoji": "💦",
+    "title": "Efecto del área superficial en la velocidad de reacción",
+    "section": "Plant Physiology",
+    "desc": "Comparar la velocidad de reacción de CaCO₃ en polvo vs. en trozos con HCl.",
+    "setupTime": "15 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that transpiration drives water uptake in plants, and that wind increases and high humidity decreases the transpiration rate by affecting the water vapour concentration gradient across leaf stomata.",
+      "instructions": [
+        "Cut a leafy shoot under water and quickly insert into the potometer — no air must enter the xylem.",
+        "Allow the shoot to acclimatise for 5 minutes in still air, then measure the distance moved by the air bubble per minute.",
+        "Repetir with a fan blowing on the leaves (increased wind).",
+        "Repetir with a plastic bag loosely over the leaves (increased humidity).",
+        "Registrar the rate of bubble movement (mm/min) as a proxy for water uptake rate."
+      ],
+      "expectedOutcome": "Windy conditions increase bubble movement rate (faster transpiration). Humid conditions decrease bubble movement (slower transpiration). Still air gives intermediate results."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🌿",
+          "name": "Leafy shoot (e.g. Pelargonium or any broad-leaved plant)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Potometer with capillary tube and reservoir"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler (mm scale)"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro"
+        },
+        {
+          "emoji": "💨",
+          "name": "Small fan (for wind treatment)"
+        }
+      ],
+      "observationsToRecord": [
+        "Rate of bubble movement (mm/min) in still air",
+        "Rate of bubble movement (mm/min) in wind",
+        "Rate of bubble movement (mm/min) in humid conditions",
+        "Temperatura and approximate relative humidity at each condition"
+      ],
+      "theoryPoints": [
+        "Transpiration is the evaporation of water from leaves through stomata.",
+        "Water vapour gradient: inside leaf (saturated, ~100% RH) → outside (lower RH) drives diffusion.",
+        "Wind removes humid air from around stomata, steepening the gradient → faster transpiration.",
+        "High humidity reduces the gradient → slower transpiration."
+      ],
+      "realWorldConnections": [
+        "Trees on windy hillsides have smaller, waxy leaves to reduce transpiration water loss.",
+        "Irrigation systems in greenhouses monitor transpiration rates to optimise watering schedules.",
+        "The cohesion-tension theory explains how water reaches the tops of tall trees — transpiration pulls water up through xylem vessels."
+      ],
+      "formula": "Transpiration rate ∝ (H₂O concentration gradient) × (stomatal area / leaf-air boundary layer resistance)"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does wind increase the rate of transpiration?",
+          "options": [
+            "Wind cools the leaves, causing more water to evaporate",
+            "Wind removes humid air from around the stomata, maintaining a steep water vapour concentration gradient",
+            "Wind opens the stomata wider",
+            "Wind increases light intensity, increasing photosynthesis and water use"
+          ],
+          "correctIndex": 1,
+          "explanation": "Water vapour that diffuses out of stomata normally accumulates around the leaf surface, reducing the concentration gradient. Wind disperses this humid layer, restoring the steep gradient that drives rapid diffusion (transpiration)."
+        },
+        {
+          "text": "A potometer measures:",
+          "options": [
+            "The rate of photosynthesis directly",
+            "The rate of water uptake by the shoot (a proxy for transpiration)",
+            "The rate of oxygen production",
+            "The leaf surface area"
+          ],
+          "correctIndex": 1,
+          "explanation": "A potometer measures how fast an air bubble moves along a capillary tube as the shoot takes up water to replace that lost by transpiration. It is a measure of water uptake, which closely approximates transpiration rate."
+        },
+        {
+          "text": "Which factor would cause the GREATEST decrease in transpiration rate?",
+          "options": [
+            "Doubling CO₂ concentration",
+            "Increasing temperature by 5°C",
+            "Increasing relative humidity from 50% to 90%",
+            "Doubling light intensity"
+          ],
+          "correctIndex": 2,
+          "explanation": "Transpiration depends on the water vapour concentration gradient between the leaf interior and the air. Increasing humidity from 50% to 90% greatly reduces this gradient, dramatically slowing transpiration. Light and temperature changes have smaller direct effects."
+        }
+      ],
+      "discussion": [
+        "Explain, using the cohesion-tension theory, how water moves from the roots to the top of a 100-metre-tall tree driven by transpiration.",
+        "Stomata open during daylight and close at night. Explain how this controls water loss and CO₂ uptake simultaneously.",
+        "Cacti have modified leaves (spines) and carry out CAM photosynthesis (open stomata at night). Explain how this adaptation reduces water loss compared to normal C3 plants."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Transpiration mechanism and driving gradient",
+          "pct": 35
+        },
+        {
+          "label": "Effect of wind and humidity on transpiration",
+          "pct": 30
+        },
+        {
+          "label": "Potometer as measure of water uptake",
+          "pct": 20
+        },
+        {
+          "label": "Cohesion-tension theory",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan water is pumped up by the roots — transpiration pull (tension) is the main driving force for water movement in xylem, not root pressure.",
+        "Many think closing stomata completely stops transpiration — a small amount of water still evaporates through the cuticle (cuticular transpiration)."
+      ],
+      "hook": "A large oak tree transpires over 150 litres of water per day in summer — that's more than a human drinks in 2 months! Every drop has to travel from roots to leaves against gravity, pulled entirely by the suction created by evaporation at leaf surfaces. Chemistry and physics working together!",
+      "khanLinks": [
+        {
+          "title": "Plant Transport",
+          "url": "https://www.khanacademy.org/science/biology/plant-biology/plant-transport/v/how-plants-transport-water-the-cohesion-tension-theory"
+        },
+        {
+          "title": "Calvin Cycle",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-calvin-cycle/v/the-calvin-cycle"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Condition",
+        "Bubble Distance per min (mm)",
+        "Relative Velocidad",
+        "Explanation"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record bubble movement distance per minute under each condition",
+      "Note temperature and qualitative humidity under each condition",
+      "Calculate relative transpiration rates compared to still air control"
+    ],
+    "conclusion": "Rank conditions by transpiration rate and explain each result in terms of the water vapour concentration gradient. Explain how the potometer result relates to actual leaf water loss.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to measure how a plant drinks — and discover why leaves on a windy day lose water much faster than on a still one!",
+      "keywords": {
+        "setup": "Cut shoot under water to prevent air entering xylem — even a tiny air bubble blocks water movement (embolism). Re-cut if an air bubble enters. Allow 5 min acclimatisation between conditions.",
+        "formula": "Transpiration rate ∝ ΔC/Δx = (C_leaf − C_air)/boundary layer. Wind reduces boundary layer thickness → steeper gradient. Humidity increases C_air → shallower gradient.",
+        "error": "Common errors: air bubble entering the xylem (start over), not acclimatising between conditions, and the potometer reservoir running dry (refill before each trial).",
+        "result": "Typical results: still air ~2 mm/min; wind ~5 mm/min (2.5× faster); humid bag ~0.5 mm/min (4× slower). Temperature effect: +5°C may increase rate ~20%.",
+        "real": "Agricultural drip irrigation systems are calibrated using transpiration models based on temperature, humidity, and wind. Farmers in arid regions water at dawn (cool, still air, high humidity) to minimise evaporative loss and maximise plant uptake efficiency.",
+        "explain": "Water inside a leaf is close to 100% relative humidity (saturated air). Outside the leaf, the air is drier. Water vapour diffuses out through stomata down this concentration gradient. Wind sweeps away the moist air layer just outside the stomata, keeping the gradient steep. High humidity outside means the gradient is shallow — less driving force, less transpiration.",
+        "hook": "A single sunflower plant transpires over 1 litre of water per day at peak summer. The entire water content of the Amazon rainforest atmosphere is largely maintained by transpiration from trees — they literally create the clouds that water them. Cut down the trees and the rain stops. Chemistry shapes weather.",
+        "misconception": "The potometer measures water UPTAKE, not actual transpiration. Almost all (>99%) of water taken up is transpired, so it is a good proxy. A small fraction goes to photosynthesis and cell growth, but this is negligible in this experiment."
+      },
+      "hint": "If the bubble does not move, check for air in the xylem (re-cut under water), ensure the potometer is watertight, and confirm the reservoir has water. Leaf wilting also stops transpiration — use a healthy, turgid shoot.",
+      "expected": "Wind condition: bubble rate approximately double still air. Humid condition: bubble rate approximately half still air. Confirms humidity gradient drives transpiration. Temperature kept constant to isolate variable."
+    }
+  },
+  {
+    "num": 143,
+    "cardEmoji": "🧅",
+    "title": "Medición de la velocidad de reacción (producción de gas)",
+    "section": "Plant Physiology",
+    "desc": "Medir la velocidad de producción de gas en una reacción y trazar volumen vs. tiempo.",
+    "setupTime": "10 min",
+    "duration": "40 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that osmosis moves water across a semi-permeable membrane from low to high solute concentration. They determine the solute concentration of potato cells from the point of zero mass change.",
+      "instructions": [
+        "Cut 16 potato strips of equal dimensions (approx. 5 cm × 1 cm × 0.5 cm). Pesar 4 strips per concentration.",
+        "Prepare beakers with 0, 0.25, 0.5, and 1.0 mol/L NaCl solutions.",
+        "Colocar strips in solutions and leave for 30 minutes.",
+        "Remove strips, blot dry with paper towel, and reweigh.",
+        "Calcular percentage mass change for each concentration: % change = (final−initial)/initial × 100."
+      ],
+      "expectedOutcome": "Strips in distilled water gain mass (water enters by osmosis). Strips in 1.0 mol/L lose mass (water leaves). There is one concentration at which mass does not change — this is the solute concentration of potato cells (approximately 0.3–0.4 mol/L for potato)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🥔",
+          "name": "Large potato (peeled)"
+        },
+        {
+          "emoji": "🧂",
+          "name": "NaCl solucións: 0, 0.25, 0.5, 1.0 mol/L"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balance (±0.01 g)"
+        },
+        {
+          "emoji": "🔪",
+          "name": "Scalpel and cutting board"
+        },
+        {
+          "emoji": "📋",
+          "name": "Paper towels and forceps"
+        }
+      ],
+      "observationsToRecord": [
+        "Initial and final mass of each set of strips",
+        "Percentage mass change at each NaCl concentration",
+        "Physical appearance of strips después treatment (firm/flaccid/turgid)",
+        "NaCl concentration at which mass change = 0"
+      ],
+      "theoryPoints": [
+        "Osmosis: net movement of water molecules through a semi-permeable membrane from low solute to high solute concentration.",
+        "If external solution is hypotonic to cells: water enters → cells become turgid → mass increases.",
+        "If external solution is hypertonic to cells: water leaves → cells become flaccid → mass decreases.",
+        "Isotonic point (no mass change) = solute concentration of potato cell contents (~0.3–0.4 mol/L)."
+      ],
+      "realWorldConnections": [
+        "Salting vegetables draws out water by osmosis (high salt concentration outside creates hypertonic solution) — used in food preservation.",
+        "Intravenous drip solutions must be isotonic with blood cells (~0.9% NaCl, 0.154 mol/L) to prevent osmotic damage to red blood cells.",
+        "Sports drinks are formulated to be isotonic with body cells to enable rapid absorption."
+      ],
+      "formula": "% mass change = (m_final − m_initial) / m_initial × 100  |  Zero change = isotonic point"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "A potato strip placed in 1.0 mol/L NaCl solution loses mass. What does this indicate?",
+          "options": [
+            "The potato cells have a solute concentration greater than 1.0 mol/L",
+            "The external solution is hypertonic — water leaves the cells by osmosis",
+            "The potato is dissolving in the salt solution",
+            "Salt is entering the potato cells"
+          ],
+          "correctIndex": 1,
+          "explanation": "If the external solution (1.0 mol/L NaCl) is more concentrated than the cell contents, it is hypertonic. Water moves out of the cells by osmosis down the water potential gradient, causing the cells to lose mass and become flaccid."
+        },
+        {
+          "text": "At which NaCl concentration would a potato strip show no change in mass?",
+          "options": [
+            "0 mol/L (distilled water)",
+            "0.5 mol/L (if potato cells are approximately 0.5 mol/L)",
+            "The strip always gains mass in any NaCl solution",
+            "1.0 mol/L"
+          ],
+          "correctIndex": 1,
+          "explanation": "When the external solution is isotonic with the cell contents, there is no net osmosis and the mass stays constant. The actual concentration depends on the potato used (typically 0.3–0.4 mol/L for standard potato)."
+        },
+        {
+          "text": "Why must strips be blotted dry before weighing?",
+          "options": [
+            "To stop osmosis from continuing",
+            "To remove surface water that would add to the measured mass but is not part of the cell contents",
+            "To clean the salt off the surface",
+            "Blotting is not necessary"
+          ],
+          "correctIndex": 1,
+          "explanation": "Surface water from the solution clings to the strip and would be measured as part of the mass, giving a false reading. Blotting removes this surface water so only the mass of the potato tissue itself is measured."
+        }
+      ],
+      "discussion": [
+        "Explain why a strip in distilled water becomes turgid and firm while one in concentrated NaCl becomes flaccid and soft, using water potential concepts.",
+        "In a red blood cell experiment, the cells burst in distilled water and shrink in concentrated NaCl. Explain these observations and state why the isotonic point for blood is 0.9% NaCl.",
+        "A student forgets to blot one set of strips dry before weighing. Predict whether this would cause the % mass change to be overestimated or underestimated, and explain."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Osmosis mechanism and semi-permeable membranes",
+          "pct": 35
+        },
+        {
+          "label": "Isotonic, hypertonic, hypotonic solutions",
+          "pct": 30
+        },
+        {
+          "label": "Percentage mass change calculation",
+          "pct": 25
+        },
+        {
+          "label": "Medical and food science applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Students often say \"salt moves in\" rather than \"water moves out\" — osmosis is always described in terms of water movement, not solute movement.",
+        "Many think the cell membrane is completely impermeable to everything — it allows water to pass freely but restricts most solutes."
+      ],
+      "hook": "Hospital IV bags must be precisely isotonic with blood — if they were pure water, every red blood cell would burst within seconds (haemolysis). If they were too concentrated, the blood cells would shrink and become non-functional. A tiny chemistry error in an IV bag can be fatal. Osmosis keeps you alive!",
+      "khanLinks": [
+        {
+          "title": "Osmosis",
+          "url": "https://www.khanacademy.org/science/biology/membranes-and-transport/osmosis/v/osmosis"
+        },
+        {
+          "title": "Introduction to Enzymes",
+          "url": "https://www.khanacademy.org/science/biology/energy-and-enzymes/introduction-to-enzymes/v/introduction-to-enzymes"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "NaCl Concentración (mol/L)",
+        "Initial Masa (g)",
+        "Final Masa (g)",
+        "Masa Change (g)",
+        "% Masa Change"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record initial and final mass for strips at each NaCl concentration",
+      "Calculate percentage mass change for each concentration",
+      "Plot % mass change vs NaCl concentration and identify the isotonic point"
+    ],
+    "conclusion": "Plot % mass change vs concentration and draw a line of best fit. Read off the NaCl concentration at which % change = 0 — this is the solute concentration of potato cells. Explain the results for hypotonic and hypertonic solutions.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you'll find out how concentrated potato cells really are — by using osmosis to weigh what's inside them, without cutting them open!",
+      "keywords": {
+        "setup": "Cut all strips from the same potato to minimise variation. Use a sharp scalpel and template for identical dimensions. Weigh each strip individually before and after. Blot strips for equal time (5 s).",
+        "formula": "% mass change = (m_f − m_i)/m_i × 100. Plot this vs [NaCl]. Isotonic point (% change = 0) gives cell solute concentration. For potato: typically 0.3–0.4 mol/L NaCl.",
+        "error": "Common errors: unequal blotting time, strips of different sizes, and leaving strips in solution for different times. Use a timer to remove all strips simultaneously.",
+        "result": "Typical results: 0 mol/L: +8–12% (water gains). 0.25 mol/L: +2–5%. 0.5 mol/L: −2 to −5%. 1.0 mol/L: −10 to −15%. Isotonic point ≈ 0.3–0.4 mol/L.",
+        "real": "Crisps (chips) are made by frying thin potato slices in oil. The frying removes almost all water (osmosis through heat and evaporation). A raw potato is ~80% water; a crisp is <5% water. Same chemistry, different scale.",
+        "explain": "Potato cells contain a solution of sugars, salts, and other molecules inside a vacuole surrounded by a semi-permeable cell membrane. Water molecules pass freely through this membrane, moving from the more dilute side to the more concentrated side (net movement down water potential gradient). In distilled water (no solutes), water rushes in; in concentrated salt (high solutes), water rushes out.",
+        "hook": "Ancient Egyptians preserved fish and meat by packing them in salt — the high salt concentration draws water out of bacteria by osmosis, killing them and preserving the food. Modern food preservation (curing, brining, pickling) still uses this 4,000-year-old chemistry!",
+        "misconception": "Osmosis is passive — it does not require energy from the cell. Water moves spontaneously down its water potential gradient (from low solute to high solute). Active transport of solutes requires energy, but osmosis itself does not."
+      },
+      "hint": "If all strips show mass gain, your NaCl solutions may be too dilute. Make fresh solutions carefully. If all strips lose mass, check whether your \"distilled water\" was accidentally mixed with salt.",
+      "expected": "% mass change clearly positive in distilled water, zero at ~0.3–0.4 mol/L, negative at 1.0 mol/L. Good straight-line fit through the data points. Isotonic point identifiable from graph."
+    }
+  },
+  {
+    "num": 144,
+    "cardEmoji": "🍃",
+    "title": "Medición de la velocidad de reacción (cambio de color)",
+    "section": "Plant Physiology",
+    "desc": "Seguir el progreso de una reacción por cambio de color usando un colorímetro o por observación.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that leaves contain multiple photosynthetic pigments — chlorophyll a, chlorophyll b, xanthophyll, and β-carotene — which separate by chromatography due to their different polarities.",
+      "instructions": [
+        "Crush fresh leaves in a mortar with a small amount of acetone to extract pigments.",
+        "Apply a concentrated spot of extract to the baseline of the chromatography paper using a capillary tube. Dry between applications (repeat 10 times).",
+        "Colocar the paper in the chromatography tank containing petroleum ether:acetone (9:1).",
+        "Allow solvent to travel to within 1 cm of the top of the paper, then remove and mark the solvent front.",
+        "Calcular Rf for each band and identify the pigments by colour and Rf value."
+      ],
+      "expectedOutcome": "Four to five bands visible from bottom to top: yellow/orange (xanthophylls, Rf ≈ 0.3), bright yellow-green (chlorophyll b, Rf ≈ 0.45), blue-green (chlorophyll a, Rf ≈ 0.65), and bright orange (β-carotene, Rf ≈ 0.95)."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🌿",
+          "name": "Fresh leaves (spinach, nettle, or any dark green leaves)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "Acetone (for extraction)"
+        },
+        {
+          "emoji": "📋",
+          "name": "Chromatography paper strips"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Chromatography tank with petroleum ether:acetone (9:1)"
+        },
+        {
+          "emoji": "📏",
+          "name": "Ruler (to measure Rf values)"
+        }
+      ],
+      "observationsToRecord": [
+        "Number and colours of pigment bands",
+        "Distance from baseline to each band (cm)",
+        "Distance from baseline to solvent front (cm)",
+        "Calculated Rf value for each band"
+      ],
+      "theoryPoints": [
+        "Rf = distance moved by pigment / distance moved by solvent front.",
+        "Non-polar pigments (β-carotene) move furthest in non-polar solvent.",
+        "More polar pigments (chlorophyll b, xanthophylls) are retained more by polar paper → lower Rf.",
+        "Separation depends on relative affinity of each pigment for the mobile phase (solvent) vs stationary phase (paper)."
+      ],
+      "realWorldConnections": [
+        "Plant pigments absorb different wavelengths — multiple pigments widen the range of light that can drive photosynthesis.",
+        "Autumn leaf colours occur when chlorophylls break down, revealing the orange and yellow carotenoids that were present all along.",
+        "Chromatography is used in food testing to detect artificial colour additives in products — the same Rf principle."
+      ],
+      "formula": "Rf = distance moved by spot / distance moved by solvent front"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does β-carotene travel furthest in petroleum ether:acetone solvent?",
+          "options": [
+            "β-carotene is the smallest molecule",
+            "β-carotene is non-polar and has the greatest affinity for the non-polar solvent",
+            "β-carotene is the most water-soluble pigment",
+            "β-carotene has the highest molecular mass"
+          ],
+          "correctIndex": 1,
+          "explanation": "Chromatography separates compounds by their relative affinities for the mobile and stationary phases. β-carotene is highly non-polar and prefers the non-polar solvent (petroleum ether), so it is carried with the solvent front, giving the highest Rf."
+        },
+        {
+          "text": "A pigment spot moves 4.0 cm and the solvent front moves 6.0 cm. What is the Rf value?",
+          "options": [
+            "0.40",
+            "0.50",
+            "0.67",
+            "1.50"
+          ],
+          "correctIndex": 2,
+          "explanation": "Rf = distance moved by pigment / distance moved by solvent = 4.0/6.0 = 0.67."
+        },
+        {
+          "text": "Why are multiple leaf pigments advantageous for a plant?",
+          "options": [
+            "Different pigments create the green colour",
+            "Different pigments absorb different wavelengths of light, allowing photosynthesis across a wider spectrum",
+            "Multiple pigments make the leaf more rigid",
+            "Carotenoids protect chlorophyll from UV light only"
+          ],
+          "correctIndex": 1,
+          "explanation": "Different pigments have different absorption spectra. Chlorophyll a absorbs red and blue; chlorophyll b absorbs blue; carotenoids absorb blue and green. Together, they capture a wider range of wavelengths, increasing photosynthetic efficiency."
+        }
+      ],
+      "discussion": [
+        "Explain why leaves appear green — which wavelengths are absorbed and which are reflected?",
+        "Why do leaves turn orange and yellow in autumn? Relate the colour change to the pigments separated in this experiment.",
+        "Some deep-sea algae contain red and brown pigments rather than green chlorophylls. Explain this adaptation using your knowledge of light absorption at depth."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Rf calculation and chromatography principle",
+          "pct": 35
+        },
+        {
+          "label": "Identity of leaf pigments and their colours",
+          "pct": 30
+        },
+        {
+          "label": "Polarity and separation mechanism",
+          "pct": 25
+        },
+        {
+          "label": "Ecological role of multiple pigments",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan leaves contain only chlorophyll — they contain multiple pigments; chlorophylls are just dominant and mask the others.",
+        "Many think Rf values are universal constants — they depend on the solvent system used. Rf must always be quoted with the solvent composition."
+      ],
+      "hook": "Every autumn, chemistry reveals what was hidden all summer. The brilliant oranges and reds of autumn leaves are carotenoids that were always there — just masked by abundant green chlorophyll. When days shorten, chlorophyll breaks down, and the other pigments are finally visible. You're separating those same hidden pigments today!",
+      "khanLinks": [
+        {
+          "title": "Photosynthesis Overview",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/introduction-to-stages-of-photosynthesis/v/intro-to-photosynthesis"
+        },
+        {
+          "title": "Plant Responses to Light",
+          "url": "https://www.khanacademy.org/science/biology/plant-biology/photoperiodism/v/plant-responses-to-light"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Band Color",
+        "Distance from Baseline (cm)",
+        "Solvent Front (cm)",
+        "Rf Value",
+        "Pigment Identity"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Record the colour and position of each pigment band",
+      "Measure the distance of each band and the solvent front from the baseline",
+      "Calculate Rf for each band and match to known values"
+    ],
+    "conclusion": "Calculate Rf values for all bands and identify each pigment. Explain why the pigments separate based on polarity. State the function of each pigment in photosynthesis.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to discover that a green leaf isn't just one colour — it contains a whole hidden rainbow of pigments that you'll separate and reveal with chemistry!",
+      "keywords": {
+        "setup": "Use fresh, dark-green leaves for the best pigment concentration. Apply extract spot in many thin layers (10+ applications), drying between each. Keep the spot diameter below 5 mm. Ensure the solvent level in the tank is below the baseline.",
+        "formula": "Rf = d(spot)/d(front). Typical values in petroleum ether:acetone 9:1: β-carotene ~0.95, chlorophyll a ~0.65, chlorophyll b ~0.45, xanthophylls ~0.3.",
+        "error": "Common errors: applying too dilute an extract (bands invisible), solvent touching the spot before developing (spot dissolves), and letting the solvent run off the top of the paper.",
+        "result": "Four bands from top to bottom: orange β-carotene (Rf ≈ 0.95), blue-green chlorophyll a (Rf ≈ 0.65), yellow-green chlorophyll b (Rf ≈ 0.45), yellow xanthophylls (Rf ≈ 0.3). Rf values reproducible ±0.05.",
+        "real": "Food manufacturers test for illegal artificial dyes using paper chromatography — same technique, same Rf principle. UK trading standards officers test products like saffron for undeclared dyes using HPLC (high performance liquid chromatography — the upgraded version of your experiment).",
+        "explain": "In chromatography, each molecule faces a tug-of-war between the moving solvent (mobile phase) and the stationary paper (stationary phase). Non-polar molecules like β-carotene prefer to dissolve in the non-polar solvent and are carried along quickly. Polar molecules like xanthophylls prefer to stick to the polar paper and move slowly. Different polarities → different Rf values → visible separation.",
+        "hook": "The 1906 Russian botanist Mikhail Tsvet invented chromatography specifically to separate leaf pigments — he named the technique from the Greek 'chroma' (colour) and 'graphein' (to write). His technique of separating coloured bands was so beautiful he called it colour writing. Over 100 years later, you're doing exactly the same experiment.",
+        "misconception": "Rf is not the absolute distance a pigment travels — it's the RATIO of pigment movement to solvent movement. This makes Rf reproducible regardless of how far the solvent travels, as long as the same solvent system is used."
+      },
+      "hint": "If bands are faint or missing, try grinding the leaves more thoroughly in acetone and applying 15 layers instead of 10. Storing the extract on ice before spotting also helps preserve unstable chlorophylls.",
+      "expected": "Four bands visible with typical Rf values. β-carotene (orange, highest Rf), chlorophyll a (blue-green), chlorophyll b (yellow-green), xanthophylls (yellow, lowest). Rf values within ±0.05 of standard values."
+    }
+  },
+  {
+    "num": 145,
+    "cardEmoji": "🧬",
+    "title": "Entalpía de neutralización",
+    "section": "Plant Physiology",
+    "desc": "Medir el calor liberado en la neutralización de un ácido fuerte con una base fuerte.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that enzymes have an optimum temperature for activity, that they denature at high temperatures, and that reaction rate can be measured by the time for a substrate to be consumed.",
+      "instructions": [
+        "Prepare a spotting tile with iodine solution in each well.",
+        "Mezclar starch solution (1%) and diluted saliva (1:10) pre-equilibrated at 20°C. Transfer one drop to the spotting tile every minute and check for blue-black colour.",
+        "Registrar the time until no blue-black colour is produced (starch fully digested).",
+        "Repetir at 37°C and 60°C using pre-equilibrated solutions.",
+        "Plot time to starch disappearance vs temperature and determine the optimum temperature."
+      ],
+      "expectedOutcome": "Fastest starch digestion at approximately 37°C (body temperature). Much slower at 20°C. At 60°C, enzyme is partially denatured and activity is reduced or absent."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧪",
+          "name": "Starch solución (1%)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Diluted saliva (1:10 in distilled water)"
+        },
+        {
+          "emoji": "💊",
+          "name": "Iodine solución (potassium iodide + iodine)"
+        },
+        {
+          "emoji": "📋",
+          "name": "Spotting tile (porcelain)"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Water baths at 20°C, 37°C, 60°C"
+        }
+      ],
+      "observationsToRecord": [
+        "Time for blue-black colour to disappear at each temperature (min)",
+        "Rate of reaction = 1/time at each temperature (min⁻¹)",
+        "Presence or absence of activity at 60°C",
+        "Cambio de color progression on the spotting tile over time"
+      ],
+      "theoryPoints": [
+        "Amylase catalyses: starch + H₂O → maltose (enzyme-catalysed hydrolysis).",
+        "Higher temperature → more kinetic energy → more enzyme-substrate collisions → faster rate.",
+        "Above optimum temperature (~55°C for salivary amylase), the enzyme denatures (3D shape lost).",
+        "Iodine test: iodine-starch complex is blue-black; colourless or orange when starch is absent."
+      ],
+      "realWorldConnections": [
+        "Salivary amylase begins starch digestion in the mouth — part of the reason bread tastes sweet if you chew it for a long time.",
+        "Los procesos industriales amylases are used in the brewing industry to convert starch in barley to maltose for fermentation.",
+        "Biological washing powders contain protease and lipase enzymes optimised for 30–40°C to remove stains without hot water."
+      ],
+      "formula": "Starch + H₂O → maltose  [enzyme-catalysed; optimum temperature ~37°C for salivary amylase]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why is amylase activity greatest at approximately 37°C?",
+          "options": [
+            "Molecules move fastest at 37°C and never denature",
+            "At 37°C the enzyme has maximum kinetic energy without denaturing — this is its optimum temperature",
+            "37°C is the highest possible temperature in a water bath",
+            "Amylase only works in human saliva at 37°C"
+          ],
+          "correctIndex": 1,
+          "explanation": "Up to the optimum temperature (~37°C for salivary amylase), increasing temperature increases reaction rate. Above this, the thermal energy disrupts hydrogen bonds and other interactions that maintain the enzyme's 3D shape, denaturing it and reducing/stopping activity."
+        },
+        {
+          "text": "What happens when amylase is heated to 80°C and cooled back to 37°C?",
+          "options": [
+            "It regains full activity when cooled",
+            "It remains denatured and inactive — denaturation is irreversible",
+            "It works even faster because it was heated",
+            "It converts to a more active form"
+          ],
+          "correctIndex": 1,
+          "explanation": "Denaturation of amylase (and most enzymes) is irreversible. The tertiary structure of the protein is permanently disrupted at high temperatures. Cooling does not restore the original active site geometry."
+        },
+        {
+          "text": "Iodine solution turns blue-black in the presence of starch because:",
+          "options": [
+            "Starch is a blue pigment",
+            "Iodine reacts with starch to form a blue-black starch-iodine complex",
+            "Iodine dissolves in starch molecules",
+            "Starch is basic and iodine is acidic"
+          ],
+          "correctIndex": 1,
+          "explanation": "Iodine (I₂) molecules become trapped within the helical coils of amylose (a component of starch), forming a charge-transfer complex that absorbs light in the red/orange range, giving the characteristic blue-black colour."
+        }
+      ],
+      "discussion": [
+        "Sketch a graph of enzyme activity vs temperature for salivary amylase and explain the shape of the curve on each side of the optimum.",
+        "Explain why biological washing powder enzymes must work effectively at 30–40°C but would be useless if used with boiling water.",
+        "A student uses amylase from a thermophilic bacterium found in hot springs. Predict how the activity vs temperature graph would differ and explain why."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Effect of temperature on enzyme activity",
+          "pct": 35
+        },
+        {
+          "label": "Enzyme denaturation at high temperatures",
+          "pct": 30
+        },
+        {
+          "label": "Iodine test for starch",
+          "pct": 20
+        },
+        {
+          "label": "Industrial enzyme applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan enzymes are \"killed\" by heat — they are denatured (their shape is irreversibly disrupted). The enzyme is still present as a polypeptide, just non-functional.",
+        "Many think a higher temperature always means faster enzyme activity — above the optimum, denaturation more than compensates for increased kinetic energy."
+      ],
+      "hook": "Chewing bread for 30–60 seconds makes it taste sweet — salivary amylase has already broken some starch into sweet maltose in your mouth. You are doing this experiment every time you eat a sandwich! Today you just make it visible with iodine.",
+      "khanLinks": [
+        {
+          "title": "Enzyme Activity",
+          "url": "https://www.khanacademy.org/science/biology/energy-and-enzymes/enzyme-regulation/v/enzyme-activity"
+        },
+        {
+          "title": "Cellular Respiration Introduction",
+          "url": "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/intro-to-cellular-respiration/v/introduction-to-cellular-respiration"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Temperatura (°C)",
+        "Tiempo to Starch Disappearance (min)",
+        "Velocidad = 1/Tiempo (min⁻¹)",
+        "Observación"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record the time taken for the blue-black iodine test to become negative at each temperature",
+      "Calculate the rate as 1/time for each temperature",
+      "Describe any differences in the appearance of the iodine colour over time"
+    ],
+    "conclusion": "Plot rate vs temperature and identify the optimum temperature for salivary amylase. Explain the shape of the graph on each side of the optimum using kinetic theory and enzyme denaturation.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to find the perfect temperature for an enzyme from your own body — the same enzyme that digests your breakfast every morning!",
+      "keywords": {
+        "setup": "Equilibrate BOTH the starch and the amylase separately in the water bath for 5 minutes before mixing. Test a drop of iodine with starch before starting to confirm the blue-black colour. Pre-fill all spotting tile wells with iodine.",
+        "formula": "Rate = 1/t (where t = time for starch to disappear). Optimum T for salivary amylase ≈ 37°C. Rate increases with T up to optimum; denaturation above optimum reduces rate.",
+        "error": "Common errors: not pre-equilibrating solutions to bath temperature before mixing, testing iodine too infrequently (missing the endpoint), and using old stale saliva (lower enzyme activity).",
+        "result": "Typical results: 20°C: ~8–10 min. 37°C: ~2–4 min (fastest). 60°C: >15 min or no clearance (denatured). Rate at 37°C approximately 3–5× faster than at 20°C.",
+        "real": "Biological washing powders (e.g. Persil Bio) contain lipases and proteases engineered to work at 30–40°C. In 2020, scientists developed a PET-digesting enzyme (PETase) from a bacterium found in a Japanese plastic-recycling plant — the same approach (enzyme optimisation) used to develop better detergent enzymes.",
+        "explain": "As temperature rises, enzyme and substrate molecules move faster and collide more often. More collisions → more successful reactions per second → faster rate. But enzymes are proteins whose function depends on their exact 3D shape. Beyond the optimum, heat breaks the weak hydrogen bonds and van der Waals forces that maintain this shape. The active site distorts and no longer fits the substrate — the enzyme is denatured.",
+        "hook": "In 1833, Anselme Payen discovered diastase (now called amylase) — the first enzyme ever isolated from living material. He noticed that a substance in malt extract broke down starch much faster than any chemical he knew. He had discovered biological catalysis before anyone knew what proteins or DNA were. Amylase was the gateway to all of enzymology!",
+        "misconception": "Salivary amylase stops working in the stomach — not because of temperature (your stomach is 37°C too) but because stomach acid (pH 2) denatures it. Different enzymes have different pH optima. Amylase works best at pH 7; stomach pepsin works best at pH 2."
+      },
+      "hint": "If the starch does not disappear even at 37°C after 10 minutes, your amylase may be too dilute. Use less water in the dilution (try 1:5 instead of 1:10). Freshly collected saliva gives better results.",
+      "expected": "Fastest clearance at 37°C (~2–4 min). Slower at 20°C (~8 min). Minimal or no clearance at 60°C (denatured). Rate vs temperature graph peaks at 37°C and falls steeply above."
+    }
+  },
+  {
+    "num": 146,
+    "cardEmoji": "🍞",
+    "title": "Entalpía de disolución",
+    "section": "Plant Physiology",
+    "desc": "Medir el cambio de temperatura al disolver sales en agua.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that yeast ferments glucose anaerobically to produce ethanol and CO₂, and that the rate of fermentation peaks around 35–40°C before falling as yeast cells are damaged.",
+      "instructions": [
+        "Prepare glucose solution (10%) and yeast suspension (5 g yeast in 50 mL warm water).",
+        "Preparar flasks at 20°C, 35°C, and 50°C water baths. Añadir 20 mL glucose + 5 mL yeast to each flask.",
+        "Conectar each flask via a delivery tube to a test tube of limewater.",
+        "Count CO₂ bubbles through limewater per minute (or measure CO₂ volume) every 2 minutes for 20 minutes.",
+        "Compare rates at each temperature and relate to enzyme optimum."
+      ],
+      "expectedOutcome": "Fermentation rate is highest at approximately 35°C. Very slow at 20°C. Limewater turns milky at all temperatures except possibly 50°C if yeast enzymes are damaged. Ethanol smell detectable at 35°C flask."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🍞",
+          "name": "Dried yeast (5 g per flask)"
+        },
+        {
+          "emoji": "🍬",
+          "name": "Glucose solución (10%), 20 mL per flask"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Conical flasks with bungs and delivery tubes"
+        },
+        {
+          "emoji": "💧",
+          "name": "Limewater in tubo de ensayos"
+        },
+        {
+          "emoji": "🌡️",
+          "name": "Water baths at 20°C, 35°C, 50°C"
+        }
+      ],
+      "observationsToRecord": [
+        "CO₂ bubble rate through limewater (bubbles/min) every 2 min",
+        "Limewater turbidity después 20 minutes at each temperature",
+        "Any ethanol smell from flasks (especially at 35°C)",
+        "Total CO₂ produced después 20 minutes at each temperature"
+      ],
+      "theoryPoints": [
+        "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ (anaerobic fermentation by yeast).",
+        "Fermentation is catalysed by yeast enzymes (zymase complex) with an optimum of ~35°C.",
+        "At low T: enzyme activity low, molecules slow → slow fermentation.",
+        "At high T (>45°C): yeast enzymes denature → fermentation rate falls."
+      ],
+      "realWorldConnections": [
+        "Bread making uses yeast fermentation — CO₂ bubbles cause the dough to rise; baking kills the yeast and sets the bread.",
+        "Wine and beer brewing exploits fermentation at controlled temperatures (typically 20–25°C for ale yeast).",
+        "Bioethanol fuel is produced by fermenting sugars from crops — the same chemistry at industrial scale."
+      ],
+      "formula": "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂  [fermentation; optimum ~35°C]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What are the two products of anaerobic fermentation of glucose by yeast?",
+          "options": [
+            "CO₂ and water",
+            "Ethanol and CO₂",
+            "Lactic acid and water",
+            "Ethanol and oxygen"
+          ],
+          "correctIndex": 1,
+          "explanation": "Yeast fermentation (alcoholic fermentation): C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂. This is anaerobic — no O₂ is needed. Lactic acid fermentation (in muscle cells) produces lactic acid, not ethanol."
+        },
+        {
+          "text": "Why does fermentation slow down at 50°C?",
+          "options": [
+            "All the glucose has been used up",
+            "CO₂ builds up and inhibits the reaction",
+            "Yeast enzymes denature at high temperatures, reducing catalytic activity",
+            "Ethanol concentration becomes toxic to the yeast"
+          ],
+          "correctIndex": 2,
+          "explanation": "The enzymes (zymase complex) that catalyse fermentation are proteins. At 50°C, thermal energy denatures these enzymes, permanently distorting their active sites. Fewer functional enzymes means lower fermentation rate."
+        },
+        {
+          "text": "How does CO₂ production confirm that fermentation is occurring?",
+          "options": [
+            "CO₂ is produced during photosynthesis and confirms sugar is being made",
+            "CO₂ is a product of fermentation and turns limewater milky — confirming the reaction is proceeding",
+            "CO₂ converts ethanol to lactic acid",
+            "CO₂ is only produced in aerobic respiration"
+          ],
+          "correctIndex": 1,
+          "explanation": "CO₂ is produced in the fermentation equation (C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂). When this CO₂ is bubbled through limewater, it reacts to form CaCO₃, turning the solution milky — confirming fermentation is occurring."
+        }
+      ],
+      "discussion": [
+        "Explain why bread rises during proving (before baking) and then sets during baking, using the chemistry of yeast fermentation.",
+        "Compare aerobic and anaerobic respiration in yeast: which produces more ATP per glucose molecule, and what are the conditions for each?",
+        "Wine becomes \"spoiled\" (turns to vinegar) if left open to air. Explain the chemistry: what does oxygen enable and what product is formed?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Fermentation equation and products",
+          "pct": 35
+        },
+        {
+          "label": "Effect of temperature on fermentation rate",
+          "pct": 30
+        },
+        {
+          "label": "CO₂ detection with limewater",
+          "pct": 20
+        },
+        {
+          "label": "Industrial applications of fermentation",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan fermentation only happens in alcohol production — fermentation occurs in bread making, yogurt, kombucha, and many other food products.",
+        "Many confuse aerobic respiration (produces CO₂ + water) with fermentation (produces CO₂ + ethanol). Both produce CO₂ but the other product and the conditions are different."
+      ],
+      "hook": "Beer has been brewed by fermentation for over 7,000 years — ancient Sumerians had over 20 words for different types of beer and brewed it with yeast strains passed down for generations. The chemistry of fermentation shaped human civilisation before anyone knew what a chemical reaction was!",
+      "khanLinks": [
+        {
+          "title": "Aerobic Respiration Steps",
+          "url": "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/aerobic-respiration/v/steps-of-cellular-respiration"
+        },
+        {
+          "title": "Fermentation",
+          "url": "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/fermentation/v/fermentation"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Tiempo (min)",
+        "20°C bubbles/min",
+        "35°C bubbles/min",
+        "50°C bubbles/min"
+      ],
+      "rows": 6
+    },
+    "observations": [
+      "Record CO₂ bubble rate every 2 minutes for each temperature",
+      "Record limewater turbidity after 20 minutes",
+      "Note any ethanol smell from the 35°C flask"
+    ],
+    "conclusion": "Plot CO₂ rate vs time for all three temperatures. Compare the rates and identify the optimum temperature. Explain the decrease in rate at 50°C in terms of enzyme denaturation.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're running the same chemistry that makes bread rise, wine ferment, and beer bubble — and you'll find the perfect temperature that makes yeast happiest!",
+      "keywords": {
+        "setup": "Pre-warm yeast in 35°C water for 10 minutes before use — this activates the yeast. Use fresh (not expired) dried yeast. Ensure the bung and delivery tube are airtight before starting the clock.",
+        "formula": "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂. M(glucose) = 180. Each mole of glucose gives 2 mol CO₂ and 2 mol ethanol. Optimum T for yeast enzymes ≈ 35°C.",
+        "error": "Common errors: air in the system before starting (gives false initial bubble count), yeast not properly mixed with glucose, and not equilibrating yeast to bath temperature before starting.",
+        "result": "Typical results: 20°C: 1–3 bubbles/min. 35°C: 10–20 bubbles/min. 50°C: initial burst then slowing to 0–5 bubbles/min after 10 min (enzymes denaturing). Limewater milky at 35°C.",
+        "real": "Baker's yeast is strains of Saccharomyces cerevisiae optimised over millennia for consistent performance at 25–35°C. Commercial breadmakers use timed, temperature-controlled proving cycles based on exactly this science.",
+        "explain": "Glucose enters the yeast cell and is broken down by enzymes in the cytoplasm (glycolysis and then fermentation) without needing oxygen. The CO₂ produced inflates bread dough (trapped in gluten) and the ethanol evaporates during baking. Higher temperatures make the enzymes work faster — up to the point where heat breaks the enzyme structure.",
+        "hook": "Louis Pasteur proved in 1857 that fermentation is caused by living microorganisms (yeast) — not by the \"vital force\" of raw ingredients, as many chemists believed. His experiment involved boiling grape juice (killing yeast) and showing it would NOT ferment. Pasteur launched the science of microbiology with a bottle of wine!",
+        "misconception": "Fermentation is NOT the same as aerobic respiration. Aerobic respiration needs O₂ and produces CO₂ + H₂O + much more ATP. Fermentation needs no O₂, produces CO₂ + ethanol + much less ATP. Yeast prefer aerobic conditions but can switch to fermentation when O₂ runs out."
+      },
+      "hint": "If there are no bubbles at 35°C after 5 minutes, check the limewater tube is submerged and the bung is sealed. Try gently swirling the flask to mix yeast and glucose more thoroughly.",
+      "expected": "Highest CO₂ rate at 35°C (~15–20 bubbles/min peak). Slower at 20°C. 50°C shows initial activity then decline. Limewater turns milky fastest at 35°C. Ethanol smell detectable at 35°C flask."
+    }
+  },
+  {
+    "num": 147,
+    "cardEmoji": "🌱",
+    "title": "Ley de Hess",
+    "section": "Plant Physiology",
+    "desc": "Verificar la Ley de Hess midiendo entalpías por caminos de reacción alternativos.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that CO₂ is a substrate for photosynthesis (Calvin cycle), and increasing CO₂ concentration increases the photosynthesis rate — up to the point where light becomes limiting.",
+      "instructions": [
+        "Preparar Elodea sprigs in beakers of distilled water with 0%, 0.1%, 0.5%, and 1.0% NaHCO₃ solutions.",
+        "Position a lamp at a fixed distance (20 cm) from each beaker.",
+        "Allow 2 minutes acclimatisation, then count bubbles per minute for each concentration.",
+        "Keep temperature and light intensity constant.",
+        "Plot bubble rate vs NaHCO₃ concentration."
+      ],
+      "expectedOutcome": "Bubble rate increases with NaHCO₃ concentration up to approximately 0.5%, then levels off as light becomes the limiting factor. Zero NaHCO₃ gives the lowest rate."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🌿",
+          "name": "Elodea sprigs (4 equal sprigs)"
+        },
+        {
+          "emoji": "🧪",
+          "name": "NaHCO₃ solucións (0, 0.1, 0.5, 1.0%)"
+        },
+        {
+          "emoji": "💡",
+          "name": "Lamp at fixed distance (20 cm)"
+        },
+        {
+          "emoji": "⏱️",
+          "name": "Cronómetro"
+        },
+        {
+          "emoji": "🪣",
+          "name": "4 identical vaso de precipitadoss (500 mL)"
+        }
+      ],
+      "observationsToRecord": [
+        "Bubble rate (bubbles/min) at each NaHCO₃ concentration",
+        "Temperatura of each beaker",
+        "Light intensity (confirm lamp distance is equal for all)",
+        "NaHCO₃ concentration at which bubble rate plateaus"
+      ],
+      "theoryPoints": [
+        "CO₂ is fixed in the Calvin cycle (light-independent reactions): CO₂ + RuBP → 2× 3-phosphoglycerate.",
+        "More CO₂ means more substrate for RuBisCO enzyme → more 3-PGA → more G3P → more glucose → more O₂.",
+        "At high CO₂, light becomes limiting — no more increase in rate even with extra CO₂.",
+        "NaHCO₃ + H₂O ⇌ H⁺ + HCO₃⁻ → CO₂(aq) + H₂O: provides dissolved CO₂ in controlled amounts."
+      ],
+      "realWorldConnections": [
+        "Commercial greenhouses often enrich the air with CO₂ to 1,000–1,500 ppm (atmospheric is ~420 ppm) to boost crop yields.",
+        "Climate change increasing atmospheric CO₂ from 280 ppm (pre-industrial) to 420 ppm has measurably increased some plant growth rates.",
+        "Carbon capture and storage aims to reduce atmospheric CO₂, which would reduce this fertilisation effect."
+      ],
+      "formula": "CO₂ + H₂O → (CH₂O) + O₂  [CO₂ is substrate; rate limited by CO₂ until light becomes limiting]"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Why does increasing NaHCO₃ concentration increase the photosynthesis rate of Elodea?",
+          "options": [
+            "NaHCO₃ provides nitrogen for chlorophyll production",
+            "NaHCO₃ releases CO₂ in solution, increasing the concentration of CO₂ substrate for the Calvin cycle",
+            "NaHCO₃ increases the pH, activating chlorophyll enzymes",
+            "NaHCO₃ provides Na⁺ ions needed for photosynthesis"
+          ],
+          "correctIndex": 1,
+          "explanation": "NaHCO₃ dissolves in water and releases CO₂ (via HCO₃⁻ equilibrium). CO₂ is the substrate for the Calvin cycle — more CO₂ means more substrate for RuBisCO and faster carbon fixation, producing more O₂."
+        },
+        {
+          "text": "Above 0.5% NaHCO₃, the bubble rate stops increasing. What does this indicate?",
+          "options": [
+            "The plant has absorbed all the NaHCO₃",
+            "Light has become the limiting factor — more CO₂ does not help if there is not enough light energy",
+            "The plant has produced enough oxygen and stops photosynthesising",
+            "NaHCO₃ at high concentrations inhibits enzymes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Once CO₂ is no longer limiting, the rate of photosynthesis is controlled by another factor — at a fixed lamp distance and constant temperature, this is likely light intensity. Adding more CO₂ cannot increase the rate further because the light reactions cannot supply ATP and NADPH any faster."
+        },
+        {
+          "text": "In which part of the plant does CO₂ fixation occur?",
+          "options": [
+            "Mitochondria, during aerobic respiration",
+            "Stroma of the chloroplast, during the Calvin cycle",
+            "Thylakoid membrane, during the light reactions",
+            "Vacuole, during osmosis"
+          ],
+          "correctIndex": 1,
+          "explanation": "CO₂ is fixed in the Calvin cycle (light-independent reactions) in the stroma of the chloroplast. RuBisCO enzyme catalyses the attachment of CO₂ to ribulose bisphosphate (RuBP)."
+        }
+      ],
+      "discussion": [
+        "Explain how CO₂ enrichment in a greenhouse can increase crop yield, and suggest a practical CO₂ concentration for maximum benefit.",
+        "Describe the three limiting factors for photosynthesis and explain how they interact — what happens when you increase CO₂ but keep light and temperature low?",
+        "Suggest why measuring bubble count is less accurate at very high CO₂ concentrations, and propose a more accurate method."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "CO₂ as substrate for the Calvin cycle",
+          "pct": 35
+        },
+        {
+          "label": "Limiting factors and saturation",
+          "pct": 30
+        },
+        {
+          "label": "NaHCO₃ as CO₂ source in experiments",
+          "pct": 20
+        },
+        {
+          "label": "CO₂ enrichment in commercial horticulture",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan plants absorb CO₂ through roots — CO₂ enters primarily through stomata in leaves (diffusion down concentration gradient).",
+        "Many confuse light reactions (occur in thylakoids, produce ATP/NADPH) with the Calvin cycle (occurs in stroma, fixes CO₂). CO₂ is only used in the Calvin cycle."
+      ],
+      "hook": "NASA is researching growing crops on Mars using photosynthesis. The challenge? Mars atmosphere is 96% CO₂ at very low pressure — too much CO₂! Scientists must design Mars greenhouses with controlled CO₂ concentrations optimised for photosynthesis. Your experiment is the fundamental science behind Mars farming!",
+      "khanLinks": [
+        {
+          "title": "Light-Independent Reactions",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-calvin-cycle/v/light-and-dark-reactions-in-photosynthesis"
+        },
+        {
+          "title": "Limiting Factors in Photosynthesis",
+          "url": "https://www.khanacademy.org/science/biology/photosynthesis-in-plants/the-light-dependent-reactions-of-photosynthesis/v/photosynthesis-light-reactions-and-photophosphorylation"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "NaHCO₃ Concentración (%)",
+        "Bubbles/min (Ensayo 1)",
+        "Bubbles/min (Ensayo 2)",
+        "Mean Bubbles/min"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Count bubbles per minute at each NaHCO₃ concentration after 2 min acclimatisation",
+      "Record temperature of each beaker",
+      "Identify the concentration at which rate plateaus"
+    ],
+    "conclusion": "Plot bubble rate vs NaHCO₃ concentration. Identify the CO₂ saturation point. Explain why increasing CO₂ increases rate up to a point, and state what limiting factor takes over above the saturation point.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're changing one ingredient in the photosynthesis recipe — CO₂ — and watching the plant respond in real time. You'll find the point where adding more CO₂ stops helping!",
+      "keywords": {
+        "setup": "Prepare NaHCO₃ solutions carefully (weigh accurately). Use equal sprigs from the same plant. Keep lamp at exactly 20 cm for all beakers. Acclimatise for 2 full minutes at each concentration before counting.",
+        "formula": "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Calvin cycle: CO₂ + RuBP → 2× 3-PGA (RuBisCO). Rate ∝ [CO₂] until light or T is limiting.",
+        "error": "Common errors: temperature differences between beakers (lamp warms the closest), using different Elodea sprigs of different health, and not acclimatising long enough before counting.",
+        "result": "Typical: 0% NaHCO₃: ~2 bubbles/min. 0.1%: ~15. 0.5%: ~25. 1.0%: ~26. Plateau visible between 0.5% and 1.0%. Confirms CO₂ limiting at low concentration, light limiting at high concentration.",
+        "real": "UK commercial cucumber growers inject CO₂ into greenhouses from tanks, raising concentration from 420 ppm to 1,200 ppm. This increases yields by 20–30% and reduces the growing season. The CO₂ often comes from fermentation plants nearby — a circular economy use of \"waste\" CO₂.",
+        "explain": "CO₂ is the carbon source for making sugar in the Calvin cycle. RuBisCO grabs CO₂ molecules and attaches them to a 5-carbon molecule (RuBP) to start making glucose. More CO₂ = more RuBisCO molecules occupied = more 3-carbon products = more glucose = more O₂ as a by-product. But eventually, the light reactions can't supply ATP and NADPH fast enough to keep up, and the rate stops increasing.",
+        "hook": "Global CO₂ levels have risen from 280 ppm (pre-industrial) to 421 ppm (2024). Scientists have measured a \"CO₂ fertilisation effect\" — some ecosystems show 5–15% more plant growth due to higher CO₂. But temperature increases and water stress from climate change can more than offset this. The net effect on agriculture is uncertain — your experiment is the fundamental science behind this debate!",
+        "misconception": "NaHCO₃ is NOT a food for the plant. It provides dissolved CO₂ as a substrate for photosynthesis, but it is not a nutrient. The plant uses CO₂ as a carbon source — the carbon atoms end up in glucose molecules."
+      },
+      "hint": "If you see no difference between concentrations, try increasing the lamp brightness (move it closer to 10 cm) and check your NaHCO₃ solutions are correctly concentrated. A fresh Elodea sprig gives more consistent results.",
+      "expected": "Clear increase in bubble rate from 0 to 0.5% NaHCO₃. Rate levels off at 1.0% (light limiting). Confirms CO₂ as limiting factor at low concentrations with light in excess."
+    }
+  },
+  {
+    "num": 148,
+    "cardEmoji": "🌻",
+    "title": "Reacciones endotérmicas y exotérmicas",
+    "section": "Plant Physiology",
+    "desc": "Clasificar reacciones como endotérmicas o exotérmicas midiendo cambios de temperatura.",
+    "setupTime": "10 min",
+    "duration": "10 min setup + observations over 5 days",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that seeds require water, warmth, and oxygen to germinate — but not light. They identify which conditions are essential and which are merely beneficial by comparing germination percentages.",
+      "instructions": [
+        "Preparar four Petri dishes each with 10 seeds on moist cotton wool.",
+        "Dish A: warm (20°C) + water (moist cotton wool). Dish B: cold (4°C fridge) + water.",
+        "Dish C: warm (20°C) + dry cotton wool (no water). Dish D: warm (20°C) + water + dark box.",
+        "Leave for 5 days; check daily and count germinated seeds (visible radicle ≥ 2 mm).",
+        "Calcular % germination for each condition."
+      ],
+      "expectedOutcome": "Dish A: ~90% germination. Dish B (cold): low germination (~10%). Dish C (dry): 0% germination. Dish D (dark): ~90% germination — confirming light is not required."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🌱",
+          "name": "Cress or radish seeds (10 per dish)"
+        },
+        {
+          "emoji": "📋",
+          "name": "4 Petri dishes with lids"
+        },
+        {
+          "emoji": "🧶",
+          "name": "Cotton wool (for each dish)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (for moist conditions)"
+        },
+        {
+          "emoji": "📦",
+          "name": "Dark cardboard box (for Dish D)"
+        }
+      ],
+      "observationsToRecord": [
+        "Number of seeds germinated per day (5-day period)",
+        "Percentage germination después 5 days for each condition",
+        "Apariencia of seedlings (radicle length, shoot length)",
+        "Any mould growth (note and consider as a factor)"
+      ],
+      "theoryPoints": [
+        "Germination requires: water (activates enzymes, hydrates cells), warmth (enzyme activity), and O₂ (aerobic respiration for growth).",
+        "Light is NOT required for germination — the seed uses stored food reserves (endosperm) for initial growth.",
+        "Water activates hydrolytic enzymes (amylases, proteases) that break down starch and protein reserves in the endosperm.",
+        "Temperature affects enzyme reaction rates — cold slows germination; optimum typically 15–25°C for most species."
+      ],
+      "realWorldConnections": [
+        "Farmers time their planting based on soil temperature — many crops require >10°C soil temperature for reliable germination.",
+        "Seed banks (e.g. Svalbard Global Seed Vault) store seeds in cold, dry conditions — the opposite of germination requirements — to maximise longevity.",
+        "Stratification (cold treatment of seeds before planting) mimics winter conditions and breaks dormancy in many temperate plant species."
+      ],
+      "formula": "% germination = (number germinated / total seeds) × 100  |  Requirements: water + warmth (15–25°C) + O₂"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "Which conditions are ESSENTIAL for seed germination?",
+          "options": [
+            "Light, water, and warmth",
+            "Water, warmth, and oxygen",
+            "Soil, water, and light",
+            "Nitrogen, CO₂, and water"
+          ],
+          "correctIndex": 1,
+          "explanation": "Seeds need water (to activate enzymes and hydrate cells), warmth (for enzyme activity), and oxygen (for aerobic respiration to provide energy for growth). Light is NOT required for germination — seeds germinate underground in the dark."
+        },
+        {
+          "text": "Why do seeds placed in cold (4°C) conditions germinate poorly?",
+          "options": [
+            "Cold water cannot enter the seed",
+            "Low temperature reduces enzyme activity, slowing the metabolic processes needed for germination",
+            "Seeds freeze at 4°C",
+            "Oxygen is less available in cold water"
+          ],
+          "correctIndex": 1,
+          "explanation": "Germination requires enzyme-catalysed reactions (amylases, proteases, etc.) to mobilise food reserves. These enzymes work much slower at 4°C than at the optimum temperature (~20°C), so germination is greatly delayed or prevented."
+        },
+        {
+          "text": "Seeds in a dark box (Dish D) germinate at the same rate as seeds in light (Dish A). What does this demonstrate?",
+          "options": [
+            "Seeds need darkness to germinate",
+            "Light is not a requirement for germination — seeds use stored food reserves",
+            "Photosynthesis occurs inside the seed during germination",
+            "The dark box maintained a higher temperature"
+          ],
+          "correctIndex": 1,
+          "explanation": "Seeds contain stored food reserves (starch, proteins, fats in the endosperm and cotyledons). They do not need light for energy during germination — they break down these reserves aerobically. Light only becomes important once the seedling's first leaves emerge and photosynthesis begins."
+        }
+      ],
+      "discussion": [
+        "Explain at a molecular level why water is essential for germination — what processes does water enable within the seed?",
+        "Many seeds in temperate climates are dormant and require a cold period before they will germinate. Explain the ecological advantage of this dormancy mechanism.",
+        "A farmer planted seeds in March and found poor germination. Suggest and explain two possible abiotic factors that could have caused this, and how they might be remedied."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Essential conditions for germination (water, warmth, O₂)",
+          "pct": 40
+        },
+        {
+          "label": "Role of enzymes in mobilising food reserves",
+          "pct": 30
+        },
+        {
+          "label": "Light not required for germination",
+          "pct": 20
+        },
+        {
+          "label": "Agricultural and seed bank applications",
+          "pct": 10
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan light is required for germination — it is not. Light is required for photosynthesis, which only begins after the seedling emerges and develops leaves.",
+        "Many think soil is required for germination — seeds germinate perfectly well on moist cotton wool or filter paper in laboratory conditions."
+      ],
+      "hook": "The Svalbard Global Seed Vault in Norway stores 1.3 million seed varieties in frozen tunnels inside an Arctic mountain — conditions perfectly opposite to those needed for germination (cold and dry). It is the most important insurance policy in human history: if crops are wiped out by disease or climate change, we can restart agriculture from these seeds.",
+      "khanLinks": [
+        {
+          "title": "Plant Growth Responses",
+          "url": "https://www.khanacademy.org/science/biology/plant-biology/plant-responses/v/plant-growth-responses"
+        },
+        {
+          "title": "Introduction to Cellular Respiration",
+          "url": "https://www.khanacademy.org/science/biology/cellular-respiration-and-fermentation/intro-to-cellular-respiration/v/steps-of-aerobic-respiration"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Condition",
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Day 5",
+        "% Germination (Day 5)"
+      ],
+      "rows": 5
+    },
+    "observations": [
+      "Count germinated seeds daily for 5 days in each Petri dish",
+      "Record cumulative % germination for each condition",
+      "Note the length and appearance of radicles in germinated seeds"
+    ],
+    "conclusion": "State the three essential requirements for germination based on your results. Explain the result for Dish D (dark) and what it demonstrates. Describe one agricultural implication of your findings.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you'll find out what seeds really need to germinate — and test whether they actually need light. The answer might surprise you!",
+      "keywords": {
+        "setup": "Use equal numbers of seeds from the same packet. Pre-soak seeds for 1 hour in water before setting up to improve germination rates. Keep Dish D truly dark — seal the box with tape.",
+        "formula": "% germination = (germinated/total) × 100. Essential conditions: H₂O (enzyme activation, cell hydration), T (enzyme activity; 15–25°C optimal), O₂ (aerobic respiration for growth).",
+        "error": "Common errors: Dish C (dry) having condensation inside the Petri dish (secretly moist), mould growing in over-wet dishes, and not checking daily (missing when germination occurred).",
+        "result": "Day 5 results: Dish A (warm + water): ~90%. Dish B (cold + water): ~10–20%. Dish C (warm + dry): 0%. Dish D (dark + warm + water): ~85–90%.",
+        "real": "Farmers in East Africa use simple soil temperature thermometers to decide when to plant maize. Maize needs >12°C soil temperature. Planting too early means seeds rot rather than germinate — understanding germination requirements is basic crop science.",
+        "explain": "Inside a dry seed, all metabolism is almost completely stopped — the seed can survive for years in this dormant state. When water enters, it activates enzymes dormant in the seed. Amylases break down starch to glucose, proteases break down storage proteins to amino acids. These provide energy (via aerobic respiration using O₂) and building blocks for the growing embryo. Warmth speeds up all these enzyme-catalysed reactions.",
+        "hook": "In 2012, scientists in Russia grew a fertile plant from a seed found in a 32,000-year-old squirrel burrow frozen in Siberian permafrost. The oldest successfully germinated seed was from a Judean date palm found at Masada — 2,000 years old. Seeds are biological time capsules that only chemistry can unlock!",
+        "misconception": "Light is for photosynthesis, not germination. Seeds contain enough stored energy (starch, oils, proteins) to support the entire germination process and initial growth without any photosynthesis. Only when the seedling's first true leaves unfold does light become essential."
+      },
+      "hint": "If Dish A shows low germination, check the seeds are not too old (test viability by floating in water — sinkers are viable, floaters may not be). Replace with fresh seeds if necessary.",
+      "expected": "Dish A: ~90% germination. Dish B (cold): ~10%. Dish C (dry): 0%. Dish D (dark): ~90%. Confirms water and warmth essential; light not required. Oxygen confirmed by aerobic respiration in seedlings."
+    }
+  },
+  {
+    "num": 149,
+    "cardEmoji": "🪴",
+    "title": "Calor de combustión",
+    "section": "Plant Physiology",
+    "desc": "Medir el calor de combustión de diferentes alcoholes usando un calorímetro.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that soil pH affects the solubility and availability of mineral nutrients, and that most plants thrive in the pH range 6–7 where key nutrients are most accessible.",
+      "instructions": [
+        "Recoger soil samples from 3 different locations (e.g. garden, near an acid-loving plant, near a path treated with lime).",
+        "Pesar 10 g of each soil, add 20 mL distilled water, shake for 2 minutes, and filter.",
+        "Medir pH of each filtrate using a pH meter or soil indicator.",
+        "Registrar the colour of indicator and exact pH reading.",
+        "Relate pH to the availability of nutrients using a nutrient availability chart."
+      ],
+      "expectedOutcome": "Different soils give different pH readings. Students can relate pH to the presence of acid-loving plants (heathers, blueberries at pH 4–5) or calcium-rich soils (pH 7–8). Lower pH soils have more available Fe, Mn, Zn; neutral pH best for N, P, K."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🪣",
+          "name": "Soil samples from 3 different locations (~50 g each)"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada (100 mL per sample)"
+        },
+        {
+          "emoji": "⚗️",
+          "name": "Vaso de precipitadoss, embudos, and papel de filtros"
+        },
+        {
+          "emoji": "🔬",
+          "name": "pH meter (or soil indicator solución and colour chart)"
+        },
+        {
+          "emoji": "⚖️",
+          "name": "Balance (10 g ± 0.1 g accuracy)"
+        }
+      ],
+      "observationsToRecord": [
+        "pH de soil extract from each location",
+        "Colour of indicator in each sample",
+        "Description of vegetation at each collection site",
+        "Prediction of which nutrients are most/least available at each pH"
+      ],
+      "theoryPoints": [
+        "pH affects mineral solubility: acidic soils (pH < 5) increase Fe²⁺, Mn²⁺, Al³⁺ solubility (can reach toxic levels).",
+        "Alkaline soils (pH > 7.5) reduce Fe, Mn, Zn availability — plants may show chlorosis (yellowing leaves).",
+        "Nitrogen (NO₃⁻, NH₄⁺), phosphorus (H₂PO₄⁻), and potassium (K⁺) are most available at pH 6–7.",
+        "Lime (CaCO₃ or Ca(OH)₂) is added to raise soil pH; sulfur or acid fertilisers lower it."
+      ],
+      "realWorldConnections": [
+        "Blueberries require acidic soil (pH 4.5–5.5) for iron absorption — growers deliberately acidify soil.",
+        "Golf courses and lawns are limed regularly to maintain pH 6–7 for optimal grass growth.",
+        "Acid rain (pH < 5) leaches nutrients from soil and releases toxic Al³⁺, damaging tree roots in forests."
+      ],
+      "formula": "pH affects solubility: Fe, Mn, Zn soluble at low pH  |  N, P, K most available at pH 6–7"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "At which pH range are nitrogen, phosphorus, and potassium most available to plants?",
+          "options": [
+            "pH 4–5",
+            "pH 5–6",
+            "pH 6–7",
+            "pH 8–9"
+          ],
+          "correctIndex": 2,
+          "explanation": "Most macronutrients (N, P, K) are most soluble and plant-available at pH 6–7 (near-neutral). Below pH 6, phosphate forms insoluble compounds with Fe and Al. Above pH 7, many micronutrients become less available."
+        },
+        {
+          "text": "A gardener notices their rhododendrons have yellowing leaves (chlorosis). Soil pH is measured at 7.5. What is most likely causing the problem?",
+          "options": [
+            "Too much nitrogen in the soil",
+            "Alkaline soil makes iron insoluble, causing iron deficiency chlorosis",
+            "The soil is too acidic for iron absorption",
+            "Rhododendrons prefer neutral soil"
+          ],
+          "correctIndex": 1,
+          "explanation": "Chlorosis (yellowing due to insufficient chlorophyll) in acid-loving plants like rhododendrons in alkaline soil is typically due to iron deficiency. Fe³⁺ is insoluble at high pH and unavailable to plants. The solution is to acidify the soil (e.g. with sulphur or ericaceous compost)."
+        },
+        {
+          "text": "How does lime (CaCO₃) applied to acidic soil improve plant growth?",
+          "options": [
+            "Lime provides calcium as a macronutrient only",
+            "Lime raises soil pH, making nutrients more available and reducing toxic Al³⁺ and Mn²⁺ concentrations",
+            "Lime kills soil bacteria that compete with plants",
+            "Lime neutralises excess phosphorus"
+          ],
+          "correctIndex": 1,
+          "explanation": "CaCO₃ + 2H⁺ → Ca²⁺ + H₂O + CO₂. Reacting with soil H⁺ ions, lime raises pH. This reduces solubility of potentially toxic Al³⁺ and Mn²⁺, and brings the pH closer to the optimum (6–7) for nutrient availability."
+        }
+      ],
+      "discussion": [
+        "Explain why acid rain (pH 4–5) is particularly damaging to forest soils in terms of nutrient leaching and toxic ion release.",
+        "A farmer wants to grow blueberries on a chalky (alkaline) soil. Suggest three chemical amendments that could lower the soil pH and explain the chemistry of each.",
+        "Explain how bacteria involved in the nitrogen cycle are affected by soil pH, and why extreme pH prevents crops from accessing nitrogen even if it is present in the soil."
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "pH and nutrient availability relationship",
+          "pct": 35
+        },
+        {
+          "label": "Effect of pH on mineral solubility",
+          "pct": 30
+        },
+        {
+          "label": "Measuring soil pH accurately",
+          "pct": 20
+        },
+        {
+          "label": "Agricultural pH management",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Los estudiantes a menudo piensan acid soil is always bad — many important crops (blueberries, potatoes, tea) actually prefer acidic conditions.",
+        "Many assume all nutrients become more available as pH falls — some become toxic at very low pH (Al³⁺, Mn²⁺), and phosphate availability actually peaks at pH 6–7."
+      ],
+      "hook": "The UK blueberry industry has grown from almost nothing in 2000 to over 10,000 tonnes per year. Every blueberry farm requires acidified soil (pH 4.5–5.5) — growers add pine bark mulch, sulphur, or acid fertilisers to achieve this. Chemistry knowledge about soil pH directly drives a multi-million-pound industry!",
+      "khanLinks": [
+        {
+          "title": "pH Scale",
+          "url": "https://www.khanacademy.org/science/chemistry/acids-and-bases-topic/acids-and-bases/v/the-ph-scale"
+        },
+        {
+          "title": "Nutrient Cycles",
+          "url": "https://www.khanacademy.org/science/biology/ecology/biogeochemical-cycles/v/nitrogen-cycle"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Sample Location",
+        "pH Reading",
+        "Indicator Color",
+        "Vegetation Present",
+        "Predicted Limiting Nutrient"
+      ],
+      "rows": 4
+    },
+    "observations": [
+      "Record pH and indicator colour for each soil sample",
+      "Describe the vegetation present at each collection site",
+      "Predict which nutrients are most and least available at each pH"
+    ],
+    "conclusion": "Compare the pH of your three soil samples. Relate each pH to nutrient availability. Suggest one agricultural treatment that would improve plant growth for the most extreme pH sample and explain the chemistry.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to find out what the ground under your feet is really like chemically — and understand why some plants love acid soil while others hate it!",
+      "keywords": {
+        "setup": "Collect soil from different microhabitats if possible (under conifers for acidic, near a concrete wall for alkaline). Use distilled water — tap water may have a different pH. Allow soil:water mixture to settle before testing supernatant.",
+        "formula": "pH = −log[H⁺]. For lime treatment: CaCO₃ + H₂SO₄ → CaSO₄ + H₂O + CO₂. Nutrient availability peaks: Fe, Mn at low pH (3–5); N, P, K at pH 6–7; Mo at high pH (>7).",
+        "error": "Common errors: using tap water instead of distilled (tap water has its own pH). Soil with high organic matter content may give different results than mineral soil. Allow 24 h for better equilibration if results are inconsistent.",
+        "result": "Typical school garden: pH 6.5–7.0. Under pine trees: pH 4.5–5.5. Near concrete path: pH 7.5–8.0. Wide range visible from different sites. pH meter more accurate than indicator (±0.1 vs ±0.5).",
+        "real": "The UK soil pH map shows clear regional patterns: acidic soils in upland Scotland and Wales (granite, high rainfall), neutral to slightly alkaline soils in lowland England (limestone/chalk). UK farmers spend over £250 million per year on lime to manage soil pH.",
+        "explain": "Soil pH determines whether mineral nutrients are dissolved (available to plant roots) or precipitated (locked in insoluble compounds). Phosphate is a perfect example: at low pH, Fe and Al bind phosphate as insoluble FePO₄ and AlPO₄. At high pH, calcium binds it as Ca₃(PO₄)₂. Only at pH 6–7 does enough phosphate stay dissolved as H₂PO₄⁻ for plants to absorb.",
+        "hook": "Tea bushes in Assam (India) grow on naturally acidic soils from centuries of leaf litter — pH 5.5–6.0. British attempts to grow tea in alkaline UK soils failed until farmers acidified the soil. That's why UK tea gardens (like Tregothnan in Cornwall) require constant soil chemistry management. Your morning tea depends on pH chemistry!",
+        "misconception": "pH affects nutrient AVAILABILITY, not nutrient PRESENCE. The soil might contain plenty of iron, but at pH 8, it is locked as insoluble Fe(OH)₃ and the plant cannot absorb it through its roots. Adding iron fertiliser to alkaline soil just makes more insoluble iron — you must lower the pH first."
+      },
+      "hint": "If all your soil samples give similar pH, try collecting one from under pine or spruce trees (acidic leaf litter) and one from a recently limed or chalky area for a wider range.",
+      "expected": "pH varies between sites (target range pH 4.5–8.0 if sites chosen well). Students can relate vegetation (acid-loving vs neutral-loving plants) to measured pH. Nutrient availability chart predictions are consistent with observations."
+    }
+  },
+  {
+    "num": 150,
+    "cardEmoji": "🔬",
+    "title": "Capacidad calorífica de un calorímetro",
+    "section": "Plant Physiology",
+    "desc": "Determinar la capacidad calorífica del calorímetro por método de mezcla.",
+    "setupTime": "10 min",
+    "duration": "25 min",
+    "summary": {
+      "whatTheyLearn": "Los estudiantes aprenden that plant cell membranes are semi-permeable: in hypertonic solutions, water leaves the vacuole by osmosis and the protoplast pulls away from the rigid cell wall (plasmolysis). The process is reversible (deplasmolysis).",
+      "instructions": [
+        "Prepare a fresh mount of red onion epidermis cells in water — observe normal turgid cells.",
+        "Remove the water and add 1 mol/L NaCl solution to the slide. Esperar 3–5 minutes.",
+        "Observar under the microscope: the red-pigmented vacuole shrinks and the membrane pulls away from the cell wall.",
+        "Remove the NaCl solution and add distilled water. Esperar 5 minutes.",
+        "Observar again — cells should recover (deplasmolysis)."
+      ],
+      "expectedOutcome": "In NaCl: cells show clear plasmolysis — red vacuole shrinks and cytoplasm pulls away from cell wall, leaving a clear gap. After distilled water: cells recover to turgid appearance (deplasmolysis), confirming the process is reversible."
+    },
+    "experiment": {
+      "equipment": [
+        {
+          "emoji": "🧅",
+          "name": "Red onion (or beetroot slice)"
+        },
+        {
+          "emoji": "🔬",
+          "name": "Light microscope (×100 or ×400)"
+        },
+        {
+          "emoji": "📋",
+          "name": "Microscope slides and coverslips"
+        },
+        {
+          "emoji": "🧂",
+          "name": "1 mol/L NaCl solución"
+        },
+        {
+          "emoji": "💧",
+          "name": "Agua destilada"
+        }
+      ],
+      "observationsToRecord": [
+        "Apariencia of cells in water (turgid, vacuole filling cell)",
+        "Apariencia of cells in 1 mol/L NaCl después 5 min (plasmolysed)",
+        "Gap between cell membrane and cell wall (plasmolysis)",
+        "Apariencia después returning to distilled water (deplasmolysis)"
+      ],
+      "theoryPoints": [
+        "Osmosis: water moves from dilute solution (inside cell) to concentrated solution (outside cell, 1 mol/L NaCl) through the semi-permeable cell membrane.",
+        "Plasmolysis: water exits vacuole → central vacuole shrinks → tonoplast and cell membrane pull inward → gap between membrane and cell wall.",
+        "Deplasmolysis: water re-enters when distilled water added → vacuole swells → membrane returns to cell wall contact.",
+        "Cell wall is rigid and does not shrink; only the membrane and vacuole change size."
+      ],
+      "realWorldConnections": [
+        "Salt stress in agriculture (saline soils) causes plasmolysis in crop roots, impairing water absorption and nutrient uptake.",
+        "Food preservation by salting (e.g. salt-cured meats, pickled vegetables) uses plasmolysis to kill bacteria by drawing water out of their cells.",
+        "Sports drink formulation ensures isotonicity — too concentrated would cause plasmolysis of intestinal cells, preventing absorption."
+      ],
+      "formula": "Water exits cell by osmosis (hypertonic NaCl) → protoplast shrinks → cell wall remains rigid → plasmolysis"
+    },
+    "questions": {
+      "mcq": [
+        {
+          "text": "What is observed during plasmolysis?",
+          "options": [
+            "The cell wall shrinks away from the cell membrane",
+            "The cell membrane and cytoplasm pull away from the rigid cell wall",
+            "The cell divides into two",
+            "The cell absorbs water and bursts"
+          ],
+          "correctIndex": 1,
+          "explanation": "During plasmolysis, water exits the vacuole by osmosis. The cytoplasm and cell membrane shrink as the vacuole deflates, but the rigid cell wall remains unchanged. A visible gap appears between the cell membrane and the cell wall."
+        },
+        {
+          "text": "Why does the cell wall not shrink during plasmolysis?",
+          "options": [
+            "The cell wall is made of protein and cannot shrink",
+            "The cell wall is rigid (made of cellulose microfibrils) and maintains its shape regardless of internal pressure",
+            "The cell wall absorbs the salt solution to maintain its volume",
+            "The cell wall expands to fill the gap left by the shrinking membrane"
+          ],
+          "correctIndex": 1,
+          "explanation": "Plant cell walls are made of cellulose microfibrils — a rigid, inextensible structure. They provide support and maintain their shape. Only the flexible cell membrane and the vacuole contents change size during osmosis."
+        },
+        {
+          "text": "What happens when distilled water is added to plasmolysed cells?",
+          "options": [
+            "Cells remain plasmolysed because the damage is permanent",
+            "Water enters the vacuole by osmosis, the vacuole expands, and the membrane returns to the cell wall (deplasmolysis)",
+            "The NaCl is diluted so the salt destroys the membrane",
+            "Cells burst because water enters too quickly"
+          ],
+          "correctIndex": 1,
+          "explanation": "Adding distilled water creates a hypotonic environment outside the cells. Water now moves back into the vacuole by osmosis (from low solute concentration outside to high solute concentration inside). The vacuole expands, pushing the membrane back to the cell wall — deplasmolysis."
+        }
+      ],
+      "discussion": [
+        "Explain, using water potential concepts, why water moves out of the vacuole when cells are placed in 1 mol/L NaCl.",
+        "If the NaCl concentration were increased to 3 mol/L for an hour, predict whether deplasmolysis would still occur and explain your reasoning.",
+        "Compare the behaviour of a plant cell and an animal cell (e.g. a red blood cell) when placed in the same 1 mol/L NaCl solution. What different observations would you expect and why?"
+      ]
+    },
+    "overview": {
+      "conceptBreakdown": [
+        {
+          "label": "Osmosis in plant cells (hypertonic solution)",
+          "pct": 35
+        },
+        {
+          "label": "Plasmolysis mechanism and cell wall role",
+          "pct": 30
+        },
+        {
+          "label": "Reversibility (deplasmolysis)",
+          "pct": 20
+        },
+        {
+          "label": "Agricultural and food science applications",
+          "pct": 15
+        }
+      ],
+      "misconceptions": [
+        "Students often say \"the cell wall shrinks during plasmolysis\" — the cell wall is rigid and does not shrink. Only the cell membrane and vacuole contents change.",
+        "Many think plasmolysis kills the cell — cells can survive and recover by deplasmolysis if returned to a hypotonic solution in time. Prolonged or extreme plasmolysis is irreversible."
+      ],
+      "hook": "Slugs die when salt is poured on them — rapid plasmolysis of their body cells draws out all their water by osmosis. Their lack of a rigid cell wall means they simply collapse. The same chemistry that makes your red onion cells shrink is used as a garden pest control. Osmosis is brutal!",
+      "khanLinks": [
+        {
+          "title": "Osmosis and Tonicity",
+          "url": "https://www.khanacademy.org/science/biology/membranes-and-transport/osmosis/v/osmosis-and-tonicity"
+        },
+        {
+          "title": "Cell Membrane Structure",
+          "url": "https://www.khanacademy.org/science/biology/membranes-and-transport/diffusion-and-osmosis/v/diffusion-and-osmosis"
+        }
+      ]
+    },
+    "dataTable": {
+      "headers": [
+        "Solution",
+        "Cell Appearance",
+        "Vacuole Size",
+        "Gap Between Membrane and Wall",
+        "State"
+      ],
+      "rows": 3
+    },
+    "observations": [
+      "Sketch the cell appearance in water, in NaCl, and after returning to water",
+      "Record whether a visible gap exists between the cell membrane and wall",
+      "Note the colour intensity of the red vacuole under each condition"
+    ],
+    "conclusion": "Describe and explain plasmolysis using osmosis and water potential. State what the reversibility of the process demonstrates about cell membrane integrity. Explain the significance of the rigid cell wall in plasmolysis.",
+    "ai": {
+      "opening": "Hi! I'm Gali, your lab assistant. Today you're going to watch a living plant cell shrink under a microscope — then watch it recover — using nothing but the power of osmosis!",
+      "keywords": {
+        "setup": "Peel the thin epidermal layer from a red onion (the purple-red cell layer — not the white parenchyma). Mount in a drop of water first to see normal cells. Add NaCl solution using a pipette at the edge of the coverslip and draw it across with filter paper.",
+        "formula": "Osmosis: water moves from Ψ_high (less negative, low solute) to Ψ_low (more negative, high solute). Plasmolysis: Ψ_outside (1 mol/L NaCl, Ψ ≈ −2.7 MPa) < Ψ_inside (cell vacuole, Ψ ≈ −0.9 MPa). Water exits.",
+        "error": "Common errors: preparing a thick section instead of a single cell layer (cannot see individual cells), using NaCl that is too dilute (no plasmolysis), and not waiting long enough (5 min minimum for clear plasmolysis).",
+        "result": "Normal cells: red vacuole filling ~80% of cell volume. After NaCl: vacuole shrinks to ~40%, clear gap between purple membrane and colourless cell wall. After distilled water: vacuole returns to ~80% (deplasmolysis). Process fully reversible within 10 min.",
+        "real": "Saline soils in coastal areas and irrigated farmlands have high NaCl concentrations. Salt-sensitive crops (maize, beans) show plasmolysis of root cells in saline soils, reducing water uptake — salt stress is a major cause of crop losses globally, affecting 20% of irrigated farmland.",
+        "explain": "Plant cells contain a large central vacuole filled with cell sap — a mixture of sugars, salts, and other molecules. The cell membrane (tonoplast + plasma membrane) is semi-permeable. When the outside is made saltier (hypertonic), the water potential gradient reverses — water leaves the vacuole by osmosis. The vacuole shrinks and pulls the membrane inward. The rigid cellulose cell wall stays put, so a gap appears.",
+        "hook": "When wilted lettuce is placed in cold water, it becomes crisp again — because the hypotonic water causes rapid water uptake (deplasmolysis and increased turgor pressure). Chefs use this technique routinely. Your experiment explains why fresh salad stays crisp and wilted salad can be revived — pure osmosis!",
+        "misconception": "Plasmolysis is NOT caused by the sodium chloride reacting with the cell — it is purely a physical osmosis effect. NaCl does not damage the membrane (at 1 mol/L for a few minutes). The cell can fully recover because the membrane is intact and the process is just water movement."
+      },
+      "hint": "If plasmolysis is not visible after 5 minutes, try a more concentrated NaCl solution (2 mol/L) or a fresh red onion (deeper coloured cells are easier to observe). Ensure the coverslip is not trapping air bubbles, which can distort the image.",
+      "expected": "Clear plasmolysis visible after 5 min in 1 mol/L NaCl: red vacuole visibly smaller, gap at cell wall. Full deplasmolysis after 5–10 min in distilled water: vacuole returns to fill cell. Process fully reversible confirms membrane integrity."
+    }
+  }
+]

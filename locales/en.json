@@ -11,7 +11,9 @@
     "physics_title": "Physics Experiments",
     "chemistry_title": "Chemistry Experiments",
     "gali_title": "Ask Gali AI",
-    "sign_out": "Sign Out"
+    "sign_out": "Sign Out",
+    "dashboard": "Progress",
+    "dashboard_title": "My Progress"
   },
   "landing": {
     "tagline": "Empower Curiosity. Ignite Innovation.",
@@ -297,7 +299,33 @@
     "label": "Language",
     "en": "English",
     "it": "Italiano",
-    "fr": "Français"
+    "fr": "Français",
+    "es": "Español"
+  },
+  "offline": {
+    "title": "You're Offline",
+    "message": "Connect to the internet to access experiments",
+    "retry": "Try Again"
+  },
+  "install": {
+    "prompt": "Install ATP Connect for offline use",
+    "install": "Install",
+    "dismiss": "Not now"
+  },
+  "dashboard": {
+    "title": "My Progress",
+    "overall": "Overall Progress",
+    "completed": "Completed",
+    "average_score": "Average Score",
+    "last_activity": "Last Activity",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "experiments_done": "{count} of {total} experiments",
+    "continue": "Continue",
+    "section_breakdown": "By Section",
+    "recent": "Recent Activity",
+    "no_progress": "Start an experiment to track your progress!",
+    "score": "Score"
   },
   "card": {
     "items": "items"

@@ -11,7 +11,9 @@
     "physics_title": "Expériences de Physique",
     "chemistry_title": "Expériences de Chimie",
     "gali_title": "Demander à Gali",
-    "sign_out": "Déconnexion"
+    "sign_out": "Déconnexion",
+    "dashboard": "Progrès",
+    "dashboard_title": "Mes Progrès"
   },
   "landing": {
     "tagline": "Éveillez la Curiosité. Allumez l'Innovation.",
@@ -297,7 +299,33 @@
     "label": "Langue",
     "en": "English",
     "it": "Italiano",
-    "fr": "Français"
+    "fr": "Français",
+    "es": "Español"
+  },
+  "offline": {
+    "title": "Vous êtes hors ligne",
+    "message": "Connectez-vous à internet pour accéder aux expériences",
+    "retry": "Réessayer"
+  },
+  "install": {
+    "prompt": "Installer ATP Connect pour une utilisation hors ligne",
+    "install": "Installer",
+    "dismiss": "Pas maintenant"
+  },
+  "dashboard": {
+    "title": "Mes Progrès",
+    "overall": "Progrès Global",
+    "completed": "Terminés",
+    "average_score": "Score Moyen",
+    "last_activity": "Dernière Activité",
+    "physics": "Physique",
+    "chemistry": "Chimie",
+    "experiments_done": "{count} sur {total} expériences",
+    "continue": "Continuer",
+    "section_breakdown": "Par Section",
+    "recent": "Activité Récente",
+    "no_progress": "Commencez une expérience pour suivre vos progrès !",
+    "score": "Score"
   },
   "card": {
     "items": "éléments"
