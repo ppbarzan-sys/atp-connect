@@ -97,7 +97,14 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   const { t, locale } = useI18n()
 
   // ── Speech locale ────────────────────────────────────────────────────────
-  const speechLocale = locale === 'it' ? 'it-IT' : 'en-US'
+  const speechLocaleMap: Record<string, string> = {
+    en: 'en-US',
+    it: 'it-IT',
+    fr: 'fr-FR',
+    es: 'es-ES',
+    ar: 'ar-SA',
+  }
+  const speechLocale = speechLocaleMap[locale] || 'en-US'
 
   // ── Voice state ──────────────────────────────────────────────────────────
   const [micSupported, setMicSupported] = useState(false)
@@ -329,7 +336,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         signal: abortRef.current.signal,
-        body: JSON.stringify({ messages: historyForAPI, context }),
+        body: JSON.stringify({ messages: historyForAPI, context, locale }),
       })
 
       if (res.status === 503) {

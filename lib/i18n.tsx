@@ -18,15 +18,16 @@ import en from '@/locales/en.json'
 import it from '@/locales/it.json'
 import fr from '@/locales/fr.json'
 import es from '@/locales/es.json'
+import ar from '@/locales/ar.json'
 
-export type Locale = 'en' | 'it' | 'fr' | 'es'
+export type Locale = 'en' | 'it' | 'fr' | 'es' | 'ar'
 
 // ── Type everything from the English master file ────────────────────────────
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] }
 export type Translations = typeof en
 
-const LOCALES: Record<Locale, DeepPartial<Translations>> = { en, it, fr, es }
-export const AVAILABLE_LOCALES: Locale[] = ['en', 'it', 'fr', 'es']
+const LOCALES: Record<Locale, DeepPartial<Translations>> = { en, it, fr, es, ar }
+export const AVAILABLE_LOCALES: Locale[] = ['en', 'it', 'fr', 'es', 'ar']
 const STORAGE_KEY = 'atp_lang'
 const DEFAULT_LOCALE: Locale = 'en'
 
@@ -64,6 +65,12 @@ export function LangProvider({ children }: { children: ReactNode }) {
       // localStorage unavailable (SSR / private mode) — keep default
     }
   }, [])
+
+  // Set dir and lang on <html> whenever locale changes
+  useEffect(() => {
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr'
+    document.documentElement.lang = locale
+  }, [locale])
 
   function setLocale(l: Locale) {
     setLocaleState(l)

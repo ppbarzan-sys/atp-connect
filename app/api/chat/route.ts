@@ -29,7 +29,15 @@ function isChemistryContext(context?: ChatContext): boolean {
   return false
 }
 
-function buildSystemPrompt(context?: ChatContext): string {
+const LOCALE_LANGUAGES: Record<string, string> = {
+  en: 'English',
+  it: 'Italian',
+  fr: 'French',
+  es: 'Spanish',
+  ar: 'Arabic (Modern Standard Arabic / فصحى)',
+}
+
+function buildSystemPrompt(context?: ChatContext, locale?: string): string {
   const subject = context?.subject || (isChemistryContext(context) ? 'chemistry' : 'physics')
 
   let contextLine: string
@@ -111,7 +119,9 @@ Response formatting guidelines:
 - For numbered steps use "1. step", "2. step" format
 - For lists use "- item" format
 - Use friendly, encouraging language appropriate for high school or early university students
-- If asked something completely off-topic, gently redirect back to STEM subjects`
+- If asked something completely off-topic, gently redirect back to STEM subjects${locale && locale !== 'en' ? `
+
+IMPORTANT: The student is using the app in ${LOCALE_LANGUAGES[locale] || 'English'}. You MUST respond in ${LOCALE_LANGUAGES[locale] || 'English'}. All your explanations, encouragements, hints, and answers must be in ${LOCALE_LANGUAGES[locale] || 'English'}. Scientific terms and formulas can remain in their standard form, but all surrounding text must be in ${LOCALE_LANGUAGES[locale] || 'English'}.` : ''}`
 }
 
 export async function POST(req: NextRequest) {
@@ -124,11 +134,12 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  let messages: ChatMessage[], context: ChatContext | undefined
+  let messages: ChatMessage[], context: ChatContext | undefined, locale: string | undefined
   try {
     const body = await req.json()
     messages = body.messages ?? []
     context = body.context
+    locale = body.locale
   } catch {
     return new Response('Invalid JSON', { status: 400 })
   }
@@ -163,7 +174,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 600,
-        system: buildSystemPrompt(context),
+        system: buildSystemPrompt(context, locale),
         stream: true,
         messages: apiMessages,
       }),
