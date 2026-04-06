@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Experiment } from '@/data/experiments'
+import { Experiment } from '@/data/loader'
 import { saveResults, loadResults } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 

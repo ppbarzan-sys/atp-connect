@@ -1,26 +1,37 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * POST /api/auth/signin
  *
- * ── DEVELOPMENT MODE ──────────────────────────────────────────────────────────
- * No credentials are validated. Any POST to this endpoint sets the session
- * cookie and grants access to the platform immediately.
+ * Validates username + password against the DEMO_USERS environment variable.
  *
- * ── PRODUCTION: plug in real auth here ───────────────────────────────────────
- * When you're ready to add authentication:
- *   1. Parse credentials from the request body:
- *        const { email, password } = await request.json()
- *   2. Validate them against your auth provider:
- *        const user = await yourAuthProvider.verify(email, password)
- *        if (!user) return NextResponse.json({ error: 'Invalid credentials.' }, { status: 401 })
- *   3. Optionally store a real token/user-id in the cookie value instead of 'true'.
- *   4. Update middleware.ts to decode and verify the token rather than checking === 'true'.
- * ─────────────────────────────────────────────────────────────────────────────
+ * Set DEMO_USERS as a comma-separated list of user:password pairs, e.g.:
+ *   DEMO_USERS=student:pass123,teacher:teach456
+ *
+ * Returns 200 + sets session cookie on success.
+ * Returns 401 on invalid credentials.
  */
-export async function POST() {
-  const res = NextResponse.json({ ok: true })
+export async function POST(req: NextRequest) {
+  const { username, password } = await req.json().catch(() => ({}))
 
+  if (!username || !password) {
+    return NextResponse.json({ error: 'Missing credentials.' }, { status: 400 })
+  }
+
+  // Parse DEMO_USERS env var: "user1:pass1,user2:pass2"
+  const raw = process.env.DEMO_USERS ?? ''
+  const validUsers: Record<string, string> = {}
+  for (const pair of raw.split(',')) {
+    const [u, ...rest] = pair.trim().split(':')
+    if (u && rest.length) validUsers[u.toLowerCase()] = rest.join(':')
+  }
+
+  const expected = validUsers[username.trim().toLowerCase()]
+  if (!expected || expected !== password) {
+    return NextResponse.json({ error: 'Invalid username or password.' }, { status: 401 })
+  }
+
+  const res = NextResponse.json({ ok: true })
   res.cookies.set('atp_session', 'true', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
@@ -28,6 +39,5 @@ export async function POST() {
     maxAge: 60 * 60 * 24 * 7, // 7 days
     path: '/',
   })
-
   return res
 }

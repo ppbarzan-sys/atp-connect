@@ -1,5 +1,5 @@
 'use client'
-import { Experiment } from '@/data/experiments'
+import { Experiment } from '@/data/loader'
 import ExperimentCard from './ExperimentCard'
 import { useI18n } from '@/lib/i18n'
 

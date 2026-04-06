@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Experiment } from '@/data/experiments'
+import { Experiment } from '@/data/loader'
 import { saveNote, loadNote, saveTeacherNote, loadTeacherNote, loadTeacherMode } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 

@@ -39,3 +39,51 @@ export function loadTeacherNote(num: number): string {
   if (typeof window === 'undefined') return '';
   return localStorage.getItem(`atp-teacher-note-${num}`) || '';
 }
+
+// ── Experiment progress ──────────────────────────────────────────────────────
+
+export interface ExperimentProgress {
+  num: number
+  correct: number
+  total: number
+  completedAt: string
+}
+
+export function saveProgress(num: number, correct: number, total: number) {
+  if (typeof window === 'undefined') return;
+  const progress: ExperimentProgress = {
+    num,
+    correct,
+    total,
+    completedAt: new Date().toISOString(),
+  };
+  localStorage.setItem(`atp-progress-${num}`, JSON.stringify(progress));
+}
+
+export function loadProgress(num: number): ExperimentProgress | null {
+  if (typeof window === 'undefined') return null;
+  const saved = localStorage.getItem(`atp-progress-${num}`);
+  if (!saved) return null;
+  try { return JSON.parse(saved); } catch { return null; }
+}
+
+export function getCompletedExperiments(): number[] {
+  if (typeof window === 'undefined') return [];
+  const completed: number[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.startsWith('atp-progress-')) {
+      const num = parseInt(key.replace('atp-progress-', ''));
+      if (!isNaN(num)) completed.push(num);
+    }
+  }
+  return completed;
+}
+
+export function getProgressSummary(experimentNums: number[]): { completed: number; total: number } {
+  if (typeof window === 'undefined') return { completed: 0, total: experimentNums.length };
+  const completed = experimentNums.filter(
+    num => localStorage.getItem(`atp-progress-${num}`) !== null
+  ).length;
+  return { completed, total: experimentNums.length };
+}

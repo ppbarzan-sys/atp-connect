@@ -1,6 +1,8 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
+import { loadProgress, type ExperimentProgress } from '@/lib/storage'
 
 interface ExperimentCardProps {
   exp: Experiment
@@ -10,7 +12,18 @@ interface ExperimentCardProps {
 }
 
 export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: ExperimentCardProps) {
-  const { tSection } = useI18n()
+  const { tSection, t } = useI18n()
+  const [progress, setProgress] = useState<ExperimentProgress | null>(null)
+  const completed = progress !== null
+
+  useEffect(() => {
+    setProgress(loadProgress(exp.num))
+  }, [exp.num])
+
+  const scoreTier = progress && progress.total > 0
+    ? (progress.correct / progress.total >= 0.7 ? 'good'
+      : progress.correct / progress.total >= 0.4 ? 'mid' : 'low')
+    : null
 
   // Use the experiment's own unique emoji; fall back to section emoji
   const fallbackMap: Record<string, string> = {
@@ -23,11 +36,17 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
   const equipmentCount = exp.experiment?.equipment?.length ?? 0
 
   return (
-    <div className="exp-card" onClick={onClick} style={{ cursor: 'pointer' }}>
+    <div className="exp-card" onClick={onClick} style={{ cursor: 'pointer', position: 'relative' }}>
+      {progress && scoreTier && (
+        <div className={`card-progress-badge ${scoreTier}`}>
+          ✓ {progress.correct}/{progress.total}
+        </div>
+      )}
       {/* Header */}
       <div className="card-header-area">
         <div className="card-icon-wrap" style={{ background: color + '18' }}>
           <div className="card-icon">{emoji}</div>
+          {completed && <span className="exp-card-done" title="Completed">✓</span>}
         </div>
         <span className="card-exp-number" style={{ background: color + '20', color }}>
           #{exp.num}
@@ -52,7 +71,7 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
           <span className="card-meta-badge">⏳ {exp.duration}</span>
         )}
         {equipmentCount > 0 && (
-          <span className="card-meta-badge">🧪 {equipmentCount} items</span>
+          <span className="card-meta-badge">🧪 {equipmentCount} {t('card.items')}</span>
         )}
       </div>
     </div>

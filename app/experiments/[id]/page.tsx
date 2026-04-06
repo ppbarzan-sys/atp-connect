@@ -1,24 +1,64 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { experiments } from '@/data/experiments'
+import { getExperiments } from '@/data/loader'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal, { GaliContext } from '@/components/GaliModal'
 import { useI18n } from '@/lib/i18n'
+import { loadResults } from '@/lib/storage'
 
 export default function ExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
+  const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
+  const experiments = getExperiments(locale)
   const exp = experiments.find(e => e.num === Number(id))
 
-  const galiCtx: GaliContext = exp
-    ? { section: exp.section, experimentTitle: exp.title, experimentNum: exp.num }
-    : { section: 'all' }
+  function openGali() {
+    if (!exp) return
+    const baseCtx: GaliContext = {
+      section: exp.section,
+      experimentTitle: exp.title,
+      experimentNum: exp.num,
+    }
+    // Compute quiz score from localStorage at open time so it's always current
+    const mcqs = exp.questions?.mcq ?? []
+    if (mcqs.length > 0) {
+      const savedAnswers = loadResults(exp.num)
+      const answeredKeys = mcqs.filter((_, i) => savedAnswers[`mcq-${i}`] !== undefined)
+      if (answeredKeys.length > 0) {
+        const correct = mcqs.filter((q, i) => {
+          const ua = savedAnswers[`mcq-${i}`]
+          return ua !== undefined && parseInt(ua) === q.correctIndex
+        }).length
+        const wrongTopics = mcqs
+          .filter((q, i) => {
+            const ua = savedAnswers[`mcq-${i}`]
+            return ua !== undefined && parseInt(ua) !== q.correctIndex
+          })
+          .map(q => q.text)
+        baseCtx.quizScore = { correct, total: mcqs.length, wrongTopics }
+      }
+    }
+    setGaliCtx(baseCtx)
+    setGaliOpen(true)
+  }
+
+  function openGaliForQuestion(questionText: string, correctAnswer: string, userAnswer: string) {
+    if (!exp) return
+    setGaliCtx({
+      section: exp.section,
+      experimentTitle: exp.title,
+      experimentNum: exp.num,
+      focusQuestion: { text: questionText, userAnswer, correctAnswer },
+    })
+    setGaliOpen(true)
+  }
 
   if (!exp) {
     return (
@@ -39,12 +79,13 @@ export default function ExperimentPage() {
         activeView="experiment"
         onHome={() => router.push('/app')}
         onSearch={() => setSearchOpen(true)}
-        onAskGali={() => setGaliOpen(true)}
+        onAskGali={openGali}
       />
       <ExperimentView
         exp={exp}
         onBack={() => router.push('/app')}
-        onAskGali={() => setGaliOpen(true)}
+        onAskGali={openGali}
+        onAskGaliForQuestion={openGaliForQuestion}
       />
       {searchOpen && (
         <SearchOverlay

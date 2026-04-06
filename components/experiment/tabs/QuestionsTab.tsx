@@ -1,14 +1,15 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Experiment } from '@/data/experiments'
-import { loadResults, saveResults } from '@/lib/storage'
+import { Experiment } from '@/data/loader'
+import { loadResults, saveResults, saveProgress } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 
 interface QuestionsTabProps {
   exp: Experiment
+  onAskGali?: (questionText: string, correctAnswer: string, userAnswer: string) => void
 }
 
-export default function QuestionsTab({ exp }: QuestionsTabProps) {
+export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
   const { t } = useI18n()
   const [answers, setAnswers] = useState<Record<number, number | null>>({})
   const [discussionAnswers, setDiscussionAnswers] = useState<Record<number, string>>({})
@@ -31,6 +32,26 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
     setDiscussionAnswers(newDisc)
   }, [exp.num])
 
+  // ── Score calculation ──────────────────────────────────────────────────────
+  const mcqs = exp.questions.mcq
+  const totalMcq = mcqs.length
+  const answeredCount = mcqs.filter((_, i) => answers[i] !== undefined && answers[i] !== null).length
+  const correctCount = mcqs.filter((q, i) => answers[i] === q.correctIndex).length
+  const allAnswered = totalMcq > 0 && answeredCount === totalMcq
+
+  // Save progress whenever all MCQs are answered
+  useEffect(() => {
+    if (allAnswered) {
+      saveProgress(exp.num, correctCount, totalMcq)
+    }
+  }, [allAnswered, correctCount, totalMcq, exp.num])
+
+  function getScoreLabel(): string {
+    if (correctCount === totalMcq) return t('questions.perfect_score')
+    if (correctCount >= Math.ceil(totalMcq * 0.7)) return t('questions.good_score')
+    return t('questions.keep_practicing')
+  }
+
   function handleAnswer(qIdx: number, optIdx: number) {
     if (answers[qIdx] !== undefined && answers[qIdx] !== null) return
     const newAnswers = { ...answers, [qIdx]: optIdx }
@@ -48,14 +69,48 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
     saveResults(exp.num, saved)
   }
 
+  function resetQuiz() {
+    setAnswers({})
+    const saved = loadResults(exp.num)
+    const cleaned: Record<string, string> = {}
+    for (const key of Object.keys(saved)) {
+      if (!key.startsWith('mcq-')) cleaned[key] = saved[key]
+    }
+    saveResults(exp.num, cleaned)
+  }
+
   return (
     <div className="tab-pane active">
       <div className="content-card">
         <div className="questions-tab">
+
+          {/* Score bar — shown as soon as at least one MCQ is answered */}
+          {totalMcq > 0 && answeredCount > 0 && (
+            <div className="quiz-score-wrap">
+              <div className="quiz-score-info">
+                <span className="quiz-score-text">
+                  {t('questions.score_correct', { correct: correctCount, total: totalMcq })}
+                </span>
+                <span className="quiz-score-result">{getScoreLabel()}</span>
+              </div>
+              <div className="quiz-score-bar">
+                <div
+                  className="quiz-score-fill"
+                  style={{ width: `${(correctCount / totalMcq) * 100}%` }}
+                />
+              </div>
+              {allAnswered && (
+                <button className="quiz-reset-btn" onClick={resetQuiz}>
+                  {t('questions.reset_quiz')}
+                </button>
+              )}
+            </div>
+          )}
+
           {/* MCQ Questions */}
           <div className="q-section">
             <h3>{t('questions.quick_check')}</h3>
-            {exp.questions.mcq.map((q, qIdx) => {
+            {mcqs.map((q, qIdx) => {
               const answered = answers[qIdx] !== undefined && answers[qIdx] !== null
               const userAnswer = answers[qIdx]
               return (
@@ -83,10 +138,18 @@ export default function QuestionsTab({ exp }: QuestionsTabProps) {
                       })}
                     </div>
                     {answered && (
-                      <div className="q-feedback" style={{ display: 'block' }}>
+                      <div className={`q-feedback${userAnswer === q.correctIndex ? ' correct' : ' wrong'}`} style={{ display: 'block' }}>
                         {userAnswer === q.correctIndex ? t('questions.correct') : t('questions.incorrect')}
                         {q.explanation}
                       </div>
+                    )}
+                    {answered && userAnswer !== null && userAnswer !== undefined && userAnswer !== q.correctIndex && onAskGali && (
+                      <button
+                        className="gali-help-btn"
+                        onClick={() => onAskGali(q.text, q.options[q.correctIndex], q.options[userAnswer])}
+                      >
+                        💡 {t('questions.ask_gali_help')}
+                      </button>
                     )}
                   </div>
                 </div>

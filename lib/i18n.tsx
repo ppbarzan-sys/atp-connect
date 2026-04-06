@@ -16,15 +16,16 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import en from '@/locales/en.json'
 import it from '@/locales/it.json'
+import fr from '@/locales/fr.json'
 
-export type Locale = 'en' | 'it'
+export type Locale = 'en' | 'it' | 'fr'
 
 // ── Type everything from the English master file ────────────────────────────
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] }
 export type Translations = typeof en
 
-const LOCALES: Record<Locale, DeepPartial<Translations>> = { en, it }
-export const AVAILABLE_LOCALES: Locale[] = ['en', 'it']
+const LOCALES: Record<Locale, DeepPartial<Translations>> = { en, it, fr }
+export const AVAILABLE_LOCALES: Locale[] = ['en', 'it', 'fr']
 const STORAGE_KEY = 'atp_lang'
 const DEFAULT_LOCALE: Locale = 'en'
 

@@ -9,6 +9,12 @@ export interface GaliContext {
   subject?: 'physics' | 'chemistry' | 'ai' | 'robotics'
   courseTitle?: string
   courseProvider?: string
+  quizScore?: { correct: number; total: number; wrongTopics?: string[] }
+  focusQuestion?: {
+    text: string
+    userAnswer: string
+    correctAnswer: string
+  }
 }
 
 interface Message {
@@ -122,6 +128,13 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // ── Build welcome message ────────────────────────────────────────────────
   function buildWelcome(): string {
+    if (context?.focusQuestion) {
+      return t('gali.focus_question_intro', {
+        text: context.focusQuestion.text,
+        userAnswer: context.focusQuestion.userAnswer,
+        correctAnswer: context.focusQuestion.correctAnswer,
+      })
+    }
     if (context?.subject === 'ai') {
       if (context?.courseTitle) return t('gali.welcome_ai_course', { title: context.courseTitle })
       return t('gali.welcome_ai')
@@ -131,6 +144,17 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
       return t('gali.welcome_robotics')
     }
     if (context?.experimentTitle) {
+      // If quiz results are available, tailor the welcome to the student's score
+      if (context.quizScore && context.quizScore.total > 0) {
+        const { correct, total } = context.quizScore
+        if (correct === total) {
+          return t('gali.welcome_exp_quiz_perfect', { title: context.experimentTitle, correct, total })
+        }
+        if (correct >= Math.ceil(total * 0.7)) {
+          return t('gali.welcome_exp_quiz_good', { title: context.experimentTitle, correct, total })
+        }
+        return t('gali.welcome_exp_quiz_poor', { title: context.experimentTitle, correct, total })
+      }
       const key = isChemistry(context)
         ? 'gali.welcome_exp_chemistry'
         : 'gali.welcome_exp_physics'

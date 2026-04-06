@@ -1,5 +1,5 @@
 'use client'
-import type { Experiment } from '@/data/experiments'
+import type { Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 
 interface FilterBarProps {

@@ -214,6 +214,110 @@ const roboticsCoursesIt: RoboticsCourse[] = [
   }
 ]
 
+const roboticsCoursesFr: RoboticsCourse[] = [
+  {
+    id: 'arduino-fundamentals',
+    title: 'Fondamentaux Arduino',
+    description: "Apprenez la programmation et l'électronique de zéro avec Arduino. Construisez de vrais circuits, écrivez du code et créez des projets interactifs étape par étape. Aucune expérience requise.",
+    category: 'arduino',
+    duration: '10-15 heures',
+    difficulty: 'Beginner',
+    icon: '🔧',
+    url: 'https://courses.arduino.cc/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'arduino-iot',
+    title: "Explorer l'IoT avec Arduino",
+    description: "Découvrez l'Internet des Objets. Apprenez à connecter des capteurs, collecter des données en temps réel et construire des appareils intelligents avec Arduino et l'IoT Cloud.",
+    category: 'arduino',
+    duration: '15-25 heures',
+    difficulty: 'Intermediate',
+    icon: '📡',
+    url: 'https://courses.arduino.cc/explore-iot/home/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'tinkercad-circuits',
+    title: 'Tinkercad Circuits — Simulateur Arduino',
+    description: "Pratiquez les projets Arduino entièrement en ligne et gratuitement — aucun matériel requis. Concevez des circuits, écrivez du code et simulez vos projets dans le navigateur. Parfait pour débuter.",
+    category: 'arduino',
+    duration: 'À votre rythme',
+    difficulty: 'Beginner',
+    icon: '🖥️',
+    url: 'https://www.tinkercad.com/circuits',
+    provider: 'Autodesk'
+  },
+  {
+    id: 'arduino-science',
+    title: 'Arduino Science Kit — Expériences de Physique',
+    description: "Utilisez Arduino pour réaliser des expériences de physique avec de vrais capteurs. Mesurez le mouvement, la lumière, la température et le son — s'intègre directement à votre programme de laboratoire.",
+    category: 'arduino',
+    duration: '15-20 heures',
+    difficulty: 'Intermediate',
+    icon: '🔬',
+    url: 'https://www.arduino.cc/education/science-kit/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'rpi-electronics',
+    title: "Introduction à l'Électronique et à la Robotique",
+    description: "Cours gratuit de la Raspberry Pi Foundation. Apprenez à construire des circuits, contrôler des LED, des moteurs et des capteurs, et à programmer vos propres robots en Python.",
+    category: 'raspberry-pi',
+    duration: '10-15 heures',
+    difficulty: 'Beginner',
+    icon: '🤖',
+    url: 'https://www.raspberrypi.org/courses/electronics-and-robotics',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-programming',
+    title: 'Introduction à la Programmation avec Python',
+    description: "Apprenez à coder avec Python sur Raspberry Pi. Couvre les variables, les boucles, les fonctions et la création de programmes interactifs. Gratuit et accessible aux débutants.",
+    category: 'raspberry-pi',
+    duration: '8-12 heures',
+    difficulty: 'Beginner',
+    icon: '🐍',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-physical-computing',
+    title: 'Informatique Physique avec Raspberry Pi',
+    description: "Connectez le monde numérique au monde physique. Contrôlez des LED, des buzzers et des moteurs par le code. Lisez des données depuis des boutons, capteurs et caméras. Construisez de vrais projets.",
+    category: 'raspberry-pi',
+    duration: '10-15 heures',
+    difficulty: 'Intermediate',
+    icon: '💡',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'cs50x',
+    title: "CS50 : Introduction à l'Informatique",
+    description: "Le légendaire cours d'introduction à l'informatique de Harvard. Couvre les algorithmes, les structures de données, le développement web et Python. Gratuit sur edX avec certificat optionnel. Le cours d'informatique le plus populaire au monde.",
+    category: 'cs50',
+    duration: '100+ heures',
+    difficulty: 'Beginner',
+    icon: '🎓',
+    url: 'https://cs50.harvard.edu/x/',
+    provider: 'Harvard'
+  },
+  {
+    id: 'cs50-ai',
+    title: "CS50 : Introduction à l'IA avec Python",
+    description: "Explorez les algorithmes qui sous-tendent l'IA — recherche, optimisation, apprentissage automatique et réseaux de neurones. Construisez des systèmes intelligents avec Python. Gratuit par Harvard.",
+    category: 'cs50',
+    duration: '40-60 heures',
+    difficulty: 'Advanced',
+    icon: '🧪',
+    url: 'https://cs50.harvard.edu/ai/',
+    provider: 'Harvard'
+  }
+]
+
 export function getRoboticsCourses(locale: string): RoboticsCourse[] {
-  return locale === 'it' ? roboticsCoursesIt : roboticsCourses
+  if (locale === 'it') return roboticsCoursesIt
+  if (locale === 'fr') return roboticsCoursesFr
+  return roboticsCourses
 }

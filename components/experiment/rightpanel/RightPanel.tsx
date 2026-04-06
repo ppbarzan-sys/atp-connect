@@ -1,5 +1,5 @@
 'use client'
-import { Experiment } from '@/data/experiments'
+import { Experiment } from '@/data/loader'
 import OverviewPane from './OverviewPane'
 import ChatPane from './ChatPane'
 import { useI18n } from '@/lib/i18n'

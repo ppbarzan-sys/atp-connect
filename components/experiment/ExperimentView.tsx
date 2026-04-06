@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { Experiment, sectionColors } from '@/data/experiments'
+import { sectionColors } from '@/data/experiments'
+import type { Experiment } from '@/data/loader'
 import SummaryTab from './tabs/SummaryTab'
 import ExperimentTab from './tabs/ExperimentTab'
 import QuestionsTab from './tabs/QuestionsTab'
@@ -14,11 +15,12 @@ interface ExperimentViewProps {
   headerColor?: string
   headerColorDark?: string
   onAskGali?: () => void
+  onAskGaliForQuestion?: (questionText: string, correctAnswer: string, userAnswer: string) => void
 }
 
 type TabId = 'summary' | 'experiment' | 'questions' | 'notes'
 
-export default function ExperimentView({ exp, onBack, headerColor, headerColorDark, onAskGali }: ExperimentViewProps) {
+export default function ExperimentView({ exp, onBack, headerColor, headerColorDark, onAskGali, onAskGaliForQuestion }: ExperimentViewProps) {
   const { t, tSection } = useI18n()
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
@@ -59,7 +61,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
         <div className="exp-main-col">
           {activeTab === 'summary' && <SummaryTab exp={exp} />}
           {activeTab === 'experiment' && <ExperimentTab exp={exp} />}
-          {activeTab === 'questions' && <QuestionsTab exp={exp} />}
+          {activeTab === 'questions' && <QuestionsTab exp={exp} onAskGali={onAskGaliForQuestion} />}
           {activeTab === 'notes' && <NotesTab exp={exp} />}
         </div>
         <RightPanel

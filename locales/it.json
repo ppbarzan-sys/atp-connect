@@ -14,7 +14,7 @@
     "sign_out": "Esci"
   },
   "landing": {
-    "tagline": "Empower Curiosity. Ignite Innovation.",
+    "tagline": "Accendi la Curiosità. Ispira l'Innovazione.",
     "username": "Nome utente",
     "password": "Password",
     "username_placeholder": "Inserisci il nome utente",
@@ -43,7 +43,8 @@
     "all_filter": "Tutti",
     "search_btn": "Cerca",
     "physics_note": "41 esperimenti progettati per il Laboratorio Mobile ATP 4900.00",
-    "chemistry_note": "50 esperimenti progettati per il Laboratorio Mobile ATP 4900.00"
+    "chemistry_note": "50 esperimenti progettati per il Laboratorio Mobile ATP 4900.00",
+    "experiments_completed": "{completed}/{total} completati"
   },
   "sections": {
     "mechanics": "Meccanica",
@@ -102,7 +103,13 @@
     "discussion": "Domande per la Discussione",
     "correct": "✅ Corretto! ",
     "incorrect": "❌ Sbagliato. ",
-    "answer_placeholder": "Scrivi qui la tua risposta…"
+    "answer_placeholder": "Scrivi qui la tua risposta…",
+    "score_correct": "{correct} su {total} corrette",
+    "perfect_score": "🎉 Punteggio perfetto!",
+    "good_score": "👍 Ottimo lavoro!",
+    "keep_practicing": "📚 Continua ad esercitarti!",
+    "reset_quiz": "↺ Riprova",
+    "ask_gali_help": "Chiedi a Gali di spiegare"
   },
   "notes": {
     "my_notes": "📝 Le Mie Note Personali",
@@ -123,7 +130,12 @@
     "concept_hint": "Questo esperimento tratta:",
     "misconceptions": "Errori Comuni",
     "hook": "Introduzione",
-    "khan": "🎬 Khan Academy"
+    "khan": "🎬 Khan Academy",
+    "smart_trays_needed": "Smart Tray necessari",
+    "smart_trays_subtitle": "Preleva questi Smart Tray dal Mobile Lab prima di iniziare",
+    "atp_code": "ATP",
+    "sensor_option": "Opzione sensore",
+    "alternative": "Alternativa:"
   },
   "rightpanel": {
     "tab_overview": "Panoramica",
@@ -175,8 +187,12 @@
     "placeholder_general": "Fai una domanda scientifica…",
     "placeholder_ai": "Chiedi dell'IA, del machine learning o di come usare Claude…",
     "placeholder_robotics": "Chiedi di Arduino, Raspberry Pi, Python o informatica…",
+    "focus_question_intro": "Vediamo insieme questa domanda: \"{text}\". Hai risposto \"{userAnswer}\", ma la risposta corretta è \"{correctAnswer}\". Vuoi che te lo spieghi?",
     "welcome_exp_physics": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di fisica si applica nella vita reale!",
     "welcome_exp_chemistry": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di chimica si applica nella vita reale!",
+    "welcome_exp_quiz_perfect": "Ciao! Sono Gali ✦ Fantastico — hai ottenuto **{correct}/{total}** su **{title}**! 🎉 C'è qualcosa che vorresti approfondire ulteriormente?",
+    "welcome_exp_quiz_good": "Ciao! Sono Gali ✦ Ottimo lavoro su **{title}** — hai ottenuto **{correct}/{total}**! 👍 Vuoi che ti aiuti a chiarire gli argomenti che hai sbagliato?",
+    "welcome_exp_quiz_poor": "Ciao! Sono Gali ✦ Lavoriamo insieme su **{title}**! Hai ottenuto **{correct}/{total}** — posso aiutarti a capire le parti più difficili. Cosa vorresti ripassare?",
     "welcome_chem_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di reazioni, formule, tecniche di laboratorio o qualsiasi altra cosa in questa sezione!",
     "welcome_physics_section": "Ciao! Sono Gali ✦ Stai esplorando gli esperimenti di **{section}**. Chiedimi di concetti, formule o applicazioni nel mondo reale!",
     "welcome_general": "Ciao! Sono Gali ✦ Il tuo assistente STEM. Posso aiutarti con esperimenti di fisica, laboratori di chimica, intelligenza artificiale, robotica, Arduino, Raspberry Pi, Python e informatica. Cosa vorresti esplorare?",
@@ -280,6 +296,10 @@
   "lang": {
     "label": "Lingua",
     "en": "English",
-    "it": "Italiano"
+    "it": "Italiano",
+    "fr": "Français"
+  },
+  "card": {
+    "items": "elementi"
   }
 }

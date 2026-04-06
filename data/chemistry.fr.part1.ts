@@ -1,0 +1,1187 @@
+import type { Experiment } from './experiments'
+
+export const chemistryFrPart1: Experiment[] = [
+  // ─── SECTION 1: Matière et Solutions (101–109) ──────────────────────────────
+  {
+    num: 101,
+    cardEmoji: "⚖️",
+    title: 'Loi de conservation de la masse',
+    section: 'Matter & Solutions',
+    desc: 'Mélanger des solutions de KI et AgNO₃ dans un flacon hermétique et peser avant et après pour vérifier la loi de Lavoisier.',
+    setupTime: '10 min',
+    duration: '20 min',
+    summary: {
+      whatTheyLearn: 'Les élèves confirment que la masse est conservée lors d\'une réaction chimique : la masse totale des réactifs est égale à la masse totale des produits.',
+      instructions: [
+        'Peser un flacon hermétique contenant une solution de KI ainsi qu\'un petit flacon intérieur de solution de AgNO₃.',
+        'Incliner le flacon pour mélanger les solutions ; un précipité jaune de AgI se forme immédiatement.',
+        'Peser à nouveau le flacon hermétique sans l\'ouvrir.',
+        'Enregistrer les deux masses et calculer la différence.',
+        'Expliquer pourquoi aucun changement de masse n\'est observé.',
+      ],
+      expectedOutcome: 'La masse avant et après la réaction est identique (dans la précision de la balance ±0,01 g), confirmant la conservation de la masse.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '⚗️', name: 'Flacon Erlenmeyer hermétique (250 mL)' },
+        { emoji: '🧪', name: 'Solution de KI (0,1 M, 50 mL)' },
+        { emoji: '🧪', name: 'Solution de AgNO₃ (0,1 M, 10 mL)' },
+        { emoji: '⚖️', name: 'Balance électronique (±0,01 g)' },
+        { emoji: '🧊', name: 'Petit flacon intérieur ou tube à essai' },
+      ],
+      observationsToRecord: [
+        'Masse du flacon hermétique avant le mélange (g)',
+        'Changement de couleur observé lors du mélange',
+        'Masse du flacon hermétique après le mélange (g)',
+        'Différence entre les masses avant et après (g)',
+      ],
+      theoryPoints: [
+        'La loi de Lavoisier stipule que la matière n\'est ni créée ni détruite lors d\'une réaction chimique.',
+        'KI + AgNO₃ → AgI↓ + KNO₃ ; le précipité jaune de AgI se forme mais reste à l\'intérieur du flacon hermétique.',
+        'Les atomes sont réarrangés, non perdus ; le flacon hermétique empêche toute perte de masse sous forme de gaz.',
+        'La théorie atomique moderne explique la conservation de la masse par la conservation des atomes.',
+      ],
+      realWorldConnections: [
+        'Les usines chimiques industrielles surveillent les bilans de masse pour détecter les fuites et s\'assurer qu\'aucun réactif n\'est gaspillé.',
+        'Les chimistes légistes utilisent les calculs de bilan de masse pour reconstituer les produits chimiques impliqués dans une réaction.',
+        'La fabrication pharmaceutique s\'appuie sur la stœchiométrie (fondée sur la conservation de la masse) pour obtenir des dosages médicamenteux précis.',
+      ],
+      formula: 'masse(réactifs) = masse(produits)',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Que stipule la loi de conservation de la masse de Lavoisier ?',
+          options: [
+            'L\'énergie est conservée dans toutes les réactions chimiques',
+            'La masse totale des réactifs est égale à la masse totale des produits',
+            'Le nombre de molécules est conservé lors d\'une réaction',
+            'Les réactions produisent toujours des gaz',
+          ],
+          correctIndex: 1,
+          explanation: 'La loi de Lavoisier stipule que la masse est conservée : la masse totale des réactifs est égale à la masse totale des produits, car les atomes sont réarrangés, non créés ni détruits.',
+        },
+        {
+          text: 'Pourquoi le flacon doit-il être hermétique lors de l\'expérience KI + AgNO₃ ?',
+          options: [
+            'Pour accélérer la réaction',
+            'Pour empêcher la formation du précipité jaune',
+            'Pour s\'assurer qu\'aucune matière (gaz ou liquide) ne peut s\'échapper, maintenant la masse constante',
+            'Pour stabiliser la température',
+          ],
+          correctIndex: 2,
+          explanation: 'Fermer hermétiquement le flacon garantit qu\'aucune matière ne s\'échappe sous forme de vapeur ou de liquide. Si le flacon était ouvert, l\'évaporation de l\'eau pourrait réduire la masse mesurée, donnant l\'impression que de la masse a été perdue.',
+        },
+        {
+          text: 'Dans KI + AgNO₃ → AgI + KNO₃, quel produit est un précipité jaune ?',
+          options: [
+            'KNO₃',
+            'KI',
+            'AgNO₃',
+            'AgI',
+          ],
+          correctIndex: 3,
+          explanation: 'L\'iodure d\'argent (AgI) est un solide jaune insoluble qui précipite de la solution lorsque KI et AgNO₃ sont mélangés.',
+        },
+      ],
+      discussion: [
+        'Si vous réalisiez cette expérience dans un bécher ouvert et observiez une légère diminution de masse, comment l\'expliqueriez-vous ? Cela contredit-il la loi de Lavoisier ?',
+        'Quel est le lien entre la loi de conservation de la masse et l\'équilibrage des équations chimiques ?',
+        'Pouvez-vous penser à une situation quotidienne où il pourrait sembler que la masse n\'est pas conservée ? Que se passe-t-il réellement ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Conservation de la masse', pct: 40 },
+        { label: 'Réactions de précipitation', pct: 30 },
+        { label: 'Mesure expérimentale', pct: 20 },
+        { label: 'Théorie atomique', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que brûler ou dissoudre détruit la matière ; en réalité, la masse est conservée mais les produits peuvent être des gaz invisibles.',
+        'Certains élèves confondent conservation de la masse et conservation des molécules — le nombre de molécules peut changer même si la masse est conservée.',
+      ],
+      hook: 'Antoine Lavoisier était tellement précis avec sa balance qu\'il a découvert une loi fondamentale de l\'univers en 1789 — avec un équipement que vous pourriez tenir dans une main !',
+      khanLinks: [
+        { title: 'Loi de conservation de la masse', url: 'https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/conservation-of-mass/v/law-of-conservation-of-mass' },
+        { title: 'Équilibrage des équations chimiques', url: 'https://www.khanacademy.org/science/chemistry/chemical-reactions-stoichiometry/balancing-chemical-equations/v/balancing-chemical-equations' },
+      ],
+    },
+    dataTable: {
+      headers: ['Essai', 'Masse avant (g)', 'Masse après (g)', 'Différence (g)', 'Observation'],
+      rows: 3,
+    },
+    observations: [
+      'Couleur de la solution de KI avant le mélange',
+      'Changement de couleur lors du mélange (précipité jaune de AgI)',
+      'Lecture de masse avant et après le mélange',
+    ],
+    conclusion: 'Rédiger une conclusion indiquant si la masse a été conservée, et relier le résultat à la loi de Lavoisier et à la théorie atomique.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali, votre assistant de laboratoire. Aujourd\'hui, vous testez l\'une des lois les plus fondamentales de la chimie — la conservation de la masse. Assurons-nous que votre expérience est correctement mise en place !',
+      keywords: {
+        setup: 'Assurez-vous que le flacon est complètement hermétique avant de l\'incliner. Placez le AgNO₃ dans le flacon intérieur afin que le mélange n\'ait lieu que lorsque vous inclinez le flacon.',
+        formula: 'La relation clé est : masse(réactifs) = masse(produits). Toute différence mesurée est une erreur expérimentale, non une perte réelle de masse.',
+        error: 'L\'erreur la plus courante est de ne pas fermer hermétiquement le flacon, permettant à la vapeur de s\'échapper et rendant la masse après mélange apparemment plus petite.',
+        result: 'Vous devriez constater que la masse avant et après le mélange est la même à ±0,02 g près, confirmant la conservation de la masse.',
+        real: 'Cette loi est à la base de toute la chimie industrielle — les usines l\'utilisent pour suivre les réactifs et s\'assurer que rien n\'est gaspillé ni fuit.',
+        explain: 'Les atomes sont réarrangés lors des réactions chimiques, non détruits. Comme les atomes ont une masse, la masse totale ne peut pas changer.',
+        hook: 'Lavoisier a été guillotiné pendant la Révolution française, mais sa loi de conservation de la masse a survécu et est devenue le fondement de la chimie moderne !',
+        misconception: 'Beaucoup pensent que la combustion détruit la matière — mais la fumée et le CO₂ libérés ont la même masse totale que le combustible et l\'oxygène d\'origine.',
+      },
+      hint: 'Si vos masses diffèrent de plus de 0,05 g, vérifiez que le couvercle du flacon est hermétique et re-zérotez la balance avant chaque mesure.',
+      expected: 'Masse avant = masse après (à ±0,02 g près). Un précipité jaune de AgI se forme à l\'intérieur du flacon.',
+    },
+  },
+
+  {
+    num: 102,
+    cardEmoji: "💧",
+    title: 'Diffusion en solution',
+    section: 'Matter & Solutions',
+    desc: 'Déposer un cristal de KMnO₄ dans de l\'eau immobile et observer la propagation lente de la couleur violette sans agitation.',
+    setupTime: '5 min',
+    duration: '30 min',
+    summary: {
+      whatTheyLearn: 'Les élèves observent comment les particules dissoutes se propagent d\'une concentration élevée vers une concentration faible par diffusion, entraînée par le mouvement thermique aléatoire.',
+      instructions: [
+        'Remplir un grand bécher avec 300 mL d\'eau distillée et le laisser reposer jusqu\'à ce qu\'il soit parfaitement immobile.',
+        'Déposer délicatement un petit cristal de KMnO₄ au centre du bécher sans agiter l\'eau.',
+        'Observer et esquisser la propagation de la couleur violette toutes les 5 minutes pendant 20 minutes.',
+        'Enregistrer le rayon approximatif de la zone violette à chaque instant.',
+        'Comparer la vitesse de diffusion au début par rapport à la fin.',
+      ],
+      expectedOutcome: 'Un halo violet se propage lentement vers l\'extérieur depuis le cristal pendant 20 minutes, démontrant que les molécules se déplacent des régions de haute concentration vers les régions de basse concentration.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🥛', name: 'Grand bécher (500 mL)' },
+        { emoji: '🔮', name: 'Cristaux de KMnO₄ (1 à 2 petits grains)' },
+        { emoji: '💧', name: 'Eau distillée (300 mL)' },
+        { emoji: '📏', name: 'Règle' },
+        { emoji: '⏱️', name: 'Minuterie' },
+      ],
+      observationsToRecord: [
+        'Rayon de la zone violette à 0, 5, 10, 15, 20 minutes',
+        'Intensité de la couleur au centre (cristal) par rapport au bord',
+        'Forme du front de diffusion (circulaire ? irrégulière ?)',
+        'Si l\'eau a été perturbée pendant l\'observation',
+      ],
+      theoryPoints: [
+        'La diffusion est le déplacement net des particules d\'une région de haute concentration vers une région de basse concentration.',
+        'La diffusion est entraînée par le mouvement thermique aléatoire (brownien) des molécules — aucun apport d\'énergie n\'est nécessaire.',
+        'La vitesse de diffusion dépend de la température, de la taille des particules et du gradient de concentration.',
+        'Première loi de Fick : flux ∝ gradient de concentration ; gradient plus raide = diffusion plus rapide.',
+      ],
+      realWorldConnections: [
+        'L\'oxygène diffuse des alvéoles pulmonaires dans la circulation sanguine à travers un gradient de concentration.',
+        'Les molécules de parfum diffusent dans l\'air depuis la source à haute concentration vers une concentration plus basse dans toute la pièce.',
+        'Les nutriments diffusent de l\'intestin vers les capillaires environnants lors de la digestion.',
+      ],
+      formula: 'J = −D (dC/dx)  [Première loi de Fick]',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce qui entraîne la diffusion en solution ?',
+          options: [
+            'Un gradient électrique entre les charges',
+            'Le mouvement thermique aléatoire des molécules',
+            'La gravité qui tire les particules vers le bas',
+            'Le pompage actif par le solvant',
+          ],
+          correctIndex: 1,
+          explanation: 'La diffusion est entraînée par le mouvement thermique aléatoire (brownien) des molécules. Aucun apport d\'énergie n\'est nécessaire ; les particules se déplacent simplement aléatoirement et se propagent avec le temps de haute concentration vers basse concentration.',
+        },
+        {
+          text: 'Pourquoi la couleur violette se propage-t-elle vers l\'extérieur depuis le cristal de KMnO₄ ?',
+          options: [
+            'Le cristal est plus dense que l\'eau et coule, libérant la couleur vers le bas',
+            'Les ions KMnO₄ se déplacent de la haute concentration près du cristal vers la concentration plus basse au loin',
+            'Les molécules d\'eau repoussent le KMnO₄ depuis le centre',
+            'La charge électrique du KMnO₄ repousse les ions vers l\'extérieur',
+          ],
+          correctIndex: 1,
+          explanation: 'Le KMnO₄ se dissout et libère des ions MnO₄⁻. Ces ions sont très concentrés près du cristal et diffusent vers les régions de plus faible concentration, créant le halo violet qui se propage.',
+        },
+        {
+          text: 'Que se passerait-il avec la vitesse de diffusion si la température de l\'eau était portée à 60 °C ?',
+          options: [
+            'La diffusion ralentirait car la chaleur rend l\'eau plus visqueuse',
+            'La diffusion s\'arrêterait car la chaleur détruit le KMnO₄',
+            'La diffusion s\'accélérerait car les molécules ont plus d\'énergie thermique',
+            'La vitesse de diffusion serait inchangée ; seule la concentration importe',
+          ],
+          correctIndex: 2,
+          explanation: 'Une température plus élevée donne aux molécules plus d\'énergie cinétique, augmentant la fréquence et la vitesse des collisions aléatoires. Cela accélère la diffusion.',
+        },
+      ],
+      discussion: [
+        'Pourquoi la vitesse de diffusion semble-t-elle ralentir à mesure que l\'expérience avance, même si la température n\'a pas changé ?',
+        'Si vous répétiez cette expérience à 60 °C, quelle différence prédiseriez-vous et pourquoi ?',
+        'Comment la diffusion en solution se compare-t-elle à la diffusion dans un gaz ? Laquelle est plus rapide et pourquoi ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Diffusion et gradient de concentration', pct: 45 },
+        { label: 'Théorie cinétique des molécules', pct: 30 },
+        { label: 'Loi de Fick', pct: 15 },
+        { label: 'Observation expérimentale', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que la diffusion nécessite une agitation ou une force extérieure — en réalité, elle est entièrement entraînée par le mouvement moléculaire aléatoire.',
+        'Beaucoup d\'élèves pensent que la diffusion continue jusqu\'à ce que toutes les molécules atteignent le centre ; en fait, elle s\'arrête lorsque la concentration est uniforme (équilibre).',
+      ],
+      hook: 'Sans diffusion, vos poumons ne pourraient pas transférer l\'oxygène dans votre sang — chaque respiration que vous prenez repose sur ce processus simple !',
+      khanLinks: [
+        { title: 'Diffusion et osmose', url: 'https://www.khanacademy.org/science/ap-biology/cell-structure-and-function/passive-transport/v/diffusion-and-osmosis' },
+        { title: 'Théorie cinétique des molécules', url: 'https://www.khanacademy.org/science/chemistry/gases-and-kinetic-molecular-theory/kinetic-molecular-theory/v/kinetic-molecular-theory-of-gas-phase' },
+      ],
+    },
+    dataTable: {
+      headers: ['Temps (min)', 'Rayon de la zone violette (cm)', 'Intensité de la couleur (1–5)', 'Notes'],
+      rows: 5,
+    },
+    observations: [
+      'Esquisser la propagation de la couleur violette à chaque intervalle de 5 minutes',
+      'Estimer le rayon de la zone violette à chaque instant',
+      'Noter si la propagation semble uniforme dans toutes les directions',
+    ],
+    conclusion: 'Expliquer comment vos observations confirment que la diffusion déplace les particules de haute concentration vers basse concentration sans aucune force extérieure.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous observez la diffusion en action — l\'un des processus les plus importants en biologie et en chimie. Observons attentivement !',
+      keywords: {
+        setup: 'Ajoutez le cristal de KMnO₄ très doucement pour ne pas créer de courants dans l\'eau. Le bécher doit être posé sur une surface exempte de vibrations.',
+        formula: 'Première loi de Fick : J = −D(dC/dx). Le flux de diffusion est proportionnel au gradient de concentration — un gradient plus raide signifie une propagation plus rapide.',
+        error: 'Évitez de perturber le bécher pendant l\'expérience. Même une petite vibration crée des courants de convection qui masquent la vraie diffusion.',
+        result: 'Vous devriez voir un halo violet qui grossit lentement, avec la couleur la plus intense près du cristal et qui s\'estompe vers les bords.',
+        real: 'L\'oxygène diffuse de vos poumons dans votre sang selon le même principe — O₂ élevé dans les alvéoles, O₂ faible dans le sang, donc il traverse.',
+        explain: 'La diffusion est causée par le mouvement moléculaire aléatoire. Les molécules de KMnO₄ se déplacent aléatoirement, mais comme il y en a plus près du cristal, le mouvement net est vers l\'extérieur.',
+        hook: 'Les cristaux de KMnO₄ sont d\'un violet-noir profond — mais dissolvez-les dans l\'eau et vous obtenez une magnifique couleur violette utilisée comme désinfectant et produit de traitement de l\'eau !',
+        misconception: 'La diffusion ne s\'ARRÊTE PAS quand le gradient disparaît — les molécules continuent de se déplacer aléatoirement, elles n\'ont simplement plus de direction nette (équilibre dynamique).',
+      },
+      hint: 'Si la couleur violette se propage de manière inégale, vérifiez les courants d\'air du climatiseur ou les vibrations d\'autres équipements affectant le bécher.',
+      expected: 'Une zone violette circulaire se dilate depuis le cristal à environ 0,5–1 cm par 5 minutes à température ambiante.',
+    },
+  },
+
+  {
+    num: 103,
+    cardEmoji: "🥛",
+    title: 'Colloïdes',
+    section: 'Matter & Solutions',
+    desc: 'Dissoudre du soufre dans l\'éthanol, ajouter à l\'eau pour créer un colloïde, puis le comparer à une vraie solution à l\'aide d\'un filtre.',
+    setupTime: '10 min',
+    duration: '25 min',
+    summary: {
+      whatTheyLearn: 'Les élèves distinguent les vraies solutions, les colloïdes et les suspensions en préparant un colloïde de soufre et en le testant par filtration.',
+      instructions: [
+        'Dissoudre une petite quantité de poudre de soufre dans 5 mL d\'éthanol dans un tube à essai.',
+        'Ajouter lentement la solution soufre-éthanol à 50 mL d\'eau distillée en remuant.',
+        'Observer l\'aspect laiteux du colloïde qui se forme.',
+        'Filtrer le colloïde à travers du papier filtre et comparer le filtrat à l\'original.',
+        'Comparer l\'aspect du colloïde avec une vraie solution de NaCl et une suspension de craie.',
+      ],
+      expectedOutcome: 'Le colloïde de soufre apparaît laiteux et opalescent. Contrairement à une suspension, il passe à travers le papier filtre. Contrairement à une vraie solution, il diffuse la lumière de façon visible.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🧪', name: 'Tubes à essai et support' },
+        { emoji: '🔆', name: 'Poudre de soufre (0,1 g)' },
+        { emoji: '🍶', name: 'Éthanol (5 mL)' },
+        { emoji: '💧', name: 'Eau distillée (100 mL)' },
+        { emoji: '📄', name: 'Papier filtre et entonnoir' },
+        { emoji: '🥛', name: 'Bécher (100 mL)' },
+      ],
+      observationsToRecord: [
+        'Aspect de la solution soufre-éthanol (claire ou trouble ?)',
+        'Aspect après ajout à l\'eau (couleur, turbidité)',
+        'Si le colloïde passe à travers le papier filtre',
+        'Comparaison avec la vraie solution de NaCl et la suspension de craie',
+      ],
+      theoryPoints: [
+        'Un colloïde contient des particules de 1 à 1000 nm de diamètre dispersées dans un milieu — trop petites pour être filtrées mais assez grandes pour diffuser la lumière.',
+        'Les vraies solutions ont des tailles de particules < 1 nm et sont transparentes ; les suspensions ont des particules > 1000 nm qui se déposent et peuvent être filtrées.',
+        'Lorsque le soufre (insoluble dans l\'eau) est ajouté via l\'éthanol, il précipite sous forme de particules colloïdales stabilisées dans l\'eau.',
+        'Les colloïdes sont thermodynamiquement métastables : ils semblent stables mais peuvent être déstabilisés par des variations de température ou de concentration en électrolytes.',
+      ],
+      realWorldConnections: [
+        'Le lait est un colloïde de gouttelettes de graisse dispersées dans l\'eau — il paraît blanc car les particules colloïdales diffusent la lumière.',
+        'Le plasma sanguin est un colloïde ; le comportement colloïdal est essentiel au transport de l\'oxygène et des nutriments.',
+        'Le brouillard est un colloïde de gouttelettes d\'eau dans l\'air ; les sprays aérosols sont des colloïdes de liquide dans un gaz.',
+      ],
+      formula: 'Diamètre des particules : 1 nm < d < 1000 nm (plage colloïdale)',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce qui distingue un colloïde d\'une vraie solution ?',
+          options: [
+            'Les colloïdes contiennent des ions ; les solutions contiennent des molécules',
+            'Les particules colloïdales font 1 à 1000 nm et diffusent la lumière ; les particules en solution font < 1 nm et ne la diffusent pas',
+            'Les colloïdes peuvent être filtrés ; les solutions ne le peuvent pas',
+            'Les colloïdes semblent toujours clairs ; les solutions semblent laiteuses',
+          ],
+          correctIndex: 1,
+          explanation: 'Les particules colloïdales (1–1000 nm) sont assez grandes pour diffuser la lumière (effet Tyndall) mais assez petites pour passer à travers le papier filtre. Les particules en vraie solution (< 1 nm) sont trop petites pour diffuser la lumière et la solution apparaît claire.',
+        },
+        {
+          text: 'Pourquoi le soufre forme-t-il un colloïde lorsque la solution éthanol est ajoutée à l\'eau ?',
+          options: [
+            'Le soufre se dissout dans l\'eau pour former des ions',
+            'L\'éthanol réagit avec l\'eau pour libérer du gaz soufré',
+            'Le soufre est insoluble dans l\'eau et précipite sous forme de minuscules particules colloïdales stabilisées par le changement de solvant',
+            'L\'eau oxyde le soufre en un nouveau composé',
+          ],
+          correctIndex: 2,
+          explanation: 'Le soufre se dissout dans l\'éthanol mais pas dans l\'eau. Lorsque la solution éthanol est ajoutée à l\'eau, le soufre précipite sous forme de particules très fines (taille colloïdale) plutôt qu\'un précipité massif, car le changement soudain de solvant empêche la formation de grands cristaux.',
+        },
+        {
+          text: 'Que se passe-t-il lorsque vous filtrez un colloïde à travers du papier filtre ordinaire ?',
+          options: [
+            'Le colloïde est complètement retenu par le papier filtre',
+            'Le colloïde passe car les particules colloïdales sont plus petites que les pores du papier filtre',
+            'La filtration convertit le colloïde en vraie solution',
+            'Le papier filtre change de couleur de façon permanente',
+          ],
+          correctIndex: 1,
+          explanation: 'Le papier filtre ordinaire a des pores bien plus grands que les particules colloïdales (1–1000 nm), donc le colloïde passe à travers sans changement. C\'est pourquoi les colloïdes ne peuvent pas être séparés par simple filtration — contrairement aux suspensions.',
+        },
+      ],
+      discussion: [
+        'Comment distingueriez-vous un colloïde, une vraie solution et une suspension sans utiliser de filtre ? Quels tests effectueriez-vous ?',
+        'Pourquoi le lait semble-t-il blanc ? Utilisez vos connaissances sur les colloïdes pour expliquer.',
+        'Les colloïdes sont décrits comme « métastables ». Qu\'est-ce que cela signifie et qu\'est-ce qui pourrait déstabiliser un colloïde ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Colloïde vs. solution vs. suspension', pct: 40 },
+        { label: 'Taille des particules et propriétés', pct: 30 },
+        { label: 'Diffusion de la lumière (effet Tyndall)', pct: 20 },
+        { label: 'Filtration et séparation', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que les colloïdes sont identiques aux suspensions — mais les suspensions se déposent et peuvent être filtrées, alors que les colloïdes ne font ni l\'un ni l\'autre.',
+        'Beaucoup d\'élèves supposent que si un liquide semble trouble, c\'est forcément une suspension — en fait, de nombreux colloïdes apparaissent troubles ou laiteux.',
+      ],
+      hook: 'Le lait, le brouillard, le sang et même la gelée sont tous des colloïdes — l\'un des types de mélanges les plus importants dans la nature et l\'industrie !',
+      khanLinks: [
+        { title: 'Introduction aux solutions', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions' },
+      ],
+    },
+    dataTable: {
+      headers: ['Échantillon', 'Aspect', 'Passe le filtre ?', 'Diffuse la lumière ?', 'Classification'],
+      rows: 4,
+    },
+    observations: [
+      'Enregistrer l\'aspect (couleur, clarté) de chaque mélange',
+      'Noter si chaque échantillon passe à travers le papier filtre',
+      'Observer quels échantillons diffusent un faisceau de lampe de poche (effet Tyndall)',
+    ],
+    conclusion: 'Résumer les différences clés entre les trois types de mélanges à partir de vos observations et les relier à la théorie des tailles de particules.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous fabriquez un colloïde — un type de mélange mystérieux qui n\'est ni une vraie solution ni une suspension. Fascinant !',
+      keywords: {
+        setup: 'Ajoutez la solution soufre-éthanol goutte à goutte dans l\'eau en remuant doucement. L\'ajouter trop vite peut créer des particules plus grandes qui se déposent.',
+        formula: 'Diamètre des particules colloïdales : 1 nm à 1000 nm. Cette plage de taille confère aux colloïdes leurs propriétés optiques uniques.',
+        error: 'N\'utilisez pas trop de soufre — un excès de soufre crée une suspension visible qui se dépose, au lieu d\'un vrai colloïde.',
+        result: 'Attendez-vous à un liquide blanc laiteux opalescent qui passe à travers le papier filtre mais diffuse un faisceau lumineux (effet Tyndall).',
+        real: 'Le lait est un colloïde de graisse dans l\'eau ; la couleur blanche provient de la diffusion de la lumière par des gouttelettes de graisse colloïdales — même physique que votre colloïde de soufre !',
+        explain: 'Les particules colloïdales sont assez grandes pour diffuser la lumière mais assez petites pour rester en suspension indéfiniment grâce au mouvement brownien.',
+        hook: 'Le ciel est bleu parce que l\'air agit comme un colloïde — de minuscules molécules de poussière et de gaz diffusent davantage la lumière bleue de courte longueur d\'onde que la lumière rouge !',
+        misconception: 'Un colloïde n\'est PAS une solution — le soufre n\'est pas dissous au niveau atomique. Mais ce n\'est PAS non plus une suspension — il ne se dépose pas.',
+      },
+      hint: 'Si votre colloïde se dépose après quelques minutes, les particules sont trop grandes. Diluez davantage la solution soufre-éthanol originale avant de l\'ajouter à l\'eau.',
+      expected: 'Un colloïde opalescent laiteux qui passe à travers le papier filtre et montre l\'effet Tyndall lorsqu\'un faisceau de lampe de poche le traverse.',
+    },
+  },
+
+  {
+    num: 104,
+    cardEmoji: "🔦",
+    title: 'Propriétés des colloïdes',
+    section: 'Matter & Solutions',
+    desc: 'Démontrer l\'effet Tyndall avec une lampe de poche, coaguler un colloïde avec NaCl et tester le lait comme colloïde naturel.',
+    setupTime: '10 min',
+    duration: '30 min',
+    summary: {
+      whatTheyLearn: 'Les élèves étudient les deux propriétés définissant les colloïdes : la diffusion de la lumière (effet Tyndall) et la coagulation par les électrolytes.',
+      instructions: [
+        'Préparer le colloïde de soufre de l\'expérience 103, ou utiliser du lait dilué.',
+        'Faire briller un laser ou une lampe de poche à travers le colloïde dans une pièce sombre — observer le trajet lumineux.',
+        'Faire briller le même faisceau à travers une vraie solution de NaCl pour comparaison.',
+        'Ajouter 1 mL de solution saturée de NaCl au colloïde et observer le changement.',
+        'Enregistrer si le colloïde devient trouble ou se dépose après l\'ajout de sel.',
+      ],
+      expectedOutcome: 'Le colloïde montre un faisceau lumineux visible (effet Tyndall) ; la solution de NaCl ne le montre pas. L\'ajout de NaCl provoque la coagulation et le dépôt du colloïde.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🔦', name: 'Lampe de poche ou pointeur laser' },
+        { emoji: '🥛', name: 'Colloïde de soufre ou lait dilué' },
+        { emoji: '🧂', name: 'Solution saturée de NaCl (5 mL)' },
+        { emoji: '🧪', name: 'Tubes à essai (x4)' },
+        { emoji: '💧', name: 'Eau distillée' },
+      ],
+      observationsToRecord: [
+        'Visibilité du faisceau lumineux dans le colloïde vs. la vraie solution',
+        'Aspect du colloïde avant et après l\'ajout de NaCl',
+        'Temps nécessaire pour que les particules coagulées se déposent',
+        'Comparaison de l\'effet Tyndall entre le lait et le colloïde de soufre',
+      ],
+      theoryPoints: [
+        'L\'effet Tyndall : les particules colloïdales diffusent la lumière, rendant le faisceau visible ; les vraies solutions ne diffusent pas significativement la lumière.',
+        'Les colloïdes sont stabilisés par des charges de surface (potentiel zêta) qui maintiennent les particules en répulsion mutuelle.',
+        'L\'ajout d\'électrolytes (NaCl) neutralise les charges de surface, permettant aux particules de s\'agréger (coaguler) et de se déposer.',
+        'Le lait est un colloïde naturel de protéines de caséine et de globules de graisse dispersés dans l\'eau.',
+      ],
+      realWorldConnections: [
+        'Les stations de traitement de l\'eau utilisent du sulfate d\'aluminium pour coaguler les impuretés colloïdales et les faire se déposer pour les éliminer.',
+        'L\'effet Tyndall explique pourquoi les phares de voiture sont visibles sous forme de faisceaux par temps de brouillard.',
+        'L\'ajout de sel ou d\'acide au lait le fait cailler (coaguler) — base de la fabrication du fromage.',
+      ],
+      formula: 'Effet Tyndall : I_diffusé ∝ 1/λ⁴ (diffusion de Rayleigh pour les petites particules)',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce que l\'effet Tyndall ?',
+          options: [
+            'Le chauffage d\'un colloïde par absorption de lumière',
+            'La diffusion d\'un faisceau lumineux par des particules colloïdales, le rendant visible',
+            'Le changement de couleur d\'un colloïde lors de l\'ajout d\'électrolytes',
+            'Le dépôt de particules dans une suspension au fil du temps',
+          ],
+          correctIndex: 1,
+          explanation: 'L\'effet Tyndall est la diffusion de la lumière par des particules colloïdales. Comme les particules colloïdales (1–1000 nm) ont une taille comparable à la longueur d\'onde de la lumière visible, elles diffusent le faisceau lumineux et le rendent visible.',
+        },
+        {
+          text: 'Pourquoi l\'ajout de NaCl provoque-t-il la coagulation d\'un colloïde ?',
+          options: [
+            'NaCl réagit chimiquement avec les particules colloïdales',
+            'NaCl augmente la viscosité de l\'eau, ralentissant les particules',
+            'Les ions Na⁺ et Cl⁻ neutralisent les charges de surface qui maintiennent les particules colloïdales éloignées',
+            'NaCl absorbe les particules sur sa surface cristalline',
+          ],
+          correctIndex: 2,
+          explanation: 'Les particules colloïdales sont stabilisées par des charges électriques sur leurs surfaces. Lorsque NaCl est ajouté, les ions neutralisent ces charges, réduisant la répulsion entre particules. Sans répulsion, les particules entrent en collision et s\'agglomèrent (coagulent), puis se déposent.',
+        },
+        {
+          text: 'Lequel des exemples suivants est une illustration réelle de la coagulation d\'un colloïde ?',
+          options: [
+            'Dissoudre du sel dans l\'eau',
+            'La glace qui fond dans une pièce chaude',
+            'Le lait qui caille lors de l\'ajout d\'acide ou de sel',
+            'La vapeur qui se condense sur une fenêtre froide',
+          ],
+          correctIndex: 2,
+          explanation: 'Le lait est un colloïde de particules protéiques (caséine). L\'ajout d\'acide ou de sel neutralise les charges de surface sur la caséine, provoquant la coagulation des particules protéiques et la formation de caillots — première étape de la fabrication du fromage.',
+        },
+      ],
+      discussion: [
+        'Comment pourriez-vous utiliser l\'effet Tyndall pour déterminer si une boisson a été falsifiée avec un additif colloïdal ?',
+        'Dans le traitement de l\'eau, pourquoi la coagulation est-elle suivie de filtration ? Que se passerait-il si vous ne faisiez qu\'une seule étape ?',
+        'Pourquoi le ciel apparaît-il bleu pendant la journée mais rouge/orange au coucher du soleil ? Comment cela se rapporte-t-il à l\'effet Tyndall ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Effet Tyndall et diffusion de la lumière', pct: 35 },
+        { label: 'Coagulation et potentiel zêta', pct: 35 },
+        { label: 'Stabilité des colloïdes', pct: 20 },
+        { label: 'Applications dans le monde réel', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent que tous les liquides blancs ou troubles montrent l\'effet Tyndall — mais l\'intensité dépend de la taille et de la concentration des particules.',
+        'Beaucoup pensent que la coagulation détruit les particules — en réalité, les particules existent toujours, elles s\'agglomèrent simplement et se déposent.',
+      ],
+      hook: 'L\'effet Tyndall explique pourquoi vous pouvez voir un faisceau laser dans l\'air brumeux — et pourquoi le ciel est bleu !',
+      khanLinks: [
+        { title: 'Introduction aux solutions', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/mixtures-and-solutions/v/introduction-to-solutions' },
+      ],
+    },
+    dataTable: {
+      headers: ['Échantillon', 'Effet Tyndall ?', 'Aspect avant NaCl', 'Aspect après NaCl', 'Temps de dépôt (min)'],
+      rows: 4,
+    },
+    observations: [
+      'Visibilité et intensité du faisceau lumineux à travers chaque échantillon',
+      'Changement d\'aspect du colloïde après l\'ajout de solution de NaCl',
+      'Si les particules coagulées finissent par se déposer au fond',
+    ],
+    conclusion: 'Expliquer comment l\'effet Tyndall et la coagulation démontrent les propriétés uniques des colloïdes par rapport aux vraies solutions.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous explorez ce qui rend les colloïdes uniques — des beaux faisceaux lumineux à la science de la fabrication du fromage. Passionnant !',
+      keywords: {
+        setup: 'Utilisez une lampe de poche dans une pièce sombre pour le meilleur effet Tyndall. Éclairez à travers le côté du tube à essai, pas par le dessus.',
+        formula: 'L\'intensité de l\'effet Tyndall est liée à la diffusion de Rayleigh : I ∝ 1/λ⁴ — les longueurs d\'onde plus courtes (lumière bleue) diffusent davantage.',
+        error: 'Utiliser trop de NaCl à la fois peut donner un résultat peu clair. Ajoutez-le goutte à goutte et observez la coagulation progressive.',
+        result: 'Le faisceau de lampe de poche doit être clairement visible dans le colloïde mais invisible dans la solution de NaCl. Après l\'ajout de sel, le colloïde doit devenir trouble puis se déposer.',
+        real: 'Les stations de traitement de l\'eau utilisent exactement ce processus — ajout d\'alun (un électrolyte) pour coaguler la boue colloïdale et les bactéries, puis filtration du sédiment.',
+        explain: 'Les charges de surface sur les particules colloïdales les maintiennent éloignées. Les électrolytes neutralisent ces charges, permettant aux particules de s\'agglomérer (coaguler) et de finalement se déposer.',
+        hook: 'La couleur bleue du ciel est en fait un effet semblable au Tyndall — de minuscules molécules d\'air diffusent davantage la lumière bleue que la lumière rouge, rendant le ciel bleu !',
+        misconception: 'La coagulation n\'est PAS la même chose que la cristallisation — les particules ne forment pas une structure cristalline, elles s\'agglomèrent simplement en agrégats plus grands.',
+      },
+      hint: 'Si la coagulation est lente, chauffez légèrement la solution — une température plus élevée accélère les collisions entre particules et la coagulation.',
+      expected: 'Faisceau Tyndall clair dans le colloïde ; pas de faisceau dans la solution. L\'ajout de NaCl provoque une turbidité visible suivie du dépôt des particules de soufre.',
+    },
+  },
+
+  {
+    num: 105,
+    cardEmoji: "💎",
+    title: 'Complexes de coordination',
+    section: 'Matter & Solutions',
+    desc: 'Ajouter de l\'ammoniaque au CuSO₄ pour former un complexe bleu profond, et du NaCl pour former un complexe vert vif.',
+    setupTime: '10 min',
+    duration: '25 min',
+    summary: {
+      whatTheyLearn: 'Les élèves observent comment les ions métalliques forment des complexes de coordination avec différents ligands, produisant des couleurs caractéristiques.',
+      instructions: [
+        'Préparer 20 mL de solution de CuSO₄ à 0,1 M dans un bécher.',
+        'Ajouter lentement une solution d\'ammoniaque diluée (NH₃) goutte à goutte en remuant ; observer le changement de couleur.',
+        'Continuer à ajouter NH₃ jusqu\'à ce que la solution devienne bleu profond — enregistrer la couleur à chaque étape.',
+        'Dans un bécher séparé, ajouter du NaCl solide à la solution de CuSO₄ et observer le changement de couleur en vert vif.',
+        'Comparer les deux complexes et discuter de l\'influence des ligands sur la couleur.',
+      ],
+      expectedOutcome: 'CuSO₄ + NH₃ produit un complexe tétraamminecuivre(II) bleu profond [Cu(NH₃)₄]²⁺. CuSO₄ + NaCl produit un complexe chlorocuivre vert vif.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🔵', name: 'Solution de CuSO₄ (0,1 M, 50 mL)' },
+        { emoji: '🧴', name: 'Solution d\'ammoniaque diluée (NH₃, 25 mL)' },
+        { emoji: '🧂', name: 'NaCl solide (2 g)' },
+        { emoji: '🥛', name: 'Béchers (100 mL, x2)' },
+        { emoji: '🧪', name: 'Pipette compte-gouttes' },
+      ],
+      observationsToRecord: [
+        'Couleur de la solution de CuSO₄ avant tout ajout (bleu pâle)',
+        'Couleur à chaque étape de l\'ajout de NH₃ (bleu pâle → bleu-vert → bleu profond)',
+        'Couleur de CuSO₄ après ajout de NaCl (vert vif)',
+        'Toute formation de précipité (Cu(OH)₂ bleu pâle avant l\'excès de NH₃)',
+      ],
+      theoryPoints: [
+        'Les complexes de coordination se forment lorsque les ligands donnent des paires d\'électrons à un ion métallique central.',
+        '[Cu(H₂O)₄]²⁺ (bleu pâle) est remplacé par [Cu(NH₃)₄]²⁺ (bleu profond) lorsque NH₃ déplace les ligands eau.',
+        'La couleur d\'un complexe dépend de l\'éclatement du champ ligand (différence d\'énergie des orbitales d) — différents ligands donnent des couleurs différentes.',
+        'Les ligands Cl⁻ créent un champ plus faible que NH₃, donnant au complexe chlorocuivre vert une énergie de transition d-d différente.',
+      ],
+      realWorldConnections: [
+        'Les complexes de coordination sont utilisés en galvanoplastie — le placage au cuivre utilise des complexes [Cu(CN)₄]²⁻ pour un dépôt uniforme.',
+        'L\'hémoglobine est un complexe de coordination du fer qui fixe et libère l\'oxygène dans l\'organisme.',
+        'L\'EDTA, utilisé dans les tubes de prélèvement sanguin, est un ligand qui forme des complexes stables avec Ca²⁺ pour prévenir la coagulation du sang.',
+      ],
+      formula: 'Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺  (bleu profond)',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce qu\'un ligand dans un complexe de coordination ?',
+          options: [
+            'L\'ion métallique central qui accepte les électrons',
+            'Une molécule ou un ion qui donne une paire libre d\'électrons à l\'ion métallique',
+            'Un sel qui se dissout dans l\'eau pour former des ions',
+            'Un précipité insoluble formé par le métal',
+          ],
+          correctIndex: 1,
+          explanation: 'Un ligand est une molécule ou un ion qui donne une paire libre d\'électrons à l\'ion métallique central, formant une liaison de coordination (liaison dative). NH₃ et Cl⁻ sont tous deux des ligands dans cette expérience.',
+        },
+        {
+          text: 'Pourquoi la couleur de la solution change-t-elle lorsque NH₃ est ajouté au CuSO₄ ?',
+          options: [
+            'NH₃ réagit avec SO₄²⁻ pour former un nouveau composé qui absorbe une lumière différente',
+            'NH₃ réduit Cu²⁺ en métal Cu, qui a une couleur différente',
+            'NH₃ remplace les ligands eau autour de Cu²⁺, modifiant l\'éclatement énergétique des orbitales d et donc la couleur',
+            'NH₃ augmente la concentration des ions Cu²⁺, intensifiant la couleur bleue',
+          ],
+          correctIndex: 2,
+          explanation: 'Différents ligands éclatent les orbitales d de Cu²⁺ de façon différente (théorie du champ ligand). NH₃ les éclate plus que H₂O, modifiant l\'énergie des transitions d-d et donc la longueur d\'onde de la lumière absorbée — résultant en une couleur bleue plus profonde.',
+        },
+        {
+          text: 'Que se forme-t-il initialement lorsqu\'une petite quantité de NH₃ est ajoutée à la solution de CuSO₄ ?',
+          options: [
+            'Immédiatement [Cu(NH₃)₄]²⁺ bleu profond',
+            'Un précipité de Cu(OH)₂ bleu pâle, avant que l\'excès de NH₃ ne le dissolve',
+            'Un précipité rouge de métal cuivre',
+            'Aucun changement visible ne se produit',
+          ],
+          correctIndex: 1,
+          explanation: 'Initialement, NH₃ augmente le pH et provoque la précipitation de Cu(OH)₂ (solide bleu pâle). Avec un excès de NH₃, celui-ci se dissout car Cu²⁺ forme le complexe stable bleu profond [Cu(NH₃)₄]²⁺ tétraamminecuivre(II).',
+        },
+      ],
+      discussion: [
+        'Pourquoi le changement de ligand autour d\'un ion métallique modifie-t-il la couleur du complexe ? Expliquez en termes de niveaux d\'énergie des électrons.',
+        'L\'hémoglobine est un complexe de coordination du fer. Pourquoi l\'empoisonnement au monoxyde de carbone (CO) est-il si dangereux d\'après ce que vous savez sur la compétition des ligands ?',
+        'Si vous ajoutiez de l\'EDTA à votre solution bleu profond de [Cu(NH₃)₄]²⁺, que pourrait-il se passer et pourquoi ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Chimie de coordination et ligands', pct: 40 },
+        { label: 'Couleur due à l\'éclatement des orbitales d', pct: 30 },
+        { label: 'Réactions de substitution de ligands', pct: 20 },
+        { label: 'Applications biologiques et industrielles', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que le changement de couleur est dû à une réaction chimique produisant un nouveau composé — c\'est en réalité un changement de l\'environnement de coordination autour du même ion Cu²⁺.',
+        'Beaucoup pensent que tous les composés du cuivre sont bleus — en réalité, différents ligands donnent à Cu²⁺ des couleurs très différentes (bleu, vert, incolore).',
+      ],
+      hook: 'Le bleu profond de [Cu(NH₃)₄]²⁺ était utilisé par les anciens Égyptiens comme pigment — et la même chimie explique pourquoi votre sang est rouge (complexe de fer) !',
+      khanLinks: [
+        { title: 'États d\'oxydation', url: 'https://www.khanacademy.org/science/chemistry/oxidation-reduction/introduction-to-oxidation-reduction-reactions/v/introduction-to-oxidation-states' },
+      ],
+    },
+    dataTable: {
+      headers: ['Ajout', 'Volume ajouté (mL)', 'Couleur observée', 'Précipité ?', 'Notes'],
+      rows: 6,
+    },
+    observations: [
+      'Couleur de la solution à chaque étape de l\'ajout de NH₃',
+      'Formation et dissolution de tout précipité',
+      'Couleur finale des deux complexes (complexe NH₃ et complexe NaCl)',
+    ],
+    conclusion: 'Expliquer comment différents ligands (NH₃ vs Cl⁻ vs H₂O) affectent la couleur des complexes de cuivre, et relier cela à la théorie du champ ligand.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous fabriquez des complexes de coordination — le même type de chimie qui rend votre sang rouge et les minéraux de cuivre bleus. Incroyable !',
+      keywords: {
+        setup: 'Ajoutez NH₃ goutte à goutte et remuez continuellement. L\'ajouter trop vite provoque un excès de précipité avant la formation du complexe.',
+        formula: 'Cu²⁺ + 4NH₃ → [Cu(NH₃)₄]²⁺. C\'est une substitution de ligands où 4 molécules d\'eau autour de Cu²⁺ sont remplacées par 4 molécules d\'ammoniaque.',
+        error: 'Une erreur courante est de s\'arrêter au stade du précipité bleu pâle — continuez à ajouter NH₃ jusqu\'à ce que le précipité se dissolve complètement et que le complexe bleu profond se forme.',
+        result: 'Avec NH₃ : solution bleu profond. Avec NaCl : solution vert vif. Ce sont deux complexes de coordination du cuivre différents.',
+        real: 'L\'hémoglobine (sang) et la chlorophylle (plantes) sont tous deux des complexes de coordination — l\'hème est à base de fer, la chlorophylle est à base de magnésium.',
+        explain: 'Différents ligands éclatent les orbitales d de Cu²⁺ différemment (éclatement du champ ligand). Cela modifie les longueurs d\'onde de lumière absorbées, changeant la couleur.',
+        hook: 'La Statue de la Liberté est faite de cuivre — elle est verte car l\'humidité atmosphérique et le CO₂ forment des complexes de carbonate de cuivre sur sa surface !',
+        misconception: 'Le changement de couleur ne signifie PAS qu\'un élément totalement nouveau est formé — Cu²⁺ est toujours là, simplement entouré de ligands différents qui modifient ses propriétés optiques.',
+      },
+      hint: 'Si la solution vire au vert au lieu du bleu avec NH₃, il peut y avoir une contamination par NaCl — rincez soigneusement toute la verrerie avant de commencer.',
+      expected: '[Cu(NH₃)₄]²⁺ bleu profond avec un excès d\'ammoniaque ; complexe vert vif avec les ligands Cl⁻ de l\'ajout de NaCl.',
+    },
+  },
+
+  {
+    num: 106,
+    cardEmoji: "🌡️",
+    title: 'Effets de la température sur la solubilité',
+    section: 'Matter & Solutions',
+    desc: 'Tester la solubilité de CaCO₃, CuSO₄, NaCl et saccharose à température ambiante et à 70 °C.',
+    setupTime: '15 min',
+    duration: '35 min',
+    summary: {
+      whatTheyLearn: 'Les élèves découvrent que la température affecte différemment la solubilité de différents solutés : la plupart des sels ioniques et des composés moléculaires deviennent plus solubles lorsqu\'ils sont chauffés.',
+      instructions: [
+        'Préparer quatre tubes à essai avec 10 mL d\'eau distillée chacun à température ambiante.',
+        'Ajouter des spatules égales de CaCO₃, CuSO₄, NaCl et saccharose dans chaque tube à essai et remuer.',
+        'Enregistrer ce qui se dissout à température ambiante (qualitatif : rien/partiel/total).',
+        'Chauffer les tubes à essai dans un bain-marie à 70 °C pendant 5 minutes et remuer.',
+        'Enregistrer la variation de solubilité pour chaque soluté à la température plus élevée.',
+      ],
+      expectedOutcome: 'CuSO₄, NaCl et saccharose montrent une solubilité accrue à 70 °C ; CaCO₃ reste pratiquement insoluble aux deux températures.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🧪', name: 'Tubes à essai (x4)' },
+        { emoji: '🌡️', name: 'Bain-marie ou plaque chauffante (70 °C)' },
+        { emoji: '🔵', name: 'CuSO₄ (0,5 g)' },
+        { emoji: '🧂', name: 'NaCl (0,5 g), saccharose (0,5 g), CaCO₃ (0,5 g)' },
+        { emoji: '💧', name: 'Eau distillée (50 mL)' },
+      ],
+      observationsToRecord: [
+        'Quantité dissoute à température ambiante pour chaque soluté',
+        'Quantité dissoute à 70 °C pour chaque soluté',
+        'Couleur et clarté de chaque solution aux deux températures',
+        'Tout changement de couleur (CuSO₄ est bleu ; CaCO₃ est blanc et insoluble)',
+      ],
+      theoryPoints: [
+        'La solubilité est la quantité maximale de soluté qui se dissout dans un volume donné de solvant à une température donnée.',
+        'Pour la plupart des solides ioniques (NaCl, CuSO₄), la solubilité augmente avec la température car le processus de dissolution est endothermique.',
+        'CaCO₃ est très insoluble car l\'énergie de réseau de son cristal est très élevée par rapport à l\'énergie d\'hydratation.',
+        'Les changements de température déplacent l\'équilibre de dissolution selon le principe de Le Chatelier : le chauffage favorise la direction de dissolution endothermique.',
+      ],
+      realWorldConnections: [
+        'L\'eau chaude dissout davantage de composés du café ou du thé — la solubilité accrue à haute température extrait plus de saveurs.',
+        'Les tuyaux d\'eau développent des dépôts de CaCO₃ (calcaire) lorsque l\'eau chaude perd du CO₂ dissous, réduisant la solubilité du carbonate.',
+        'Les poissons ont besoin d\'oxygène dissous — l\'eau plus chaude contient moins d\'O₂, c\'est pourquoi des mortalités de poissons surviennent lors des vagues de chaleur estivales.',
+      ],
+      formula: 'Ksp (CaCO₃) = [Ca²⁺][CO₃²⁻] = 3,3 × 10⁻⁹ mol²/L²',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Que signifie la solubilité d\'une substance ?',
+          options: [
+            'La vitesse à laquelle une substance se dissout dans l\'eau',
+            'La masse maximale d\'un soluté qui se dissout dans 100 g de solvant à une température donnée',
+            'Le volume de solvant nécessaire pour dissoudre 1 g de tout soluté',
+            'La température à laquelle une substance commence à se dissoudre',
+          ],
+          correctIndex: 1,
+          explanation: 'La solubilité est la quantité maximale (généralement en grammes) de soluté qui se dissout complètement dans 100 g (ou 100 mL) de solvant à une température spécifique pour former une solution saturée.',
+        },
+        {
+          text: 'Pourquoi le saccharose devient-il plus soluble dans l\'eau lorsque la température augmente ?',
+          options: [
+            'Le saccharose réagit avec l\'eau chaude pour produire des ions qui se dissolvent plus facilement',
+            'Une température plus élevée donne aux molécules d\'eau plus d\'énergie pour briser les liaisons cristallines du saccharose',
+            'L\'eau chaude s\'évapore, laissant plus de place pour les molécules de saccharose',
+            'Le saccharose fond à 70 °C et devient un liquide qui se mélange avec l\'eau',
+          ],
+          correctIndex: 1,
+          explanation: 'Une température plus élevée augmente l\'énergie cinétique des molécules d\'eau. Cela leur donne plus d\'énergie pour briser les liaisons intermoléculaires maintenant ensemble les cristaux de saccharose, permettant à davantage de saccharose de se dissoudre.',
+        },
+        {
+          text: 'CaCO₃ est pratiquement insoluble à température ambiante et à 70 °C. Quelle est la meilleure explication ?',
+          options: [
+            'CaCO₃ est un gaz à haute température',
+            'CaCO₃ possède une très haute énergie de réseau qui n\'est pas surmontée par l\'énergie d\'hydratation, même à 70 °C',
+            'Le calcium ne peut pas former d\'ions dans l\'eau',
+            'L\'ion CO₃²⁻ réagit avec l\'eau et empêche la dissolution',
+          ],
+          correctIndex: 1,
+          explanation: 'CaCO₃ possède une énergie de réseau extrêmement élevée (liaisons cristallines fortes). L\'énergie libérée par l\'hydratation de ses ions est insuffisante pour surmonter cette énergie de réseau, donc très peu se dissout quelle que soit la température.',
+        },
+      ],
+      discussion: [
+        'Le gaz oxygène devient moins soluble dans l\'eau lorsque la température augmente. En quoi cela diffère-t-il de la plupart des solides ioniques, et que cela vous dit-il sur le signe de ΔH pour la dissolution d\'un gaz dans l\'eau ?',
+        'En utilisant le principe de Le Chatelier, expliquez pourquoi le chauffage augmente la solubilité de NaCl si la réaction de dissolution est endothermique.',
+        'Comment le changement climatique (augmentation des températures océaniques) pourrait-il affecter la capacité de l\'eau de mer à dissoudre le CO₂ ? Quelles sont les conséquences environnementales ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Solubilité et saturation', pct: 35 },
+        { label: 'Effet de la température sur la solubilité', pct: 35 },
+        { label: 'Énergie de réseau vs. énergie d\'hydratation', pct: 20 },
+        { label: 'Principe de Le Chatelier', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves supposent souvent que toutes les substances deviennent plus solubles lorsqu\'elles sont chauffées — les gaz deviennent en réalité moins solubles à des températures plus élevées.',
+        'Beaucoup pensent qu\'une substance est « insoluble » uniquement si rien ne se dissout — même CaCO₃ se dissout en très petite quantité (Ksp = 3,3 × 10⁻⁹).',
+      ],
+      hook: 'Pourquoi les poissons meurent-ils dans de l\'eau très chaude ? Parce que l\'eau chaude contient moins d\'oxygène dissous — la solubilité de l\'O₂ diminue avec la hausse de la température !',
+      khanLinks: [
+        { title: 'Solubilité et forces intermoléculaires', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/solutions-chemistry/v/solubility-and-intermolecular-forces' },
+      ],
+    },
+    dataTable: {
+      headers: ['Soluté', 'Dissous à 20 °C (g/100 mL)', 'Dissous à 70 °C (g/100 mL)', 'Variation', 'Observation'],
+      rows: 4,
+    },
+    observations: [
+      'Clarté et couleur de chaque solution à température ambiante',
+      'Changement visuel de la quantité dissoute après chauffage à 70 °C',
+      'Quels solutés montrent le plus grand changement de solubilité avec la température',
+    ],
+    conclusion: 'Comparer comment la température affecte chaque soluté et relier les résultats à l\'énergie de réseau, à l\'énergie d\'hydratation et au principe de Le Chatelier.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous explorez comment la température modifie la quantité d\'une substance pouvant se dissoudre — une question cruciale pour tout, de la cuisine aux sciences de l\'environnement !',
+      keywords: {
+        setup: 'Utilisez des quantités égales de chaque soluté pour une comparaison équitable. Contrôlez soigneusement la température du bain-marie — utilisez un thermomètre.',
+        formula: 'Produit de solubilité : Ksp = [Ca²⁺][CO₃²⁻]. Pour CaCO₃ c\'est 3,3 × 10⁻⁹, expliquant sa solubilité quasi nulle.',
+        error: 'N\'ajoutez pas trop de soluté d\'un coup — vous voulez voir le point de saturation, donc ajoutez de petites quantités et observez si chaque ajout se dissout.',
+        result: 'CuSO₄ et saccharose se dissolvent clairement davantage à 70 °C. NaCl montre seulement une légère augmentation. CaCO₃ reste principalement non dissous aux deux températures.',
+        real: 'Les sources chaudes du monde entier précipitent des minéraux (CaCO₃, silicates) lorsque l\'eau se refroidit — les minéraux qui étaient dissous à haute température sortent de solution.',
+        explain: 'La dissolution de la plupart des composés ioniques est endothermique — ajouter de la chaleur déplace l\'équilibre vers plus de dissolution (principe de Le Chatelier).',
+        hook: 'Le café instantané se dissout dans l\'eau chaude mais pas dans l\'eau froide — vous utilisez la température pour augmenter la solubilité chaque matin !',
+        misconception: 'Agiter accélère la vitesse de dissolution mais n\'augmente PAS la solubilité maximale (la concentration saturée finale). La solubilité est une propriété qui dépend uniquement de la température.',
+      },
+      hint: 'Si CuSO₄ ne semble pas se dissoudre davantage à 70 °C, vérifiez que vous mesurez par masse dissoute par unité de volume, et non seulement par aspect visuel.',
+      expected: 'Solubilité accrue pour CuSO₄, NaCl et saccharose à 70 °C ; CaCO₃ essentiellement insoluble aux deux températures.',
+    },
+  },
+
+  {
+    num: 107,
+    cardEmoji: "🧊",
+    title: 'Densité des substances',
+    section: 'Matter & Solutions',
+    desc: 'Mesurer la densité de l\'eau, du glycérol, d\'un objet solide et de la glace à l\'aide d\'une éprouvette graduée et d\'une balance.',
+    setupTime: '10 min',
+    duration: '30 min',
+    summary: {
+      whatTheyLearn: 'Les élèves calculent la densité (masse/volume) pour différents états de la matière et apprennent pourquoi la glace flotte sur l\'eau.',
+      instructions: [
+        'Mesurer la masse et le volume de 50 mL d\'eau distillée à l\'aide d\'une balance et d\'une éprouvette graduée.',
+        'Répéter pour 50 mL de glycérol.',
+        'Mesurer la masse et le volume d\'un objet solide (cylindre métallique ou pierre) par déplacement d\'eau.',
+        'Mesurer la masse et le volume d\'un glaçon juste après l\'avoir sorti du congélateur.',
+        'Calculer la densité = masse/volume pour chaque substance et comparer.',
+      ],
+      expectedOutcome: 'Eau ≈ 1,00 g/mL, glycérol ≈ 1,26 g/mL, glace ≈ 0,917 g/mL. La densité de la glace est inférieure à celle de l\'eau, expliquant pourquoi elle flotte.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '📐', name: 'Éprouvette graduée (100 mL)' },
+        { emoji: '⚖️', name: 'Balance électronique (±0,01 g)' },
+        { emoji: '💧', name: 'Eau distillée (100 mL)' },
+        { emoji: '🍯', name: 'Glycérol (50 mL)' },
+        { emoji: '🧊', name: 'Glaçon' },
+        { emoji: '🪨', name: 'Petit objet solide (cylindre métallique)' },
+      ],
+      observationsToRecord: [
+        'Masse et volume de chaque échantillon',
+        'Densité calculée pour chaque substance',
+        'Comparaison des densités mesurées avec les valeurs de référence',
+        'Observation de la glace flottant sur l\'eau',
+      ],
+      theoryPoints: [
+        'Densité (ρ) = masse (m) / volume (V) ; unités g/mL ou g/cm³.',
+        'Les liquides plus denses coulent sous les moins denses : le glycérol coule sous l\'eau, qui coule sous l\'huile.',
+        'La glace est moins dense que l\'eau liquide (0,917 vs 1,00 g/mL) car le réseau hexagonal de liaisons hydrogène dans la glace occupe plus d\'espace.',
+        'Déplacement de volume : volume immergé = volume d\'eau déplacée ; cela permet de mesurer les volumes de solides irréguliers.',
+      ],
+      realWorldConnections: [
+        'Les icebergs flottent avec environ 10 % au-dessus de l\'eau (densité de la glace ~0,917 g/mL vs eau de mer ~1,025 g/mL).',
+        'Les différences de densité entre eau salée et eau douce créent des couches dans les courants océaniques, entraînant les schémas climatiques mondiaux.',
+        'L\'hydromètrie (mesure de la densité des liquides) est utilisée dans les brasseries pour mesurer la teneur en alcool lors de la fermentation.',
+      ],
+      formula: 'ρ = m/V  [g/mL ou g/cm³]',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Quelle formule exprime correctement la densité ?',
+          options: [
+            'ρ = V/m',
+            'ρ = m × V',
+            'ρ = m/V',
+            'ρ = m − V',
+          ],
+          correctIndex: 2,
+          explanation: 'La densité est égale à la masse divisée par le volume : ρ = m/V. Par exemple, l\'eau a une masse de 100 g et un volume de 100 mL, donnant ρ = 1,00 g/mL.',
+        },
+        {
+          text: 'Pourquoi la glace flotte-t-elle sur l\'eau liquide ?',
+          options: [
+            'La glace est plus chaude que l\'eau liquide et la chaleur fait flotter les objets',
+            'La glace a une densité inférieure à l\'eau liquide car les liaisons hydrogène créent une structure cristalline moins compacte',
+            'La glace est plus légère car elle contient moins de molécules que l\'eau liquide',
+            'La glace flotte car les molécules d\'eau la poussent vers le haut par convection',
+          ],
+          correctIndex: 1,
+          explanation: 'Dans la glace, les molécules d\'eau forment un réseau rigide hexagonal de liaisons hydrogène qui les maintient plus espacées que dans l\'eau liquide. Cela rend la glace moins dense (0,917 g/mL) que l\'eau liquide (1,00 g/mL), donc elle flotte.',
+        },
+        {
+          text: 'Vous avez 50 mL de glycérol avec une masse de 63 g. Quelle est sa densité ?',
+          options: [
+            '0,79 g/mL',
+            '1,00 g/mL',
+            '1,26 g/mL',
+            '2,52 g/mL',
+          ],
+          correctIndex: 2,
+          explanation: 'Densité = masse/volume = 63 g / 50 mL = 1,26 g/mL, ce qui est la densité correcte du glycérol.',
+        },
+      ],
+      discussion: [
+        'Si vous versiez du glycérol, de l\'eau et de l\'huile végétale dans un grand cylindre, prédisez l\'ordre des couches de bas en haut. Expliquez votre raisonnement.',
+        'Pourquoi le fait que la glace soit moins dense que l\'eau est-il biologiquement important pour la vie aquatique dans les climats froids ?',
+        'Comment pourriez-vous utiliser des mesures de densité pour déterminer si un morceau de métal est de l\'or pur (ρ = 19,3 g/cm³) ou un faux plaqué or ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Mesure et calcul de la densité', pct: 40 },
+        { label: 'États de la matière et structure', pct: 30 },
+        { label: 'Méthode de déplacement d\'eau', pct: 20 },
+        { label: 'Applications de la densité dans le monde réel', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent que les objets plus lourds coulent toujours — en réalité, c\'est la densité (masse par volume), et non la masse totale, qui détermine si quelque chose flotte.',
+        'Beaucoup pensent que la glace flotte parce qu\'elle est « plus légère » — mais un grand bloc de glace est très lourd ; il flotte en raison de sa densité plus faible.',
+      ],
+      hook: 'Si la glace était plus dense que l\'eau liquide — comme presque tous les autres solides — les lacs gèleraient entièrement de bas en haut, tuant toute vie aquatique chaque hiver !',
+      khanLinks: [
+        { title: 'États de la matière', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter' },
+      ],
+    },
+    dataTable: {
+      headers: ['Substance', 'Masse (g)', 'Volume (mL)', 'Densité (g/mL)', 'Valeur de référence (g/mL)'],
+      rows: 4,
+    },
+    observations: [
+      'Masse et volume de chaque substance',
+      'Si la glace flotte ou coule lorsqu\'elle est placée dans l\'eau',
+      'Stratification visuelle lors de la combinaison de glycérol, d\'eau et d\'huile',
+    ],
+    conclusion: 'Résumer les valeurs de densité obtenues, les comparer aux valeurs de référence et expliquer pourquoi la glace flotte d\'après le concept de densité.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous mesurez la densité — la propriété qui explique pourquoi les navires flottent, pourquoi les icebergs existent et pourquoi la vinaigrette se sépare en couches !',
+      keywords: {
+        setup: 'Zérotez (tarez) la balance avant de placer le récipient dessus. Lisez le volume du liquide à hauteur des yeux pour éviter l\'erreur de parallaxe.',
+        formula: 'ρ = m/V. Enregistrez la masse en grammes et le volume en millilitres — le résultat est en g/mL. L\'eau devrait donner ~1,00 g/mL.',
+        error: 'L\'erreur la plus courante est de ne pas tenir compte de la masse du récipient (oublier de tarer la balance).',
+        result: 'Eau : 1,00 g/mL, glycérol : 1,26 g/mL, glace : ~0,917 g/mL. La glace flotte sur l\'eau car elle est moins dense.',
+        real: 'Archimède a découvert le principe du déplacement de fluide lorsqu\'on lui a demandé de vérifier si une couronne était en or pur — il a mesuré sa densité par déplacement d\'eau !',
+        explain: 'La glace possède une structure cristalline hexagonale de liaisons hydrogène qui espace les molécules plus loin que dans l\'eau liquide — lui conférant une densité plus faible.',
+        hook: 'Un navire en acier peut flotter car sa densité totale (coque + air intérieur) est inférieure à celle de l\'eau, même si l\'acier seul coule !',
+        misconception: 'La densité n\'est pas la même chose que la masse — un minuscule cube d\'or est plus dense qu\'un grand bloc de bois, même si le bois est plus lourd.',
+      },
+      hint: 'Si votre densité de glace semble trop élevée, la glace a peut-être commencé à fondre. Travaillez rapidement — mesurez la glace immédiatement après l\'avoir sortie du congélateur.',
+      expected: 'Densités mesurées : eau ~1,00, glycérol ~1,26, glace ~0,917 g/mL. La glace flotte sur l\'eau ; le glycérol coule sous l\'eau.',
+    },
+  },
+
+  {
+    num: 108,
+    cardEmoji: "💠",
+    title: 'Eau de cristallisation',
+    section: 'Matter & Solutions',
+    desc: 'Chauffer le CuSO₄·5H₂O bleu jusqu\'à ce qu\'il devienne blanc, puis ajouter de l\'eau pour restaurer la couleur bleue.',
+    setupTime: '10 min',
+    duration: '25 min',
+    summary: {
+      whatTheyLearn: 'Les élèves découvrent que certains composés ioniques contiennent des molécules d\'eau dans leur structure cristalline, et que le chauffage élimine cette eau de façon réversible.',
+      instructions: [
+        'Peser 2 g de cristaux bleus de CuSO₄·5H₂O et les placer dans une capsule d\'évaporation.',
+        'Chauffer doucement sur un bec Bunsen, en observant le changement de couleur du bleu au blanc.',
+        'Continuer à chauffer jusqu\'à ce qu\'aucun changement de couleur supplémentaire ne se produise ; laisser refroidir.',
+        'Peser le CuSO₄ anhydre blanc et calculer la masse d\'eau perdue.',
+        'Ajouter 2 à 3 gouttes d\'eau distillée sur la poudre blanche et observer le retour de la couleur bleue.',
+      ],
+      expectedOutcome: 'Le CuSO₄·5H₂O bleu devient blanc (CuSO₄ anhydre) par chauffage. L\'ajout d\'eau restaure la couleur bleue, confirmant la nature réversible de l\'hydratation.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🔵', name: 'Cristaux bleus de CuSO₄·5H₂O (2 g)' },
+        { emoji: '🍳', name: 'Capsule d\'évaporation' },
+        { emoji: '🔥', name: 'Bec Bunsen ou plaque chauffante' },
+        { emoji: '⚖️', name: 'Balance électronique (±0,01 g)' },
+        { emoji: '💧', name: 'Compte-gouttes avec eau distillée' },
+      ],
+      observationsToRecord: [
+        'Couleur de CuSO₄·5H₂O avant chauffage (bleu)',
+        'Couleur pendant et après le chauffage (bleu → blanc)',
+        'Masse avant et après le chauffage (calculer la masse d\'eau perdue)',
+        'Changement de couleur lors de l\'ajout d\'eau au CuSO₄ anhydre (blanc → bleu)',
+      ],
+      theoryPoints: [
+        'L\'eau de cristallisation est constituée de molécules d\'eau incorporées dans le réseau cristallin d\'un composé ionique.',
+        'CuSO₄·5H₂O contient cinq molécules d\'eau par unité formulaire ; la couleur est due aux complexes [Cu(H₂O)₄]²⁺.',
+        'Le chauffage chasse les molécules d\'eau : CuSO₄·5H₂O → CuSO₄ + 5H₂O ; le sel anhydre est blanc car Cu²⁺ n\'a pas de ligands eau.',
+        'La réaction est réversible : l\'ajout d\'eau réhydrate le sel et restaure le complexe de coordination bleu.',
+      ],
+      realWorldConnections: [
+        'Le CaCl₂ anhydre et le gel de silice sont utilisés comme dessiccants car ils absorbent facilement l\'eau de cristallisation de l\'air.',
+        'Le gypse (CaSO₄·2H₂O) est chauffé pour former le plâtre de Paris (CaSO₄·½H₂O), qui se réhydrate et durcit lorsqu\'il est mélangé à de l\'eau.',
+        'Le CuSO₄ anhydre est utilisé comme test de présence d\'eau car il devient visiblement bleu même en présence de traces d\'eau.',
+      ],
+      formula: 'CuSO₄·5H₂O → CuSO₄ + 5H₂O  (ΔH > 0, endothermique)',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce que l\'« eau de cristallisation » ?',
+          options: [
+            'Des molécules d\'eau piégées à la surface des cristaux',
+            'Des molécules d\'eau qui forment le réseau cristallin de la glace',
+            'Des molécules d\'eau chimiquement incorporées dans la structure cristalline d\'un composé ionique',
+            'De l\'eau produite lorsqu\'un cristal se dissout dans un solvant',
+          ],
+          correctIndex: 2,
+          explanation: 'L\'eau de cristallisation est constituée de molécules d\'eau chimiquement liées dans la structure cristalline d\'un sel ionique, faisant partie de la maille élémentaire répétitive. Ce n\'est pas seulement de l\'eau de surface — c\'est une partie de la formule chimique.',
+        },
+        {
+          text: 'Pourquoi CuSO₄·5H₂O devient-il blanc lorsqu\'il est chauffé ?',
+          options: [
+            'La chaleur décompose CuSO₄ en métal cuivre et gaz SO₃',
+            'Les molécules d\'eau sont chassées, supprimant les ligands eau de Cu²⁺, ce qui élimine la couleur bleue',
+            'La haute température oxyde Cu²⁺ en Cu³⁺, qui est blanc',
+            'La structure cristalline s\'effondre et Cu²⁺ devient incolore',
+          ],
+          correctIndex: 1,
+          explanation: 'La couleur bleue de CuSO₄·5H₂O est due aux complexes de coordination [Cu(H₂O)₄]²⁺. Le chauffage chasse les molécules d\'eau ; sans ligands eau, Cu²⁺ se trouve dans un environnement électronique différent et apparaît blanc.',
+        },
+        {
+          text: 'CuSO₄·5H₂O a une masse molaire de 249,7 g/mol et CuSO₄ est de 159,6 g/mol. Quel pourcentage de la masse est de l\'eau ?',
+          options: [
+            '36,1 %',
+            '15,2 %',
+            '49,3 %',
+            '22,5 %',
+          ],
+          correctIndex: 0,
+          explanation: 'Masse de l\'eau = 249,7 − 159,6 = 90,1 g/mol. Pourcentage = (90,1/249,7) × 100 = 36,1 %. Cela confirme qu\'environ un tiers de la masse du vitriol bleu est de l\'eau.',
+        },
+      ],
+      discussion: [
+        'Pourquoi le CuSO₄ anhydre est-il utilisé pour tester la présence d\'eau ? Qu\'observeriez-vous et qu\'est-ce que cela prouve ?',
+        'Le gypse (CaSO₄·2H₂O) est chauffé pour fabriquer le plâtre de Paris, qui durcit lorsqu\'on ajoute de l\'eau. Comment ce processus est-il lié à ce que vous avez observé avec CuSO₄ ?',
+        'Si vous laissiez du CuSO₄ anhydre blanc dans une pièce humide toute la nuit, qu\'attendriez-vous trouver le matin et pourquoi ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Eau de cristallisation', pct: 40 },
+        { label: 'Chimie de coordination (couleur de Cu²⁺)', pct: 30 },
+        { label: 'Réactions réversibles', pct: 20 },
+        { label: 'Stœchiométrie (% eau)', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que la couleur de CuSO₄ est une propriété intrinsèque du cuivre — mais elle dépend entièrement des ligands autour de Cu²⁺.',
+        'Beaucoup pensent que l\'« eau de cristallisation » signifie que le cristal est humide — mais l\'eau est chimiquement liée à l\'intérieur de la structure cristalline.',
+      ],
+      hook: 'Le sulfate de cuivre anhydre est le test le plus simple au monde pour détecter l\'eau — placez une goutte de n\'importe quel liquide dessus : s\'il devient bleu, de l\'eau est présente !',
+      khanLinks: [
+        { title: 'États de la matière', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter' },
+      ],
+    },
+    dataTable: {
+      headers: ['Étape', 'Masse (g)', 'Couleur', 'Notes'],
+      rows: 4,
+    },
+    observations: [
+      'Couleur des cristaux à chaque étape (avant chauffage, pendant le chauffage, après refroidissement, après ajout d\'eau)',
+      'Masse de l\'échantillon avant et après le chauffage',
+      'Masse et pourcentage d\'eau perdue calculés',
+    ],
+    conclusion: 'Indiquer la masse d\'eau perdue par gramme de CuSO₄·5H₂O, comparer à la valeur théorique (36,1 %), et expliquer le changement de couleur réversible.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous explorez une belle réaction réversible — regardez les cristaux bleus devenir blancs, puis bleus à nouveau en ajoutant simplement de l\'eau. Comme de la magie, mais de la chimie !',
+      keywords: {
+        setup: 'Chauffez doucement et uniformément. Trop de chaleur peut décomposer CuSO₄ en CuO (noir), ce qui n\'est pas réversible.',
+        formula: 'CuSO₄·5H₂O → CuSO₄ + 5H₂O. Masses molaires : 249,7 → 159,6 + 90,1. Donc 36,1 % de la masse est de l\'eau.',
+        error: 'Ne surchauffez pas — si la capsule noircit, vous avez décomposé CuSO₄ en CuO, pas seulement retiré l\'eau. Utilisez une chaleur douce.',
+        result: 'Cristaux bleus → poudre blanche lors du chauffage. Poudre blanche → bleue lors de l\'ajout d\'eau. Perte de masse ≈ 36 % de la masse initiale.',
+        real: 'Le plâtre de Paris (CaSO₄·½H₂O) durcit lorsqu\'il est mélangé à de l\'eau car il se réhydrate en gypse (CaSO₄·2H₂O) — même principe que cette expérience.',
+        explain: 'La couleur bleue provient des molécules d\'eau agissant comme ligands autour de Cu²⁺. Supprimez les ligands eau, et Cu²⁺ se trouve dans un environnement différent — plus de couleur bleue.',
+        hook: 'Le gel de silice (les petits sachets dans les nouvelles chaussures) est un dessiccant — il absorbe l\'eau de cristallisation de l\'air pour garder les produits secs, tout comme le CuSO₄ anhydre !',
+        misconception: 'L\'eau dans CuSO₄·5H₂O N\'EST PAS de l\'humidité de surface — elle fait chimiquement partie du cristal, et son élimination modifie complètement les propriétés du composé.',
+      },
+      hint: 'Si votre perte de masse est inférieure à 30 %, le chauffage n\'est peut-être pas complet. Continuez à chauffer jusqu\'à ce que la masse reste constante entre les mesures.',
+      expected: 'Perte de masse de ~36 % (eau). Changement de couleur bleu vers blanc lors du chauffage. Retour instantané de la couleur bleue lorsque l\'eau est ajoutée à la poudre anhydre.',
+    },
+  },
+
+  {
+    num: 109,
+    cardEmoji: "🟡",
+    title: 'Fusion du soufre',
+    section: 'Matter & Solutions',
+    desc: 'Chauffer le soufre lentement et observer les transitions : solide jaune → liquide → plastique visqueux → gaz. Comparer avec la décomposition du saccharose.',
+    setupTime: '10 min',
+    duration: '35 min',
+    summary: {
+      whatTheyLearn: 'Les élèves observent les transitions allotropiques du soufre et comparent la fusion physique (soufre) avec la décomposition chimique (saccharose).',
+      instructions: [
+        'Placer une petite quantité de poudre de soufre dans un tube à essai et chauffer lentement sur un bec Bunsen.',
+        'Enregistrer l\'aspect à chaque stade de température : solide jaune, liquide jaune pâle (région rhombique), liquide ambré, liquide visqueux sombre (soufre plastique) et gaz.',
+        'Dans un tube à essai séparé, chauffer une petite quantité de saccharose et enregistrer la couleur et l\'odeur.',
+        'Comparer : fusion du soufre (changement physique) vs. caramélisation et décomposition du saccharose (changement chimique).',
+      ],
+      expectedOutcome: 'Le soufre subit des changements allotropiques physiques : jaune → liquide → soufre plastique sombre visqueux → gaz. Le saccharose brunit, dégage une odeur de caramel et se carbonise en carbone noir — un changement chimique.',
+    },
+    experiment: {
+      equipment: [
+        { emoji: '🟡', name: 'Poudre de soufre (2 g)' },
+        { emoji: '🍬', name: 'Saccharose (1 g)' },
+        { emoji: '🧪', name: 'Tubes à essai en borosilicate (x2)' },
+        { emoji: '🔥', name: 'Bec Bunsen' },
+        { emoji: '🌡️', name: 'Thermomètre (jusqu\'à 300 °C)' },
+      ],
+      observationsToRecord: [
+        'Couleur et état du soufre à chaque plage de température',
+        'Température à laquelle le soufre commence à fondre',
+        'Aspect du liquide visqueux sombre à ~160 °C',
+        'Changements observés lors du chauffage du saccharose (couleur, odeur, résidu)',
+      ],
+      theoryPoints: [
+        'Le soufre existe en deux allotropes cristallins : rhombique (stable en dessous de 96 °C) et monoclinique (stable entre 96 et 119 °C).',
+        'Au-dessus de 119 °C, le soufre fond en un liquide mobile jaune pâle ; au-dessus de ~160 °C, les anneaux S₈ s\'ouvrent pour former de longues chaînes (soufre plastique) — sombres et visqueux.',
+        'Les changements physiques (transitions allotropiques, fusion) sont réversibles ; les changements chimiques (décomposition du saccharose) ne le sont pas.',
+        'Le saccharose (C₁₂H₂₂O₁₁) se décompose lors du chauffage : l\'eau est chassée et le carbone reste sous forme de charbon noir — c\'est un changement chimique.',
+      ],
+      realWorldConnections: [
+        'Le soufre plastique peut être fabriqué en versant du soufre fondu dans de l\'eau froide — utilisé pour fabriquer des composés soufrés flexibles dans les processus industriels.',
+        'Le soufre est utilisé dans la vulcanisation du caoutchouc — la chaleur et le soufre créent des liaisons croisées entre les chaînes polymères, rendant le caoutchouc plus dur.',
+        'La caramélisation du saccharose est exploitée en cuisine — le brunissement et le développement des arômes du caramel et des bonbons sont des changements chimiques issus de réactions d\'ouverture d\'anneaux (mais pour le carbone).',
+      ],
+      formula: 'S₈ (rhombique) → S₈ (monoclinique) → S liquide → chaînes Sₙ (plastique) → gaz S₂/S',
+    },
+    questions: {
+      mcq: [
+        {
+          text: 'Qu\'est-ce qu\'un allotrope ?',
+          options: [
+            'Une forme radioactive d\'un élément',
+            'Un état physique différent (solide, liquide, gaz) d\'un élément',
+            'Une forme structurelle différente du même élément avec des propriétés physiques différentes',
+            'Un composé formé lorsqu\'un élément réagit avec l\'oxygène',
+          ],
+          correctIndex: 2,
+          explanation: 'Les allotropes sont des formes structurelles (moléculaires ou cristallines) différentes du même élément. Le soufre rhombique et le soufre monoclinique sont tous deux du soufre pur mais ont des structures cristallines différentes et des propriétés physiques différentes.',
+        },
+        {
+          text: 'Pourquoi le soufre fondu devient-il sombre et visqueux au-dessus d\'environ 160 °C ?',
+          options: [
+            'Le soufre réagit avec l\'air pour former SO₂, qui est sombre',
+            'Les anneaux S₈ s\'ouvrent et forment de longues chaînes enchevêtrées qui résistent à l\'écoulement',
+            'Les impuretés dans le soufre se concentrent à mesure que l\'eau s\'évapore',
+            'Le soufre recristallise sous forme rhombique, augmentant la viscosité',
+          ],
+          correctIndex: 1,
+          explanation: 'Au-dessus de ~160 °C, les molécules d\'anneaux S₈ s\'ouvrent et se polymérisent en longues chaînes de millions d\'atomes de soufre. Ces longues chaînes enchevêtrées augmentent considérablement la viscosité, rendant le liquide sombre et épais (soufre plastique).',
+        },
+        {
+          text: 'Comment peut-on distinguer la fusion du soufre de la décomposition du saccharose comme changement physique vs. chimique ?',
+          options: [
+            'Le soufre change de couleur ; le saccharose ne change pas',
+            'La fusion du soufre est réversible (il se solidifie en refroidissant) ; la décomposition du saccharose n\'est pas réversible (le carbone noir reste)',
+            'Le soufre produit un gaz ; le saccharose non',
+            'Le soufre nécessite une température plus élevée que le saccharose',
+          ],
+          correctIndex: 1,
+          explanation: 'Les changements physiques comme la fusion sont réversibles — le soufre refroidi se solidifie de nouveau en solide jaune. La décomposition du saccharose est un changement chimique : elle produit de la vapeur d\'eau et du carbone (charbon noir), et ne peut pas être inversée pour régénérer le saccharose.',
+        },
+      ],
+      discussion: [
+        'Le carbone possède aussi des allotropes (graphite et diamant). En quoi diffèrent-ils de structure et de propriétés, et quelle analogie y a-t-il avec les allotropes du soufre ?',
+        'Si vous versiez le soufre plastique visqueux sombre dans de l\'eau froide, que se passerait-il et quelle forme de soufre obtiendriez-vous ?',
+        'Lorsque le saccharose brûle, on voit du carbone noir et de la vapeur. Ce processus est-il le même que la caramélisation ? Comment pouvez-vous le savoir ?',
+      ],
+    },
+    overview: {
+      conceptBreakdown: [
+        { label: 'Allotropie et structure cristalline', pct: 35 },
+        { label: 'Changements physiques vs. chimiques', pct: 30 },
+        { label: 'Transitions de phase', pct: 25 },
+        { label: 'Polymères (soufre en longues chaînes)', pct: 10 },
+      ],
+      misconceptions: [
+        'Les élèves pensent souvent que tout changement de couleur est nécessairement un changement chimique — mais les changements de couleur du soufre lors de la fusion sont des changements physiques (aucune nouvelle substance n\'est formée).',
+        'Beaucoup pensent que « fondre » signifie toujours devenir un liquide clair — mais le soufre plastique est sombre et visqueux, ce qui déroute les élèves.',
+      ],
+      hook: 'Le soufre plastique est un matériau caoutchouteux et extensible — et vous pouvez le fabriquer en laboratoire en versant simplement du soufre fondu dans de l\'eau froide !',
+      khanLinks: [
+        { title: 'États de la matière', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/states-of-matter' },
+        { title: 'Diagrammes de phases', url: 'https://www.khanacademy.org/science/chemistry/states-of-matter-and-intermolecular-forces/states-of-matter/v/phase-diagrams' },
+      ],
+    },
+    dataTable: {
+      headers: ['Température (°C)', 'Aspect du soufre', 'État physique', 'Réversible ?'],
+      rows: 6,
+    },
+    observations: [
+      'Enregistrer la couleur et la consistance du soufre à chaque stade de température',
+      'Noter l\'odeur produite (le dioxyde de soufre est toxique — travaillez sous une hotte ou dans un endroit bien ventilé)',
+      'Enregistrer tous les changements observés lors du chauffage du saccharose',
+    ],
+    conclusion: 'Distinguer les changements allotropiques du soufre (physiques) de la décomposition du saccharose (chimique), et expliquer pourquoi l\'un est réversible et l\'autre non.',
+    ai: {
+      opening: 'Bonjour ! Je suis Gali. Aujourd\'hui, vous pouvez observer le soufre se transformer en un plastique caoutchouteux et extensible — l\'un des changements physiques les plus spectaculaires de la chimie !',
+      keywords: {
+        setup: 'Chauffez lentement et observez chaque étape. Travaillez près d\'une fenêtre ouverte ou sous une hotte — la vapeur de soufre et le SO₂ sont désagréables et nocifs.',
+        formula: 'Anneaux S₈ (rhombique/monoclinique) → longues chaînes Sₙ (soufre plastique) à ~160 °C.',
+        error: 'Chauffer trop rapidement saute les étapes intermédiaires intéressantes. Chauffez lentement pour pouvoir observer chaque changement de couleur en séquence.',
+        result: 'Soufre : solide jaune → liquide pâle → ambré → liquide visqueux sombre → gaz. Saccharose : fond → brunit → se carbonise en carbone noir.',
+        real: 'Les pneus de votre voiture existent grâce au soufre — la vulcanisation utilise des chaînes de soufre pour créer des liaisons croisées entre les molécules de caoutchouc et les rendre durables.',
+        explain: 'Les changements physiques impliquent les mêmes molécules dans des arrangements différents ; les changements chimiques rompent et forment des liaisons, créant des substances entièrement nouvelles.',
+        hook: 'Les dépôts de soufre près des volcans forment de magnifiques cristaux jaunes (soufre rhombique) — le même matériau que vous chauffez en laboratoire !',
+        misconception: 'La couleur sombre du soufre plastique n\'est PAS due à une combustion ou à une réaction — c\'est un changement physique des molécules en anneaux vers de longues chaînes.',
+      },
+      hint: 'Si le soufre commence à brûler avec une flamme bleue en produisant du SO₂, réduisez immédiatement la chaleur — vous êtes allé au-delà du stade plastique dans la combustion.',
+      expected: 'Changements distincts de couleur et de viscosité à chaque stade de température. Le saccharose devient brun puis noir (irréversible). Les changements du soufre sont réversibles lors du refroidissement.',
+    },
+  },
+]

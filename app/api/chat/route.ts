@@ -14,6 +14,7 @@ interface ChatContext {
   subject?: 'physics' | 'chemistry' | 'ai' | 'robotics'
   courseTitle?: string
   courseProvider?: string
+  quizScore?: { correct: number; total: number; wrongTopics?: string[] }
 }
 
 const CHEMISTRY_SECTIONS = new Set([
@@ -47,6 +48,13 @@ function buildSystemPrompt(context?: ChatContext): string {
   } else if (context?.experimentTitle) {
     const subjectName = subject === 'chemistry' ? 'chemistry' : 'physics'
     contextLine = `The student is currently working on ${subjectName} experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
+    if (context.quizScore && context.quizScore.total > 0) {
+      const { correct, total, wrongTopics } = context.quizScore
+      contextLine += ` They scored ${correct}/${total} on the quiz.`
+      if (wrongTopics && wrongTopics.length > 0) {
+        contextLine += ` Topics they struggled with: ${wrongTopics.slice(0, 3).join('; ')}.`
+      }
+    }
   } else if (context?.section && context.section !== 'all') {
     const subjectName = CHEMISTRY_SECTIONS.has(context.section) ? 'chemistry' : 'physics'
     contextLine = `The student is browsing the "${context.section}" section of the ${subjectName} lab.`

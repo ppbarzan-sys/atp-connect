@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import {
   sectionColors as physicsColors,
   sectionEmojis as physicsEmojis,
@@ -8,6 +9,7 @@ import { getExperiments } from '@/data/loader'
 import FilterBar from './FilterBar'
 import BrowseSection from './BrowseSection'
 import { useI18n } from '@/lib/i18n'
+import { getProgressSummary } from '@/lib/storage'
 
 interface BrowseViewProps {
   activeFilter: string
@@ -42,6 +44,12 @@ export default function BrowseView({
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
 
+  const [progress, setProgress] = useState({ completed: 0, total: 0 })
+  useEffect(() => {
+    const nums = allExperiments.map(e => e.num)
+    setProgress(getProgressSummary(nums))
+  }, [allExperiments])
+
   // Derive ordered section list from the data (preserves insertion order)
   const sections = [...new Set(allExperiments.map(e => e.section))]
 
@@ -73,6 +81,22 @@ export default function BrowseView({
               <h1 className="browse-hero-title">{title}</h1>
               <p className="browse-hero-subtitle">{subtitle}</p>
               {note && <p className="browse-hero-note">{note}</p>}
+              {progress.total > 0 && (
+                <div className="browse-progress-wrap">
+                  <div className="browse-progress-bar">
+                    <div
+                      className="browse-progress-fill"
+                      style={{ width: `${(progress.completed / progress.total) * 100}%` }}
+                    />
+                  </div>
+                  <span className="browse-progress-label">
+                    {t('browse.experiments_completed', {
+                      completed: progress.completed,
+                      total: progress.total,
+                    })}
+                  </span>
+                </div>
+              )}
             </div>
             {onAskGali && (
               <button className="ask-gali-hero" onClick={() => onAskGali()}>

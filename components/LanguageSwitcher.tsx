@@ -4,6 +4,7 @@ import { useI18n, AVAILABLE_LOCALES, type Locale } from '@/lib/i18n'
 const META: Record<Locale, { flag: string; label: string }> = {
   en: { flag: '🇬🇧', label: 'EN' },
   it: { flag: '🇮🇹', label: 'IT' },
+  fr: { flag: '🇫🇷', label: 'FR' },
 }
 
 export default function LanguageSwitcher() {

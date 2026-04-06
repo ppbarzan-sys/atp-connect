@@ -1,6 +1,9 @@
 'use client'
-import { Experiment, sectionColors } from '@/data/experiments'
+import { useState } from 'react'
+import { sectionColors } from '@/data/experiments'
+import type { Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
+import { SMART_TRAYS, lookupEquipment } from '@/data/atpCodes'
 
 interface OverviewPaneProps {
   exp: Experiment
@@ -10,18 +13,87 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
   const { t } = useI18n()
   const color = sectionColors[exp.section] || '#14B8A6'
 
+  // Track which equipment items have their sensor alternative expanded
+  const [expandedSensors, setExpandedSensors] = useState<Set<number>>(new Set())
+
+  const toggleSensor = (idx: number) => {
+    setExpandedSensors((prev) => {
+      const next = new Set(prev)
+      if (next.has(idx)) next.delete(idx)
+      else next.add(idx)
+      return next
+    })
+  }
+
+  const smartTrays = SMART_TRAYS[exp.num] ?? []
+
   return (
     <div style={{ overflowY: 'auto', height: '100%', padding: '0 0 16px 0' }}>
+
       {/* Equipment Grid */}
       <div className="rp-section">
         <h4>{t('overview.equipment')}</h4>
-        <div className="eq-grid">
-          {exp.experiment.equipment.map((eq, i) => (
-            <div className="eq-item" key={i}>
-              <div className="eq-emoji">{eq.emoji}</div>
-              <div className="eq-name">{eq.name}</div>
+
+        {/* ── Smart Tray Banner ─────────────────────────────────── */}
+        {smartTrays.length > 0 && (
+          <div className="smart-tray-banner">
+            <div className="smart-tray-icon">📦</div>
+            <div className="smart-tray-body">
+              <div className="smart-tray-title">
+                {t('overview.smart_trays_needed')}:{' '}
+                {smartTrays.map((tray, i) => (
+                  <span key={tray} className="smart-tray-pill">
+                    {tray}{i < smartTrays.length - 1 ? '' : ''}
+                  </span>
+                ))}
+              </div>
+              <div className="smart-tray-subtitle">
+                {t('overview.smart_trays_subtitle')}
+              </div>
             </div>
-          ))}
+          </div>
+        )}
+
+        {/* ── Equipment Cards ──────────────────────────────────── */}
+        <div className="eq-grid">
+          {exp.experiment.equipment.map((eq, i) => {
+            const { code, sensor } = lookupEquipment(eq.name)
+            const sensorOpen = expandedSensors.has(i)
+
+            return (
+              <div className="eq-item" key={i}>
+                <div className="eq-emoji">{eq.emoji}</div>
+                <div className="eq-name">{eq.name}</div>
+
+                {code && (
+                  <div className="eq-atp-code">
+                    <span className="eq-atp-label">{t('overview.atp_code')}</span>
+                    {' '}{code}
+                  </div>
+                )}
+
+                {sensor && (
+                  <button
+                    className={`eq-sensor-btn${sensorOpen ? ' open' : ''}`}
+                    onClick={() => toggleSensor(i)}
+                    aria-expanded={sensorOpen}
+                    title={sensor.name}
+                  >
+                    📡 {t('overview.sensor_option')}
+                  </button>
+                )}
+
+                {sensor && sensorOpen && (
+                  <div className="eq-sensor-panel">
+                    <div className="eq-sensor-name">
+                      <strong>{t('overview.alternative')}</strong> {sensor.name}
+                    </div>
+                    <div className="eq-sensor-desc">{sensor.description}</div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
 

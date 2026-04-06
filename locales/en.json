@@ -43,7 +43,8 @@
     "all_filter": "All",
     "search_btn": "Search",
     "physics_note": "41 experiments designed for the ATP Mobile Lab 4900.00",
-    "chemistry_note": "50 experiments designed for the ATP Mobile Lab 4900.00"
+    "chemistry_note": "50 experiments designed for the ATP Mobile Lab 4900.00",
+    "experiments_completed": "{completed}/{total} completed"
   },
   "sections": {
     "mechanics": "Mechanics",
@@ -102,7 +103,13 @@
     "discussion": "Discussion Questions",
     "correct": "✅ Correct! ",
     "incorrect": "❌ Incorrect. ",
-    "answer_placeholder": "Write your answer here…"
+    "answer_placeholder": "Write your answer here…",
+    "score_correct": "{correct} of {total} correct",
+    "perfect_score": "🎉 Perfect score!",
+    "good_score": "👍 Good job!",
+    "keep_practicing": "📚 Keep practicing!",
+    "reset_quiz": "↺ Try Again",
+    "ask_gali_help": "Ask Gali to explain this"
   },
   "notes": {
     "my_notes": "📝 My Personal Notes",
@@ -123,7 +130,12 @@
     "concept_hint": "This experiment covers:",
     "misconceptions": "Common Misconceptions",
     "hook": "Hook",
-    "khan": "🎬 Khan Academy"
+    "khan": "🎬 Khan Academy",
+    "smart_trays_needed": "Smart Trays needed",
+    "smart_trays_subtitle": "Pull these Smart Trays from the Mobile Lab before starting",
+    "atp_code": "ATP",
+    "sensor_option": "Sensor option",
+    "alternative": "Alternative:"
   },
   "rightpanel": {
     "tab_overview": "Overview",
@@ -175,8 +187,12 @@
     "placeholder_general": "Ask a science question…",
     "placeholder_ai": "Ask about AI, machine learning, or how to use Claude…",
     "placeholder_robotics": "Ask about Arduino, Raspberry Pi, Python, or CS…",
+    "focus_question_intro": "Let's look at this question together: \"{text}\". You answered \"{userAnswer}\", but the correct answer is \"{correctAnswer}\". Want me to explain why?",
     "welcome_exp_physics": "Hi! I'm Gali ✦ I'm here to help with **{title}**. Ask me about setup, key formulas, expected results, or how this physics concept applies in the real world!",
     "welcome_exp_chemistry": "Hi! I'm Gali ✦ I'm here to help with **{title}**. Ask me about setup, key formulas, expected results, or how this chemistry concept applies in the real world!",
+    "welcome_exp_quiz_perfect": "Hi! I'm Gali ✦ Amazing — you scored **{correct}/{total}** on **{title}**! 🎉 Is there anything you'd like to explore deeper or challenge yourself further?",
+    "welcome_exp_quiz_good": "Hi! I'm Gali ✦ Good work on **{title}** — you scored **{correct}/{total}**! 👍 Would you like me to help clarify any of the topics you missed?",
+    "welcome_exp_quiz_poor": "Hi! I'm Gali ✦ Let's work on **{title}** together! You scored **{correct}/{total}** — I can help you understand the tricky parts. What would you like to review?",
     "welcome_chem_section": "Hi! I'm Gali ✦ You're exploring **{section}** chemistry experiments. Ask me about reactions, formulas, lab techniques, or anything else in this section!",
     "welcome_physics_section": "Hi! I'm Gali ✦ You're exploring **{section}** experiments. Ask me about concepts, formulas, or real-world applications!",
     "welcome_general": "Hi! I'm Gali ✦ Your AI STEM assistant. I can help with physics experiments, chemistry labs, artificial intelligence, robotics, Arduino, Raspberry Pi, Python, and computer science. What would you like to explore?",
@@ -280,6 +296,10 @@
   "lang": {
     "label": "Language",
     "en": "English",
-    "it": "Italiano"
+    "it": "Italiano",
+    "fr": "Français"
+  },
+  "card": {
+    "items": "items"
   }
 }

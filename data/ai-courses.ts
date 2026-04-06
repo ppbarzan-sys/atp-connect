@@ -280,6 +280,143 @@ const aiCoursesIt: AICourse[] = [
   }
 ]
 
+const aiCoursesFr: AICourse[] = [
+  {
+    id: 'ai-fluency-students',
+    title: "Compétences IA pour les Élèves",
+    description: "Apprenez les fondamentaux de l'intelligence artificielle — comment elle fonctionne, ce qu'elle peut faire, et comment l'utiliser de manière responsable pour l'apprentissage et la recherche.",
+    category: 'students',
+    duration: '1-2 heures',
+    difficulty: 'Beginner',
+    icon: '🧠',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-101',
+    title: 'Claude 101',
+    description: "Maîtrisez les bases de l'utilisation de Claude pour apprendre, écrire, résoudre des problèmes et faire de la recherche scientifique. Le premier pas idéal dans les outils IA.",
+    category: 'students',
+    duration: '1-2 heures',
+    difficulty: 'Beginner',
+    icon: '💬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-foundations',
+    title: "Maîtrise de l'IA : Cadre & Fondements",
+    description: "Développez une compréhension approfondie des capacités, des limites et de l'utilisation responsable de l'IA. Idéal pour les élèves qui veulent aller au-delà des bases.",
+    category: 'students',
+    duration: '2-3 heures',
+    difficulty: 'Beginner',
+    icon: '🏗️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-educators',
+    title: "Compétences IA pour les Enseignants",
+    description: "Découvrez comment intégrer efficacement les outils IA dans votre pratique pédagogique, de la planification des cours à l'évaluation des élèves et à l'apprentissage personnalisé.",
+    category: 'educators',
+    duration: '2-3 heures',
+    difficulty: 'Beginner',
+    icon: '📚',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'teaching-ai-fluency',
+    title: "Enseigner les Compétences IA",
+    description: "Frameworks prêts à l'emploi et plans de cours pour enseigner la littératie IA à vos élèves. Comprend des activités en classe et des guides de discussion.",
+    category: 'educators',
+    duration: '2-3 heures',
+    difficulty: 'Intermediate',
+    icon: '🎯',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-nonprofits',
+    title: "Compétences IA pour les Associations",
+    description: "Découvrez comment les organisations à but non lucratif et les établissements scolaires peuvent tirer parti de l'IA pour amplifier leur mission, améliorer leurs opérations et mieux servir les communautés.",
+    category: 'educators',
+    duration: '1-2 heures',
+    difficulty: 'Beginner',
+    icon: '🤝',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'building-claude-api',
+    title: "Développer avec l'API Claude",
+    description: "Apprenez à créer de vraies applications propulsées par Claude. Couvre l'authentification API, l'ingénierie des prompts, les réponses en streaming et l'utilisation des outils.",
+    category: 'advanced',
+    duration: '3-4 heures',
+    difficulty: 'Advanced',
+    icon: '⚡',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-code-action',
+    title: 'Claude Code en Action',
+    description: "Utilisez Claude Code pour des tâches de programmation agentique directement depuis le terminal. Construisez, déboguez et livrez du code plus rapidement avec l'assistance IA.",
+    category: 'advanced',
+    duration: '2-3 heures',
+    difficulty: 'Intermediate',
+    icon: '💻',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'intro-mcp',
+    title: 'Introduction au Model Context Protocol',
+    description: "Comprenez comment MCP connecte les modèles IA aux outils externes, bases de données et APIs. Créez vos propres intégrations et étendez les capacités de l'IA.",
+    category: 'advanced',
+    duration: '2-3 heures',
+    difficulty: 'Advanced',
+    icon: '🔌',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'mcp-advanced',
+    title: 'MCP : Sujets Avancés',
+    description: "Plongez dans les patterns avancés du Model Context Protocol — transports personnalisés, authentification, architectures multi-serveurs et déploiement en production.",
+    category: 'advanced',
+    duration: '3-4 heures',
+    difficulty: 'Advanced',
+    icon: '🔬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'agent-skills',
+    title: 'Introduction aux Skills des Agents',
+    description: "Apprenez à créer des packages de skills réutilisables pour les agents IA. Concevez des prompts, outils et workflows qui rendent les agents plus capables et fiables.",
+    category: 'advanced',
+    duration: '2-3 heures',
+    difficulty: 'Intermediate',
+    icon: '🛠️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-bedrock',
+    title: 'Claude avec Amazon Bedrock',
+    description: "Déployez et mettez à l'échelle Claude via AWS Bedrock. Couvre la configuration, les options de personnalisation, la sécurité enterprise et les bonnes pratiques de production.",
+    category: 'advanced',
+    duration: '2-3 heures',
+    difficulty: 'Advanced',
+    icon: '☁️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  }
+]
+
 export function getAICourses(locale: string): AICourse[] {
-  return locale === 'it' ? aiCoursesIt : aiCourses
+  if (locale === 'it') return aiCoursesIt
+  if (locale === 'fr') return aiCoursesFr
+  return aiCourses
 }

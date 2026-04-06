@@ -1,7 +1,8 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { experiments as physicsExps, sectionColors as physicsColors, sectionEmojis as physicsEmojis } from '@/data/experiments'
-import type { Experiment } from '@/data/experiments'
+import { sectionColors as physicsColors, sectionEmojis as physicsEmojis } from '@/data/experiments'
+import type { Experiment } from '@/data/loader'
+import { getExperiments } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 
 interface SearchOverlayProps {
@@ -19,11 +20,11 @@ export default function SearchOverlay({
   sectionColorMap,
   sectionEmojiMap,
 }: SearchOverlayProps) {
-  const { t, tSection } = useI18n()
+  const { t, tSection, locale } = useI18n()
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const allExperiments = expData ?? physicsExps
+  const allExperiments = expData ?? getExperiments(locale)
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
 
