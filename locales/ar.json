@@ -339,7 +339,10 @@
     "performance_trend": "اتجاه الأداء",
     "weak_areas": "مجالات للتحسين",
     "review_experiments": "مراجعة التجارب",
-    "ask_gali_about": "اسأل غالي عن هذا"
+    "ask_gali_about": "اسأل غالي عن هذا",
+    "show_all": "عرض الكل ({count})",
+    "show_less": "عرض أقل",
+    "no_data": "أكمل تجربة لرؤية اتجاه أدائك!"
   },
   "achievements": {
     "title": "الإنجازات",

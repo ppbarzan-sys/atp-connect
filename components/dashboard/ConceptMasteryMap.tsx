@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { useI18n } from '@/lib/i18n'
 import type { Experiment } from '@/data/loader'
 import type { ExperimentProgress } from '@/lib/storage'
@@ -38,11 +39,7 @@ function computeConceptMastery(
     }
   }
 
-  return [...conceptMap.values()].sort((a, b) => {
-    const aM = a.totalWeight > 0 ? a.weightedScore / a.totalWeight : -1
-    const bM = b.totalWeight > 0 ? b.weightedScore / b.totalWeight : -1
-    return bM - aM
-  })
+  return [...conceptMap.values()]
 }
 
 function masteryColor(pct: number): string {
@@ -54,15 +51,33 @@ function masteryColor(pct: number): string {
 
 export default function ConceptMasteryMap({ experiments, progressMap }: ConceptMasteryMapProps) {
   const { t } = useI18n()
-  const concepts = computeConceptMastery(experiments, progressMap)
+  const [showAll, setShowAll] = useState(false)
 
-  if (concepts.length === 0) return null
+  const allConcepts = computeConceptMastery(experiments, progressMap)
+
+  if (allConcepts.length === 0) return null
+
+  // Sort: attempted concepts first (lowest mastery first), then not-attempted
+  const sortedConcepts = [...allConcepts].sort((a, b) => {
+    const aAttempted = a.totalWeight > 0
+    const bAttempted = b.totalWeight > 0
+    if (aAttempted && !bAttempted) return -1
+    if (!aAttempted && bAttempted) return 1
+    if (aAttempted && bAttempted) {
+      const aM = a.weightedScore / a.totalWeight
+      const bM = b.weightedScore / b.totalWeight
+      return aM - bM
+    }
+    return 0
+  })
+
+  const displayedConcepts = showAll ? sortedConcepts : sortedConcepts.slice(0, 10)
 
   return (
     <div className="concept-mastery-card">
       <h2 className="concept-mastery-title">{t('grades.concept_mastery')}</h2>
       <div className="concept-mastery-list">
-        {concepts.map(c => {
+        {displayedConcepts.map(c => {
           const attempted = c.totalWeight > 0
           const mastery = attempted ? Math.round((c.weightedScore / c.totalWeight) * 100) : -1
           return (
@@ -87,6 +102,14 @@ export default function ConceptMasteryMap({ experiments, progressMap }: ConceptM
           )
         })}
       </div>
+      {sortedConcepts.length > 10 && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="concept-mastery-toggle"
+        >
+          {showAll ? t('grades.show_less') : t('grades.show_all', { count: sortedConcepts.length })}
+        </button>
+      )}
     </div>
   )
 }

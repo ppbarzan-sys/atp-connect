@@ -1886,3 +1886,26 @@ body.teacher-mode .teacher-mode-bar{display:block;}
 [dir="rtl"] .achievements-grid {
   direction: rtl;
 }
+
+/* ── Concept Mastery Toggle Button ───────────────────────────────────────── */
+.concept-mastery-toggle {
+  display: block;
+  margin: 16px auto 0;
+  padding: 8px 24px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--teal);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, border-color 0.15s;
+}
+.concept-mastery-toggle:hover {
+  background: var(--teal-bg);
+  border-color: var(--teal);
+}
+
+/* ── Performance Trend ───────────────────────────────────────────────────── */
+.performance-trend svg text { user-select: none; }
+.performance-trend circle { transition: r 0.2s ease; }

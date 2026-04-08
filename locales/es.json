@@ -339,7 +339,10 @@
     "performance_trend": "Tendencia de Rendimiento",
     "weak_areas": "Áreas a Mejorar",
     "review_experiments": "Revisar Experimentos",
-    "ask_gali_about": "Pregunta a Gali"
+    "ask_gali_about": "Pregunta a Gali",
+    "show_all": "Mostrar Todos ({count})",
+    "show_less": "Mostrar Menos",
+    "no_data": "¡Completa un experimento para ver tu tendencia de rendimiento!"
   },
   "achievements": {
     "title": "Logros",

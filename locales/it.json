@@ -339,7 +339,10 @@
     "performance_trend": "Andamento Prestazioni",
     "weak_areas": "Aree da Migliorare",
     "review_experiments": "Rivedi Esperimenti",
-    "ask_gali_about": "Chiedi a Gali"
+    "ask_gali_about": "Chiedi a Gali",
+    "show_all": "Mostra Tutti ({count})",
+    "show_less": "Mostra Meno",
+    "no_data": "Completa un esperimento per vedere il tuo andamento!"
   },
   "achievements": {
     "title": "Traguardi",

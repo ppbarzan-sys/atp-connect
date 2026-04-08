@@ -8,6 +8,7 @@ import { getExperiments, getChemistryExperiments, type Experiment } from '@/data
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
 import { deleteAllProgress, loadProgress, getAllGrades, type ExperimentProgress } from '@/lib/storage'
 import ConceptMasteryMap, { computeConceptMastery } from '@/components/dashboard/ConceptMasteryMap'
+import { PerformanceTrend } from '@/components/dashboard/PerformanceTrend'
 import { achievements, getEarnedAchievements } from '@/lib/achievements'
 
 export default function DashboardPage() {
@@ -48,22 +49,6 @@ export default function DashboardPage() {
       })
       .slice(0, 3)
   }, [allExperiments, progressMap])
-
-  // Performance trend: all completed, sorted by time
-  const trendData = useMemo(() => {
-    if (!data) return []
-    return [...progressMap.entries()]
-      .map(([num, prog]) => {
-        const exp = allExperiments.find(e => e.num === num)
-        return {
-          num,
-          title: exp?.title || `#${num}`,
-          pct: prog.total > 0 ? Math.round((prog.correct / prog.total) * 100) : 0,
-          completedAt: prog.completedAt,
-        }
-      })
-      .sort((a, b) => new Date(a.completedAt).getTime() - new Date(b.completedAt).getTime())
-  }, [progressMap, allExperiments, data])
 
   if (!data) return null
 
@@ -150,13 +135,11 @@ export default function DashboardPage() {
                 />
               </div>
 
-              {/* Performance Trend Chart */}
-              {trendData.length > 1 && (
-                <PerformanceTrend data={trendData} t={t} onDotClick={(num) => router.push(`/experiments/${num}`)} />
-              )}
-
               {/* Achievement Badges */}
               <AchievementBadges earned={earned} t={t} />
+
+              {/* Performance Trend Chart */}
+              <PerformanceTrend />
 
               {/* Section Breakdown */}
               <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
@@ -233,73 +216,6 @@ export default function DashboardPage() {
           onExpClick={(num) => { setSearchOpen(false); router.push(`/experiments/${num}`) }}
         />
       )}
-    </div>
-  )
-}
-
-/* ── Performance Trend Chart (SVG) ─────────────────────────────────────────── */
-
-function PerformanceTrend({
-  data,
-  t,
-  onDotClick,
-}: {
-  data: { num: number; title: string; pct: number; completedAt: string }[]
-  t: (key: string, vars?: Record<string, string | number>) => string
-  onDotClick: (num: number) => void
-}) {
-  const W = 700
-  const H = 200
-  const PAD = { top: 20, right: 20, bottom: 40, left: 45 }
-  const chartW = W - PAD.left - PAD.right
-  const chartH = H - PAD.top - PAD.bottom
-
-  const dots = data.map((d, i) => {
-    const x = PAD.left + (data.length > 1 ? (i / (data.length - 1)) * chartW : chartW / 2)
-    const y = PAD.top + chartH - (d.pct / 100) * chartH
-    const color = d.pct >= 80 ? '#16a34a' : d.pct >= 60 ? '#ca8a04' : '#dc2626'
-    return { ...d, x, y, color }
-  })
-
-  const linePath = dots.map((d, i) => `${i === 0 ? 'M' : 'L'} ${d.x} ${d.y}`).join(' ')
-
-  return (
-    <div style={{ marginBottom: '2rem' }}>
-      <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
-        {t('grades.performance_trend')}
-      </h2>
-      <div className="trend-chart-card">
-        <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: 'auto' }}>
-          {/* Grid lines */}
-          {[0, 20, 40, 60, 80, 100].map(v => {
-            const y = PAD.top + chartH - (v / 100) * chartH
-            return (
-              <g key={v}>
-                <line x1={PAD.left} y1={y} x2={W - PAD.right} y2={y} stroke="#e2e8f0" strokeWidth={1} />
-                <text x={PAD.left - 8} y={y + 4} textAnchor="end" fontSize={10} fill="#94a3b8">{v}</text>
-              </g>
-            )
-          })}
-          {/* Line */}
-          <path d={linePath} fill="none" stroke="#14b8a6" strokeWidth={2} />
-          {/* Dots */}
-          {dots.map((d, i) => (
-            <g key={i} style={{ cursor: 'pointer' }} onClick={() => onDotClick(d.num)}>
-              <circle cx={d.x} cy={d.y} r={6} fill={d.color} stroke="#fff" strokeWidth={2} />
-              <title>{d.title}: {d.pct}%</title>
-              <text
-                x={d.x}
-                y={H - PAD.bottom + 16}
-                textAnchor="middle"
-                fontSize={9}
-                fill="#64748b"
-              >
-                #{d.num}
-              </text>
-            </g>
-          ))}
-        </svg>
-      </div>
     </div>
   )
 }

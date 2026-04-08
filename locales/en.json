@@ -339,7 +339,10 @@
     "performance_trend": "Performance Trend",
     "weak_areas": "Areas to Improve",
     "review_experiments": "Review Experiments",
-    "ask_gali_about": "Ask Gali about this"
+    "ask_gali_about": "Ask Gali about this",
+    "show_all": "Show All ({count})",
+    "show_less": "Show Less",
+    "no_data": "Complete an experiment to see your performance trend!"
   },
   "achievements": {
     "title": "Achievements",

@@ -339,7 +339,10 @@
     "performance_trend": "Tendance des Performances",
     "weak_areas": "Points à Améliorer",
     "review_experiments": "Revoir les Expériences",
-    "ask_gali_about": "Demander à Gali"
+    "ask_gali_about": "Demander à Gali",
+    "show_all": "Tout Afficher ({count})",
+    "show_less": "Afficher Moins",
+    "no_data": "Terminez une expérience pour voir votre progression !"
   },
   "achievements": {
     "title": "Réalisations",
