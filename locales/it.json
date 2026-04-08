@@ -13,7 +13,9 @@
     "gali_title": "Chiedi a Gali IA",
     "sign_out": "Esci",
     "dashboard": "Progressi",
-    "dashboard_title": "I Miei Progressi"
+    "dashboard_title": "I Miei Progressi",
+    "classroom": "Classe",
+    "classroom_title": "Gestione Classe"
   },
   "landing": {
     "tagline": "Accendi la Curiosità. Ispira l'Innovazione.",
@@ -370,5 +372,63 @@
   "resetProgress": "Azzera progresso",
   "confirmResetExperiment": "Azzerare il progresso per questo esperimento? Le risposte e il punteggio verranno cancellati.",
   "confirmResetAll": "Azzerare TUTTI i progressi? Questo cancellerà tutte le risposte, i punteggi e le note di ogni esperimento. Questa azione non può essere annullata.",
-  "resetAllProgress": "Azzera tutti i progressi"
+  "resetAllProgress": "Azzera tutti i progressi",
+  "classroom": {
+    "title": "La Mia Classe",
+    "add_student": "Aggiungi Studente",
+    "student_name": "Nome Studente",
+    "import_csv": "Importa da CSV",
+    "max_students": "Massimo 28 studenti per classe",
+    "empty": "Aggiungi il primo studente per iniziare",
+    "remove_confirm": "Rimuovere {name} dalla classe?",
+    "class_name": "Nome Classe",
+    "avg_score": "Media",
+    "completed": "Completati",
+    "student_report": "Report Studente",
+    "overall_avg": "Media Generale",
+    "export_report": "Esporta Report Studente",
+    "quiz": "Quiz",
+    "lab_report": "Relazione Lab",
+    "practical": "Abilità Pratiche",
+    "not_graded": "Non valutato",
+    "select_student": "Seleziona Studente",
+    "teacher_grading": "Valutazione Insegnante",
+    "grade_lab": "Valuta Relazione Lab",
+    "grade_practical": "Valuta Abilità Pratiche"
+  },
+  "lab_report": {
+    "title": "Voto Relazione Lab",
+    "hypothesis": "Ipotesi",
+    "procedure": "Procedura",
+    "data_collection": "Raccolta Dati",
+    "analysis": "Analisi",
+    "conclusion": "Conclusione",
+    "total": "Totale",
+    "notes": "Note",
+    "save": "Salva Voto",
+    "cancel": "Annulla"
+  },
+  "practical": {
+    "title": "Abilità Pratiche",
+    "safety": "Sicurezza",
+    "technique": "Tecnica",
+    "accuracy": "Precisione",
+    "teamwork": "Lavoro di Squadra",
+    "total": "Totale",
+    "notes": "Note",
+    "save": "Salva Voto",
+    "cancel": "Annulla"
+  },
+  "class_dashboard": {
+    "title": "Dashboard Classe",
+    "students": "Studenti",
+    "class_avg": "Media Classe",
+    "total_completed": "Totale Completati",
+    "score_distribution": "Distribuzione Voti",
+    "top_performers": "Migliori",
+    "needs_attention": "Da Seguire",
+    "by_experiment": "Per Esperimento",
+    "export_grades": "Esporta Voti Classe",
+    "no_data": "Nessun voto registrato"
+  }
 }

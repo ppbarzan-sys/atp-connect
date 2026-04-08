@@ -1,7 +1,9 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { ATP_LOGO } from '@/data/experiments'
 import { useI18n } from '@/lib/i18n'
+import { loadTeacherMode } from '@/lib/storage'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 async function signOut(router: ReturnType<typeof useRouter>) {
@@ -21,11 +23,19 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
   const router = useRouter()
   const pathname = usePathname()
   const { t } = useI18n()
+  const [teacherMode, setTeacherMode] = useState(false)
   const isChemistry = pathname?.startsWith('/chemistry') ?? false
   const isAI = pathname?.startsWith('/ai') ?? false
   const isRobotics = pathname?.startsWith('/robotics') ?? false
   const isDashboard = pathname?.startsWith('/dashboard') ?? false
-  const isPhysicsActive = !isChemistry && !isAI && !isRobotics && !isDashboard
+  const isClassroom = pathname?.startsWith('/classroom') ?? false
+  const isPhysicsActive = !isChemistry && !isAI && !isRobotics && !isDashboard && !isClassroom
+
+  useEffect(() => {
+    setTeacherMode(loadTeacherMode())
+    const interval = setInterval(() => setTeacherMode(loadTeacherMode()), 2000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <aside className="sidebar">
@@ -82,6 +92,18 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
         <span>📊</span>
         <span className="label">{t('nav.dashboard')}</span>
       </button>
+
+      {/* Classroom — teacher mode only */}
+      {teacherMode && (
+        <button
+          className={`nav-icon${isClassroom ? ' active' : ''}`}
+          onClick={() => router.push('/classroom')}
+          title={t('nav.classroom_title')}
+        >
+          <span>🏫</span>
+          <span className="label">{t('nav.classroom')}</span>
+        </button>
+      )}
 
       {/* Search */}
       <button

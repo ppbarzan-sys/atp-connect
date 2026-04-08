@@ -13,7 +13,9 @@
     "gali_title": "Pregunta a Gali IA",
     "sign_out": "Cerrar sesión",
     "dashboard": "Progreso",
-    "dashboard_title": "Mi Progreso"
+    "dashboard_title": "Mi Progreso",
+    "classroom": "Aula",
+    "classroom_title": "Gestión del Aula"
   },
   "landing": {
     "tagline": "Despierta la Curiosidad. Enciende la Innovación.",
@@ -370,5 +372,63 @@
   "resetProgress": "Restablecer progreso",
   "confirmResetExperiment": "¿Restablecer el progreso de este experimento? Se borrarán las respuestas y la puntuación.",
   "confirmResetAll": "¿Restablecer TODO el progreso? Esto borrará todas las respuestas, puntuaciones y notas de cada experimento. Esta acción no se puede deshacer.",
-  "resetAllProgress": "Restablecer todo el progreso"
+  "resetAllProgress": "Restablecer todo el progreso",
+  "classroom": {
+    "title": "Mi Aula",
+    "add_student": "Agregar Estudiante",
+    "student_name": "Nombre del Estudiante",
+    "import_csv": "Importar desde CSV",
+    "max_students": "Máximo 28 estudiantes por aula",
+    "empty": "Agrega tu primer estudiante para comenzar",
+    "remove_confirm": "¿Eliminar a {name} del aula?",
+    "class_name": "Nombre del Aula",
+    "avg_score": "Promedio",
+    "completed": "Completados",
+    "student_report": "Reporte del Estudiante",
+    "overall_avg": "Promedio General",
+    "export_report": "Exportar Reporte",
+    "quiz": "Quiz",
+    "lab_report": "Informe de Lab",
+    "practical": "Habilidades Prácticas",
+    "not_graded": "Sin calificar",
+    "select_student": "Seleccionar Estudiante",
+    "teacher_grading": "Calificación del Maestro",
+    "grade_lab": "Calificar Informe de Lab",
+    "grade_practical": "Calificar Habilidades Prácticas"
+  },
+  "lab_report": {
+    "title": "Calificación del Informe de Lab",
+    "hypothesis": "Hipótesis",
+    "procedure": "Procedimiento",
+    "data_collection": "Recolección de Datos",
+    "analysis": "Análisis",
+    "conclusion": "Conclusión",
+    "total": "Total",
+    "notes": "Notas",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "practical": {
+    "title": "Habilidades Prácticas",
+    "safety": "Seguridad",
+    "technique": "Técnica",
+    "accuracy": "Precisión",
+    "teamwork": "Trabajo en Equipo",
+    "total": "Total",
+    "notes": "Notas",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "class_dashboard": {
+    "title": "Panel del Aula",
+    "students": "Estudiantes",
+    "class_avg": "Promedio del Aula",
+    "total_completed": "Total Completados",
+    "score_distribution": "Distribución de Notas",
+    "top_performers": "Mejores Estudiantes",
+    "needs_attention": "Necesitan Atención",
+    "by_experiment": "Por Experimento",
+    "export_grades": "Exportar Notas del Aula",
+    "no_data": "Sin calificaciones registradas"
+  }
 }

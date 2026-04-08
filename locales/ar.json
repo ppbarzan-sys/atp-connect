@@ -13,7 +13,9 @@
     "gali_title": "اسأل غالي AI",
     "sign_out": "تسجيل الخروج",
     "dashboard": "التقدّم",
-    "dashboard_title": "تقدّمي"
+    "dashboard_title": "تقدّمي",
+    "classroom": "الفصل",
+    "classroom_title": "إدارة الفصل"
   },
   "landing": {
     "tagline": "أطلق الفضول. أشعل الابتكار.",
@@ -370,5 +372,63 @@
   "resetProgress": "إعادة تعيين التقدم",
   "confirmResetExperiment": "إعادة تعيين التقدم لهذه التجربة؟ سيتم مسح إجاباتك ونتيجتك.",
   "confirmResetAll": "إعادة تعيين كل التقدم؟ سيتم مسح جميع الإجابات والنتائج والملاحظات لكل تجربة. لا يمكن التراجع عن هذا الإجراء.",
-  "resetAllProgress": "إعادة تعيين كل التقدم"
+  "resetAllProgress": "إعادة تعيين كل التقدم",
+  "classroom": {
+    "title": "فصلي",
+    "add_student": "إضافة طالب",
+    "student_name": "اسم الطالب",
+    "import_csv": "استيراد من CSV",
+    "max_students": "الحد الأقصى 28 طالب لكل فصل",
+    "empty": "أضف أول طالب للبدء",
+    "remove_confirm": "إزالة {name} من الفصل؟",
+    "class_name": "اسم الفصل",
+    "avg_score": "المعدل",
+    "completed": "المكتملة",
+    "student_report": "تقرير الطالب",
+    "overall_avg": "المعدل العام",
+    "export_report": "تصدير تقرير الطالب",
+    "quiz": "اختبار",
+    "lab_report": "تقرير المختبر",
+    "practical": "المهارات العملية",
+    "not_graded": "لم يتم التقييم",
+    "select_student": "اختر طالب",
+    "teacher_grading": "تقييم المعلم",
+    "grade_lab": "تقييم تقرير المختبر",
+    "grade_practical": "تقييم المهارات العملية"
+  },
+  "lab_report": {
+    "title": "تقييم تقرير المختبر",
+    "hypothesis": "الفرضية",
+    "procedure": "الإجراء",
+    "data_collection": "جمع البيانات",
+    "analysis": "التحليل",
+    "conclusion": "الخلاصة",
+    "total": "المجموع",
+    "notes": "ملاحظات",
+    "save": "حفظ التقييم",
+    "cancel": "إلغاء"
+  },
+  "practical": {
+    "title": "المهارات العملية",
+    "safety": "السلامة",
+    "technique": "التقنية",
+    "accuracy": "الدقة",
+    "teamwork": "العمل الجماعي",
+    "total": "المجموع",
+    "notes": "ملاحظات",
+    "save": "حفظ التقييم",
+    "cancel": "إلغاء"
+  },
+  "class_dashboard": {
+    "title": "لوحة الفصل",
+    "students": "الطلاب",
+    "class_avg": "معدل الفصل",
+    "total_completed": "إجمالي المكتملة",
+    "score_distribution": "توزيع الدرجات",
+    "top_performers": "الأفضل أداءً",
+    "needs_attention": "يحتاجون متابعة",
+    "by_experiment": "حسب التجربة",
+    "export_grades": "تصدير درجات الفصل",
+    "no_data": "لا توجد درجات مسجلة"
+  }
 }

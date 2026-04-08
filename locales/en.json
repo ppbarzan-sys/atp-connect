@@ -13,7 +13,9 @@
     "gali_title": "Ask Gali AI",
     "sign_out": "Sign Out",
     "dashboard": "Progress",
-    "dashboard_title": "My Progress"
+    "dashboard_title": "My Progress",
+    "classroom": "Classroom",
+    "classroom_title": "Classroom Management"
   },
   "landing": {
     "tagline": "Empower Curiosity. Ignite Innovation.",
@@ -370,5 +372,63 @@
   "resetProgress": "Reset progress",
   "confirmResetExperiment": "Reset progress for this experiment? This will clear your quiz answers and score.",
   "confirmResetAll": "Reset ALL progress? This will clear all quiz answers, scores, and notes for every experiment. This cannot be undone.",
-  "resetAllProgress": "Reset All Progress"
+  "resetAllProgress": "Reset All Progress",
+  "classroom": {
+    "title": "My Classroom",
+    "add_student": "Add Student",
+    "student_name": "Student Name",
+    "import_csv": "Import from CSV",
+    "max_students": "Maximum 28 students per classroom",
+    "empty": "Add your first student to get started",
+    "remove_confirm": "Remove {name} from the classroom?",
+    "class_name": "Class Name",
+    "avg_score": "Avg Score",
+    "completed": "Completed",
+    "student_report": "Student Report",
+    "overall_avg": "Overall Average",
+    "export_report": "Export Student Report",
+    "quiz": "Quiz",
+    "lab_report": "Lab Report",
+    "practical": "Practical Skills",
+    "not_graded": "Not graded",
+    "select_student": "Select Student",
+    "teacher_grading": "Teacher Grading",
+    "grade_lab": "Grade Lab Report",
+    "grade_practical": "Grade Practical"
+  },
+  "lab_report": {
+    "title": "Lab Report Grade",
+    "hypothesis": "Hypothesis",
+    "procedure": "Procedure",
+    "data_collection": "Data Collection",
+    "analysis": "Analysis",
+    "conclusion": "Conclusion",
+    "total": "Total",
+    "notes": "Notes",
+    "save": "Save Grade",
+    "cancel": "Cancel"
+  },
+  "practical": {
+    "title": "Practical Skills",
+    "safety": "Safety",
+    "technique": "Technique",
+    "accuracy": "Accuracy",
+    "teamwork": "Teamwork",
+    "total": "Total",
+    "notes": "Notes",
+    "save": "Save Grade",
+    "cancel": "Cancel"
+  },
+  "class_dashboard": {
+    "title": "Class Dashboard",
+    "students": "Students",
+    "class_avg": "Class Average",
+    "total_completed": "Total Completed",
+    "score_distribution": "Score Distribution",
+    "top_performers": "Top Performers",
+    "needs_attention": "Needs Attention",
+    "by_experiment": "By Experiment",
+    "export_grades": "Export Class Grades",
+    "no_data": "No grades recorded yet"
+  }
 }

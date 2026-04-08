@@ -13,7 +13,9 @@
     "gali_title": "Demander à Gali",
     "sign_out": "Déconnexion",
     "dashboard": "Progrès",
-    "dashboard_title": "Mes Progrès"
+    "dashboard_title": "Mes Progrès",
+    "classroom": "Classe",
+    "classroom_title": "Gestion de Classe"
   },
   "landing": {
     "tagline": "Éveillez la Curiosité. Allumez l'Innovation.",
@@ -370,5 +372,63 @@
   "resetProgress": "Réinitialiser la progression",
   "confirmResetExperiment": "Réinitialiser la progression de cette expérience ? Les réponses et le score seront effacés.",
   "confirmResetAll": "Réinitialiser TOUTE la progression ? Cela effacera toutes les réponses, scores et notes de chaque expérience. Cette action est irréversible.",
-  "resetAllProgress": "Réinitialiser toute la progression"
+  "resetAllProgress": "Réinitialiser toute la progression",
+  "classroom": {
+    "title": "Ma Classe",
+    "add_student": "Ajouter un Élève",
+    "student_name": "Nom de l'Élève",
+    "import_csv": "Importer depuis CSV",
+    "max_students": "Maximum 28 élèves par classe",
+    "empty": "Ajoutez votre premier élève pour commencer",
+    "remove_confirm": "Retirer {name} de la classe?",
+    "class_name": "Nom de la Classe",
+    "avg_score": "Moyenne",
+    "completed": "Complétés",
+    "student_report": "Rapport de l'Élève",
+    "overall_avg": "Moyenne Générale",
+    "export_report": "Exporter le Rapport",
+    "quiz": "Quiz",
+    "lab_report": "Rapport de Lab",
+    "practical": "Compétences Pratiques",
+    "not_graded": "Non noté",
+    "select_student": "Sélectionner un Élève",
+    "teacher_grading": "Notation Enseignant",
+    "grade_lab": "Noter le Rapport de Lab",
+    "grade_practical": "Noter les Compétences Pratiques"
+  },
+  "lab_report": {
+    "title": "Note du Rapport de Lab",
+    "hypothesis": "Hypothèse",
+    "procedure": "Procédure",
+    "data_collection": "Collecte de Données",
+    "analysis": "Analyse",
+    "conclusion": "Conclusion",
+    "total": "Total",
+    "notes": "Notes",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "practical": {
+    "title": "Compétences Pratiques",
+    "safety": "Sécurité",
+    "technique": "Technique",
+    "accuracy": "Précision",
+    "teamwork": "Travail d'Équipe",
+    "total": "Total",
+    "notes": "Notes",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "class_dashboard": {
+    "title": "Tableau de Bord de Classe",
+    "students": "Élèves",
+    "class_avg": "Moyenne de Classe",
+    "total_completed": "Total Complétés",
+    "score_distribution": "Distribution des Notes",
+    "top_performers": "Meilleurs Élèves",
+    "needs_attention": "À Suivre",
+    "by_experiment": "Par Expérience",
+    "export_grades": "Exporter les Notes",
+    "no_data": "Aucune note enregistrée"
+  }
 }
