@@ -1662,3 +1662,56 @@ body.teacher-mode .teacher-mode-bar{display:block;}
 [dir="rtl"] .signout-btn {
   transform: scaleX(-1);
 }
+
+/* Per-experiment reset button on card */
+.card-reset-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 2;
+  color: #666;
+}
+
+.exp-card:hover .card-reset-btn {
+  opacity: 1;
+}
+
+.card-reset-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+[dir="rtl"] .card-reset-btn {
+  left: auto;
+  right: 8px;
+}
+
+/* Reset All button on Dashboard */
+.reset-all-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reset-all-btn:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.6);
+}

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
-import { loadResults, saveResults, saveProgress } from '@/lib/storage'
+import { loadResults, saveResults, saveProgress, deleteProgress } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 
 interface QuestionsTabProps {
@@ -77,6 +77,8 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
       if (!key.startsWith('mcq-')) cleaned[key] = saved[key]
     }
     saveResults(exp.num, cleaned)
+    // Also delete the progress entry so badge disappears
+    deleteProgress(exp.num)
   }
 
   return (

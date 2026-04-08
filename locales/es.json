@@ -330,5 +330,9 @@
   },
   "card": {
     "items": "elementos"
-  }
+  },
+  "resetProgress": "Restablecer progreso",
+  "confirmResetExperiment": "¿Restablecer el progreso de este experimento? Se borrarán las respuestas y la puntuación.",
+  "confirmResetAll": "¿Restablecer TODO el progreso? Esto borrará todas las respuestas, puntuaciones y notas de cada experimento. Esta acción no se puede deshacer.",
+  "resetAllProgress": "Restablecer todo el progreso"
 }

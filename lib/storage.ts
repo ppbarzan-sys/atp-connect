@@ -87,3 +87,24 @@ export function getProgressSummary(experimentNums: number[]): { completed: numbe
   ).length;
   return { completed, total: experimentNums.length };
 }
+
+/** Delete progress for a single experiment */
+export function deleteProgress(num: number): void {
+  if (typeof window === 'undefined') return
+  localStorage.removeItem(`atp-progress-${num}`)
+  localStorage.removeItem(`atp-results-${num}`)
+  localStorage.removeItem(`atp-note-${num}`)
+}
+
+/** Delete ALL experiment progress, results, and notes */
+export function deleteAllProgress(): void {
+  if (typeof window === 'undefined') return
+  const keysToRemove: string[] = []
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    if (key && (key.startsWith('atp-progress-') || key.startsWith('atp-results-') || key.startsWith('atp-note-'))) {
+      keysToRemove.push(key)
+    }
+  }
+  keysToRemove.forEach(key => localStorage.removeItem(key))
+}

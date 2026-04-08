@@ -330,5 +330,9 @@
   },
   "card": {
     "items": "éléments"
-  }
+  },
+  "resetProgress": "Réinitialiser la progression",
+  "confirmResetExperiment": "Réinitialiser la progression de cette expérience ? Les réponses et le score seront effacés.",
+  "confirmResetAll": "Réinitialiser TOUTE la progression ? Cela effacera toutes les réponses, scores et notes de chaque expérience. Cette action est irréversible.",
+  "resetAllProgress": "Réinitialiser toute la progression"
 }

@@ -330,5 +330,9 @@
   },
   "card": {
     "items": "elementi"
-  }
+  },
+  "resetProgress": "Azzera progresso",
+  "confirmResetExperiment": "Azzerare il progresso per questo esperimento? Le risposte e il punteggio verranno cancellati.",
+  "confirmResetAll": "Azzerare TUTTI i progressi? Questo cancellerà tutte le risposte, i punteggi e le note di ogni esperimento. Questa azione non può essere annullata.",
+  "resetAllProgress": "Azzera tutti i progressi"
 }

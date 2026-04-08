@@ -6,6 +6,7 @@ import SearchOverlay from '@/components/SearchOverlay'
 import { useI18n } from '@/lib/i18n'
 import { getExperiments, getChemistryExperiments } from '@/data/loader'
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
+import { deleteAllProgress } from '@/lib/storage'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -37,9 +38,24 @@ export default function DashboardPage() {
           color: '#fff',
           padding: '2rem 2rem 1.5rem',
         }}>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>
-            {t('dashboard.title')}
-          </h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h1 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>
+              {t('dashboard.title')}
+            </h1>
+            {hasProgress && (
+              <button
+                className="reset-all-btn"
+                onClick={() => {
+                  if (window.confirm(t('confirmResetAll'))) {
+                    deleteAllProgress()
+                    window.location.reload()
+                  }
+                }}
+              >
+                {t('resetAllProgress')}
+              </button>
+            )}
+          </div>
         </div>
 
         <div style={{ padding: '1.5rem 2rem', maxWidth: 900, margin: '0 auto' }}>

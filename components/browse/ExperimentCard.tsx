@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
-import { loadProgress, type ExperimentProgress } from '@/lib/storage'
+import { loadProgress, deleteProgress, type ExperimentProgress } from '@/lib/storage'
 
 interface ExperimentCardProps {
   exp: Experiment
@@ -37,6 +37,22 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
 
   return (
     <div className="exp-card" onClick={onClick} style={{ cursor: 'pointer', position: 'relative' }}>
+      {progress && (
+        <button
+          className="card-reset-btn"
+          title={t('resetProgress')}
+          onClick={(e) => {
+            e.stopPropagation()
+            e.preventDefault()
+            if (window.confirm(t('confirmResetExperiment'))) {
+              deleteProgress(exp.num)
+              setProgress(null)
+            }
+          }}
+        >
+          ↺
+        </button>
+      )}
       {progress && scoreTier && (
         <div className={`card-progress-badge ${scoreTier}`}>
           ✓ {progress.correct}/{progress.total}

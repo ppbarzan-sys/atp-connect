@@ -330,5 +330,9 @@
   },
   "card": {
     "items": "items"
-  }
+  },
+  "resetProgress": "Reset progress",
+  "confirmResetExperiment": "Reset progress for this experiment? This will clear your quiz answers and score.",
+  "confirmResetAll": "Reset ALL progress? This will clear all quiz answers, scores, and notes for every experiment. This cannot be undone.",
+  "resetAllProgress": "Reset All Progress"
 }
