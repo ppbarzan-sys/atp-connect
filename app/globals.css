@@ -497,8 +497,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .teacher-only{display:none;}
 body.teacher-mode .teacher-only{display:block;}
 .teacher-notes-input{background:#FFFBEB;}
-.teacher-mode-bar{display:none;background:#F59E0B;color:#fff;padding:6px 24px;font-size:12px;font-weight:700;text-align:center;letter-spacing:.03em;}
+.teacher-mode-bar{display:none;background:#F59E0B;color:#fff;padding:6px 24px;font-size:12px;font-weight:700;text-align:center;letter-spacing:.03em;position:fixed;top:0;left:0;right:0;z-index:1000;height:auto;width:100%;}
 body.teacher-mode .teacher-mode-bar{display:block;}
+body.teacher-mode{padding-top:32px;}
+body.teacher-mode .sidebar{top:32px;height:calc(100vh - 32px);}
+body.teacher-mode .page-shell{top:32px;bottom:0;}
 
 /* ── SEARCH OVERLAY ────────── */
 .search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;display:none;align-items:flex-start;justify-content:center;padding-top:80px;}
