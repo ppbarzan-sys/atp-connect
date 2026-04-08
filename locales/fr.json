@@ -328,6 +328,39 @@
     "no_progress": "Commencez une expérience pour suivre vos progrès !",
     "score": "Score"
   },
+  "grades": {
+    "score_breakdown": "Vous avez obtenu {correct}/{total} ({percent}%) en {time}",
+    "time_format": "{min}:{sec}",
+    "best_score": "Meilleur Score",
+    "attempts": "Tentatives",
+    "last_attempt": "Dernière Tentative",
+    "concept_mastery": "Maîtrise des Concepts",
+    "mastery_not_attempted": "Pas encore tenté",
+    "performance_trend": "Tendance des Performances",
+    "weak_areas": "Points à Améliorer",
+    "review_experiments": "Revoir les Expériences",
+    "ask_gali_about": "Demander à Gali"
+  },
+  "achievements": {
+    "title": "Réalisations",
+    "first_experiment": "Premiers Pas",
+    "first_experiment_desc": "Terminer votre première expérience",
+    "five_experiments": "Bon Début",
+    "five_experiments_desc": "Terminer 5 expériences",
+    "ten_experiments": "Élève Assidu",
+    "ten_experiments_desc": "Terminer 10 expériences",
+    "mechanics_master": "Maître en Mécanique",
+    "mechanics_master_desc": "Terminer les 18 expériences de mécanique avec 70%+ de moyenne",
+    "perfect_score": "Score Parfait",
+    "perfect_score_desc": "Obtenir 100% à une expérience",
+    "chemistry_explorer": "Explorateur en Chimie",
+    "chemistry_explorer_desc": "Terminer 10 expériences de chimie",
+    "speed_demon": "Éclair",
+    "speed_demon_desc": "Score parfait en moins de 60 secondes",
+    "improver": "En Progrès",
+    "improver_desc": "Améliorer votre score lors d'un nouvel essai",
+    "locked": "Continuez pour débloquer !"
+  },
   "card": {
     "items": "éléments"
   },

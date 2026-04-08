@@ -1,24 +1,69 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import { useI18n } from '@/lib/i18n'
-import { getExperiments, getChemistryExperiments } from '@/data/loader'
+import { getExperiments, getChemistryExperiments, type Experiment } from '@/data/loader'
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
-import { deleteAllProgress } from '@/lib/storage'
+import { deleteAllProgress, loadProgress, getAllGrades, type ExperimentProgress } from '@/lib/storage'
+import ConceptMasteryMap, { computeConceptMastery } from '@/components/dashboard/ConceptMasteryMap'
+import { achievements, getEarnedAchievements } from '@/lib/achievements'
 
 export default function DashboardPage() {
   const router = useRouter()
   const { t, tSection, locale } = useI18n()
   const [searchOpen, setSearchOpen] = useState(false)
   const [data, setData] = useState<DashboardData | null>(null)
+  const [allExperiments, setAllExperiments] = useState<Experiment[]>([])
+  const [progressMap, setProgressMap] = useState<Map<number, ExperimentProgress>>(new Map())
 
   useEffect(() => {
     const physics = getExperiments(locale)
     const chemistry = getChemistryExperiments(locale)
+    const all = [...physics, ...chemistry]
+    setAllExperiments(all)
     setData(getDashboardData(physics, chemistry))
+
+    const pMap = new Map<number, ExperimentProgress>()
+    for (const exp of all) {
+      const prog = loadProgress(exp.num)
+      if (prog) pMap.set(exp.num, prog)
+    }
+    setProgressMap(pMap)
   }, [locale])
+
+  const grades = useMemo(() => getAllGrades(), [data])
+  const earned = useMemo(() => getEarnedAchievements(grades), [grades])
+
+  // Weak areas: 3 lowest-scoring concepts
+  const weakAreas = useMemo(() => {
+    const concepts = computeConceptMastery(allExperiments, progressMap)
+    return concepts
+      .filter(c => c.totalWeight > 0)
+      .sort((a, b) => {
+        const aM = a.totalWeight > 0 ? a.weightedScore / a.totalWeight : 0
+        const bM = b.totalWeight > 0 ? b.weightedScore / b.totalWeight : 0
+        return aM - bM
+      })
+      .slice(0, 3)
+  }, [allExperiments, progressMap])
+
+  // Performance trend: all completed, sorted by time
+  const trendData = useMemo(() => {
+    if (!data) return []
+    return [...progressMap.entries()]
+      .map(([num, prog]) => {
+        const exp = allExperiments.find(e => e.num === num)
+        return {
+          num,
+          title: exp?.title || `#${num}`,
+          pct: prog.total > 0 ? Math.round((prog.correct / prog.total) * 100) : 0,
+          completedAt: prog.completedAt,
+        }
+      })
+      .sort((a, b) => new Date(a.completedAt).getTime() - new Date(b.completedAt).getTime())
+  }, [progressMap, allExperiments, data])
 
   if (!data) return null
 
@@ -105,6 +150,14 @@ export default function DashboardPage() {
                 />
               </div>
 
+              {/* Performance Trend Chart */}
+              {trendData.length > 1 && (
+                <PerformanceTrend data={trendData} t={t} onDotClick={(num) => router.push(`/experiments/${num}`)} />
+              )}
+
+              {/* Achievement Badges */}
+              <AchievementBadges earned={earned} t={t} />
+
               {/* Section Breakdown */}
               <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
                 {t('dashboard.section_breakdown')}
@@ -114,6 +167,19 @@ export default function DashboardPage() {
                   <SectionRow key={sec.section} section={sec} tSection={tSection} />
                 ))}
               </div>
+
+              {/* Concept Mastery Map */}
+              <ConceptMasteryMap experiments={allExperiments} progressMap={progressMap} />
+
+              {/* Weak Areas */}
+              {weakAreas.length > 0 && (
+                <WeakAreas
+                  areas={weakAreas}
+                  allExperiments={allExperiments}
+                  t={t}
+                  onExpClick={(num) => router.push(`/experiments/${num}`)}
+                />
+              )}
 
               {/* Recent Activity */}
               {data.recentActivity.length > 0 && (
@@ -170,6 +236,161 @@ export default function DashboardPage() {
     </div>
   )
 }
+
+/* ── Performance Trend Chart (SVG) ─────────────────────────────────────────── */
+
+function PerformanceTrend({
+  data,
+  t,
+  onDotClick,
+}: {
+  data: { num: number; title: string; pct: number; completedAt: string }[]
+  t: (key: string, vars?: Record<string, string | number>) => string
+  onDotClick: (num: number) => void
+}) {
+  const W = 700
+  const H = 200
+  const PAD = { top: 20, right: 20, bottom: 40, left: 45 }
+  const chartW = W - PAD.left - PAD.right
+  const chartH = H - PAD.top - PAD.bottom
+
+  const dots = data.map((d, i) => {
+    const x = PAD.left + (data.length > 1 ? (i / (data.length - 1)) * chartW : chartW / 2)
+    const y = PAD.top + chartH - (d.pct / 100) * chartH
+    const color = d.pct >= 80 ? '#16a34a' : d.pct >= 60 ? '#ca8a04' : '#dc2626'
+    return { ...d, x, y, color }
+  })
+
+  const linePath = dots.map((d, i) => `${i === 0 ? 'M' : 'L'} ${d.x} ${d.y}`).join(' ')
+
+  return (
+    <div style={{ marginBottom: '2rem' }}>
+      <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
+        {t('grades.performance_trend')}
+      </h2>
+      <div className="trend-chart-card">
+        <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', height: 'auto' }}>
+          {/* Grid lines */}
+          {[0, 20, 40, 60, 80, 100].map(v => {
+            const y = PAD.top + chartH - (v / 100) * chartH
+            return (
+              <g key={v}>
+                <line x1={PAD.left} y1={y} x2={W - PAD.right} y2={y} stroke="#e2e8f0" strokeWidth={1} />
+                <text x={PAD.left - 8} y={y + 4} textAnchor="end" fontSize={10} fill="#94a3b8">{v}</text>
+              </g>
+            )
+          })}
+          {/* Line */}
+          <path d={linePath} fill="none" stroke="#14b8a6" strokeWidth={2} />
+          {/* Dots */}
+          {dots.map((d, i) => (
+            <g key={i} style={{ cursor: 'pointer' }} onClick={() => onDotClick(d.num)}>
+              <circle cx={d.x} cy={d.y} r={6} fill={d.color} stroke="#fff" strokeWidth={2} />
+              <title>{d.title}: {d.pct}%</title>
+              <text
+                x={d.x}
+                y={H - PAD.bottom + 16}
+                textAnchor="middle"
+                fontSize={9}
+                fill="#64748b"
+              >
+                #{d.num}
+              </text>
+            </g>
+          ))}
+        </svg>
+      </div>
+    </div>
+  )
+}
+
+/* ── Achievement Badges ─────────────────────────────────────────────────────── */
+
+function AchievementBadges({
+  earned,
+  t,
+}: {
+  earned: { id: string; titleKey: string; icon: string }[]
+  t: (key: string) => string
+}) {
+  const earnedIds = new Set(earned.map(a => a.id))
+
+  return (
+    <div style={{ marginBottom: '2rem' }}>
+      <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
+        {t('achievements.title')}
+      </h2>
+      <div className="achievements-grid">
+        {achievements.map(a => {
+          const isEarned = earnedIds.has(a.id)
+          return (
+            <div
+              key={a.id}
+              className={`achievement-badge${isEarned ? '' : ' locked'}`}
+              title={isEarned ? t(a.titleKey) : t('achievements.locked')}
+            >
+              <span className="achievement-icon">{a.icon}</span>
+              <span className="achievement-label">{t(a.titleKey)}</span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+/* ── Weak Areas ──────────────────────────────────────────────────────────────── */
+
+function WeakAreas({
+  areas,
+  allExperiments,
+  t,
+  onExpClick,
+}: {
+  areas: { label: string; weightedScore: number; totalWeight: number; experimentNums: number[] }[]
+  allExperiments: Experiment[]
+  t: (key: string, vars?: Record<string, string | number>) => string
+  onExpClick: (num: number) => void
+}) {
+  return (
+    <div style={{ marginBottom: '2rem', marginTop: '1.5rem' }}>
+      <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '1rem' }}>
+        {t('grades.weak_areas')}
+      </h2>
+      <div className="weak-areas-card">
+        {areas.map(a => {
+          const mastery = a.totalWeight > 0 ? Math.round((a.weightedScore / a.totalWeight) * 100) : 0
+          const relatedExps = a.experimentNums.slice(0, 3)
+          return (
+            <div className="weak-area-row" key={a.label}>
+              <div className="weak-area-info">
+                <span className="weak-area-label">{a.label}</span>
+                <span className="weak-area-pct" style={{ color: mastery < 40 ? '#dc2626' : '#ea580c' }}>
+                  {mastery}%
+                </span>
+              </div>
+              <div className="weak-area-links">
+                <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
+                  {t('grades.review_experiments')}:{' '}
+                  {relatedExps.map((num, i) => (
+                    <span key={num}>
+                      <button className="weak-area-exp-link" onClick={() => onExpClick(num)}>
+                        #{num}
+                      </button>
+                      {i < relatedExps.length - 1 && ', '}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+/* ── Existing helper components ──────────────────────────────────────────────── */
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (

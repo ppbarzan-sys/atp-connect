@@ -102,9 +102,69 @@ export function deleteAllProgress(): void {
   const keysToRemove: string[] = []
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i)
-    if (key && (key.startsWith('atp-progress-') || key.startsWith('atp-results-') || key.startsWith('atp-note-'))) {
+    if (key && (key.startsWith('atp-progress-') || key.startsWith('atp-results-') || key.startsWith('atp-note-') || key.startsWith('atp-grades-'))) {
       keysToRemove.push(key)
     }
   }
   keysToRemove.forEach(key => localStorage.removeItem(key))
+}
+
+// ── Detailed grade tracking ─────────────────────────────────────────────────
+
+export interface QuizAttempt {
+  num: number
+  correct: number
+  total: number
+  completedAt: string
+  answers: Record<number, number>
+  timeSpent?: number
+}
+
+export interface StudentGrades {
+  attempts: QuizAttempt[]
+  bestScore: { correct: number; total: number }
+  lastAttempt: string
+}
+
+export function saveGrade(num: number, attempt: QuizAttempt): void {
+  if (typeof window === 'undefined') return
+  const existing = loadGrades(num)
+  const attempts = existing ? [...existing.attempts, attempt] : [attempt]
+  const bestScore = attempts.reduce(
+    (best, a) => {
+      const bestPct = best.total > 0 ? best.correct / best.total : 0
+      const aPct = a.total > 0 ? a.correct / a.total : 0
+      return aPct > bestPct ? { correct: a.correct, total: a.total } : best
+    },
+    { correct: 0, total: 0 }
+  )
+  const grades: StudentGrades = {
+    attempts,
+    bestScore,
+    lastAttempt: attempt.completedAt,
+  }
+  localStorage.setItem(`atp-grades-${num}`, JSON.stringify(grades))
+}
+
+export function loadGrades(num: number): StudentGrades | null {
+  if (typeof window === 'undefined') return null
+  const saved = localStorage.getItem(`atp-grades-${num}`)
+  if (!saved) return null
+  try { return JSON.parse(saved) } catch { return null }
+}
+
+export function getAllGrades(): Map<number, StudentGrades> {
+  if (typeof window === 'undefined') return new Map()
+  const map = new Map<number, StudentGrades>()
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    if (key?.startsWith('atp-grades-')) {
+      const num = parseInt(key.replace('atp-grades-', ''))
+      if (!isNaN(num)) {
+        const grades = loadGrades(num)
+        if (grades) map.set(num, grades)
+      }
+    }
+  }
+  return map
 }

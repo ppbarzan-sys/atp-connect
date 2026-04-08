@@ -328,6 +328,39 @@
     "no_progress": "¡Empieza un experimento para seguir tu progreso!",
     "score": "Puntuación"
   },
+  "grades": {
+    "score_breakdown": "Obtuviste {correct}/{total} ({percent}%) en {time}",
+    "time_format": "{min}:{sec}",
+    "best_score": "Mejor Puntuación",
+    "attempts": "Intentos",
+    "last_attempt": "Último Intento",
+    "concept_mastery": "Dominio de Conceptos",
+    "mastery_not_attempted": "Aún no intentado",
+    "performance_trend": "Tendencia de Rendimiento",
+    "weak_areas": "Áreas a Mejorar",
+    "review_experiments": "Revisar Experimentos",
+    "ask_gali_about": "Pregunta a Gali"
+  },
+  "achievements": {
+    "title": "Logros",
+    "first_experiment": "Primeros Pasos",
+    "first_experiment_desc": "Completa tu primer experimento",
+    "five_experiments": "Buen Comienzo",
+    "five_experiments_desc": "Completa 5 experimentos",
+    "ten_experiments": "Estudiante Dedicado",
+    "ten_experiments_desc": "Completa 10 experimentos",
+    "mechanics_master": "Maestro de Mecánica",
+    "mechanics_master_desc": "Completa los 18 experimentos de mecánica con 70%+ de promedio",
+    "perfect_score": "Puntuación Perfecta",
+    "perfect_score_desc": "Obtén 100% en un experimento",
+    "chemistry_explorer": "Explorador de Química",
+    "chemistry_explorer_desc": "Completa 10 experimentos de química",
+    "speed_demon": "Rayo",
+    "speed_demon_desc": "Puntuación perfecta en menos de 60 segundos",
+    "improver": "En Mejora",
+    "improver_desc": "Mejora tu puntuación en un reintento",
+    "locked": "¡Sigue adelante para desbloquear!"
+  },
   "card": {
     "items": "elementos"
   },

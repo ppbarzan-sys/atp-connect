@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
-import { loadResults, saveResults, saveProgress, deleteProgress } from '@/lib/storage'
+import { loadResults, saveResults, saveProgress, deleteProgress, saveGrade, type QuizAttempt } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 
 interface QuestionsTabProps {
@@ -13,6 +13,8 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
   const { t } = useI18n()
   const [answers, setAnswers] = useState<Record<number, number | null>>({})
   const [discussionAnswers, setDiscussionAnswers] = useState<Record<number, string>>({})
+  const [tabOpenTime] = useState(() => Date.now())
+  const [gradeSaved, setGradeSaved] = useState(false)
 
   useEffect(() => {
     const saved = loadResults(exp.num)
@@ -43,8 +45,25 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
   useEffect(() => {
     if (allAnswered) {
       saveProgress(exp.num, correctCount, totalMcq)
+      if (!gradeSaved) {
+        const timeSpent = Math.round((Date.now() - tabOpenTime) / 1000)
+        const answersMap: Record<number, number> = {}
+        for (const [k, v] of Object.entries(answers)) {
+          if (v !== null && v !== undefined) answersMap[Number(k)] = v
+        }
+        const attempt: QuizAttempt = {
+          num: exp.num,
+          correct: correctCount,
+          total: totalMcq,
+          completedAt: new Date().toISOString(),
+          answers: answersMap,
+          timeSpent,
+        }
+        saveGrade(exp.num, attempt)
+        setGradeSaved(true)
+      }
     }
-  }, [allAnswered, correctCount, totalMcq, exp.num])
+  }, [allAnswered, correctCount, totalMcq, exp.num, gradeSaved, tabOpenTime, answers])
 
   function getScoreLabel(): string {
     if (correctCount === totalMcq) return t('questions.perfect_score')
@@ -79,6 +98,7 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
     saveResults(exp.num, cleaned)
     // Also delete the progress entry so badge disappears
     deleteProgress(exp.num)
+    setGradeSaved(false)
   }
 
   return (
@@ -102,9 +122,24 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
                 />
               </div>
               {allAnswered && (
-                <button className="quiz-reset-btn" onClick={resetQuiz}>
-                  {t('questions.reset_quiz')}
-                </button>
+                <>
+                  <div className="quiz-score-breakdown">
+                    {t('grades.score_breakdown', {
+                      correct: correctCount,
+                      total: totalMcq,
+                      percent: totalMcq > 0 ? Math.round((correctCount / totalMcq) * 100) : 0,
+                      time: (() => {
+                        const s = Math.round((Date.now() - tabOpenTime) / 1000)
+                        const min = Math.floor(s / 60)
+                        const sec = s % 60
+                        return `${min}:${sec.toString().padStart(2, '0')}`
+                      })(),
+                    })}
+                  </div>
+                  <button className="quiz-reset-btn" onClick={resetQuiz}>
+                    {t('questions.reset_quiz')}
+                  </button>
+                </>
               )}
             </div>
           )}

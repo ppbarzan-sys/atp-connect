@@ -328,6 +328,39 @@
     "no_progress": "Inizia un esperimento per monitorare i tuoi progressi!",
     "score": "Punteggio"
   },
+  "grades": {
+    "score_breakdown": "Hai ottenuto {correct}/{total} ({percent}%) in {time}",
+    "time_format": "{min}:{sec}",
+    "best_score": "Miglior Punteggio",
+    "attempts": "Tentativi",
+    "last_attempt": "Ultimo Tentativo",
+    "concept_mastery": "Padronanza dei Concetti",
+    "mastery_not_attempted": "Non ancora tentato",
+    "performance_trend": "Andamento Prestazioni",
+    "weak_areas": "Aree da Migliorare",
+    "review_experiments": "Rivedi Esperimenti",
+    "ask_gali_about": "Chiedi a Gali"
+  },
+  "achievements": {
+    "title": "Traguardi",
+    "first_experiment": "Primi Passi",
+    "first_experiment_desc": "Completa il tuo primo esperimento",
+    "five_experiments": "Buon Inizio",
+    "five_experiments_desc": "Completa 5 esperimenti",
+    "ten_experiments": "Studente Dedicato",
+    "ten_experiments_desc": "Completa 10 esperimenti",
+    "mechanics_master": "Maestro di Meccanica",
+    "mechanics_master_desc": "Completa tutti i 18 esperimenti di meccanica con media 70%+",
+    "perfect_score": "Punteggio Perfetto",
+    "perfect_score_desc": "Ottieni il 100% in un esperimento",
+    "chemistry_explorer": "Esploratore di Chimica",
+    "chemistry_explorer_desc": "Completa 10 esperimenti di chimica",
+    "speed_demon": "Velocista",
+    "speed_demon_desc": "Punteggio perfetto in meno di 60 secondi",
+    "improver": "In Miglioramento",
+    "improver_desc": "Migliora il tuo punteggio in un secondo tentativo",
+    "locked": "Continua per sbloccare!"
+  },
   "card": {
     "items": "elementi"
   },

@@ -328,6 +328,39 @@
     "no_progress": "Start an experiment to track your progress!",
     "score": "Score"
   },
+  "grades": {
+    "score_breakdown": "You scored {correct}/{total} ({percent}%) in {time}",
+    "time_format": "{min}:{sec}",
+    "best_score": "Best Score",
+    "attempts": "Attempts",
+    "last_attempt": "Last Attempt",
+    "concept_mastery": "Concept Mastery",
+    "mastery_not_attempted": "Not attempted yet",
+    "performance_trend": "Performance Trend",
+    "weak_areas": "Areas to Improve",
+    "review_experiments": "Review Experiments",
+    "ask_gali_about": "Ask Gali about this"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "first_experiment": "First Steps",
+    "first_experiment_desc": "Complete your first experiment",
+    "five_experiments": "Getting Started",
+    "five_experiments_desc": "Complete 5 experiments",
+    "ten_experiments": "Dedicated Learner",
+    "ten_experiments_desc": "Complete 10 experiments",
+    "mechanics_master": "Mechanics Master",
+    "mechanics_master_desc": "Complete all 18 mechanics experiments with 70%+ average",
+    "perfect_score": "Perfect Score",
+    "perfect_score_desc": "Score 100% on any experiment",
+    "chemistry_explorer": "Chemistry Explorer",
+    "chemistry_explorer_desc": "Complete 10 chemistry experiments",
+    "speed_demon": "Speed Demon",
+    "speed_demon_desc": "Perfect score in under 60 seconds",
+    "improver": "Self-Improver",
+    "improver_desc": "Improve your score on a retake",
+    "locked": "Keep going to unlock!"
+  },
   "card": {
     "items": "items"
   },

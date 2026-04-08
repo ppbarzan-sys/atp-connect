@@ -328,6 +328,39 @@
     "no_progress": "ابدأ تجربة لتتبّع تقدّمك!",
     "score": "الدرجة"
   },
+  "grades": {
+    "score_breakdown": "حصلت على {correct}/{total} ({percent}%) في {time}",
+    "time_format": "{min}:{sec}",
+    "best_score": "أفضل درجة",
+    "attempts": "المحاولات",
+    "last_attempt": "آخر محاولة",
+    "concept_mastery": "إتقان المفاهيم",
+    "mastery_not_attempted": "لم تُحاول بعد",
+    "performance_trend": "اتجاه الأداء",
+    "weak_areas": "مجالات للتحسين",
+    "review_experiments": "مراجعة التجارب",
+    "ask_gali_about": "اسأل غالي عن هذا"
+  },
+  "achievements": {
+    "title": "الإنجازات",
+    "first_experiment": "الخطوات الأولى",
+    "first_experiment_desc": "أكمل تجربتك الأولى",
+    "five_experiments": "بداية جيدة",
+    "five_experiments_desc": "أكمل 5 تجارب",
+    "ten_experiments": "طالب مجتهد",
+    "ten_experiments_desc": "أكمل 10 تجارب",
+    "mechanics_master": "سيّد الميكانيكا",
+    "mechanics_master_desc": "أكمل جميع تجارب الميكانيكا الـ18 بمعدل 70%+",
+    "perfect_score": "درجة كاملة",
+    "perfect_score_desc": "احصل على 100% في أي تجربة",
+    "chemistry_explorer": "مستكشف الكيمياء",
+    "chemistry_explorer_desc": "أكمل 10 تجارب كيمياء",
+    "speed_demon": "سريع البرق",
+    "speed_demon_desc": "درجة كاملة في أقل من 60 ثانية",
+    "improver": "في تحسّن",
+    "improver_desc": "حسّن درجتك في إعادة المحاولة",
+    "locked": "استمر لفتح المزيد!"
+  },
   "card": {
     "items": "عناصر"
   },
