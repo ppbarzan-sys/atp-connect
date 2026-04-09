@@ -15,9 +15,18 @@ export interface SubjectStats {
   sections: SectionStats[]
 }
 
+export interface CourseQuizProgress {
+  num: number
+  title: string
+  correct: number
+  total: number
+}
+
 export interface DashboardData {
   physics: SubjectStats
   chemistry: SubjectStats
+  robotics: { completed: number; total: number; avgScore: number; quizzes: CourseQuizProgress[] }
+  ai: { completed: number; total: number; avgScore: number; quizzes: CourseQuizProgress[] }
   totalCompleted: number
   totalExperiments: number
   overallAvgScore: number
@@ -68,7 +77,8 @@ function computeSubjectStats(
 
 export function getDashboardData(
   physicsExperiments: Experiment[],
-  chemistryExperiments: Experiment[]
+  chemistryExperiments: Experiment[],
+  courseQuizNums?: { robotics: { num: number; title: string }[]; ai: { num: number; title: string }[] }
 ): DashboardData {
   const allExperiments = [...physicsExperiments, ...chemistryExperiments]
   const progressMap = new Map<number, ExperimentProgress>()
@@ -83,8 +93,28 @@ export function getDashboardData(
   const physics = computeSubjectStats(physicsExperiments, progressMap)
   const chemistry = computeSubjectStats(chemistryExperiments, progressMap)
 
-  const totalCompleted = physics.completed + chemistry.completed
-  const totalExperiments = physics.total + chemistry.total
+  // Robotics & AI course quizzes
+  function computeCourseQuizStats(items: { num: number; title: string }[]) {
+    const quizzes: CourseQuizProgress[] = []
+    const scores: number[] = []
+    for (const item of items) {
+      const prog = loadProgress(item.num)
+      if (prog) {
+        quizzes.push({ num: item.num, title: item.title, correct: prog.correct, total: prog.total })
+        if (prog.total > 0) scores.push((prog.correct / prog.total) * 100)
+        progressMap.set(item.num, prog)
+        titleMap.set(item.num, item.title)
+      }
+    }
+    const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
+    return { completed: quizzes.length, total: items.length, avgScore, quizzes }
+  }
+
+  const robotics = courseQuizNums ? computeCourseQuizStats(courseQuizNums.robotics) : { completed: 0, total: 0, avgScore: 0, quizzes: [] }
+  const ai = courseQuizNums ? computeCourseQuizStats(courseQuizNums.ai) : { completed: 0, total: 0, avgScore: 0, quizzes: [] }
+
+  const totalCompleted = physics.completed + chemistry.completed + robotics.completed + ai.completed
+  const totalExperiments = physics.total + chemistry.total + robotics.total + ai.total
 
   const allScores = [...progressMap.values()]
     .map(p => p.total > 0 ? (p.correct / p.total) * 100 : 0)
@@ -100,6 +130,8 @@ export function getDashboardData(
   return {
     physics,
     chemistry,
+    robotics,
+    ai,
     totalCompleted,
     totalExperiments,
     overallAvgScore,

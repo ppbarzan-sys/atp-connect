@@ -7,6 +7,8 @@ import { useI18n } from '@/lib/i18n'
 import { getExperiments, getChemistryExperiments, type Experiment } from '@/data/loader'
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
 import { deleteAllProgress, loadProgress, getAllGrades, type ExperimentProgress } from '@/lib/storage'
+import { roboticsQuizzes } from '@/data/robotics-quizzes'
+import { aiQuizzes } from '@/data/ai-quizzes'
 import ConceptMasteryMap, { computeConceptMastery } from '@/components/dashboard/ConceptMasteryMap'
 import { PerformanceTrend } from '@/components/dashboard/PerformanceTrend'
 import { achievements, getEarnedAchievements } from '@/lib/achievements'
@@ -24,7 +26,12 @@ export default function DashboardPage() {
     const chemistry = getChemistryExperiments(locale)
     const all = [...physics, ...chemistry]
     setAllExperiments(all)
-    setData(getDashboardData(physics, chemistry))
+
+    const courseQuizNums = {
+      robotics: roboticsQuizzes.map(q => ({ num: q.num, title: q.title })),
+      ai: aiQuizzes.map(q => ({ num: q.num, title: q.title })),
+    }
+    setData(getDashboardData(physics, chemistry, courseQuizNums))
 
     const pMap = new Map<number, ExperimentProgress>()
     for (const exp of all) {
@@ -132,6 +139,20 @@ export default function DashboardPage() {
                   stats={data.chemistry}
                   t={t}
                   onContinue={() => router.push('/chemistry')}
+                />
+                <SubjectCard
+                  title={t('dashboard.robotics')}
+                  icon="⚙️"
+                  stats={data.robotics}
+                  t={t}
+                  onContinue={() => router.push('/robotics')}
+                />
+                <SubjectCard
+                  title={t('dashboard.ai_courses')}
+                  icon="🤖"
+                  stats={data.ai}
+                  t={t}
+                  onContinue={() => router.push('/ai')}
                 />
               </div>
 

@@ -328,7 +328,31 @@
     "section_breakdown": "By Section",
     "recent": "Recent Activity",
     "no_progress": "Start an experiment to track your progress!",
-    "score": "Score"
+    "score": "Score",
+    "robotics": "Robotics",
+    "ai_courses": "AI Courses"
+  },
+  "quiz": {
+    "course_quiz": "Course Quiz",
+    "take_quiz": "Take Quiz",
+    "submit_quiz": "Submit Quiz",
+    "retry_quiz": "Retry Quiz",
+    "show_explanations": "Show Explanations",
+    "hide_explanations": "Hide Explanations",
+    "not_attempted": "Not attempted",
+    "score": "Score",
+    "questions": "questions",
+    "mixed_difficulty": "Mixed difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "your_answer": "Your answer",
+    "type_answer": "Type your answer...",
+    "true": "True",
+    "false": "False",
+    "short_answer_hint": "Type a short answer (1-3 words)"
   },
   "grades": {
     "score_breakdown": "You scored {correct}/{total} ({percent}%) in {time}",

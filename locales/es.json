@@ -328,7 +328,31 @@
     "section_breakdown": "Por Sección",
     "recent": "Actividad Reciente",
     "no_progress": "¡Empieza un experimento para seguir tu progreso!",
-    "score": "Puntuación"
+    "score": "Puntuación",
+    "robotics": "Robótica",
+    "ai_courses": "Cursos IA"
+  },
+  "quiz": {
+    "course_quiz": "Quiz del Curso",
+    "take_quiz": "Hacer el Quiz",
+    "submit_quiz": "Enviar Quiz",
+    "retry_quiz": "Reintentar Quiz",
+    "show_explanations": "Mostrar Explicaciones",
+    "hide_explanations": "Ocultar Explicaciones",
+    "not_attempted": "No intentado",
+    "score": "Puntuación",
+    "questions": "preguntas",
+    "mixed_difficulty": "Dificultad mixta",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil",
+    "correct": "Correcto",
+    "incorrect": "Incorrecto",
+    "your_answer": "Tu respuesta",
+    "type_answer": "Escribe tu respuesta...",
+    "true": "Verdadero",
+    "false": "Falso",
+    "short_answer_hint": "Escribe una respuesta corta (1-3 palabras)"
   },
   "grades": {
     "score_breakdown": "Obtuviste {correct}/{total} ({percent}%) en {time}",

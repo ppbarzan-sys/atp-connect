@@ -328,7 +328,31 @@
     "section_breakdown": "حسب القسم",
     "recent": "النشاط الأخير",
     "no_progress": "ابدأ تجربة لتتبّع تقدّمك!",
-    "score": "الدرجة"
+    "score": "الدرجة",
+    "robotics": "الروبوتات",
+    "ai_courses": "دورات الذكاء الاصطناعي"
+  },
+  "quiz": {
+    "course_quiz": "اختبار الدورة",
+    "take_quiz": "ابدأ الاختبار",
+    "submit_quiz": "إرسال الاختبار",
+    "retry_quiz": "إعادة الاختبار",
+    "show_explanations": "عرض التفسيرات",
+    "hide_explanations": "إخفاء التفسيرات",
+    "not_attempted": "لم يتم المحاولة",
+    "score": "النتيجة",
+    "questions": "أسئلة",
+    "mixed_difficulty": "صعوبة مختلطة",
+    "easy": "سهل",
+    "medium": "متوسط",
+    "hard": "صعب",
+    "correct": "صحيح",
+    "incorrect": "خطأ",
+    "your_answer": "إجابتك",
+    "type_answer": "اكتب إجابتك...",
+    "true": "صحيح",
+    "false": "خطأ",
+    "short_answer_hint": "اكتب إجابة قصيرة (1-3 كلمات)"
   },
   "grades": {
     "score_breakdown": "حصلت على {correct}/{total} ({percent}%) في {time}",
