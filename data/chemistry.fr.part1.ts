@@ -8,6 +8,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Loi de conservation de la masse',
     section: 'Matter & Solutions',
     desc: 'Mélanger des solutions de KI et AgNO₃ dans un flacon hermétique et peser avant et après pour vérifier la loi de Lavoisier.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '20 min',
     summary: {
@@ -140,6 +141,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Diffusion en solution',
     section: 'Matter & Solutions',
     desc: 'Déposer un cristal de KMnO₄ dans de l\'eau immobile et observer la propagation lente de la couleur violette sans agitation.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {
@@ -272,6 +274,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Colloïdes',
     section: 'Matter & Solutions',
     desc: 'Dissoudre du soufre dans l\'éthanol, ajouter à l\'eau pour créer un colloïde, puis le comparer à une vraie solution à l\'aide d\'un filtre.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -404,6 +407,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Propriétés des colloïdes',
     section: 'Matter & Solutions',
     desc: 'Démontrer l\'effet Tyndall avec une lampe de poche, coaguler un colloïde avec NaCl et tester le lait comme colloïde naturel.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -535,6 +539,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Complexes de coordination',
     section: 'Matter & Solutions',
     desc: 'Ajouter de l\'ammoniaque au CuSO₄ pour former un complexe bleu profond, et du NaCl pour former un complexe vert vif.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -666,6 +671,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Effets de la température sur la solubilité',
     section: 'Matter & Solutions',
     desc: 'Tester la solubilité de CaCO₃, CuSO₄, NaCl et saccharose à température ambiante et à 70 °C.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '35 min',
     summary: {
@@ -797,6 +803,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Densité des substances',
     section: 'Matter & Solutions',
     desc: 'Mesurer la densité de l\'eau, du glycérol, d\'un objet solide et de la glace à l\'aide d\'une éprouvette graduée et d\'une balance.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -929,6 +936,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Eau de cristallisation',
     section: 'Matter & Solutions',
     desc: 'Chauffer le CuSO₄·5H₂O bleu jusqu\'à ce qu\'il devienne blanc, puis ajouter de l\'eau pour restaurer la couleur bleue.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -1060,6 +1068,7 @@ export const chemistryFrPart1: Experiment[] = [
     title: 'Fusion du soufre',
     section: 'Matter & Solutions',
     desc: 'Chauffer le soufre lentement et observer les transitions : solide jaune → liquide → plastique visqueux → gaz. Comparer avec la décomposition du saccharose.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '35 min',
     summary: {

@@ -12,6 +12,8 @@ import { getRoboticsCourses } from '@/data/robotics-courses'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
 import { roboticsExperiments, roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
 import { loadProgress } from '@/lib/storage'
+import EquipmentFilter from '@/components/browse/EquipmentFilter'
+import type { EquipmentCategory } from '@/data/experiments'
 
 export default function RoboticsPage() {
   const router = useRouter()
@@ -21,8 +23,13 @@ export default function RoboticsPage() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'arduino' | 'raspberry-pi' | 'cs50'>('all')
   const [expFilter, setExpFilter] = useState<'all' | 'Fundamentals' | 'Sensors' | 'Actuators' | 'Projects'>('all')
   const [openQuizId, setOpenQuizId] = useState<string | null>(null)
+  const [equipmentFilter, setEquipmentFilter] = useState<EquipmentCategory | 'all'>('all')
 
-  const filteredExps = expFilter === 'all' ? roboticsExperiments : roboticsExperiments.filter(e => e.section === expFilter)
+  const filteredExps = roboticsExperiments.filter(e => {
+    if (expFilter !== 'all' && e.section !== expFilter) return false
+    if (equipmentFilter !== 'all' && e.equipmentNeeded !== equipmentFilter) return false
+    return true
+  })
   const expSections = ['all', 'Fundamentals', 'Sensors', 'Actuators', 'Projects'] as const
 
   const courses = getRoboticsCourses(locale)
@@ -99,6 +106,13 @@ export default function RoboticsPage() {
               )
             })}
           </div>
+
+          {/* Equipment filter */}
+          <EquipmentFilter
+            value={equipmentFilter}
+            onChange={setEquipmentFilter}
+            showArduino={true}
+          />
 
           {/* Experiment cards grid */}
           <div className="experiment-grid" style={{ marginBottom: '1.5rem' }}>

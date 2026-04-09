@@ -8,6 +8,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Estérification',
     section: 'Acids & Bases',
     desc: 'Réagir l\'éthanol avec l\'acide éthanoïque en utilisant H₂SO₄ comme catalyseur pour produire de l\'éthanoate d\'éthyle, identifié par son odeur fruitée caractéristique.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -109,6 +110,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Saponification (Fabrication du savon)',
     section: 'Acids & Bases',
     desc: 'Réagir de l\'huile végétale avec NaOH pour fabriquer du savon par saponification, puis tester le savon avec de l\'eau dure et de l\'eau douce.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {
@@ -212,6 +214,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Production et propriétés du dioxyde de carbone',
     section: 'Gas Chemistry',
     desc: 'Les élèves font réagir des fragments de marbre avec de l\'acide chlorhydrique pour produire du CO₂, le recueillent par déplacement vers le bas, le testent avec de l\'eau de chaux (qui devient laiteuse) et l\'utilisent pour éteindre une bougie.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -343,6 +346,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Production et propriétés de l\'oxygène',
     section: 'Gas Chemistry',
     desc: 'Les élèves décomposent le peroxyde d\'hydrogène en utilisant le dioxyde de manganèse comme catalyseur, recueillent l\'oxygène produit et confirment son identité en rallumant une baguette incandescente.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -469,6 +473,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Production et propriétés de l\'hydrogène',
     section: 'Gas Chemistry',
     desc: 'Les élèves font réagir des granules de zinc avec de l\'acide chlorhydrique pour produire du gaz hydrogène, le recueillent par déplacement vers le haut de l\'air et confirment son identité par le test du « pop » craquant.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -594,6 +599,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Loi de Boyle',
     section: 'Gas Chemistry',
     desc: 'Les élèves utilisent une seringue scellée pour comprimer une masse fixe de gaz à température constante, enregistrant la pression et le volume pour vérifier la relation inverse P₁V₁ = P₂V₂.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -719,6 +725,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Loi de Charles',
     section: 'Gas Chemistry',
     desc: 'Les élèves chauffent une seringue scellée ou un petit ballon dans des bains d\'eau à différentes températures et enregistrent le volume à chaque température pour vérifier la relation directe V ∝ T (en Kelvin).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -844,6 +851,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Loi de Graham — Diffusion des gaz',
     section: 'Gas Chemistry',
     desc: 'Les élèves imbibent des tampons de coton avec des solutions de HCl et d\'ammoniaque, les insèrent aux extrémités opposées d\'un tube de verre scellé et observent où se forme l\'anneau blanc de NH₄Cl pour démontrer que les gaz plus légers diffusent plus vite.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '15 min',
     summary: {
@@ -965,6 +973,7 @@ export const chemistryFrPart3: Experiment[] = [
     title: 'Solubilité du CO₂ en fonction de la température',
     section: 'Gas Chemistry',
     desc: 'Les élèves agitent des bouteilles d\'eau gazeuse saturée en CO₂ à différentes températures, comparent l\'intensité des bulles et mesurent le changement de pH pour démontrer que la solubilité des gaz diminue avec la température (loi de Henry).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '20 min',
     summary: {

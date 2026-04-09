@@ -383,7 +383,7 @@
     "not_attempted": "Non tentato",
     "score": "Punteggio",
     "questions": "domande",
-    "mixed_difficulty": "Difficolt\u00e0 mista",
+    "mixed_difficulty": "Difficoltà mista",
     "easy": "Facile",
     "medium": "Medio",
     "hard": "Difficile",
@@ -484,6 +484,30 @@
     "save": "Salva Voto",
     "cancel": "Annulla"
   },
+  "gamification": {
+    "level": "Livello",
+    "levelUp": "LIVELLO SUPERIORE!",
+    "toNextLevel": "al prossimo livello",
+    "dayStreak": "Giorni consecutivi!",
+    "perfectScore": "Punteggio perfetto!",
+    "dailyGoal": "Obiettivo di oggi",
+    "xpEarned": "XP Guadagnati",
+    "totalXP": "XP Totali",
+    "currentStreak": "Serie Attuale",
+    "longestStreak": "Serie Più Lunga",
+    "levels": {
+      "labAssistant": "Assistente di Laboratorio",
+      "labTechnician": "Tecnico di Laboratorio",
+      "juniorResearcher": "Ricercatore Junior",
+      "researcher": "Ricercatore",
+      "seniorResearcher": "Ricercatore Senior",
+      "leadScientist": "Scienziato Capo",
+      "principalScientist": "Scienziato Principale",
+      "scienceDirector": "Direttore Scientifico",
+      "distinguishedFellow": "Membro Distinto",
+      "chiefScientist": "Primo Scienziato"
+    }
+  },
   "class_dashboard": {
     "title": "Dashboard Classe",
     "students": "Studenti",
@@ -495,5 +519,15 @@
     "by_experiment": "Per Esperimento",
     "export_grades": "Esporta Voti Classe",
     "no_data": "Nessun voto registrato"
+  },
+  "equipment": {
+    "filterLabel": "Attrezzatura necessaria:",
+    "all": "Tutti",
+    "mobileLab": "Laboratorio Mobile",
+    "arduinoKit": "Kit Arduino",
+    "basicSupplies": "Materiali di Base",
+    "noEquipment": "Nessuna Attrezzatura",
+    "noMatchTitle": "Nessun esperimento corrisponde a questo filtro",
+    "noMatchDesc": "Prova a selezionare una categoria di attrezzatura diversa"
   }
 }

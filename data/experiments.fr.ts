@@ -7,6 +7,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Leviers du premier genre",
     "section": "Mechanics",
     "desc": "Étudier l'équilibre d'un levier du premier genre en équilibrant des masses connues de part et d'autre d'un pivot central.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -175,6 +176,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Leviers du premier genre et positions d'équilibre",
     "section": "Mechanics",
     "desc": "Mesurer les moments par rapport à un pivot et vérifier le principe des moments à l'aide d'un levier avec des charges à des distances connues.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -342,6 +344,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Sensibilité d'une balance",
     "section": "Mechanics",
     "desc": "Déterminer la sensibilité d'une balance à fléau en mesurant combien de divisions correspondent à une masse ajoutée connue.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -505,6 +508,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Leviers des deuxième et troisième genres",
     "section": "Mechanics",
     "desc": "Étudier un levier du deuxième genre avec le pivot à une extrémité et vérifier le principe des moments pour des pivots non centraux.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -674,6 +678,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Mesure d'une longueur",
     "section": "Mechanics",
     "desc": "Mesurer le diamètre et la hauteur de cylindres métalliques à l'aide d'un pied à coulisse et calculer leurs volumes.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -842,6 +847,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Mesure de la densité",
     "section": "Mechanics",
     "desc": "Déterminer la densité de cylindres métalliques par deux méthodes : masse/volume et par un vase à débordement.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -1014,6 +1020,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Composition et décomposition des forces",
     "section": "Mechanics",
     "desc": "Trouver la résultante de deux forces concourantes à l'aide de la règle du parallélogramme et la vérifier avec une troisième force d'équilibre.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1181,6 +1188,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Poulies fixes",
     "section": "Mechanics",
     "desc": "Montrer qu'une poulie fixe simple change la direction de la force mais pas son intensité ; avantage mécanique = 1.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1341,6 +1349,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Poulie mobile",
     "section": "Mechanics",
     "desc": "Démontrer qu'une poulie mobile simple procure un avantage mécanique de 2, réduisant de moitié l'effort requis.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1506,6 +1515,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Poulies fixe et mobile",
     "section": "Mechanics",
     "desc": "Combiner une poulie fixe et une poulie mobile et montrer que le système donne toujours AM ≈ 2 avec l'avantage du changement de direction.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1672,6 +1682,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Plan incliné",
     "section": "Mechanics",
     "desc": "Mesurer la force nécessaire pour faire glisser une masse sur un plan incliné et la comparer à la composante théorique de la pesanteur le long de la pente.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1839,6 +1850,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Loi de Hooke",
     "section": "Mechanics",
     "desc": "Vérifier la loi de Hooke en mesurant l'allongement d'un ressort en fonction de la force appliquée et déterminer la constante de raideur k.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2006,6 +2018,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Ressorts en série et en parallèle",
     "section": "Mechanics",
     "desc": "Mesurer la constante de raideur effective pour des ressorts montés en série et en parallèle, et explorer le surprenant « paradoxe des ressorts ».",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -2171,6 +2184,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Pendule simple",
     "section": "Mechanics",
     "desc": "Mesurer la période d'un pendule simple pour différentes longueurs et vérifier T = 2π√(L/g).",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2337,6 +2351,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Pendule à ressort",
     "section": "Mechanics",
     "desc": "Mesurer la période d'un oscillateur masse-ressort et vérifier T = 2π√(m/k).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2503,6 +2518,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Vases communicants",
     "section": "Mechanics",
     "desc": "Observer qu'un liquide dans des tubes reliés atteint le même niveau dans tous les tubes, vérifiant la loi de Stevino p = ρgh.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2667,6 +2683,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Principe d'Archimède",
     "section": "Mechanics",
     "desc": "Vérifier le principe d'Archimède en mesurant la poussée d'Archimède sur des objets immergés et en la comparant au poids du fluide déplacé.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2836,6 +2853,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Température d'équilibre de liquides mélangés",
     "section": "Heat",
     "desc": "Mélanger des volumes égaux d'eau chaude et d'eau froide et mesurer la température d'équilibre pour vérifier l'échange de chaleur.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2998,6 +3016,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Transfert de chaleur et isolation thermique",
     "section": "Heat",
     "desc": "Comparer le taux de refroidissement d'eau chaude sans isolation, avec une couche isolante et avec deux couches isolantes.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3162,6 +3181,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Capacité thermique massique des solides",
     "section": "Heat",
     "desc": "Déterminer la capacité thermique massique de métaux en mesurant les changements de température lorsqu'un métal chaud est plongé dans de l'eau froide.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3333,6 +3353,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Sensibilité thermique",
     "section": "Heat",
     "desc": "Démontrer la subjectivité de la perception de la température grâce à l'expérience des trois bassines de Locke.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3497,6 +3518,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Vase de Franklin",
     "section": "Heat",
     "desc": "Observer le vase de Franklin (jouet de Franklin) pour comprendre comment la pression réduite abaisse le point d'ébullition d'un liquide.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3651,6 +3673,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Constante de temps du thermomètre",
     "section": "Heat",
     "desc": "Mesurer la rapidité avec laquelle un thermomètre répond à un échelon de température et déterminer sa constante de temps τ.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3811,6 +3834,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Le manomètre",
     "section": "Mechanics",
     "desc": "Utiliser un manomètre en U pour mesurer qualitativement les différences de pression des gaz en observant les différences de niveau de liquide.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -3977,6 +4001,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Utilisation des diapasons",
     "section": "Acoustics",
     "desc": "Trouver la longueur de résonance d'une colonne d'air pour un diapason de 440 Hz et déterminer la vitesse du son.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4142,6 +4167,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Le phénomène de résonance",
     "section": "Acoustics",
     "desc": "Démontrer la résonance sympathique entre deux diapasons identiques sur des caisses de résonance se faisant face.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4302,6 +4328,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Battements et interférence en acoustique",
     "section": "Acoustics",
     "desc": "Produire des battements en faisant résonner deux diapasons de fréquences légèrement différentes et mesurer la fréquence de battement.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4463,6 +4490,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Distance focale",
     "section": "Optics",
     "desc": "Mesurer les distances focales de lentilles biconcaves et biconvexes en faisant converger de la lumière parallèle ou en utilisant des objets distants.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4627,6 +4655,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Équation des lentilles minces",
     "section": "Optics",
     "desc": "Vérifier l'équation des lentilles minces 1/p + 1/q = 1/f en utilisant une lentille convergente et en mesurant les distances objet et image.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -4790,6 +4819,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Grandissement",
     "section": "Optics",
     "desc": "Mesurer le grandissement linéaire d'une lentille convergente en comparant les tailles de l'image et de l'objet et en vérifiant m = −v/u.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -4955,6 +4985,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Mélange des couleurs",
     "section": "Optics",
     "desc": "Mélanger des lumières colorées (synthèse additive) et des filtres colorés (synthèse soustractive) pour comprendre la perception des couleurs.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5118,6 +5149,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Microscope – Télescope",
     "section": "Optics",
     "desc": "Construire un microscope simple et un télescope avec les lentilles disponibles et mesurer leurs grossissements.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5284,6 +5316,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Prisme : Composition de la lumière",
     "section": "Optics",
     "desc": "Faire passer de la lumière blanche à travers un prisme en verre pour produire un spectre visible et observer la réfraction dépendante de la longueur d'onde (dispersion).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5445,6 +5478,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Ombres et pénombre",
     "section": "Optics",
     "desc": "Étudier comment la taille et la netteté de l'ombre dépendent de la taille de la source et des positions relatives de la source, de l'objet et de l'écran.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5611,6 +5645,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Miroirs",
     "section": "Optics",
     "desc": "Étudier la formation d'images par des miroirs concaves et convexes pour des objets à différentes distances.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5779,6 +5814,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Force magnétique d'attraction et de répulsion",
     "section": "Magnetism",
     "desc": "Étudier les forces entre des aimants droits et cartographier les régions d'attraction et de répulsion.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -5936,6 +5972,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Forces de champ magnétique",
     "section": "Magnetism",
     "desc": "Cartographier le champ magnétique d'un aimant en U à l'aide d'une chambre de champ 2D avec de la limaille de fer.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -6092,6 +6129,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Boussole et magnétisme",
     "section": "Magnetism",
     "desc": "Utiliser une boussole pour cartographier la direction d'un champ magnétique et observer comment une boussole s'aligne avec un champ externe.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "20 min",
     "summary": {
@@ -6251,6 +6289,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Un jouet magnétique assez courant",
     "section": "Magnetism",
     "desc": "Explorer comment une bille d'acier placée entre deux aimants à pôles identiques inverse l'interaction apparente de la répulsion à l'attraction.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -6407,6 +6446,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Résistance électrique",
     "section": "Electricity",
     "desc": "Vérifier la loi d'Ohm en mesurant le courant traversant une résistance à différentes tensions et en déterminant la résistance.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -6570,6 +6610,7 @@ export const experimentsFr: Experiment[] = [
     "title": "Circuits en série et en parallèle",
     "section": "Electricity",
     "desc": "Mesurer la résistance totale pour des combinaisons de résistances en série et en parallèle et vérifier les formules de combinaison.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {

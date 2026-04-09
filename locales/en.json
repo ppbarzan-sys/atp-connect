@@ -484,6 +484,30 @@
     "save": "Save Grade",
     "cancel": "Cancel"
   },
+  "gamification": {
+    "level": "Level",
+    "levelUp": "LEVEL UP!",
+    "toNextLevel": "to next level",
+    "dayStreak": "Day Streak!",
+    "perfectScore": "Perfect Score!",
+    "dailyGoal": "Today's Goal",
+    "xpEarned": "XP Earned",
+    "totalXP": "Total XP",
+    "currentStreak": "Current Streak",
+    "longestStreak": "Longest Streak",
+    "levels": {
+      "labAssistant": "Lab Assistant",
+      "labTechnician": "Lab Technician",
+      "juniorResearcher": "Junior Researcher",
+      "researcher": "Researcher",
+      "seniorResearcher": "Senior Researcher",
+      "leadScientist": "Lead Scientist",
+      "principalScientist": "Principal Scientist",
+      "scienceDirector": "Science Director",
+      "distinguishedFellow": "Distinguished Fellow",
+      "chiefScientist": "Chief Scientist"
+    }
+  },
   "class_dashboard": {
     "title": "Class Dashboard",
     "students": "Students",
@@ -495,5 +519,15 @@
     "by_experiment": "By Experiment",
     "export_grades": "Export Class Grades",
     "no_data": "No grades recorded yet"
+  },
+  "equipment": {
+    "filterLabel": "Equipment needed:",
+    "all": "All",
+    "mobileLab": "Mobile Lab",
+    "arduinoKit": "Arduino Kit",
+    "basicSupplies": "Basic Supplies",
+    "noEquipment": "No Equipment",
+    "noMatchTitle": "No experiments match this filter",
+    "noMatchDesc": "Try selecting a different equipment category"
   }
 }

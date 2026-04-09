@@ -27,6 +27,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Law of Mass Conservation',
     section: 'Matter & Solutions',
     desc: 'Mix KI and AgNO₃ solutions in a sealed flask and weigh before and after to verify Lavoisier\'s Law.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '20 min',
     summary: {
@@ -159,6 +160,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Diffusion in Solution',
     section: 'Matter & Solutions',
     desc: 'Drop a KMnO₄ crystal into still water and watch the purple colour spread slowly without stirring.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {
@@ -291,6 +293,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Colloids',
     section: 'Matter & Solutions',
     desc: 'Dissolve sulphur in ethanol, add to water to create a colloid, then compare it to a true solution using a filter.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -423,6 +426,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Properties of Colloids',
     section: 'Matter & Solutions',
     desc: 'Demonstrate the Tyndall effect with a torch, coagulate a colloid with NaCl, and test milk as a natural colloid.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -554,6 +558,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Coordination Complexes',
     section: 'Matter & Solutions',
     desc: 'Add ammonia to CuSO₄ to form a deep blue complex, and NaCl to form a bright green complex.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -685,6 +690,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Temperature Effects on Solubility',
     section: 'Matter & Solutions',
     desc: 'Test the solubility of CaCO₃, CuSO₄, NaCl, and sucrose at room temperature and at 70°C.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '35 min',
     summary: {
@@ -816,6 +822,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Density of Substances',
     section: 'Matter & Solutions',
     desc: 'Measure the density of water, glycerol, a solid object, and ice using a graduated cylinder and balance.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -948,6 +955,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Water of Crystallization',
     section: 'Matter & Solutions',
     desc: 'Heat blue CuSO₄·5H₂O until it turns white, then add water to restore the blue colour.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -1079,6 +1087,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Melting of Sulphur',
     section: 'Matter & Solutions',
     desc: 'Heat sulphur slowly and observe the transitions: yellow solid → liquid → viscous plastic → gas. Compare with sucrose decomposition.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '35 min',
     summary: {
@@ -1210,6 +1219,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Iodine Sublimation',
     section: 'Matter & Solutions',
     desc: 'Heat iodine crystals gently and observe purple vapour forming and recrystallising without passing through a liquid phase.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1344,6 +1354,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Universal Indicator & pH Scale',
     section: 'Acids & Bases',
     desc: 'Test household solutions (vinegar, baking soda, lemon juice, bleach, milk) with universal indicator and rank them on the pH scale.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1429,6 +1440,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Strong vs Weak Acids (Conductivity)',
     section: 'Acids & Bases',
     desc: 'Compare the electrical conductivity of HCl and ethanoic acid at the same concentration to distinguish strong and weak acids.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1514,6 +1526,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Neutralisation & Temperature Change',
     section: 'Acids & Bases',
     desc: 'Mix HCl and NaOH solutions and measure the temperature rise to demonstrate that neutralisation is exothermic.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1599,6 +1612,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Acid Rain Effect on Marble',
     section: 'Acids & Bases',
     desc: 'Drip dilute HCl on marble chips to simulate acid rain, measuring CO₂ production and mass loss over time.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -1769,6 +1783,8 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Buffer Action',
     section: 'Acids & Bases',
     desc: 'Demonstrate that buffer solutions resist pH change when small amounts of acid or base are added, compared to unbuffered solutions.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1854,6 +1870,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Natural pH Indicators',
     section: 'Acids & Bases',
     desc: 'Extract red cabbage juice as a natural pH indicator and test it across a range of pH values to create a colour spectrum.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -1939,6 +1956,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Antacid Effectiveness',
     section: 'Acids & Bases',
     desc: 'Compare how much acid different commercial antacid tablets can neutralise to determine which is most effective.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -2024,6 +2042,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Esterification',
     section: 'Acids & Bases',
     desc: 'React ethanol with ethanoic acid using an H₂SO₄ catalyst to produce ethyl ethanoate, identified by its characteristic fruity smell.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -2109,6 +2128,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Saponification (Soap Making)',
     section: 'Acids & Bases',
     desc: 'React vegetable oil with NaOH to make soap via saponification, then test the soap with hard water and soft water.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {
@@ -2196,6 +2216,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Production and Properties of Carbon Dioxide',
     section: 'Gas Chemistry',
     desc: 'Students react marble chips with hydrochloric acid to produce CO₂, collect it by downward displacement, test with limewater (turns milky), and use it to extinguish a candle.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -2327,6 +2348,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Production and Properties of Oxygen',
     section: 'Gas Chemistry',
     desc: 'Students decompose hydrogen peroxide using manganese dioxide as a catalyst, collect the oxygen produced, and confirm its identity by relighting a glowing splint.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -2453,6 +2475,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Production and Properties of Hydrogen',
     section: 'Gas Chemistry',
     desc: 'Students react zinc granules with hydrochloric acid to produce hydrogen gas, collect it by upward displacement of air, and confirm its identity with the squeaky pop test.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '20 min',
     summary: {
@@ -2578,6 +2601,7 @@ export const chemistryExperiments: Experiment[] = [
     title: "Boyle's Law",
     section: 'Gas Chemistry',
     desc: 'Students use a sealed syringe to compress a fixed mass of gas at constant temperature, recording pressure and volume to verify the inverse relationship P₁V₁ = P₂V₂.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2703,6 +2727,7 @@ export const chemistryExperiments: Experiment[] = [
     title: "Charles's Law",
     section: 'Gas Chemistry',
     desc: 'Students heat a sealed syringe or small balloon in water baths at different temperatures and record the volume at each temperature to verify the direct relationship V ∝ T (in Kelvin).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -2828,6 +2853,7 @@ export const chemistryExperiments: Experiment[] = [
     title: "Graham's Law — Gas Diffusion",
     section: 'Gas Chemistry',
     desc: 'Students soak cotton wool plugs in HCl and ammonia solutions, insert them at opposite ends of a sealed glass tube, and observe where the white NH₄Cl ring forms to demonstrate that lighter gases diffuse faster.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '15 min',
     summary: {
@@ -3080,6 +3106,8 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Molar Volume of Hydrogen',
     section: 'Gas Chemistry',
     desc: 'Students collect hydrogen gas over water from the reaction of zinc with HCl, measure the volume at room temperature and pressure, and calculate the molar volume of a gas.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -3201,6 +3229,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Catalytic Decomposition of H₂O₂',
     section: 'Gas Chemistry',
     desc: 'Students compare the rate of H₂O₂ decomposition using MnO₂, FeCl₃ solution, liver (catalase enzyme), and no catalyst, measuring O₂ volume over time to determine which catalyst is most effective.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -3332,6 +3361,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Ammonia Fountain',
     section: 'Gas Chemistry',
     desc: 'Students fill a round-bottom flask with ammonia gas, invert it over coloured water with universal indicator, and open a valve to create a dramatic upward fountain — demonstrating the extreme solubility of NH₃.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '15 min',
     summary: {
@@ -3459,6 +3489,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Electrolysis of Water',
     section: 'Electrochemistry',
     desc: 'Students electrolyse dilute sulphuric acid and collect hydrogen and oxygen gases to confirm the 2:1 volume ratio.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -3585,6 +3616,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Electrolysis of Brine',
     section: 'Electrochemistry',
     desc: 'Students electrolyse concentrated salt solution to produce chlorine at the anode, hydrogen at the cathode, and sodium hydroxide in solution.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '25 min',
     summary: {
@@ -3711,6 +3743,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Zinc-Copper Galvanic Cell',
     section: 'Electrochemistry',
     desc: 'Students construct a zinc-copper voltaic cell using a salt bridge and measure the cell voltage, observing anode dissolution and cathode deposition.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '25 min',
     summary: {
@@ -3832,6 +3865,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Electroplating with Copper',
     section: 'Electrochemistry',
     desc: 'Students electroplate an iron nail with copper and measure the mass change to understand industrial electroplating.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '25 min',
     summary: {
@@ -3953,6 +3987,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Factors Affecting Corrosion',
     section: 'Electrochemistry',
     desc: 'Students place iron nails in different conditions and observe which factors accelerate or inhibit rusting over several days.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '10 min setup + observations over 3–5 days',
     summary: {
@@ -4194,6 +4229,8 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Conductivity of Electrolytes',
     section: 'Electrochemistry',
     desc: 'Students compare the electrical conductivity of various solutions and solids using a simple LED circuit to identify electrolytes and non-electrolytes.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4325,6 +4362,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Fruit Battery',
     section: 'Electrochemistry',
     desc: 'Students create galvanic cells using fruits and different metal pairs to generate measurable voltages and understand electrochemical potential.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4446,6 +4484,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Standard Electrode Potentials (Activity Series)',
     section: 'Electrochemistry',
     desc: 'Students compare which metals displace others from solution to construct an experimental activity series and relate it to standard electrode potentials.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '25 min',
     summary: {
@@ -4567,6 +4606,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Cathodic Protection',
     section: 'Electrochemistry',
     desc: 'Students demonstrate that zinc protects iron from corrosion by acting as a sacrificial anode, modelling galvanising and cathodic protection of steel structures.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min setup + observations over 3 days',
     summary: {
@@ -4700,6 +4740,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Photosynthesis Rate (Elodea)',
     section: 'Plant Physiology',
     desc: 'Students count oxygen bubbles produced by Elodea at different light intensities (varying the distance from a lamp) and plot bubble rate vs light intensity to find the relationship.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -4828,6 +4869,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Transpiration (Potometer)',
     section: 'Plant Physiology',
     desc: 'Students measure water uptake rate by a leafy shoot using a potometer under different conditions — still air, windy (fan), and humid (plastic bag) — recording air bubble movement in the capillary tube.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '25 min',
     summary: {
@@ -4959,6 +5001,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Osmosis in Plant Cells',
     section: 'Plant Physiology',
     desc: 'Students cut potato strips, weigh them, place them in NaCl solutions of 0, 0.25, 0.5, and 1.0 mol/L for 30 minutes, and weigh again to find percentage mass change — determining the solute concentration of potato cells.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '40 min',
     summary: {
@@ -5090,6 +5133,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Chromatography of Leaf Pigments',
     section: 'Plant Physiology',
     desc: 'Students crush leaves in acetone, apply the extract to chromatography paper, develop with petroleum ether:acetone solvent, and identify chlorophyll a/b and carotenoids by their Rf values and colours.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -5216,6 +5260,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Amylase Enzyme Activity',
     section: 'Plant Physiology',
     desc: 'Students mix starch solution with salivary amylase at 20°C, 37°C, and 60°C, testing with iodine solution every minute until the blue-black colour disappears, to find the optimum temperature for amylase activity.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -5347,6 +5392,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Anaerobic Respiration in Yeast',
     section: 'Plant Physiology',
     desc: 'Students mix yeast with glucose solution at different temperatures, use limewater or CO₂ sensors to capture CO₂ production, and measure fermentation rate over 20 minutes.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -5478,6 +5524,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Effect of CO₂ Concentration on Photosynthesis',
     section: 'Plant Physiology',
     desc: 'Students vary CO₂ concentration by adding different amounts of NaHCO₃ to an Elodea beaker and count the bubble rate at each concentration, at a fixed lamp distance.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -5609,6 +5656,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Seed Germination Conditions',
     section: 'Plant Physiology',
     desc: 'Students set up cress or radish seeds in four conditions — warm+water, cold+water, warm+no water, dark+warm+water — record germination percentage after 5 days, and identify the essential requirements for germination.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '10 min setup + observations over 5 days',
     summary: {
@@ -5740,6 +5788,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Soil pH and Plant Nutrients',
     section: 'Plant Physiology',
     desc: 'Students collect soil samples from different sites, measure pH using indicator solution or a pH meter, relate results to nutrient availability, and examine visible plant health indicators in plants grown in the soils.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -5866,6 +5915,7 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Plasmolysis and Deplasmolysis',
     section: 'Plant Physiology',
     desc: 'Students place red onion or beetroot cells in 1 mol/L NaCl solution (causing plasmolysis) and observe the cell membrane pulling away from the cell wall under a microscope, then add distilled water to reverse the process (deplasmolysis).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {

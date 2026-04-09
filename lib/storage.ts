@@ -1,3 +1,5 @@
+import { awardXP, updateStreak, incrementDailyGoal, resetGamification } from './gamification'
+
 export function saveResults(num: number, data: Record<string, string>) {
   if (typeof window === 'undefined') return;
   localStorage.setItem(`atp-results-${num}`, JSON.stringify(data));
@@ -51,6 +53,10 @@ export interface ExperimentProgress {
 
 export function saveProgress(num: number, correct: number, total: number) {
   if (typeof window === 'undefined') return;
+
+  const isFirstEver = getCompletedExperiments().length === 0
+  const pct = total > 0 ? Math.round((correct / total) * 100) : 0
+
   const progress: ExperimentProgress = {
     num,
     correct,
@@ -58,6 +64,35 @@ export function saveProgress(num: number, correct: number, total: number) {
     completedAt: new Date().toISOString(),
   };
   localStorage.setItem(`atp-progress-${num}`, JSON.stringify(progress));
+
+  // ── Gamification hooks ──
+  updateStreak()
+  incrementDailyGoal()
+
+  if (isFirstEver) {
+    awardXP('FIRST_EXPERIMENT')
+  }
+
+  awardXP('EXPERIMENT_COMPLETE')
+
+  if (pct === 100) {
+    awardXP('QUIZ_PERFECT')
+  } else if (pct >= 70) {
+    awardXP('QUIZ_GOOD')
+  } else {
+    awardXP('QUIZ_ATTEMPT')
+  }
+
+  // First experiment of the day bonus
+  const today = new Date().toISOString().split('T')[0]
+  const allCompleted = getCompletedExperiments()
+  const todayCount = allCompleted.filter(n => {
+    const p = loadProgress(n)
+    return p && p.completedAt.startsWith(today)
+  }).length
+  if (todayCount === 1) {
+    awardXP('DAILY_FIRST_EXPERIMENT')
+  }
 }
 
 export function loadProgress(num: number): ExperimentProgress | null {
@@ -96,7 +131,7 @@ export function deleteProgress(num: number): void {
   localStorage.removeItem(`atp-note-${num}`)
 }
 
-/** Delete ALL experiment progress, results, and notes */
+/** Delete ALL experiment progress, results, notes, and gamification state */
 export function deleteAllProgress(): void {
   if (typeof window === 'undefined') return
   const keysToRemove: string[] = []
@@ -107,6 +142,8 @@ export function deleteAllProgress(): void {
     }
   }
   keysToRemove.forEach(key => localStorage.removeItem(key))
+  // Reset gamification state
+  resetGamification()
 }
 
 // ── Detailed grade tracking ─────────────────────────────────────────────────

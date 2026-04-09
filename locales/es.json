@@ -484,6 +484,30 @@
     "save": "Guardar",
     "cancel": "Cancelar"
   },
+  "gamification": {
+    "level": "Nivel",
+    "levelUp": "¡SUBISTE DE NIVEL!",
+    "toNextLevel": "para el siguiente nivel",
+    "dayStreak": "¡Días consecutivos!",
+    "perfectScore": "¡Puntuación perfecta!",
+    "dailyGoal": "Meta de hoy",
+    "xpEarned": "XP Ganados",
+    "totalXP": "XP Total",
+    "currentStreak": "Racha Actual",
+    "longestStreak": "Racha Más Larga",
+    "levels": {
+      "labAssistant": "Asistente de Laboratorio",
+      "labTechnician": "Técnico de Laboratorio",
+      "juniorResearcher": "Investigador Junior",
+      "researcher": "Investigador",
+      "seniorResearcher": "Investigador Senior",
+      "leadScientist": "Científico Líder",
+      "principalScientist": "Científico Principal",
+      "scienceDirector": "Director de Ciencias",
+      "distinguishedFellow": "Miembro Distinguido",
+      "chiefScientist": "Científico Jefe"
+    }
+  },
   "class_dashboard": {
     "title": "Panel del Aula",
     "students": "Estudiantes",
@@ -495,5 +519,15 @@
     "by_experiment": "Por Experimento",
     "export_grades": "Exportar Notas del Aula",
     "no_data": "Sin calificaciones registradas"
+  },
+  "equipment": {
+    "filterLabel": "Equipo necesario:",
+    "all": "Todos",
+    "mobileLab": "Laboratorio Móvil",
+    "arduinoKit": "Kit Arduino",
+    "basicSupplies": "Materiales Básicos",
+    "noEquipment": "Sin Equipo",
+    "noMatchTitle": "No hay experimentos que coincidan con este filtro",
+    "noMatchDesc": "Intenta seleccionar una categoría de equipo diferente"
   }
 }

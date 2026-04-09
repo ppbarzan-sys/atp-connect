@@ -4,10 +4,12 @@ import {
   sectionColors as physicsColors,
   sectionEmojis as physicsEmojis,
 } from '@/data/experiments'
+import type { EquipmentCategory } from '@/data/experiments'
 import type { Experiment } from '@/data/loader'
 import { getExperiments } from '@/data/loader'
 import FilterBar from './FilterBar'
 import BrowseSection from './BrowseSection'
+import EquipmentFilter from './EquipmentFilter'
 import { useI18n } from '@/lib/i18n'
 import { getProgressSummary } from '@/lib/storage'
 
@@ -24,6 +26,7 @@ interface BrowseViewProps {
   heroTitle?: string
   heroSubtitle?: string
   heroNote?: string
+  showArduinoFilter?: boolean
 }
 
 export default function BrowseView({
@@ -38,11 +41,14 @@ export default function BrowseView({
   heroTitle,
   heroSubtitle,
   heroNote,
+  showArduinoFilter = false,
 }: BrowseViewProps) {
   const { t, locale } = useI18n()
   const allExperiments = expData ?? getExperiments(locale)
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
+
+  const [equipmentFilter, setEquipmentFilter] = useState<EquipmentCategory | 'all'>('all')
 
   const [progress, setProgress] = useState({ completed: 0, total: 0 })
   useEffect(() => {
@@ -53,10 +59,12 @@ export default function BrowseView({
   // Derive ordered section list from the data (preserves insertion order)
   const sections = [...new Set(allExperiments.map(e => e.section))]
 
-  const filteredExps =
-    activeFilter === 'all'
-      ? allExperiments
-      : allExperiments.filter(e => e.section === activeFilter)
+  // Apply both section and equipment filters
+  const filteredExps = allExperiments.filter(e => {
+    if (activeFilter !== 'all' && e.section !== activeFilter) return false
+    if (equipmentFilter !== 'all' && e.equipmentNeeded !== equipmentFilter) return false
+    return true
+  })
 
   const sectionGroups = sections
     .map(sec => ({
@@ -117,19 +125,35 @@ export default function BrowseView({
           expData={allExperiments}
         />
 
+        {/* Equipment filter */}
+        <div style={{ padding: '0 2rem' }}>
+          <EquipmentFilter
+            value={equipmentFilter}
+            onChange={setEquipmentFilter}
+            showArduino={showArduinoFilter}
+          />
+        </div>
+
         {/* Sections grid */}
         <div className="browse-content" id="browseContent">
-          {sectionGroups.map(g => (
-            <BrowseSection
-              key={g.name}
-              name={g.name}
-              color={g.color}
-              emoji={g.emoji}
-              experiments={g.exps}
-              onExpClick={onExpClick}
-              onFilterChange={onFilterChange}
-            />
-          ))}
+          {sectionGroups.length > 0 ? (
+            sectionGroups.map(g => (
+              <BrowseSection
+                key={g.name}
+                name={g.name}
+                color={g.color}
+                emoji={g.emoji}
+                experiments={g.exps}
+                onExpClick={onExpClick}
+                onFilterChange={onFilterChange}
+              />
+            ))
+          ) : (
+            <div className="equipment-empty-state">
+              <h3>{t('equipment.noMatchTitle')}</h3>
+              <p>{t('equipment.noMatchDesc')}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

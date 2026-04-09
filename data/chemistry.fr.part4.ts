@@ -8,6 +8,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Volume Molaire de l\'Hydrogène',
     section: 'Gas Chemistry',
     desc: 'Mesurer le volume d\'hydrogène produit par la réaction du zinc avec l\'acide chlorhydrique et calculer le volume molaire.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '45 min',
     summary: {
@@ -143,6 +144,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Décomposition Catalytique de H₂O₂',
     section: 'Gas Chemistry',
     desc: 'Comparer l\'efficacité de différents catalyseurs (MnO₂, FeCl₃, foie) dans la décomposition du peroxyde d\'hydrogène.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '40 min',
     summary: {
@@ -277,6 +279,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Fontaine d\'Ammoniac',
     section: 'Gas Chemistry',
     desc: 'Démontrer la solubilité extrême de l\'ammoniac dans l\'eau par une spectaculaire démonstration de fontaine.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '20 min',
     duration: '30 min',
     summary: {
@@ -411,6 +414,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Électrolyse de l\'Eau',
     section: 'Electrochemistry',
     desc: 'Décomposer l\'eau en hydrogène et oxygène par électrolyse et vérifier le rapport volumique 2:1.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '50 min',
     summary: {
@@ -543,6 +547,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Électrolyse de la Saumure',
     section: 'Electrochemistry',
     desc: 'Électrolyser une solution de NaCl et identifier les produits Cl₂, H₂ et NaOH formés.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '50 min',
     summary: {
@@ -677,6 +682,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Pile Galvanique Zinc-Cuivre',
     section: 'Electrochemistry',
     desc: 'Construire une pile de Daniell zinc-cuivre et mesurer la force électromotrice produite.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '45 min',
     summary: {
@@ -810,6 +816,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Électrodéposition du Cuivre',
     section: 'Electrochemistry',
     desc: 'Déposer du cuivre métallique sur un objet par électrolyse et mesurer la masse déposée en fonction de la charge électrique.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '60 min',
     summary: {
@@ -944,6 +951,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Facteurs Influençant la Corrosion',
     section: 'Electrochemistry',
     desc: 'Étudier l\'effet de différentes conditions sur la vitesse de corrosion de clous en fer sur 3–7 jours.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '60 min',
     summary: {
@@ -1077,6 +1085,7 @@ export const chemistryFrPart4: Experiment[] = [
     title: 'Première Loi de Faraday',
     section: 'Electrochemistry',
     desc: 'Vérifier la proportionnalité entre la masse de cuivre déposée et la charge électrique totale passée.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '20 min',
     duration: '70 min',
     summary: {

@@ -6,6 +6,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Conductivité des Électrolytes',
     section: 'Electrochemistry',
     desc: 'Les élèves comparent la conductivité électrique de diverses solutions et solides à l\'aide d\'un circuit LED simple pour identifier les électrolytes et les non-électrolytes.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -137,6 +138,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Pile à Fruit',
     section: 'Electrochemistry',
     desc: 'Les élèves créent des piles galvaniques en utilisant des fruits et différentes paires de métaux pour générer des tensions mesurables et comprendre le potentiel électrochimique.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -258,6 +260,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Potentiels d\'Électrode Standard (Série d\'Activité)',
     section: 'Electrochemistry',
     desc: 'Les élèves comparent quels métaux en déplacent d\'autres en solution pour construire une série d\'activité expérimentale et la relier aux potentiels d\'électrode standard.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '8 min',
     duration: '25 min',
     summary: {
@@ -379,6 +382,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Protection Cathodique',
     section: 'Electrochemistry',
     desc: 'Les élèves démontrent que le zinc protège le fer de la corrosion en agissant comme anode sacrificielle, en modélisant la galvanisation et la protection cathodique des structures en acier.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min de préparation + observations sur 3 jours',
     summary: {
@@ -510,6 +514,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Taux de Photosynthèse (Elodea)',
     section: 'Plant Physiology',
     desc: 'Les élèves comptent les bulles d\'oxygène produites par l\'Elodea à différentes intensités lumineuses (en faisant varier la distance d\'une lampe) et tracent le taux de bulles en fonction de l\'intensité lumineuse pour trouver la relation.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -638,6 +643,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Transpiration (Potomètre)',
     section: 'Plant Physiology',
     desc: 'Les élèves mesurent le taux d\'absorption d\'eau par une tige feuillée à l\'aide d\'un potomètre dans différentes conditions — air calme, venteux (ventilateur) et humide (sac plastique) — en enregistrant le mouvement d\'une bulle d\'air dans le tube capillaire.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '15 min',
     duration: '25 min',
     summary: {
@@ -769,6 +775,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Osmose dans les Cellules Végétales',
     section: 'Plant Physiology',
     desc: 'Les élèves découpent des bandes de pomme de terre, les pèsent, les placent dans des solutions de NaCl à 0, 0,25, 0,5 et 1,0 mol/L pendant 30 minutes, puis les repèsent pour trouver le pourcentage de variation de masse — déterminant ainsi la concentration en solutés des cellules de pomme de terre.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '40 min',
     summary: {
@@ -900,6 +907,7 @@ export const chemistryFrPart5: Experiment[] = [
     title: 'Chromatographie des Pigments Foliaires',
     section: 'Plant Physiology',
     desc: 'Les élèves broient des feuilles dans l\'acétone, appliquent l\'extrait sur du papier chromatographique, développent avec du solvant éther de pétrole:acétone, et identifient la chlorophylle a/b et les caroténoïdes par leurs valeurs de Rf et leurs couleurs.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {

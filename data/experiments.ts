@@ -1,5 +1,11 @@
 // Auto-generated from index.html
 
+export type EquipmentCategory =
+  | 'mobile-lab'       // Requires ATP Mobile Lab equipment (glassware, chemicals, sensors)
+  | 'arduino-kit'      // Requires Arduino Science Kit R3 or Starter Kit
+  | 'basic-supplies'   // Requires only basic supplies (ruler, string, coins, water, etc.)
+  | 'none'             // Theory-only or simulation — no physical equipment needed
+
 export interface Experiment {
   num: number;
   cardEmoji?: string;
@@ -8,6 +14,7 @@ export interface Experiment {
   desc: string;
   setupTime: string;
   duration: string;
+  equipmentNeeded?: EquipmentCategory;
   summary: {
     whatTheyLearn: string;
     instructions: string[];
@@ -87,6 +94,7 @@ export const experiments: Experiment[] = [
     "title": "First class levers",
     "section": "Mechanics",
     "desc": "Investigate equilibrium of a first-class lever by balancing known masses on either side of a central pivot.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -255,6 +263,7 @@ export const experiments: Experiment[] = [
     "title": "First class levers and equilibrium positions",
     "section": "Mechanics",
     "desc": "Measure moments about a pivot and verify the principle of moments using a lever with loads at known distances.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -422,6 +431,7 @@ export const experiments: Experiment[] = [
     "title": "Sensitivity of a balance",
     "section": "Mechanics",
     "desc": "Determine the sensitivity of a beam balance by measuring how many scale divisions correspond to a known added mass.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -585,6 +595,7 @@ export const experiments: Experiment[] = [
     "title": "Second and third class levers",
     "section": "Mechanics",
     "desc": "Study a second-class lever with the fulcrum at one end and verify the principle of moments for non-central pivots.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -754,6 +765,7 @@ export const experiments: Experiment[] = [
     "title": "Measurement of a length",
     "section": "Mechanics",
     "desc": "Measure the diameter and height of metal cylinders using a Vernier calliper and calculate their volumes.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -922,6 +934,7 @@ export const experiments: Experiment[] = [
     "title": "Measurement of density",
     "section": "Mechanics",
     "desc": "Determine the density of metal cylinders by two methods: mass/volume and using a displacement vessel.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -1094,6 +1107,7 @@ export const experiments: Experiment[] = [
     "title": "Composition and decomposition of forces",
     "section": "Mechanics",
     "desc": "Find the resultant of two concurrent forces using the parallelogram rule and verify it with a third equilibrant force.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1261,6 +1275,7 @@ export const experiments: Experiment[] = [
     "title": "Fixed Pulleys",
     "section": "Mechanics",
     "desc": "Show that a single fixed pulley changes the direction of force but not its magnitude; mechanical advantage = 1.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1421,6 +1436,7 @@ export const experiments: Experiment[] = [
     "title": "Mobile Pulley",
     "section": "Mechanics",
     "desc": "Demonstrate that a single movable pulley provides a mechanical advantage of 2, halving the required effort.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1586,6 +1602,7 @@ export const experiments: Experiment[] = [
     "title": "Fixed and Mobile Pulleys",
     "section": "Mechanics",
     "desc": "Combine a fixed and a movable pulley and show that the system still yields MA ≈ 2 with the benefit of direction change.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1752,6 +1769,7 @@ export const experiments: Experiment[] = [
     "title": "Inclined Plane",
     "section": "Mechanics",
     "desc": "Measure the force needed to slide a mass up an inclined plane and compare with the theoretical component of gravity along the slope.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1919,6 +1937,7 @@ export const experiments: Experiment[] = [
     "title": "Hooke’s Law",
     "section": "Mechanics",
     "desc": "Verify Hooke's Law by measuring spring extension as a function of applied force and determine the spring constant k.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2086,6 +2105,7 @@ export const experiments: Experiment[] = [
     "title": "Springs in series and in parallel",
     "section": "Mechanics",
     "desc": "Measure the effective spring constant for springs connected in series and in parallel, and explore the surprising 'spring paradox'.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -2251,6 +2271,7 @@ export const experiments: Experiment[] = [
     "title": "Simple Pendulum",
     "section": "Mechanics",
     "desc": "Measure the period of a simple pendulum for different lengths and verify T = 2π√(L/g).",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2417,6 +2438,7 @@ export const experiments: Experiment[] = [
     "title": "Spring Pendulum",
     "section": "Mechanics",
     "desc": "Measure the period of a spring-mass oscillator and verify T = 2π√(m/k).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2583,6 +2605,7 @@ export const experiments: Experiment[] = [
     "title": "Communicating Vessels",
     "section": "Mechanics",
     "desc": "Observe that a connected liquid reaches the same level in all tubes, verifying Stevino's law p = ρgh.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2747,6 +2770,7 @@ export const experiments: Experiment[] = [
     "title": "Archimedes’ Principle",
     "section": "Mechanics",
     "desc": "Verify Archimedes' principle by measuring the buoyant force on submerged objects and comparing it with the weight of fluid displaced.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2916,6 +2940,7 @@ export const experiments: Experiment[] = [
     "title": "Equilibrium temperature of mixed liquids",
     "section": "Heat",
     "desc": "Mix equal volumes of hot and cold water and measure the equilibrium temperature to verify heat exchange.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3078,6 +3103,7 @@ export const experiments: Experiment[] = [
     "title": "Heat transfer and thermal insulation",
     "section": "Heat",
     "desc": "Compare the cooling rate of hot water with no insulation, one insulating layer, and two insulating layers.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3242,6 +3268,7 @@ export const experiments: Experiment[] = [
     "title": "Specific heat capacity of solids",
     "section": "Heat",
     "desc": "Determine the specific heat capacity of metals by measuring temperature changes when hot metal is dropped into cold water.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3413,6 +3440,7 @@ export const experiments: Experiment[] = [
     "title": "Heat Sensitivity",
     "section": "Heat",
     "desc": "Demonstrate the subjectivity of temperature perception using Locke's three-bowl experiment.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3577,6 +3605,7 @@ export const experiments: Experiment[] = [
     "title": "Pulse Glass",
     "section": "Heat",
     "desc": "Observe the pulse glass (Franklin's toy) to understand how reduced pressure lowers the boiling point of a liquid.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3731,6 +3760,7 @@ export const experiments: Experiment[] = [
     "title": "Thermometer’s time constant",
     "section": "Heat",
     "desc": "Measure how quickly a thermometer responds to a step change in temperature and determine its time constant τ.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3891,6 +3921,7 @@ export const experiments: Experiment[] = [
     "title": "The Manometer",
     "section": "Mechanics",
     "desc": "Use a U-tube manometer to qualitatively measure gas pressure differences by observing liquid level differences.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -4057,6 +4088,7 @@ export const experiments: Experiment[] = [
     "title": "Use of the Tuning Forks",
     "section": "Acoustics",
     "desc": "Find the resonance length of an air column for a 440 Hz tuning fork and determine the speed of sound.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4222,6 +4254,7 @@ export const experiments: Experiment[] = [
     "title": "The Phenomenon of Resonance",
     "section": "Acoustics",
     "desc": "Demonstrate sympathetic resonance between two identical tuning forks on resonance boxes facing each other.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4382,6 +4415,7 @@ export const experiments: Experiment[] = [
     "title": "Beats and Interference in Acoustics",
     "section": "Acoustics",
     "desc": "Produce beats by sounding two tuning forks with slightly different frequencies and measure the beat frequency.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4543,6 +4577,7 @@ export const experiments: Experiment[] = [
     "title": "Focal Length",
     "section": "Optics",
     "desc": "Measure the focal lengths of biconcave and biconvex lenses by focusing parallel light or using distant objects.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4707,6 +4742,7 @@ export const experiments: Experiment[] = [
     "title": "Thin Lens Equation",
     "section": "Optics",
     "desc": "Verify the thin lens equation 1/p + 1/q = 1/f using a converging lens and measuring object and image distances.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -4870,6 +4906,7 @@ export const experiments: Experiment[] = [
     "title": "Magnification",
     "section": "Optics",
     "desc": "Measure the linear magnification of a converging lens by comparing image and object sizes and verifying m = −v/u.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -5035,6 +5072,7 @@ export const experiments: Experiment[] = [
     "title": "Mixing of Colours",
     "section": "Optics",
     "desc": "Mix coloured lights (additive synthesis) and coloured filters (subtractive synthesis) to understand colour perception.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5198,6 +5236,7 @@ export const experiments: Experiment[] = [
     "title": "Microscope – Telescope",
     "section": "Optics",
     "desc": "Build a simple microscope and telescope using available lenses and measure their magnifications.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5364,6 +5403,7 @@ export const experiments: Experiment[] = [
     "title": "Prism: Composition of Light",
     "section": "Optics",
     "desc": "Pass white light through a glass prism to produce a visible spectrum and observe wavelength-dependent refraction (dispersion).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5525,6 +5565,7 @@ export const experiments: Experiment[] = [
     "title": "Shadows and Penumbra",
     "section": "Optics",
     "desc": "Investigate how shadow size and sharpness depend on source size and the relative positions of source, object, and screen.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5691,6 +5732,7 @@ export const experiments: Experiment[] = [
     "title": "Mirrors",
     "section": "Optics",
     "desc": "Investigate image formation by concave and convex mirrors for objects at different distances.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5859,6 +5901,7 @@ export const experiments: Experiment[] = [
     "title": "Attractive and repulsive Magnetic force",
     "section": "Magnetism",
     "desc": "Investigate the forces between bar magnets and map the regions of attraction and repulsion.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -6016,6 +6059,7 @@ export const experiments: Experiment[] = [
     "title": "Magnetic Field Forces",
     "section": "Magnetism",
     "desc": "Map the magnetic field of a U-shaped magnet using a 2D field chamber with iron filings.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -6172,6 +6216,7 @@ export const experiments: Experiment[] = [
     "title": "Compass and Magnetism",
     "section": "Magnetism",
     "desc": "Use a compass to map the direction of a magnetic field and observe how a compass aligns with an external field.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "20 min",
     "summary": {
@@ -6331,6 +6376,7 @@ export const experiments: Experiment[] = [
     "title": "A Fairly Common Magnetic Toy",
     "section": "Magnetism",
     "desc": "Explore how a steel ball bearing between two like-pole magnets reverses the apparent interaction from repulsion to attraction.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -6487,6 +6533,7 @@ export const experiments: Experiment[] = [
     "title": "Electric Resistance",
     "section": "Electricity",
     "desc": "Verify Ohm's Law by measuring the current through a resistor at different voltages and determining the resistance.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -6650,6 +6697,7 @@ export const experiments: Experiment[] = [
     "title": "Series versus parallel circuits",
     "section": "Electricity",
     "desc": "Measure the total resistance for series and parallel resistor combinations and verify the combination formulas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {

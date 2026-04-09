@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import { loadProgress, deleteProgress, type ExperimentProgress } from '@/lib/storage'
+import { EquipmentBadge } from './EquipmentFilter'
 
 interface ExperimentCardProps {
   exp: Experiment
@@ -80,6 +81,9 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
 
       {/* Footer */}
       <div className="card-footer">
+        {exp.equipmentNeeded && (
+          <EquipmentBadge type={exp.equipmentNeeded} />
+        )}
         {exp.setupTime && (
           <span className="card-meta-badge">⏱ {exp.setupTime}</span>
         )}

@@ -4,6 +4,7 @@ import { chemistryExperiments } from './chemistry'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const arTranslations: Record<number, any> = {
   101: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قانون حفظ الكتلة',
     desc: 'خلط محلولي KI و AgNO₃ في دورق محكم الإغلاق ووزنه قبل وبعد للتحقق من قانون لافوازييه.',
     summary: {
@@ -128,6 +129,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   102: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الانتشار والتناضح',
     desc: 'مقارنة خصائص الحالات الثلاث للمادة: الشكل والحجم والانضغاطية والانتشار.',
     summary: {
@@ -252,6 +254,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   103: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقدمة في المحاليل',
     desc: 'التمييز بين المخاليط والمركبات بمقارنة خلط برادة الحديد والكبريت مع كبريتيد الحديد.',
     summary: {
@@ -376,6 +379,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   104: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقدمة في المحاليل',
     desc: 'فصل خليط سائل بالتقطير البسيط وقياس درجات الغليان.',
     summary: {
@@ -499,6 +503,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   105: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حالات الأكسدة',
     desc: 'فصل أصباغ الحبر باستخدام كروماتوغرافيا الورق.',
     summary: {
@@ -622,6 +627,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   106: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الذائبية والقوى بين الجزيئية',
     desc: 'مراقبة انتشار برمنغنات البوتاسيوم في الماء عند درجات حرارة مختلفة.',
     summary: {
@@ -745,6 +751,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   107: {
+    equipmentNeeded: 'basic-supplies',
     title: 'حالات المادة',
     desc: 'مقارنة سرعات انتشار غازي HCl و NH₃ في أنبوب زجاجي.',
     summary: {
@@ -869,6 +876,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   108: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حالات المادة',
     desc: 'قياس ذوبانية ملح عند درجات حرارة مختلفة ورسم منحنى الذوبانية.',
     summary: {
@@ -992,6 +1000,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   109: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حالات المادة',
     desc: 'تحضير 250 مل من محلول قياسي من Na₂CO₃ بتركيز معروف.',
     summary: {
@@ -1115,6 +1124,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   110: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مخططات الأطوار',
     desc: 'تحديد ذوبانية KNO₃ عند درجات حرارة متعددة ورسم منحنى الذوبانية.',
     summary: {
@@ -1239,6 +1249,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   111: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقياس pH',
     desc: 'اختبار أحماض وقواعد شائعة بالكواشف وتصنيف خصائصها.',
     summary: {
@@ -1317,6 +1328,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   112: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الأحماض القوية والقواعد القوية',
     desc: 'استخدام كواشف شاملة وورق pH لقياس الأس الهيدروجيني لمحاليل منزلية.',
     summary: {
@@ -1395,6 +1407,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   113: {
+    equipmentNeeded: 'mobile-lab',
     title: 'معايرة الحمض والقاعدة',
     desc: 'إجراء تفاعل تعادل وقياس التغير في درجة الحرارة.',
     summary: {
@@ -1473,6 +1486,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   114: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المعادلات الجزيئية والكاملة والأيونية الصافية',
     desc: 'إجراء معايرة حمض-قاعدة باستخدام كاشف لإيجاد التركيز المجهول.',
     summary: {
@@ -1551,6 +1565,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   115: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقدمة في المعايرة',
     desc: 'تحضير بلورات كلوريد الصوديوم بتعادل HCl مع NaOH.',
     summary: {
@@ -1629,6 +1644,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   116: {
+    equipmentNeeded: 'mobile-lab',
     title: 'هندرسون-هاسلباخ',
     desc: 'تفاعل حمض مع فلزات مختلفة وجمع الهيدروجين الناتج.',
     summary: {
@@ -1707,6 +1723,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   117: {
+    equipmentNeeded: 'basic-supplies',
     title: 'مقياس pH',
     desc: 'تفاعل حمض مع كربونات وملاحظة إنتاج CO₂.',
     summary: {
@@ -1785,6 +1802,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   118: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الأحماض والقواعد المرافقة',
     desc: 'تحديد الأحماض والقواعد في المنتجات المنزلية باستخدام الكواشف.',
     summary: {
@@ -1863,6 +1881,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   119: {
+    equipmentNeeded: 'mobile-lab',
     title: 'اتزان الحمض الضعيف',
     desc: 'تحديد نقاء عينة باستخدام المعايرة العكسية.',
     summary: {
@@ -1941,6 +1960,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   120: {
+    equipmentNeeded: 'mobile-lab',
     title: 'تعريف أرهينيوس للأحماض والقواعد',
     desc: 'تحضير محلول منظم وإثبات مقاومته للتغير في الأس الهيدروجيني.',
     summary: {
@@ -2019,6 +2039,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   121: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قانون الغاز المثالي',
     desc: 'إنتاج الأكسجين بالتحلل التحفيزي لـ H₂O₂ وجمعه بإزاحة الماء.',
     summary: {
@@ -2143,6 +2164,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   122: {
+    equipmentNeeded: 'mobile-lab',
     title: 'النظرية الحركية الجزيئية',
     desc: 'إنتاج CO₂ بتفاعل حمض مع كربونات وجمعه بالإزاحة للأسفل.',
     summary: {
@@ -2262,6 +2284,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   123: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حالات الأكسدة',
     desc: 'إنتاج الهيدروجين بتفاعل الزنك مع حمض الهيدروكلوريك المخفف.',
     summary: {
@@ -2381,6 +2404,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   124: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قانون بويل',
     desc: 'تحديد O₂ و CO₂ و H₂ باستخدام اختبارات قياسية (الشظية المتوهجة، ماء الجير، الفرقعة).',
     summary: {
@@ -2500,6 +2524,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   125: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قانون شارل',
     desc: 'مقارنة سرعات انتشار غازات ذات كتل مولية مختلفة.',
     summary: {
@@ -2619,6 +2644,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   126: {
+    equipmentNeeded: 'mobile-lab',
     title: 'النظرية الحركية الجزيئية وقوانين الغازات',
     desc: 'التحقق من أنه عند ثبات درجة الحرارة، P × V = ثابت للغاز.',
     summary: {
@@ -2733,6 +2759,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   127: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حسابات الغازات الستويكيومترية',
     desc: 'التحقق من أنه عند ثبات الضغط، V/T = ثابت للغاز.',
     summary: {
@@ -2857,6 +2884,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   128: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الستويكيومتريا',
     desc: 'استكشاف العلاقة بين الضغط والحجم ودرجة الحرارة للغاز.',
     summary: {
@@ -2971,6 +2999,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   129: {
+    equipmentNeeded: 'mobile-lab',
     title: 'طاقة التنشيط والعوامل المساعدة',
     desc: 'تحليل الماء كهربائياً إلى H₂ و O₂ والتحقق من النسبة 2:1.',
     summary: {
@@ -3095,6 +3124,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   130: {
+    equipmentNeeded: 'mobile-lab',
     title: 'توازن الأحماض والقواعد',
     desc: 'تحليل محلول CuSO₄ كهربائياً بأقطاب كربونية وملاحظة النواتج.',
     summary: {
@@ -3214,6 +3244,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   131: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التحليل الكهربائي',
     desc: 'طلاء جسم معدني بالنحاس عن طريق الترسيب الكهربائي.',
     summary: {
@@ -3333,6 +3364,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   132: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التحليل الكهربائي',
     desc: 'بناء خلية غلفانية بسيطة بأقطاب زنك ونحاس.',
     summary: {
@@ -3452,6 +3484,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   133: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الخلايا الغلفانية',
     desc: 'ترتيب الفلزات حسب نشاطها بملاحظة تفاعلات الإزاحة.',
     summary: {
@@ -3566,6 +3599,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   134: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التحليل الكهربائي',
     desc: 'دراسة ظروف حدوث الصدأ وطرق الوقاية منه.',
     summary: {
@@ -3680,6 +3714,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   135: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الخلايا الغلفانية',
     desc: 'بناء خلية تركيز وقياس فرق الجهد.',
     summary: {
@@ -3799,6 +3834,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   136: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التحليل الكهربائي',
     desc: 'التحقق من قوانين فاراداي بقياس الكتلة المترسبة مقابل الشحنة الكهربائية.',
     summary: {
@@ -3908,6 +3944,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   137: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقدمة في حالات الأكسدة',
     desc: 'مقارنة خصائص الخلايا الإلكتروليتية والغلفانية.',
     summary: {
@@ -4032,6 +4069,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   138: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الخلايا الغلفانية',
     desc: 'تفكيك وفحص بطاريات جافة وقلوية وتحديد مكوناتها.',
     summary: {
@@ -4146,6 +4184,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   139: {
+    equipmentNeeded: 'mobile-lab',
     title: 'جهد الخلية القياسي',
     desc: 'قياس كيف يؤثر تركيز المتفاعل على سرعة التفاعل.',
     summary: {
@@ -4260,6 +4299,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   140: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الخلايا الغلفانية',
     desc: 'قياس كيف تؤثر درجة الحرارة على سرعة تفاعل كيميائي.',
     summary: {
@@ -4384,6 +4424,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   141: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البناء الضوئي',
     desc: 'مقارنة سرعة تحلل H₂O₂ مع وبدون عامل محفز MnO₂.',
     summary: {
@@ -4505,6 +4546,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   142: {
+    equipmentNeeded: 'mobile-lab',
     title: 'نقل المواد في النبات',
     desc: 'مقارنة سرعة تفاعل CaCO₃ المسحوق مقابل القطع مع HCl.',
     summary: {
@@ -4629,6 +4671,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   143: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الأسموزية',
     desc: 'قياس سرعة إنتاج الغاز في تفاعل ورسم الحجم مقابل الزمن.',
     summary: {
@@ -4753,6 +4796,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   144: {
+    equipmentNeeded: 'mobile-lab',
     title: 'نظرة عامة على البناء الضوئي',
     desc: 'تتبع تقدم تفاعل بتغير اللون باستخدام مقياس ألوان أو بالملاحظة.',
     summary: {
@@ -4872,6 +4916,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   145: {
+    equipmentNeeded: 'mobile-lab',
     title: 'نشاط الإنزيم',
     desc: 'قياس الحرارة المنبعثة عند تعادل حمض قوي مع قاعدة قوية.',
     summary: {
@@ -4996,6 +5041,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   146: {
+    equipmentNeeded: 'mobile-lab',
     title: 'خطوات التنفس الهوائي',
     desc: 'قياس التغير في درجة الحرارة عند إذابة أملاح في الماء.',
     summary: {
@@ -5120,6 +5166,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   147: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التفاعلات غير المعتمدة على الضوء',
     desc: 'التحقق من قانون هس بقياس الإنثالبي عبر مسارات تفاعل بديلة.',
     summary: {
@@ -5244,6 +5291,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   148: {
+    equipmentNeeded: 'mobile-lab',
     title: 'استجابات نمو النبات',
     desc: 'تصنيف التفاعلات إلى ماصة أو طاردة للحرارة بقياس تغيرات درجة الحرارة.',
     summary: {
@@ -5368,6 +5416,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   149: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مقياس pH',
     desc: 'قياس حرارة احتراق كحولات مختلفة باستخدام مسعر حراري.',
     summary: {
@@ -5487,6 +5536,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   150: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الأسموزية والتوترية',
     desc: 'تحديد السعة الحرارية للمسعر بطريقة المزج.',
     summary: {

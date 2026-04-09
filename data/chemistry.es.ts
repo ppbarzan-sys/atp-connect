@@ -9,6 +9,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Ley de conservación de la masa",
     "section": "Matter & Solutions",
     "desc": "Mezclar soluciones de KI y AgNO₃ en un matraz sellado y pesar antes y después para verificar la Ley de Lavoisier.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "20 min",
     "summary": {
@@ -179,6 +180,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Propiedades de sólidos, líquidos y gases",
     "section": "Matter & Solutions",
     "desc": "Comparar las propiedades de los tres estados de la materia: forma, volumen, compresibilidad y difusión.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -348,6 +350,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Mezcla vs. compuesto",
     "section": "Matter & Solutions",
     "desc": "Distinguir mezclas de compuestos comparando la mezcla de limaduras de hierro y azufre con el sulfuro de hierro.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -518,6 +521,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Separación por destilación",
     "section": "Matter & Solutions",
     "desc": "Separar una mezcla líquida por destilación simple y medir las temperaturas de ebullición.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "30 min",
     "summary": {
@@ -684,6 +688,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Separación por cromatografía",
     "section": "Matter & Solutions",
     "desc": "Separar los pigmentos de la tinta usando cromatografía en papel.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -850,6 +855,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Difusión en líquidos",
     "section": "Matter & Solutions",
     "desc": "Observar la difusión de permanganato de potasio en agua a diferentes temperaturas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "15 min",
     "duration": "35 min",
     "summary": {
@@ -1016,6 +1022,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Difusión en gases",
     "section": "Matter & Solutions",
     "desc": "Comparar las velocidades de difusión de HCl y NH₃ gaseosos en un tubo de vidrio.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "10 min",
     "duration": "30 min",
     "summary": {
@@ -1186,6 +1193,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Solubilidad y temperatura",
     "section": "Matter & Solutions",
     "desc": "Medir la solubilidad de una sal a diferentes temperaturas y construir una curva de solubilidad.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -1351,6 +1359,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Preparación de una solución estándar",
     "section": "Matter & Solutions",
     "desc": "Preparar 250 mL de una solución estándar de Na₂CO₃ de concentración conocida.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "35 min",
     "summary": {
@@ -1519,6 +1528,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Curva de solubilidad del KNO₃",
     "section": "Matter & Solutions",
     "desc": "Determinar la solubilidad del KNO₃ a varias temperaturas y trazar la curva de solubilidad.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1688,6 +1698,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Propiedades de ácidos y bases",
     "section": "Acids & Bases",
     "desc": "Probar ácidos y bases comunes con indicadores y clasificar sus propiedades.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1858,6 +1869,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Escala de pH con indicadores",
     "section": "Acids & Bases",
     "desc": "Usar indicadores universales y papel pH para medir el pH de soluciones domésticas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2028,6 +2040,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Neutralización ácido-base",
     "section": "Acids & Bases",
     "desc": "Realizar una reacción de neutralización y medir el cambio de temperatura.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2198,6 +2211,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Titulación ácido fuerte – base fuerte",
     "section": "Acids & Bases",
     "desc": "Realizar una titulación ácido-base usando un indicador para encontrar la concentración desconocida.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "25 min",
     "summary": {
@@ -2367,6 +2381,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Preparación de una sal por neutralización",
     "section": "Acids & Bases",
     "desc": "Preparar cristales de cloruro de sodio por neutralización de HCl con NaOH.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "30 min",
     "summary": {
@@ -2537,6 +2552,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Reacciones de ácidos con metales",
     "section": "Acids & Bases",
     "desc": "Hacer reaccionar ácido con diferentes metales y recoger el hidrógeno producido.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2708,6 +2724,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Reacciones de ácidos con carbonatos",
     "section": "Acids & Bases",
     "desc": "Hacer reaccionar ácido con carbonatos y observar la producción de CO₂.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -2877,6 +2894,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Ácidos y bases en la vida cotidiana",
     "section": "Acids & Bases",
     "desc": "Identificar ácidos y bases en productos del hogar usando indicadores.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "25 min",
     "summary": {
@@ -3047,6 +3065,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Titulación de retroceso",
     "section": "Acids & Bases",
     "desc": "Determinar la pureza de una muestra usando titulación de retroceso.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "25 min",
     "summary": {
@@ -3216,6 +3235,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Efecto tampón",
     "section": "Acids & Bases",
     "desc": "Preparar una solución tampón y demostrar su resistencia al cambio de pH.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -3385,6 +3405,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Preparación de oxígeno",
     "section": "Gas Chemistry",
     "desc": "Producir oxígeno por descomposición catalítica de H₂O₂ y recoger por desplazamiento de agua.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "20 min",
     "summary": {
@@ -3554,6 +3575,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Preparación de dióxido de carbono",
     "section": "Gas Chemistry",
     "desc": "Producir CO₂ por reacción de ácido con carbonato y recoger por desplazamiento hacia abajo.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "20 min",
     "summary": {
@@ -3723,6 +3745,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Preparación de hidrógeno",
     "section": "Gas Chemistry",
     "desc": "Producir hidrógeno por reacción de zinc con ácido clorhídrico diluido.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "20 min",
     "summary": {
@@ -3892,6 +3915,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Prueba de gases: O₂, CO₂, H₂",
     "section": "Gas Chemistry",
     "desc": "Identificar O₂, CO₂ y H₂ usando pruebas estándar (astilla incandescente, agua de cal, estallido).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4060,6 +4084,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Ley de difusión de Graham",
     "section": "Gas Chemistry",
     "desc": "Comparar las velocidades de difusión de gases de diferentes masas molares.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -4228,6 +4253,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "La ley de Boyle",
     "section": "Gas Chemistry",
     "desc": "Verificar que a temperatura constante, P × V = constante para un gas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "15 min",
     "summary": {
@@ -4398,6 +4424,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "La ley de Charles",
     "section": "Gas Chemistry",
     "desc": "Verificar que a presión constante, V/T = constante para un gas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "20 min",
     "summary": {
@@ -4567,6 +4594,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Presión de gas y ley combinada",
     "section": "Gas Chemistry",
     "desc": "Explorar la relación entre presión, volumen y temperatura de un gas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -4737,6 +4765,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Electrólisis del agua",
     "section": "Gas Chemistry",
     "desc": "Descomponer agua en H₂ y O₂ por electrólisis y verificar la proporción 2:1.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -4907,6 +4936,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Electrólisis de solución de CuSO₄",
     "section": "Gas Chemistry",
     "desc": "Electrolizar solución de CuSO₄ con electrodos de carbono y observar los productos.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "15 min",
     "duration": "15 min",
     "summary": {
@@ -5076,6 +5106,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Galvanización (electrodeposición)",
     "section": "Electrochemistry",
     "desc": "Recubrir un objeto metálico con cobre mediante electrodeposición.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -5245,6 +5276,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Celda voltaica simple",
     "section": "Electrochemistry",
     "desc": "Construir una celda galvánica simple con electrodos de zinc y cobre.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "25 min",
     "summary": {
@@ -5415,6 +5447,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Serie de actividad de metales",
     "section": "Electrochemistry",
     "desc": "Ordenar metales por reactividad observando reacciones de desplazamiento.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "25 min",
     "summary": {
@@ -5585,6 +5618,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Corrosión y prevención de la oxidación",
     "section": "Electrochemistry",
     "desc": "Investigar las condiciones para la oxidación y métodos de prevención.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "25 min",
     "summary": {
@@ -5755,6 +5789,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Celda de concentración",
     "section": "Electrochemistry",
     "desc": "Construir una celda de concentración y medir la diferencia de potencial.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min setup + observations over 3–5 days",
     "summary": {
@@ -5924,6 +5959,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Leyes de electrólisis de Faraday",
     "section": "Electrochemistry",
     "desc": "Verificar las leyes de Faraday midiendo la masa depositada vs. la carga eléctrica.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "30 min",
     "summary": {
@@ -6095,6 +6131,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Celda electrolítica vs. celda galvánica",
     "section": "Electrochemistry",
     "desc": "Comparar las características de celdas electrolíticas y galvánicas.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -6264,6 +6301,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Pilas secas y alcalinas",
     "section": "Electrochemistry",
     "desc": "Desarmar y examinar pilas secas y alcalinas, identificando componentes.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -6434,6 +6472,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Efecto de la concentración en la velocidad de reacción",
     "section": "Electrochemistry",
     "desc": "Medir cómo la concentración del reactivo afecta la velocidad de reacción.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "8 min",
     "duration": "25 min",
     "summary": {
@@ -6605,6 +6644,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Efecto de la temperatura en la velocidad de reacción",
     "section": "Electrochemistry",
     "desc": "Medir cómo la temperatura afecta la velocidad de una reacción química.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min setup + observations over 3 days",
     "summary": {
@@ -6775,6 +6815,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Efecto del catalizador en la velocidad de reacción",
     "section": "Plant Physiology",
     "desc": "Comparar la velocidad de descomposición de H₂O₂ con y sin catalizador MnO₂.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -6945,6 +6986,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Efecto del área superficial en la velocidad de reacción",
     "section": "Plant Physiology",
     "desc": "Comparar la velocidad de reacción de CaCO₃ en polvo vs. en trozos con HCl.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "15 min",
     "duration": "25 min",
     "summary": {
@@ -7114,6 +7156,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Medición de la velocidad de reacción (producción de gas)",
     "section": "Plant Physiology",
     "desc": "Medir la velocidad de producción de gas en una reacción y trazar volumen vs. tiempo.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "40 min",
     "summary": {
@@ -7284,6 +7327,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Medición de la velocidad de reacción (cambio de color)",
     "section": "Plant Physiology",
     "desc": "Seguir el progreso de una reacción por cambio de color usando un colorímetro o por observación.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -7454,6 +7498,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Entalpía de neutralización",
     "section": "Plant Physiology",
     "desc": "Medir el calor liberado en la neutralización de un ácido fuerte con una base fuerte.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -7623,6 +7668,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Entalpía de disolución",
     "section": "Plant Physiology",
     "desc": "Medir el cambio de temperatura al disolver sales en agua.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -7792,6 +7838,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Ley de Hess",
     "section": "Plant Physiology",
     "desc": "Verificar la Ley de Hess midiendo entalpías por caminos de reacción alternativos.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -7961,6 +8008,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Reacciones endotérmicas y exotérmicas",
     "section": "Plant Physiology",
     "desc": "Clasificar reacciones como endotérmicas o exotérmicas midiendo cambios de temperatura.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "10 min setup + observations over 5 days",
     "summary": {
@@ -8132,6 +8180,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Calor de combustión",
     "section": "Plant Physiology",
     "desc": "Medir el calor de combustión de diferentes alcoholes usando un calorímetro.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {
@@ -8302,6 +8351,7 @@ export const chemistryExperimentsEs: Experiment[] =
     "title": "Capacidad calorífica de un calorímetro",
     "section": "Plant Physiology",
     "desc": "Determinar la capacidad calorífica del calorímetro por método de mezcla.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "10 min",
     "duration": "25 min",
     "summary": {

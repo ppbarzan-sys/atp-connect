@@ -316,8 +316,214 @@ const roboticsCoursesFr: RoboticsCourse[] = [
   }
 ]
 
+const roboticsCoursesAr: RoboticsCourse[] = [
+  {
+    id: 'arduino-fundamentals',
+    title: 'أساسيات أردوينو',
+    description: 'تعلّم البرمجة والإلكترونيات من الصفر مع أردوينو. ابنِ دوائر حقيقية، واكتب الكود، وأنشئ مشاريع تفاعلية خطوة بخطوة. لا تحتاج خبرة سابقة.',
+    category: 'arduino',
+    duration: '١٠-١٥ ساعة',
+    difficulty: 'Beginner',
+    icon: '🔧',
+    url: 'https://courses.arduino.cc/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'arduino-iot',
+    title: 'استكشاف إنترنت الأشياء مع أردوينو',
+    description: 'اكتشف إنترنت الأشياء. تعلّم توصيل المستشعرات وجمع البيانات في الوقت الحقيقي وبناء أجهزة ذكية باستخدام أردوينو وسحابة إنترنت الأشياء.',
+    category: 'arduino',
+    duration: '١٥-٢٥ ساعة',
+    difficulty: 'Intermediate',
+    icon: '📡',
+    url: 'https://courses.arduino.cc/explore-iot/home/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'tinkercad-circuits',
+    title: 'تينكركاد للدوائر — محاكي أردوينو',
+    description: 'تدرّب على مشاريع أردوينو عبر الإنترنت مجانًا — لا حاجة لأجهزة. صمّم الدوائر واكتب الكود وحاكِ مشاريعك في المتصفح. مثالي للبدء.',
+    category: 'arduino',
+    duration: 'حسب الوتيرة الشخصية',
+    difficulty: 'Beginner',
+    icon: '🖥️',
+    url: 'https://www.tinkercad.com/circuits',
+    provider: 'Autodesk'
+  },
+  {
+    id: 'arduino-science',
+    title: 'مجموعة أردوينو العلمية — تجارب الفيزياء',
+    description: 'استخدم أردوينو لإجراء تجارب فيزيائية بمستشعرات حقيقية. قِس الحركة والضوء والحرارة والصوت — يتصل مباشرة بمنهج المختبر.',
+    category: 'arduino',
+    duration: '١٥-٢٠ ساعة',
+    difficulty: 'Intermediate',
+    icon: '🔬',
+    url: 'https://www.arduino.cc/education/science-kit/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'rpi-electronics',
+    title: 'مقدمة في الإلكترونيات والروبوتات',
+    description: 'دورة مجانية من مؤسسة راسبيري باي. تعلّم بناء الدوائر والتحكم في مصابيح LED والمحركات والمستشعرات وبرمجة الروبوتات باستخدام بايثون.',
+    category: 'raspberry-pi',
+    duration: '١٠-١٥ ساعة',
+    difficulty: 'Beginner',
+    icon: '🤖',
+    url: 'https://www.raspberrypi.org/courses/electronics-and-robotics',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-programming',
+    title: 'مقدمة في البرمجة باستخدام بايثون',
+    description: 'تعلّم البرمجة بلغة بايثون مع راسبيري باي. يغطي المتغيرات والحلقات والدوال وبناء البرامج التفاعلية. مجاني ومناسب للمبتدئين.',
+    category: 'raspberry-pi',
+    duration: '٨-١٢ ساعة',
+    difficulty: 'Beginner',
+    icon: '🐍',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-physical-computing',
+    title: 'الحوسبة الفيزيائية مع راسبيري باي',
+    description: 'اربط العالم الرقمي بالعالم المادي. تحكّم في مصابيح LED والأزرار والمحركات بالكود. اقرأ البيانات من الأزرار والمستشعرات والكاميرات. ابنِ مشاريع حقيقية.',
+    category: 'raspberry-pi',
+    duration: '١٠-١٥ ساعة',
+    difficulty: 'Intermediate',
+    icon: '💡',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'cs50x',
+    title: 'CS50: مقدمة في علوم الحاسوب',
+    description: 'الدورة الأسطورية من جامعة هارفارد لمقدمة علوم الحاسوب. تغطي الخوارزميات وهياكل البيانات وتطوير الويب وبايثون. مجانية على edX. الدورة الأكثر شعبية في العالم.',
+    category: 'cs50',
+    duration: '١٠٠+ ساعة',
+    difficulty: 'Beginner',
+    icon: '🎓',
+    url: 'https://cs50.harvard.edu/x/',
+    provider: 'Harvard'
+  },
+  {
+    id: 'cs50-ai',
+    title: 'CS50: مقدمة في الذكاء الاصطناعي مع بايثون',
+    description: 'استكشف الخوارزميات وراء الذكاء الاصطناعي — البحث والتحسين والتعلّم الآلي والشبكات العصبية. ابنِ أنظمة ذكية بلغة بايثون. مجانية من هارفارد.',
+    category: 'cs50',
+    duration: '٤٠-٦٠ ساعة',
+    difficulty: 'Advanced',
+    icon: '🧪',
+    url: 'https://cs50.harvard.edu/ai/',
+    provider: 'Harvard'
+  }
+]
+
+const roboticsCoursesEs: RoboticsCourse[] = [
+  {
+    id: 'arduino-fundamentals',
+    title: 'Fundamentos de Arduino',
+    description: 'Aprende programación y electrónica desde cero con Arduino. Construye circuitos reales, escribe código y crea proyectos interactivos paso a paso. No se necesita experiencia previa.',
+    category: 'arduino',
+    duration: '10-15 horas',
+    difficulty: 'Beginner',
+    icon: '🔧',
+    url: 'https://courses.arduino.cc/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'arduino-iot',
+    title: 'Explora IoT con Arduino',
+    description: 'Descubre el Internet de las Cosas. Aprende a conectar sensores, recopilar datos en tiempo real y construir dispositivos inteligentes usando Arduino y la nube IoT.',
+    category: 'arduino',
+    duration: '15-25 horas',
+    difficulty: 'Intermediate',
+    icon: '📡',
+    url: 'https://courses.arduino.cc/explore-iot/home/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'tinkercad-circuits',
+    title: 'Tinkercad Circuits — Simulador Arduino',
+    description: 'Practica proyectos Arduino completamente en línea y gratis — sin hardware necesario. Diseña circuitos, escribe código y simula tus proyectos en el navegador. Perfecto para comenzar.',
+    category: 'arduino',
+    duration: 'A tu ritmo',
+    difficulty: 'Beginner',
+    icon: '🖥️',
+    url: 'https://www.tinkercad.com/circuits',
+    provider: 'Autodesk'
+  },
+  {
+    id: 'arduino-science',
+    title: 'Kit de Ciencias Arduino — Experimentos de Física',
+    description: 'Usa Arduino para realizar experimentos de física con sensores reales. Mide movimiento, luz, temperatura y sonido — se conecta directamente con tu plan de estudios de laboratorio.',
+    category: 'arduino',
+    duration: '15-20 horas',
+    difficulty: 'Intermediate',
+    icon: '🔬',
+    url: 'https://www.arduino.cc/education/science-kit/',
+    provider: 'Arduino'
+  },
+  {
+    id: 'rpi-electronics',
+    title: 'Introducción a Electrónica y Robótica',
+    description: 'Curso gratuito de la Fundación Raspberry Pi. Aprende a construir circuitos, controlar LEDs, motores y sensores, y programar tus propios robots usando Python.',
+    category: 'raspberry-pi',
+    duration: '10-15 horas',
+    difficulty: 'Beginner',
+    icon: '🤖',
+    url: 'https://www.raspberrypi.org/courses/electronics-and-robotics',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-programming',
+    title: 'Introducción a la Programación con Python',
+    description: 'Aprende a programar con Python usando Raspberry Pi. Cubre variables, bucles, funciones y construcción de programas interactivos. Gratuito y apto para principiantes.',
+    category: 'raspberry-pi',
+    duration: '8-12 horas',
+    difficulty: 'Beginner',
+    icon: '🐍',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'rpi-physical-computing',
+    title: 'Computación Física con Raspberry Pi',
+    description: 'Conecta el mundo digital con el físico. Controla LEDs, zumbadores y motores con código. Lee datos de botones, sensores y cámaras. Construye proyectos reales.',
+    category: 'raspberry-pi',
+    duration: '10-15 horas',
+    difficulty: 'Intermediate',
+    icon: '💡',
+    url: 'https://www.raspberrypi.org/courses/',
+    provider: 'Raspberry Pi'
+  },
+  {
+    id: 'cs50x',
+    title: 'CS50: Introducción a las Ciencias de la Computación',
+    description: 'El legendario curso introductorio de CS de la Universidad de Harvard. Cubre algoritmos, estructuras de datos, desarrollo web y Python. Gratis en edX. El curso de CS más popular del mundo.',
+    category: 'cs50',
+    duration: '100+ horas',
+    difficulty: 'Beginner',
+    icon: '🎓',
+    url: 'https://cs50.harvard.edu/x/',
+    provider: 'Harvard'
+  },
+  {
+    id: 'cs50-ai',
+    title: 'CS50: Introducción a la IA con Python',
+    description: 'Explora los algoritmos detrás de la IA: búsqueda, optimización, aprendizaje automático y redes neuronales. Construye sistemas inteligentes con Python. Gratis de Harvard.',
+    category: 'cs50',
+    duration: '40-60 horas',
+    difficulty: 'Advanced',
+    icon: '🧪',
+    url: 'https://cs50.harvard.edu/ai/',
+    provider: 'Harvard'
+  }
+]
+
 export function getRoboticsCourses(locale: string): RoboticsCourse[] {
   if (locale === 'it') return roboticsCoursesIt
   if (locale === 'fr') return roboticsCoursesFr
+  if (locale === 'ar') return roboticsCoursesAr
+  if (locale === 'es') return roboticsCoursesEs
   return roboticsCourses
 }

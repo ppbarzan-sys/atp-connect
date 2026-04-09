@@ -377,23 +377,23 @@
     "course_quiz": "Quiz du Cours",
     "take_quiz": "Faire le Quiz",
     "submit_quiz": "Soumettre le Quiz",
-    "retry_quiz": "R\u00e9essayer le Quiz",
+    "retry_quiz": "Réessayer le Quiz",
     "show_explanations": "Afficher les Explications",
     "hide_explanations": "Masquer les Explications",
-    "not_attempted": "Non tent\u00e9",
+    "not_attempted": "Non tenté",
     "score": "Score",
     "questions": "questions",
-    "mixed_difficulty": "Difficult\u00e9 mixte",
+    "mixed_difficulty": "Difficulté mixte",
     "easy": "Facile",
     "medium": "Moyen",
     "hard": "Difficile",
     "correct": "Correct",
     "incorrect": "Incorrect",
-    "your_answer": "Votre r\u00e9ponse",
-    "type_answer": "Tapez votre r\u00e9ponse...",
+    "your_answer": "Votre réponse",
+    "type_answer": "Tapez votre réponse...",
     "true": "Vrai",
     "false": "Faux",
-    "short_answer_hint": "Tapez une r\u00e9ponse courte (1-3 mots)"
+    "short_answer_hint": "Tapez une réponse courte (1-3 mots)"
   },
   "grades": {
     "score_breakdown": "Vous avez obtenu {correct}/{total} ({percent}%) en {time}",
@@ -484,6 +484,30 @@
     "save": "Enregistrer",
     "cancel": "Annuler"
   },
+  "gamification": {
+    "level": "Niveau",
+    "levelUp": "NIVEAU SUPÉRIEUR !",
+    "toNextLevel": "au prochain niveau",
+    "dayStreak": "Jours consécutifs !",
+    "perfectScore": "Score parfait !",
+    "dailyGoal": "Objectif du jour",
+    "xpEarned": "XP Gagnés",
+    "totalXP": "XP Total",
+    "currentStreak": "Série Actuelle",
+    "longestStreak": "Plus Longue Série",
+    "levels": {
+      "labAssistant": "Assistant de Laboratoire",
+      "labTechnician": "Technicien de Laboratoire",
+      "juniorResearcher": "Chercheur Junior",
+      "researcher": "Chercheur",
+      "seniorResearcher": "Chercheur Senior",
+      "leadScientist": "Scientifique en Chef",
+      "principalScientist": "Scientifique Principal",
+      "scienceDirector": "Directeur Scientifique",
+      "distinguishedFellow": "Membre Distingué",
+      "chiefScientist": "Chef Scientifique"
+    }
+  },
   "class_dashboard": {
     "title": "Tableau de Bord de Classe",
     "students": "Élèves",
@@ -495,5 +519,15 @@
     "by_experiment": "Par Expérience",
     "export_grades": "Exporter les Notes",
     "no_data": "Aucune note enregistrée"
+  },
+  "equipment": {
+    "filterLabel": "Équipement nécessaire :",
+    "all": "Tous",
+    "mobileLab": "Laboratoire Mobile",
+    "arduinoKit": "Kit Arduino",
+    "basicSupplies": "Fournitures de Base",
+    "noEquipment": "Aucun Équipement",
+    "noMatchTitle": "Aucune expérience ne correspond à ce filtre",
+    "noMatchDesc": "Essayez de sélectionner une autre catégorie d'équipement"
   }
 }

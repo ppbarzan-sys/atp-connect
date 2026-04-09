@@ -6,6 +6,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Sublimation de l\'iode',
     section: 'Matter & Solutions',
     desc: 'Chauffer doucement des cristaux d\'iode et observer la formation d\'une vapeur violette qui se recristallise sans passer par une phase liquide.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -139,6 +140,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Indicateur universel et échelle de pH',
     section: 'Acids & Bases',
     desc: 'Tester des solutions du quotidien (vinaigre, bicarbonate de soude, jus de citron, eau de Javel, lait) avec l\'indicateur universel et les classer sur l\'échelle de pH.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -255,6 +257,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Acides forts vs acides faibles (conductivité)',
     section: 'Acids & Bases',
     desc: 'Comparer la conductivité électrique du HCl et de l\'acide éthanoïque à la même concentration pour distinguer les acides forts des acides faibles.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -376,6 +379,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Neutralisation et changement de température',
     section: 'Acids & Bases',
     desc: 'Mélanger des solutions de HCl et de NaOH et mesurer l\'élévation de température pour démontrer que la neutralisation est exothermique.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -492,6 +496,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Effet des pluies acides sur le marbre',
     section: 'Acids & Bases',
     desc: 'Faire couler du HCl dilué sur des billes de marbre pour simuler les pluies acides, en mesurant la production de CO₂ et la perte de masse au fil du temps.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -608,6 +613,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Titrage acide-base',
     section: 'Acids & Bases',
     desc: 'Titrer l\'acide acétique du vinaigre avec NaOH en utilisant l\'indicateur phénolphtaléine pour déterminer la concentration en acide du vinaigre.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -734,6 +740,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Action tampon',
     section: 'Acids & Bases',
     desc: 'Démontrer que les solutions tampons résistent au changement de pH lorsque de petites quantités d\'acide ou de base sont ajoutées, par rapport aux solutions non tamponnées.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -860,6 +867,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Indicateurs de pH naturels',
     section: 'Acids & Bases',
     desc: 'Extraire du jus de chou rouge comme indicateur de pH naturel et le tester sur une gamme de valeurs de pH pour créer un spectre de couleurs.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -981,6 +989,7 @@ export const chemistryFrPart2: Experiment[] = [
     title: 'Efficacité des antiacides',
     section: 'Acids & Bases',
     desc: 'Comparer la quantité d\'acide que différents comprimés antiacides commerciaux peuvent neutraliser pour déterminer lequel est le plus efficace.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '25 min',
     summary: {

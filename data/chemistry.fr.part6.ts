@@ -6,6 +6,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'Activité de l\'enzyme amylase',
     section: 'Plant Physiology',
     desc: 'Les élèves mélangent une solution d\'amidon avec de l\'amylase salivaire à 20 °C, 37 °C et 60 °C, en testant avec une solution d\'iode toutes les minutes jusqu\'à ce que la couleur bleu-noir disparaisse, afin de trouver la température optimale d\'activité de l\'amylase.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -137,6 +138,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'Respiration anaérobie dans la levure',
     section: 'Plant Physiology',
     desc: 'Les élèves mélangent de la levure avec une solution de glucose à différentes températures, utilisent de l\'eau de chaux ou des capteurs CO₂ pour capturer la production de CO₂, et mesurent la vitesse de fermentation sur 20 minutes.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -268,6 +270,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'Effet de la concentration en CO₂ sur la photosynthèse',
     section: 'Plant Physiology',
     desc: 'Les élèves font varier la concentration en CO₂ en ajoutant différentes quantités de NaHCO₃ à un bécher contenant de l\'Elodea et comptent la vitesse de bulles à chaque concentration, à une distance de lampe fixe.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -399,6 +402,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'Conditions de germination des graines',
     section: 'Plant Physiology',
     desc: 'Les élèves installent des graines de cresson ou de radis dans quatre conditions — chaud+eau, froid+eau, chaud+pas d\'eau, sombre+chaud+eau — enregistrent le pourcentage de germination après 5 jours et identifient les exigences essentielles à la germination.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '10 min de mise en place + observations sur 5 jours',
     summary: {
@@ -530,6 +534,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'pH du sol et nutriments des plantes',
     section: 'Plant Physiology',
     desc: 'Les élèves collectent des échantillons de sol provenant de différents sites, mesurent le pH à l\'aide d\'une solution indicatrice ou d\'un pH-mètre, relient les résultats à la disponibilité des nutriments et examinent les indicateurs visibles de santé végétale dans les plantes cultivées dans ces sols.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -656,6 +661,7 @@ export const chemistryFrPart6: Experiment[] = [
     title: 'Plasmolyse et déplasmolyse',
     section: 'Plant Physiology',
     desc: 'Les élèves placent des cellules d\'oignon rouge ou de betterave dans une solution de NaCl 1 mol/L (provoquant la plasmolyse) et observent au microscope la membrane cellulaire se décollant de la paroi cellulaire, puis ajoutent de l\'eau distillée pour inverser le processus (déplasmolyse).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {

@@ -165,6 +165,8 @@ export const experiments: Experiment[] = [
     title: 'Leve di primo genere e posizioni di equilibrio',
     section: 'Mechanics',
     desc: 'Misura i momenti rispetto a un fulcro e verifica il principio dei momenti usando una leva con carichi a distanze note.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -316,6 +318,7 @@ export const experiments: Experiment[] = [
     title: 'Sensibilità di una bilancia',
     section: 'Mechanics',
     desc: 'Misura la sensibilità di una bilancia aggiungendo masse sempre più piccole e osservando la minima massa rilevabile.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -469,6 +472,7 @@ export const experiments: Experiment[] = [
     title: 'Leve di secondo e terzo genere',
     section: 'Mechanics',
     desc: 'Confronta leve di secondo e terzo genere, misurando le forze necessarie per bilanciare carichi a varie distanze.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {
@@ -628,6 +632,7 @@ export const experiments: Experiment[] = [
     title: 'Misura di una lunghezza',
     section: 'Mechanics',
     desc: 'Misura la stessa lunghezza con strumenti diversi (righello, calibro, micrometro) e confronta precisione e incertezza.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -786,6 +791,7 @@ export const experiments: Experiment[] = [
     title: 'Misura della densità',
     section: 'Mechanics',
     desc: 'Determina la densità di solidi e liquidi misurando massa e volume con gli strumenti di laboratorio.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '40 min',
     summary: {
@@ -948,6 +954,7 @@ export const experiments: Experiment[] = [
     title: 'Composizione e scomposizione delle forze',
     section: 'Mechanics',
     desc: 'Trova la risultante di forze concorrenti usando il metodo del parallelogramma e verifica con un dinamometro.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1105,6 +1112,7 @@ export const experiments: Experiment[] = [
     title: 'Pulegge fisse',
     section: 'Mechanics',
     desc: 'Studia come una puleggia fissa cambia la direzione di una forza ma non il suo modulo.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1255,6 +1263,7 @@ export const experiments: Experiment[] = [
     title: 'Puleggia mobile',
     section: 'Mechanics',
     desc: 'Usa una puleggia mobile per dimezzare la forza necessaria a sollevare un carico.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1406,6 +1415,7 @@ export const experiments: Experiment[] = [
     title: 'Pulegge fisse e mobili',
     section: 'Mechanics',
     desc: 'Combina pulegge fisse e mobili per ottenere diversi vantaggi meccanici.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1562,6 +1572,7 @@ export const experiments: Experiment[] = [
     title: 'Piano inclinato',
     section: 'Mechanics',
     desc: 'Misura la forza necessaria per spingere un carico su piani inclinati a diverse angolazioni.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -1719,6 +1730,7 @@ export const experiments: Experiment[] = [
     title: 'Legge di Hooke',
     section: 'Mechanics',
     desc: 'Applica forze crescenti a una molla e verifica la proporzionalità tra forza e allungamento (legge di Hooke).',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2025,6 +2037,8 @@ export const experiments: Experiment[] = [
     title: 'Pendolo semplice',
     section: 'Mechanics',
     desc: 'Misura il periodo di un pendolo semplice al variare della lunghezza e verifica la formula T = 2π√(l/g).',
+    equipmentNeeded: 'basic-supplies',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2175,6 +2189,7 @@ export const experiments: Experiment[] = [
     title: 'Pendolo a molla',
     section: 'Mechanics',
     desc: 'Studia le oscillazioni di un pendolo a molla e determina la costante elastica dalla misura del periodo.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2474,6 +2489,8 @@ export const experiments: Experiment[] = [
     title: 'Principio di Archimede',
     section: 'Mechanics',
     desc: 'Misura la forza di spinta di Archimede su corpi immersi in acqua e verifica la legge di Archimede.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2633,6 +2650,7 @@ export const experiments: Experiment[] = [
     title: 'Temperatura di equilibrio dei liquidi mescolati',
     section: 'Heat',
     desc: 'Mescola liquidi a temperature diverse e misura la temperatura di equilibrio, confrontando il dato con la previsione teorica.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2785,6 +2803,7 @@ export const experiments: Experiment[] = [
     title: 'Trasferimento di calore e isolamento termico',
     section: 'Heat',
     desc: 'Confronta la velocità di raffreddamento di oggetti con diverso isolamento termico.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -2939,6 +2958,7 @@ export const experiments: Experiment[] = [
     title: 'Calore specifico dei solidi',
     section: 'Heat',
     desc: 'Riscalda campioni solidi di materiale noto e calcola il calore specifico dalla variazione di temperatura.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -3100,6 +3120,7 @@ export const experiments: Experiment[] = [
     title: 'Sensibilità al calore',
     section: 'Heat',
     desc: 'Testa la sensibilità delle dita al calore e determina la soglia di percezione termica.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '3 min',
     duration: '10 min',
     summary: {
@@ -3254,6 +3275,7 @@ export const experiments: Experiment[] = [
     title: 'Bicchiere a impulso (Pulse Glass)',
     section: 'Heat',
     desc: 'Osserva il trasferimento di calore per evaporazione e condensazione nel bicchiere a impulso.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '3 min',
     duration: '10 min',
     summary: {
@@ -3540,6 +3562,8 @@ export const experiments: Experiment[] = [
     title: 'Il manometro',
     section: 'Mechanics',
     desc: 'Costruisci un manometro a U e misura la pressione di gas in contenitori chiusi.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '10 min',
     summary: {
@@ -3835,6 +3859,8 @@ export const experiments: Experiment[] = [
     title: 'Il fenomeno della risonanza',
     section: 'Acoustics',
     desc: 'Dimostra la risonanza facendo vibrare un secondo diapason senza toccarlo, usando le onde sonore.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -3985,6 +4011,7 @@ export const experiments: Experiment[] = [
     title: 'Battimenti e interferenza acustica',
     section: 'Acoustics',
     desc: 'Sovrapponi due suoni di frequenza simile e osserva i battimenti — variazioni periodiche del volume.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4130,6 +4157,7 @@ export const experiments: Experiment[] = [
     title: 'Lunghezza focale',
     section: 'Optics',
     desc: 'Misura la lunghezza focale di lenti convergenti e divergenti usando oggetti a distanza nota.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4565,6 +4593,9 @@ export const experiments: Experiment[] = [
     title: 'Mescolanza dei colori',
     section: 'Optics',
     desc: 'Mescola luci colorate primarie e studia la sintesi additiva dei colori.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4708,6 +4739,7 @@ export const experiments: Experiment[] = [
     title: 'Microscopio e cannocchiale',
     section: 'Optics',
     desc: 'Costruisci un microscopio e un cannocchiale semplici con due lenti e studia i loro ingrandimenti.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -4856,6 +4888,7 @@ export const experiments: Experiment[] = [
     title: 'Prisma: composizione della luce',
     section: 'Optics',
     desc: 'Usa un prisma per scomporre la luce bianca nello spettro visibile e studiare la dispersione della luce.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -5001,6 +5034,7 @@ export const experiments: Experiment[] = [
     title: 'Ombre e penombre',
     section: 'Optics',
     desc: 'Studia la formazione di ombre e penombre proiettate da sorgenti luminose di diverse dimensioni.',
+    equipmentNeeded: 'basic-supplies',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -5155,6 +5189,7 @@ export const experiments: Experiment[] = [
     title: 'Specchi',
     section: 'Optics',
     desc: 'Esplora la riflessione della luce su specchi piani, concavi e convessi e verifica la legge della riflessione.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -5315,6 +5350,7 @@ export const experiments: Experiment[] = [
     title: 'Forza magnetica attrattiva e repulsiva',
     section: 'Magnetism',
     desc: 'Esplora le forze attrattive e repulsive tra magneti permanenti e misura la variazione con la distanza.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '3 min',
     duration: '10 min',
     summary: {
@@ -5455,6 +5491,7 @@ export const experiments: Experiment[] = [
     title: 'Forze del campo magnetico',
     section: 'Magnetism',
     desc: 'Mappa le linee del campo magnetico intorno a un magnete a barra usando limatura di ferro e bussoline.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '10 min',
     summary: {
@@ -5900,6 +5937,9 @@ export const experiments: Experiment[] = [
     title: 'Resistenza elettrica',
     section: 'Electricity',
     desc: 'Misura la resistenza di diversi conduttori con il metodo voltamperometrico e verifica la legge di Ohm.',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -6048,6 +6088,7 @@ export const experiments: Experiment[] = [
     title: 'Circuiti in serie e in parallelo',
     section: 'Electricity',
     desc: 'Confronta la corrente e la tensione in circuiti in serie e in parallelo e verifica le leggi di Kirchhoff.',
+    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '30 min',
     summary: {

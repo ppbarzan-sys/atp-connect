@@ -8,6 +8,7 @@ export const experimentsEs: Experiment[] =
     "title": "Palancas de primer género",
     "section": "Mechanics",
     "desc": "Estudiar el equilibrio de una palanca de primer género equilibrando masas conocidas a ambos lados de un punto de apoyo central.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -176,6 +177,7 @@ export const experimentsEs: Experiment[] =
     "title": "Palancas de segundo género",
     "section": "Mechanics",
     "desc": "Explorar cómo una palanca de segundo género (ej: carretilla) multiplica la fuerza colocando la carga entre el punto de apoyo y el esfuerzo.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -343,6 +345,7 @@ export const experimentsEs: Experiment[] =
     "title": "Palancas de tercer género",
     "section": "Mechanics",
     "desc": "Investigar una palanca de tercer género donde el esfuerzo se aplica entre el punto de apoyo y la carga, ganando velocidad a costa de fuerza.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -506,6 +509,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ley de Hooke y constante del resorte",
     "section": "Mechanics",
     "desc": "Colgar masas de un resorte y medir la extensión para verificar la Ley de Hooke F = kx y determinar la constante del resorte.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -675,6 +679,7 @@ export const experimentsEs: Experiment[] =
     "title": "Inclinarse: plano inclinado",
     "section": "Mechanics",
     "desc": "Hacer rodar un carrito por un plano inclinado para relacionar ángulo, fuerza normal y componente gravitacional a lo largo de la pendiente.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -843,6 +848,7 @@ export const experimentsEs: Experiment[] =
     "title": "Fricción estática vs. dinámica",
     "section": "Mechanics",
     "desc": "Medir la fuerza necesaria para iniciar y mantener el movimiento de un bloque, comparando fricción estática y dinámica.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -1015,6 +1021,7 @@ export const experimentsEs: Experiment[] =
     "title": "Péndulo simple",
     "section": "Mechanics",
     "desc": "Medir el período de un péndulo simple para diferentes longitudes y verificar T = 2π√(L/g).",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1182,6 +1189,7 @@ export const experimentsEs: Experiment[] =
     "title": "Poleas: ventaja mecánica",
     "section": "Mechanics",
     "desc": "Construir sistemas de poleas simples y compuestas para medir cómo la ventaja mecánica reduce la fuerza necesaria.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1342,6 +1350,7 @@ export const experimentsEs: Experiment[] =
     "title": "Centro de gravedad",
     "section": "Mechanics",
     "desc": "Encontrar el centro de gravedad de formas irregulares usando el método de suspensión.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1507,6 +1516,7 @@ export const experimentsEs: Experiment[] =
     "title": "Transferencia de calor por conducción",
     "section": "Mechanics",
     "desc": "Medir la conducción de calor a través de diferentes materiales comparando las tasas de transferencia térmica.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1673,6 +1683,7 @@ export const experimentsEs: Experiment[] =
     "title": "Transferencia de calor por convección",
     "section": "Mechanics",
     "desc": "Observar corrientes de convección en agua calentada usando indicadores de color.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -1840,6 +1851,7 @@ export const experimentsEs: Experiment[] =
     "title": "Transferencia de calor por radiación",
     "section": "Mechanics",
     "desc": "Comparar la radiación térmica de superficies claras y oscuras usando termómetros.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2007,6 +2019,7 @@ export const experimentsEs: Experiment[] =
     "title": "Calor específico del agua",
     "section": "Mechanics",
     "desc": "Calentar agua y medir temperatura vs. tiempo para determinar el calor específico.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -2172,6 +2185,7 @@ export const experimentsEs: Experiment[] =
     "title": "Cambios de estado: fusión del hielo",
     "section": "Mechanics",
     "desc": "Registrar la temperatura mientras el hielo se derrite para observar la meseta del cambio de estado.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2338,6 +2352,7 @@ export const experimentsEs: Experiment[] =
     "title": "Dilatación lineal de metales",
     "section": "Mechanics",
     "desc": "Calentar barras metálicas y medir su expansión longitudinal con un calibrador.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2504,6 +2519,7 @@ export const experimentsEs: Experiment[] =
     "title": "Dilatación volumétrica de líquidos",
     "section": "Mechanics",
     "desc": "Calentar líquidos en un matraz y medir el aumento de volumen por dilatación térmica.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2668,6 +2684,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ley de enfriamiento de Newton",
     "section": "Mechanics",
     "desc": "Registrar el enfriamiento de agua caliente en el tiempo para verificar la ley exponencial de Newton.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2837,6 +2854,7 @@ export const experimentsEs: Experiment[] =
     "title": "Equivalente mecánico del calor",
     "section": "Heat",
     "desc": "Convertir energía mecánica en calor por fricción y comparar con la energía térmica generada.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -2999,6 +3017,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ondas sonoras y frecuencia",
     "section": "Heat",
     "desc": "Usar diapasones y un osciloscopio para explorar cómo la frecuencia determina el tono del sonido.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3163,6 +3182,7 @@ export const experimentsEs: Experiment[] =
     "title": "Velocidad del sonido en el aire",
     "section": "Heat",
     "desc": "Medir el tiempo de eco o usar tubos de resonancia para calcular la velocidad del sonido en el aire.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -3334,6 +3354,7 @@ export const experimentsEs: Experiment[] =
     "title": "Resonancia de un tubo cerrado",
     "section": "Heat",
     "desc": "Encontrar las frecuencias de resonancia de un tubo cerrado en un extremo usando diapasones.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3498,6 +3519,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ondas estacionarias en una cuerda",
     "section": "Heat",
     "desc": "Generar ondas estacionarias en una cuerda vibrante y medir nodos y antinodos.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3652,6 +3674,7 @@ export const experimentsEs: Experiment[] =
     "title": "Reflexión de la luz",
     "section": "Heat",
     "desc": "Usar espejos planos para verificar la ley de reflexión: ángulo de incidencia = ángulo de reflexión.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -3812,6 +3835,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ley de Snell: refracción",
     "section": "Mechanics",
     "desc": "Pasar luz a través de bloques de vidrio para medir ángulos y verificar la ley de Snell n₁ sin θ₁ = n₂ sin θ₂.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -3978,6 +4002,7 @@ export const experimentsEs: Experiment[] =
     "title": "Dispersión por un prisma",
     "section": "Acoustics",
     "desc": "Pasar luz blanca a través de un prisma para observar la dispersión en el espectro de colores.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4143,6 +4168,7 @@ export const experimentsEs: Experiment[] =
     "title": "Lentes convergentes: formación de imagen",
     "section": "Acoustics",
     "desc": "Usar una lente convergente para formar imágenes reales e invertidas y verificar 1/f = 1/u + 1/v.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4303,6 +4329,7 @@ export const experimentsEs: Experiment[] =
     "title": "Lentes divergentes: imágenes virtuales",
     "section": "Acoustics",
     "desc": "Observar las imágenes virtuales, derechas y reducidas formadas por lentes divergentes.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4464,6 +4491,7 @@ export const experimentsEs: Experiment[] =
     "title": "Cámara estenopeica",
     "section": "Optics",
     "desc": "Construir una cámara estenopeica para demostrar la propagación rectilínea de la luz.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -4628,6 +4656,7 @@ export const experimentsEs: Experiment[] =
     "title": "Mezcla de colores con LEDs",
     "section": "Optics",
     "desc": "Superponer luces LED roja, verde y azul para explorar la síntesis aditiva del color.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {
@@ -4791,6 +4820,7 @@ export const experimentsEs: Experiment[] =
     "title": "Campo magnético de un imán de barra",
     "section": "Optics",
     "desc": "Trazar las líneas de campo magnético alrededor de un imán de barra usando limaduras de hierro.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "40 min",
     "summary": {
@@ -4956,6 +4986,7 @@ export const experimentsEs: Experiment[] =
     "title": "Fabricar un electroimán",
     "section": "Optics",
     "desc": "Enrollar alambre alrededor de un clavo de hierro y conectar a una batería para crear un electroimán.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5119,6 +5150,7 @@ export const experimentsEs: Experiment[] =
     "title": "Motor eléctrico simple",
     "section": "Optics",
     "desc": "Construir un motor de CC simple con una bobina, imanes y un conmutador.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5285,6 +5317,7 @@ export const experimentsEs: Experiment[] =
     "title": "Inducción electromagnética",
     "section": "Optics",
     "desc": "Mover un imán dentro de una bobina para generar corriente y demostrar la ley de Faraday.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5446,6 +5479,7 @@ export const experimentsEs: Experiment[] =
     "title": "Brújula y campo magnético terrestre",
     "section": "Optics",
     "desc": "Usar una brújula para mapear el campo magnético terrestre y encontrar el norte magnético.",
+    "equipmentNeeded": "basic-supplies",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5612,6 +5646,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ley de Ohm",
     "section": "Optics",
     "desc": "Medir voltaje y corriente para diferentes resistencias y verificar V = IR.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -5780,6 +5815,7 @@ export const experimentsEs: Experiment[] =
     "title": "Resistencia y longitud del alambre",
     "section": "Magnetism",
     "desc": "Medir la resistencia de alambres de diferentes longitudes para demostrar la relación lineal R ∝ L.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -5937,6 +5973,7 @@ export const experimentsEs: Experiment[] =
     "title": "Resistividad y material",
     "section": "Magnetism",
     "desc": "Comparar la resistencia de alambres de diferentes materiales para entender la resistividad.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "10 min",
     "summary": {
@@ -6093,6 +6130,7 @@ export const experimentsEs: Experiment[] =
     "title": "Potencia eléctrica y calentamiento",
     "section": "Magnetism",
     "desc": "Medir el calentamiento producido por una resistencia eléctrica y calcular P = IV.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "20 min",
     "summary": {
@@ -6252,6 +6290,7 @@ export const experimentsEs: Experiment[] =
     "title": "Puente de Wheatstone",
     "section": "Magnetism",
     "desc": "Construir un puente de Wheatstone para medir resistencias desconocidas con precisión.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "3 min",
     "duration": "10 min",
     "summary": {
@@ -6408,6 +6447,7 @@ export const experimentsEs: Experiment[] =
     "title": "Ley de Kirchhoff",
     "section": "Electricity",
     "desc": "Verificar las leyes de corrientes y voltajes de Kirchhoff en un circuito con múltiples lazos.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "20 min",
     "summary": {
@@ -6571,6 +6611,7 @@ export const experimentsEs: Experiment[] =
     "title": "Circuitos en serie vs. en paralelo",
     "section": "Electricity",
     "desc": "Construir circuitos en serie y en paralelo para comparar voltajes, corrientes y resistencia total.",
+    "equipmentNeeded": "mobile-lab",
     "setupTime": "5 min",
     "duration": "30 min",
     "summary": {

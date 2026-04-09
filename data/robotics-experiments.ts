@@ -22,6 +22,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'LED Blink \u2014 Your First Circuit',
     section: 'Fundamentals',
     desc: 'Build your first circuit by connecting an LED to Arduino and writing code to make it blink on and off.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -155,6 +156,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Traffic Light Controller',
     section: 'Fundamentals',
     desc: 'Build a 3-LED traffic light system and program it to cycle through red, yellow, and green with realistic timing.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -285,6 +287,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Button-Controlled LED',
     section: 'Fundamentals',
     desc: 'Use a pushbutton as a digital input to control an LED. Learn about digital input, pull-down resistors, and conditional logic.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -415,6 +418,7 @@ export const roboticsExperiments: Experiment[] = [
     section: 'Fundamentals',
     desc: "Connect a potentiometer to Arduino's analog input and read variable voltage values from 0 to 1023.",
     setupTime: '10 min',
+    equipmentNeeded: 'arduino-kit',
     duration: '25 min',
     summary: {
       whatTheyLearn: 'Students learn about analog input (0-1023), PWM output (0-255), the map() function, and voltage dividers.',
@@ -541,6 +545,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Temperature Sensor \u2014 Measuring Heat',
     section: 'Sensors',
     desc: 'Use the TMP36 temperature sensor to measure ambient temperature and display readings on the Serial Monitor.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -666,6 +671,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Light Sensor \u2014 Measuring Brightness',
     section: 'Sensors',
     desc: 'Build a light-sensing circuit using a photoresistor (LDR) and create an automatic night light.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -794,6 +800,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Ultrasonic Distance Sensor',
     section: 'Sensors',
     desc: 'Measure distances using sound waves with the ultrasonic sensor. Calculate speed of sound from your measurements.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -920,6 +927,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Environmental Monitoring Station',
     section: 'Sensors',
     desc: 'Use the Science Kit R3 carrier board to simultaneously read temperature, humidity, pressure, and light \u2014 building a weather station.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '5 min',
     duration: '35 min',
     summary: {
@@ -1044,6 +1052,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Servo Motor \u2014 Precision Angle Control',
     section: 'Actuators',
     desc: 'Control a servo motor to rotate to precise angles (0-180\u00B0) using a potentiometer as input.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '10 min',
     duration: '30 min',
     summary: {
@@ -1168,6 +1177,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'DC Motor Speed Control',
     section: 'Actuators',
     desc: 'Control the speed and direction of a DC motor using the H-bridge (L293D) motor driver IC.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '15 min',
     duration: '35 min',
     summary: {
@@ -1295,6 +1305,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Piezo Buzzer \u2014 Making Music with Code',
     section: 'Actuators',
     desc: 'Generate different musical tones using a piezo buzzer and program a simple melody.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '5 min',
     duration: '25 min',
     summary: {
@@ -1420,6 +1431,7 @@ export const roboticsExperiments: Experiment[] = [
     title: 'Smart Night Light \u2014 Combining Sensors & Actuators',
     section: 'Projects',
     desc: 'Build an automatic night light that turns on when dark, adjusts brightness based on ambient light, and plays a tone when activated.',
+    equipmentNeeded: 'arduino-kit',
     setupTime: '15 min',
     duration: '40 min',
     summary: {

@@ -2,6 +2,7 @@ import './globals.css'
 import TeacherToggle from '@/components/TeacherToggle'
 import AppShell from '@/components/AppShell'
 import InstallPrompt from '@/components/InstallPrompt'
+import Celebrations from '@/components/Celebrations'
 import { LangProvider } from '@/lib/i18n'
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <LangProvider>
           <AppShell>
+            <Celebrations />
             {children}
           </AppShell>
           <TeacherToggle />

@@ -4,6 +4,7 @@ import { experiments } from './experiments'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const arTranslations: Record<number, any> = {
   1: {
+    equipmentNeeded: 'mobile-lab',
     title: 'روافع الدرجة الأولى',
     desc: 'دراسة اتزان رافعة من الدرجة الأولى عن طريق موازنة كتل معلومة على جانبي نقطة ارتكاز مركزية.',
     summary: {
@@ -130,6 +131,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   2: {
+    equipmentNeeded: 'mobile-lab',
     title: 'روافع الدرجة الأولى ومواضع الاتزان',
     desc: 'قياس العزوم حول نقطة ارتكاز والتحقق من مبدأ العزوم باستخدام رافعة ذات أحمال على مسافات معلومة.',
     summary: {
@@ -250,6 +252,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   3: {
+    equipmentNeeded: 'mobile-lab',
     title: 'حساسية الميزان',
     desc: 'تحديد حساسية ميزان ذي ذراع عن طريق قياس عدد أقسام التدريج المقابلة لكتلة مضافة معلومة.',
     summary: {
@@ -376,6 +379,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   4: {
+    equipmentNeeded: 'mobile-lab',
     title: 'روافع الدرجة الثانية والثالثة',
     desc: 'دراسة رافعة من الدرجة الثانية بنقطة ارتكاز عند أحد الطرفين والتحقق من مبدأ العزوم للمحاور غير المركزية.',
     summary: {
@@ -513,6 +517,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   5: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قياس الطول',
     desc: 'قياس قطر وارتفاع أسطوانات معدنية باستخدام القدمة ذات الورنية وحساب حجومها.',
     summary: {
@@ -649,6 +654,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   6: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قياس الكثافة',
     desc: 'تحديد كثافة أسطوانات معدنية بطريقتين: الكتلة/الحجم واستخدام وعاء الإزاحة.',
     summary: {
@@ -786,6 +792,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   8: {
+    equipmentNeeded: 'mobile-lab',
     title: 'تركيب وتحليل القوى',
     desc: 'إيجاد محصلة قوتين متلاقيتين باستخدام قاعدة متوازي الأضلاع والتحقق منها بقوة موازنة ثالثة.',
     summary: {
@@ -917,6 +924,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   9: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البكرات الثابتة',
     desc: 'إثبات أن البكرة الثابتة المفردة تغيّر اتجاه القوة دون تغيير مقدارها؛ الفائدة الميكانيكية = 1.',
     summary: {
@@ -1044,6 +1052,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   10: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البكرة المتحركة',
     desc: 'إثبات أن البكرة المتحركة المفردة توفر فائدة ميكانيكية مقدارها 2، فتُنصّف الجهد المطلوب.',
     summary: {
@@ -1173,6 +1182,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   11: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البكرات الثابتة والمتحركة',
     desc: 'اجمع بين بكرة ثابتة وبكرة متحركة وأظهر أن النظام يحقق ميزة ميكانيكية MA ≈ 2 مع فائدة تغيير اتجاه القوة.',
     summary: {
@@ -1303,6 +1313,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   12: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المستوى المائل',
     desc: 'قِس القوة اللازمة لسحب كتلة على مستوى مائل وقارنها مع المركبة النظرية للجاذبية على طول السطح.',
     summary: {
@@ -1435,6 +1446,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   13: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قانون هوك',
     desc: 'تحقّق من قانون هوك بقياس استطالة النابض كدالة للقوة المطبقة وحدّد ثابت النابض k.',
     summary: {
@@ -1570,6 +1582,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   14: {
+    equipmentNeeded: 'mobile-lab',
     title: 'النوابض على التوالي وعلى التوازي',
     desc: 'قِس ثابت النابض الفعّال لنوابض موصولة على التوالي وعلى التوازي، واستكشف "مفارقة النابض" المدهشة.',
     summary: {
@@ -1699,6 +1712,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   15: {
+    equipmentNeeded: 'basic-supplies',
     title: 'البندول البسيط',
     desc: 'قِس دورة البندول البسيط لأطوال مختلفة وتحقّق من العلاقة T = 2π√(L/g).',
     summary: {
@@ -1829,6 +1843,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   16: {
+    equipmentNeeded: 'mobile-lab',
     title: 'بندول النابض',
     desc: 'قِس دورة مذبذب كتلة-نابض وتحقّق من العلاقة T = 2π√(m/k).',
     summary: {
@@ -1963,6 +1978,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   17: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الأوعية المتصلة',
     desc: 'لاحظ أن السائل المتصل يصل إلى نفس المستوى في جميع الأنابيب، مما يتحقق من قانون ستيفينو p = ρgh.',
     summary: {
@@ -2091,6 +2107,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   18: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مبدأ أرخميدس',
     desc: 'تحقّق من مبدأ أرخميدس بقياس قوة الطفو على أجسام مغمورة ومقارنتها مع وزن السائل المُزاح.',
     summary: {
@@ -2228,6 +2245,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   19: {
+    equipmentNeeded: 'mobile-lab',
     title: 'درجة حرارة التوازن للسوائل المخلوطة',
     desc: 'اخلط حجمين متساويين من الماء الساخن والبارد وقِس درجة حرارة التوازن للتحقق من تبادل الحرارة.',
     summary: {
@@ -2358,6 +2376,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   20: {
+    equipmentNeeded: 'mobile-lab',
     title: 'انتقال الحرارة والعزل الحراري',
     desc: 'قارن معدل تبريد الماء الساخن بدون عزل، وبطبقة عازلة واحدة، وبطبقتين عازلتين.',
     summary: {
@@ -2490,6 +2509,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   21: {
+    equipmentNeeded: 'mobile-lab',
     title: 'السعة الحرارية النوعية للمواد الصلبة',
     desc: 'تحديد السعة الحرارية النوعية للمعادن عن طريق قياس تغيرات درجة الحرارة عند إسقاط معدن ساخن في ماء بارد.',
     summary: {
@@ -2626,6 +2646,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   22: {
+    equipmentNeeded: 'basic-supplies',
     title: 'الحساسية الحرارية',
     desc: 'توضيح ذاتية الإحساس بدرجة الحرارة باستخدام تجربة الأوعية الثلاثة للوك.',
     summary: {
@@ -2758,6 +2779,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   23: {
+    equipmentNeeded: 'mobile-lab',
     title: 'الزجاجة النابضة',
     desc: 'مراقبة الزجاجة النابضة (لعبة فرانكلين) لفهم كيف يخفض الضغط المنخفض درجة غليان السائل.',
     summary: {
@@ -2886,6 +2908,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   24: {
+    equipmentNeeded: 'mobile-lab',
     title: 'ثابت الزمن لمقياس الحرارة',
     desc: 'قياس سرعة استجابة مقياس الحرارة لتغيّر مفاجئ في درجة الحرارة وتحديد ثابت الزمن τ.',
     summary: {
@@ -3017,6 +3040,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   25: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المانومتر',
     desc: 'استخدام مانومتر أنبوبي على شكل حرف U لقياس فروق ضغط الغاز نوعياً من خلال ملاحظة فروق مستوى السائل.',
     summary: {
@@ -3151,6 +3175,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   26: {
+    equipmentNeeded: 'mobile-lab',
     title: 'استخدام الشوكات الرنانة',
     desc: 'إيجاد طول الرنين لعمود هوائي باستخدام شوكة رنانة بتردد 440 Hz وتحديد سرعة الصوت.',
     summary: {
@@ -3278,6 +3303,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   27: {
+    equipmentNeeded: 'mobile-lab',
     title: 'ظاهرة الرنين',
     desc: 'توضيح الرنين التعاطفي بين شوكتين رنانتين متماثلتين على صندوقي رنين متقابلين.',
     summary: {
@@ -3403,6 +3429,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   28: {
+    equipmentNeeded: 'mobile-lab',
     title: 'النبضات والتداخل في الصوتيات',
     desc: 'إنتاج نبضات صوتية بتشغيل شوكتين رنانتين بترددين مختلفين قليلاً وقياس تردد النبضات.',
     summary: {
@@ -3529,6 +3556,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   29: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البُعد البؤري',
     desc: 'قياس الأبعاد البؤرية لعدسات مقعرة ومحدبة الوجهين عن طريق تركيز ضوء متوازٍ أو استخدام أجسام بعيدة.',
     summary: {
@@ -3655,6 +3683,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   30: {
+    equipmentNeeded: 'mobile-lab',
     title: 'معادلة العدسة الرقيقة',
     desc: 'التحقق من معادلة العدسة الرقيقة 1/p + 1/q = 1/f باستخدام عدسة مجمِّعة وقياس مسافتي الجسم والصورة.',
     summary: {
@@ -3783,6 +3812,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   31: {
+    equipmentNeeded: 'mobile-lab',
     title: 'التكبير',
     desc: 'قياس التكبير الخطي لعدسة مجمِّعة بمقارنة حجمي الصورة والجسم والتحقق من m = −v/u.',
     summary: {
@@ -3914,6 +3944,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   32: {
+    equipmentNeeded: 'mobile-lab',
     title: 'مزج الألوان',
     desc: 'امزج أضواءً ملونة (التركيب الجمعي) ومرشحات ملونة (التركيب الطرحي) لفهم إدراك الألوان.',
     summary: {
@@ -4031,6 +4062,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   33: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المجهر – التلسكوب',
     desc: 'ابنِ مجهراً بسيطاً وتلسكوباً باستخدام العدسات المتاحة وقِس تكبيرهما.',
     summary: {
@@ -4148,6 +4180,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   34: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المنشور: تركيب الضوء',
     desc: 'أمرر ضوءاً أبيض عبر منشور زجاجي لإنتاج طيف مرئي ومراقبة الانكسار المعتمد على الطول الموجي (التشتت).',
     summary: {
@@ -4270,6 +4303,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   35: {
+    equipmentNeeded: 'basic-supplies',
     title: 'الظلال وشبه الظل',
     desc: 'تحقق من كيفية اعتماد حجم الظل ووضوحه على حجم المصدر والمواقع النسبية للمصدر والجسم والشاشة.',
     summary: {
@@ -4404,6 +4438,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   36: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المرايا',
     desc: 'تحقق من تكوّن الصور بواسطة المرايا المقعرة والمحدبة لأجسام على مسافات مختلفة.',
     summary: {
@@ -4540,6 +4575,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   37: {
+    equipmentNeeded: 'mobile-lab',
     title: 'القوة المغناطيسية: التجاذب والتنافر',
     desc: 'تحقق من القوى بين المغانط القضيبية وحدد مناطق التجاذب والتنافر.',
     summary: {
@@ -4671,6 +4707,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   38: {
+    equipmentNeeded: 'mobile-lab',
     title: 'قوى المجال المغناطيسي',
     desc: 'ارسم خريطة المجال المغناطيسي لمغناطيس على شكل حرف U باستخدام غرفة مجال ثنائية الأبعاد ببُرادة حديد.',
     summary: {
@@ -4801,6 +4838,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   39: {
+    equipmentNeeded: 'mobile-lab',
     title: 'البوصلة والمغناطيسية',
     desc: 'استخدم بوصلة لرسم خريطة اتجاه المجال المغناطيسي ولاحظ كيف تتوافق البوصلة مع مجال خارجي.',
     summary: {
@@ -4931,6 +4969,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   40: {
+    equipmentNeeded: 'mobile-lab',
     title: 'لعبة مغناطيسية شائعة',
     desc: 'استكشف كيف تعكس كرة فولاذية بين مغناطيسين متشابهي القطب التفاعل الظاهري من تنافر إلى تجاذب.',
     summary: {
@@ -5061,6 +5100,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   41: {
+    equipmentNeeded: 'mobile-lab',
     title: 'المقاومة الكهربائية',
     desc: 'تحقق من قانون أوم بقياس التيار عبر مقاومة عند فولتيات مختلفة وتحديد قيمة المقاومة.',
     summary: {
@@ -5192,6 +5232,7 @@ const arTranslations: Record<number, any> = {
     },
   },
   42: {
+    equipmentNeeded: 'mobile-lab',
     title: 'دوائر التوالي مقابل التوازي',
     desc: 'قِس المقاومة الكلية لتوصيلات المقاومات على التوالي وعلى التوازي وتحقق من صيغ التوصيل.',
     summary: {

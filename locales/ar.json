@@ -484,6 +484,30 @@
     "save": "حفظ التقييم",
     "cancel": "إلغاء"
   },
+  "gamification": {
+    "level": "المستوى",
+    "levelUp": "ارتقيت!",
+    "toNextLevel": "للمستوى التالي",
+    "dayStreak": "أيام متتالية!",
+    "perfectScore": "درجة كاملة!",
+    "dailyGoal": "هدف اليوم",
+    "xpEarned": "نقاط الخبرة المكتسبة",
+    "totalXP": "إجمالي نقاط الخبرة",
+    "currentStreak": "السلسلة الحالية",
+    "longestStreak": "أطول سلسلة",
+    "levels": {
+      "labAssistant": "مساعد مختبر",
+      "labTechnician": "فني مختبر",
+      "juniorResearcher": "باحث مبتدئ",
+      "researcher": "باحث",
+      "seniorResearcher": "باحث أول",
+      "leadScientist": "عالم رئيسي",
+      "principalScientist": "عالم أساسي",
+      "scienceDirector": "مدير العلوم",
+      "distinguishedFellow": "زميل متميز",
+      "chiefScientist": "كبير العلماء"
+    }
+  },
   "class_dashboard": {
     "title": "لوحة الفصل",
     "students": "الطلاب",
@@ -495,5 +519,15 @@
     "by_experiment": "حسب التجربة",
     "export_grades": "تصدير درجات الفصل",
     "no_data": "لا توجد درجات مسجلة"
+  },
+  "equipment": {
+    "filterLabel": "المعدات المطلوبة:",
+    "all": "الكل",
+    "mobileLab": "المختبر المتنقل",
+    "arduinoKit": "مجموعة أردوينو",
+    "basicSupplies": "مستلزمات أساسية",
+    "noEquipment": "بدون معدات",
+    "noMatchTitle": "لا توجد تجارب تطابق هذا الفلتر",
+    "noMatchDesc": "حاول اختيار فئة معدات مختلفة"
   }
 }

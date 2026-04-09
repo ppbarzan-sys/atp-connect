@@ -415,8 +415,280 @@ const aiCoursesFr: AICourse[] = [
   }
 ]
 
+const aiCoursesAr: AICourse[] = [
+  {
+    id: 'ai-fluency-students',
+    title: 'الطلاقة في الذكاء الاصطناعي للطلاب',
+    description: 'تعلّم أساسيات الذكاء الاصطناعي — كيف يعمل، وما يمكنه فعله، وكيفية استخدامه بمسؤولية في التعلّم والبحث العلمي.',
+    category: 'students',
+    duration: '١-٢ ساعة',
+    difficulty: 'Beginner',
+    icon: '🧠',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-101',
+    title: 'كلود ١٠١',
+    description: 'أتقن أساسيات استخدام كلود في التعلّم والكتابة وحل المشكلات والبحث العلمي. الخطوة الأولى المثالية لأدوات الذكاء الاصطناعي.',
+    category: 'students',
+    duration: '١-٢ ساعة',
+    difficulty: 'Beginner',
+    icon: '💬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-foundations',
+    title: 'الطلاقة في الذكاء الاصطناعي: الإطار والأسس',
+    description: 'اكتسب فهمًا عميقًا لقدرات الذكاء الاصطناعي وحدوده واستخدامه المسؤول. مناسب للطلاب الراغبين في تجاوز الأساسيات.',
+    category: 'students',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Beginner',
+    icon: '🏗️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-educators',
+    title: 'الطلاقة في الذكاء الاصطناعي للمعلمين',
+    description: 'اكتشف كيفية دمج أدوات الذكاء الاصطناعي في ممارستك التعليمية، من تخطيط الدروس إلى تقييم الطلاب والتعلّم المخصص.',
+    category: 'educators',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Beginner',
+    icon: '📚',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'teaching-ai-fluency',
+    title: 'تدريس الطلاقة في الذكاء الاصطناعي',
+    description: 'أُطر عمل وخطط دروس جاهزة للاستخدام لتعليم محو الأمية في الذكاء الاصطناعي لطلابك. تشمل أنشطة صفية وأدلة نقاش.',
+    category: 'educators',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Intermediate',
+    icon: '🎯',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-nonprofits',
+    title: 'الطلاقة في الذكاء الاصطناعي للمنظمات غير الربحية',
+    description: 'تعلّم كيف يمكن للمنظمات غير الربحية والمدارس الاستفادة من الذكاء الاصطناعي لتعزيز رسالتها وتحسين عملياتها وخدمة المجتمعات بشكل أفضل.',
+    category: 'educators',
+    duration: '١-٢ ساعة',
+    difficulty: 'Beginner',
+    icon: '🤝',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'building-claude-api',
+    title: 'البناء باستخدام واجهة كلود البرمجية',
+    description: 'تعلّم بناء تطبيقات حقيقية مدعومة بكلود. يغطي المصادقة على الواجهة البرمجية وهندسة الأوامر والاستجابات المتدفقة واستخدام الأدوات.',
+    category: 'advanced',
+    duration: '٣-٤ ساعات',
+    difficulty: 'Advanced',
+    icon: '⚡',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-code-action',
+    title: 'كلود كود في العمل',
+    description: 'استخدم كلود كود لمهام البرمجة الذاتية مباشرة من الطرفية. ابنِ وصحّح الأخطاء وأطلق الكود بسرعة أكبر بمساعدة الذكاء الاصطناعي.',
+    category: 'advanced',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Intermediate',
+    icon: '💻',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'intro-mcp',
+    title: 'مقدمة في بروتوكول سياق النموذج',
+    description: 'افهم كيف يربط بروتوكول سياق النموذج نماذج الذكاء الاصطناعي بالأدوات الخارجية وقواعد البيانات والواجهات البرمجية. ابنِ تكاملاتك الخاصة.',
+    category: 'advanced',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Advanced',
+    icon: '🔌',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'mcp-advanced',
+    title: 'بروتوكول سياق النموذج: مواضيع متقدمة',
+    description: 'تعمّق في أنماط بروتوكول سياق النموذج المتقدمة — وسائل النقل المخصصة والمصادقة وبنيات الخوادم المتعددة والنشر الإنتاجي.',
+    category: 'advanced',
+    duration: '٣-٤ ساعات',
+    difficulty: 'Advanced',
+    icon: '🔬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'agent-skills',
+    title: 'مقدمة في مهارات الوكيل',
+    description: 'تعلّم إنشاء حزم مهارات قابلة لإعادة الاستخدام لوكلاء الذكاء الاصطناعي. صمّم أوامر وأدوات وسير عمل تجعل الوكلاء أكثر قدرة وموثوقية.',
+    category: 'advanced',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Intermediate',
+    icon: '🛠️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-bedrock',
+    title: 'كلود مع أمازون بيدروك',
+    description: 'انشر ووسّع نطاق كلود عبر أمازون بيدروك. يغطي الإعداد وخيارات الضبط الدقيق وأمان المؤسسات وأفضل ممارسات الإنتاج.',
+    category: 'advanced',
+    duration: '٢-٣ ساعات',
+    difficulty: 'Advanced',
+    icon: '☁️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  }
+]
+
+const aiCoursesEs: AICourse[] = [
+  {
+    id: 'ai-fluency-students',
+    title: 'Fluidez en IA para Estudiantes',
+    description: 'Aprende los fundamentos de la inteligencia artificial: cómo funciona, qué puede hacer y cómo usarla de manera responsable para el aprendizaje y la investigación.',
+    category: 'students',
+    duration: '1-2 horas',
+    difficulty: 'Beginner',
+    icon: '🧠',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-101',
+    title: 'Claude 101',
+    description: 'Domina los conceptos básicos del uso de Claude para el aprendizaje, la escritura, la resolución de problemas y la investigación científica. El primer paso perfecto en herramientas de IA.',
+    category: 'students',
+    duration: '1-2 horas',
+    difficulty: 'Beginner',
+    icon: '💬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-foundations',
+    title: 'Fluidez en IA: Marco y Fundamentos',
+    description: 'Desarrolla una comprensión profunda de las capacidades, limitaciones y uso responsable de la IA. Ideal para estudiantes que quieren ir más allá de lo básico.',
+    category: 'students',
+    duration: '2-3 horas',
+    difficulty: 'Beginner',
+    icon: '🏗️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-educators',
+    title: 'Fluidez en IA para Educadores',
+    description: 'Descubre cómo integrar eficazmente las herramientas de IA en tu práctica docente, desde la planificación de lecciones hasta la evaluación de estudiantes y el aprendizaje personalizado.',
+    category: 'educators',
+    duration: '2-3 horas',
+    difficulty: 'Beginner',
+    icon: '📚',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'teaching-ai-fluency',
+    title: 'Enseñando Fluidez en IA',
+    description: 'Marcos y planes de lecciones listos para usar para enseñar alfabetización en IA a tus estudiantes. Incluye actividades en el aula y guías de discusión.',
+    category: 'educators',
+    duration: '2-3 horas',
+    difficulty: 'Intermediate',
+    icon: '🎯',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'ai-fluency-nonprofits',
+    title: 'Fluidez en IA para Organizaciones Sin Fines de Lucro',
+    description: 'Aprende cómo las organizaciones sin fines de lucro y las escuelas pueden aprovechar la IA para amplificar su misión, mejorar sus operaciones y servir mejor a las comunidades.',
+    category: 'educators',
+    duration: '1-2 horas',
+    difficulty: 'Beginner',
+    icon: '🤝',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'building-claude-api',
+    title: 'Construyendo con la API de Claude',
+    description: 'Aprende a construir aplicaciones reales impulsadas por Claude. Cubre autenticación de API, ingeniería de prompts, respuestas en streaming y uso de herramientas.',
+    category: 'advanced',
+    duration: '3-4 horas',
+    difficulty: 'Advanced',
+    icon: '⚡',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-code-action',
+    title: 'Claude Code en Acción',
+    description: 'Usa Claude Code para tareas de programación agéntica directamente desde la terminal. Construye, depura y lanza código más rápido con asistencia de IA.',
+    category: 'advanced',
+    duration: '2-3 horas',
+    difficulty: 'Intermediate',
+    icon: '💻',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'intro-mcp',
+    title: 'Introducción al Protocolo de Contexto de Modelo',
+    description: 'Comprende cómo MCP conecta modelos de IA con herramientas externas, bases de datos y APIs. Construye tus propias integraciones y amplía las capacidades de la IA.',
+    category: 'advanced',
+    duration: '2-3 horas',
+    difficulty: 'Advanced',
+    icon: '🔌',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'mcp-advanced',
+    title: 'MCP: Temas Avanzados',
+    description: 'Profundiza en patrones avanzados del Protocolo de Contexto de Modelo: transportes personalizados, autenticación, arquitecturas multi-servidor y despliegue en producción.',
+    category: 'advanced',
+    duration: '3-4 horas',
+    difficulty: 'Advanced',
+    icon: '🔬',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'agent-skills',
+    title: 'Introducción a Habilidades de Agentes',
+    description: 'Aprende a crear paquetes de habilidades reutilizables para agentes de IA. Diseña prompts, herramientas y flujos de trabajo que hacen a los agentes más capaces y confiables.',
+    category: 'advanced',
+    duration: '2-3 horas',
+    difficulty: 'Intermediate',
+    icon: '🛠️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  },
+  {
+    id: 'claude-bedrock',
+    title: 'Claude con Amazon Bedrock',
+    description: 'Despliega y escala Claude a través de AWS Bedrock. Cubre configuración, opciones de ajuste fino, seguridad empresarial y mejores prácticas de producción.',
+    category: 'advanced',
+    duration: '2-3 horas',
+    difficulty: 'Advanced',
+    icon: '☁️',
+    url: 'https://anthropic.skilljar.com/',
+    provider: 'Anthropic'
+  }
+]
+
 export function getAICourses(locale: string): AICourse[] {
   if (locale === 'it') return aiCoursesIt
   if (locale === 'fr') return aiCoursesFr
+  if (locale === 'ar') return aiCoursesAr
+  if (locale === 'es') return aiCoursesEs
   return aiCourses
 }

@@ -13,6 +13,7 @@ import { aiQuizzes } from '@/data/ai-quizzes'
 import ConceptMasteryMap, { computeConceptMastery } from '@/components/dashboard/ConceptMasteryMap'
 import { PerformanceTrend } from '@/components/dashboard/PerformanceTrend'
 import { achievements, getEarnedAchievements } from '@/lib/achievements'
+import XPBar from '@/components/XPBar'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -115,6 +116,9 @@ export default function DashboardPage() {
         </div>
 
         <div style={{ padding: '1.5rem 2rem', maxWidth: 900, margin: '0 auto' }}>
+          {/* XP & Level Bar */}
+          <XPBar />
+
           {!hasProgress ? (
             <div style={{
               textAlign: 'center',
