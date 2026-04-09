@@ -8,6 +8,7 @@ import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal, { GaliContext } from '@/components/GaliModal'
 import { useI18n } from '@/lib/i18n'
+import { loadResults, loadTeacherMode, getCompletedExperiments, computeOverallAverage } from '@/lib/storage'
 
 export default function ChemistryExperimentPage() {
   const { id } = useParams()
@@ -20,18 +21,58 @@ export default function ChemistryExperimentPage() {
 
   const exp = chemistryExperiments.find(e => e.num === Number(id))
 
+  function buildRichContext(): GaliContext {
+    if (!exp) return { section: 'all' }
+    const ctx: GaliContext = {
+      section: exp.section,
+      experimentTitle: exp.title,
+      experimentNum: exp.num,
+      subject: 'chemistry',
+      experimentSummary: exp.summary.whatTheyLearn,
+      expectedOutcome: exp.summary.expectedOutcome,
+      equipment: exp.experiment.equipment.map(e => e.name),
+      theoryPoints: exp.experiment.theoryPoints,
+      formula: exp.experiment.formula,
+      realWorldConnections: exp.experiment.realWorldConnections,
+      misconceptions: exp.overview.misconceptions,
+      conceptBreakdown: exp.overview.conceptBreakdown,
+      dataTableHeaders: exp.dataTable.headers,
+      expectedDataRanges: exp.ai.expected,
+      completedExperimentCount: getCompletedExperiments().length,
+      overallAvgScore: computeOverallAverage(),
+      isTeacherMode: loadTeacherMode(),
+    }
+    const mcqs = exp.questions?.mcq ?? []
+    if (mcqs.length > 0) {
+      const savedAnswers = loadResults(exp.num)
+      const answeredKeys = mcqs.filter((_, i) => savedAnswers[`mcq-${i}`] !== undefined)
+      if (answeredKeys.length > 0) {
+        const correct = mcqs.filter((q, i) => {
+          const ua = savedAnswers[`mcq-${i}`]
+          return ua !== undefined && parseInt(ua) === q.correctIndex
+        }).length
+        const wrongTopics = mcqs
+          .filter((q, i) => {
+            const ua = savedAnswers[`mcq-${i}`]
+            return ua !== undefined && parseInt(ua) !== q.correctIndex
+          })
+          .map(q => q.text)
+        ctx.quizScore = { correct, total: mcqs.length, wrongTopics }
+      }
+    }
+    return ctx
+  }
+
   function openGali() {
     if (!exp) return
-    setGaliCtx({ section: exp.section, experimentTitle: exp.title, experimentNum: exp.num })
+    setGaliCtx(buildRichContext())
     setGaliOpen(true)
   }
 
   function openGaliForQuestion(questionText: string, correctAnswer: string, userAnswer: string) {
     if (!exp) return
     setGaliCtx({
-      section: exp.section,
-      experimentTitle: exp.title,
-      experimentNum: exp.num,
+      ...buildRichContext(),
       focusQuestion: { text: questionText, userAnswer, correctAnswer },
     })
     setGaliOpen(true)

@@ -15,6 +15,35 @@ interface ChatContext {
   courseTitle?: string
   courseProvider?: string
   quizScore?: { correct: number; total: number; wrongTopics?: string[] }
+  focusQuestion?: { text: string; userAnswer: string; correctAnswer: string }
+
+  // Full experiment awareness
+  experimentSummary?: string
+  expectedOutcome?: string
+  equipment?: string[]
+  theoryPoints?: string[]
+  formula?: string
+  realWorldConnections?: string[]
+  misconceptions?: string[]
+  conceptBreakdown?: Array<{ label: string; pct: number }>
+  dataTableHeaders?: string[]
+  expectedDataRanges?: string
+
+  // Student activity awareness
+  currentTab?: 'summary' | 'experiment' | 'questions' | 'notes'
+  dataEntries?: Record<string, string>
+  timeOnExperiment?: number
+
+  // Student history
+  completedExperimentCount?: number
+  overallAvgScore?: number
+  recentExperiments?: Array<{ title: string; score: number }>
+
+  // Teacher mode
+  isTeacherMode?: boolean
+
+  // Dashboard context
+  weakAreas?: Array<{ concept: string; mastery: number }>
 }
 
 const CHEMISTRY_SECTIONS = new Set([
@@ -38,38 +67,193 @@ const LOCALE_LANGUAGES: Record<string, string> = {
 }
 
 function buildSystemPrompt(context?: ChatContext, locale?: string): string {
+  const lang = LOCALE_LANGUAGES[locale || 'en'] || 'English'
   const subject = context?.subject || (isChemistryContext(context) ? 'chemistry' : 'physics')
 
-  let contextLine: string
-  if (subject === 'ai') {
+  // ── Teacher mode: completely different persona ──────────────────────────
+  if (context?.isTeacherMode) {
+    let prompt = `You are Gali, an AI teaching assistant for the ATP STEM Hub platform.
+You are helping a TEACHER prepare for and facilitate a hands-on science lab session.
+Respond in ${lang}. Be professional but approachable.
+
+When the teacher asks for help:
+- Provide clear, concise explanations they can relay to students
+- Highlight common student mistakes and how to address them
+- Suggest guiding questions the teacher can ask students
+- Include safety reminders relevant to the experiment
+- Offer tips for managing group work during the experiment`
+
+    if (context.experimentTitle) {
+      prompt += `\n\n## Current Experiment
+The teacher is preparing: "${context.experimentTitle}" (Experiment #${context.experimentNum})
+Section: ${context.section}
+Subject: ${subject}`
+    }
+
+    if (context.experimentSummary) {
+      prompt += `\nLearning objectives: ${context.experimentSummary}`
+    }
+    if (context.expectedOutcome) {
+      prompt += `\nExpected outcome: ${context.expectedOutcome}`
+    }
+    if (context.formula) {
+      prompt += `\nKey formula: ${context.formula}`
+    }
+    if (context.theoryPoints?.length) {
+      prompt += `\n\nKey theory points:\n${context.theoryPoints.map(p => `- ${p}`).join('\n')}`
+    }
+    if (context.misconceptions?.length) {
+      prompt += `\n\nCommon student misconceptions:\n${context.misconceptions.map(m => `- ${m}`).join('\n')}`
+    }
+    if (context.equipment?.length) {
+      prompt += `\n\nEquipment needed: ${context.equipment.join(', ')}`
+    }
+
+    prompt += `\n\nIf the teacher asks for a briefing or overview, provide:
+1. Key concept in simple terms (2 sentences)
+2. Three most common student mistakes
+3. One great opening question to engage the class
+4. Safety checklist for this experiment
+5. Estimated time breakdown (setup / experiment / quiz / discussion)`
+
+    prompt += `\n\nResponse formatting guidelines:
+- Keep responses concise and well-structured
+- Use **bold** for key terms
+- Use numbered lists for steps and bullet lists for items
+- Use friendly, professional language`
+
+    if (locale && locale !== 'en') {
+      prompt += `\n\nIMPORTANT: Respond in ${lang}. All text must be in ${lang}. Scientific terms and formulas can remain in standard form.`
+    }
+
+    return prompt
+  }
+
+  // ── Student mode (default) ─────────────────────────────────────────────
+  let prompt = `You are Gali, a friendly and knowledgeable AI science tutor for the ATP STEM Hub platform.
+You are helping a student with hands-on science experiments.
+Respond in ${lang}. Keep responses concise (2-4 sentences for simple questions, up to a paragraph for explanations).
+Use encouraging, warm language appropriate for secondary school students.
+When explaining concepts, use analogies and real-world examples the student can relate to.
+NEVER give quiz answers directly — guide the student to figure it out themselves using Socratic questioning.`
+
+  // ── Platform overview ──────────────────────────────────────────────────
+  prompt += `\n\nATP Connect is an interactive learning platform for schools in Africa with:
+- 41 physics experiments across Mechanics, Heat, Acoustics, Optics, Magnetism, and Electricity
+- 50 chemistry experiments across Matter & Solutions, Acids & Bases, Gas Chemistry, Electrochemistry, and Plant Physiology
+- 12 free AI courses from Anthropic (for students, educators, and advanced learners)
+- 9 free Robotics & CS courses from Arduino Education, Raspberry Pi Foundation, and Harvard CS50`
+
+  // ── Current experiment context ─────────────────────────────────────────
+  if (context?.experimentTitle) {
+    const subjectName = subject === 'chemistry' ? 'chemistry' : subject === 'robotics' ? 'robotics' : 'physics'
+    prompt += `\n\n## Current Experiment
+The student is working on: "${context.experimentTitle}" (Experiment #${context.experimentNum})
+Section: ${context.section}
+Subject: ${subjectName}`
+  } else if (subject === 'ai') {
     if (context?.courseTitle) {
-      contextLine = `The student is looking at the AI course: "${context.courseTitle}" by ${context.courseProvider || 'Anthropic'}.`
+      prompt += `\n\nThe student is looking at the AI course: "${context.courseTitle}" by ${context.courseProvider || 'Anthropic'}.`
     } else {
-      contextLine = 'The student is browsing the AI courses section, which features free Anthropic courses on artificial intelligence.'
+      prompt += '\n\nThe student is browsing the AI courses section, which features free Anthropic courses on artificial intelligence.'
     }
   } else if (subject === 'robotics') {
     if (context?.courseTitle) {
-      contextLine = `The student is looking at the Robotics & CS course: "${context.courseTitle}" by ${context.courseProvider || 'the course provider'}.`
+      prompt += `\n\nThe student is looking at the Robotics & CS course: "${context.courseTitle}" by ${context.courseProvider || 'the course provider'}.`
     } else {
-      contextLine = 'The student is browsing the Robotics & CS section, which features courses from Arduino, Raspberry Pi Foundation, and Harvard CS50.'
-    }
-  } else if (context?.experimentTitle) {
-    const subjectName = subject === 'chemistry' ? 'chemistry' : 'physics'
-    contextLine = `The student is currently working on ${subjectName} experiment #${context.experimentNum}: "${context.experimentTitle}" in the ${context.section} section.`
-    if (context.quizScore && context.quizScore.total > 0) {
-      const { correct, total, wrongTopics } = context.quizScore
-      contextLine += ` They scored ${correct}/${total} on the quiz.`
-      if (wrongTopics && wrongTopics.length > 0) {
-        contextLine += ` Topics they struggled with: ${wrongTopics.slice(0, 3).join('; ')}.`
-      }
+      prompt += '\n\nThe student is browsing the Robotics & CS section, which features courses from Arduino, Raspberry Pi Foundation, and Harvard CS50.'
     }
   } else if (context?.section && context.section !== 'all') {
     const subjectName = CHEMISTRY_SECTIONS.has(context.section) ? 'chemistry' : 'physics'
-    contextLine = `The student is browsing the "${context.section}" section of the ${subjectName} lab.`
+    prompt += `\n\nThe student is browsing the "${context.section}" section of the ${subjectName} lab.`
   } else {
-    contextLine = 'The student is browsing the ATP Connect platform.'
+    prompt += '\n\nThe student is browsing the ATP Connect platform.'
   }
 
+  // ── Deep experiment awareness ──────────────────────────────────────────
+  if (context?.experimentSummary) {
+    prompt += `\n\nWhat they're learning: ${context.experimentSummary}`
+  }
+  if (context?.expectedOutcome) {
+    prompt += `\nExpected outcome: ${context.expectedOutcome}`
+  }
+  if (context?.formula) {
+    prompt += `\nKey formula: ${context.formula}`
+  }
+  if (context?.theoryPoints?.length) {
+    prompt += `\n\nKey theory points:\n${context.theoryPoints.map(p => `- ${p}`).join('\n')}`
+  }
+  if (context?.misconceptions?.length) {
+    prompt += `\n\nCommon misconceptions to watch for:\n${context.misconceptions.map(m => `- ${m}`).join('\n')}`
+  }
+  if (context?.expectedDataRanges) {
+    prompt += `\n\nExpected data ranges: ${context.expectedDataRanges}`
+  }
+  if (context?.equipment?.length) {
+    prompt += `\n\nEquipment being used: ${context.equipment.join(', ')}`
+  }
+  if (context?.realWorldConnections?.length) {
+    prompt += `\n\nReal-world connections to mention when relevant:\n${context.realWorldConnections.map(c => `- ${c}`).join('\n')}`
+  }
+
+  // ── Student activity context ───────────────────────────────────────────
+  if (context?.currentTab) {
+    const tabDescriptions: Record<string, string> = {
+      summary: 'reading the experiment summary and instructions',
+      experiment: 'conducting the experiment and recording data',
+      questions: 'answering quiz questions',
+      notes: 'writing notes about the experiment'
+    }
+    prompt += `\n\nThe student is currently ${tabDescriptions[context.currentTab] || context.currentTab}.`
+  }
+
+  if (context?.dataEntries && Object.keys(context.dataEntries).length > 0) {
+    prompt += `\n\nData the student has entered so far:\n${JSON.stringify(context.dataEntries, null, 2)}`
+    prompt += `\nIf their data looks unusual compared to expected ranges, gently point this out and suggest what might have gone wrong.`
+  }
+
+  // ── Quiz performance ───────────────────────────────────────────────────
+  if (context?.quizScore && context.quizScore.total > 0) {
+    const pct = Math.round((context.quizScore.correct / context.quizScore.total) * 100)
+    prompt += `\n\nQuiz performance: ${context.quizScore.correct}/${context.quizScore.total} (${pct}%)`
+    if (context.quizScore.wrongTopics?.length) {
+      prompt += `\nTopics they got wrong: ${context.quizScore.wrongTopics.join(', ')}`
+      prompt += `\nFocus your help on these weak areas without directly revealing answers.`
+    }
+  }
+
+  if (context?.focusQuestion) {
+    prompt += `\n\nThe student is asking about a specific question they got wrong:
+Question: "${context.focusQuestion.text}"
+Their answer: "${context.focusQuestion.userAnswer}"
+Correct answer: "${context.focusQuestion.correctAnswer}"
+Help them understand WHY the correct answer is right without just stating it. Use Socratic questioning.`
+  }
+
+  // ── Student history for personalization ─────────────────────────────────
+  if (context?.completedExperimentCount !== undefined) {
+    if (context.completedExperimentCount === 0) {
+      prompt += `\n\nThis appears to be the student's first experiment. Be extra welcoming and encouraging. Explain things simply.`
+    } else if (context.completedExperimentCount > 20) {
+      prompt += `\n\nThis student has completed ${context.completedExperimentCount} experiments — they're experienced. You can use more advanced terminology and go deeper into theory.`
+    }
+  }
+
+  if (context?.overallAvgScore !== undefined) {
+    if (context.overallAvgScore < 50) {
+      prompt += `\nTheir overall average is below 50%. Use simpler language, more analogies, and be extra encouraging.`
+    } else if (context.overallAvgScore > 85) {
+      prompt += `\nTheir overall average is above 85%. They're a strong student — feel free to introduce advanced concepts and challenge them.`
+    }
+  }
+
+  // ── Dashboard weak areas ───────────────────────────────────────────────
+  if (context?.weakAreas?.length) {
+    prompt += `\n\nThe student's weakest areas are:\n${context.weakAreas.map(a => `- ${a.concept}: ${a.mastery}% mastery`).join('\n')}`
+    prompt += `\nSuggest specific experiments or topics they should review.`
+  }
+
+  // ── Subject scope ──────────────────────────────────────────────────────
   let subjectScope: string
   if (subject === 'ai') {
     subjectScope = `artificial intelligence concepts including:
@@ -97,21 +281,7 @@ function buildSystemPrompt(context?: ChatContext, locale?: string): string {
     subjectScope = `physics concepts (mechanics, forces, thermodynamics, acoustics, optics, magnetism, electricity, etc.)`
   }
 
-  return `You are Gali ✦, an enthusiastic and knowledgeable AI STEM assistant for ATP Connect — an interactive learning platform for schools in Africa with:
-- 41 physics experiments across Mechanics, Heat, Acoustics, Optics, Magnetism, and Electricity
-- 50 chemistry experiments across Matter & Solutions, Acids & Bases, Gas Chemistry, Electrochemistry, and Plant Physiology
-- 12 free AI courses from Anthropic (for students, educators, and advanced learners)
-- 9 free Robotics & CS courses from Arduino Education, Raspberry Pi Foundation, and Harvard CS50
-
-${contextLine}
-
-Your role is to:
-- Help students understand ${subjectScope}
-- Explain concepts clearly with real-world examples
-- Guide students step-by-step through problems and projects
-- Encourage curiosity, critical thinking, and hands-on experimentation
-- Suggest relevant courses or experiments from the platform when helpful
-- Be supportive and patient — many students are encountering these topics for the first time
+  prompt += `\n\nYour role is to help students understand ${subjectScope}
 
 Response formatting guidelines:
 - Keep responses concise: 2–4 short paragraphs or a bullet list
@@ -119,9 +289,13 @@ Response formatting guidelines:
 - For numbered steps use "1. step", "2. step" format
 - For lists use "- item" format
 - Use friendly, encouraging language appropriate for high school or early university students
-- If asked something completely off-topic, gently redirect back to STEM subjects${locale && locale !== 'en' ? `
+- If asked something completely off-topic, gently redirect back to STEM subjects`
 
-IMPORTANT: The student is using the app in ${LOCALE_LANGUAGES[locale] || 'English'}. You MUST respond in ${LOCALE_LANGUAGES[locale] || 'English'}. All your explanations, encouragements, hints, and answers must be in ${LOCALE_LANGUAGES[locale] || 'English'}. Scientific terms and formulas can remain in their standard form, but all surrounding text must be in ${LOCALE_LANGUAGES[locale] || 'English'}.` : ''}`
+  if (locale && locale !== 'en') {
+    prompt += `\n\nIMPORTANT: The student is using the app in ${lang}. You MUST respond in ${lang}. All your explanations, encouragements, hints, and answers must be in ${lang}. Scientific terms and formulas can remain in their standard form, but all surrounding text must be in ${lang}.`
+  }
+
+  return prompt
 }
 
 export async function POST(req: NextRequest) {

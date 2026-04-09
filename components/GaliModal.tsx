@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useI18n } from '@/lib/i18n'
+import { cleanForSpeech, getSpeechRecognition, SPEECH_LOCALE_MAP, type ISpeechRecognition, type ISpeechRecognitionEvent } from '@/lib/chat-utils'
 
 export interface GaliContext {
   section?: string
@@ -15,6 +16,34 @@ export interface GaliContext {
     userAnswer: string
     correctAnswer: string
   }
+
+  // Full experiment awareness
+  experimentSummary?: string
+  expectedOutcome?: string
+  equipment?: string[]
+  theoryPoints?: string[]
+  formula?: string
+  realWorldConnections?: string[]
+  misconceptions?: string[]
+  conceptBreakdown?: Array<{ label: string; pct: number }>
+  dataTableHeaders?: string[]
+  expectedDataRanges?: string
+
+  // Student activity awareness
+  currentTab?: 'summary' | 'experiment' | 'questions' | 'notes'
+  dataEntries?: Record<string, string>
+  timeOnExperiment?: number
+
+  // Student history
+  completedExperimentCount?: number
+  overallAvgScore?: number
+  recentExperiments?: Array<{ title: string; score: number }>
+
+  // Teacher mode
+  isTeacherMode?: boolean
+
+  // Dashboard context
+  weakAreas?: Array<{ concept: string; mastery: number }>
 }
 
 interface Message {
@@ -57,53 +86,7 @@ function isChemistry(context?: GaliContext): boolean {
   return false
 }
 
-// ─── Speech API types (cross-browser, avoids reliance on lib.dom globals) ────
-
-interface ISpeechRecognitionEvent {
-  readonly results: { [index: number]: { [index: number]: { transcript: string } } }
-}
-
-interface ISpeechRecognition {
-  lang: string
-  continuous: boolean
-  interimResults: boolean
-  maxAlternatives: number
-  onresult: ((ev: ISpeechRecognitionEvent) => void) | null
-  onerror: (() => void) | null
-  onend: (() => void) | null
-  start(): void
-  abort(): void
-}
-
-type SpeechRecognitionCtor = new () => ISpeechRecognition
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-/** Strip markdown so TTS reads clean prose */
-function cleanForSpeech(text: string): string {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '$1')
-    .replace(/\*(.*?)\*/g, '$1')
-    .replace(/`(.*?)`/g, '$1')
-    .replace(/^[-*•]\s/gm, '')
-    .replace(/^\d+\.\s/gm, '')
-    .replace(/#{1,6}\s/gm, '')
-    .replace(/\n{2,}/g, '. ')
-    .replace(/\n/g, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .trim()
-}
-
-/** Resolve the Web Speech SpeechRecognition constructor (cross-browser) */
-function getSpeechRecognition(): SpeechRecognitionCtor | null {
-  if (typeof window === 'undefined') return null
-  type W = Window & {
-    SpeechRecognition?: SpeechRecognitionCtor
-    webkitSpeechRecognition?: SpeechRecognitionCtor
-  }
-  const w = window as W
-  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null
-}
+// Speech types and helpers imported from @/lib/chat-utils
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -111,14 +94,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   const { t, locale } = useI18n()
 
   // ── Speech locale ────────────────────────────────────────────────────────
-  const speechLocaleMap: Record<string, string> = {
-    en: 'en-US',
-    it: 'it-IT',
-    fr: 'fr-FR',
-    es: 'es-ES',
-    ar: 'ar-SA',
-  }
-  const speechLocale = speechLocaleMap[locale] || 'en-US'
+  const speechLocale = SPEECH_LOCALE_MAP[locale] || 'en-US'
 
   // ── Voice state ──────────────────────────────────────────────────────────
   const [micSupported, setMicSupported] = useState(false)
@@ -194,6 +170,22 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // ── Quick prompts ────────────────────────────────────────────────────────
   function getQuickPrompts(): string[] {
+    // Teacher mode quick prompts
+    if (context?.isTeacherMode && context?.experimentTitle) {
+      return [
+        t('gali.quick_teacher_briefing'),
+        t('gali.quick_teacher_mistakes'),
+        t('gali.quick_teacher_opening'),
+        t('gali.quick_teacher_explain'),
+        t('gali.quick_teacher_safety'),
+      ]
+    }
+
+    // Dashboard quick prompts
+    if (context?.weakAreas !== undefined) {
+      return [t('gali.quick_study_next'), t('gali.quick_struggling'), t('gali.quick_how_doing')]
+    }
+
     if (context?.subject === 'ai') return [t('gali.quick_ai_1'), t('gali.quick_ai_2'), t('gali.quick_ai_3')]
     if (context?.subject === 'robotics') return [t('gali.quick_robotics_1'), t('gali.quick_robotics_2'), t('gali.quick_robotics_3')]
     if (context?.experimentTitle) {

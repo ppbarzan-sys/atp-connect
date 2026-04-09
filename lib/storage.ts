@@ -403,3 +403,38 @@ export function getStudentCompletedCount(studentId: string): number {
   const grades = getAllStudentGrades(studentId)
   return grades.size
 }
+
+// ── Gali context helpers ──────────────────────────────────────────────────────
+
+/** Compute overall average score (0-100) across all personal quiz grades */
+export function computeOverallAverage(): number {
+  const grades = getAllGrades()
+  const scores: number[] = []
+  grades.forEach(g => {
+    if (g.bestScore.total > 0) {
+      scores.push((g.bestScore.correct / g.bestScore.total) * 100)
+    }
+  })
+  if (scores.length === 0) return 0
+  return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+}
+
+/** Return the last N completed experiments with their scores (needs experiment list for titles) */
+export function getRecentExperiments(
+  experiments: Array<{ num: number; title: string }>,
+  n: number = 5
+): Array<{ title: string; score: number }> {
+  if (typeof window === 'undefined') return []
+  const completed: Array<{ title: string; score: number; completedAt: string }> = []
+  for (const exp of experiments) {
+    const progress = loadProgress(exp.num)
+    if (progress) {
+      const pct = progress.total > 0
+        ? Math.round((progress.correct / progress.total) * 100)
+        : 0
+      completed.push({ title: exp.title, score: pct, completedAt: progress.completedAt })
+    }
+  }
+  completed.sort((a, b) => b.completedAt.localeCompare(a.completedAt))
+  return completed.slice(0, n).map(({ title, score }) => ({ title, score }))
+}

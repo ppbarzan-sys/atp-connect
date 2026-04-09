@@ -7,7 +7,7 @@ import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal, { GaliContext } from '@/components/GaliModal'
 import { useI18n } from '@/lib/i18n'
-import { loadResults } from '@/lib/storage'
+import { loadResults, loadTeacherMode, getCompletedExperiments, computeOverallAverage } from '@/lib/storage'
 
 export default function ExperimentPage() {
   const { id } = useParams()
@@ -19,14 +19,27 @@ export default function ExperimentPage() {
   const experiments = getExperiments(locale)
   const exp = experiments.find(e => e.num === Number(id))
 
-  function openGali() {
-    if (!exp) return
+  function buildRichContext(): GaliContext {
+    if (!exp) return { section: 'all' }
     const baseCtx: GaliContext = {
       section: exp.section,
       experimentTitle: exp.title,
       experimentNum: exp.num,
+      experimentSummary: exp.summary.whatTheyLearn,
+      expectedOutcome: exp.summary.expectedOutcome,
+      equipment: exp.experiment.equipment.map(e => e.name),
+      theoryPoints: exp.experiment.theoryPoints,
+      formula: exp.experiment.formula,
+      realWorldConnections: exp.experiment.realWorldConnections,
+      misconceptions: exp.overview.misconceptions,
+      conceptBreakdown: exp.overview.conceptBreakdown,
+      dataTableHeaders: exp.dataTable.headers,
+      expectedDataRanges: exp.ai.expected,
+      completedExperimentCount: getCompletedExperiments().length,
+      overallAvgScore: computeOverallAverage(),
+      isTeacherMode: loadTeacherMode(),
     }
-    // Compute quiz score from localStorage at open time so it's always current
+    // Compute quiz score from localStorage
     const mcqs = exp.questions?.mcq ?? []
     if (mcqs.length > 0) {
       const savedAnswers = loadResults(exp.num)
@@ -45,16 +58,19 @@ export default function ExperimentPage() {
         baseCtx.quizScore = { correct, total: mcqs.length, wrongTopics }
       }
     }
-    setGaliCtx(baseCtx)
+    return baseCtx
+  }
+
+  function openGali() {
+    if (!exp) return
+    setGaliCtx(buildRichContext())
     setGaliOpen(true)
   }
 
   function openGaliForQuestion(questionText: string, correctAnswer: string, userAnswer: string) {
     if (!exp) return
     setGaliCtx({
-      section: exp.section,
-      experimentTitle: exp.title,
-      experimentNum: exp.num,
+      ...buildRichContext(),
       focusQuestion: { text: questionText, userAnswer, correctAnswer },
     })
     setGaliOpen(true)

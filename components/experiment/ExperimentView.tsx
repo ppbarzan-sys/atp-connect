@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { sectionColors } from '@/data/experiments'
 import type { Experiment } from '@/data/loader'
 import SummaryTab from './tabs/SummaryTab'
@@ -8,6 +8,8 @@ import QuestionsTab from './tabs/QuestionsTab'
 import NotesTab from './tabs/NotesTab'
 import RightPanel from './rightpanel/RightPanel'
 import { useI18n } from '@/lib/i18n'
+import { loadTeacherMode, loadResults, getCompletedExperiments, computeOverallAverage } from '@/lib/storage'
+import type { GaliContext } from '@/components/GaliModal'
 
 interface ExperimentViewProps {
   exp: Experiment
@@ -25,6 +27,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
   const [activeTab, setActiveTab] = useState<TabId>('summary')
   const [rpTab, setRpTab] = useState<'overview' | 'chat'>('overview')
   const [mobilePanelOpen, setMobilePanelOpen] = useState(false)
+  const [dataEntries, setDataEntries] = useState<Record<string, string>>({})
   const color = headerColor ?? sectionColors[exp.section] ?? '#14B8A6'
   const colorDark = headerColorDark ?? '#0D9488'
 
@@ -34,6 +37,68 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
     exp.section === 'Acoustics' ? '🎵' :
     exp.section === 'Optics' ? '🔭' :
     exp.section === 'Magnetism' ? '🧲' : '⚡'
+
+  // Build rich Gali context for the right-panel ChatPane
+  const galiContext = useMemo<GaliContext>(() => {
+    const isTeacher = typeof window !== 'undefined' ? loadTeacherMode() : false
+    const completedCount = typeof window !== 'undefined' ? getCompletedExperiments().length : 0
+    const avgScore = typeof window !== 'undefined' ? computeOverallAverage() : 0
+
+    // Compute quiz score from localStorage
+    let quizScore: GaliContext['quizScore'] = undefined
+    const mcqs = exp.questions?.mcq ?? []
+    if (mcqs.length > 0 && typeof window !== 'undefined') {
+      const savedAnswers = loadResults(exp.num)
+      const answeredKeys = mcqs.filter((_, i) => savedAnswers[`mcq-${i}`] !== undefined)
+      if (answeredKeys.length > 0) {
+        const correct = mcqs.filter((q, i) => {
+          const ua = savedAnswers[`mcq-${i}`]
+          return ua !== undefined && parseInt(ua) === q.correctIndex
+        }).length
+        const wrongTopics = mcqs
+          .filter((q, i) => {
+            const ua = savedAnswers[`mcq-${i}`]
+            return ua !== undefined && parseInt(ua) !== q.correctIndex
+          })
+          .map(q => q.text)
+        quizScore = { correct, total: mcqs.length, wrongTopics }
+      }
+    }
+
+    return {
+      section: exp.section,
+      experimentTitle: exp.title,
+      experimentNum: exp.num,
+      experimentSummary: exp.summary.whatTheyLearn,
+      expectedOutcome: exp.summary.expectedOutcome,
+      equipment: exp.experiment.equipment.map(e => e.name),
+      theoryPoints: exp.experiment.theoryPoints,
+      formula: exp.experiment.formula,
+      realWorldConnections: exp.experiment.realWorldConnections,
+      misconceptions: exp.overview.misconceptions,
+      conceptBreakdown: exp.overview.conceptBreakdown,
+      dataTableHeaders: exp.dataTable.headers,
+      expectedDataRanges: exp.ai.expected,
+      currentTab: activeTab,
+      dataEntries: Object.keys(dataEntries).length > 0 ? dataEntries : undefined,
+      quizScore,
+      completedExperimentCount: completedCount,
+      overallAvgScore: avgScore,
+      isTeacherMode: isTeacher,
+    }
+  }, [exp, activeTab, dataEntries])
+
+  // Sync data entries from localStorage when switching to experiment tab
+  useEffect(() => {
+    if (activeTab === 'experiment' && typeof window !== 'undefined') {
+      const saved = loadResults(exp.num)
+      const entries: Record<string, string> = {}
+      for (const [key, val] of Object.entries(saved)) {
+        if (key.startsWith('cell-') && val) entries[key] = val
+      }
+      setDataEntries(entries)
+    }
+  }, [activeTab, exp.num])
 
   return (
     <div className="exp-view" id={`expview-${exp.num}`}>
@@ -69,6 +134,7 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
           activeTab={rpTab}
           onTabChange={setRpTab}
           extraClass={mobilePanelOpen ? 'mobile-open' : ''}
+          galiContext={galiContext}
         />
       </div>
 

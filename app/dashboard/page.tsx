@@ -6,7 +6,8 @@ import SearchOverlay from '@/components/SearchOverlay'
 import { useI18n } from '@/lib/i18n'
 import { getExperiments, getChemistryExperiments, getRoboticsExperiments, type Experiment } from '@/data/loader'
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
-import { deleteAllProgress, loadProgress, getAllGrades, type ExperimentProgress } from '@/lib/storage'
+import { deleteAllProgress, loadProgress, getAllGrades, computeOverallAverage, getCompletedExperiments, loadTeacherMode, type ExperimentProgress } from '@/lib/storage'
+import GaliModal, { GaliContext } from '@/components/GaliModal'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
 import { aiQuizzes } from '@/data/ai-quizzes'
 import ConceptMasteryMap, { computeConceptMastery } from '@/components/dashboard/ConceptMasteryMap'
@@ -17,6 +18,8 @@ export default function DashboardPage() {
   const router = useRouter()
   const { t, tSection, locale } = useI18n()
   const [searchOpen, setSearchOpen] = useState(false)
+  const [galiOpen, setGaliOpen] = useState(false)
+  const [galiCtx, setGaliCtx] = useState<GaliContext>({})
   const [data, setData] = useState<DashboardData | null>(null)
   const [allExperiments, setAllExperiments] = useState<Experiment[]>([])
   const [progressMap, setProgressMap] = useState<Map<number, ExperimentProgress>>(new Map())
@@ -58,6 +61,20 @@ export default function DashboardPage() {
       .slice(0, 3)
   }, [allExperiments, progressMap])
 
+  function openGali() {
+    const wa = weakAreas.map(a => ({
+      concept: a.label,
+      mastery: a.totalWeight > 0 ? Math.round((a.weightedScore / a.totalWeight) * 100) : 0,
+    }))
+    setGaliCtx({
+      completedExperimentCount: data?.totalCompleted ?? getCompletedExperiments().length,
+      overallAvgScore: data?.overallAvgScore ?? computeOverallAverage(),
+      weakAreas: wa,
+      isTeacherMode: loadTeacherMode(),
+    })
+    setGaliOpen(true)
+  }
+
   if (!data) return null
 
   const hasProgress = data.totalCompleted > 0
@@ -68,6 +85,7 @@ export default function DashboardPage() {
         activeView="browse"
         onHome={() => router.push('/app')}
         onSearch={() => setSearchOpen(true)}
+        onAskGali={openGali}
       />
       <main style={{ flex: 1, overflow: 'auto', background: '#f8fafc', padding: '0' }}>
         {/* Hero header */}
@@ -237,6 +255,9 @@ export default function DashboardPage() {
           onClose={() => setSearchOpen(false)}
           onExpClick={(num) => { setSearchOpen(false); router.push(`/experiments/${num}`) }}
         />
+      )}
+      {galiOpen && (
+        <GaliModal context={galiCtx} onClose={() => setGaliOpen(false)} />
       )}
     </div>
   )

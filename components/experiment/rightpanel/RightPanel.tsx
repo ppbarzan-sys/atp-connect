@@ -3,15 +3,17 @@ import { Experiment } from '@/data/loader'
 import OverviewPane from './OverviewPane'
 import ChatPane from './ChatPane'
 import { useI18n } from '@/lib/i18n'
+import type { GaliContext } from '@/components/GaliModal'
 
 interface RightPanelProps {
   exp: Experiment
   activeTab: 'overview' | 'chat'
   onTabChange: (tab: 'overview' | 'chat') => void
   extraClass?: string
+  galiContext?: GaliContext
 }
 
-export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '' }: RightPanelProps) {
+export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '', galiContext }: RightPanelProps) {
   const { t } = useI18n()
   return (
     <div className={`right-panel${extraClass ? ' ' + extraClass : ''}`} id={`rp-${exp.num}`}>
@@ -47,7 +49,7 @@ export default function RightPanel({ exp, activeTab, onTabChange, extraClass = '
           minHeight: 0,
         }}
       >
-        <ChatPane exp={exp} />
+        <ChatPane exp={exp} galiContext={galiContext} />
       </div>
     </div>
   )
