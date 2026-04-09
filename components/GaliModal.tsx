@@ -36,9 +36,23 @@ const CHEMISTRY_SECTIONS = new Set([
   'Plant Physiology',
 ])
 
+const ROBOTICS_SECTIONS = new Set([
+  'Fundamentals',
+  'Sensors',
+  'Actuators',
+  'Projects',
+])
+
+function isRobotics(context?: GaliContext): boolean {
+  if (!context) return false
+  if (context.experimentNum && context.experimentNum >= 501) return true
+  if (context.section && ROBOTICS_SECTIONS.has(context.section)) return true
+  return false
+}
+
 function isChemistry(context?: GaliContext): boolean {
   if (!context) return false
-  if (context.experimentNum && context.experimentNum >= 101) return true
+  if (context.experimentNum && context.experimentNum >= 101 && context.experimentNum < 500) return true
   if (context.section && CHEMISTRY_SECTIONS.has(context.section)) return true
   return false
 }
@@ -162,7 +176,9 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
         }
         return t('gali.welcome_exp_quiz_poor', { title: context.experimentTitle, correct, total })
       }
-      const key = isChemistry(context)
+      const key = isRobotics(context)
+        ? 'gali.welcome_exp_robotics'
+        : isChemistry(context)
         ? 'gali.welcome_exp_chemistry'
         : 'gali.welcome_exp_physics'
       return t(key, { title: context.experimentTitle })
@@ -181,6 +197,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     if (context?.subject === 'ai') return [t('gali.quick_ai_1'), t('gali.quick_ai_2'), t('gali.quick_ai_3')]
     if (context?.subject === 'robotics') return [t('gali.quick_robotics_1'), t('gali.quick_robotics_2'), t('gali.quick_robotics_3')]
     if (context?.experimentTitle) {
+      if (isRobotics(context)) return [t('gali.quick_robotics_circuit'), t('gali.quick_robotics_code'), t('gali.quick_robotics_debug')]
       return isChemistry(context)
         ? [t('gali.quick_chem_reaction'), t('gali.quick_chem_safety'), t('gali.quick_chem_read')]
         : [t('gali.quick_physics_setup'), t('gali.quick_physics_formula'), t('gali.quick_physics_results')]

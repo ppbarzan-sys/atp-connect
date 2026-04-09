@@ -76,7 +76,8 @@
     "overview_close": "✕ Chiudi",
     "not_found": "Esperimento non trovato",
     "back_to_browse": "Torna alla Lista",
-    "back_to_chemistry": "Torna alla Chimica"
+    "back_to_chemistry": "Torna alla Chimica",
+    "back_to_robotics": "Torna alla Robotica"
   },
   "summary": {
     "what_learn": "Cosa Impareranno",
@@ -194,6 +195,7 @@
     "focus_question_intro": "Vediamo insieme questa domanda: \"{text}\". Hai risposto \"{userAnswer}\", ma la risposta corretta è \"{correctAnswer}\". Vuoi che te lo spieghi?",
     "welcome_exp_physics": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di fisica si applica nella vita reale!",
     "welcome_exp_chemistry": "Ciao! Sono Gali ✦ Sono qui per aiutarti con **{title}**. Chiedimi del setup, delle formule chiave, dei risultati attesi o di come questo concetto di chimica si applica nella vita reale!",
+    "welcome_exp_robotics": "Ciao! Sono Gali, il tuo assistente di laboratorio robotica. Ti aiuterò con **{title}**. Chiedimi del circuito, del codice o della risoluzione dei problemi!",
     "welcome_exp_quiz_perfect": "Ciao! Sono Gali ✦ Fantastico — hai ottenuto **{correct}/{total}** su **{title}**! 🎉 C'è qualcosa che vorresti approfondire ulteriormente?",
     "welcome_exp_quiz_good": "Ciao! Sono Gali ✦ Ottimo lavoro su **{title}** — hai ottenuto **{correct}/{total}**! 👍 Vuoi che ti aiuti a chiarire gli argomenti che hai sbagliato?",
     "welcome_exp_quiz_poor": "Ciao! Sono Gali ✦ Lavoriamo insieme su **{title}**! Hai ottenuto **{correct}/{total}** — posso aiutarti a capire le parti più difficili. Cosa vorresti ripassare?",
@@ -240,6 +242,9 @@
     "quick_robotics_1": "Come inizio con Arduino?",
     "quick_robotics_2": "A cosa serve il Raspberry Pi?",
     "quick_robotics_3": "Cosa imparerò in CS50?",
+    "quick_robotics_circuit": "Spiega lo schema del circuito",
+    "quick_robotics_code": "Aiutami a capire il codice",
+    "quick_robotics_debug": "Il mio circuito non funziona",
     "voice_input": "Parla",
     "voice_listening": "In ascolto…",
     "voice_stop": "Interrompi",
@@ -290,7 +295,14 @@
     "intermediate": "Intermedio",
     "advanced": "Avanzato",
     "open_in_new_tab": "Si apre in una nuova scheda",
-    "provider_label": "Di"
+    "provider_label": "Di",
+    "hands_on_experiments": "Esperimenti Arduino Pratici",
+    "experiments_subtitle": "Costruisci circuiti reali con Arduino Science Kit R3 — 12 esperimenti guidati",
+    "online_courses": "Corsi Online",
+    "section_fundamentals": "Fondamenti",
+    "section_sensors": "Sensori",
+    "section_actuators": "Attuatori",
+    "section_projects": "Progetti"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 MODALITÀ DOCENTE ATTIVA — Risultati e note degli studenti sono visibili",

@@ -76,7 +76,8 @@
     "overview_close": "✕ Cerrar",
     "not_found": "Experimento no encontrado",
     "back_to_browse": "Volver a la lista",
-    "back_to_chemistry": "Volver a Química"
+    "back_to_chemistry": "Volver a Química",
+    "back_to_robotics": "Volver a Robótica"
   },
   "summary": {
     "what_learn": "Qué aprenderán",
@@ -194,6 +195,7 @@
     "focus_question_intro": "Veamos esta pregunta juntos: \"{text}\". Respondiste \"{userAnswer}\", pero la respuesta correcta es \"{correctAnswer}\". ¿Quieres que te explique por qué?",
     "welcome_exp_physics": "¡Hola! Soy Gali ✦ Estoy aquí para ayudarte con **{title}**. Pregúntame sobre el montaje, fórmulas clave, resultados esperados o cómo este concepto de física se aplica en el mundo real.",
     "welcome_exp_chemistry": "¡Hola! Soy Gali ✦ Estoy aquí para ayudarte con **{title}**. Pregúntame sobre el montaje, fórmulas clave, resultados esperados o cómo este concepto de química se aplica en el mundo real.",
+    "welcome_exp_robotics": "¡Hola! Soy Gali, tu asistente de laboratorio de robótica. Te ayudaré con **{title}**. ¡Pregúntame sobre el circuito, el código o la depuración!",
     "welcome_exp_quiz_perfect": "¡Hola! Soy Gali ✦ Increíble — obtuviste **{correct}/{total}** en **{title}**. 🎉 ¿Hay algo que te gustaría profundizar más?",
     "welcome_exp_quiz_good": "¡Hola! Soy Gali ✦ Buen trabajo en **{title}** — obtuviste **{correct}/{total}**. 👍 ¿Quieres que te ayude a aclarar los temas que fallaste?",
     "welcome_exp_quiz_poor": "¡Hola! Soy Gali ✦ ¡Trabajemos juntos en **{title}**! Obtuviste **{correct}/{total}** — puedo ayudarte a entender las partes más difíciles. ¿Qué te gustaría repasar?",
@@ -240,6 +242,9 @@
     "quick_robotics_1": "¿Cómo empiezo con Arduino?",
     "quick_robotics_2": "¿Para qué sirve Raspberry Pi?",
     "quick_robotics_3": "¿Qué aprenderé en CS50?",
+    "quick_robotics_circuit": "Explica el diagrama del circuito",
+    "quick_robotics_code": "Ayúdame a entender el código",
+    "quick_robotics_debug": "Mi circuito no funciona",
     "voice_input": "Hablar",
     "voice_listening": "Escuchando…",
     "voice_stop": "Detener",
@@ -290,7 +295,14 @@
     "intermediate": "Intermedio",
     "advanced": "Avanzado",
     "open_in_new_tab": "Se abre en una nueva pestaña",
-    "provider_label": "Por"
+    "provider_label": "Por",
+    "hands_on_experiments": "Experimentos Arduino Prácticos",
+    "experiments_subtitle": "Construye circuitos reales con Arduino Science Kit R3 — 12 experimentos guiados",
+    "online_courses": "Cursos en Línea",
+    "section_fundamentals": "Fundamentos",
+    "section_sensors": "Sensores",
+    "section_actuators": "Actuadores",
+    "section_projects": "Proyectos"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 MODO DOCENTE ACTIVO — Los resultados y notas de los estudiantes son visibles",

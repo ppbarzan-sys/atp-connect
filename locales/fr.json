@@ -76,7 +76,8 @@
     "overview_close": "✕ Fermer",
     "not_found": "Expérience introuvable",
     "back_to_browse": "Retour à la navigation",
-    "back_to_chemistry": "Retour à la Chimie"
+    "back_to_chemistry": "Retour à la Chimie",
+    "back_to_robotics": "Retour à la Robotique"
   },
   "summary": {
     "what_learn": "Ce qu'ils apprendront",
@@ -194,6 +195,7 @@
     "focus_question_intro": "Regardons cette question ensemble : \"{text}\". Tu as répondu \"{userAnswer}\", mais la bonne réponse est \"{correctAnswer}\". Veux-tu que je t'explique pourquoi ?",
     "welcome_exp_physics": "Bonjour ! Je suis Gali ✦ Je suis là pour vous aider avec **{title}**. Posez-moi des questions sur la mise en place, les formules clés, les résultats attendus ou les applications concrètes de ce concept physique !",
     "welcome_exp_chemistry": "Bonjour ! Je suis Gali ✦ Je suis là pour vous aider avec **{title}**. Posez-moi des questions sur la mise en place, les formules clés, les résultats attendus ou les applications concrètes de ce concept chimique !",
+    "welcome_exp_robotics": "Bonjour ! Je suis Gali, votre assistant de laboratoire robotique. Je vais vous aider avec **{title}**. Demandez-moi le circuit, le code ou le dépannage !",
     "welcome_exp_quiz_perfect": "Bonjour ! Je suis Gali ✦ Incroyable — vous avez obtenu **{correct}/{total}** à **{title}** ! 🎉 Y a-t-il quelque chose que vous aimeriez approfondir ?",
     "welcome_exp_quiz_good": "Bonjour ! Je suis Gali ✦ Bon travail sur **{title}** — vous avez obtenu **{correct}/{total}** ! 👍 Voulez-vous que je vous aide à clarifier les sujets que vous avez manqués ?",
     "welcome_exp_quiz_poor": "Bonjour ! Je suis Gali ✦ Travaillons ensemble sur **{title}** ! Vous avez obtenu **{correct}/{total}** — je peux vous aider à comprendre les parties difficiles. Que souhaitez-vous revoir ?",
@@ -240,6 +242,9 @@
     "quick_robotics_1": "Comment débuter avec Arduino ?",
     "quick_robotics_2": "À quoi sert le Raspberry Pi ?",
     "quick_robotics_3": "Qu'apprendrai-je dans CS50 ?",
+    "quick_robotics_circuit": "Explique le schéma du circuit",
+    "quick_robotics_code": "Aide-moi à comprendre le code",
+    "quick_robotics_debug": "Mon circuit ne fonctionne pas",
     "voice_input": "Parler",
     "voice_listening": "Écoute en cours…",
     "voice_stop": "Arrêter",
@@ -290,7 +295,14 @@
     "intermediate": "Intermédiaire",
     "advanced": "Avancé",
     "open_in_new_tab": "S'ouvre dans un nouvel onglet",
-    "provider_label": "Par"
+    "provider_label": "Par",
+    "hands_on_experiments": "Expériences Arduino Pratiques",
+    "experiments_subtitle": "Construisez de vrais circuits avec Arduino Science Kit R3 — 12 expériences guidées",
+    "online_courses": "Cours en Ligne",
+    "section_fundamentals": "Fondamentaux",
+    "section_sensors": "Capteurs",
+    "section_actuators": "Actionneurs",
+    "section_projects": "Projets"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 MODE ENSEIGNANT ACTIF — Les résultats et notes des élèves sont visibles",

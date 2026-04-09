@@ -7,8 +7,10 @@ import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal, { GaliContext } from '@/components/GaliModal'
 import CourseCard from '@/components/browse/CourseCard'
 import CourseQuizPanel from '@/components/CourseQuizPanel'
+import ExperimentCard from '@/components/browse/ExperimentCard'
 import { getRoboticsCourses } from '@/data/robotics-courses'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
+import { roboticsExperiments, roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
 import { loadProgress } from '@/lib/storage'
 
 export default function RoboticsPage() {
@@ -17,7 +19,11 @@ export default function RoboticsPage() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const [activeFilter, setActiveFilter] = useState<'all' | 'arduino' | 'raspberry-pi' | 'cs50'>('all')
+  const [expFilter, setExpFilter] = useState<'all' | 'Fundamentals' | 'Sensors' | 'Actuators' | 'Projects'>('all')
   const [openQuizId, setOpenQuizId] = useState<string | null>(null)
+
+  const filteredExps = expFilter === 'all' ? roboticsExperiments : roboticsExperiments.filter(e => e.section === expFilter)
+  const expSections = ['all', 'Fundamentals', 'Sensors', 'Actuators', 'Projects'] as const
 
   const courses = getRoboticsCourses(locale)
   const filtered = activeFilter === 'all' ? courses : courses.filter(c => c.category === activeFilter)
@@ -65,6 +71,55 @@ export default function RoboticsPage() {
               {'\u2726'} {t('experiment.ask_gali')}
             </button>
           </div>
+        </div>
+
+        {/* ── Hands-On Experiments Section ── */}
+        <div style={{ padding: '1.5rem 2rem 0' }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text)', margin: '0 0 4px' }}>
+            🔬 {t('robotics.hands_on_experiments')}
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: 'var(--muted)', margin: '0 0 1rem' }}>
+            {t('robotics.experiments_subtitle')}
+          </p>
+
+          {/* Section filter buttons */}
+          <div className="filter-group" style={{ marginBottom: '1rem' }}>
+            {expSections.map(s => {
+              const label = s === 'all'
+                ? `${t('robotics.filter_all')} (${roboticsExperiments.length})`
+                : `${roboticsSectionEmojis[s] || ''} ${t(`robotics.section_${s.toLowerCase()}`)} (${roboticsExperiments.filter(e => e.section === s).length})`
+              return (
+                <button
+                  key={s}
+                  className={`filter-btn${expFilter === s ? ' active' : ''}`}
+                  onClick={() => setExpFilter(s)}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Experiment cards grid */}
+          <div className="experiment-grid" style={{ marginBottom: '1.5rem' }}>
+            {filteredExps.map(exp => (
+              <ExperimentCard
+                key={exp.num}
+                exp={exp}
+                color={roboticsSectionColors[exp.section] ?? '#14B8A6'}
+                sectionEmoji={roboticsSectionEmojis[exp.section]}
+                onClick={() => router.push(`/robotics/experiments/${exp.num}`)}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* ── Online Courses Section ── */}
+        <div style={{ padding: '0 2rem' }}>
+          <div className="robotics-section-divider" />
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text)', margin: '0 0 4px' }}>
+            🎓 {t('robotics.online_courses')}
+          </h2>
         </div>
 
         {/* Filter bar */}

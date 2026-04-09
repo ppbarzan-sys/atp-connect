@@ -535,6 +535,9 @@ body.teacher-mode .page-shell{top:32px;bottom:0;}
 [dir="rtl"] .quiz-options{margin-left:0;margin-right:8px;}
 [dir="rtl"] .quiz-short-answer{text-align:right;}
 
+/* ── ROBOTICS EXPERIMENTS ──── */
+.robotics-section-divider{height:1px;background:var(--border);margin:1rem 0 1.25rem;}
+
 /* ── SEARCH OVERLAY ────────── */
 .search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;display:none;align-items:flex-start;justify-content:center;padding-top:80px;}
 .search-overlay.open{display:flex;}

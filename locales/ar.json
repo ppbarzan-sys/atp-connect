@@ -76,7 +76,8 @@
     "overview_close": "✕ إغلاق",
     "not_found": "التجربة غير موجودة",
     "back_to_browse": "العودة إلى التصفّح",
-    "back_to_chemistry": "العودة إلى الكيمياء"
+    "back_to_chemistry": "العودة إلى الكيمياء",
+    "back_to_robotics": "العودة إلى الروبوتات"
   },
   "summary": {
     "what_learn": "ماذا سيتعلّمون",
@@ -194,6 +195,7 @@
     "focus_question_intro": "لننظر في هذا السؤال معًا: \"{text}\". أجبت \"{userAnswer}\"، لكن الإجابة الصحيحة هي \"{correctAnswer}\". هل تريد أن أشرح لك السبب؟",
     "welcome_exp_physics": "مرحبًا! أنا غالي ✦ أنا هنا لمساعدتك في **{title}**. اسألني عن الإعداد أو المعادلات الأساسية أو النتائج المتوقعة أو كيف ينطبق هذا المفهوم الفيزيائي في العالم الحقيقي!",
     "welcome_exp_chemistry": "مرحبًا! أنا غالي ✦ أنا هنا لمساعدتك في **{title}**. اسألني عن الإعداد أو المعادلات الأساسية أو النتائج المتوقعة أو كيف ينطبق هذا المفهوم الكيميائي في العالم الحقيقي!",
+    "welcome_exp_robotics": "مرحباً! أنا غالي، مساعدك في مختبر الروبوتات. سأساعدك في **{title}**. اسألني عن الدائرة أو الكود أو استكشاف الأخطاء!",
     "welcome_exp_quiz_perfect": "مرحبًا! أنا غالي ✦ رائع — حصلت على **{correct}/{total}** في **{title}**! 🎉 هل هناك شيء تريد استكشافه بشكل أعمق أو تحدّي نفسك أكثر؟",
     "welcome_exp_quiz_good": "مرحبًا! أنا غالي ✦ عمل جيد في **{title}** — حصلت على **{correct}/{total}**! 👍 هل تريد أن أساعدك في توضيح أي من المواضيع التي أخطأت فيها؟",
     "welcome_exp_quiz_poor": "مرحبًا! أنا غالي ✦ لنعمل على **{title}** معًا! حصلت على **{correct}/{total}** — يمكنني مساعدتك في فهم الأجزاء الصعبة. ماذا تريد أن تراجع؟",
@@ -240,6 +242,9 @@
     "quick_robotics_1": "كيف أبدأ مع Arduino؟",
     "quick_robotics_2": "فيمَ يُستخدم Raspberry Pi؟",
     "quick_robotics_3": "ماذا سأتعلّم في CS50؟",
+    "quick_robotics_circuit": "اشرح مخطط الدائرة",
+    "quick_robotics_code": "ساعدني في فهم الكود",
+    "quick_robotics_debug": "دائرتي لا تعمل",
     "voice_input": "تحدّث",
     "voice_listening": "جارٍ الاستماع…",
     "voice_stop": "إيقاف",
@@ -290,7 +295,14 @@
     "intermediate": "متوسط",
     "advanced": "متقدّم",
     "open_in_new_tab": "يفتح في تبويب جديد",
-    "provider_label": "من"
+    "provider_label": "من",
+    "hands_on_experiments": "تجارب أردوينو العملية",
+    "experiments_subtitle": "ابنِ دوائر حقيقية مع Arduino Science Kit R3 — 12 تجربة موجهة",
+    "online_courses": "الدورات عبر الإنترنت",
+    "section_fundamentals": "الأساسيات",
+    "section_sensors": "المستشعرات",
+    "section_actuators": "المحركات",
+    "section_projects": "المشاريع"
   },
   "teacher": {
     "mode_bar": "👩‍🏫 وضع المعلّم مفعّل — نتائج الطلاب وملاحظاتهم مرئية",

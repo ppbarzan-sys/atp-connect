@@ -78,9 +78,10 @@ function computeSubjectStats(
 export function getDashboardData(
   physicsExperiments: Experiment[],
   chemistryExperiments: Experiment[],
-  courseQuizNums?: { robotics: { num: number; title: string }[]; ai: { num: number; title: string }[] }
+  courseQuizNums?: { robotics: { num: number; title: string }[]; ai: { num: number; title: string }[] },
+  roboticsExperiments?: Experiment[]
 ): DashboardData {
-  const allExperiments = [...physicsExperiments, ...chemistryExperiments]
+  const allExperiments = [...physicsExperiments, ...chemistryExperiments, ...(roboticsExperiments || [])]
   const progressMap = new Map<number, ExperimentProgress>()
   const titleMap = new Map<number, string>()
 
@@ -110,7 +111,22 @@ export function getDashboardData(
     return { completed: quizzes.length, total: items.length, avgScore, quizzes }
   }
 
-  const robotics = courseQuizNums ? computeCourseQuizStats(courseQuizNums.robotics) : { completed: 0, total: 0, avgScore: 0, quizzes: [] }
+  // Robotics: combine hands-on experiments (500-series) + course quizzes (200-series)
+  const roboticsExpStats = roboticsExperiments ? computeSubjectStats(roboticsExperiments, progressMap) : null
+  const roboticsQuizStats = courseQuizNums ? computeCourseQuizStats(courseQuizNums.robotics) : { completed: 0, total: 0, avgScore: 0, quizzes: [] }
+  const roboticsAllScores: number[] = []
+  if (roboticsExpStats) {
+    for (const sec of roboticsExpStats.sections) {
+      if (sec.avgScore > 0) roboticsAllScores.push(sec.avgScore)
+    }
+  }
+  if (roboticsQuizStats.avgScore > 0) roboticsAllScores.push(roboticsQuizStats.avgScore)
+  const robotics = {
+    completed: (roboticsExpStats?.completed || 0) + roboticsQuizStats.completed,
+    total: (roboticsExpStats?.total || 0) + roboticsQuizStats.total,
+    avgScore: roboticsAllScores.length > 0 ? Math.round(roboticsAllScores.reduce((a, b) => a + b, 0) / roboticsAllScores.length) : 0,
+    quizzes: roboticsQuizStats.quizzes,
+  }
   const ai = courseQuizNums ? computeCourseQuizStats(courseQuizNums.ai) : { completed: 0, total: 0, avgScore: 0, quizzes: [] }
 
   const totalCompleted = physics.completed + chemistry.completed + robotics.completed + ai.completed

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
 import { useI18n } from '@/lib/i18n'
-import { getExperiments, getChemistryExperiments, type Experiment } from '@/data/loader'
+import { getExperiments, getChemistryExperiments, getRoboticsExperiments, type Experiment } from '@/data/loader'
 import { getDashboardData, type DashboardData } from '@/lib/dashboard'
 import { deleteAllProgress, loadProgress, getAllGrades, type ExperimentProgress } from '@/lib/storage'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
@@ -24,14 +24,15 @@ export default function DashboardPage() {
   useEffect(() => {
     const physics = getExperiments(locale)
     const chemistry = getChemistryExperiments(locale)
-    const all = [...physics, ...chemistry]
+    const robotics = getRoboticsExperiments(locale)
+    const all = [...physics, ...chemistry, ...robotics]
     setAllExperiments(all)
 
     const courseQuizNums = {
       robotics: roboticsQuizzes.map(q => ({ num: q.num, title: q.title })),
       ai: aiQuizzes.map(q => ({ num: q.num, title: q.title })),
     }
-    setData(getDashboardData(physics, chemistry, courseQuizNums))
+    setData(getDashboardData(physics, chemistry, courseQuizNums, robotics))
 
     const pMap = new Map<number, ExperimentProgress>()
     for (const exp of all) {
