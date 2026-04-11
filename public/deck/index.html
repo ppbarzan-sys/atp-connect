@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATP Connect — Where Theory Becomes Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2A9B9B;
+  --teal-dark:#1F7878;
+  --teal-soft:#E6F3F3;
+  --navy:#2B3A42;
+  --navy-ink:#1A242A;
+  --cream:#F7F5EF;
+  --bg:#F7F9FA;
+  --ink:#0E1A20;
+  --ink-2:#49606A;
+  --line:#DCE5E8;
+  --accent:#F2A93B;
+  --shadow:0 20px 60px -20px rgba(20,40,50,.25),0 6px 20px -10px rgba(20,40,50,.15);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0A1114;color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.stage{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(1200px 700px at 50% 50%,#16252B 0%,#0A1114 80%);
+}
+.deck{
+  position:relative;width:min(94vw,1440px);aspect-ratio:16/9;max-height:92vh;
+  background:var(--bg);border-radius:18px;overflow:hidden;box-shadow:0 40px 120px -30px rgba(0,0,0,.6);
+}
+.slide{
+  position:absolute;inset:0;opacity:0;transform:translateY(8px) scale(.995);
+  transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.1,1);
+  padding:56px 72px;display:flex;flex-direction:column;justify-content:center;
+  pointer-events:none;
+}
+.slide.active{opacity:1;transform:none;pointer-events:auto}
+.slide.prev{transform:translateY(-8px) scale(.995)}
+
+/* Header bar */
+.bar{position:absolute;top:22px;left:72px;right:72px;display:flex;align-items:center;justify-content:space-between;font:500 12px/1 'Inter';color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase}
+.bar .lg{display:flex;align-items:center;gap:10px}
+.bar img{height:22px;width:auto}
+.bar .pg{font-variant-numeric:tabular-nums;color:var(--ink-2)}
+
+/* Progress */
+.bar .bar-line{position:absolute;left:72px;right:72px;bottom:24px;height:3px;background:rgba(0,0,0,.06);border-radius:99px;overflow:hidden}
+.progress{position:absolute;left:72px;right:72px;bottom:24px;height:3px;background:rgba(42,155,155,.12);border-radius:99px;overflow:hidden;z-index:5}
+.progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--accent));transition:width .5s ease}
+
+/* Typography */
+h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;color:var(--navy-ink);letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(36px,4.2vw,68px);line-height:1.02;font-weight:700}
+h2{font-size:clamp(28px,3.2vw,48px);line-height:1.05;font-weight:700}
+h3{font-size:clamp(18px,1.6vw,24px);font-weight:600}
+p{font-size:clamp(15px,1.15vw,19px);line-height:1.55;color:var(--ink-2);margin:0}
+.eyebrow{display:inline-block;font:600 11px/1 'Inter';letter-spacing:.22em;text-transform:uppercase;color:var(--teal);padding:8px 14px;background:var(--teal-soft);border-radius:99px;margin-bottom:18px}
+.lead{font-size:clamp(18px,1.45vw,22px);color:var(--ink-2);max-width:58ch}
+
+/* Layout helpers */
+.grid{display:grid;gap:32px}
+.g-2{grid-template-columns:1fr 1fr}
+.g-3{grid-template-columns:repeat(3,1fr)}
+.g-4{grid-template-columns:repeat(4,1fr)}
+.g-asym{grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.g-asym-r{grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 2px 0 rgba(0,0,0,.02)}
+.card h3{margin:0 0 6px}
+.card p{font-size:15px;line-height:1.5}
+.card .ic{width:38px;height:38px;border-radius:10px;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px}
+
+.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;background:var(--teal-soft);color:var(--teal-dark);border-radius:99px;font:600 12px/1 'Inter'}
+
+/* Photo frames */
+.photo{position:relative;border-radius:16px;overflow:hidden;background:#000;box-shadow:var(--shadow)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo.tall{aspect-ratio:4/5}
+.photo.wide{aspect-ratio:16/10}
+.photo .cap{position:absolute;left:16px;bottom:14px;right:16px;color:#fff;font:500 13px/1.3 'Inter';text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.photo::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);pointer-events:none}
+
+/* Dark slide variant */
+.slide.dark{background:linear-gradient(160deg,#20333C 0%,#0F1B21 100%);color:#fff}
+.slide.dark h1,.slide.dark h2,.slide.dark h3{color:#fff}
+.slide.dark p{color:rgba(255,255,255,.7)}
+.slide.dark .eyebrow{background:rgba(42,155,155,.18);color:#7FD4D4}
+.slide.dark .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:#fff}
+.slide.dark .card h3{color:#fff}
+.slide.dark .card p{color:rgba(255,255,255,.65)}
+.slide.dark .bar{color:rgba(255,255,255,.55)}
+.slide.dark .progress{background:rgba(255,255,255,.08)}
+
+/* Title slide */
+.hero{display:flex;flex-direction:column;justify-content:center;gap:24px}
+.hero .logo-big{height:56px;width:auto;margin-bottom:8px}
+.hero h1{font-size:clamp(48px,5.6vw,92px);line-height:.98}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--teal),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(18px,1.5vw,22px);max-width:56ch;color:rgba(255,255,255,.7)}
+.hero .meta{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+.chip{padding:9px 16px;border:1px solid rgba(255,255,255,.18);border-radius:99px;font:500 13px/1 'Inter';color:rgba(255,255,255,.85)}
+.hero .bgphoto{position:absolute;inset:0;background-image:url('lab3.jpg');background-size:cover;background-position:center right;opacity:.22;filter:saturate(.85) contrast(1.05)}
+.hero .bgphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#0B1A20 0%,rgba(11,26,32,.75) 45%,transparent 90%)}
+
+/* Stats */
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,4vw,60px);line-height:1;font-weight:700;color:var(--teal);letter-spacing:-.02em}
+.stat .lbl{font:500 13px/1.35 'Inter';color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em}
+.dark .stat .num{color:#7FD4D4}
+.dark .stat .lbl{color:rgba(255,255,255,.6)}
+
+/* Dashboard mockup */
+.mock{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;aspect-ratio:16/10}
+.mock .mhead{height:40px;display:flex;align-items:center;gap:8px;padding:0 14px;border-bottom:1px solid var(--line);background:#F8FAFB}
+.mock .mhead .dot{width:10px;height:10px;border-radius:50%;background:#E4E7EA}
+.mock .mhead .dot.r{background:#FF6057}
+.mock .mhead .dot.y{background:#FFBD2E}
+.mock .mhead .dot.g{background:#27C93F}
+.mock .mhead .url{flex:1;height:22px;background:#EEF2F3;border-radius:6px;font:500 10px/22px 'Inter';color:#8A9AA0;padding:0 10px}
+.mock .mbody{display:grid;grid-template-columns:180px 1fr;height:calc(100% - 40px)}
+.mock .mside{background:#F4F7F8;border-right:1px solid var(--line);padding:16px 12px;font-size:11px}
+.mock .mside .mitem{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;color:var(--ink-2);margin-bottom:2px}
+.mock .mside .mitem.active{background:var(--teal-soft);color:var(--teal-dark);font-weight:600}
+.mock .mside .mitem .i{width:16px;height:16px;border-radius:4px;background:#D6E2E6}
+.mock .mside .mitem.active .i{background:var(--teal)}
+.mock .mmain{padding:18px 22px;overflow:hidden}
+.mock .mstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.mock .mstats .s{padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.mock .mstats .s .v{font:700 22px/1 'Space Grotesk';color:var(--navy-ink)}
+.mock .mstats .s .k{font:500 10px/1 'Inter';color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+.mock .mpan{border:1px solid var(--line);border-radius:10px;padding:14px;background:#fff;height:calc(100% - 95px);display:flex;flex-direction:column}
+.mock .mpan .t{font:600 11px/1 'Inter';color:var(--ink);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.chart{flex:1;display:flex;align-items:flex-end;gap:6px}
+.chart .b{flex:1;background:linear-gradient(to top,var(--teal),#6FC4C4);border-radius:4px 4px 0 0;min-height:6px}
+
+/* Gali chat mockup */
+.chat-mock{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;aspect-ratio:16/10}
+.chat-mock .chead{height:44px;display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--teal),var(--teal-dark));color:#fff}
+.chat-mock .chead .av{width:26px;height:26px;border-radius:50%;background:#fff;color:var(--teal);display:flex;align-items:center;justify-content:center;font:700 13px/1 'Space Grotesk'}
+.chat-mock .chead .tit{font:600 13px/1.2 'Inter'}
+.chat-mock .chead .tit small{display:block;font:400 10px/1.2 'Inter';opacity:.85;margin-top:2px}
+.chat-mock .cbody{flex:1;padding:18px 22px;display:flex;flex-direction:column;gap:12px;overflow:hidden;background:#FBFCFD}
+.msg{max-width:78%;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.5}
+.msg.s{align-self:flex-end;background:var(--teal);color:#fff;border-bottom-right-radius:4px}
+.msg.g{align-self:flex-start;background:#fff;border:1px solid var(--line);color:var(--navy-ink);border-bottom-left-radius:4px}
+.msg.g .lbl{font:600 10px/1 'Inter';color:var(--teal);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.msg.g .step{display:flex;gap:8px;margin-top:6px;color:var(--ink-2)}
+.msg.g .step i{width:14px;height:14px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:inline-flex;align-items:center;justify-content:center;font:700 9px/1 'Space Grotesk';flex:none;margin-top:2px}
+.chat-mock .cfoot{border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:8px;background:#fff}
+.chat-mock .cfoot .inp{flex:1;height:32px;border:1px solid var(--line);border-radius:8px;background:#F6F9FA;font:500 11px/32px 'Inter';color:#9AA9AE;padding:0 12px}
+.chat-mock .cfoot .snd{width:32px;height:32px;background:var(--teal);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff}
+
+/* Screenshot frame */
+.shot{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.shot img{display:block;width:100%;height:auto}
+.shot .lab{position:absolute;top:14px;left:14px;padding:6px 12px;background:rgba(255,255,255,.95);border-radius:99px;font:600 11px/1 'Inter';color:var(--teal-dark);text-transform:uppercase;letter-spacing:.1em;backdrop-filter:blur(6px);border:1px solid rgba(42,155,155,.2)}
+
+/* Feature rows */
+.feats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px}
+.feat{display:flex;gap:16px;align-items:flex-start}
+.feat .ic{width:44px;height:44px;border-radius:12px;background:var(--teal-soft);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.feat h3{font-size:17px;margin-bottom:4px}
+.feat p{font-size:14px;line-height:1.5}
+.dark .feat .ic{background:rgba(42,155,155,.15);color:#7FD4D4}
+
+/* Call to action */
+.cta-box{background:linear-gradient(130deg,var(--teal) 0%,var(--teal-dark) 80%);border-radius:20px;padding:44px 48px;color:#fff;box-shadow:var(--shadow)}
+.cta-box h2{color:#fff;margin-bottom:10px}
+.cta-box p{color:rgba(255,255,255,.85);max-width:50ch}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;color:var(--teal-dark);border-radius:99px;font:600 15px/1 'Inter';text-decoration:none;margin-top:20px}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff}
+
+/* Keyboard hint */
+.khint{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.35);font:500 11px/1 'Inter';letter-spacing:.1em;text-transform:uppercase}
+kbd{display:inline-block;padding:3px 7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:5px;font-family:'Space Grotesk';font-size:10px;margin:0 3px;color:rgba(255,255,255,.7)}
+
+/* Quote */
+.quote{font-family:'Space Grotesk';font-size:clamp(26px,2.6vw,38px);line-height:1.25;color:var(--navy-ink);max-width:24ch;font-weight:600}
+.dark .quote{color:#fff}
+.quote-mark{font-family:'Space Grotesk';font-size:80px;line-height:.4;color:var(--teal);display:block;margin-bottom:-10px}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="deck" id="deck">
+
+    <!-- 1. TITLE -->
+    <section class="slide dark active">
+      <div class="bgphoto"></div>
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP Connect"></div><div class="pg">01 / 14</div></div>
+      <div class="hero" style="position:relative;z-index:2">
+        <img class="logo-big" src="logo.png" alt="ATP">
+        <h1>Where <em>theory</em><br>becomes <em>practice.</em></h1>
+        <p class="sub">ATP Connect blends a physical mobile lab, an AI tutor named Gali, and a guided digital platform — so every student learns STEM by doing.</p>
+        <div class="meta">
+          <span class="chip">🧪 Physics · Chemistry · Biology · Robotics</span>
+          <span class="chip">🤖 AI tutor</span>
+          <span class="chip">🌍 Ages 8 – 18</span>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 2. THE PROBLEM -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">02 / 14</div></div>
+      <span class="eyebrow">The problem</span>
+      <h1 style="max-width:16ch">STEM is taught on paper.<br>Real understanding happens in hands.</h1>
+      <p class="lead" style="margin-top:22px">Most classrooms rely on textbooks and slides. Students memorize formulas they've never seen at work. Labs are rare, expensive, or reserved for a lucky few — and curiosity quietly fades.</p>
+      <div class="grid g-3" style="margin-top:44px">
+        <div class="stat"><div class="num">70%</div><div class="lbl">of students say STEM feels abstract</div></div>
+        <div class="stat"><div class="num">1 in 5</div><div class="lbl">schools has a working lab</div></div>
+        <div class="stat"><div class="num">3×</div><div class="lbl">better retention with hands-on learning</div></div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 3. THE SOLUTION -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">03 / 14</div></div>
+      <div class="grid g-asym">
+        <div>
+          <span class="eyebrow">The solution</span>
+          <h1 style="max-width:14ch">One kit. One tutor.<br>One platform.</h1>
+          <p class="lead" style="margin-top:18px">ATP Connect brings the lab to the student. Open the case, scan a QR code, and every experiment comes alive — guided step-by-step on screen and mentored in real time by Gali, our AI teaching assistant.</p>
+          <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="tag">🧰 Mobile lab</span>
+            <span class="tag">🤖 Gali AI tutor</span>
+            <span class="tag">💻 Digital platform</span>
+            <span class="tag">📚 Curriculum-aligned</span>
+          </div>
+        </div>
+        <div class="photo wide"><img src="lab1.jpg" alt="ATP mobile lab"><div class="cap">The ATP mobile lab — everything a classroom needs, in one case.</div></div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 4. THE MOBILE LAB -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">04 / 14</div></div>
+      <span class="eyebrow">The mobile lab</span>
+      <h1 style="max-width:18ch">A full STEM lab that fits on a desk.</h1>
+      <div class="grid g-2" style="gap:40px;margin-top:30px;align-items:center">
+        <p class="lead">Smart trays for mechanics, optics, electricity, chemistry, and biology — each component tagged, tracked, and ready to use. Teachers unpack. Students experiment. No setup headaches, no missing pieces.</p>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px">
+          <div class="feat"><div class="ic">📦</div><div><h3>Portable</h3><p>Rolls into any classroom, sets up in minutes.</p></div></div>
+          <div class="feat"><div class="ic">🧲</div><div><h3>Modular</h3><p>Swap trays for different subjects and levels.</p></div></div>
+          <div class="feat"><div class="ic">🏷️</div><div><h3>Tracked</h3><p>Every part catalogued and scannable.</p></div></div>
+          <div class="feat"><div class="ic">♻️</div><div><h3>Reusable</h3><p>Built to last hundreds of lessons.</p></div></div>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 5. HANDS-ON LEARNING (photo spread) -->
+    <section class="slide dark">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">05 / 14</div></div>
+      <div class="grid g-2" style="gap:40px;align-items:center;height:100%">
+        <div>
+          <span class="eyebrow">Hands-on learning</span>
+          <h1 style="max-width:14ch">Experiments that students actually remember.</h1>
+          <p class="lead" style="margin-top:18px;color:rgba(255,255,255,.75)">When students touch a circuit, weigh a reaction, or balance a lever themselves, the concept stops being abstract. Curiosity comes back. Questions multiply. STEM becomes something they want to do — not something they have to study.</p>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px">
+          <div class="photo tall"><img src="lab2.jpg" alt="Hands-on experiment"></div>
+          <div class="photo tall" style="margin-top:40px"><img src="lab3.jpg" alt="Students using the lab"></div>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 6. THE PLATFORM (dashboard mock) -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">06 / 14</div></div>
+      <div class="grid g-asym-r">
+        <div class="mock">
+          <div class="mhead"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><div class="url">atpconnect.app / classroom</div></div>
+          <div class="mbody">
+            <div class="mside">
+              <div class="mitem active"><div class="i"></div>Dashboard</div>
+              <div class="mitem"><div class="i"></div>Physics</div>
+              <div class="mitem"><div class="i"></div>Chemistry</div>
+              <div class="mitem"><div class="i"></div>Biology</div>
+              <div class="mitem"><div class="i"></div>Robotics</div>
+              <div class="mitem"><div class="i"></div>Gali AI</div>
+              <div class="mitem"><div class="i"></div>Progress</div>
+            </div>
+            <div class="mmain">
+              <div class="mstats">
+                <div class="s"><div class="v">124</div><div class="k">Students</div></div>
+                <div class="s"><div class="v">38</div><div class="k">Experiments</div></div>
+                <div class="s"><div class="v">92%</div><div class="k">Completion</div></div>
+                <div class="s"><div class="v">4.7★</div><div class="k">Engagement</div></div>
+              </div>
+              <div class="mpan">
+                <div class="t">Class progress · Mechanics</div>
+                <div class="chart">
+                  <div class="b" style="height:55%"></div>
+                  <div class="b" style="height:72%"></div>
+                  <div class="b" style="height:38%"></div>
+                  <div class="b" style="height:88%"></div>
+                  <div class="b" style="height:64%"></div>
+                  <div class="b" style="height:82%"></div>
+                  <div class="b" style="height:50%"></div>
+                  <div class="b" style="height:94%"></div>
+                  <div class="b" style="height:68%"></div>
+                  <div class="b" style="height:76%"></div>
+                  <div class="b" style="height:44%"></div>
+                  <div class="b" style="height:86%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">The platform</span>
+          <h1 style="max-width:12ch">Every lesson,<br>organized.</h1>
+          <p class="lead" style="margin-top:18px">Teachers see who's ahead, who's stuck, and where understanding breaks down — without grading a single paper. Students see their next step, their streak, and their progress across subjects.</p>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 7. GALI AI TUTOR (chat mock) -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">07 / 14</div></div>
+      <div class="grid g-asym">
+        <div>
+          <span class="eyebrow">Meet Gali</span>
+          <h1 style="max-width:14ch">An AI tutor that never runs out of patience.</h1>
+          <p class="lead" style="margin-top:18px">Gali explains, encourages, and guides — one student, one question at a time. She knows every experiment, speaks the student's language, and nudges without giving the answer away.</p>
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:28px">
+            <div class="feat"><div class="ic">💬</div><div><h3>Socratic</h3><p>Asks questions back, instead of spoon-feeding.</p></div></div>
+            <div class="feat"><div class="ic">🧠</div><div><h3>Contextual</h3><p>Knows the exact step the student is on.</p></div></div>
+            <div class="feat"><div class="ic">🗣️</div><div><h3>Multilingual</h3><p>English, Italian, French, Spanish, Arabic.</p></div></div>
+            <div class="feat"><div class="ic">🛡️</div><div><h3>Safe</h3><p>Bounded to the lesson — no drift, no noise.</p></div></div>
+          </div>
+        </div>
+        <div class="chat-mock">
+          <div class="chead">
+            <div class="av">G</div>
+            <div class="tit">Gali · AI Tutor<small>First class levers · equilibrium</small></div>
+          </div>
+          <div class="cbody">
+            <div class="msg s">My lever tips to the left. Both masses are 25g. What did I miss?</div>
+            <div class="msg g">
+              <div class="lbl">Gali</div>
+              Great observation! The masses are equal, so something else must differ. Think about where each mass sits on the arm.
+              <div class="step"><i>1</i>Measure the distance from the pivot to each mass.</div>
+              <div class="step"><i>2</i>Compare the two distances.</div>
+              <div class="step"><i>3</i>What does M = F × d tell you?</div>
+            </div>
+            <div class="msg s">Oh — the left one is further out. So the moment is bigger.</div>
+            <div class="msg g"><div class="lbl">Gali</div>Exactly. Try moving it closer until the arm is level — you'll find the balance point.</div>
+          </div>
+          <div class="cfoot"><div class="inp">Type your question…</div><div class="snd">➤</div></div>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 8. QUOTE / TESTIMONIAL -->
+    <section class="slide dark">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">08 / 14</div></div>
+      <div class="grid g-asym" style="align-items:center;height:100%">
+        <div>
+          <span class="quote-mark">&ldquo;</span>
+          <p class="quote">My students stopped asking <em>"why do we need this?"</em> — they started asking <em>"what happens if we try&nbsp;…?"</em></p>
+          <p style="margin-top:28px;color:rgba(255,255,255,.55);font:500 14px/1.4 'Inter'">Science teacher · middle school pilot, 2025</p>
+        </div>
+        <div class="photo wide"><img src="lab2.jpg" alt="Students experimenting"><div class="cap">A curiosity-first classroom in session.</div></div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 9. EXPERIMENT LIBRARY (real screenshot) -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">09 / 14</div></div>
+      <span class="eyebrow">Experiment library</span>
+      <h1 style="max-width:18ch">Dozens of ready-to-run experiments, curated and sequenced.</h1>
+      <p class="lead" style="margin-top:14px;max-width:62ch">Each lesson ships with instructions, safety notes, expected outcomes, equipment lists, and auto-generated questions — all tied back to the physical kit.</p>
+      <div class="shot" style="margin-top:26px;max-height:56%"><div class="lab">Live platform</div><img src="atp_physics.jpg" alt="ATP Connect physics experiments screen"></div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 10. SUBJECTS COVERED -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">10 / 14</div></div>
+      <span class="eyebrow">What's inside</span>
+      <h1 style="max-width:18ch">Four subjects. One coherent journey.</h1>
+      <div class="grid g-4" style="margin-top:36px">
+        <div class="card"><div class="ic">⚖️</div><h3>Physics</h3><p>Levers, pendulums, optics, circuits, magnetism — mechanics you can feel.</p></div>
+        <div class="card"><div class="ic">⚗️</div><h3>Chemistry</h3><p>Safe reactions, pH, crystallization, states of matter — science in color.</p></div>
+        <div class="card"><div class="ic">🌱</div><h3>Biology</h3><p>Microscopy, plant growth, osmosis, ecosystems — life at eye level.</p></div>
+        <div class="card"><div class="ic">🤖</div><h3>Robotics &amp; CS</h3><p>Sensors, motors, block-based code — logic made physical.</p></div>
+      </div>
+      <p style="margin-top:28px;font:500 13px/1.4 'Inter';color:var(--ink-2)">Curriculum mapped to national STEM frameworks (MIUR, Cambridge, IB MYP).</p>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 11. FOR TEACHERS -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">11 / 14</div></div>
+      <div class="grid g-asym">
+        <div>
+          <span class="eyebrow">For teachers</span>
+          <h1 style="max-width:14ch">Prep in minutes,<br>teach with confidence.</h1>
+          <div class="feats" style="margin-top:28px">
+            <div class="feat"><div class="ic">📋</div><div><h3>Lesson plans</h3><p>Click to open a full lesson with timings, objectives, and prompts.</p></div></div>
+            <div class="feat"><div class="ic">📊</div><div><h3>Real-time analytics</h3><p>See where students hesitate — and why.</p></div></div>
+            <div class="feat"><div class="ic">🧑‍🏫</div><div><h3>Teacher mode</h3><p>Student results and notes, always one click away.</p></div></div>
+            <div class="feat"><div class="ic">🔁</div><div><h3>Reusable</h3><p>Same kit, same platform, dozens of lessons.</p></div></div>
+          </div>
+        </div>
+        <div class="photo tall"><img src="lab3.jpg" alt="Teacher-led lab"></div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 12. FOR STUDENTS -->
+    <section class="slide">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">12 / 14</div></div>
+      <div class="grid g-asym-r">
+        <div class="photo tall"><img src="lab1.jpg" alt="Student using ATP lab"></div>
+        <div>
+          <span class="eyebrow">For students</span>
+          <h1 style="max-width:14ch">Learn by asking,<br>not by guessing.</h1>
+          <div class="feats" style="margin-top:28px">
+            <div class="feat"><div class="ic">🧪</div><div><h3>Do first</h3><p>Start with the experiment, not the formula.</p></div></div>
+            <div class="feat"><div class="ic">💬</div><div><h3>Ask Gali</h3><p>Never stuck — a patient tutor is always there.</p></div></div>
+            <div class="feat"><div class="ic">🏅</div><div><h3>Track progress</h3><p>Streaks, badges, and visible growth.</p></div></div>
+            <div class="feat"><div class="ic">🌍</div><div><h3>Your language</h3><p>Learn in the language you think in.</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 13. VALUE PROPOSITION / IMPACT -->
+    <section class="slide dark">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">13 / 14</div></div>
+      <span class="eyebrow">Why it works</span>
+      <h1 style="max-width:18ch">Hardware + AI + curriculum — in one coherent experience.</h1>
+      <div class="grid g-3" style="margin-top:40px">
+        <div class="card">
+          <div class="ic">🧰</div>
+          <h3>Physical first</h3>
+          <p>Students touch the science. Abstract concepts become muscle memory, not worksheet answers.</p>
+        </div>
+        <div class="card">
+          <div class="ic">🤖</div>
+          <h3>AI that guides</h3>
+          <p>Gali meets each learner where they are — closing gaps before they become frustration.</p>
+        </div>
+        <div class="card">
+          <div class="ic">📈</div>
+          <h3>Measurable outcomes</h3>
+          <p>Teachers get evidence, not estimates. Admins get data, not anecdotes.</p>
+        </div>
+      </div>
+      <div class="grid g-4" style="margin-top:44px;gap:24px">
+        <div class="stat"><div class="num">+42%</div><div class="lbl">concept retention<br>(pilot, 2025)</div></div>
+        <div class="stat"><div class="num">3×</div><div class="lbl">student<br>engagement time</div></div>
+        <div class="stat"><div class="num">−60%</div><div class="lbl">teacher<br>prep time</div></div>
+        <div class="stat"><div class="num">4.8/5</div><div class="lbl">teacher<br>satisfaction</div></div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+    <!-- 14. CALL TO ACTION -->
+    <section class="slide dark">
+      <div class="bar"><div class="lg"><img src="logo.png" alt="ATP"></div><div class="pg">14 / 14</div></div>
+      <div class="grid g-asym" style="align-items:center;height:100%">
+        <div class="cta-box">
+          <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff">Get started</span>
+          <h2 style="margin-top:14px">Bring ATP Connect to your classroom.</h2>
+          <p>Pilot kits ship worldwide. Training, curriculum mapping, and multilingual support included.</p>
+          <a class="btn" href="https://atpconnect.app">atpconnect.app →</a>
+          <a class="btn ghost" href="mailto:hello@atpconnect.app" style="margin-left:10px">hello@atpconnect.app</a>
+        </div>
+        <div>
+          <img src="logo.png" alt="ATP" style="height:72px;width:auto;margin-bottom:28px">
+          <p style="color:rgba(255,255,255,.65);max-width:32ch;font-size:17px;line-height:1.55">One kit. One tutor. One platform. An entire generation, learning STEM with their hands — and loving it again.</p>
+        </div>
+      </div>
+      <div class="progress"><i></i></div>
+    </section>
+
+  </div>
+</div>
+<div class="khint">
+  <kbd>←</kbd><kbd>→</kbd> navigate · <kbd>Home</kbd> first · <kbd>End</kbd> last
+</div>
+<script>
+const slides = [...document.querySelectorAll('.slide')];
+const total = slides.length;
+let i = 0;
+function go(n){
+  if(n<0) n=0;
+  if(n>=total) n=total-1;
+  slides.forEach((s,k)=>{
+    s.classList.toggle('active', k===n);
+    s.classList.toggle('prev', k<n);
+    const p = s.querySelector('.progress > i');
+    if(p) p.style.width = (((k+1)/total)*100) + '%';
+  });
+  i = n;
+}
+document.addEventListener('keydown', e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1)}
+  else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1)}
+  else if(e.key==='Home'){e.preventDefault();go(0)}
+  else if(e.key==='End'){e.preventDefault();go(total-1)}
+});
+document.addEventListener('click', e=>{
+  if(e.target.closest('a,button,.khint')) return;
+  const r = document.getElementById('deck').getBoundingClientRect();
+  const x = e.clientX - r.left;
+  go(x < r.width/2 ? i-1 : i+1);
+});
+go(0);
+</script>
+</body>
+</html>
