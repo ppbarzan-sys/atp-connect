@@ -281,6 +281,7 @@
 
     /* Generic two-col -> single col */
     .row,.row.left-img,.row.right-img{grid-template-columns:1fr;gap:22px;margin-top:14px}
+    .row > *{min-width:0}
     .photo{max-height:260px;height:auto;object-fit:cover}
 
     /* Cards grids */
@@ -319,8 +320,46 @@
     .spec .k{padding-bottom:2px;padding-top:12px}
     .spec .v{border-bottom:1px solid var(--line);padding-top:0;padding-bottom:12px}
 
-    /* Mocks — hide decorative dashboards on mobile to keep slides tight */
-    .mock{display:none}
+    /* Mocks — restructure for narrow screens (sidebars become top bars,
+       2-col layouts collapse, grids reduce column count). */
+    .mock{max-width:100%;width:100%;margin:0 auto;box-shadow:0 12px 30px rgba(10,30,40,.18);overflow:hidden}
+    .mock .bar{padding:8px 10px;gap:4px;min-width:0}
+    .mock .bar .url{font-size:10px;padding:3px 8px;max-width:100%;min-width:0;margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1 1 0}
+    .mock .body{flex-direction:column;min-height:0}
+    .mock .sidebar{width:100%;flex-direction:row;border-right:none;border-bottom:1px solid var(--line);padding:10px 12px;gap:8px;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}
+    .mock .sidebar .logo-b{width:32px;height:32px;font-size:10px;margin-bottom:0;flex:0 0 auto}
+    .mock .sidebar .navi{width:auto;min-width:52px;height:38px;flex-direction:row;gap:5px;padding:0 8px;font-size:10px;flex:0 0 auto;border-radius:8px}
+    .mock .sidebar .navi .gi{font-size:13px}
+    .mock .main{padding:16px 16px}
+    .mock .topbar{margin:-16px -16px 14px;padding:5px;font-size:10px}
+    .mock h4{font-size:14px;margin-bottom:10px}
+
+    /* Dashboard stats — keep 3 columns (small numbers fit fine) */
+    .stats{gap:6px;margin-bottom:10px}
+    .stat{padding:8px 6px}
+    .stat .n{font-size:16px}
+    .stat .l{font-size:8px}
+    .panel{padding:10px;margin-bottom:8px}
+    .panel h5{font-size:11px;margin-bottom:8px}
+    .bar-row{font-size:9px;gap:6px;margin:4px 0}
+    .bar-row .lab{width:40px}
+    .bar-row .val{width:38px}
+    .duo{grid-template-columns:1fr;gap:8px}
+
+    /* Gali chat mock — stack 2-col into 1-col */
+    .chat-mock{grid-template-columns:1fr;min-height:0}
+    .chat-mock .left-col{padding:16px;border-right:none;border-bottom:1px solid var(--line)}
+    .chat-mock .right-col{padding:14px}
+    .chat-mock .step{font-size:10px;padding:8px 10px}
+    .chat-mock .msg{font-size:10px;padding:7px 10px;max-width:92%}
+
+    /* Experiments grid — collapse 3-col to 2-col */
+    .exp-grid{grid-template-columns:1fr 1fr;gap:8px}
+    .exp{padding:10px;font-size:10px}
+    .exp .ttl{font-size:11px}
+    .exp .img{height:40px;font-size:18px}
+    .exp .tag{font-size:8px}
+    .exp .meta{font-size:8px}
 
     /* Closing slide */
     .slide-end{padding:60px 22px 90px}
