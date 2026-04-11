@@ -1784,7 +1784,6 @@ export const chemistryExperiments: Experiment[] = [
     section: 'Acids & Bases',
     desc: 'Demonstrate that buffer solutions resist pH change when small amounts of acid or base are added, compared to unbuffered solutions.',
     equipmentNeeded: 'mobile-lab',
-    equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
     summary: {
@@ -3107,7 +3106,6 @@ export const chemistryExperiments: Experiment[] = [
     section: 'Gas Chemistry',
     desc: 'Students collect hydrogen gas over water from the reaction of zinc with HCl, measure the volume at room temperature and pressure, and calculate the molar volume of a gas.',
     equipmentNeeded: 'mobile-lab',
-    equipmentNeeded: 'mobile-lab',
     setupTime: '10 min',
     duration: '25 min',
     summary: {
@@ -4229,7 +4227,6 @@ export const chemistryExperiments: Experiment[] = [
     title: 'Conductivity of Electrolytes',
     section: 'Electrochemistry',
     desc: 'Students compare the electrical conductivity of various solutions and solids using a simple LED circuit to identify electrolytes and non-electrolytes.',
-    equipmentNeeded: 'mobile-lab',
     equipmentNeeded: 'mobile-lab',
     setupTime: '5 min',
     duration: '20 min',
