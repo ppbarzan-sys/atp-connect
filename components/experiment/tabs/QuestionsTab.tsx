@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Experiment } from '@/data/loader'
 import { loadResults, saveResults, saveProgress, deleteProgress, saveGrade, type QuizAttempt } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
+import PrintButton from '@/components/PrintButton'
 
 interface QuestionsTabProps {
   exp: Experiment
@@ -136,9 +137,12 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
                       })(),
                     })}
                   </div>
-                  <button className="quiz-reset-btn" onClick={resetQuiz}>
-                    {t('questions.reset_quiz')}
-                  </button>
+                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <button className="quiz-reset-btn" onClick={resetQuiz}>
+                      {t('questions.reset_quiz')}
+                    </button>
+                    <PrintButton tooltip={t('questions.print_results') || 'Print results'} />
+                  </div>
                 </>
               )}
             </div>

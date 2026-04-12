@@ -10,6 +10,7 @@ import RightPanel from './rightpanel/RightPanel'
 import { useI18n } from '@/lib/i18n'
 import { loadTeacherMode, loadResults, getCompletedExperiments, computeOverallAverage } from '@/lib/storage'
 import type { GaliContext } from '@/components/GaliModal'
+import PrintButton from '@/components/PrintButton'
 
 interface ExperimentViewProps {
   exp: Experiment
@@ -105,7 +106,10 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
       <div className="exp-teal-header" style={{ background: `linear-gradient(135deg, ${color} 0%, ${colorDark} 100%)` }}>
         <div className="exp-header-top">
           <button className="back-btn" onClick={onBack}>{t('experiment.back')}</button>
-          <button className="ask-gali-btn" onClick={() => onAskGali?.()}>{t('experiment.ask_gali')}</button>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <PrintButton tooltip={t('experiment.print') || 'Print'} />
+            <button className="ask-gali-btn" onClick={() => onAskGali?.()}>{t('experiment.ask_gali')}</button>
+          </div>
         </div>
         <h1 className="exp-h1">{exp.title}</h1>
         <p className="exp-subtitle">{exp.desc}</p>

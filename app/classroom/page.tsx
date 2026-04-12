@@ -11,6 +11,7 @@ import {
 import { getExperiments, getChemistryExperiments } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import StudentTable from '@/components/classroom/StudentTable'
+import PrintButton from '@/components/PrintButton'
 
 export default function ClassroomPage() {
   const router = useRouter()
@@ -97,7 +98,8 @@ export default function ClassroomPage() {
       <div style={{ flex: 1, overflowY: 'auto', padding: '32px 40px' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
         <h1 style={{ fontSize: 28, fontWeight: 700 }}>🏫 {t('classroom.title')}</h1>
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          <PrintButton tooltip={t('classroom.print') || 'Print'} />
           <button
             onClick={() => router.push('/classroom/dashboard')}
             style={{ background: 'var(--teal)', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 8, fontWeight: 600, cursor: 'pointer' }}

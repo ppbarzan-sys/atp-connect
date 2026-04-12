@@ -2300,3 +2300,130 @@ body.teacher-mode .page-shell{top:32px;bottom:0;}
   font-size: 14px;
   margin: 0;
 }
+
+/* ── PRINT BUTTON ─────────── */
+.print-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.print-btn:hover {
+  background: #F8FAFC;
+  border-color: var(--teal);
+  color: var(--teal);
+}
+/* Inside experiment header (white icon on gradient) */
+.exp-header-top .print-btn {
+  border-color: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+.exp-header-top .print-btn:hover {
+  background: rgba(255,255,255,.25);
+  border-color: rgba(255,255,255,.6);
+  color: #fff;
+}
+
+/* ── PRINT STYLES ─────────── */
+@media print {
+  /* Reset locked viewport */
+  html.app-shell, body.app-shell { position: static !important; overflow: auto !important; height: auto !important; }
+  .page-shell { position: static !important; overflow: visible !important; height: auto !important; }
+
+  /* Hide non-printable UI */
+  .sidebar,
+  .mobile-panel-btn,
+  .right-panel,
+  .ask-gali-btn,
+  .ask-gali-hero,
+  .gali-help-btn,
+  .gali-modal-overlay,
+  .gali-modal,
+  .gali-fab,
+  .teacher-mode-bar,
+  .print-btn,
+  .quiz-reset-btn,
+  .back-btn,
+  .search-overlay,
+  .btn-secondary,
+  .main-tabs,
+  .nav-icon,
+  .sidebar-bottom,
+  .notes-tab-wrap,
+  [data-noprint] {
+    display: none !important;
+  }
+
+  /* Full-width content */
+  .main-area,
+  .exp-view,
+  .exp-body,
+  .exp-main-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Experiment header – keep but flatten */
+  .exp-teal-header {
+    padding: 24px 20px !important;
+    break-after: avoid;
+  }
+  .exp-h1 { font-size: 22px !important; }
+  .exp-subtitle { font-size: 13px !important; }
+  .exp-header-top { display: none !important; } /* hides back + gali buttons row */
+
+  /* Show all tab content for printing */
+  .tab-pane { display: block !important; }
+  .content-card {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 12px 0 !important;
+  }
+
+  /* Data tables */
+  table { border-collapse: collapse !important; width: 100% !important; }
+  td, th { border: 1px solid #999 !important; padding: 6px 10px !important; }
+
+  /* Ensure backgrounds and colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Quiz question styling for print */
+  .q-btn { border: 1px solid #ccc !important; background: #fff !important; }
+  .q-btn.correct { background: #D1FAE5 !important; border-color: #059669 !important; }
+  .q-btn.wrong { background: #FEE2E2 !important; border-color: #EF4444 !important; }
+  .q-feedback { break-inside: avoid; }
+  .q-item, .q-open { break-inside: avoid; }
+
+  /* Classroom / dashboard tables */
+  .classroom-table { width: 100% !important; }
+
+  /* Score distribution chart – keep visible */
+  .score-dist-bar { break-inside: avoid; }
+
+  /* Page margins */
+  @page { margin: 1.5cm; }
+
+  /* Page breaks for sections */
+  .q-section { break-before: auto; break-inside: avoid; }
+
+  /* RTL support – direction is inherited from html[dir] */
+}

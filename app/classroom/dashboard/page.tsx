@@ -11,6 +11,7 @@ import {
 import { getExperiments, getChemistryExperiments, Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import ScoreDistribution from '@/components/classroom/ScoreDistribution'
+import PrintButton from '@/components/PrintButton'
 
 export default function ClassDashboardPage() {
   const router = useRouter()
@@ -104,7 +105,10 @@ export default function ClassDashboardPage() {
         ← {t('classroom.title')}
       </button>
 
-      <h1 style={{ fontSize: 24, fontWeight: 700, marginBottom: 8 }}>📊 {t('class_dashboard.title')} — {classroom.name}</h1>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+        <h1 style={{ fontSize: 24, fontWeight: 700 }}>📊 {t('class_dashboard.title')} — {classroom.name}</h1>
+        <PrintButton tooltip={t('class_dashboard.print') || 'Print'} />
+      </div>
 
       {/* Summary Cards */}
       <div style={{ display: 'flex', gap: 16, marginBottom: 32 }}>
