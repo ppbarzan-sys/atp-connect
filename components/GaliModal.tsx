@@ -250,6 +250,12 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     utterance.lang = speechLocaleRef.current
     utterance.rate = 0.95
     utterance.pitch = 1.0
+    // Try to find a matching voice for the locale (important for Arabic)
+    const langPrefix = speechLocaleRef.current.split('-')[0]
+    const voices = window.speechSynthesis.getVoices()
+    const match = voices.find(v => v.lang === speechLocaleRef.current)
+      || voices.find(v => v.lang.startsWith(langPrefix))
+    if (match) utterance.voice = match
     window.speechSynthesis.speak(utterance)
   }
 
@@ -275,15 +281,31 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
     const recognition = new SR()
     recognition.lang = speechLocaleRef.current
-    recognition.continuous = false
-    recognition.interimResults = false
+    recognition.continuous = true
+    recognition.interimResults = true
     recognition.maxAlternatives = 1
     recognitionRef.current = recognition
 
     recognition.onresult = (event: ISpeechRecognitionEvent) => {
-      const transcript = event.results[0][0].transcript
-      setIsListening(false)
-      if (transcript.trim()) sendMessage(transcript.trim())
+      const results = event.results
+      let finalTranscript = ''
+      let interimTranscript = ''
+      for (let i = 0; i < (results as unknown as { length: number }).length; i++) {
+        const r = results[i]
+        if ((r as unknown as { isFinal: boolean }).isFinal) {
+          finalTranscript += r[0].transcript
+        } else {
+          interimTranscript += r[0].transcript
+        }
+      }
+      if (finalTranscript.trim()) {
+        recognition.abort()
+        setIsListening(false)
+        setInput('')
+        sendMessage(finalTranscript.trim())
+      } else if (interimTranscript) {
+        setInput(interimTranscript)
+      }
     }
 
     recognition.onerror = () => setIsListening(false)
@@ -472,7 +494,8 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) sendMessage() }}
-            disabled={isStreaming || isListening}
+            disabled={isStreaming}
+            readOnly={isListening}
           />
 
           {/* Microphone button — only shown if browser supports Web Speech API */}
