@@ -207,6 +207,12 @@
   .slide-end img.logo-e{height:60px;margin-bottom:30px;filter:brightness(0) invert(1)}
   .slide-end .footer{color:rgba(255,255,255,.5)}
   .slide-end .footer .brand img{filter:brightness(0) invert(1)}
+  .cta-link{display:inline-block;margin-top:28px;padding:14px 36px;background:var(--teal);color:#fff;font-size:16px;font-weight:600;border-radius:10px;text-decoration:none;letter-spacing:.02em;transition:background .2s}
+  .cta-link:hover{background:var(--teal-dark)}
+  .qr-wrap{display:flex;flex-direction:column;align-items:center;margin-top:24px}
+  .qr-box{background:#fff;border-radius:14px;padding:16px;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+  .qr-box img{display:block;border-radius:4px}
+  .qr-text{font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-top:10px;letter-spacing:.04em}
 
   /* ===== Opportunity slide ===== */
   .opp-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
@@ -783,6 +789,13 @@
   <img class="logo-e fade d1" src="/deck/logo.png" alt="ATP Technologies" />
   <h1 class="fade d2">STEM education,<br/>reimagined.</h1>
   <p class="fade d3">Empower curiosity. Ignite innovation. One classroom at a time — everywhere.</p>
+  <a href="https://atpconnect.app" target="_blank" class="fade d4 cta-link">Try the platform →</a>
+  <div class="fade d5 qr-wrap">
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://atpconnect.app&color=2B3A42" alt="QR code" width="140" height="140"/>
+    </div>
+    <div class="qr-text">Scan to visit atpconnect.app</div>
+  </div>
   <div class="footer"><div class="brand"><img src="/deck/logo.png" alt=""/>ATP Connect</div><div>14</div></div>
 </section>
 
