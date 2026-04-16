@@ -9,6 +9,7 @@ import { chemistryExperimentsEs } from './chemistry.es'
 import { experimentsAr } from './experiments.ar'
 import { chemistryExperimentsAr } from './chemistry.ar'
 import { roboticsExperiments as roboticsEn } from './robotics-experiments'
+import { roboticsExperimentsAr } from './robotics-experiments.ar'
 
 export function getExperiments(locale: string): Experiment[] {
   if (locale === 'it') return experimentsIt
@@ -27,7 +28,7 @@ export function getChemistryExperiments(locale: string): Experiment[] {
 }
 
 export function getRoboticsExperiments(locale: string): Experiment[] {
-  // For now, return English for all locales — translation files can be added later
+  if (locale === 'ar') return roboticsExperimentsAr.length > 0 ? roboticsExperimentsAr : roboticsEn
   return roboticsEn
 }
 

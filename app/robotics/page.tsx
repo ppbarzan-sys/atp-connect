@@ -10,7 +10,8 @@ import CourseQuizPanel from '@/components/CourseQuizPanel'
 import ExperimentCard from '@/components/browse/ExperimentCard'
 import { getRoboticsCourses } from '@/data/robotics-courses'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
-import { roboticsExperiments, roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
+import { roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
+import { getRoboticsExperiments } from '@/data/loader'
 import { loadProgress } from '@/lib/storage'
 import EquipmentFilter from '@/components/browse/EquipmentFilter'
 import type { EquipmentCategory } from '@/data/experiments'
@@ -24,6 +25,8 @@ export default function RoboticsPage() {
   const [expFilter, setExpFilter] = useState<'all' | 'Fundamentals' | 'Sensors' | 'Actuators' | 'Projects'>('all')
   const [openQuizId, setOpenQuizId] = useState<string | null>(null)
   const [equipmentFilter, setEquipmentFilter] = useState<EquipmentCategory | 'all'>('all')
+
+  const roboticsExperiments = getRoboticsExperiments(locale)
 
   const filteredExps = roboticsExperiments.filter(e => {
     if (expFilter !== 'all' && e.section !== expFilter) return false
