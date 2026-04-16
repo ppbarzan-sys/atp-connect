@@ -34,7 +34,7 @@ function InlineText({ text }: { text: string }) {
         if (part.startsWith('*') && part.endsWith('*') && part.length > 2)
           return <em key={i}>{part.slice(1, -1)}</em>
         if (part.startsWith('`') && part.endsWith('`') && part.length > 2)
-          return <code key={i} className="gali-inline-code">{part.slice(1, -1)}</code>
+          return <code key={i} dir="ltr" className="gali-inline-code">{part.slice(1, -1)}</code>
         return <span key={i}>{part}</span>
       })}
     </>
@@ -357,7 +357,7 @@ export default function ChatPane({ exp, galiContext }: ChatPaneProps) {
         {messages.map((msg, i) => (
           <div key={i} className={`chat-msg${msg.role === 'user' ? ' user' : ''}`}>
             {msg.role === 'gali' && <div className="gali-avatar">G</div>}
-            <div className={`chat-bubble ${msg.role === 'gali' ? 'gali-bubble' : 'user-bubble'}`}>
+            <div dir="auto" className={`chat-bubble ${msg.role === 'gali' ? 'gali-bubble' : 'user-bubble'}`}>
               <MarkdownText text={msg.content} />
               {msg.streaming && <span className="gali-cursor" />}
             </div>

@@ -36,8 +36,8 @@ export default function CourseCard({ id: _id, title, description, duration, diff
         <span className="course-category-badge" style={{ backgroundColor: categoryColor }}>
           {categoryLabel}
         </span>
-        <h3 className="course-title">{title}</h3>
-        <p className="course-description">{description}</p>
+        <h3 dir="auto" className="course-title">{title}</h3>
+        <p dir="auto" className="course-description">{description}</p>
       </div>
 
       <div className="course-card-footer">

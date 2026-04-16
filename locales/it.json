@@ -15,7 +15,17 @@
     "dashboard": "Progressi",
     "dashboard_title": "I Miei Progressi",
     "classroom": "Classe",
-    "classroom_title": "Gestione Classe"
+    "classroom_title": "Gestione Classe",
+    "switch_role": "Cambia Ruolo",
+    "role": "Ruolo"
+  },
+  "role": {
+    "welcome": "Bentornato, {name}!",
+    "choose": "Come vuoi usare ATP Connect oggi?",
+    "student_title": "Sono uno Studente",
+    "student_desc": "Esplora esperimenti, impara con Gali e monitora i tuoi progressi",
+    "teacher_title": "Sono un Insegnante",
+    "teacher_desc": "Gestisci la tua classe, aggiungi studenti e monitora le prestazioni"
   },
   "landing": {
     "tagline": "Accendi la Curiosità. Ispira l'Innovazione.",
@@ -46,8 +56,8 @@
     "browse_all": "Vedi tutti",
     "all_filter": "Tutti",
     "search_btn": "Cerca",
-    "physics_note": "41 esperimenti progettati per il Laboratorio Mobile ATP 4900.00",
-    "chemistry_note": "50 esperimenti progettati per il Laboratorio Mobile ATP 4900.00",
+    "physics_note": "41 esperimenti progettati per <strong>ATP Mobile Lab</strong> <span class=\"model-number\">— Modello 4900</span>",
+    "chemistry_note": "50 esperimenti progettati per <strong>ATP Mobile Lab</strong> <span class=\"model-number\">— Modello 4900</span>",
     "experiments_completed": "{completed}/{total} completati"
   },
   "sections": {
@@ -61,7 +71,11 @@
     "acids_bases": "Acidi e Basi",
     "gas_chemistry": "Chimica dei Gas",
     "electrochemistry": "Elettrochimica",
-    "plant_physiology": "Fisiologia Vegetale"
+    "plant_physiology": "Fisiologia Vegetale",
+    "fundamentals": "Fondamenti",
+    "sensors": "Sensori",
+    "actuators": "Attuatori",
+    "projects": "Progetti"
   },
   "experiment": {
     "back": "← Indietro",
@@ -83,7 +97,7 @@
     "what_learn": "Cosa Impareranno",
     "instructions": "Istruzioni",
     "expected_outcome": "Risultato Atteso",
-    "khan_title": "🎬 Khan Academy — video correlati"
+    "khan_title": "🎓 Khan Academy — video correlati"
   },
   "exp_tab": {
     "equipment": "⚙ Preparazione Strumenti",
@@ -135,7 +149,7 @@
     "concept_hint": "Questo esperimento tratta:",
     "misconceptions": "Errori Comuni",
     "hook": "Introduzione",
-    "khan": "🎬 Khan Academy",
+    "khan": "🎓 Khan Academy",
     "smart_trays_needed": "Smart Tray necessari",
     "smart_trays_subtitle": "Preleva questi Smart Tray dal Mobile Lab prima di iniziare",
     "atp_code": "ATP",
@@ -529,5 +543,36 @@
     "noEquipment": "Nessuna Attrezzatura",
     "noMatchTitle": "Nessun esperimento corrisponde a questo filtro",
     "noMatchDesc": "Prova a selezionare una categoria di attrezzatura diversa"
+  },
+  "tour": {
+    "skip": "Salta",
+    "next": "Avanti",
+    "back": "Indietro",
+    "student_finish": "Inizia a esplorare!",
+    "teacher_finish": "Inizia a insegnare!",
+    "restart_teacher": "📖 Tour Insegnante",
+    "restart_teacher_title": "Fai il tour per insegnanti",
+    "s1_title": "Esplora le materie",
+    "s1_text": "Sfoglia esperimenti di Fisica, Chimica, IA e Robotica — tutti progettati per l'apprendimento pratico.",
+    "s2_title": "Scegli un esperimento",
+    "s2_text": "Ogni esperimento include istruzioni passo passo, elenchi di attrezzature e risultati attesi.",
+    "s3_title": "Incontra Gali, il tuo tutor IA",
+    "s3_text": "Bloccato? Gali può spiegare concetti, aiutare con le domande e guidarti negli esperimenti.",
+    "s4_title": "Filtra per attrezzatura",
+    "s4_text": "Hai solo materiali di base? Filtra gli esperimenti per trovare quelli adatti a ciò che hai.",
+    "s5_title": "Monitora i tuoi progressi",
+    "s5_text": "Guadagna XP, sali di livello e scopri quanto sei avanzato in tutte le materie.",
+    "t1_title": "Modalità Insegnante",
+    "t1_text": "Sei in Modalità Insegnante. I risultati e le note degli studenti sono visibili in tutti gli esperimenti.",
+    "t2_title": "La tua classe",
+    "t2_text": "Gestisci la tua classe qui — aggiungi studenti, dai un nome alla classe e importa elenchi.",
+    "t3_title": "Aggiungi studenti",
+    "t3_text": "Aggiungi studenti uno alla volta, oppure usa 'Importa da CSV' per aggiungere un'intera classe.",
+    "t4_title": "Dashboard della classe",
+    "t4_text": "Monitora i progressi degli studenti, i punteggi dei quiz e il completamento degli esperimenti — tutto in un unico posto.",
+    "t5_title": "Visualizza il lavoro degli studenti",
+    "t5_text": "Sfoglia gli esperimenti come al solito — in Modalità Insegnante puoi vedere tutti i risultati e le note degli studenti accanto al contenuto.",
+    "t6_title": "Torna indietro",
+    "t6_text": "Clicca qui in qualsiasi momento per tornare alla Modalità Studente per il tuo apprendimento."
   }
 }

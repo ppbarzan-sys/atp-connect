@@ -70,7 +70,7 @@ export default function CourseQuizPanel({ quiz, onClose }: CourseQuizPanelProps)
           <div className="quiz-meta">
             {quiz.questions.length} {t('quiz.questions')} &middot; {t('quiz.mixed_difficulty')}
             {savedScore && !submitted && (
-              <span style={{ marginLeft: 12, color: 'var(--teal)', fontWeight: 600 }}>
+              <span style={{ marginInlineStart: 12, color: 'var(--teal)', fontWeight: 600 }}>
                 {t('quiz.score')}: {savedScore.correct}/{savedScore.total} ({Math.round((savedScore.correct / savedScore.total) * 100)}%)
               </span>
             )}
@@ -95,12 +95,12 @@ export default function CourseQuizPanel({ quiz, onClose }: CourseQuizPanelProps)
                 {q.difficulty === 'easy' ? `🟢 ${t('quiz.easy')}` : q.difficulty === 'medium' ? `🟡 ${t('quiz.medium')}` : `🔴 ${t('quiz.hard')}`}
               </span>
               {submitted && (
-                <span style={{ marginLeft: 'auto', fontSize: 16 }}>
+                <span style={{ marginInlineStart: 'auto', fontSize: 16 }}>
                   {isCorrect ? '✅' : '❌'}
                 </span>
               )}
             </div>
-            <p style={{ fontWeight: 500, marginBottom: 10, lineHeight: 1.5 }}>{q.text}</p>
+            <p dir="auto" style={{ fontWeight: 500, marginBottom: 10, lineHeight: 1.5 }}>{q.text}</p>
 
             {(q.type === 'mcq' || q.type === 'true-false') && q.options && (
               <div className={q.type === 'true-false' ? 'tf-options' : 'quiz-options'}>
@@ -116,10 +116,11 @@ export default function CourseQuizPanel({ quiz, onClose }: CourseQuizPanelProps)
                     <button
                       key={optIdx}
                       className={cls}
+                      dir="auto"
                       onClick={() => handleSelectOption(qIdx, optIdx)}
                       disabled={submitted}
                     >
-                      {q.type === 'mcq' && <span style={{ fontWeight: 700, marginRight: 6 }}>{String.fromCharCode(65 + optIdx)})</span>}
+                      {q.type === 'mcq' && <span style={{ fontWeight: 700, marginInlineEnd: 6 }}>{String.fromCharCode(65 + optIdx)})</span>}
                       {opt}
                     </button>
                   )

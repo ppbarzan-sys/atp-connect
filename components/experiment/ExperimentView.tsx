@@ -111,8 +111,8 @@ export default function ExperimentView({ exp, onBack, headerColor, headerColorDa
             <button className="ask-gali-btn" onClick={() => onAskGali?.()}>{t('experiment.ask_gali')}</button>
           </div>
         </div>
-        <h1 className="exp-h1">{exp.title}</h1>
-        <p className="exp-subtitle">{exp.desc}</p>
+        <h1 dir="auto" className="exp-h1">{exp.title}</h1>
+        <p dir="auto" className="exp-subtitle">{exp.desc}</p>
         <div className="exp-badges">
           <span className="exp-badge">{sectionEmoji} {tSection(exp.section)}</span>
           <span className="exp-badge">{t('experiment.badge_setup', { time: exp.setupTime })}</span>

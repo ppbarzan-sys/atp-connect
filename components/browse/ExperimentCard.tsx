@@ -75,8 +75,8 @@ export default function ExperimentCard({ exp, color, onClick, sectionEmoji }: Ex
         <span className="card-section-badge" style={{ backgroundColor: color }}>
           {tSection(exp.section)}
         </span>
-        <div className="card-title">{exp.title}</div>
-        <div className="card-desc">{exp.desc}</div>
+        <div dir="auto" className="card-title">{exp.title}</div>
+        <div dir="auto" className="card-desc">{exp.desc}</div>
       </div>
 
       {/* Footer */}

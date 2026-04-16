@@ -158,7 +158,7 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
                 <div className="q-item" key={qIdx} id={`qi-${exp.num}-${qIdx}`}>
                   <div className={`q-check-icon${answered && userAnswer === q.correctIndex ? ' correct' : answered ? ' wrong' : ''}`}>✓</div>
                   <div className="q-content">
-                    <p className="q-text">{q.text}</p>
+                    <p dir="auto" className="q-text">{q.text}</p>
                     <div className="q-answers">
                       {q.options.map((opt, optIdx) => {
                         let btnClass = 'q-btn'
@@ -172,6 +172,7 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
                             className={btnClass}
                             onClick={() => handleAnswer(qIdx, optIdx)}
                             disabled={answered}
+                            dir="auto"
                           >
                             {opt}
                           </button>
@@ -206,7 +207,7 @@ export default function QuestionsTab({ exp, onAskGali }: QuestionsTabProps) {
                 <div className="q-open" key={dqIdx}>
                   <div className="q-check-icon">✓</div>
                   <div className="q-content">
-                    <p className="q-text">{dq}</p>
+                    <p dir="auto" className="q-text">{dq}</p>
                     <textarea
                       placeholder={t('questions.answer_placeholder')}
                       rows={3}

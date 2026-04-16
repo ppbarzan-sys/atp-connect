@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { ATP_LOGO } from '@/data/experiments'
 import { useI18n } from '@/lib/i18n'
-import { loadTeacherMode } from '@/lib/storage'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { loadTeacherMode, saveTeacherMode } from '@/lib/storage'
+import { clearUserRole, requestRoleSelection } from '@/components/RoleSelector'
+import LanguageSwitcher, { LanguageGlobe } from '@/components/LanguageSwitcher'
 
 async function signOut(router: ReturnType<typeof useRouter>) {
   await fetch('/api/auth/signout', { method: 'POST' })
@@ -43,6 +44,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
         <img src={ATP_LOGO} alt="ATP Logo" />
       </div>
 
+      <div data-tour="sidebar-nav">
       {/* Physics */}
       <button
         className={`nav-icon${isPhysicsActive ? ' active' : ''}`}
@@ -82,12 +84,14 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
         <span>⚙️</span>
         <span className="label">{t('nav.robotics')}</span>
       </button>
+      </div>
 
       {/* Dashboard */}
       <button
         className={`nav-icon${isDashboard ? ' active' : ''}`}
         onClick={() => router.push('/dashboard')}
         title={t('nav.dashboard_title')}
+        data-tour="progress-nav"
       >
         <span>📊</span>
         <span className="label">{t('nav.dashboard')}</span>
@@ -99,15 +103,16 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
           className={`nav-icon${isClassroom ? ' active' : ''}`}
           onClick={() => router.push('/classroom')}
           title={t('nav.classroom_title')}
+          data-tour="classroom-nav"
         >
           <span>🏫</span>
           <span className="label">{t('nav.classroom')}</span>
         </button>
       )}
 
-      {/* Search */}
+      {/* Search — hidden on mobile bottom nav */}
       <button
-        className="nav-icon"
+        className="nav-icon mobile-nav-hide"
         onClick={onSearch}
         title={t('nav.search')}
       >
@@ -117,7 +122,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
 
       {onAskGali && (
         <button
-          className="nav-icon gali-nav"
+          className="nav-icon gali-nav mobile-nav-hide"
           onClick={onAskGali}
           title={t('nav.gali_title')}
         >
@@ -127,15 +132,40 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       )}
 
       <div className="sidebar-bottom">
-        <LanguageSwitcher />
+        {/* Switch Role button */}
         <button
-          className="signout-btn"
-          onClick={() => signOut(router)}
-          title={t('nav.sign_out')}
-          aria-label={t('nav.sign_out')}
+          className="switch-role-btn"
+          onClick={() => {
+            clearUserRole()
+            saveTeacherMode(false)
+            document.body.classList.remove('teacher-mode')
+            requestRoleSelection()
+            router.push('/app')
+            router.refresh()
+          }}
+          title={t('nav.switch_role')}
         >
-          ↩
+          <span>🔄</span>
+          <span className="label">{t('nav.role')}</span>
         </button>
+
+        {/* Desktop: full language switcher + sign-out button */}
+        <div className="desktop-only-nav">
+          <LanguageSwitcher />
+          <button
+            className="signout-btn"
+            onClick={() => signOut(router)}
+            title={t('nav.sign_out')}
+            aria-label={t('nav.sign_out')}
+          >
+            ↩
+          </button>
+        </div>
+
+        {/* Mobile: compact globe with dropdown (includes sign-out) */}
+        <div className="mobile-only-nav">
+          <LanguageGlobe onSignOut={() => signOut(router)} />
+        </div>
       </div>
     </aside>
   )

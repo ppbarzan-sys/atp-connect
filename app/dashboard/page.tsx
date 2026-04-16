@@ -231,8 +231,8 @@ export default function DashboardPage() {
                         }}
                       >
                         <div>
-                          <span style={{ fontWeight: 600, color: '#1e293b' }}>{act.title}</span>
-                          <span style={{ color: '#94a3b8', fontSize: '0.8rem', marginLeft: '0.5rem' }}>
+                          <span dir="auto" style={{ fontWeight: 600, color: '#1e293b' }}>{act.title}</span>
+                          <span style={{ color: '#94a3b8', fontSize: '0.8rem', marginInlineStart: '0.5rem' }}>
                             {new Date(act.completedAt).toLocaleDateString()}
                           </span>
                         </div>

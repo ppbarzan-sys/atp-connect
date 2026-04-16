@@ -88,7 +88,7 @@ export default function BrowseView({
             <div className="browse-hero-content">
               <h1 className="browse-hero-title">{title}</h1>
               <p className="browse-hero-subtitle">{subtitle}</p>
-              {note && <p className="browse-hero-note">{note}</p>}
+              {note && <p dir="auto" className="browse-hero-note" dangerouslySetInnerHTML={{ __html: note }} />}
               {progress.total > 0 && (
                 <div className="browse-progress-wrap">
                   <div className="browse-progress-bar">
@@ -107,7 +107,7 @@ export default function BrowseView({
               )}
             </div>
             {onAskGali && (
-              <button className="ask-gali-hero" onClick={() => onAskGali()}>
+              <button className="ask-gali-hero" onClick={() => onAskGali()} data-tour="ask-gali">
                 ✦ {t('experiment.ask_gali')}
               </button>
             )}

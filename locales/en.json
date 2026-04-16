@@ -15,7 +15,17 @@
     "dashboard": "Progress",
     "dashboard_title": "My Progress",
     "classroom": "Classroom",
-    "classroom_title": "Classroom Management"
+    "classroom_title": "Classroom Management",
+    "switch_role": "Switch Role",
+    "role": "Role"
+  },
+  "role": {
+    "welcome": "Welcome back, {name}!",
+    "choose": "How would you like to use ATP Connect today?",
+    "student_title": "I'm a Student",
+    "student_desc": "Explore experiments, learn with Gali, and track your progress",
+    "teacher_title": "I'm a Teacher",
+    "teacher_desc": "Manage your classroom, add students, and monitor performance"
   },
   "landing": {
     "tagline": "Empower Curiosity. Ignite Innovation.",
@@ -46,8 +56,8 @@
     "browse_all": "Browse all",
     "all_filter": "All",
     "search_btn": "Search",
-    "physics_note": "41 experiments designed for the ATP Mobile Lab 4900.00",
-    "chemistry_note": "50 experiments designed for the ATP Mobile Lab 4900.00",
+    "physics_note": "41 experiments designed for the <strong>ATP Mobile Lab</strong> <span class=\"model-number\">— Model 4900</span>",
+    "chemistry_note": "50 experiments designed for the <strong>ATP Mobile Lab</strong> <span class=\"model-number\">— Model 4900</span>",
     "experiments_completed": "{completed}/{total} completed"
   },
   "sections": {
@@ -61,7 +71,11 @@
     "acids_bases": "Acids & Bases",
     "gas_chemistry": "Gas Chemistry",
     "electrochemistry": "Electrochemistry",
-    "plant_physiology": "Plant Physiology"
+    "plant_physiology": "Plant Physiology",
+    "fundamentals": "Fundamentals",
+    "sensors": "Sensors",
+    "actuators": "Actuators",
+    "projects": "Projects"
   },
   "experiment": {
     "back": "← Back",
@@ -83,7 +97,7 @@
     "what_learn": "What They'll Learn",
     "instructions": "Instructions",
     "expected_outcome": "Expected Outcome",
-    "khan_title": "🎬 Khan Academy — related videos"
+    "khan_title": "🎓 Khan Academy — related videos"
   },
   "exp_tab": {
     "equipment": "⚙ Equipment Setup",
@@ -135,7 +149,7 @@
     "concept_hint": "This experiment covers:",
     "misconceptions": "Common Misconceptions",
     "hook": "Hook",
-    "khan": "🎬 Khan Academy",
+    "khan": "🎓 Khan Academy",
     "smart_trays_needed": "Smart Trays needed",
     "smart_trays_subtitle": "Pull these Smart Trays from the Mobile Lab before starting",
     "atp_code": "ATP",
@@ -529,5 +543,36 @@
     "noEquipment": "No Equipment",
     "noMatchTitle": "No experiments match this filter",
     "noMatchDesc": "Try selecting a different equipment category"
+  },
+  "tour": {
+    "skip": "Skip",
+    "next": "Next",
+    "back": "Back",
+    "student_finish": "Start Exploring!",
+    "teacher_finish": "Start Teaching!",
+    "restart_teacher": "📖 Take Teacher Tour",
+    "restart_teacher_title": "Take the Teacher Tour",
+    "s1_title": "Explore Subjects",
+    "s1_text": "Browse Physics, Chemistry, AI, and Robotics experiments — all designed for hands-on learning.",
+    "s2_title": "Pick an Experiment",
+    "s2_text": "Each experiment includes step-by-step instructions, equipment lists, and expected outcomes.",
+    "s3_title": "Meet Gali, Your AI Tutor",
+    "s3_text": "Stuck? Gali can explain concepts, help with questions, and guide you through experiments.",
+    "s4_title": "Filter by Equipment",
+    "s4_text": "Only have basic supplies? Filter experiments to match what you have on hand.",
+    "s5_title": "Track Your Progress",
+    "s5_text": "Earn XP, level up, and see how far you've come across all subjects.",
+    "t1_title": "Teacher Mode",
+    "t1_text": "You're now in Teacher Mode. Student results and notes are visible across all experiments.",
+    "t2_title": "Your Classroom",
+    "t2_text": "Manage your class here — add students, name your class, and import rosters.",
+    "t3_title": "Add Students",
+    "t3_text": "Add students one by one, or use 'Import from CSV' to add an entire class at once.",
+    "t4_title": "Class Dashboard",
+    "t4_text": "Monitor student progress, quiz scores, and experiment completion — all in one place.",
+    "t5_title": "View Student Work",
+    "t5_text": "Browse experiments as usual — in Teacher Mode you can see all student results and notes alongside the content.",
+    "t6_title": "Switch Back",
+    "t6_text": "Click here anytime to switch back to Student Mode for your own learning."
   }
 }

@@ -12,6 +12,7 @@ import { getExperiments, getChemistryExperiments } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import StudentTable from '@/components/classroom/StudentTable'
 import PrintButton from '@/components/PrintButton'
+import TeacherOnboardingTour, { RestartTeacherTourButton } from '@/components/TeacherOnboardingTour'
 
 export default function ClassroomPage() {
   const router = useRouter()
@@ -103,12 +104,14 @@ export default function ClassroomPage() {
           <button
             onClick={() => router.push('/classroom/dashboard')}
             style={{ background: 'var(--teal)', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 8, fontWeight: 600, cursor: 'pointer' }}
+            data-tour="class-dashboard-btn"
           >
             📊 {t('class_dashboard.title')}
           </button>
           <button
             onClick={() => setShowAdd(true)}
             style={{ background: 'var(--teal)', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 8, fontWeight: 600, cursor: 'pointer' }}
+            data-tour="add-student-btn"
           >
             + {t('classroom.add_student')}
           </button>
@@ -194,6 +197,8 @@ export default function ClassroomPage() {
         </button>
       </div>
       </div>
+      <TeacherOnboardingTour />
+      <RestartTeacherTourButton />
     </div>
   )
 }

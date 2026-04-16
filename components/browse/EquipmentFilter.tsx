@@ -27,7 +27,7 @@ export default function EquipmentFilter({ value, onChange, showArduino = false }
   }
 
   return (
-    <div className="equipment-filter">
+    <div className="equipment-filter" data-tour="equipment-filter">
       <span className="equipment-filter-label">{t('equipment.filterLabel')}</span>
       <div className="equipment-filter-chips">
         {options.map(opt => (

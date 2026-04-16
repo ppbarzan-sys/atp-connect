@@ -63,7 +63,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
             return (
               <div className="eq-item" key={i}>
                 <div className="eq-emoji">{eq.emoji}</div>
-                <div className="eq-name">{eq.name}</div>
+                <div dir="auto" className="eq-name">{eq.name}</div>
 
                 {code && (
                   <div className="eq-atp-code">
@@ -124,7 +124,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
             {exp.overview.misconceptions.map((m, i) => (
               <div className="misconception wrong" key={i}>
                 <span className="mc-icon">✗</span>
-                <span>{m}</span>
+                <span dir="auto">{m}</span>
               </div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function OverviewPane({ exp }: OverviewPaneProps) {
       {exp.overview.hook && (
         <div className="rp-section">
           <h4>{t('overview.hook')}</h4>
-          <div className="hook-box">💡 {exp.overview.hook}</div>
+          <div dir="auto" className="hook-box">💡 {exp.overview.hook}</div>
         </div>
       )}
 

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useI18n } from '@/lib/i18n'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { seedDemoProgress } from '@/lib/demoSeed'
 
 export default function LandingPage() {
   const [username, setUsername] = useState('')
@@ -26,6 +27,11 @@ export default function LandingPage() {
       })
 
       if (res.ok) {
+        seedDemoProgress()
+        // Store username for role selector greeting
+        localStorage.setItem('atp_username', username)
+        // Signal that the role selector should appear on /app
+        sessionStorage.setItem('needsRoleSelection', 'true')
         router.push('/app')
         router.refresh()
       } else {
@@ -59,7 +65,7 @@ export default function LandingPage() {
         </div>
 
         <div className="landing-brand">
-          <h1 className="landing-title">ATP Connect</h1>
+          <h1 className="landing-title" dir="ltr">ATP Connect</h1>
           <p className="landing-tagline">{t('landing.tagline')}</p>
         </div>
 
