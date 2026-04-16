@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { rateLimit } from '@/lib/rateLimit'
 
 /**
  * POST /api/auth/signin
@@ -12,6 +13,13 @@ import { NextRequest, NextResponse } from 'next/server'
  * Returns 401 on invalid credentials.
  */
 export async function POST(req: NextRequest) {
+  // Rate limiting: 5 requests per 60 seconds per IP
+  const ip = req.headers.get('x-forwarded-for') || 'unknown'
+  const rl = rateLimit(ip, 5, 60_000)
+  if (!rl.success) {
+    return NextResponse.json({ error: 'Too many attempts, try again later' }, { status: 429 })
+  }
+
   const { username, password } = await req.json().catch(() => ({}))
 
   if (!username || !password) {

@@ -1,4 +1,6 @@
-import { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
+import { rateLimit } from '@/lib/rateLimit'
 
 export const runtime = 'nodejs'
 
@@ -299,6 +301,20 @@ Response formatting guidelines:
 }
 
 export async function POST(req: NextRequest) {
+  // Session validation
+  const cookieStore = await cookies()
+  const session = cookieStore.get('atp_session')?.value
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  // Rate limiting: 20 requests per 60 seconds per IP
+  const ip = req.headers.get('x-forwarded-for') || 'unknown'
+  const rl = rateLimit(ip, 20, 60_000)
+  if (!rl.success) {
+    return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 })
+  }
+
   const apiKey = process.env.ANTHROPIC_API_KEY
 
   if (!apiKey) {
