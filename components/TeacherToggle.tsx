@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { saveTeacherMode, loadTeacherMode } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
+import { appEvents } from '@/lib/events'
 
 export default function TeacherToggle() {
   const { t } = useI18n()
@@ -24,6 +25,7 @@ export default function TeacherToggle() {
     } else {
       document.body.classList.remove('teacher-mode')
     }
+    appEvents.emit('role-changed')
   }
 
   return (

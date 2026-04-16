@@ -1,4 +1,5 @@
 import { awardXP, updateStreak, incrementDailyGoal, resetGamification } from './gamification'
+import { appEvents } from './events'
 
 export function saveResults(num: number, data: Record<string, string>) {
   if (typeof window === 'undefined') return;
@@ -93,6 +94,8 @@ export function saveProgress(num: number, correct: number, total: number) {
   if (todayCount === 1) {
     awardXP('DAILY_FIRST_EXPERIMENT')
   }
+
+  appEvents.emit('progress-updated', { num, correct, total })
 }
 
 export function loadProgress(num: number): ExperimentProgress | null {

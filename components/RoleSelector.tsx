@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { saveTeacherMode } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
+import { appEvents } from '@/lib/events'
 
 const ROLE_KEY = 'userRole'
 const DEMO_USER = 'Atpconnect'
@@ -68,6 +69,7 @@ export default function RoleSelector({ username, onComplete }: RoleSelectorProps
       router.push('/app')
     }
 
+    appEvents.emit('role-changed')
     router.refresh()
     onComplete()
   }

@@ -225,12 +225,6 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
   useEffect(() => { messagesRef.current = messages }, [messages])
 
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [onClose])
-
-  useEffect(() => {
     const timer = setTimeout(() => inputRef.current?.focus(), 150)
     return () => clearTimeout(timer)
   }, [])
@@ -402,6 +396,28 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     }
   }
 
+  // ── Close handler — abort streaming & clear chat history ─────────────────
+  const handleClose = useCallback(() => {
+    // Abort any active streaming response
+    abortRef.current?.abort()
+    abortRef.current = null
+    // Stop speech
+    recognitionRef.current?.abort()
+    window.speechSynthesis?.cancel()
+    // Reset chat state
+    setMessages([{ role: 'gali', content: buildWelcome() }])
+    setInput('')
+    setIsStreaming(false)
+    setIsListening(false)
+    onClose()
+  }, [onClose])
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') handleClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [handleClose])
+
   // ── Derived UI values ─────────────────────────────────────────────────────
   const contextLabel = context?.experimentTitle
     ? t('gali.context_exp', { num: String(context.experimentNum ?? ''), title: context.experimentTitle })
@@ -414,7 +430,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
 
   // ── Render ────────────────────────────────────────────────────────────────
   return (
-    <div className="gali-modal-overlay" onClick={onClose}>
+    <div className="gali-modal-overlay" onClick={handleClose}>
       <div className="gali-modal" onClick={e => e.stopPropagation()}>
 
         {/* Header */}
@@ -433,7 +449,7 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
             {voiceEnabled ? '🔊' : '🔇'}
           </button>
 
-          <button className="gali-modal-close" onClick={onClose} aria-label="Close">✕</button>
+          <button className="gali-modal-close" onClick={handleClose} aria-label="Close">✕</button>
         </div>
 
         {/* No-API-key notice */}

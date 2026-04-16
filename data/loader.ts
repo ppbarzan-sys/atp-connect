@@ -46,9 +46,21 @@ export async function getChemistryExperiments(locale: string): Promise<Experimen
 }
 
 export async function getRoboticsExperiments(locale: string): Promise<Experiment[]> {
+  const fallback = async () => (await import('./robotics-experiments')).roboticsExperiments
+  if (locale === 'fr') {
+    const { roboticsExperimentsFr } = await import('./robotics-experiments.fr')
+    return roboticsExperimentsFr.length > 0 ? roboticsExperimentsFr : await fallback()
+  }
+  if (locale === 'es') {
+    const { roboticsExperimentsEs } = await import('./robotics-experiments.es')
+    return roboticsExperimentsEs.length > 0 ? roboticsExperimentsEs : await fallback()
+  }
+  if (locale === 'it') {
+    const { roboticsExperimentsIt } = await import('./robotics-experiments.it')
+    return roboticsExperimentsIt.length > 0 ? roboticsExperimentsIt : await fallback()
+  }
   if (locale === 'ar') {
     const { roboticsExperimentsAr } = await import('./robotics-experiments.ar')
-    const fallback = async () => (await import('./robotics-experiments')).roboticsExperiments
     return roboticsExperimentsAr.length > 0 ? roboticsExperimentsAr : await fallback()
   }
   const { roboticsExperiments } = await import('./robotics-experiments')
