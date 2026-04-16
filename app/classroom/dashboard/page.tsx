@@ -8,7 +8,7 @@ import {
   getStudentCompletedCount, loadStudentGrades, loadLabReport,
   loadPracticalSkill, Classroom,
 } from '@/lib/storage'
-import { getExperiments, getChemistryExperiments, Experiment } from '@/data/loader'
+import { getExperiments, getChemistryExperiments, type Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import ScoreDistribution from '@/components/classroom/ScoreDistribution'
 import PrintButton from '@/components/PrintButton'
@@ -19,17 +19,17 @@ export default function ClassDashboardPage() {
   const [classroom, setClassroom] = useState<Classroom | null>(null)
   const [isTeacher, setIsTeacher] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
-
-  const physics = getExperiments(locale)
-  const chemistry = getChemistryExperiments(locale)
-  const allExperiments: Experiment[] = [...physics, ...chemistry]
+  const [allExperiments, setAllExperiments] = useState<Experiment[]>([])
   const totalExperiments = allExperiments.length
 
   useEffect(() => {
     if (!loadTeacherMode()) { router.replace('/dashboard'); return }
     setIsTeacher(true)
     setClassroom(loadClassroom())
-  }, [router])
+    Promise.all([getExperiments(locale), getChemistryExperiments(locale)]).then(
+      ([physics, chemistry]) => setAllExperiments([...physics, ...chemistry])
+    )
+  }, [router, locale])
 
   if (!isTeacher || !classroom) return null
 

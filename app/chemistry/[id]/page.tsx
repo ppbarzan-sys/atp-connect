@@ -1,8 +1,8 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { chemistrySectionColors, chemistrySectionEmojis } from '@/data/chemistry'
-import { getChemistryExperiments } from '@/data/loader'
+import { getChemistryExperiments, type Experiment } from '@/data/loader'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
@@ -14,7 +14,11 @@ export default function ChemistryExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const { t, locale } = useI18n()
-  const chemistryExperiments = getChemistryExperiments(locale)
+  const [chemistryExperiments, setChemistryExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getChemistryExperiments(locale).then(setChemistryExperiments)
+  }, [locale])
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })

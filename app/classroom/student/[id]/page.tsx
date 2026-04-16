@@ -8,7 +8,7 @@ import {
   loadLabReport, loadPracticalSkill, getStudentOverallAverage,
   getStudentCompletedCount, Student,
 } from '@/lib/storage'
-import { getExperiments, getChemistryExperiments, Experiment } from '@/data/loader'
+import { getExperiments, getChemistryExperiments, type Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 import LabReportModal from '@/components/classroom/LabReportModal'
 import PracticalSkillModal from '@/components/classroom/PracticalSkillModal'
@@ -24,9 +24,15 @@ export default function StudentDetailPage() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [labModal, setLabModal] = useState<{ exp: Experiment } | null>(null)
   const [practicalModal, setPracticalModal] = useState<{ exp: Experiment } | null>(null)
+  const [physics, setPhysics] = useState<Experiment[]>([])
+  const [chemistry, setChemistry] = useState<Experiment[]>([])
 
-  const physics = getExperiments(locale)
-  const chemistry = getChemistryExperiments(locale)
+  useEffect(() => {
+    Promise.all([getExperiments(locale), getChemistryExperiments(locale)]).then(
+      ([p, c]) => { setPhysics(p); setChemistry(c) }
+    )
+  }, [locale])
+
   const allExperiments = filter === 'physics' ? physics : filter === 'chemistry' ? chemistry : [...physics, ...chemistry]
   const totalExperiments = physics.length + chemistry.length
 

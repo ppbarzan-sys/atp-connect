@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useI18n } from '@/lib/i18n'
 import Sidebar from '@/components/Sidebar'
@@ -11,7 +11,7 @@ import ExperimentCard from '@/components/browse/ExperimentCard'
 import { getRoboticsCourses } from '@/data/robotics-courses'
 import { roboticsQuizzes } from '@/data/robotics-quizzes'
 import { roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
-import { getRoboticsExperiments } from '@/data/loader'
+import { getRoboticsExperiments, type Experiment } from '@/data/loader'
 import { loadProgress } from '@/lib/storage'
 import EquipmentFilter from '@/components/browse/EquipmentFilter'
 import type { EquipmentCategory } from '@/data/experiments'
@@ -26,7 +26,11 @@ export default function RoboticsPage() {
   const [openQuizId, setOpenQuizId] = useState<string | null>(null)
   const [equipmentFilter, setEquipmentFilter] = useState<EquipmentCategory | 'all'>('all')
 
-  const roboticsExperiments = getRoboticsExperiments(locale)
+  const [roboticsExperiments, setRoboticsExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getRoboticsExperiments(locale).then(setRoboticsExperiments)
+  }, [locale])
 
   const filteredExps = roboticsExperiments.filter(e => {
     if (expFilter !== 'all' && e.section !== expFilter) return false

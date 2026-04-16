@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Sidebar from '@/components/Sidebar'
 import BrowseView from '@/components/browse/BrowseView'
@@ -9,7 +9,7 @@ import {
   chemistrySectionColors,
   chemistrySectionEmojis,
 } from '@/data/chemistry'
-import { getChemistryExperiments } from '@/data/loader'
+import { getChemistryExperiments, type Experiment } from '@/data/loader'
 import { useI18n } from '@/lib/i18n'
 
 export default function ChemistryPage() {
@@ -18,7 +18,11 @@ export default function ChemistryPage() {
   const [galiOpen, setGaliOpen] = useState(false)
   const router = useRouter()
   const { t, locale } = useI18n()
-  const chemistryExperiments = getChemistryExperiments(locale)
+  const [chemistryExperiments, setChemistryExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getChemistryExperiments(locale).then(setChemistryExperiments)
+  }, [locale])
 
   function handleExpClick(num: number) {
     router.push(`/chemistry/${num}`)

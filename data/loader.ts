@@ -1,35 +1,58 @@
-import { experiments as experimentsEn, type Experiment } from './experiments'
-import { experiments as experimentsIt } from './experiments.it'
-import { experimentsFr } from './experiments.fr'
-import { chemistryExperiments as chemistryEn } from './chemistry'
-import { chemistryExperiments as chemistryIt } from './chemistry.it'
-import { chemistryExperimentsFr } from './chemistry.fr'
-import { experimentsEs } from './experiments.es'
-import { chemistryExperimentsEs } from './chemistry.es'
-import { experimentsAr } from './experiments.ar'
-import { chemistryExperimentsAr } from './chemistry.ar'
-import { roboticsExperiments as roboticsEn } from './robotics-experiments'
-import { roboticsExperimentsAr } from './robotics-experiments.ar'
+import type { Experiment } from './experiments'
 
-export function getExperiments(locale: string): Experiment[] {
-  if (locale === 'it') return experimentsIt
-  if (locale === 'fr') return experimentsFr.length > 0 ? experimentsFr : experimentsEn
-  if (locale === 'es') return experimentsEs.length > 0 ? experimentsEs : experimentsEn
-  if (locale === 'ar') return experimentsAr.length > 0 ? experimentsAr : experimentsEn
-  return experimentsEn
+export async function getExperiments(locale: string): Promise<Experiment[]> {
+  if (locale === 'it') {
+    const { experiments } = await import('./experiments.it')
+    return experiments
+  }
+  if (locale === 'fr') {
+    const { experimentsFr } = await import('./experiments.fr')
+    return experimentsFr.length > 0 ? experimentsFr : (await import('./experiments')).experiments
+  }
+  if (locale === 'es') {
+    const { experimentsEs } = await import('./experiments.es')
+    return experimentsEs.length > 0 ? experimentsEs : (await import('./experiments')).experiments
+  }
+  if (locale === 'ar') {
+    const { experimentsAr } = await import('./experiments.ar')
+    return experimentsAr.length > 0 ? experimentsAr : (await import('./experiments')).experiments
+  }
+  const { experiments } = await import('./experiments')
+  return experiments
 }
 
-export function getChemistryExperiments(locale: string): Experiment[] {
-  if (locale === 'it') return chemistryIt
-  if (locale === 'fr') return chemistryExperimentsFr.length > 0 ? chemistryExperimentsFr : chemistryEn
-  if (locale === 'es') return chemistryExperimentsEs.length > 0 ? chemistryExperimentsEs : chemistryEn
-  if (locale === 'ar') return chemistryExperimentsAr.length > 0 ? chemistryExperimentsAr : chemistryEn
-  return chemistryEn
+export async function getChemistryExperiments(locale: string): Promise<Experiment[]> {
+  if (locale === 'it') {
+    const { chemistryExperiments } = await import('./chemistry.it')
+    return chemistryExperiments
+  }
+  if (locale === 'fr') {
+    const { chemistryExperimentsFr } = await import('./chemistry.fr')
+    const fallback = async () => (await import('./chemistry')).chemistryExperiments
+    return chemistryExperimentsFr.length > 0 ? chemistryExperimentsFr : await fallback()
+  }
+  if (locale === 'es') {
+    const { chemistryExperimentsEs } = await import('./chemistry.es')
+    const fallback = async () => (await import('./chemistry')).chemistryExperiments
+    return chemistryExperimentsEs.length > 0 ? chemistryExperimentsEs : await fallback()
+  }
+  if (locale === 'ar') {
+    const { chemistryExperimentsAr } = await import('./chemistry.ar')
+    const fallback = async () => (await import('./chemistry')).chemistryExperiments
+    return chemistryExperimentsAr.length > 0 ? chemistryExperimentsAr : await fallback()
+  }
+  const { chemistryExperiments } = await import('./chemistry')
+  return chemistryExperiments
 }
 
-export function getRoboticsExperiments(locale: string): Experiment[] {
-  if (locale === 'ar') return roboticsExperimentsAr.length > 0 ? roboticsExperimentsAr : roboticsEn
-  return roboticsEn
+export async function getRoboticsExperiments(locale: string): Promise<Experiment[]> {
+  if (locale === 'ar') {
+    const { roboticsExperimentsAr } = await import('./robotics-experiments.ar')
+    const fallback = async () => (await import('./robotics-experiments')).roboticsExperiments
+    return roboticsExperimentsAr.length > 0 ? roboticsExperimentsAr : await fallback()
+  }
+  const { roboticsExperiments } = await import('./robotics-experiments')
+  return roboticsExperiments
 }
 
 export type { Experiment }

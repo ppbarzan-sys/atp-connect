@@ -1,7 +1,7 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { getExperiments } from '@/data/loader'
+import { useState, useEffect } from 'react'
+import { getExperiments, type Experiment } from '@/data/loader'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
@@ -16,7 +16,11 @@ export default function ExperimentPage() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
-  const experiments = getExperiments(locale)
+  const [experiments, setExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getExperiments(locale).then(setExperiments)
+  }, [locale])
   const exp = experiments.find(e => e.num === Number(id))
 
   function buildRichContext(): GaliContext {

@@ -26,8 +26,13 @@ export default function ClassroomPage() {
   const [, setTick] = useState(0)
   const [searchOpen, setSearchOpen] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
+  const [totalExperiments, setTotalExperiments] = useState(0)
 
-  const totalExperiments = getExperiments(locale).length + getChemistryExperiments(locale).length
+  useEffect(() => {
+    Promise.all([getExperiments(locale), getChemistryExperiments(locale)]).then(
+      ([physics, chemistry]) => setTotalExperiments(physics.length + chemistry.length)
+    )
+  }, [locale])
 
   useEffect(() => {
     if (!loadTeacherMode()) {

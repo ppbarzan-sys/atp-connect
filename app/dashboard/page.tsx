@@ -26,24 +26,27 @@ export default function DashboardPage() {
   const [progressMap, setProgressMap] = useState<Map<number, ExperimentProgress>>(new Map())
 
   useEffect(() => {
-    const physics = getExperiments(locale)
-    const chemistry = getChemistryExperiments(locale)
-    const robotics = getRoboticsExperiments(locale)
-    const all = [...physics, ...chemistry, ...robotics]
-    setAllExperiments(all)
+    async function load() {
+      const physics = await getExperiments(locale)
+      const chemistry = await getChemistryExperiments(locale)
+      const robotics = await getRoboticsExperiments(locale)
+      const all = [...physics, ...chemistry, ...robotics]
+      setAllExperiments(all)
 
-    const courseQuizNums = {
-      robotics: roboticsQuizzes.map(q => ({ num: q.num, title: q.title })),
-      ai: aiQuizzes.map(q => ({ num: q.num, title: q.title })),
-    }
-    setData(getDashboardData(physics, chemistry, courseQuizNums, robotics))
+      const courseQuizNums = {
+        robotics: roboticsQuizzes.map(q => ({ num: q.num, title: q.title })),
+        ai: aiQuizzes.map(q => ({ num: q.num, title: q.title })),
+      }
+      setData(getDashboardData(physics, chemistry, courseQuizNums, robotics))
 
-    const pMap = new Map<number, ExperimentProgress>()
-    for (const exp of all) {
-      const prog = loadProgress(exp.num)
-      if (prog) pMap.set(exp.num, prog)
+      const pMap = new Map<number, ExperimentProgress>()
+      for (const exp of all) {
+        const prog = loadProgress(exp.num)
+        if (prog) pMap.set(exp.num, prog)
+      }
+      setProgressMap(pMap)
     }
-    setProgressMap(pMap)
+    load()
   }, [locale])
 
   const grades = useMemo(() => getAllGrades(), [data])
@@ -76,7 +79,57 @@ export default function DashboardPage() {
     setGaliOpen(true)
   }
 
-  if (!data) return null
+  if (!data) return (
+    <div className="page-shell">
+      <Sidebar
+        activeView="browse"
+        onHome={() => router.push('/app')}
+        onSearch={() => {}}
+        onAskGali={() => {}}
+      />
+      <main style={{ flex: 1, overflow: 'auto', background: '#f8fafc', padding: '0' }}>
+        {/* Skeleton header */}
+        <div style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)', padding: '2rem 2rem 1.5rem' }}>
+          <div className="h-8 w-48 rounded bg-white/20 animate-pulse" />
+        </div>
+        <div style={{ padding: '1.5rem 2rem', maxWidth: 900, margin: '0 auto' }}>
+          {/* Skeleton stat cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+            {[1, 2, 3].map(i => (
+              <div key={i} style={{ background: '#fff', borderRadius: 12, padding: '1.25rem', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+                <div className="h-8 w-16 rounded bg-gray-200 animate-pulse mx-auto mb-2" />
+                <div className="h-4 w-24 rounded bg-gray-200 animate-pulse mx-auto" />
+              </div>
+            ))}
+          </div>
+          {/* Skeleton subject cards */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+            {[1, 2, 3, 4].map(i => (
+              <div key={i} style={{ background: '#fff', borderRadius: 12, padding: '1.25rem', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="h-8 w-8 rounded bg-gray-200 animate-pulse" />
+                  <div className="h-5 w-28 rounded bg-gray-200 animate-pulse" />
+                </div>
+                <div className="h-4 w-36 rounded bg-gray-200 animate-pulse mb-2" />
+                <div className="h-2 w-full rounded bg-gray-200 animate-pulse mb-3" />
+                <div className="h-4 w-24 rounded bg-gray-200 animate-pulse" />
+              </div>
+            ))}
+          </div>
+          {/* Skeleton recent activity rows */}
+          <div className="h-5 w-32 rounded bg-gray-200 animate-pulse mb-3" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            {[1, 2, 3, 4, 5].map(i => (
+              <div key={i} style={{ background: '#fff', borderRadius: 12, padding: '0.75rem 1rem', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div className="h-4 w-48 rounded bg-gray-200 animate-pulse" />
+                <div className="h-4 w-16 rounded bg-gray-200 animate-pulse" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+    </div>
+  )
 
   const hasProgress = data.totalCompleted > 0
 

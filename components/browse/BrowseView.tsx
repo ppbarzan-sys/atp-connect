@@ -44,7 +44,15 @@ export default function BrowseView({
   showArduinoFilter = false,
 }: BrowseViewProps) {
   const { t, locale } = useI18n()
-  const allExperiments = expData ?? getExperiments(locale)
+  const [loadedExperiments, setLoadedExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    if (!expData) {
+      getExperiments(locale).then(setLoadedExperiments)
+    }
+  }, [locale, expData])
+
+  const allExperiments = expData ?? loadedExperiments
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
 

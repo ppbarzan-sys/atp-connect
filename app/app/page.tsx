@@ -6,7 +6,7 @@ import BrowseView from '@/components/browse/BrowseView'
 import SearchOverlay from '@/components/SearchOverlay'
 import GaliModal from '@/components/GaliModal'
 import { useI18n } from '@/lib/i18n'
-import { getExperiments } from '@/data/loader'
+import { getExperiments, type Experiment } from '@/data/loader'
 import OnboardingTour, { RestartTourButton } from '@/components/OnboardingTour'
 import RoleSelector, { shouldShowRoleSelector } from '@/components/RoleSelector'
 
@@ -18,7 +18,11 @@ export default function AppHome() {
   const [username, setUsername] = useState('')
   const router = useRouter()
   const { t, locale } = useI18n()
-  const experiments = getExperiments(locale)
+  const [experiments, setExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getExperiments(locale).then(setExperiments)
+  }, [locale])
 
   useEffect(() => {
     const storedUser = localStorage.getItem('atp_username') || ''

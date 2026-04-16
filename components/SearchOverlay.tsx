@@ -23,8 +23,15 @@ export default function SearchOverlay({
   const { t, tSection, locale } = useI18n()
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
+  const [loadedExperiments, setLoadedExperiments] = useState<Experiment[]>([])
 
-  const allExperiments = expData ?? getExperiments(locale)
+  useEffect(() => {
+    if (!expData) {
+      getExperiments(locale).then(setLoadedExperiments)
+    }
+  }, [locale, expData])
+
+  const allExperiments = expData ?? loadedExperiments
   const sectionColors = sectionColorMap ?? physicsColors
   const sectionEmojis = sectionEmojiMap ?? physicsEmojis
 

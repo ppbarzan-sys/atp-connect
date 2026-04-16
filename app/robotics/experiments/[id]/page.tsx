@@ -1,8 +1,8 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { roboticsSectionColors, roboticsSectionEmojis } from '@/data/robotics-experiments'
-import { getRoboticsExperiments } from '@/data/loader'
+import { getRoboticsExperiments, type Experiment } from '@/data/loader'
 import ExperimentView from '@/components/experiment/ExperimentView'
 import Sidebar from '@/components/Sidebar'
 import SearchOverlay from '@/components/SearchOverlay'
@@ -14,7 +14,11 @@ export default function RoboticsExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const { t, locale } = useI18n()
-  const roboticsExperiments = getRoboticsExperiments(locale)
+  const [roboticsExperiments, setRoboticsExperiments] = useState<Experiment[]>([])
+
+  useEffect(() => {
+    getRoboticsExperiments(locale).then(setRoboticsExperiments)
+  }, [locale])
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
