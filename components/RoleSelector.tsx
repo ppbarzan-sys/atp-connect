@@ -60,23 +60,23 @@ export default function RoleSelector({ username, onComplete }: RoleSelectorProps
       document.body.classList.add('teacher-mode')
       // Reset teacher onboarding so the tour triggers
       localStorage.removeItem('teacher_onboarding_completed')
-      router.push('/classroom')
-    } else {
-      // Ensure teacher mode is off
-      saveTeacherMode(false)
-      document.body.classList.remove('teacher-mode')
-      // Reset student onboarding so the tour triggers
-      localStorage.removeItem('student_onboarding_completed')
-      if (!hasCompletedPassionOnboarding()) {
-        router.push('/onboarding/passions')
-      } else {
-        router.push('/app')
-      }
+      appEvents.emit('role-changed')
+      router.replace('/classroom')
+      return
     }
 
+    // Ensure teacher mode is off
+    saveTeacherMode(false)
+    document.body.classList.remove('teacher-mode')
+    // Reset student onboarding so the tour triggers
+    localStorage.removeItem('student_onboarding_completed')
+    const completed = hasCompletedPassionOnboarding()
     appEvents.emit('role-changed')
-    router.refresh()
-    onComplete()
+    router.replace(completed ? '/app' : '/onboarding/passions')
+    // Only hide the overlay if we're staying on /app — otherwise keep it
+    // visible until the route transition unmounts us, to avoid flashing
+    // the underlying /app content.
+    if (completed) onComplete()
   }
 
   return (
