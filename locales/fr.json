@@ -544,6 +544,13 @@
     "noMatchTitle": "Aucune expérience ne correspond à ce filtre",
     "noMatchDesc": "Essayez de sélectionner une autre catégorie d'équipement"
   },
+  "passions": {
+    "title": "Qu'aimes-tu en dehors de l'école ?",
+    "subtitle": "Choisis-en jusqu'à 3. Gali s'en servira pour t'expliquer les choses d'une façon qui te parle.",
+    "something_else": "Autre chose (facultatif)",
+    "skip": "Passer",
+    "continue": "Continuer"
+  },
   "tour": {
     "skip": "Passer",
     "next": "Suivant",

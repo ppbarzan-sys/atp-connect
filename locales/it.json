@@ -544,6 +544,13 @@
     "noMatchTitle": "Nessun esperimento corrisponde a questo filtro",
     "noMatchDesc": "Prova a selezionare una categoria di attrezzatura diversa"
   },
+  "passions": {
+    "title": "Cosa ami fuori dalla scuola?",
+    "subtitle": "Scegline fino a 3. Gali li userà per spiegarti le cose in un modo che ti arriva dritto.",
+    "something_else": "Qualcos'altro (facoltativo)",
+    "skip": "Salta",
+    "continue": "Continua"
+  },
   "tour": {
     "skip": "Salta",
     "next": "Avanti",

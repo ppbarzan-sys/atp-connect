@@ -544,6 +544,13 @@
     "noMatchTitle": "No hay experimentos que coincidan con este filtro",
     "noMatchDesc": "Intenta seleccionar una categoría de equipo diferente"
   },
+  "passions": {
+    "title": "¿Qué te apasiona fuera de la escuela?",
+    "subtitle": "Elige hasta 3. Gali las usará para explicarte las cosas de una forma que te encaje.",
+    "something_else": "Otra cosa (opcional)",
+    "skip": "Saltar",
+    "continue": "Continuar"
+  },
   "tour": {
     "skip": "Saltar",
     "next": "Siguiente",

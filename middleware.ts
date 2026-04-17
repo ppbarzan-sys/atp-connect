@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 // Routes that require a valid session
-const PROTECTED = ['/app', '/experiments', '/chemistry', '/ai', '/robotics', '/dashboard', '/classroom']
+const PROTECTED = ['/app', '/experiments', '/chemistry', '/ai', '/robotics', '/dashboard', '/classroom', '/onboarding']
 
 // Routes always accessible without a session
 const PUBLIC = ['/', '/landing', '/api/auth']

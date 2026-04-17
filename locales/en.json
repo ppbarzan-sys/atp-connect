@@ -544,6 +544,13 @@
     "noMatchTitle": "No experiments match this filter",
     "noMatchDesc": "Try selecting a different equipment category"
   },
+  "passions": {
+    "title": "What do you love outside school?",
+    "subtitle": "Pick up to 3. Gali will use these to explain things in a way that clicks for you.",
+    "something_else": "Something else (optional)",
+    "skip": "Skip",
+    "continue": "Continue"
+  },
   "tour": {
     "skip": "Skip",
     "next": "Next",
