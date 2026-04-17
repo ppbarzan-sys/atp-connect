@@ -578,7 +578,7 @@ function InlineText({ text }: { text: string }) {
         if (part.startsWith('*') && part.endsWith('*') && part.length > 2)
           return <em key={i}>{part.slice(1, -1)}</em>
         if (part.startsWith('`') && part.endsWith('`') && part.length > 2)
-          return <code key={i} dir="ltr" className="gali-inline-code">{part.slice(1, -1)}</code>
+          return <bdi key={i}><code dir="ltr" className="gali-inline-code">{part.slice(1, -1)}</code></bdi>
         return <span key={i}>{part}</span>
       })}
     </>
