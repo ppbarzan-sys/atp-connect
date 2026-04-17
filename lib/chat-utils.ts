@@ -67,12 +67,39 @@ export interface StreamChatOptions {
   onError: (status: number) => void
 }
 
+import { loadPassions } from './passions'
+
+/**
+ * Merge persisted learner passions into the outgoing Gali context so every
+ * call carries them in learnerProfile. Centralised here so every chat surface
+ * (modal, right-panel pane, teacher pane) picks it up automatically.
+ */
+function withLearnerProfile(
+  context: Record<string, unknown>
+): Record<string, unknown> {
+  const passions = loadPassions()
+  const existing =
+    (context?.learnerProfile as Record<string, unknown> | undefined) ?? {}
+  const resolvedPassions =
+    passions.length > 0
+      ? passions
+      : ((existing.passions as string[] | undefined) ?? [])
+  return {
+    ...context,
+    learnerProfile: {
+      ...existing,
+      passions: resolvedPassions,
+    },
+  }
+}
+
 /**
  * Send a streaming chat request to /api/chat.
  * Returns the HTTP status code (or 0 for network errors).
  */
 export async function streamChat(opts: StreamChatOptions): Promise<number> {
   const { messages, context, locale, signal, onChunk, onDone, onError } = opts
+  const enrichedContext = withLearnerProfile(context)
 
   let res: Response
   try {
@@ -80,7 +107,7 @@ export async function streamChat(opts: StreamChatOptions): Promise<number> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       signal,
-      body: JSON.stringify({ messages, context, locale }),
+      body: JSON.stringify({ messages, context: enrichedContext, locale }),
     })
   } catch (err: unknown) {
     if ((err as Error)?.name === 'AbortError') return 0

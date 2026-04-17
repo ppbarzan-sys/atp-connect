@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useI18n } from '@/lib/i18n'
 import { cleanForSpeech, getSpeechRecognition, SPEECH_LOCALE_MAP, type ISpeechRecognition, type ISpeechRecognitionEvent } from '@/lib/chat-utils'
+import { loadPassions } from '@/lib/passions'
 
 export interface GaliContext {
   section?: string
@@ -44,6 +45,15 @@ export interface GaliContext {
 
   // Dashboard context
   weakAreas?: Array<{ concept: string; mastery: number }>
+
+  // Learner profile
+  learnerProfile?: {
+    name?: string
+    grade?: number
+    passions?: string[]
+    knownConcepts?: string[]
+    shakyConcepts?: string[]
+  }
 }
 
 interface Message {
@@ -356,12 +366,26 @@ export default function GaliModal({ context, onClose }: GaliModalProps) {
     setIsStreaming(true)
     abortRef.current = new AbortController()
 
+    // Merge persisted learner passions into the outgoing context so every
+    // Gali call carries them. Skip entirely if the user opted out (empty array).
+    const passions = loadPassions()
+    const enrichedContext: GaliContext = {
+      ...context,
+      learnerProfile: {
+        ...(context?.learnerProfile ?? {}),
+        passions:
+          passions.length > 0
+            ? passions
+            : (context?.learnerProfile?.passions ?? []),
+      },
+    }
+
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         signal: abortRef.current.signal,
-        body: JSON.stringify({ messages: historyForAPI, context, locale }),
+        body: JSON.stringify({ messages: historyForAPI, context: enrichedContext, locale }),
       })
 
       if (res.status === 503) {
