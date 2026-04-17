@@ -2666,7 +2666,7 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 }
 
 .role-selector-header{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
-.role-selector-logo{width:56px;height:56px;object-fit:contain;margin-bottom:4px;}
+.role-selector-logo{width:auto;height:44px;object-fit:contain;margin-bottom:4px;}
 .role-selector-welcome{font-size:24px;font-weight:700;color:var(--text);}
 .role-selector-subtitle{font-size:15px;color:var(--muted);font-weight:500;}
 
@@ -2678,16 +2678,17 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
   position:relative;
   display:flex;flex-direction:column;align-items:center;gap:12px;
   padding:36px 24px;
-  border-radius:16px;
-  border:2px solid var(--border);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
   background:#fff;
+  box-shadow:var(--card-shadow);
   cursor:pointer;
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
   text-align:center;
 }
 .role-card:hover{
-  transform:scale(1.03);
-  box-shadow:0 8px 32px rgba(0,0,0,.12);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 .role-card:active{transform:scale(.98);}
 
@@ -2762,71 +2763,38 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
   position:relative;
   width:100%;flex:1 1 auto;
   min-height:100dvh;
-  display:flex;align-items:center;justify-content:center;
-  padding:32px 16px;
-  background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(20,184,166,.20), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(236,72,153,.14), transparent 55%),
-    radial-gradient(700px 400px at 110% 60%, rgba(99,102,241,.12), transparent 60%),
-    linear-gradient(180deg,#F0FDFA 0%,#FAF5FF 100%);
-  overflow:hidden;
-}
-.passions-orb{
-  position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;
-  pointer-events:none;z-index:0;
-}
-.passions-orb-1{
-  width:320px;height:320px;top:-80px;left:-80px;
-  background:radial-gradient(circle,#5EEAD4,transparent 70%);
-  animation:passions-float 14s ease-in-out infinite;
-}
-.passions-orb-2{
-  width:260px;height:260px;bottom:-60px;right:-40px;
-  background:radial-gradient(circle,#F0ABFC,transparent 70%);
-  animation:passions-float 18s ease-in-out infinite reverse;
-}
-.passions-orb-3{
-  width:220px;height:220px;top:40%;right:-80px;
-  background:radial-gradient(circle,#A5B4FC,transparent 70%);
-  animation:passions-float 22s ease-in-out infinite;
-}
-@keyframes passions-float{
-  0%,100%{transform:translate(0,0) scale(1);}
-  50%{transform:translate(20px,-30px) scale(1.08);}
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:32px 16px 48px;
+  background:#F8FAFC;
 }
 .passions-card{
-  position:relative;z-index:1;
   width:100%;max-width:680px;margin:0 auto;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:saturate(140%) blur(10px);
-  -webkit-backdrop-filter:saturate(140%) blur(10px);
-  border:1px solid rgba(255,255,255,.6);
-  border-radius:24px;
-  box-shadow:0 20px 60px rgba(15,118,110,.18),0 2px 10px rgba(0,0,0,.04);
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--card-shadow);
   padding:32px 32px 28px;
   display:flex;flex-direction:column;gap:20px;
-  animation:passions-card-in .5s cubic-bezier(.2,.8,.2,1) both;
+  animation:passions-card-in .35s cubic-bezier(.2,.8,.2,1) both;
 }
 .passions-logo{
   display:block;margin:0 auto;
-  height:52px;width:auto;
+  height:44px;width:auto;
   object-fit:contain;
 }
 .passions-welcome{
   display:flex;align-items:flex-start;gap:14px;
-  padding:16px 18px;
-  border-radius:18px;
-  border:1px solid rgba(20,184,166,.18);
-  background:linear-gradient(135deg,rgba(240,253,250,.9),rgba(250,245,255,.9));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  padding:14px 16px;
+  border-radius:var(--radius);
+  border:1px solid var(--teal-light);
+  background:var(--teal-bg);
 }
 .passions-welcome-avatar{
   flex-shrink:0;
-  width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg,#14B8A6,#7C3AED);
-  color:#fff;font-size:18px;font-weight:700;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--teal);
+  color:#fff;font-size:16px;font-weight:700;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 12px rgba(20,184,166,.35);
 }
 .passions-welcome-text{
   display:flex;flex-direction:column;gap:6px;min-width:0;
@@ -2840,47 +2808,34 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 }
 [dir="rtl"] .passions-welcome-text{text-align:start;}
 @keyframes passions-card-in{
-  from{opacity:0;transform:translateY(12px);}
+  from{opacity:0;transform:translateY(8px);}
   to{opacity:1;transform:translateY(0);}
 }
 .passions-header{display:flex;flex-direction:column;gap:6px;text-align:center;align-items:center;}
-.passions-sparkle{
-  font-size:32px;line-height:1;margin-bottom:2px;
-  animation:passions-sparkle 2.4s ease-in-out infinite;
-  filter:drop-shadow(0 4px 10px rgba(20,184,166,.35));
-}
-@keyframes passions-sparkle{
-  0%,100%{transform:rotate(-6deg) scale(1);}
-  50%{transform:rotate(6deg) scale(1.12);}
-}
 .passions-title{
-  font-size:28px;font-weight:800;color:var(--text);line-height:1.2;
-  background:linear-gradient(135deg,#0F766E 0%,#7C3AED 100%);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font-size:26px;font-weight:800;color:var(--text);line-height:1.2;
 }
 .passions-subtitle{font-size:15px;color:var(--muted);line-height:1.5;max-width:440px;}
 .passions-counter{
   display:inline-flex;align-items:center;gap:10px;
   margin-top:6px;padding:6px 14px;border-radius:999px;
-  background:rgba(15,23,42,.04);
+  background:#F1F5F9;
   font-size:13px;font-weight:600;color:var(--muted);
   transition:all .2s ease;
 }
 .passions-counter-active{
-  background:linear-gradient(135deg,rgba(20,184,166,.14),rgba(124,58,237,.14));
+  background:var(--teal-light);
   color:var(--teal-dark);
 }
 .passions-counter-dots{display:inline-flex;gap:5px;}
 .passions-counter-dot{
   width:8px;height:8px;border-radius:50%;
-  background:rgba(15,23,42,.15);
+  background:#CBD5E1;
   transition:all .25s cubic-bezier(.2,.8,.2,1);
 }
 .passions-counter-dot-filled{
-  background:linear-gradient(135deg,#14B8A6,#7C3AED);
+  background:var(--teal);
   transform:scale(1.25);
-  box-shadow:0 0 0 3px rgba(20,184,166,.15);
 }
 .passions-grid{
   display:grid;
@@ -2892,33 +2847,26 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:8px;
   padding:18px 10px 14px;
-  border-radius:16px;
-  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
   background:#fff;
   color:var(--text);
   font-size:14px;font-weight:600;
   cursor:pointer;
+  box-shadow:var(--card-shadow);
   transition:transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s ease, border-color .18s ease, background .18s ease;
   overflow:hidden;
   min-height:108px;
 }
-.passion-tile::before{
-  content:"";position:absolute;inset:0;border-radius:inherit;
-  background:linear-gradient(135deg,rgba(20,184,166,.08),rgba(124,58,237,.08));
-  opacity:0;transition:opacity .18s ease;pointer-events:none;
-}
 .passion-tile:hover:not(:disabled):not(.passion-tile-active){
-  transform:translateY(-3px);
-  border-color:rgba(20,184,166,.5);
-  box-shadow:0 8px 20px rgba(15,118,110,.10);
+  border-color:var(--teal);
+  box-shadow:0 4px 12px rgba(20,184,166,.15);
 }
-.passion-tile:hover:not(:disabled):not(.passion-tile-active)::before{opacity:1;}
 .passion-tile-emoji{
   font-size:34px;line-height:1;
   transition:transform .25s cubic-bezier(.2,.8,.2,1);
-  filter:drop-shadow(0 2px 6px rgba(15,23,42,.08));
 }
-.passion-tile:hover:not(:disabled) .passion-tile-emoji{transform:scale(1.12) rotate(-4deg);}
+.passion-tile:hover:not(:disabled) .passion-tile-emoji{transform:scale(1.08);}
 .passion-tile-label{
   position:relative;z-index:1;
   text-align:center;line-height:1.15;
@@ -2928,22 +2876,17 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 .passion-tile-check{
   position:absolute;top:8px;right:8px;
   width:22px;height:22px;border-radius:50%;
-  background:linear-gradient(135deg,#14B8A6,#0D9488);
+  background:var(--teal);
   color:#fff;font-size:12px;font-weight:800;
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 10px rgba(13,148,136,.45);
-  opacity:0;transform:scale(.5) rotate(-30deg);
-  transition:all .22s cubic-bezier(.2,.8,.2,1);
+  opacity:0;transform:scale(.5);
+  transition:all .2s cubic-bezier(.2,.8,.2,1);
 }
 .passion-tile-active{
-  border-color:transparent;
-  background:linear-gradient(135deg,#0D9488 0%,#7C3AED 100%);
-  color:#fff;
-  box-shadow:0 10px 24px rgba(13,148,136,.30),0 2px 6px rgba(124,58,237,.20);
-  transform:translateY(-2px);
+  border-color:var(--teal);
+  background:var(--teal-bg);
 }
-.passion-tile-active .passion-tile-check{opacity:1;transform:scale(1) rotate(0);}
-.passion-tile-active .passion-tile-emoji{transform:scale(1.08);}
+.passion-tile-active .passion-tile-check{opacity:1;transform:scale(1);}
 .passion-tile-disabled{opacity:.4;cursor:not-allowed;}
 .passion-tile:focus-visible{
   outline:none;
@@ -2955,38 +2898,33 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 }
 .passions-custom-input{
   width:100%;padding:12px 14px;
-  border:1.5px solid var(--border);border-radius:12px;
+  border:1px solid var(--border);border-radius:var(--radius);
   font-size:15px;font-family:inherit;
-  background:rgba(248,250,252,.8);transition:all .15s ease;
+  background:#fff;transition:all .15s ease;
 }
 .passions-custom-input:focus{
-  outline:none;border-color:var(--teal);background:#fff;
+  outline:none;border-color:var(--teal);
   box-shadow:0 0 0 3px rgba(20,184,166,.18);
 }
 .passions-actions{display:flex;gap:12px;margin-top:4px;}
 .passions-skip-btn{
-  flex:0 0 auto;padding:13px 22px;border-radius:12px;
-  background:transparent;border:1.5px solid var(--border);
+  flex:0 0 auto;padding:13px 22px;border-radius:var(--radius);
+  background:transparent;border:1px solid var(--border);
   color:var(--muted);font-size:15px;font-weight:600;cursor:pointer;
   transition:all .15s ease;
 }
 .passions-skip-btn:hover{background:#F1F5F9;color:var(--text);border-color:#CBD5E1;}
 .passions-continue-btn{
-  position:relative;
-  flex:1 1 auto;padding:13px 22px;border-radius:12px;
-  background:linear-gradient(135deg,#0D9488 0%,#7C3AED 100%);
-  background-size:200% 100%;background-position:0% 0%;
+  flex:1 1 auto;padding:13px 22px;border-radius:var(--radius);
+  background:var(--teal);
   border:none;color:#fff;
   font-size:15px;font-weight:700;cursor:pointer;
-  transition:background-position .35s ease, box-shadow .2s ease, transform .15s ease;
-  box-shadow:0 6px 18px rgba(13,148,136,.30);
+  transition:background .15s ease;
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   letter-spacing:.01em;
 }
 .passions-continue-btn:hover{
-  background-position:100% 0%;
-  box-shadow:0 10px 26px rgba(13,148,136,.40);
-  transform:translateY(-1px);
+  background:var(--teal-dark);
 }
 .passions-continue-arrow{transition:transform .18s ease;display:inline-block;}
 .passions-continue-btn:hover .passions-continue-arrow{transform:translateX(3px);}
@@ -2994,11 +2932,11 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 [dir="rtl"] .passions-continue-btn:hover .passions-continue-arrow{transform:scaleX(-1) translateX(3px);}
 
 @media (max-width:480px){
-  .passions-card{padding:24px 18px 20px;border-radius:20px;gap:16px;}
-  .passions-logo{height:42px;}
-  .passions-title{font-size:24px;}
-  .passions-welcome{padding:14px;gap:12px;border-radius:16px;}
-  .passions-welcome-avatar{width:36px;height:36px;font-size:16px;}
+  .passions-card{padding:24px 18px 20px;gap:16px;}
+  .passions-logo{height:40px;}
+  .passions-title{font-size:22px;}
+  .passions-welcome{padding:12px 14px;gap:12px;}
+  .passions-welcome-avatar{width:32px;height:32px;font-size:14px;}
   .passions-welcome-greeting{font-size:14px;}
   .passions-welcome-line{font-size:13px;}
   .passions-grid{grid-template-columns:repeat(2,1fr);gap:10px;}

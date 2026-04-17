@@ -59,10 +59,6 @@ export default function PassionsOnboardingPage() {
 
   return (
     <div className="passions-onboarding">
-      <div className="passions-orb passions-orb-1" aria-hidden />
-      <div className="passions-orb passions-orb-2" aria-hidden />
-      <div className="passions-orb passions-orb-3" aria-hidden />
-
       <div className="passions-card">
         <img
           src="/logo-atp-full.png"
