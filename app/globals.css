@@ -2760,6 +2760,7 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 /* ── Passion onboarding ───────────────────────────────────────────── */
 .passions-onboarding{
   position:relative;
+  width:100%;flex:1 1 auto;
   min-height:100dvh;
   display:flex;align-items:center;justify-content:center;
   padding:32px 16px;
@@ -2795,17 +2796,49 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 }
 .passions-card{
   position:relative;z-index:1;
-  width:100%;max-width:620px;
+  width:100%;max-width:680px;margin:0 auto;
   background:rgba(255,255,255,.85);
   backdrop-filter:saturate(140%) blur(10px);
   -webkit-backdrop-filter:saturate(140%) blur(10px);
   border:1px solid rgba(255,255,255,.6);
   border-radius:24px;
   box-shadow:0 20px 60px rgba(15,118,110,.18),0 2px 10px rgba(0,0,0,.04);
-  padding:36px 32px 28px;
+  padding:32px 32px 28px;
   display:flex;flex-direction:column;gap:20px;
   animation:passions-card-in .5s cubic-bezier(.2,.8,.2,1) both;
 }
+.passions-logo{
+  display:block;margin:0 auto;
+  height:52px;width:auto;
+  object-fit:contain;
+}
+.passions-welcome{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(20,184,166,.18);
+  background:linear-gradient(135deg,rgba(240,253,250,.9),rgba(250,245,255,.9));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+}
+.passions-welcome-avatar{
+  flex-shrink:0;
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,#14B8A6,#7C3AED);
+  color:#fff;font-size:18px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(20,184,166,.35);
+}
+.passions-welcome-text{
+  display:flex;flex-direction:column;gap:6px;min-width:0;
+  text-align:start;
+}
+.passions-welcome-greeting{
+  font-size:15px;font-weight:700;color:var(--text);line-height:1.3;
+}
+.passions-welcome-line{
+  font-size:14px;color:var(--text);line-height:1.5;opacity:.85;
+}
+[dir="rtl"] .passions-welcome-text{text-align:start;}
 @keyframes passions-card-in{
   from{opacity:0;transform:translateY(12px);}
   to{opacity:1;transform:translateY(0);}
@@ -2961,8 +2994,13 @@ pre, code, .code-block, .formula, .formula-box code, .gali-inline-code, .chat-fo
 [dir="rtl"] .passions-continue-btn:hover .passions-continue-arrow{transform:scaleX(-1) translateX(3px);}
 
 @media (max-width:480px){
-  .passions-card{padding:28px 20px 22px;border-radius:20px;}
+  .passions-card{padding:24px 18px 20px;border-radius:20px;gap:16px;}
+  .passions-logo{height:42px;}
   .passions-title{font-size:24px;}
+  .passions-welcome{padding:14px;gap:12px;border-radius:16px;}
+  .passions-welcome-avatar{width:36px;height:36px;font-size:16px;}
+  .passions-welcome-greeting{font-size:14px;}
+  .passions-welcome-line{font-size:13px;}
   .passions-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
   .passion-tile{min-height:100px;padding:16px 8px 12px;}
   .passion-tile-emoji{font-size:30px;}

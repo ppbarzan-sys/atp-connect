@@ -64,8 +64,22 @@ export default function PassionsOnboardingPage() {
       <div className="passions-orb passions-orb-3" aria-hidden />
 
       <div className="passions-card">
+        <img
+          src="/logo-atp-full.png"
+          alt="ATP Connect"
+          className="passions-logo"
+        />
+
+        <div className="passions-welcome" role="note">
+          <div className="passions-welcome-avatar" aria-hidden>✦</div>
+          <div className="passions-welcome-text">
+            <p className="passions-welcome-greeting">{t('passions.welcome_greeting')}</p>
+            <p className="passions-welcome-line">{t('passions.welcome_intro')}</p>
+            <p className="passions-welcome-line">{t('passions.welcome_ask')}</p>
+          </div>
+        </div>
+
         <div className="passions-header">
-          <div className="passions-sparkle" aria-hidden>✨</div>
           <h1 className="passions-title">{t('passions.title')}</h1>
           <p className="passions-subtitle">{t('passions.subtitle')}</p>
           <div

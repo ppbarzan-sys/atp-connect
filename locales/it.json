@@ -550,7 +550,10 @@
     "selected_count": "{count} di 3 scelti",
     "something_else": "Qualcos'altro (facoltativo)",
     "skip": "Salta",
-    "continue": "Continua"
+    "continue": "Continua",
+    "welcome_greeting": "Ciao, sono Gali 👋",
+    "welcome_intro": "Sono il tuo tutor AI su ATP Connect. Trasformiamo fisica e chimica in esperimenti che costruisci con le tue mani, non solo da leggere.",
+    "welcome_ask": "Prima di iniziare: dimmi cosa ami fuori dalla scuola. Lo uso per spiegarti la scienza con esempi che conosci già."
   },
   "tour": {
     "skip": "Salta",
