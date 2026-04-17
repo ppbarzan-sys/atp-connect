@@ -547,6 +547,7 @@
   "passions": {
     "title": "What do you love outside school?",
     "subtitle": "Pick up to 3. Gali will use these to explain things in a way that clicks for you.",
+    "selected_count": "{count} of 3 picked",
     "something_else": "Something else (optional)",
     "skip": "Skip",
     "continue": "Continue"

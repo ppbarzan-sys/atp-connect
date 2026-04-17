@@ -547,6 +547,7 @@
   "passions": {
     "title": "Cosa ami fuori dalla scuola?",
     "subtitle": "Scegline fino a 3. Gali li userà per spiegarti le cose in un modo che ti arriva dritto.",
+    "selected_count": "{count} di 3 scelti",
     "something_else": "Qualcos'altro (facoltativo)",
     "skip": "Salta",
     "continue": "Continua"

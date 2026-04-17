@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { saveTeacherMode } from '@/lib/storage'
 import { useI18n } from '@/lib/i18n'
 import { appEvents } from '@/lib/events'
+import { hasCompletedPassionOnboarding } from '@/lib/passions'
 
 const ROLE_KEY = 'userRole'
 const DEMO_USER = 'Atpconnect'
@@ -66,7 +67,11 @@ export default function RoleSelector({ username, onComplete }: RoleSelectorProps
       document.body.classList.remove('teacher-mode')
       // Reset student onboarding so the tour triggers
       localStorage.removeItem('student_onboarding_completed')
-      router.push('/app')
+      if (!hasCompletedPassionOnboarding()) {
+        router.push('/onboarding/passions')
+      } else {
+        router.push('/app')
+      }
     }
 
     appEvents.emit('role-changed')

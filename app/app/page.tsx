@@ -8,8 +8,7 @@ import GaliModal from '@/components/GaliModal'
 import { useI18n } from '@/lib/i18n'
 import { getExperiments, type Experiment } from '@/data/loader'
 import OnboardingTour, { RestartTourButton } from '@/components/OnboardingTour'
-import RoleSelector, { shouldShowRoleSelector, getUserRole } from '@/components/RoleSelector'
-import { hasCompletedPassionOnboarding } from '@/lib/passions'
+import RoleSelector, { shouldShowRoleSelector } from '@/components/RoleSelector'
 
 export default function AppHome() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -41,16 +40,6 @@ export default function AppHome() {
     }, 300)
     return () => clearInterval(interval)
   }, [])
-
-  // First-launch passion capture: gate student-role home only.
-  // Runs after the role selector closes and on mount when not shown.
-  useEffect(() => {
-    if (showRoleSelector) return
-    const role = getUserRole()
-    if (role !== 'teacher' && !hasCompletedPassionOnboarding()) {
-      router.replace('/onboarding/passions')
-    }
-  }, [showRoleSelector, router])
 
   function handleExpClick(num: number) {
     router.push(`/experiments/${num}`)

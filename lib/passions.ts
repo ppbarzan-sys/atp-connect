@@ -9,12 +9,14 @@ export type PassionLocale = 'en' | 'it' | 'fr' | 'es' | 'ar'
 
 export interface PassionOption {
   id: string
+  emoji: string
   labels: Record<PassionLocale, string>
 }
 
 export const PASSION_OPTIONS: PassionOption[] = [
   {
     id: 'soccer',
+    emoji: '⚽',
     labels: {
       en: 'Soccer',
       it: 'Calcio',
@@ -25,6 +27,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'basketball',
+    emoji: '🏀',
     labels: {
       en: 'Basketball',
       it: 'Pallacanestro',
@@ -35,6 +38,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'videogames',
+    emoji: '🎮',
     labels: {
       en: 'Video games',
       it: 'Videogiochi',
@@ -45,6 +49,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'music',
+    emoji: '🎵',
     labels: {
       en: 'Music',
       it: 'Musica',
@@ -55,6 +60,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'cars',
+    emoji: '🏎️',
     labels: {
       en: 'Cars',
       it: 'Automobili',
@@ -65,6 +71,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'art',
+    emoji: '🎨',
     labels: {
       en: 'Art & drawing',
       it: 'Arte e disegno',
@@ -75,6 +82,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'cooking',
+    emoji: '🍳',
     labels: {
       en: 'Cooking',
       it: 'Cucina',
@@ -85,6 +93,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'reading',
+    emoji: '📚',
     labels: {
       en: 'Reading',
       it: 'Lettura',
@@ -95,6 +104,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'outdoors',
+    emoji: '🏕️',
     labels: {
       en: 'Outdoors & nature',
       it: 'Natura e aria aperta',
@@ -105,6 +115,7 @@ export const PASSION_OPTIONS: PassionOption[] = [
   },
   {
     id: 'animals',
+    emoji: '🐾',
     labels: {
       en: 'Animals',
       it: 'Animali',

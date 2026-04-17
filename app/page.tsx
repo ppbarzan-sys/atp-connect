@@ -30,6 +30,9 @@ export default function LandingPage() {
         seedDemoProgress()
         // Store username for role selector greeting
         localStorage.setItem('atp_username', username)
+        // Demo mode: reset passion onboarding so every session starts fresh
+        localStorage.removeItem('atp.learner.passions.v1')
+        localStorage.removeItem('atp.learner.passions.completed.v1')
         // Signal that the role selector should appear on /app
         sessionStorage.setItem('needsRoleSelection', 'true')
         router.push('/app')
