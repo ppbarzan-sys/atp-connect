@@ -14,7 +14,7 @@ export default function RoboticsExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const { t, locale } = useI18n()
-  const [roboticsExperiments, setRoboticsExperiments] = useState<Experiment[]>([])
+  const [roboticsExperiments, setRoboticsExperiments] = useState<Experiment[] | null>(null)
 
   useEffect(() => {
     getRoboticsExperiments(locale).then(setRoboticsExperiments)
@@ -23,7 +23,7 @@ export default function RoboticsExperimentPage() {
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
 
-  const exp = roboticsExperiments.find(e => e.num === Number(id))
+  const exp = roboticsExperiments?.find(e => e.num === Number(id))
 
   function buildRichContext(): GaliContext {
     if (!exp) return { section: 'all' }
@@ -80,6 +80,14 @@ export default function RoboticsExperimentPage() {
       focusQuestion: { text: questionText, userAnswer, correctAnswer },
     })
     setGaliOpen(true)
+  }
+
+  if (roboticsExperiments === null) {
+    return (
+      <div className="page-loading">
+        <div className="page-loading-spinner" aria-label={t('common.loading')} />
+      </div>
+    )
   }
 
   if (!exp) {

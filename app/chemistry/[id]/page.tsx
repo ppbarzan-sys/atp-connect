@@ -14,7 +14,7 @@ export default function ChemistryExperimentPage() {
   const { id } = useParams()
   const router = useRouter()
   const { t, locale } = useI18n()
-  const [chemistryExperiments, setChemistryExperiments] = useState<Experiment[]>([])
+  const [chemistryExperiments, setChemistryExperiments] = useState<Experiment[] | null>(null)
 
   useEffect(() => {
     getChemistryExperiments(locale).then(setChemistryExperiments)
@@ -23,7 +23,7 @@ export default function ChemistryExperimentPage() {
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
 
-  const exp = chemistryExperiments.find(e => e.num === Number(id))
+  const exp = chemistryExperiments?.find(e => e.num === Number(id))
 
   function buildRichContext(): GaliContext {
     if (!exp) return { section: 'all' }
@@ -80,6 +80,14 @@ export default function ChemistryExperimentPage() {
       focusQuestion: { text: questionText, userAnswer, correctAnswer },
     })
     setGaliOpen(true)
+  }
+
+  if (chemistryExperiments === null) {
+    return (
+      <div className="page-loading">
+        <div className="page-loading-spinner" aria-label={t('common.loading')} />
+      </div>
+    )
   }
 
   if (!exp) {

@@ -552,7 +552,7 @@
     "skip": "Skip",
     "continue": "Continue",
     "welcome_greeting": "Hi, I'm Gali 👋",
-    "welcome_intro": "I'm your AI tutor here at ATP Connect. We turn physics and chemistry into hands-on experiments you actually build — not just read about.",
+    "welcome_intro": "I'm your AI tutor here at ATP Connect. We turn science and technology into hands-on experiments you actually build — not just read about.",
     "welcome_ask": "Before we start: tell me what you love outside school. I use it to explain tricky science using things that already make sense to you."
   },
   "tour": {
@@ -585,5 +585,8 @@
     "t5_text": "Browse experiments as usual — in Teacher Mode you can see all student results and notes alongside the content.",
     "t6_title": "Switch Back",
     "t6_text": "Click here anytime to switch back to Student Mode for your own learning."
+  },
+  "common": {
+    "loading": "Loading…"
   }
 }

@@ -552,7 +552,7 @@
     "skip": "Salta",
     "continue": "Continua",
     "welcome_greeting": "Ciao, sono Gali 👋",
-    "welcome_intro": "Sono il tuo tutor AI su ATP Connect. Trasformiamo fisica e chimica in esperimenti che costruisci con le tue mani, non solo da leggere.",
+    "welcome_intro": "Sono il tuo tutor AI su ATP Connect. Trasformiamo scienza e tecnologia in esperimenti che costruisci con le tue mani, non solo da leggere.",
     "welcome_ask": "Prima di iniziare: dimmi cosa ami fuori dalla scuola. Lo uso per spiegarti la scienza con esempi che conosci già."
   },
   "tour": {
@@ -585,5 +585,8 @@
     "t5_text": "Sfoglia gli esperimenti come al solito — in Modalità Insegnante puoi vedere tutti i risultati e le note degli studenti accanto al contenuto.",
     "t6_title": "Torna indietro",
     "t6_text": "Clicca qui in qualsiasi momento per tornare alla Modalità Studente per il tuo apprendimento."
+  },
+  "common": {
+    "loading": "Caricamento…"
   }
 }

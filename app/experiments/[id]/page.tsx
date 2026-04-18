@@ -16,12 +16,12 @@ export default function ExperimentPage() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [galiOpen, setGaliOpen] = useState(false)
   const [galiCtx, setGaliCtx] = useState<GaliContext>({ section: 'all' })
-  const [experiments, setExperiments] = useState<Experiment[]>([])
+  const [experiments, setExperiments] = useState<Experiment[] | null>(null)
 
   useEffect(() => {
     getExperiments(locale).then(setExperiments)
   }, [locale])
-  const exp = experiments.find(e => e.num === Number(id))
+  const exp = experiments?.find(e => e.num === Number(id))
 
   function buildRichContext(): GaliContext {
     if (!exp) return { section: 'all' }
@@ -78,6 +78,14 @@ export default function ExperimentPage() {
       focusQuestion: { text: questionText, userAnswer, correctAnswer },
     })
     setGaliOpen(true)
+  }
+
+  if (experiments === null) {
+    return (
+      <div className="page-loading">
+        <div className="page-loading-spinner" aria-label={t('common.loading')} />
+      </div>
+    )
   }
 
   if (!exp) {

@@ -552,7 +552,7 @@
     "skip": "Saltar",
     "continue": "Continuar",
     "welcome_greeting": "¡Hola, soy Gali! 👋",
-    "welcome_intro": "Soy tu tutor de IA en ATP Connect. Convertimos la física y la química en experimentos que construyes de verdad, no solo que lees.",
+    "welcome_intro": "Soy tu tutor de IA en ATP Connect. Convertimos la ciencia y la tecnología en experimentos que construyes de verdad, no solo que lees.",
     "welcome_ask": "Antes de empezar: cuéntame qué te gusta fuera del cole. Lo uso para explicarte la ciencia con cosas que ya conoces."
   },
   "tour": {
@@ -585,5 +585,8 @@
     "t5_text": "Explora los experimentos como siempre — en Modo Profesor puedes ver todos los resultados y notas de los estudiantes junto al contenido.",
     "t6_title": "Volver atrás",
     "t6_text": "Haz clic aquí en cualquier momento para volver al Modo Estudiante para tu propio aprendizaje."
+  },
+  "common": {
+    "loading": "Cargando…"
   }
 }
