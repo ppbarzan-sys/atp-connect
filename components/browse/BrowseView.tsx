@@ -12,6 +12,7 @@ import BrowseSection from './BrowseSection'
 import EquipmentFilter from './EquipmentFilter'
 import { useI18n } from '@/lib/i18n'
 import { getProgressSummary } from '@/lib/storage'
+import { appEvents } from '@/lib/events'
 
 interface BrowseViewProps {
   activeFilter: string
@@ -61,7 +62,18 @@ export default function BrowseView({
   const [progress, setProgress] = useState({ completed: 0, total: 0 })
   useEffect(() => {
     const nums = allExperiments.map(e => e.num)
-    setProgress(getProgressSummary(nums))
+    const recompute = () => setProgress(getProgressSummary(nums))
+    recompute()
+
+    appEvents.on('progress-updated', recompute)
+    window.addEventListener('focus', recompute)
+    window.addEventListener('pageshow', recompute)
+
+    return () => {
+      appEvents.off('progress-updated', recompute)
+      window.removeEventListener('focus', recompute)
+      window.removeEventListener('pageshow', recompute)
+    }
   }, [allExperiments])
 
   // Derive ordered section list from the data (preserves insertion order)
