@@ -15,6 +15,18 @@ interface SidebarProps {
   onAskGali?: () => void
 }
 
+type NavKey = 'physics' | 'chemistry' | 'ai' | 'robotics' | 'dashboard' | 'classroom'
+
+function activeNavKey(pathname: string | null): NavKey {
+  if (!pathname) return 'physics'
+  if (pathname.startsWith('/chemistry')) return 'chemistry'
+  if (pathname.startsWith('/ai')) return 'ai'
+  if (pathname.startsWith('/robotics')) return 'robotics'
+  if (pathname.startsWith('/dashboard')) return 'dashboard'
+  if (pathname.startsWith('/classroom')) return 'classroom'
+  return 'physics'
+}
+
 export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: SidebarProps) {
   const router = useRouter()
   const pathname = usePathname()
@@ -39,12 +51,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       setSigningOut(false)
     }
   }
-  const isChemistry = pathname?.startsWith('/chemistry') ?? false
-  const isAI = pathname?.startsWith('/ai') ?? false
-  const isRobotics = pathname?.startsWith('/robotics') ?? false
-  const isDashboard = pathname?.startsWith('/dashboard') ?? false
-  const isClassroom = pathname?.startsWith('/classroom') ?? false
-  const isPhysicsActive = !isChemistry && !isAI && !isRobotics && !isDashboard && !isClassroom
+  const active = activeNavKey(pathname)
 
   useEffect(() => {
     setTeacherMode(loadTeacherMode())
@@ -66,7 +73,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       <div data-tour="sidebar-nav">
       {/* Physics */}
       <button
-        className={`nav-icon${isPhysicsActive ? ' active' : ''}`}
+        className={`nav-icon${active === 'physics' ? ' active' : ''}`}
         onClick={() => router.push('/app')}
         title={t('nav.physics_title')}
         aria-label={t('nav.physics_title')}
@@ -77,7 +84,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
 
       {/* Chemistry */}
       <button
-        className={`nav-icon${isChemistry ? ' active' : ''}`}
+        className={`nav-icon${active === 'chemistry' ? ' active' : ''}`}
         onClick={() => router.push('/chemistry')}
         title={t('nav.chemistry_title')}
         aria-label={t('nav.chemistry_title')}
@@ -88,7 +95,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
 
       {/* AI */}
       <button
-        className={`nav-icon${isAI ? ' active' : ''}`}
+        className={`nav-icon${active === 'ai' ? ' active' : ''}`}
         onClick={() => router.push('/ai')}
         title={t('nav.ai_title')}
         aria-label={t('nav.ai_title')}
@@ -99,7 +106,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
 
       {/* Robotics */}
       <button
-        className={`nav-icon${isRobotics ? ' active' : ''}`}
+        className={`nav-icon${active === 'robotics' ? ' active' : ''}`}
         onClick={() => router.push('/robotics')}
         title={t('nav.robotics_title')}
         aria-label={t('nav.robotics_title')}
@@ -111,7 +118,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
 
       {/* Dashboard */}
       <button
-        className={`nav-icon${isDashboard ? ' active' : ''}`}
+        className={`nav-icon${active === 'dashboard' ? ' active' : ''}`}
         onClick={() => router.push('/dashboard')}
         title={t('nav.dashboard_title')}
         aria-label={t('nav.dashboard_title')}
@@ -124,7 +131,7 @@ export default function Sidebar({ activeView, onHome, onSearch, onAskGali }: Sid
       {/* Classroom — teacher mode only */}
       {teacherMode && (
         <button
-          className={`nav-icon${isClassroom ? ' active' : ''}`}
+          className={`nav-icon${active === 'classroom' ? ' active' : ''}`}
           onClick={() => router.push('/classroom')}
           title={t('nav.classroom_title')}
           aria-label={t('nav.classroom_title')}
